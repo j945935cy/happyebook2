@@ -1,4 +1,5 @@
 ﻿const sampleBooks = [
+  { id: "word-builder-1200", title: "Word Builder 1200", subtitle: "1200 個核心英文單字的互動式網頁版閱讀教材", author: "Happy eBook 編輯部", category: "英語學習", type: "web", format: "網頁版", cover: "../assets/images/book-word-builder-1200.svg", description: "適合在瀏覽器直接閱讀的英文單字書，整理常用字彙並支援長時間閱讀。", downloadUrl: "", buyUrl: "", readUrl: "../word-builder-1200-single-file.html", featured: true, popular: true, priceLabel: "免費閱讀" },
   { id: "linux-starter", title: "從 Windows 開始學 Linux", subtitle: "用 WSL2 建立第一個穩定的 Linux 學習環境", author: "Happy eBook 編輯部", category: "Linux 入門", type: "web", format: "網頁版 / PDF", cover: "../assets/images/book-linux-starter.svg", description: "用最少阻力開始學 Linux，從安裝、指令、工作流程一路到實作。", downloadUrl: "", buyUrl: "", readUrl: "book.html?id=linux-starter", featured: true, popular: true, priceLabel: "免費閱讀" },
   { id: "epub-writing-guide", title: "EPUB 製作實戰手冊", subtitle: "從內容整理到上架格式，一次掌握電子書製作流程", author: "林書晨", category: "出版製作", type: "paid", format: "EPUB / PDF", cover: "../assets/images/book-epub-guide.svg", description: "適合想把文章、教材或課程筆記整理成正式電子書的創作者。", downloadUrl: "", buyUrl: "#buy-epub-writing-guide", readUrl: "", featured: true, popular: false, priceLabel: "付費購買" },
   { id: "web-book-design", title: "網頁版電子書設計筆記", subtitle: "把靜態內容做成舒服好讀的 Web Book", author: "周映青", category: "前端設計", type: "free", format: "PDF / 原始檔", cover: "../assets/images/book-web-design.svg", description: "整理電子書版面、章節導覽、排版系統與閱讀體驗的設計思路。", downloadUrl: "#download-web-book-design", buyUrl: "", readUrl: "", featured: false, popular: true, priceLabel: "免費下載" },
@@ -16,4 +17,3 @@ const initBookPage = async () => { const books = await loadBooks(); const id = n
 const initNav = () => { const nav = document.querySelector("[data-site-nav]"); const toggle = document.querySelector("[data-nav-toggle]"); toggle?.addEventListener("click", () => nav?.classList.toggle("is-open")); };
 const boot = () => { initNav(); const page = document.body.dataset.page; if (page === "home") initHome(); if (page === "books") initBooksPage(); if (page === "book") initBookPage(); };
 boot();
-
