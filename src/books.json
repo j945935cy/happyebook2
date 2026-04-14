@@ -100,22 +100,5 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "免費閱讀"
-    },
-    {
-        "id":  "linux-starter",
-        "title":  "從 Windows 開始學 Linux",
-        "subtitle":  "用 WSL2 建立第一個穩定的 Linux 學習環境",
-        "author":  "Happy eBook 編輯部",
-        "category":  "Linux 入門",
-        "type":  "web",
-        "format":  "網頁版 / PDF",
-        "cover":  "../assets/images/book-linux-starter.svg",
-        "description":  "用最少阻力開始學 Linux，從安裝、指令、工作流程一路到實作。",
-        "downloadUrl":  "",
-        "buyUrl":  "",
-        "readUrl":  "https://j945935cy.github.io/ebook2026linux/",
-        "featured":  true,
-        "popular":  true,
-        "priceLabel":  "免費閱讀"
     }
 ]
