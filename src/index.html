@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy eBook | 電子書平台</title>
+  <meta name="description" content="Happy eBook 提供電子書展示、網頁版閱讀、投稿與內容整理的第一版 MVP。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">Happy eBook</span>
+          <span class="brand-sub">教學感、內容導向的電子書平台</span>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle>選單</button>
+        <nav class="site-nav" data-site-nav>
+          <a class="is-active" href="index.html">首頁</a>
+          <a href="books.html">書籍列表</a>
+          <a href="submit.html">投稿</a>
+          <a href="about.html">關於</a>
+          <a href="contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Phase 1 MVP</span>
+            <h1>把電子書、教材與網頁版內容整理成清楚好讀的平台。</h1>
+            <p>Happy eBook 聚焦在先上線、可維護、可擴充。第一版提供作品展示、分類導覽、投稿入口與網頁版閱讀導流。</p>
+            <div class="hero-actions">
+              <a class="button primary" href="books.html">開始找書</a>
+              <a class="button secondary" href="submit.html">我要投稿</a>
+            </div>
+          </div>
+          <aside class="hero-panel">
+            <img src="../assets/images/book-linux-starter.svg" alt="Happy eBook 精選書封展示">
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">平台特色</span>
+              <h2>第一版先把最重要的事情做好</h2>
+            </div>
+            <p class="section-copy">不先做複雜會員系統，先把內容呈現、分類與導流做對。</p>
+          </div>
+          <div class="grid-3">
+            <article class="feature-card"><h3>內容先上線</h3><p>支援 EPUB、PDF 與網頁版作品，讓平台能快速開始累積內容。</p></article>
+            <article class="feature-card"><h3>投稿入口明確</h3><p>提供作者投稿說明與流程，先把供稿動線建立起來。</p></article>
+            <article class="feature-card"><h3>後續好擴充</h3><p>資料先收斂在 <code>books.json</code>，方便未來升級成資料庫與平台版本。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div><span class="eyebrow">最新上架</span><h2>精選作品</h2></div>
+            <a class="card-link" href="books.html">查看全部作品</a>
+          </div>
+          <div class="book-grid" data-home-featured></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div><span class="eyebrow">熱門主題</span><h2>讀者常看的內容</h2></div>
+          </div>
+          <div class="book-grid" data-home-popular></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid-2">
+          <article class="info-panel">
+            <h3>分類導覽</h3>
+            <p>目前先以內容用途切分，方便快速找書。</p>
+            <div class="tag-row"><span class="tag category">Linux 入門</span><span class="tag category">出版製作</span><span class="tag category">前端設計</span><span class="tag category">教學應用</span></div>
+          </article>
+          <article class="info-panel">
+            <h3>免費 / 付費導流</h3>
+            <p>免費內容用來建立流量，付費內容則保留轉換空間，網頁版作品適合直接推廣閱讀。</p>
+            <div class="cta-row"><a class="button secondary" href="books.html">免費內容</a><a class="button secondary" href="books.html">付費內容</a><a class="button secondary" href="books.html">網頁版作品</a></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar"><span>Happy eBook MVP</span><span>HTML / CSS / Vanilla JavaScript</span></div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
