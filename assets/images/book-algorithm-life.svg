@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#EAF1F8"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#F9FBFE" stroke="#8FA8C2" stroke-width="4"/>
+  <text x="120" y="210" fill="#46627E" font-size="40" font-family="Georgia, serif" letter-spacing="5">WEB BOOK</text>
+  <text x="120" y="390" fill="#142033" font-size="102" font-family="Georgia, serif">日常與職場的</text>
+  <text x="120" y="520" fill="#142033" font-size="130" font-family="Georgia, serif">演算法應用</text>
+  <text x="120" y="690" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">用日常情境理解演算法思維</text>
+  <rect x="120" y="1030" width="260" height="64" rx="32" fill="#46627E"/>
+  <text x="182" y="1072" fill="#F9FBFE" font-size="30" font-family="'Noto Sans TC', sans-serif">Read Online</text>
+</svg>
