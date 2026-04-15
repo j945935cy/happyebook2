@@ -75,6 +75,14 @@ happyebook2/
 - `PROMPTS/phase2_platform.md`
 - `PROMPTS/phase3_business.md`
 
+## 文件
+
+- `docs/operation-manual.md`：網站操作手冊
+- `docs/content-model.md`：內容資料模型
+- `docs/site-map.md`：網站地圖
+- `docs/deployment-notes.md`：部署筆記
+- `docs/design-system.md`：設計系統
+
 ## 給 Codex 的規則
 
 請參考：

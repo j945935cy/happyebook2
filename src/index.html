@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy eBook | 電子書平台</title>
   <meta name="description" content="Happy eBook 提供電子書展示、網頁版閱讀、投稿與內容整理服務。">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body data-page="home">
   <div class="site-shell">
@@ -15,7 +15,10 @@
           <span class="brand-mark">Happy eBook</span>
           <span class="brand-sub">教學感、內容導向的電子書平台</span>
         </a>
-        <button class="nav-toggle" type="button" data-nav-toggle>選單</button>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
         <nav class="site-nav" data-site-nav>
           <a class="is-active" href="index.html">首頁</a>
           <a href="books.html">書籍列表</a>
@@ -29,22 +32,33 @@
     <main>
       <section class="hero">
         <div class="container hero-grid">
-          <div>
+          <div class="hero-copy">
             <span class="eyebrow">精選內容</span>
-            <h1>把電子書、教材與網頁版內容整理成清楚好讀的平台。</h1>
-            <p>Happy eBook 聚焦在清楚展示作品、整理分類、提供投稿專區，並支援網頁版閱讀導流。</p>
+            <h1>清楚整理電子書、教材與網頁版閱讀內容。</h1>
+            <p>Happy eBook 以教學平台的閱讀節奏，整理免費教材、付費作品與作者投稿內容，讓讀者更快找到能直接開始學習的書。</p>
             <div class="hero-actions">
               <a class="button primary" href="books.html">開始找書</a>
               <a class="button secondary" href="submit.html">我要投稿</a>
             </div>
+            <dl class="hero-stats" aria-label="平台內容摘要">
+              <div><dt data-stat-total>0</dt><dd>本作品</dd></div>
+              <div><dt data-stat-categories>0</dt><dd>個分類</dd></div>
+              <div><dt data-stat-web>0</dt><dd>本網頁版</dd></div>
+            </dl>
           </div>
-          <aside class="hero-panel">
+          <aside class="hero-panel" aria-label="精選書籍">
             <img src="../assets/images/book-linux-starter.svg" alt="Happy eBook 精選書封展示">
+            <div class="hero-panel-body">
+              <span class="tag web">網頁版</span>
+              <h2>從 Windows 開始學 Linux</h2>
+              <p>以實作導向整理 WSL2、Linux 指令與工具鏈，適合想把學習路線一次看清楚的讀者。</p>
+              <a class="card-link" href="book.html?id=ebook-wsl2-online">查看書籍介紹</a>
+            </div>
           </aside>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section-soft">
         <div class="container">
           <div class="section-head">
             <div>
@@ -54,9 +68,9 @@
             <p class="section-copy">精選教學型電子書與網頁教材，讓讀者更快找到適合的內容。</p>
           </div>
           <div class="grid-3">
-            <article class="feature-card"><h3>內容先上線</h3><p>支援 EPUB、PDF 與網頁版作品，讓平台能快速開始累積內容。</p></article>
-            <article class="feature-card"><h3>投稿動線清楚</h3><p>提供作者投稿說明與投稿方式，讓供稿動線更清楚。</p></article>
-            <article class="feature-card"><h3>內容管理清楚</h3><p>資料先收斂在 <code>books.json</code>，方便持續整理作品與持續擴充。</p></article>
+            <article class="feature-card"><span class="feature-number">01</span><h3>內容先上線</h3><p>支援 EPUB、PDF 與網頁版作品，讓平台能快速開始累積內容。</p></article>
+            <article class="feature-card"><span class="feature-number">02</span><h3>投稿動線清楚</h3><p>提供作者投稿說明與投稿方式，讓供稿動線更清楚。</p></article>
+            <article class="feature-card"><span class="feature-number">03</span><h3>內容管理清楚</h3><p>資料先收斂在 <code>books.json</code>，方便持續整理作品與持續擴充。</p></article>
           </div>
         </div>
       </section>
@@ -64,28 +78,25 @@
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <div><span class="eyebrow">最新上架</span><h2>精選作品</h2></div>
+            <div><span class="eyebrow">Bookshelf</span><h2>分類書櫃</h2></div>
             <a class="card-link" href="books.html">查看全部作品</a>
           </div>
-          <div class="book-grid" data-home-featured></div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <div><span class="eyebrow">熱門主題</span><h2>讀者常看的內容</h2></div>
+          <div class="home-filter-panel">
+            <div class="filter-group" data-home-category-filters>
+              <button class="filter-chip is-active" data-home-category="all" type="button">全部</button>
+            </div>
+            <p data-home-filter-summary>正在整理作品。</p>
           </div>
-          <div class="book-grid" data-home-popular></div>
+          <div class="book-grid" data-home-books></div>
         </div>
       </section>
 
       <section class="section">
         <div class="container grid-2">
           <article class="info-panel">
-            <h3>分類導覽</h3>
-            <p>目前先以內容用途切分，方便快速找書。</p>
-            <div class="tag-row"><span class="tag category">Linux 入門</span><span class="tag category">出版製作</span><span class="tag category">前端設計</span><span class="tag category">教學應用</span><span class="tag category">英語學習</span><span class="tag category">資料結構</span><span class="tag category">演算法</span><span class="tag category">證照學習</span></div>
+            <h3>熱門主題</h3>
+            <p>以學習用途切分內容，讀者可以從證照、英文、Linux、資料結構與演算法快速進入。</p>
+            <div class="tag-row" data-home-category-tags></div>
           </article>
           <article class="info-panel">
             <h3>免費 / 付費導流</h3>
@@ -100,7 +111,7 @@
       <div class="container footer-bar"><span>Happy eBook</span><span>HTML / CSS / Vanilla JavaScript</span></div>
     </footer>
   </div>
-  <script src="script.js"></script>
+  <script src="/src/script.js"></script>
 </body>
 </html>
 

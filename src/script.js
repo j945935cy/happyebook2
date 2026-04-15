@@ -13,14 +13,69 @@
   { id: "word-builder-1200", title: "Word Builder 1200", subtitle: "1200 個核心英文單字的互動式網頁版閱讀教材", author: "Happy eBook 編輯部", category: "英語學習", type: "web", format: "網站閱讀", cover: "../assets/images/book-word-builder-1200.svg", description: "適合在瀏覽器直接閱讀的英文單字書，整理常用字彙並支援長時間閱讀。", downloadUrl: "", buyUrl: "", readUrl: "https://j945935cy.github.io/text2speech/word-builder-1200-single-file.html", featured: true, popular: true, priceLabel: "免費閱讀" }
 ];
 const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
-const loadBooks = async () => { try { const response = await fetch("books.json"); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); } catch (error) { console.warn("books.json 載入失敗，改用內建資料：", error); return sampleBooks; } };
+const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
+const loadBooks = async () => { try { const response = await fetch(new URL("books.json", scriptBase)); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); } catch (error) { console.warn("books.json 載入失敗，改用內建資料：", error); return sampleBooks; } };
+const isPublished = (book) => book.published !== false;
 const createTags = (book) => [`<span class="tag ${book.type}">${typeLabel[book.type] || book.type}</span>`,`<span class="tag category">${book.category}</span>`].join("");
 const primaryAction = (book) => book.type === "free" ? `<a class="button primary" href="${book.downloadUrl || "#"}">下載閱讀</a>` : book.type === "paid" ? `<a class="button primary" href="${book.buyUrl || "#"}">立即購買</a>` : `<a class="button primary" href="${book.readUrl || `book.html?id=${book.id}`}">前往閱讀</a>`;
 const createBookCard = (book) => `<article class="book-card"><div class="book-card-media"><img src="${book.cover}" alt="${book.title} 書封"></div><div class="book-card-body"><h3>${book.title}</h3><p class="book-meta">${book.author} ・ ${book.format}</p><div class="tag-row">${createTags(book)}</div><p>${book.description}</p><div class="card-actions">${primaryAction(book)}<a class="card-link" href="book.html?id=${book.id}">更多資訊</a></div></div></article>`;
 const renderList = (selector, books) => { const target = document.querySelector(selector); if (target) target.innerHTML = books.map(createBookCard).join(""); };
-const initHome = async () => { const books = await loadBooks(); renderList("[data-home-featured]", books.filter((book) => book.featured)); renderList("[data-home-popular]", books.filter((book) => book.popular)); };
-const initBooksPage = async () => { const books = await loadBooks(); const grid = document.querySelector("[data-books-grid]"); const typeFilters = [...document.querySelectorAll("[data-type-filter]")]; const categoryFilters = [...document.querySelectorAll("[data-category-filter]")]; if (!grid) return; let activeType = "all"; let activeCategory = "all"; const render = () => { const filtered = books.filter((book) => (activeType === "all" || book.type === activeType) && (activeCategory === "all" || book.category === activeCategory)); grid.innerHTML = filtered.length ? filtered.map(createBookCard).join("") : `<div class="empty-state"><h3>目前沒有符合條件的作品</h3><p>你可以切換篩選條件，或之後再回來看看。</p></div>`; }; typeFilters.forEach((button) => button.addEventListener("click", () => { activeType = button.dataset.typeFilter; typeFilters.forEach((item) => item.classList.toggle("is-active", item === button)); render(); })); categoryFilters.forEach((button) => button.addEventListener("click", () => { activeCategory = button.dataset.categoryFilter; categoryFilters.forEach((item) => item.classList.toggle("is-active", item === button)); render(); })); render(); };
-const initBookPage = async () => { const books = await loadBooks(); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img src="${book.cover}" alt="${book.title} 書封"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><h1>${book.title}</h1><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${book.category}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; };
-const initNav = () => { const nav = document.querySelector("[data-site-nav]"); const toggle = document.querySelector("[data-nav-toggle]"); toggle?.addEventListener("click", () => nav?.classList.toggle("is-open")); };
+const setText = (selector, value) => { const target = document.querySelector(selector); if (target) target.textContent = value; };
+const uniqueCategories = (books) => [...new Set(books.map((book) => book.category))];
+const initHome = async () => {
+  const books = (await loadBooks()).filter(isPublished);
+  const featuredBooks = books.filter((book) => book.featured);
+  const categories = uniqueCategories(books);
+  const filterWrap = document.querySelector("[data-home-category-filters]");
+  const tagWrap = document.querySelector("[data-home-category-tags]");
+  const summary = document.querySelector("[data-home-filter-summary]");
+  const grid = document.querySelector("[data-home-books]");
+  let activeCategory = "all";
+
+  setText("[data-stat-total]", books.length);
+  setText("[data-stat-categories]", categories.length);
+  setText("[data-stat-web]", books.filter((book) => book.type === "web").length);
+
+  if (tagWrap) tagWrap.innerHTML = categories.map((category) => `<span class="tag category">${category}</span>`).join("");
+  if (!filterWrap || !grid) return;
+
+  filterWrap.innerHTML = [
+    `<button class="filter-chip is-active" data-home-category="all" type="button">全部</button>`,
+    ...categories.map((category) => `<button class="filter-chip" data-home-category="${category}" type="button">${category}</button>`)
+  ].join("");
+
+  const render = () => {
+    const filtered = featuredBooks.filter((book) => activeCategory === "all" || book.category === activeCategory).slice(0, 8);
+    grid.innerHTML = filtered.length ? filtered.map(createBookCard).join("") : `<div class="empty-state"><h3>目前沒有符合條件的作品</h3><p>你可以切換分類，或前往書籍列表查看全部內容。</p></div>`;
+    if (summary) summary.textContent = activeCategory === "all" ? `顯示 ${filtered.length} 本精選作品` : `${activeCategory}：${filtered.length} 本作品`;
+  };
+
+  filterWrap.querySelectorAll("[data-home-category]").forEach((button) => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.homeCategory;
+      filterWrap.querySelectorAll("[data-home-category]").forEach((item) => item.classList.toggle("is-active", item === button));
+      render();
+    });
+  });
+  render();
+};
+const initBooksPage = async () => { const books = (await loadBooks()).filter(isPublished); const grid = document.querySelector("[data-books-grid]"); const typeFilters = [...document.querySelectorAll("[data-type-filter]")]; const categoryFilters = [...document.querySelectorAll("[data-category-filter]")]; if (!grid) return; let activeType = "all"; let activeCategory = "all"; const render = () => { const filtered = books.filter((book) => (activeType === "all" || book.type === activeType) && (activeCategory === "all" || book.category === activeCategory)); grid.innerHTML = filtered.length ? filtered.map(createBookCard).join("") : `<div class="empty-state"><h3>目前沒有符合條件的作品</h3><p>你可以切換篩選條件，或之後再回來看看。</p></div>`; }; typeFilters.forEach((button) => button.addEventListener("click", () => { activeType = button.dataset.typeFilter; typeFilters.forEach((item) => item.classList.toggle("is-active", item === button)); render(); })); categoryFilters.forEach((button) => button.addEventListener("click", () => { activeCategory = button.dataset.categoryFilter; categoryFilters.forEach((item) => item.classList.toggle("is-active", item === button)); render(); })); render(); };
+const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img src="${book.cover}" alt="${book.title} 書封"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><h1>${book.title}</h1><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${book.category}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; };
+const initNav = () => {
+  const nav = document.querySelector("[data-site-nav]");
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const closeNav = () => {
+    nav?.classList.remove("is-open");
+    toggle?.setAttribute("aria-expanded", "false");
+    toggle?.setAttribute("aria-label", "開啟主選單");
+  };
+  toggle?.addEventListener("click", () => {
+    const isOpen = nav?.classList.toggle("is-open") || false;
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
+  });
+  nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
+  window.addEventListener("resize", () => { if (window.innerWidth > 760) closeNav(); });
+};
 const boot = () => { initNav(); const page = document.body.dataset.page; if (page === "home") initHome(); if (page === "books") initBooksPage(); if (page === "book") initBookPage(); };
 boot();
