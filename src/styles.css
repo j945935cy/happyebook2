@@ -118,6 +118,12 @@ button:disabled { opacity: 0.48; cursor: not-allowed; }
 .admin-checks input, .check-line input { width: auto; }
 .check-line { display: flex !important; flex-direction: row; align-items: center; gap: 10px; color: var(--ink) !important; }
 .form-message { margin: 0; color: var(--primary-dark); font-weight: 800; }
+.google-form-panel { display: grid; gap: 18px; }
+.google-form-status { margin: 0; padding: 14px 16px; border-radius: 18px; background: rgba(37, 99, 235, 0.08); color: var(--primary-dark); font-weight: 800; }
+.google-form-status.is-warning { background: rgba(242, 140, 40, 0.16); color: #9a5a16; }
+.google-form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+.google-form-note { padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface-soft); }
+.google-form-note h3 { margin-bottom: 12px; }
 .admin-summary { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
 .admin-summary span { display: inline-flex; padding: 8px 12px; border-radius: 999px; background: var(--surface-soft); color: var(--primary-dark); font-weight: 800; }
 .admin-list, .submission-review-list { display: grid; gap: 12px; margin-bottom: 18px; }

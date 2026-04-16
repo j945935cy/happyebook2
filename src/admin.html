@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>版主管理 | Happy eBook</title>
-  <meta name="description" content="Happy eBook 版主管理頁，可審核作者投稿、編輯書籍資料並匯出 books.json。">
+  <meta name="description" content="Happy eBook 版主管理頁，用於查看 Google 表單回應、編輯書籍資料並匯出 books.json。">
   <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body data-page="admin">
@@ -21,8 +21,8 @@
       <section class="page-hero">
         <div class="container">
           <span class="eyebrow">Moderator</span>
-          <h1>作者投稿審核與書籍上架</h1>
-          <p>版主可先審核作者送出的作品資料，確認內容、分類與連結後，再加入書籍目錄並匯出 <code>books.json</code>。</p>
+          <h1>Google 表單回應整理與書籍上架</h1>
+          <p>版主可先查看 Google 表單收件內容，確認資料完整度與授權資訊後，再加入書籍目錄並匯出 <code>books.json</code>。</p>
         </div>
       </section>
 
@@ -81,14 +81,21 @@
 
           <section class="admin-panel">
             <div class="admin-panel-head">
-              <div><span class="eyebrow">Review</span><h2>待審投稿</h2></div>
-              <div class="admin-toolbar">
-                <button class="button secondary compact" type="button" data-export-submissions>匯出待審資料</button>
-                <button class="button secondary compact" type="button" data-clear-reviewed>清除已處理</button>
-              </div>
+              <div><span class="eyebrow">Google Form</span><h2>投稿回應整理</h2></div>
             </div>
-            <div class="admin-summary" data-submission-summary></div>
-            <div class="submission-review-list" data-submission-list></div>
+            <p class="google-form-status" data-google-responses-status aria-live="polite"></p>
+            <div class="google-form-actions">
+              <a class="button primary compact" data-google-form-responses-link href="#">查看表單回應</a>
+              <a class="button secondary compact" data-google-form-link href="#">查看投稿表單</a>
+            </div>
+            <div class="google-form-note">
+              <h3>建議整理步驟</h3>
+              <ol class="flow-list">
+                <li>到 Google 表單回應表檢查作品名稱、作者、連結與授權欄位。</li>
+                <li>將通過審核的內容整理成書籍資料，填入左側編輯表單。</li>
+                <li>確認分類、封面與取得方式後，輸出新版 <code>books.json</code>。</li>
+              </ol>
+            </div>
           </section>
         </div>
       </section>
@@ -111,7 +118,7 @@
       </section>
     </main>
 
-    <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><span>投稿審核與書籍管理</span></div></footer>
+    <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><span>Google 表單回應整理與書籍管理</span></div></footer>
   </div>
   <script src="/src/script.js"></script>
   <script src="/src/admin.js"></script>

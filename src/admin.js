@@ -117,6 +117,7 @@ const updateSummary = () => {
 };
 
 const updateSubmissionSummary = () => {
+  if (!submissionSummary) return;
   const pending = adminState.submissions.filter((item) => item.status === "pending").length;
   const approved = adminState.submissions.filter((item) => item.status === "approved").length;
   const rejected = adminState.submissions.filter((item) => item.status === "rejected").length;
@@ -154,6 +155,7 @@ const renderAdminList = () => {
 const submissionStatusLabel = (status) => ({ pending: "待審", approved: "已核准", rejected: "已退回" }[status] || "待審");
 
 const renderSubmissionList = () => {
+  if (!submissionList) return;
   updateSubmissionSummary();
   const submissions = adminState.submissions;
   if (!submissions.length) {
@@ -367,13 +369,13 @@ const initAdmin = async () => {
 
   form.addEventListener("submit", saveBook);
   list.addEventListener("click", handleListAction);
-  submissionList.addEventListener("click", handleSubmissionAction);
+  submissionList?.addEventListener("click", handleSubmissionAction);
   document.querySelector("[data-new-book]").addEventListener("click", resetEditor);
   document.querySelector("[data-reset-form]").addEventListener("click", resetEditor);
   document.querySelector("[data-download-json]").addEventListener("click", downloadJson);
   document.querySelector("[data-copy-json]").addEventListener("click", copyJson);
-  document.querySelector("[data-export-submissions]").addEventListener("click", exportSubmissions);
-  document.querySelector("[data-clear-reviewed]").addEventListener("click", clearReviewed);
+  document.querySelector("[data-export-submissions]")?.addEventListener("click", exportSubmissions);
+  document.querySelector("[data-clear-reviewed]")?.addEventListener("click", clearReviewed);
 };
 
 if (document.body.dataset.page === "admin") {

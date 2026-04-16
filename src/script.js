@@ -14,7 +14,10 @@
 ];
 const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
-const submissionsKey = "happyebook_author_submissions";
+const siteConfig = {
+  googleFormUrl: "https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM/viewform",
+  googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
+};
 const loadBooks = async () => { try { const response = await fetch(new URL("books.json", scriptBase)); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); } catch (error) { console.warn("books.json 載入失敗，改用內建資料：", error); return sampleBooks; } };
 const isPublished = (book) => book.published !== false;
 const isFreeBook = (book) => book.type === "free" || book.priceLabel?.includes("免費");
@@ -30,60 +33,39 @@ const createBookCard = (book) => `<article class="book-card"><div class="book-ca
 const renderList = (selector, books) => { const target = document.querySelector(selector); if (target) target.innerHTML = books.map(createBookCard).join(""); };
 const setText = (selector, value) => { const target = document.querySelector(selector); if (target) target.textContent = value; };
 const uniqueCategories = (books) => [...new Set(books.map((book) => book.category))];
-const readSubmissions = () => {
-  try {
-    return JSON.parse(localStorage.getItem(submissionsKey) || "[]");
-  } catch (error) {
-    console.warn("投稿資料讀取失敗：", error);
-    return [];
-  }
-};
-const writeSubmissions = (submissions) => localStorage.setItem(submissionsKey, JSON.stringify(submissions));
-const toSubmissionSlug = (value) => value
-  .trim()
-  .toLowerCase()
-  .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-")
-  .replace(/^-+|-+$/g, "") || "author-book";
-const initSubmitPage = () => {
-  const form = document.querySelector("[data-submission-form]");
-  const message = document.querySelector("[data-submission-message]");
-  if (!form) return;
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const data = Object.fromEntries(new FormData(form).entries());
-    const timestamp = new Date().toISOString();
-    const draftBookId = toSubmissionSlug(data.title);
-    const submissionId = `${draftBookId}-${Date.now().toString(36)}`;
-    const submission = {
-      id: draftBookId,
-      submissionId,
-      submittedAt: timestamp,
-      status: "pending",
-      title: data.title.trim(),
-      subtitle: data.subtitle.trim(),
-      author: data.author.trim(),
-      category: data.category.trim(),
-      type: data.type,
-      format: data.format.trim(),
-      cover: data.cover.trim() || "../assets/images/book-submission-placeholder.svg",
-      description: data.description.trim(),
-      downloadUrl: data.downloadUrl.trim(),
-      buyUrl: data.buyUrl.trim(),
-      readUrl: data.readUrl.trim(),
-      priceLabel: data.priceLabel.trim(),
-      contactEmail: data.contactEmail.trim(),
-      note: data.note.trim(),
-      featured: false,
-      popular: false,
-      published: false
-    };
-    const submissions = readSubmissions();
-    submissions.unshift(submission);
-    writeSubmissions(submissions);
-    form.reset();
-    if (message) message.textContent = `已送出版主審核，投稿編號：${submissionId}`;
+const isPlaceholderUrl = (value) => !value || value.includes("REPLACE_WITH_YOUR");
+const bindExternalLinks = () => {
+  document.querySelectorAll("[data-google-form-link]").forEach((link) => {
+    link.href = siteConfig.googleFormUrl;
+    link.target = "_blank";
+    link.rel = "noreferrer";
   });
+  document.querySelectorAll("[data-google-form-responses-link]").forEach((link) => {
+    link.href = siteConfig.googleResponsesUrl;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+  });
+};
+const initSubmitPage = () => {
+  const status = document.querySelector("[data-google-form-status]");
+  if (!status) return;
+  const configured = !isPlaceholderUrl(siteConfig.googleFormUrl);
+  status.textContent = configured
+    ? "已設定 Google 表單收件連結，作者可直接前往表單投稿。"
+    : "尚未填入正式 Google 表單網址，請先在 script.js 更新 googleFormUrl。";
+  status.classList.toggle("is-warning", !configured);
+};
+const initAdminPageLinks = () => {
+  const status = document.querySelector("[data-google-responses-status]");
+  if (!status) return;
+  const formConfigured = !isPlaceholderUrl(siteConfig.googleFormUrl);
+  const responsesConfigured = !isPlaceholderUrl(siteConfig.googleResponsesUrl);
+  if (formConfigured && responsesConfigured) {
+    status.textContent = "已設定 Google 表單與回應試算表連結，可直接查看投稿回應並手動上架作品。";
+    return;
+  }
+  status.textContent = "請先在 script.js 更新 googleFormUrl 與 googleResponsesUrl，才能開始正式收件。";
+  status.classList.add("is-warning");
 };
 const initHome = async () => {
   const books = (await loadBooks()).filter(isPublished);
@@ -140,5 +122,14 @@ const initNav = () => {
   nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
   window.addEventListener("resize", () => { if (window.innerWidth > 760) closeNav(); });
 };
-const boot = () => { initNav(); const page = document.body.dataset.page; if (page === "home") initHome(); if (page === "books") initBooksPage(); if (page === "book") initBookPage(); if (page === "submit") initSubmitPage(); };
+const boot = () => {
+  initNav();
+  bindExternalLinks();
+  const page = document.body.dataset.page;
+  if (page === "home") initHome();
+  if (page === "books") initBooksPage();
+  if (page === "book") initBookPage();
+  if (page === "submit") initSubmitPage();
+  if (page === "admin") initAdminPageLinks();
+};
 boot();
