@@ -4,13 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>投稿 | Happy eBook</title>
-  <meta name="description" content="查看 Happy eBook 的投稿說明、投稿規則與投稿方式。">
+  <meta name="description" content="作者可在 Happy eBook 投稿 EPUB、PDF 或網頁版作品，送出版主審核後再上架。">
   <link rel="stylesheet" href="/src/styles.css">
 </head>
-<body>
+<body data-page="submit">
   <div class="site-shell">
     <header class="site-header"><div class="container header-row"><a class="brand" href="index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">作者投稿專區</span></a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單"><span class="nav-toggle-bars" aria-hidden="true"></span><span>選單</span></button><nav class="site-nav" data-site-nav><a href="index.html">首頁</a><a href="books.html">書籍列表</a><a class="is-active" href="submit.html">投稿</a><a href="about.html">關於</a><a href="contact.html">聯絡</a></nav></div></header>
-    <main><section class="page-hero"><div class="container"><span class="eyebrow">Submit</span><h1>投稿作品</h1><p>歡迎作者提供 EPUB、PDF 或網頁版內容，讓平台持續累積更多實用作品。</p></div></section><section class="section"><div class="container split-layout"><article class="submit-card"><h3>投稿說明</h3><p>目前採人工審核與表單收件，方便整理適合上架的內容並與作者確認資訊。</p><ul class="rule-list"><li>內容需為原創，或具備可公開發布權利。</li><li>需提供作品名稱、作者名稱、簡介與封面圖。</li><li>可投稿免費內容、付費內容或網頁版作品。</li></ul></article><article class="submit-card"><h3>投稿方式</h3><ol class="flow-list"><li>整理作品資料與封面</li><li>填寫投稿表單</li><li>等待平台回覆</li><li>確認分類與上架資訊</li></ol><div class="cta-row"><a class="button primary" href="#submit-form">前往投稿表單</a></div></article></div></section><section class="section"><div class="container"><article class="page-panel" id="submit-form"><h3>投稿表單區</h3><p>之後可在這裡嵌入 Google 表單或導向外部收件頁面。目前先保留清楚的投稿方式。</p><div class="cta-row"><a class="button secondary" href="contact.html">先聯絡平台</a></div></article></div></section></main>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Submit</span>
+          <h1>作者投稿作品</h1>
+          <p>作者可送出 EPUB、PDF 或網頁版作品資料，版主審核通過後才會加入平台書櫃。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split-layout">
+          <article class="submit-card">
+            <h3>投稿流程</h3>
+            <ol class="flow-list">
+              <li>作者填寫作品資料與閱讀連結。</li>
+              <li>系統先放入待審清單，不會直接公開。</li>
+              <li>版主在管理頁確認內容、分類與連結。</li>
+              <li>審核通過後匯出書籍資料並上架。</li>
+            </ol>
+          </article>
+          <article class="submit-card">
+            <h3>投稿規範</h3>
+            <ul class="rule-list">
+              <li>作品需為原創，或已取得公開發布權利。</li>
+              <li>請提供可檢視的作品連結、封面圖連結與作者聯絡方式。</li>
+              <li>版主可依平台定位調整分類、摘要與公開狀態。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <article class="page-panel" id="submit-form">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Upload</span>
+                <h2>送出待審作品</h2>
+              </div>
+              <p class="section-copy">此表單會先建立待審資料，版主審核前不會顯示在書籍列表。</p>
+            </div>
+            <form class="submission-form" data-submission-form>
+              <div class="admin-form-grid">
+                <label>作品名稱<input name="title" type="text" required placeholder="請輸入作品名稱"></label>
+                <label>作者名稱<input name="author" type="text" required placeholder="請輸入作者或團隊名稱"></label>
+              </div>
+              <label>副標題<input name="subtitle" type="text" placeholder="一句話說明作品特色"></label>
+              <div class="admin-form-grid">
+                <label>分類<input name="category" type="text" required placeholder="例如：英語學習、證照學習"></label>
+                <label>內容型態
+                  <select name="type">
+                    <option value="web">網頁版</option>
+                    <option value="free">免費</option>
+                    <option value="paid">付費</option>
+                  </select>
+                </label>
+              </div>
+              <div class="admin-form-grid">
+                <label>閱讀格式<input name="format" type="text" required placeholder="網頁閱讀 / PDF / EPUB"></label>
+                <label>取得方式<input name="priceLabel" type="text" required placeholder="免費閱讀 / 提供試閱版 / 付費購買"></label>
+              </div>
+              <label>作品簡介<textarea name="description" rows="5" required placeholder="請簡述作品內容、適合讀者與學習目標"></textarea></label>
+              <div class="admin-form-grid">
+                <label>閱讀連結<input name="readUrl" type="url" placeholder="https://..."></label>
+                <label>封面圖連結<input name="cover" type="text" placeholder="https://... 或 ../assets/images/cover.svg"></label>
+              </div>
+              <div class="admin-form-grid">
+                <label>下載連結<input name="downloadUrl" type="url" placeholder="PDF / EPUB 下載連結"></label>
+                <label>購買連結<input name="buyUrl" type="url" placeholder="付費作品購買頁"></label>
+              </div>
+              <div class="admin-form-grid">
+                <label>聯絡 Email<input name="contactEmail" type="email" required placeholder="name@example.com"></label>
+                <label>補充說明<input name="note" type="text" placeholder="授權、試閱、上架備註"></label>
+              </div>
+              <label class="check-line"><input name="rightsConfirmed" type="checkbox" required> 我確認此作品為原創或具備公開發布權利。</label>
+              <div class="admin-actions">
+                <button class="button primary" type="submit">送出版主審核</button>
+                <button class="button secondary" type="reset">清除重填</button>
+              </div>
+              <p class="form-message" data-submission-message aria-live="polite"></p>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
     <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><span>作者投稿專區</span></div></footer>
   </div>
   <script src="/src/script.js"></script>

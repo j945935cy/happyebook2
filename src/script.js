@@ -14,6 +14,7 @@
 ];
 const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
+const submissionsKey = "happyebook_author_submissions";
 const loadBooks = async () => { try { const response = await fetch(new URL("books.json", scriptBase)); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); } catch (error) { console.warn("books.json 載入失敗，改用內建資料：", error); return sampleBooks; } };
 const isPublished = (book) => book.published !== false;
 const isFreeBook = (book) => book.type === "free" || book.priceLabel?.includes("免費");
@@ -29,6 +30,61 @@ const createBookCard = (book) => `<article class="book-card"><div class="book-ca
 const renderList = (selector, books) => { const target = document.querySelector(selector); if (target) target.innerHTML = books.map(createBookCard).join(""); };
 const setText = (selector, value) => { const target = document.querySelector(selector); if (target) target.textContent = value; };
 const uniqueCategories = (books) => [...new Set(books.map((book) => book.category))];
+const readSubmissions = () => {
+  try {
+    return JSON.parse(localStorage.getItem(submissionsKey) || "[]");
+  } catch (error) {
+    console.warn("投稿資料讀取失敗：", error);
+    return [];
+  }
+};
+const writeSubmissions = (submissions) => localStorage.setItem(submissionsKey, JSON.stringify(submissions));
+const toSubmissionSlug = (value) => value
+  .trim()
+  .toLowerCase()
+  .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-")
+  .replace(/^-+|-+$/g, "") || "author-book";
+const initSubmitPage = () => {
+  const form = document.querySelector("[data-submission-form]");
+  const message = document.querySelector("[data-submission-message]");
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    const timestamp = new Date().toISOString();
+    const draftBookId = toSubmissionSlug(data.title);
+    const submissionId = `${draftBookId}-${Date.now().toString(36)}`;
+    const submission = {
+      id: draftBookId,
+      submissionId,
+      submittedAt: timestamp,
+      status: "pending",
+      title: data.title.trim(),
+      subtitle: data.subtitle.trim(),
+      author: data.author.trim(),
+      category: data.category.trim(),
+      type: data.type,
+      format: data.format.trim(),
+      cover: data.cover.trim() || "../assets/images/book-submission-placeholder.svg",
+      description: data.description.trim(),
+      downloadUrl: data.downloadUrl.trim(),
+      buyUrl: data.buyUrl.trim(),
+      readUrl: data.readUrl.trim(),
+      priceLabel: data.priceLabel.trim(),
+      contactEmail: data.contactEmail.trim(),
+      note: data.note.trim(),
+      featured: false,
+      popular: false,
+      published: false
+    };
+    const submissions = readSubmissions();
+    submissions.unshift(submission);
+    writeSubmissions(submissions);
+    form.reset();
+    if (message) message.textContent = `已送出版主審核，投稿編號：${submissionId}`;
+  });
+};
 const initHome = async () => {
   const books = (await loadBooks()).filter(isPublished);
   const featuredBooks = books.filter((book) => book.featured);
@@ -84,5 +140,5 @@ const initNav = () => {
   nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
   window.addEventListener("resize", () => { if (window.innerWidth > 760) closeNav(); });
 };
-const boot = () => { initNav(); const page = document.body.dataset.page; if (page === "home") initHome(); if (page === "books") initBooksPage(); if (page === "book") initBookPage(); };
+const boot = () => { initNav(); const page = document.body.dataset.page; if (page === "home") initHome(); if (page === "books") initBooksPage(); if (page === "book") initBookPage(); if (page === "submit") initSubmitPage(); };
 boot();

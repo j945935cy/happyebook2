@@ -3,36 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>書籍管理 | Happy eBook</title>
-  <meta name="description" content="Happy eBook 書籍管理介面，用於整理 books.json、上架下架與調整排序。">
+  <title>版主管理 | Happy eBook</title>
+  <meta name="description" content="Happy eBook 版主管理頁，可審核作者投稿、編輯書籍資料並匯出 books.json。">
   <link rel="stylesheet" href="/src/styles.css">
 </head>
 <body data-page="admin">
   <div class="site-shell">
     <header class="site-header">
       <div class="container header-row">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">Happy eBook</span>
-          <span class="brand-sub">書籍管理</span>
-        </a>
+        <a class="brand" href="index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">版主管理</span></a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單"><span class="nav-toggle-bars" aria-hidden="true"></span><span>選單</span></button>
-        <nav class="site-nav" data-site-nav>
-          <a href="index.html">首頁</a>
-          <a href="books.html">書籍列表</a>
-          <a href="submit.html">投稿</a>
-          <a href="about.html">關於</a>
-          <a href="contact.html">聯絡</a>
-          <a class="is-active" href="admin.html">管理</a>
-        </nav>
+        <nav class="site-nav" data-site-nav><a href="index.html">首頁</a><a href="books.html">書籍列表</a><a href="submit.html">投稿</a><a href="about.html">關於</a><a href="contact.html">聯絡</a><a class="is-active" href="admin.html">管理</a></nav>
       </div>
     </header>
 
     <main>
       <section class="page-hero">
         <div class="container">
-          <span class="eyebrow">Book Admin</span>
-          <h1>書籍上架管理</h1>
-          <p>用這個介面新增、編輯、上架、下架與調整排序。完成後下載新版 <code>books.json</code>，再覆蓋到 <code>src/books.json</code>。</p>
+          <span class="eyebrow">Moderator</span>
+          <h1>作者投稿審核與書籍上架</h1>
+          <p>版主可先審核作者送出的作品資料，確認內容、分類與連結後，再加入書籍目錄並匯出 <code>books.json</code>。</p>
         </div>
       </section>
 
@@ -40,29 +30,26 @@
         <div class="container admin-layout">
           <aside class="admin-panel">
             <div class="admin-panel-head">
-              <div>
-                <span class="eyebrow">Editor</span>
-                <h2 data-admin-form-title>新增書籍</h2>
-              </div>
-              <button class="button secondary compact" type="button" data-new-book>新增空白</button>
+              <div><span class="eyebrow">Editor</span><h2 data-admin-form-title>新增書籍</h2></div>
+              <button class="button secondary compact" type="button" data-new-book>新增空白書籍</button>
             </div>
 
             <form class="admin-form" data-book-form>
-              <label>狀態
+              <label>公開狀態
                 <select name="published">
-                  <option value="true">上架</option>
-                  <option value="false">下架</option>
+                  <option value="true">已上架</option>
+                  <option value="false">未上架</option>
                 </select>
               </label>
               <div class="admin-form-grid">
                 <label>ID<input name="id" type="text" required placeholder="例如：my-book-id"></label>
                 <label>分類<input name="category" type="text" required placeholder="例如：英語學習"></label>
               </div>
-              <label>書名<input name="title" type="text" required placeholder="請輸入書名"></label>
-              <label>副標<input name="subtitle" type="text" placeholder="請輸入副標"></label>
+              <label>作品名稱<input name="title" type="text" required placeholder="請輸入作品名稱"></label>
+              <label>副標題<input name="subtitle" type="text" placeholder="請輸入副標題"></label>
               <div class="admin-form-grid">
                 <label>作者<input name="author" type="text" placeholder="作者名稱"></label>
-                <label>類型
+                <label>內容型態
                   <select name="type">
                     <option value="web">網頁版</option>
                     <option value="free">免費</option>
@@ -71,53 +58,62 @@
                 </label>
               </div>
               <div class="admin-form-grid">
-                <label>格式<input name="format" type="text" placeholder="網站閱讀 / PDF / EPUB"></label>
-                <label>按鈕文字<input name="priceLabel" type="text" placeholder="免費閱讀 / 前往書籍頁"></label>
+                <label>格式<input name="format" type="text" placeholder="網頁閱讀 / PDF / EPUB"></label>
+                <label>取得方式<input name="priceLabel" type="text" placeholder="免費閱讀 / 提供試閱版"></label>
               </div>
-              <label>封面路徑<input name="cover" type="text" placeholder="../assets/images/book-cover.svg"></label>
+              <label>封面圖路徑<input name="cover" type="text" placeholder="../assets/images/book-submission-placeholder.svg"></label>
               <label>閱讀連結<input name="readUrl" type="url" placeholder="https://..."></label>
               <div class="admin-form-grid">
                 <label>下載連結<input name="downloadUrl" type="url" placeholder="https://..."></label>
                 <label>購買連結<input name="buyUrl" type="url" placeholder="https://..."></label>
               </div>
-              <label>簡介<textarea name="description" rows="4" placeholder="請輸入書籍簡介"></textarea></label>
+              <label>作品簡介<textarea name="description" rows="4" placeholder="請輸入作品介紹"></textarea></label>
               <div class="admin-checks">
-                <label><input name="featured" type="checkbox"> 顯示在精選作品</label>
-                <label><input name="popular" type="checkbox"> 顯示在熱門內容</label>
+                <label><input name="featured" type="checkbox"> 顯示在精選書櫃</label>
+                <label><input name="popular" type="checkbox"> 標示為熱門作品</label>
               </div>
               <div class="admin-actions">
                 <button class="button primary" type="submit">儲存書籍</button>
-                <button class="button secondary" type="button" data-reset-form>取消編輯</button>
+                <button class="button secondary" type="button" data-reset-form>重設表單</button>
               </div>
             </form>
           </aside>
 
           <section class="admin-panel">
             <div class="admin-panel-head">
-              <div>
-                <span class="eyebrow">Catalog</span>
-                <h2>目前書單</h2>
-              </div>
+              <div><span class="eyebrow">Review</span><h2>待審投稿</h2></div>
               <div class="admin-toolbar">
-                <button class="button secondary compact" type="button" data-copy-json>複製 JSON</button>
-                <button class="button primary compact" type="button" data-download-json>下載 books.json</button>
+                <button class="button secondary compact" type="button" data-export-submissions>匯出待審資料</button>
+                <button class="button secondary compact" type="button" data-clear-reviewed>清除已處理</button>
               </div>
             </div>
-            <div class="admin-summary" data-admin-summary></div>
-            <div class="admin-list" data-admin-list></div>
-            <label class="json-output-label">JSON 預覽
-              <textarea class="json-output" rows="12" readonly data-json-output></textarea>
-            </label>
+            <div class="admin-summary" data-submission-summary></div>
+            <div class="submission-review-list" data-submission-list></div>
           </section>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container admin-panel">
+          <div class="admin-panel-head">
+            <div><span class="eyebrow">Catalog</span><h2>書籍目錄</h2></div>
+            <div class="admin-toolbar">
+              <button class="button secondary compact" type="button" data-copy-json>複製 JSON</button>
+              <button class="button primary compact" type="button" data-download-json>下載 books.json</button>
+            </div>
+          </div>
+          <div class="admin-summary" data-admin-summary></div>
+          <div class="admin-list" data-admin-list></div>
+          <label class="json-output-label">JSON 輸出
+            <textarea class="json-output" rows="12" readonly data-json-output></textarea>
+          </label>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container footer-bar"><span>Happy eBook</span><span>書籍管理介面</span></div>
-    </footer>
+    <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><span>投稿審核與書籍管理</span></div></footer>
   </div>
-  <script src="script.js"></script>
+  <script src="/src/script.js"></script>
   <script src="/src/admin.js"></script>
 </body>
 </html>

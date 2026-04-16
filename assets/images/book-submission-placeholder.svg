@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="title desc">
+  <title id="title">作者投稿作品封面</title>
+  <desc id="desc">Happy eBook 作者投稿作品的預設封面</desc>
+  <rect width="600" height="800" fill="#eaf2ff"/>
+  <rect x="56" y="56" width="488" height="688" rx="32" fill="#ffffff" stroke="#b8cbef" stroke-width="4"/>
+  <text x="96" y="150" fill="#2563eb" font-family="'Segoe UI', sans-serif" font-size="28" font-weight="800" letter-spacing="5">AUTHOR WORK</text>
+  <g fill="#18324a" font-family="'Noto Sans TC', 'Segoe UI', sans-serif" font-weight="900">
+    <text x="96" y="276" font-size="68">作者投稿</text>
+    <text x="96" y="364" font-size="68">待審作品</text>
+  </g>
+  <rect x="96" y="438" width="408" height="112" rx="22" fill="#f4f8ff" stroke="#d7e1eb" stroke-width="3"/>
+  <text x="128" y="496" fill="#5c7184" font-family="'Noto Sans TC', 'Segoe UI', sans-serif" font-size="28">版主審核後上架</text>
+  <circle cx="144" cy="646" r="54" fill="none" stroke="#f28c28" stroke-width="14"/>
+  <path d="M132 646l20 20 44-54" fill="none" stroke="#2563eb" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
