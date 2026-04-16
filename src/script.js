@@ -15,6 +15,7 @@
 const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 const siteConfig = {
+  contactEmail: "t945935@gmail.com",
   googleFormUrl: "https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM/viewform",
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
 };
@@ -66,6 +67,35 @@ const initAdminPageLinks = () => {
   }
   status.textContent = "請先在 script.js 更新 googleFormUrl 與 googleResponsesUrl，才能開始正式收件。";
   status.classList.add("is-warning");
+};
+const initContactPage = () => {
+  const form = document.querySelector("[data-contact-form]");
+  const message = document.querySelector("[data-contact-message]");
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    const name = String(data.name || "").trim();
+    const email = String(data.email || "").trim();
+    const content = String(data.message || "").trim();
+    if (!name || !email || !content) {
+      if (message) message.textContent = "請先完整填寫姓名、Email 與訊息內容。";
+      return;
+    }
+
+    const subject = `Happy eBook 聯絡表單｜${name}`;
+    const body = [
+      `姓名：${name}`,
+      `Email：${email}`,
+      "",
+      "訊息內容：",
+      content
+    ].join("\n");
+    const mailtoUrl = `mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (message) message.textContent = `已為你開啟寄信內容，收件人是 ${siteConfig.contactEmail}。`;
+    window.location.href = mailtoUrl;
+  });
 };
 const initHome = async () => {
   const books = (await loadBooks()).filter(isPublished);
@@ -130,6 +160,7 @@ const boot = () => {
   if (page === "books") initBooksPage();
   if (page === "book") initBookPage();
   if (page === "submit") initSubmitPage();
+  if (page === "contact") initContactPage();
   if (page === "admin") initAdminPageLinks();
 };
 boot();
