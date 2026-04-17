@@ -187,6 +187,23 @@
         "priceLabel":  "免費閱讀"
     },
     {
+        "id":  "python-for-beginners-book",
+        "title":  "Python for Beginners",
+        "subtitle":  "給初學者的 Python 網頁版入門電子書",
+        "author":  "Happy eBook 編輯部",
+        "category":  "程式設計",
+        "type":  "web",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-submission-placeholder.svg",
+        "description":  "整理 Python 初學者常見基礎主題，適合想從零開始建立語法觀念與練習節奏的讀者。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://j945935cy.github.io/Python-for-Beginners-Book/",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "免費閱讀"
+    },
+    {
         "id":  "word-builder-1200",
         "title":  "Word Builder 1200",
         "subtitle":  "1200 個核心英文單字的互動式網頁版閱讀教材",
