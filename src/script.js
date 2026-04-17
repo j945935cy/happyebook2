@@ -16,7 +16,7 @@ const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 const siteConfig = {
   contactEmail: "t945935@gmail.com",
-  googleFormUrl: "https://docs.google.com/forms/d/e/REPLACE_WITH_YOUR_FORM/viewform",
+  googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
 };
 const loadBooks = async () => { try { const response = await fetch(new URL("books.json", scriptBase)); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); } catch (error) { console.warn("books.json 載入失敗，改用內建資料：", error); return sampleBooks; } };
