@@ -20,7 +20,7 @@ const siteConfig = {
   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
 };
-const loadBooks = async () => { try { const response = await fetch(new URL("books.json", scriptBase)); if (!response.ok) throw new Error(`HTTP ${response.status}`); return await response.json(); } catch (error) { console.warn("books.json 載入失敗，改用內建資料：", error); return sampleBooks; } };
+const loadBooks = async () => { try { const response = await fetch(new URL("books.json", scriptBase)); if (!response.ok) throw new Error(`HTTP ${response.status}`); const data = await response.json(); return data.slice().reverse(); } catch (error) { console.warn("books.json 載入失敗，改用內建資料：", error); return sampleBooks.slice().reverse(); } };
 const isPublished = (book) => book.published !== false;
 const isGoogleBooksUrl = (value) => String(value || "").includes("play.google.com/store/books");
 const getEffectiveType = (book) => {
