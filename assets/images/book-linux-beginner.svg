@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#EBF2FB"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#F8FBFF" stroke="#9EC3E8" stroke-width="4"/>
+  <text x="120" y="210" fill="#2563EB" font-size="40" font-family="Georgia, serif" letter-spacing="5">BEGINNER EDITION</text>
+  <text x="120" y="390" fill="#111827" font-size="140" font-family="Georgia, serif">Linux</text>
+  <text x="120" y="530" fill="#111827" font-size="116" font-family="Georgia, serif">入門</text>
+  <text x="120" y="700" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">基礎 Linux 教學電子書</text>
+  <text x="120" y="760" fill="#374151" font-size="36" font-family="'Noto Sans TC', sans-serif">10 章 + 1 附錄</text>
+  <rect x="120" y="1030" width="220" height="64" rx="32" fill="#2563EB"/>
+  <text x="168" y="1072" fill="#FFFFFF" font-size="30" font-family="'Noto Sans TC', sans-serif">免費閱讀</text>
+</svg>

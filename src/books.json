@@ -219,5 +219,22 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "免費閱讀"
+    },
+    {
+        "id":  "linux-beginner-2026",
+        "title":  "Linux 入門",
+        "subtitle":  "基礎 Linux 教學電子書，10 章 + 1 附錄",
+        "author":  "Happy eBook 編輯部",
+        "category":  "Linux 入門",
+        "type":  "web",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-linux-beginner.svg",
+        "description":  "從 Linux 是什麼開始，循序帶入指令、檔案系統、權限與常用工具，適合初學者自學閱讀。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://j945935cy.github.io/ebook2026linux/",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "免費閱讀"
     }
 ]
