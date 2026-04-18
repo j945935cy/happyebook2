@@ -194,7 +194,7 @@
         "category":  "程式設計",
         "type":  "web",
         "format":  "網站閱讀",
-        "cover":  "../assets/images/book-submission-placeholder.svg",
+        "cover":  "../assets/images/book-python-beginners.svg",
         "description":  "整理 Python 初學者常見基礎主題，適合想從零開始建立語法觀念與練習節奏的讀者。",
         "downloadUrl":  "",
         "buyUrl":  "",
