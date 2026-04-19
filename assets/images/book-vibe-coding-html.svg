@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#EFF6FF"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#F8FAFF" stroke="#60A5FA" stroke-width="4"/>
+  <text x="120" y="210" fill="#2563EB" font-size="40" font-family="Georgia, serif" letter-spacing="5">VIBE CODING</text>
+  <text x="120" y="380" fill="#111827" font-size="110" font-family="Georgia, serif">HTML</text>
+  <text x="120" y="510" fill="#111827" font-size="110" font-family="Georgia, serif">CSS / JS</text>
+  <text x="120" y="680" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">用 AI 當你的學習夥伴</text>
+  <text x="120" y="740" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">從零打造你的第一個網頁</text>
+  <rect x="120" y="1030" width="220" height="64" rx="32" fill="#2563EB"/>
+  <text x="168" y="1072" fill="#FFFFFF" font-size="30" font-family="'Noto Sans TC', sans-serif">免費閱讀</text>
+</svg>
