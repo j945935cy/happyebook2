@@ -236,5 +236,22 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "免費閱讀"
+    },
+    {
+        "id":  "ipas-mid-ai-guide",
+        "title":  "iPAS 中級 AI 應用規劃師高分過關指南",
+        "subtitle":  "觀念 → 情境 → 判斷，以理解取代死背的備考攻略",
+        "author":  "證照達人研究室 AI 組",
+        "category":  "證照學習",
+        "type":  "web",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-ipas-mid-ai-guide.svg",
+        "description":  "聚焦 iPAS 中級 AI 應用規劃師考試，用白話拆解 AI 核心概念，從觀念、情境到判斷思維，幫助考生建立 AI 規劃能力，高分通過考試。",
+        "downloadUrl":  "",
+        "buyUrl":  "https://play.google.com/store/books/details/iPAS_%E4%B8%AD%E7%B4%9A_AI_%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E9%AB%98%E5%88%86%E9%81%8E%E9%97%9C%E6%8C%87%E5%8D%97?id=5ki3EQAAQBAJ",
+        "readUrl":  "https://play.google.com/store/books/details/iPAS_%E4%B8%AD%E7%B4%9A_AI_%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E9%AB%98%E5%88%86%E9%81%8E%E9%97%9C%E6%8C%87%E5%8D%97?id=5ki3EQAAQBAJ",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "提供試閱版"
     }
 ]

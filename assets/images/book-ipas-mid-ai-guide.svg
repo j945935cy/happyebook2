@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="title desc">
+  <title id="title">iPAS 中級 AI 應用規劃師高分過關指南</title>
+  <desc id="desc">證照學習書封圖</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#bfdbfe"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect x="44" y="44" width="512" height="712" rx="28" fill="#f8faff" stroke="#2563eb" stroke-width="4"/>
+  <text x="76" y="132" fill="#1d4ed8" font-family="'Segoe UI', sans-serif" font-size="28" letter-spacing="4">iPAS CERTIFICATE GUIDE</text>
+  <text x="76" y="240" fill="#111827" font-family="'Noto Serif TC', serif" font-size="64" font-weight="700">中級 AI</text>
+  <text x="76" y="318" fill="#111827" font-family="'Noto Serif TC', serif" font-size="54" font-weight="700">應用規劃師</text>
+  <text x="76" y="422" fill="#1e40af" font-family="'Georgia', serif" font-size="86" font-weight="700">高分過關</text>
+  <text x="76" y="508" fill="#1e3a8a" font-family="'Noto Serif TC', serif" font-size="52" font-weight="700">指南</text>
+  <text x="76" y="574" fill="#374151" font-family="'Segoe UI', sans-serif" font-size="26">觀念 ． 情境 ． 判斷思維</text>
+  <rect x="76" y="614" width="170" height="52" rx="26" fill="#1d4ed8"/>
+  <text x="108" y="649" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="24">Google Play</text>
+  <text x="76" y="718" fill="#1e3a8a" font-family="'Segoe UI', sans-serif" font-size="26">證照達人研究室 AI 組</text>
+</svg>
