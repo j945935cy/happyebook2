@@ -255,6 +255,23 @@
         "priceLabel":  "免費閱讀"
     },
     {
+        "id":  "powershell-ebook",
+        "title":  "從零開始，慢慢學會用 PowerShell 自動處理工作",
+        "subtitle":  "10 章帶你從指令入門到腳本自動化",
+        "author":  "Happy eBook 編輯部",
+        "category":  "程式設計",
+        "type":  "web",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-powershell-ebook.svg",
+        "description":  "專為 Windows 用戶設計的 PowerShell 入門教材，從基本觀念到撰寫腳本、批次整理檔案與系統查詢，10 個章節循序帶你學會真正有用的自動化操作。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://j945935cy.github.io/powershell-ebook/",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "免費閱讀"
+    },
+    {
         "id":  "ipas-mid-ai-guide",
         "title":  "iPAS 中級 AI 應用規劃師高分過關指南",
         "subtitle":  "觀念 → 情境 → 判斷，以理解取代死背的備考攻略",
