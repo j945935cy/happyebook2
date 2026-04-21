@@ -321,5 +321,22 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "提供試閱版"
+    },
+    {
+        "id":  "git-github-start-book",
+        "title":  "Git Start Book：Git 與 GitHub 入門",
+        "subtitle":  "用清楚路線完成第一個版本控制專案",
+        "author":  "Git Start Book 專案",
+        "category":  "程式設計",
+        "type":  "free",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-git-github-start.svg",
+        "description":  "從 Git 與 GitHub 基本觀念開始，循序帶你完成 clone、add、commit、push 與 Pull Request，適合初學者建立版本控制與協作實作能力。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://j945935cy.github.io/gitgithubebook/toc.html",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "免費閱讀"
     }
 ]
