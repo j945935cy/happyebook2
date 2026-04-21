@@ -15,7 +15,8 @@
   { id: "linux-beginner-2026", title: "Linux 入門", subtitle: "基礎 Linux 教學電子書，10 章 + 1 附錄", author: "Happy eBook 編輯部", category: "Linux 入門", type: "web", format: "網站閱讀", cover: "../assets/images/book-linux-beginner.svg", description: "從 Linux 是什麼開始，循序帶入指令、檔案系統、權限與常用工具，適合初學者自學閱讀。", downloadUrl: "", buyUrl: "", readUrl: "https://j945935cy.github.io/ebook2026linux/", featured: true, popular: true, priceLabel: "免費閱讀" },
   { id: "vibe-coding-html-css-js", title: "Vibe Coding 入門 HTML / CSS / JavaScript", subtitle: "用 AI 當你的學習夥伴，從零打造你的第一個網頁", author: "Happy eBook 編輯部", category: "程式設計", type: "web", format: "網站閱讀", cover: "../assets/images/book-vibe-coding-html.svg", description: "專為 Vibe Coding 初學者打造，結合 AI 工具的現代學習方式。8 個章節從零帶你認識 HTML、CSS 與 JavaScript，每章都有可直接執行的範例，適合完全沒有程式基礎的讀者。", downloadUrl: "", buyUrl: "", readUrl: "https://j945935cy.github.io/htmlcssjsebook/", featured: true, popular: true, priceLabel: "免費閱讀" },
   { id: "powershell-ebook", title: "從零開始，慢慢學會用 PowerShell 自動處理工作", subtitle: "10 章帶你從指令入門到腳本自動化", author: "Happy eBook 編輯部", category: "程式設計", type: "web", format: "網站閱讀", cover: "../assets/images/book-powershell-ebook.svg", description: "專為 Windows 用戶設計的 PowerShell 入門教材，從基本觀念到撰寫腳本、批次整理檔案與系統查詢，10 個章節循序帶你學會真正有用的自動化操作。", downloadUrl: "", buyUrl: "", readUrl: "https://j945935cy.github.io/powershell-ebook/", featured: true, popular: true, priceLabel: "免費閱讀" },
-  { id: "ipas-mid-ai-guide", title: "iPAS 中級 AI 應用規劃師高分過關指南", subtitle: "觀念 → 情境 → 判斷，以理解取代死背的備考攻略", author: "證照達人研究室 AI 組", category: "證照學習", type: "web", format: "網站閱讀", cover: "../assets/images/book-ipas-mid-ai-guide.svg", description: "聚焦 iPAS 中級 AI 應用規劃師考試，用白話拆解 AI 核心概念，從觀念、情境到判斷思維，幫助考生建立 AI 規劃能力，高分通過考試。", downloadUrl: "", buyUrl: "https://play.google.com/store/books/details/iPAS_%E4%B8%AD%E7%B4%9A_AI_%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E9%AB%98%E5%88%86%E9%81%8E%E9%97%9C%E6%8C%87%E5%8D%97?id=5ki3EQAAQBAJ", readUrl: "https://play.google.com/store/books/details/iPAS_%E4%B8%AD%E7%B4%9A_AI_%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E9%AB%98%E5%88%86%E9%81%8E%E9%97%9C%E6%8C%87%E5%8D%97?id=5ki3EQAAQBAJ", featured: true, popular: true, priceLabel: "提供試閱版" }
+  { id: "ipas-mid-ai-guide", title: "iPAS 中級 AI 應用規劃師高分過關指南", subtitle: "觀念 → 情境 → 判斷，以理解取代死背的備考攻略", author: "證照達人研究室 AI 組", category: "證照學習", type: "web", format: "網站閱讀", cover: "../assets/images/book-ipas-mid-ai-guide.svg", description: "聚焦 iPAS 中級 AI 應用規劃師考試，用白話拆解 AI 核心概念，從觀念、情境到判斷思維，幫助考生建立 AI 規劃能力，高分通過考試。", downloadUrl: "", buyUrl: "https://play.google.com/store/books/details/iPAS_%E4%B8%AD%E7%B4%9A_AI_%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E9%AB%98%E5%88%86%E9%81%8E%E9%97%9C%E6%8C%87%E5%8D%97?id=5ki3EQAAQBAJ", readUrl: "https://play.google.com/store/books/details/iPAS_%E4%B8%AD%E7%B4%9A_AI_%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E9%AB%98%E5%88%86%E9%81%8E%E9%97%9C%E6%8C%87%E5%8D%97?id=5ki3EQAAQBAJ", featured: true, popular: true, priceLabel: "提供試閱版" },
+  { id: "keeping-up-joneses-bilingual", title: "Keeping Up with the Joneses：用故事學生活英文（中英對照）", subtitle: "透過 Jones 一家的日常情境，學最實用的生活英文", author: "陳蕙芳 Monica", category: "英語學習", type: "web", format: "網站閱讀", cover: "../assets/images/book-keeping-up-joneses.svg", description: "收錄英文對話、中文翻譯、單字整理與重點句型說明，適合國中、高中學生、自學者，以及想用生活情境培養英語表達力的讀者。", downloadUrl: "", buyUrl: "https://play.google.com/store/books/details?id=hVLSEQAAQBAJ", readUrl: "https://play.google.com/store/books/details?id=hVLSEQAAQBAJ", featured: true, popular: true, priceLabel: "提供試閱版" }
 ];
 const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
@@ -24,7 +25,6 @@ const siteConfig = {
   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
 };
-const loadBooks = async () => { try { const response = await fetch(new URL("books.json", scriptBase)); if (!response.ok) throw new Error(`HTTP ${response.status}`); const data = await response.json(); return data.slice().reverse(); } catch (error) { console.warn("books.json 載入失敗，改用內建資料：", error); return sampleBooks.slice().reverse(); } };
 const isPublished = (book) => book.published !== false;
 const isGoogleBooksUrl = (value) => String(value || "").includes("play.google.com/store/books");
 const getEffectiveType = (book) => {
@@ -32,6 +32,21 @@ const getEffectiveType = (book) => {
   if (isGoogleBooksUrl(book.readUrl)) return "web";
   if (book.type === "free" || book.downloadUrl || book.readUrl || book.priceLabel?.includes("免費")) return "free";
   return book.type || "web";
+};
+const isFreeWebBook = (book) => getEffectiveType(book) === "free" && !!book.readUrl;
+const sortBooksForDisplay = (books) => books
+  .slice()
+  .reverse()
+  .sort((left, right) => Number(isFreeWebBook(right)) - Number(isFreeWebBook(left)));
+const loadBooks = async () => {
+  try {
+    const response = await fetch(new URL("books.json", scriptBase));
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return sortBooksForDisplay(await response.json());
+  } catch (error) {
+    console.warn("books.json 載入失敗，改用內建資料：", error);
+    return sortBooksForDisplay(sampleBooks);
+  }
 };
 const isFreeBook = (book) => getEffectiveType(book) === "free";
 const hasPreview = (book) => book.priceLabel?.includes("試閱") || isGoogleBooksUrl(book.readUrl);

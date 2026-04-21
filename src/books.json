@@ -287,5 +287,22 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "提供試閱版"
+    },
+    {
+        "id":  "keeping-up-joneses-bilingual",
+        "title":  "Keeping Up with the Joneses：用故事學生活英文（中英對照）",
+        "subtitle":  "透過 Jones 一家的日常情境，學最實用的生活英文",
+        "author":  "陳蕙芳 Monica",
+        "category":  "英語學習",
+        "type":  "web",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-keeping-up-joneses.svg",
+        "description":  "收錄英文對話、中文翻譯、單字整理與重點句型說明，適合國中、高中學生、自學者，以及想用生活情境培養英語表達力的讀者。",
+        "downloadUrl":  "",
+        "buyUrl":  "https://play.google.com/store/books/details?id=hVLSEQAAQBAJ",
+        "readUrl":  "https://play.google.com/store/books/details?id=hVLSEQAAQBAJ",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "提供試閱版"
     }
 ]

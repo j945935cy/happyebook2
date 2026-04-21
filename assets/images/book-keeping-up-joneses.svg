@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="72" x2="840" y2="1368" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6FBFF"/>
+      <stop offset="1" stop-color="#E2EEFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1440" fill="#EAF3FF"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="url(#bg)" stroke="#8FB0D9" stroke-width="4"/>
+  <circle cx="764" cy="236" r="112" fill="#DCEBFF"/>
+  <circle cx="718" cy="268" r="48" fill="#F59E0B" fill-opacity=".18"/>
+  <rect x="124" y="156" width="236" height="54" rx="27" fill="#2563EB"/>
+  <text x="166" y="191" fill="#F8FAFC" font-size="28" font-family="'Noto Sans TC', sans-serif">英語學習</text>
+  <text x="124" y="324" fill="#0F172A" font-size="62" font-family="Georgia, serif">Keeping Up</text>
+  <text x="124" y="396" fill="#0F172A" font-size="62" font-family="Georgia, serif">with the Joneses</text>
+  <text x="124" y="492" fill="#1D4ED8" font-size="42" font-family="'Noto Sans TC', sans-serif">用故事學生活英文</text>
+  <text x="124" y="548" fill="#475569" font-size="30" font-family="'Noto Sans TC', sans-serif">中英對照情境式閱讀教材</text>
+  <rect x="124" y="642" width="712" height="324" rx="28" fill="#FFFFFF" fill-opacity=".76" stroke="#B9CBE6" stroke-width="3"/>
+  <text x="164" y="728" fill="#0F172A" font-size="34" font-family="'Noto Sans TC', sans-serif">生活情境</text>
+  <text x="164" y="784" fill="#334155" font-size="28" font-family="'Noto Sans TC', sans-serif">英文對話 + 中文翻譯 + 單字整理</text>
+  <text x="164" y="840" fill="#334155" font-size="28" font-family="'Noto Sans TC', sans-serif">重點句型說明，適合自學與教學</text>
+  <text x="124" y="1088" fill="#F59E0B" font-size="28" font-family="'Noto Sans TC', sans-serif">作者</text>
+  <text x="124" y="1140" fill="#0F172A" font-size="46" font-family="'Noto Sans TC', sans-serif">陳蕙芳 Monica</text>
+  <text x="124" y="1262" fill="#64748B" font-size="24" font-family="'Noto Sans TC', sans-serif">Happy eBook</text>
+</svg>
