@@ -24,6 +24,7 @@ const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 const siteConfig = {
   contactEmail: "t945935@gmail.com",
+  contactFormEndpoint: "https://formsubmit.co/ajax/t945935@gmail.com",
   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
 };
@@ -119,9 +120,10 @@ const initAdminPageLinks = () => {
 const initContactPage = () => {
   const form = document.querySelector("[data-contact-form]");
   const message = document.querySelector("[data-contact-message]");
+  const submitButton = form?.querySelector('button[type="submit"]');
   if (!form) return;
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(form).entries());
     const name = String(data.name || "").trim();
@@ -140,8 +142,40 @@ const initContactPage = () => {
       "訊息內容：",
       content
     ].join("\n");
+
+    const payload = {
+      name,
+      email,
+      message: content,
+      _subject: subject,
+      _template: "table",
+      _captcha: "false"
+    };
+
+    if (submitButton) submitButton.disabled = true;
+    if (message) message.textContent = "訊息送出中，請稍候...";
+
+    try {
+      const response = await fetch(siteConfig.contactFormEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (message) message.textContent = "已送出聯絡訊息，我們會盡快回覆你。";
+      form.reset();
+      return;
+    } catch (error) {
+      console.warn("聯絡表單送出失敗，改用 mailto 備援：", error);
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
+
     const mailtoUrl = `mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    if (message) message.textContent = `已為你開啟寄信內容，收件人是 ${siteConfig.contactEmail}。`;
+    if (message) message.textContent = `系統送件失敗，已改為開啟寄信內容，收件人是 ${siteConfig.contactEmail}。`;
     window.location.href = mailtoUrl;
   });
 };
