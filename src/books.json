@@ -238,11 +238,7 @@
         "priceLabel":  "免費閱讀"
     },
     {
-        "id":  "vibe-coding-html-css-js",
-        "title":  "Vibe Coding 入門 HTML / CSS / JavaScript",
-        "subtitle":  "用 AI 當你的學習夥伴，從零打造你的第一個網頁",
-        "author":  "Happy eBook 編輯部",
-        "category":  "程式設計",
+        "category":  "前端設計",
         "type":  "web",
         "format":  "網站閱讀",
         "cover":  "../assets/images/book-vibe-coding-html.svg",
