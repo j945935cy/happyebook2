@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#F3F8FF"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#FFFFFF" stroke="#8CB4E8" stroke-width="4"/>
+  <text x="120" y="210" fill="#2C5F97" font-size="38" font-family="Georgia, serif" letter-spacing="5">SPEAK CLEARLY</text>
+  <text x="120" y="390" fill="#16324F" font-size="110" font-family="'Noto Serif TC', serif">學會</text>
+  <text x="120" y="520" fill="#16324F" font-size="110" font-family="'Noto Serif TC', serif">講清楚</text>
+  <text x="120" y="680" fill="#4B5563" font-size="40" font-family="'Noto Sans TC', sans-serif">支援單頁閱讀網站與 EPUB 輸出</text>
+  <text x="120" y="740" fill="#4B5563" font-size="40" font-family="'Noto Sans TC', sans-serif">以 Markdown 維護內容的表達力電子書</text>
+  <path d="M120 900C120 866.863 146.863 840 180 840H440C473.137 840 500 866.863 500 900V980C500 1013.14 473.137 1040 440 1040H180C146.863 1040 120 1013.14 120 980V900Z" fill="#E8F1FF"/>
+  <path d="M180 885H440V995H180V885Z" fill="#FFFFFF" stroke="#8CB4E8" stroke-width="3"/>
+  <path d="M210 915H410" stroke="#2C5F97" stroke-width="10" stroke-linecap="round"/>
+  <path d="M210 945H365" stroke="#F59E0B" stroke-width="10" stroke-linecap="round"/>
+  <path d="M210 975H392" stroke="#2C5F97" stroke-width="10" stroke-linecap="round"/>
+  <rect x="120" y="1090" width="220" height="64" rx="32" fill="#2C5F97"/>
+  <text x="178" y="1132" fill="#FFFFFF" font-size="30" font-family="'Noto Sans TC', sans-serif">免費閱讀</text>
+</svg>
