@@ -238,7 +238,7 @@
         "priceLabel":  "免費閱讀"
     },
     {
-        "category":  "前端設計",
+        "category":  ["前端設計", "程式設計"],
         "type":  "web",
         "format":  "網站閱讀",
         "cover":  "../assets/images/book-vibe-coding-html.svg",
