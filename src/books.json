@@ -85,6 +85,23 @@
         "priceLabel":  "提供試閱版"
     },
     {
+        "id":  "english-grammar-zero-start",
+        "title":  "英文文法從零開始：最簡單的學習法",
+        "subtitle":  "用最簡單的方法，重新建立英文文法基礎",
+        "author":  "證照達人研究室英文組",
+        "category":  "英語學習",
+        "type":  "web",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-english-grammar-zero-start.svg",
+        "description":  "以初學者也能理解的方式拆解英文句子的基本結構與常見文法觀念，強調直覺理解、避免常見錯誤，適合想從零開始或重新打穩基礎的讀者。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://books.google.com.tw/books/about?id=GaPSEQAAQBAJ&redir_esc=y",
+        "featured":  false,
+        "popular":  false,
+        "priceLabel":  "提供試閱版"
+    },
+    {
         "id":  "speech-english-play",
         "title":  "用演說學英文",
         "subtitle":  "用演說文本建立英語表達力",
