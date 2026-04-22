@@ -4,8 +4,8 @@
   <text x="120" y="210" fill="#2C5F97" font-size="38" font-family="Georgia, serif" letter-spacing="5">SPEAK CLEARLY</text>
   <text x="120" y="390" fill="#16324F" font-size="110" font-family="'Noto Serif TC', serif">學會</text>
   <text x="120" y="520" fill="#16324F" font-size="110" font-family="'Noto Serif TC', serif">講清楚</text>
-  <text x="120" y="680" fill="#4B5563" font-size="40" font-family="'Noto Sans TC', sans-serif">支援單頁閱讀網站與 EPUB 輸出</text>
-  <text x="120" y="740" fill="#4B5563" font-size="40" font-family="'Noto Sans TC', sans-serif">以 Markdown 維護內容的表達力電子書</text>
+  <text x="120" y="680" fill="#4B5563" font-size="40" font-family="'Noto Sans TC', sans-serif">把話講清楚，讓人一聽就懂</text>
+  <text x="120" y="740" fill="#4B5563" font-size="40" font-family="'Noto Sans TC', sans-serif">從表達邏輯到實戰技巧，一本讀懂</text>
   <path d="M120 900C120 866.863 146.863 840 180 840H440C473.137 840 500 866.863 500 900V980C500 1013.14 473.137 1040 440 1040H180C146.863 1040 120 1013.14 120 980V900Z" fill="#E8F1FF"/>
   <path d="M180 885H440V995H180V885Z" fill="#FFFFFF" stroke="#8CB4E8" stroke-width="3"/>
   <path d="M210 915H410" stroke="#2C5F97" stroke-width="10" stroke-linecap="round"/>
