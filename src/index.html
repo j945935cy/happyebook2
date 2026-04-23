@@ -7,21 +7,17 @@
   <meta name="description" content="Happy eBook 提供電子書展示、網頁版閱讀、投稿與內容整理服務。">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="home">
+<body data-page="books">
   <div class="site-shell">
     <header class="site-header">
       <div class="container header-row">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">Happy eBook</span>
-          <span class="brand-sub">從讀者角度出發的電子書平台</span>
-        </a>
+        <a class="brand" href="index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">電子書平台</span></a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
           <span class="nav-toggle-bars" aria-hidden="true"></span>
           <span>選單</span>
         </button>
         <nav class="site-nav" data-site-nav>
           <a class="is-active" href="index.html">首頁</a>
-          <a href="books.html">書籍列表</a>
           <a href="submit.html">投稿</a>
           <a href="about.html">關於</a>
           <a href="contact.html">聯絡</a>
@@ -30,109 +26,50 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">精選內容</span>
-            <h1>整理電子書、教材與網頁版閱讀內容</h1>
-            <p>Happy eBook 以教學平台的閱讀節奏，整理免費教材、付費作品與作者投稿內容，讓讀者更快找到能直接開始學習的書。</p>
-            <div class="hero-actions">
-              <a class="button primary" href="books.html">開始找書</a>
-              <a class="button secondary" href="submit.html">我要投稿</a>
-            </div>
-            <dl class="hero-stats" aria-label="平台內容摘要">
-              <div><dt data-stat-total>0</dt><dd>總冊數</dd></div>
-              <div><dt data-stat-visits>讀取中</dt><dd>首頁總訪問人數</dd></div>
-              <div><dt data-stat-categories>0</dt><dd>個分類</dd></div>
-              <div><dt data-stat-web>0</dt><dd>本網頁版</dd></div>
-            </dl>
-          </div>
-          <aside class="hero-panel hero-platform-panel" aria-label="平台內容導覽">
-            <div class="hero-shelf-preview">
-              <a class="hero-mini-book hero-mini-book-primary" href="book.html?id=ebook-wsl2-online" aria-label="查看從 Windows 開始學 Linux">
-                <span class="tag web">網頁版精選</span>
-                <h2>從 Windows 開始學 Linux</h2>
-                <p>實作導向的 Linux 入門示例內容。</p>
-              </a>
-              <a class="hero-mini-book" href="book.html?id=grammar-beginners-day42" aria-label="查看英文文法 Day 42">
-                <span class="tag free">免費教材</span>
-                <h3>英文文法 Day 42</h3>
-                <p>Grammar for Beginners V2 規劃 42 天教材，適合閱讀與複習。</p>
-              </a>
-              <a class="hero-mini-book" href="book.html?id=ipas-mid-ai-guide" aria-label="查看 iPAS 中級 AI 應用規劃師高分過關指南">
-                <span class="tag paid">付費作品</span>
-                <h3>iPAS 中級 AI 應用規劃師高分過關指南</h3>
-                <p>聚焦考點與情境判斷，提供試閱版與完整購買入口。</p>
-              </a>
-              <a class="hero-mini-book" href="book.html?id=git-github-start-book" aria-label="查看 Git Start Book：Git 與 GitHub 入門">
-                <span class="tag free">免費教材</span>
-                <h3>Git Start Book：Git 與 GitHub 入門</h3>
-                <p>從 clone 到 Pull Request，循序完成第一個版本控制專案。</p>
-              </a>
-            </div>
-            <div class="hero-panel-body">
-              <span class="eyebrow hero-panel-eyebrow">平台精選</span>
-              <p class="hero-panel-intro">包含免費內容、付費作品與網頁版閱讀的多元書櫃。</p>
-              <div class="hero-panel-links">
-                <a class="button primary compact" href="books.html">瀏覽全部作品</a>
-                <a class="button secondary compact" href="book.html?id=ebook-wsl2-online">查看精選示例</a>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Books</span>
+          <h1>書籍列表</h1>
+          <p>目前提供免費、付費與網頁版三種內容型態，方便依需求快速挑選。</p>
+          <dl class="hero-stats page-stats" aria-label="平台內容摘要">
+            <div><dt data-stat-total>0</dt><dd>總冊數</dd></div>
+            <div><dt data-stat-visits>讀取中</dt><dd>首頁總訪問人數</dd></div>
+            <div><dt data-stat-categories>0</dt><dd>個分類</dd></div>
+            <div><dt data-stat-web>0</dt><dd>本網頁版</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="filter-shell">
+            <div class="filter-bar">
+              <div class="filter-group">
+                <button class="filter-chip is-active" data-type-filter="all" type="button">全部</button>
+                <button class="filter-chip" data-type-filter="free" type="button">免費</button>
+                <button class="filter-chip" data-type-filter="paid" type="button">付費</button>
+                <button class="filter-chip" data-type-filter="web" type="button">網頁版</button>
+              </div>
+              <div class="filter-group">
+                <button class="filter-chip is-active" data-category-filter="all" type="button">全部分類</button>
+                <button class="filter-chip" data-category-filter="Linux 入門" type="button">Linux 入門</button>
+                <button class="filter-chip" data-category-filter="出版製作" type="button">出版製作</button>
+                <button class="filter-chip" data-category-filter="前端設計" type="button">前端設計</button>
+                <button class="filter-chip" data-category-filter="程式設計" type="button">程式設計</button>
+                <button class="filter-chip" data-category-filter="教學應用" type="button">教學應用</button>
+                <button class="filter-chip" data-category-filter="英語學習" type="button">英語學習</button>
+                <button class="filter-chip" data-category-filter="資料結構" type="button">資料結構</button>
+                <button class="filter-chip" data-category-filter="演算法" type="button">演算法</button>
+                <button class="filter-chip" data-category-filter="證照學習" type="button">證照學習</button>
               </div>
             </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section section-soft">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="eyebrow">平台特色</span>
-              <h2>把最重要的閱讀體驗先做好</h2>
-            </div>
-            <p class="section-copy">精選教學型電子書與網頁教材，讓讀者更快找到適合的內容。</p>
           </div>
-          <div class="grid-3">
-            <article class="feature-card"><span class="feature-number">01</span><h3>多種格式閱讀</h3><p>支援 EPUB、PDF 與網頁版作品，讀者可依照習慣選擇適合的閱讀方式。</p></article>
-            <article class="feature-card"><span class="feature-number">02</span><h3>投稿資訊清楚</h3><p>提供作者投稿說明與聯絡方式，讓優質教學內容更容易被讀者看見。</p></article>
-            <article class="feature-card"><span class="feature-number">03</span><h3>書籍整理清楚</h3><p>依分類、標籤與閱讀形式整理作品，方便讀者快速找到適合的內容。</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <div><span class="eyebrow">Bookshelf</span><h2>分類書櫃</h2></div>
-            <a class="card-link" href="books.html">查看全部作品</a>
-          </div>
-          <div class="home-filter-panel">
-            <div class="filter-group" data-home-category-filters>
-              <button class="filter-chip is-active" data-home-category="all" type="button">全部</button>
-            </div>
-            <p data-home-filter-summary>正在整理作品。</p>
-          </div>
-          <div class="book-grid" data-home-books></div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container grid-2">
-          <article class="info-panel">
-            <h3>熱門主題</h3>
-            <p>以學習用途切分內容，讀者可以從證照、英文、Linux、資料結構與演算法快速進入。</p>
-            <div class="tag-row" data-home-category-tags></div>
-          </article>
-          <article class="info-panel">
-            <h3>免費 / 付費導流</h3>
-            <p>免費內容讓你馬上開始閱讀，付費作品提供更完整的學習資源，網頁版書籍則可直接在瀏覽器閱讀，不需下載。</p>
-            <div class="cta-row"><a class="button secondary" href="books.html">免費內容</a><a class="button secondary" href="books.html">付費內容</a><a class="button secondary" href="books.html">網頁版作品</a></div>
-          </article>
+          <div class="book-grid" data-books-grid></div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer-bar"><span>Happy eBook</span><span>HTML / CSS / Vanilla JavaScript</span></div>
+      <div class="container footer-bar"><span>Happy eBook</span><span>幫讀者找到好書</span></div>
     </footer>
   </div>
   <script src="script.js"></script>
