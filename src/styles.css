@@ -46,7 +46,7 @@ button:disabled { opacity: 0.48; cursor: not-allowed; }
 .hero h1, .section-head h2, .page-hero h1, .book-content-panel h1 { margin: 0 0 16px; line-height: 1.12; font-size: clamp(2.2rem, 5vw, 4.2rem); }
 .hero p, .page-hero p, .section-copy, .card p, .book-meta, .info-panel p, .empty-state p, .book-content-panel p, .home-filter-panel p, .hero-stats dd { color: var(--muted); line-height: 1.8; }
 .hero-actions, .filter-bar, .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
-.hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 28px 0 0; }
+.hero-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 28px 0 0; }
 .hero-stats div { padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255, 255, 255, 0.72); }
 .hero-stats dt { margin: 0 0 2px; color: var(--primary-dark); font-size: 1.55rem; font-weight: 900; }
 .hero-stats dd { margin: 0; font-size: 0.92rem; }

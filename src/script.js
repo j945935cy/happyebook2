@@ -28,10 +28,12 @@ const siteConfig = {
   contactEmail: "t945935@gmail.com",
   contactFormEndpoint: "https://formsubmit.co/ajax/t945935@gmail.com",
   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
-  googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
+  googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit",
+  homeVisitsApi: "https://api.countapi.xyz/hit/j945935cy.github.io/happyebook2-home"
 };
 const isPublished = (book) => book.published !== false;
 const isGoogleBooksUrl = (value) => String(value || "").includes("play.google.com/store/books");
+const formatNumber = (value) => new Intl.NumberFormat("zh-TW").format(Number(value || 0));
 const getEffectiveType = (book) => {
   if (book.type === "paid" || book.buyUrl) return "paid";
   if (isGoogleBooksUrl(book.readUrl)) return "web";
@@ -84,6 +86,17 @@ const primaryAction = (book) => {
 const createBookCard = (book) => { const readHref = book.readUrl || `book.html?id=${book.id}`; const readAttrs = hasExternalUrl(readHref) ? ` target="_blank" rel="noopener noreferrer"` : ""; return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img src="${book.cover}" alt="${book.title} 書封"></a></div><div class="book-card-body"><h3>${book.title}</h3><p class="book-meta">${book.author} ・ ${book.format}</p><div class="tag-row">${createTags(book)}</div><p>${book.description}</p><div class="card-actions">${primaryAction(book)}<a class="card-link" href="book.html?id=${book.id}">更多資訊</a></div></div></article>`; };
 const renderList = (selector, books) => { const target = document.querySelector(selector); if (target) target.innerHTML = books.map(createBookCard).join(""); };
 const setText = (selector, value) => { const target = document.querySelector(selector); if (target) target.textContent = value; };
+const loadHomeVisits = async () => {
+  try {
+    const response = await fetch(siteConfig.homeVisitsApi, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    return formatNumber(data.value);
+  } catch (error) {
+    console.warn("首頁訪問人數讀取失敗：", error);
+    return "暫無資料";
+  }
+};
 const getCategories = (book) => Array.isArray(book.category) ? book.category : [book.category];
 const uniqueCategories = (books) => [...new Set(books.flatMap(getCategories))];
 const isPlaceholderUrl = (value) => !value || value.includes("REPLACE_WITH_YOUR");
@@ -192,9 +205,10 @@ const initHome = async () => {
   const grid = document.querySelector("[data-home-books]");
   let activeCategory = "all";
 
-  setText("[data-stat-total]", books.length);
-  setText("[data-stat-categories]", categories.length);
-  setText("[data-stat-web]", books.filter((book) => getEffectiveType(book) === "web").length);
+  setText("[data-stat-total]", formatNumber(books.length));
+  setText("[data-stat-categories]", formatNumber(categories.length));
+  setText("[data-stat-web]", formatNumber(books.filter((book) => getEffectiveType(book) === "web").length));
+  setText("[data-stat-visits]", await loadHomeVisits());
 
   if (tagWrap) tagWrap.innerHTML = categories.map((category) => `<span class="tag category">${category}</span>`).join("");
   if (!filterWrap || !grid) return;
