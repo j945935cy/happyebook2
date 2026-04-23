@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#F7EFE6"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#FFF9F2" stroke="#C9A57E" stroke-width="4"/>
+  <text x="120" y="210" fill="#B36A2E" font-size="40" font-family="Georgia, serif" letter-spacing="5">GRAMMAR EDITION</text>
+  <text x="120" y="390" fill="#1F2937" font-size="118" font-family="Georgia, serif">英文文法</text>
+  <text x="120" y="520" fill="#1F2937" font-size="118" font-family="Georgia, serif">Day 21</text>
+  <text x="120" y="690" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">規劃 21 天英文文法教材</text>
+  <rect x="120" y="1030" width="260" height="64" rx="32" fill="#B36A2E"/>
+  <text x="182" y="1072" fill="#FFF9F2" font-size="30" font-family="'Noto Sans TC', sans-serif">Read Online</text>
+</svg>
