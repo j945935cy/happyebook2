@@ -30,7 +30,7 @@ const siteConfig = {
   contactFormEndpoint: "https://formsubmit.co/ajax/t945935@gmail.com",
   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit",
-  homeVisitsApi: "https://api.countapi.xyz/hit/j945935cy.github.io/happyebook2-home"
+  homeVisitsBadgeUrl: "https://visitor-badge.one9x.com/badge?page_id=happyebook2.home&namespace=hebook&unique=true&timeframe=86400&left_text=visits&left_color=2563eb&right_color=f28c28"
 };
 const isPublished = (book) => book.published !== false;
 const isGoogleBooksUrl = (value) => String(value || "").includes("play.google.com/store/books");
@@ -87,25 +87,28 @@ const primaryAction = (book) => {
 const createBookCard = (book) => { const readHref = book.readUrl || `book.html?id=${book.id}`; const readAttrs = hasExternalUrl(readHref) ? ` target="_blank" rel="noopener noreferrer"` : ""; return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img src="${book.cover}" alt="${book.title} 書封"></a></div><div class="book-card-body"><h3>${book.title}</h3><p class="book-meta">${book.author} ・ ${book.format}</p><div class="tag-row">${createTags(book)}</div><p>${book.description}</p><div class="card-actions">${primaryAction(book)}<a class="card-link" href="book.html?id=${book.id}">更多資訊</a></div></div></article>`; };
 const renderList = (selector, books) => { const target = document.querySelector(selector); if (target) target.innerHTML = books.map(createBookCard).join(""); };
 const setText = (selector, value) => { const target = document.querySelector(selector); if (target) target.textContent = value; };
-const loadHomeVisits = async () => {
-  try {
-    const response = await fetch(siteConfig.homeVisitsApi, { cache: "no-store" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
-    return formatNumber(data.value);
-  } catch (error) {
-    console.warn("首頁訪問人數讀取失敗：", error);
-    return "暫無資料";
-  }
+const renderHomeVisits = () => {
+  const target = document.querySelector("[data-stat-visits]");
+  if (!target) return;
+  const image = new Image();
+  image.src = siteConfig.homeVisitsBadgeUrl;
+  image.alt = "首頁訪問人數";
+  image.className = "visit-badge";
+  image.loading = "eager";
+  image.referrerPolicy = "no-referrer";
+  image.addEventListener("load", () => {
+    target.replaceChildren(image);
+  });
+  image.addEventListener("error", () => {
+    target.textContent = "統計維護中";
+  });
 };
 const populateStats = async (books) => {
   const categories = uniqueCategories(books);
   setText("[data-stat-total]", formatNumber(books.length));
   setText("[data-stat-categories]", formatNumber(categories.length));
   setText("[data-stat-web]", formatNumber(books.filter((book) => getEffectiveType(book) === "web").length));
-  if (document.querySelector("[data-stat-visits]")) {
-    setText("[data-stat-visits]", await loadHomeVisits());
-  }
+  renderHomeVisits();
   return categories;
 };
 const getCategories = (book) => Array.isArray(book.category) ? book.category : [book.category];
