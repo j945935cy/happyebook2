@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#EAF6FF"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#F8FCFF" stroke="#2563EB" stroke-width="4"/>
+  <rect x="120" y="132" width="280" height="58" rx="29" fill="#F97316"/>
+  <text x="154" y="170" fill="#FFFFFF" font-size="28" font-family="Arial, sans-serif" font-weight="700">AI AUTOMATION</text>
+  <text x="120" y="340" fill="#111827" font-size="118" font-family="Georgia, serif">AI Python</text>
+  <text x="120" y="470" fill="#111827" font-size="106" font-family="Georgia, serif">Automation</text>
+  <text x="120" y="620" fill="#334155" font-size="42" font-family="'Noto Sans TC', Arial, sans-serif" font-weight="700">AI Python 自動化實戰</text>
+  <text x="120" y="690" fill="#475569" font-size="34" font-family="'Noto Sans TC', Arial, sans-serif">用 Python 與 AI 工具提升工作效率</text>
+  <rect x="120" y="820" width="720" height="300" rx="32" fill="#DBEAFE"/>
+  <path d="M210 940h540M210 1018h420M210 1096h300" stroke="#2563EB" stroke-width="26" stroke-linecap="round"/>
+  <circle cx="704" cy="1018" r="72" fill="#F97316"/>
+  <path d="M674 1018l22 22 42-54" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="120" y="1230" width="220" height="64" rx="32" fill="#16A34A"/>
+  <text x="168" y="1272" fill="#FFFFFF" font-size="30" font-family="'Noto Sans TC', Arial, sans-serif" font-weight="700">免費閱讀</text>
+</svg>
