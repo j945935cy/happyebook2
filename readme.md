@@ -1,103 +1,215 @@
 ﻿# happyebook2
 
-happyebook2 是一個電子書平台專案，目標是建立一個可快速上線、可逐步擴充的網站，用來展示與整理：
+happyebook2 是一個以內容展示為核心的電子書平台網站，用來整理、展示與導流多種電子書作品。
 
-- EPUB 電子書
-- PDF 電子書
+平台內容包含：
+
+- EPUB / PDF 電子書
 - 網頁版電子書
-- 免費與付費內容
-- 作者投稿內容
+- 免費閱讀內容
+- 付費或試閱內容
+- 作者投稿作品
 
-## 專案目標
+網站風格以教學平台、數位書櫃、簡潔易讀為主，不走花俏商城路線。
 
-本專案分為三個階段：
+## 技術架構
 
-1. Phase 1：快速上線版 MVP
-2. Phase 2：平台功能版
-3. Phase 3：正式商業版
+本專案使用純前端靜態網站架構：
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- JSON 作為書籍資料來源
+
+不使用：
+
+- React
+- Vue
+- Angular
+- Tailwind
+- Bootstrap
+- jQuery
+- 外部大型 UI framework
 
 ## 專案結構
 
 ```text
 happyebook2/
-├─ README.md
-├─ AGENTS.md
-├─ .gitignore
-├─ PROMPTS/
-├─ docs/
-├─ src/
-└─ assets/
+├─ assets/                  # 圖片與書封素材
+│  └─ images/
+├─ docs/                    # 專案文件
+├─ PROMPTS/                 # 階段提示詞與規劃提示
+├─ src/                     # 主要網站前端檔案
+│  ├─ index.html            # 首頁
+│  ├─ books.html            # 書籍列表
+│  ├─ book.html             # 單本作品頁
+│  ├─ submit.html           # 投稿頁
+│  ├─ about.html            # 關於頁
+│  ├─ contact.html          # 聯絡頁
+│  ├─ admin.html            # 管理頁
+│  ├─ books.json            # 書籍資料
+│  ├─ script.js             # 前台互動
+│  ├─ admin.js              # 管理頁互動
+│  └─ styles.css            # 全站樣式
+├─ AGENTS.md                # Codex 專案規則
+├─ CNAME                    # GitHub Pages 自訂網域
+├─ index.html               # 根目錄導向頁
+└─ readme.md
 ```
 
-## Phase 1 內容
+## 主要功能
 
-快速上線版包含：
+- 書籍列表展示
+- 依內容型態篩選：全部、免費、付費、網頁版
+- 依 `books.json` 自動產生分類篩選按鈕
+- 書籍卡片顯示書封、書名、副標、作者、格式、標籤與簡介
+- 單本作品詳細頁
+- Google 表單投稿入口
+- 聯絡表單與 mailto 備援
+- 手機版導覽選單
+- 響應式書籍卡片排版
 
-- 首頁
-- 書籍列表頁
-- 單本作品頁
-- 投稿頁
-- 關於頁
-- 聯絡頁
+## 書籍資料
 
-資料來源使用：
+主要資料來源：
 
-- `src/books.json`
+```text
+src/books.json
+```
 
-技術使用：
+每本書常見欄位：
 
-- HTML
-- CSS
-- Vanilla JavaScript
+```json
+{
+  "id": "book-id",
+  "title": "書名",
+  "subtitle": "副標",
+  "author": "作者",
+  "category": "分類",
+  "type": "web",
+  "format": "網站閱讀",
+  "cover": "../assets/images/book-cover.svg",
+  "description": "作品簡介",
+  "downloadUrl": "",
+  "buyUrl": "",
+  "readUrl": "https://example.com",
+  "featured": true,
+  "popular": true,
+  "priceLabel": "免費閱讀"
+}
+```
 
-## 開發原則
+`category` 可使用字串或陣列：
 
-- 先求可上線
-- 先求可維護
-- 不使用前端框架
-- 優先使用簡單、清楚、低維護成本的做法
-- 可逐步擴充到會員與商業版
+```json
+"category": ["前端設計", "程式設計"]
+```
 
-## 使用方式
+## 本機預覽
 
-本地可直接開啟：
+建議從專案根目錄啟動靜態伺服器，讓 `src/` 頁面可以正確讀取 `../assets/images/...` 書封路徑。
 
-- `src/index.html`
+```powershell
+python -m http.server 8090 --bind 127.0.0.1 --directory C:\happyebook2
+```
 
-如果需要較完整的資料載入體驗，建議啟動簡單靜態伺服器：
+開啟：
 
-- `python -m http.server`
-- VS Code Live Server
+```text
+http://127.0.0.1:8090/src/index.html
+http://127.0.0.1:8090/src/books.html
+```
 
-## 提示詞位置
+如果書封出現破圖，通常是伺服器根目錄開錯。不要只用 `C:\happyebook2\src` 當根目錄，請使用 `C:\happyebook2`。
 
-- `PROMPTS/phase1_mvp.md`
-- `PROMPTS/phase2_platform.md`
-- `PROMPTS/phase3_business.md`
+## 常用指令
 
-## 文件
+查看 Git 狀態：
 
+```powershell
+git -C C:\happyebook2 status --short --branch
+```
+
+查看最近提交：
+
+```powershell
+git -C C:\happyebook2 log --oneline --decorate --max-count=10
+```
+
+查看修改摘要：
+
+```powershell
+git -C C:\happyebook2 diff --stat
+```
+
+檢查 JavaScript 語法：
+
+```powershell
+node --check C:\happyebook2\src\script.js
+```
+
+推送到 GitHub：
+
+```powershell
+git -C C:\happyebook2 push origin main
+```
+
+## 部署
+
+目前專案可用 GitHub Pages 部署。
+
+重要檔案：
+
+- `.nojekyll`：避免 GitHub Pages 套用 Jekyll 處理
+- `CNAME`：自訂網域設定
+- 根目錄 `index.html`：導向主要網站頁面
+
+## 開發規範
+
+- 所有主要前端檔案放在 `src/`
+- 所有樣式集中在 `src/styles.css`
+- 所有前台互動集中在 `src/script.js`
+- 書籍資料以 `src/books.json` 為主
+- 文案使用繁體中文與台灣用語
+- 圖片需有 `alt`
+- 表單欄位需有 `label`
+- 保持介面簡潔、明亮、易讀
+
+## Codex Skill
+
+本專案已建立常用指令 skill：
+
+```text
+happyebook2-commands
+```
+
+可用於：
+
+- 查詢 Git 狀態
+- 整理提交紀錄
+- 啟動本機測試頁
+- 檢查封面破圖
+- 執行前端驗證
+- 推送 GitHub
+
+## 相關文件
+
+- `AGENTS.md`：專案開發規則
 - `docs/operation-manual.md`：網站操作手冊
 - `docs/content-model.md`：內容資料模型
 - `docs/site-map.md`：網站地圖
 - `docs/deployment-notes.md`：部署筆記
 - `docs/design-system.md`：設計系統
 
-## 給 Codex 的規則
-
-請參考：
-
-- `AGENTS.md`
-
 ## 後續規劃
 
-- 串第三方付費連結
-- 加入會員系統
-- 作者上傳後台
-- 金流與訂單
-- 管理員審核
-- 報表分析
+- 強化首頁平台介紹與精選書區塊
+- 增加單本作品推薦
+- 補強 SEO 與社群分享 meta
+- 改善投稿審核流程
+- 規劃正式後台與內容管理流程
 
 ## 授權
 
-此專案可作為 happyebook2 平台開發基礎使用。
+此專案作為 happyebook2 電子書平台開發基礎使用。
+
