@@ -3,7 +3,24 @@
   { id: "sample-submit-guide", title: "作者投稿說明", subtitle: "了解如何提交作品給 Happy eBook", author: "Happy eBook 編輯部", category: "平台說明", type: "free", format: "投稿說明", cover: "../assets/images/book-git-github-start.svg", description: "提供投稿流程、作品資料準備與人工審核方向，方便作者快速理解平台收件方式。", downloadUrl: "", buyUrl: "", readUrl: "submit.html", featured: false, popular: false, priceLabel: "免費閱讀" }
 ];
 const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
+const fallbackCoverDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900"><rect width="640" height="900" fill="#dbeafe"/><rect x="52" y="52" width="536" height="796" rx="24" fill="#eff6ff"/><text x="320" y="420" text-anchor="middle" fill="#1e3a5f" font-size="34" font-family="Noto Sans TC, sans-serif">封面載入中</text><text x="320" y="468" text-anchor="middle" fill="#4b6b8d" font-size="24" font-family="Noto Sans TC, sans-serif">已改用預設封面</text></svg>')}`;
+const getCoverSources = (cover) => {
+  const primary = String(cover || "").trim();
+  if (!primary) return [];
+  const candidates = [primary];
+  if (primary.startsWith("../")) candidates.push(primary.slice(3));
+  return [...new Set(candidates)];
+};
+let coverObserver;
+let coverLoadSuccessCount = 0;
+let coverLoadFailureCount = 0;
+let disableCoverRequests = false;
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
+const pagePath = window.location.pathname || "";
+if (!pagePath.includes("/src/")) {
+  // When server root is src/, ../assets paths are unreachable and cause repeated 404.
+  disableCoverRequests = true;
+}
 const siteConfig = {
   contactEmail: "t945935@gmail.com",
   contactFormEndpoint: "https://formsubmit.co/ajax/t945935@gmail.com",
@@ -63,12 +80,67 @@ const primaryAction = (book) => {
   const attrs = hasExternalUrl(href) ? ` target="_blank" rel="noopener noreferrer"` : "";
   return `<a class="button primary" href="${href}"${attrs}>前往閱讀</a>`;
 };
+const loadCoverIntoImage = (image) => {
+  if (image.dataset.coverHydrated === "true") return;
+  if (disableCoverRequests) return;
+  image.dataset.coverHydrated = "true";
+  const candidates = [image.dataset.coverSrc, image.dataset.coverSrc2].filter(Boolean);
+  if (!candidates.length) return;
+
+  let index = 0;
+  const tryNext = () => {
+    if (index >= candidates.length) return;
+    const candidate = candidates[index++];
+    const probe = new Image();
+    probe.loading = "eager";
+    probe.decoding = "async";
+    probe.addEventListener("load", () => {
+      coverLoadSuccessCount += 1;
+      image.src = candidate;
+      image.alt = image.dataset.coverAlt || image.alt;
+    });
+    probe.addEventListener("error", () => {
+      coverLoadFailureCount += 1;
+      if (coverLoadSuccessCount === 0 && coverLoadFailureCount >= 6) {
+        disableCoverRequests = true;
+        return;
+      }
+      tryNext();
+    });
+    probe.src = candidate;
+  };
+  tryNext();
+};
+const ensureCoverObserver = () => {
+  if (coverObserver) return coverObserver;
+  if (!("IntersectionObserver" in window)) return null;
+  coverObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const image = entry.target;
+      loadCoverIntoImage(image);
+      coverObserver.unobserve(image);
+    });
+  }, { rootMargin: "240px 0px" });
+  return coverObserver;
+};
+const hydrateCoverImages = (container = document) => {
+  const observer = ensureCoverObserver();
+  container.querySelectorAll("img[data-cover-image]").forEach((image) => {
+    if (observer) {
+      observer.observe(image);
+      return;
+    }
+    loadCoverIntoImage(image);
+  });
+};
 const createBookCard = (book) => {
   const readHref = book.readUrl || `book.html?id=${book.id}`;
   const readAttrs = hasExternalUrl(readHref) ? ` target="_blank" rel="noopener noreferrer"` : "";
-  return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img src="${book.cover}" alt="${book.title} 書封"></a></div><div class="book-card-body"><div class="book-card-content"><h3>${book.title}</h3><p class="book-subtitle">${book.subtitle || ""}</p><p class="book-meta">${book.author} ・ ${book.format}</p><div class="tag-row">${createTags(book)}</div><p class="book-description">${book.description}</p></div><div class="card-actions">${primaryAction(book)}<a class="card-link" href="book.html?id=${book.id}">更多資訊</a></div></div></article>`;
+  const [coverSrc = "", coverSrc2 = ""] = getCoverSources(book.cover);
+  return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-src="${coverSrc}" data-cover-src-2="${coverSrc2}" data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）" loading="lazy" decoding="async"></a></div><div class="book-card-body"><div class="book-card-content"><h3>${book.title}</h3><p class="book-subtitle">${book.subtitle || ""}</p><p class="book-meta">${book.author} ・ ${book.format}</p><div class="tag-row">${createTags(book)}</div><p class="book-description">${book.description}</p></div><div class="card-actions">${primaryAction(book)}<a class="card-link" href="book.html?id=${book.id}">更多資訊</a></div></div></article>`;
 };
-const renderList = (selector, books) => { const target = document.querySelector(selector); if (target) target.innerHTML = books.map(createBookCard).join(""); };
+const renderList = (selector, books) => { const target = document.querySelector(selector); if (!target) return; target.innerHTML = books.map(createBookCard).join(""); hydrateCoverImages(target); };
 const setText = (selector, value) => { const target = document.querySelector(selector); if (target) target.textContent = value; };
 const renderHomeVisits = () => {
   const target = document.querySelector("[data-stat-visits]");
@@ -223,6 +295,7 @@ const initBooksPage = async () => {
   const render = () => {
     const filtered = books.filter((book) => (activeType === "all" || getEffectiveType(book) === activeType) && (activeCategory === "all" || getCategories(book).includes(activeCategory)));
     grid.innerHTML = filtered.length ? filtered.map(createBookCard).join("") : `<div class="empty-state"><h3>目前沒有符合條件的作品</h3><p>你可以切換篩選條件，或之後再回來看看。</p></div>`;
+    hydrateCoverImages(grid);
   };
   typeFilters.forEach((button) => button.addEventListener("click", () => {
     activeType = button.dataset.typeFilter;
@@ -236,7 +309,7 @@ const initBooksPage = async () => {
   }));
   render();
 };
-const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img src="${book.cover}" alt="${book.title} 書封"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><h1>${book.title}</h1><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${getCategories(book).join(' / ')}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; };
+const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); const heroCopy = document.querySelector("[data-book-hero-copy]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; if (heroCopy) heroCopy.textContent = book.heroCopy || "這裡會顯示書封、書名、副標、作者、分類、標籤、簡介、格式與操作按鈕。"; const [coverSrc = "", coverSrc2 = ""] = getCoverSources(book.cover); target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-src="${coverSrc}" data-cover-src-2="${coverSrc2}" data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><h1>${book.title}</h1><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${getCategories(book).join(' / ')}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; hydrateCoverImages(target); };
 const initNav = () => {
   const nav = document.querySelector("[data-site-nav]");
   const toggle = document.querySelector("[data-nav-toggle]");
