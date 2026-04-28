@@ -9,7 +9,7 @@ const siteConfig = {
   contactFormEndpoint: "https://formsubmit.co/ajax/t945935@gmail.com",
   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit",
-  homeVisitsBadgeUrl: "https://visitor-badge.one9x.com/badge?page_id=happyebook2.home&namespace=hebook&unique=true&timeframe=86400&left_text=visits&left_color=2563eb&right_color=f28c28"
+  homeVisitsBadgeUrl: "https://views-counter.vercel.app/badge?pageId=happyebook2.home&label=%E8%A8%AA%E5%AE%A2%E4%BA%BA%E6%95%B8&leftColor=2563eb&rightColor=f28c28&type=total&style=none"
 };
 const isPublished = (book) => book.published !== false;
 const isGoogleBooksUrl = (value) => String(value || "").includes("play.google.com/store/books");
@@ -73,6 +73,8 @@ const setText = (selector, value) => { const target = document.querySelector(sel
 const renderHomeVisits = () => {
   const target = document.querySelector("[data-stat-visits]");
   if (!target) return;
+  target.classList.remove("is-unavailable");
+  target.textContent = "讀取中";
   const image = new Image();
   image.src = siteConfig.homeVisitsBadgeUrl;
   image.alt = "首頁訪問人數";
@@ -80,9 +82,12 @@ const renderHomeVisits = () => {
   image.loading = "eager";
   image.referrerPolicy = "no-referrer";
   image.addEventListener("load", () => {
+    target.classList.add("has-visit-badge");
     target.replaceChildren(image);
   });
   image.addEventListener("error", () => {
+    target.classList.remove("has-visit-badge");
+    target.classList.add("is-unavailable");
     target.textContent = "統計維護中";
   });
 };
