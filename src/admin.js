@@ -171,7 +171,7 @@ const renderSubmissionList = () => {
           <h3>${escapeHtml(item.title || "未命名作品")}</h3>
           <p>${escapeHtml(item.author || "未填作者")} ・ ${escapeHtml(item.category || "未分類")} ・ ${escapeHtml(item.format || "未填格式")}</p>
         </div>
-        <p>${escapeHtml(item.description || "尚未提供作品簡介")}</p>
+        <p>${escapeHtml(item.description || "尚未提供給讀者的文案")}</p>
         <dl class="submission-meta">
           <div><dt>Email</dt><dd>${escapeHtml(item.contactEmail || "未提供")}</dd></div>
           <div><dt>送出時間</dt><dd>${escapeHtml(formatSubmissionDate(item.submittedAt))}</dd></div>
