@@ -389,5 +389,22 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "免費閱讀"
+    },
+    {
+        "id":  "word-root-vocabulary-play",
+        "title":  "字根組字彙教學",
+        "subtitle":  "用字首、字根、字尾拆解 1200 個常用英文單字",
+        "author":  "Happy eBook",
+        "category":  "英語學習",
+        "type":  "paid",
+        "format":  "Google Play Books 電子書",
+        "cover":  "../assets/images/book-word-root-vocabulary.svg",
+        "description":  "以英文單字結構為核心，透過字首、字根與字尾拆解常用單字，幫助讀者理解組字邏輯、建立字彙記憶力，適合英文初學者、考試準備者與想用字根法打底的學習者。",
+        "downloadUrl":  "",
+        "buyUrl":  "https://play.google.com/store/books/details?id=xRPUEQAAQBAJ",
+        "readUrl":  "https://play.google.com/store/books/details?id=xRPUEQAAQBAJ",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "NT$84，提供試閱版"
     }
 ]

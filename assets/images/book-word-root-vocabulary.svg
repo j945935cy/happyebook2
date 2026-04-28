@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#F4F8FF"/>
+  <rect x="64" y="64" width="832" height="1312" rx="36" fill="#FFFFFF" stroke="#93B4E8" stroke-width="4"/>
+  <rect x="64" y="64" width="832" height="260" rx="36" fill="#2563EB"/>
+  <path d="M64 272H896V324H64V272Z" fill="#F28C28"/>
+  <text x="120" y="178" fill="#FFFFFF" font-size="56" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-weight="700">字根組字彙教學</text>
+  <text x="120" y="252" fill="#DBEAFE" font-size="34" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif">1200 個常用英文單字</text>
+  <text x="120" y="455" fill="#111827" font-size="90" font-family="Georgia, serif">prefix</text>
+  <text x="120" y="565" fill="#2563EB" font-size="90" font-family="Georgia, serif">root</text>
+  <text x="120" y="675" fill="#F28C28" font-size="90" font-family="Georgia, serif">suffix</text>
+  <line x1="120" y1="735" x2="840" y2="735" stroke="#D6E4F8" stroke-width="6"/>
+  <g font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="36" fill="#374151">
+    <text x="120" y="825">用字首、字根、字尾拆解單字</text>
+    <text x="120" y="895">建立可推理的英文單字力</text>
+    <text x="120" y="965">適合初學者與考試複習</text>
+  </g>
+  <rect x="120" y="1065" width="340" height="72" rx="12" fill="#ECFDF5"/>
+  <text x="150" y="1113" fill="#047857" font-size="34" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-weight="700">Google Play Books</text>
+  <rect x="120" y="1200" width="270" height="70" rx="12" fill="#111827"/>
+  <text x="168" y="1247" fill="#FFFFFF" font-size="34" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif">提供試閱版</text>
+  <text x="120" y="1330" fill="#6B7280" font-size="30" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif">Happy eBook</text>
+</svg>
