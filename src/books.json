@@ -407,5 +407,22 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "NT$84，提供試閱版"
+    },
+    {
+        "id":  "sql2026",
+        "title":  "2026 現代 SQL 全書",
+        "subtitle":  "從零開始的 SQLite 學習指南",
+        "author":  "Happy eBook",
+        "category":  "程式設計",
+        "type":  "free",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-sql2026.svg",
+        "description":  "適合初學者的 SQLite 完整學習指南，從零開始掌握 SQL 查詢、資料關聯與資料庫管理，建立實用的資料處理基礎。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://j945935cy.github.io/SQL2026/",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "免費閱讀"
     }
 ]

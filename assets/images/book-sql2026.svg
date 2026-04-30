@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#EEF6FF"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#FFFFFF" stroke="#2563EB" stroke-width="4"/>
+  <rect x="120" y="124" width="720" height="144" rx="24" fill="#DBEAFE"/>
+  <text x="156" y="210" fill="#1D4ED8" font-size="42" font-family="Georgia, serif" letter-spacing="4">SQL 2026</text>
+  <text x="120" y="405" fill="#111827" font-size="100" font-family="Georgia, serif">現代 SQL</text>
+  <text x="120" y="525" fill="#111827" font-size="100" font-family="Georgia, serif">全書</text>
+  <text x="124" y="630" fill="#374151" font-size="38" font-family="'Noto Sans TC', sans-serif">從零開始的 SQLite 學習指南</text>
+  <rect x="120" y="730" width="720" height="360" rx="28" fill="#0F172A"/>
+  <text x="168" y="820" fill="#93C5FD" font-size="34" font-family="Consolas, monospace">SELECT title, author</text>
+  <text x="168" y="890" fill="#FFFFFF" font-size="34" font-family="Consolas, monospace">FROM books</text>
+  <text x="168" y="960" fill="#FBBF24" font-size="34" font-family="Consolas, monospace">WHERE year = 2026;</text>
+  <circle cx="744" cy="930" r="50" fill="#F28C28"/>
+  <path d="M714 930h60M744 900v60" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+  <rect x="120" y="1160" width="220" height="64" rx="32" fill="#16A34A"/>
+  <text x="168" y="1202" fill="#FFFFFF" font-size="30" font-family="'Noto Sans TC', sans-serif">免費閱讀</text>
+  <text x="120" y="1300" fill="#64748B" font-size="28" font-family="'Noto Sans TC', sans-serif">Published by Happy eBook</text>
+</svg>
