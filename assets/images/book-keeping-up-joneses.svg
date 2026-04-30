@@ -11,8 +11,8 @@
   <circle cx="718" cy="268" r="48" fill="#F59E0B" fill-opacity=".18"/>
   <rect x="124" y="156" width="236" height="54" rx="27" fill="#2563EB"/>
   <text x="166" y="191" fill="#F8FAFC" font-size="28" font-family="'Noto Sans TC', sans-serif">英語學習</text>
-  <text x="124" y="324" fill="#0F172A" font-size="62" font-family="Georgia, serif">Keeping Up</text>
-  <text x="124" y="396" fill="#0F172A" font-size="62" font-family="Georgia, serif">with the Joneses</text>
+  <text x="124" y="324" fill="#0F172A" font-size="62" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">Keeping Up</text>
+  <text x="124" y="396" fill="#0F172A" font-size="62" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">with the Joneses</text>
   <text x="124" y="492" fill="#1D4ED8" font-size="42" font-family="'Noto Sans TC', sans-serif">用故事學生活英文</text>
   <text x="124" y="548" fill="#475569" font-size="30" font-family="'Noto Sans TC', sans-serif">中英對照情境式閱讀教材</text>
   <rect x="124" y="642" width="712" height="324" rx="28" fill="#FFFFFF" fill-opacity=".76" stroke="#B9CBE6" stroke-width="3"/>

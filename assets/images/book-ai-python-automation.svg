@@ -3,8 +3,8 @@
   <rect x="72" y="72" width="816" height="1296" rx="40" fill="#F8FCFF" stroke="#2563EB" stroke-width="4"/>
   <rect x="120" y="132" width="280" height="58" rx="29" fill="#F97316"/>
   <text x="154" y="170" fill="#FFFFFF" font-size="28" font-family="Arial, sans-serif" font-weight="700">AI AUTOMATION</text>
-  <text x="120" y="340" fill="#111827" font-size="118" font-family="Georgia, serif">AI Python</text>
-  <text x="120" y="470" fill="#111827" font-size="106" font-family="Georgia, serif">Automation</text>
+  <text x="120" y="340" fill="#111827" font-size="118" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">AI Python</text>
+  <text x="120" y="470" fill="#111827" font-size="106" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">Automation</text>
   <text x="120" y="620" fill="#334155" font-size="42" font-family="'Noto Sans TC', Arial, sans-serif" font-weight="700">AI Python 自動化實戰</text>
   <text x="120" y="690" fill="#475569" font-size="34" font-family="'Noto Sans TC', Arial, sans-serif">用 Python 與 AI 工具提升工作效率</text>
   <rect x="120" y="820" width="720" height="300" rx="32" fill="#DBEAFE"/>

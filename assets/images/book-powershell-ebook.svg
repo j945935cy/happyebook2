@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
   <rect width="960" height="1440" fill="#F0F4FF"/>
   <rect x="72" y="72" width="816" height="1296" rx="40" fill="#F8F9FF" stroke="#6366F1" stroke-width="4"/>
-  <text x="120" y="210" fill="#6366F1" font-size="40" font-family="Georgia, serif" letter-spacing="5">WINDOWS AUTOMATION</text>
-  <text x="120" y="390" fill="#111827" font-size="120" font-family="Georgia, serif">Power</text>
-  <text x="120" y="520" fill="#111827" font-size="120" font-family="Georgia, serif">Shell</text>
+  <text x="120" y="210" fill="#6366F1" font-size="40" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800" letter-spacing="5">WINDOWS AUTOMATION</text>
+  <text x="120" y="390" fill="#111827" font-size="120" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">Power</text>
+  <text x="120" y="520" fill="#111827" font-size="120" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">Shell</text>
   <text x="120" y="700" fill="#374151" font-size="38" font-family="'Noto Sans TC', sans-serif">從零開始，慢慢學會</text>
   <text x="120" y="755" fill="#374151" font-size="38" font-family="'Noto Sans TC', sans-serif">用 PowerShell 自動處理工作</text>
   <rect x="120" y="1030" width="220" height="64" rx="32" fill="#6366F1"/>

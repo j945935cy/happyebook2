@@ -1,9 +1,9 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
   <rect width="960" height="1440" fill="#EAF2FB"/>
   <rect x="72" y="72" width="816" height="1296" rx="40" fill="#F9FBFF" stroke="#8EB0D0" stroke-width="4"/>
-  <text x="120" y="210" fill="#2F6B9A" font-size="40" font-family="Georgia, serif" letter-spacing="5">GOOGLE PLAY BOOKS</text>
-  <text x="120" y="390" fill="#142033" font-size="104" font-family="Georgia, serif">漸進式英語</text>
-  <text x="120" y="520" fill="#142033" font-size="104" font-family="Georgia, serif">會話訓練</text>
+  <text x="120" y="210" fill="#2F6B9A" font-size="40" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800" letter-spacing="5">GOOGLE PLAY BOOKS</text>
+  <text x="120" y="390" fill="#142033" font-size="104" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">漸進式英語</text>
+  <text x="120" y="520" fill="#142033" font-size="104" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">會話訓練</text>
   <text x="120" y="690" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">100 句入門，400 句輕鬆開口</text>
   <rect x="120" y="1030" width="260" height="64" rx="32" fill="#2F6B9A"/>
   <text x="190" y="1072" fill="#F9FBFF" font-size="30" font-family="'Noto Sans TC', sans-serif">Open Book</text>

@@ -5,9 +5,9 @@
   <path d="M64 272H896V324H64V272Z" fill="#F28C28"/>
   <text x="120" y="178" fill="#FFFFFF" font-size="56" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-weight="700">字根組字彙教學</text>
   <text x="120" y="252" fill="#DBEAFE" font-size="34" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif">1200 個常用英文單字</text>
-  <text x="120" y="455" fill="#111827" font-size="90" font-family="Georgia, serif">prefix</text>
-  <text x="120" y="565" fill="#2563EB" font-size="90" font-family="Georgia, serif">root</text>
-  <text x="120" y="675" fill="#F28C28" font-size="90" font-family="Georgia, serif">suffix</text>
+  <text x="120" y="455" fill="#111827" font-size="90" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">prefix</text>
+  <text x="120" y="565" fill="#2563EB" font-size="90" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">root</text>
+  <text x="120" y="675" fill="#F28C28" font-size="90" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">suffix</text>
   <line x1="120" y1="735" x2="840" y2="735" stroke="#D6E4F8" stroke-width="6"/>
   <g font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="36" fill="#374151">
     <text x="120" y="825">用字首、字根、字尾拆解單字</text>

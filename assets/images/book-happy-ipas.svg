@@ -1,9 +1,9 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
   <rect width="960" height="1440" fill="#EAF0F8"/>
   <rect x="72" y="72" width="816" height="1296" rx="40" fill="#F9FBFF" stroke="#8EA5C4" stroke-width="4"/>
-  <text x="120" y="210" fill="#2E5B88" font-size="40" font-family="Georgia, serif" letter-spacing="5">IPAS LEARNING HUB</text>
-  <text x="120" y="390" fill="#142033" font-size="108" font-family="Georgia, serif">快樂學習</text>
-  <text x="120" y="520" fill="#142033" font-size="108" font-family="Georgia, serif">iPAS 一次就過</text>
+  <text x="120" y="210" fill="#2E5B88" font-size="40" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800" letter-spacing="5">IPAS LEARNING HUB</text>
+  <text x="120" y="390" fill="#142033" font-size="108" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">快樂學習</text>
+  <text x="120" y="520" fill="#142033" font-size="108" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">iPAS 一次就過</text>
   <text x="120" y="690" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">iPAS AI 應用規劃師資源網站</text>
   <rect x="120" y="1030" width="260" height="64" rx="32" fill="#2E5B88"/>
   <text x="182" y="1072" fill="#F9FBFF" font-size="30" font-family="'Noto Sans TC', sans-serif">Read Online</text>

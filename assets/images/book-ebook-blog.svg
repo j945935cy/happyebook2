@@ -1,8 +1,8 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
   <rect width="960" height="1440" fill="#F3EDE4"/>
   <rect x="72" y="72" width="816" height="1296" rx="40" fill="#FFFDF8" stroke="#C4B39A" stroke-width="4"/>
-  <text x="120" y="210" fill="#8B5E34" font-size="40" font-family="Georgia, serif" letter-spacing="5">BLOG EDITION</text>
-  <text x="120" y="420" fill="#171717" font-size="148" font-family="Georgia, serif">ebook</text>
+  <text x="120" y="210" fill="#8B5E34" font-size="40" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800" letter-spacing="5">BLOG EDITION</text>
+  <text x="120" y="420" fill="#171717" font-size="148" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">ebook</text>
   <text x="120" y="620" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">教學書網站與線上閱讀入口</text>
   <text x="120" y="690" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">適合章節式學習與教材整理</text>
   <rect x="120" y="1030" width="260" height="64" rx="32" fill="#8B5E34"/>

@@ -1,9 +1,9 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
   <rect width="960" height="1440" fill="#F4EBDD"/>
   <rect x="72" y="72" width="816" height="1296" rx="40" fill="#FFF9F2" stroke="#C8A57A" stroke-width="4"/>
-  <text x="120" y="210" fill="#B45A3C" font-size="40" font-family="Georgia, serif" letter-spacing="5">GITHUB PAGES EDITION</text>
-  <text x="120" y="420" fill="#141A24" font-size="122" font-family="Georgia, serif">Linux</text>
-  <text x="120" y="550" fill="#141A24" font-size="122" font-family="Georgia, serif">入門</text>
+  <text x="120" y="210" fill="#B45A3C" font-size="40" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800" letter-spacing="5">GITHUB PAGES EDITION</text>
+  <text x="120" y="420" fill="#141A24" font-size="122" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">Linux</text>
+  <text x="120" y="550" fill="#141A24" font-size="122" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">入門</text>
   <text x="120" y="700" fill="#334155" font-size="40" font-family="'Noto Sans TC', sans-serif">基礎 Linux 教學電子書</text>
   <text x="120" y="770" fill="#334155" font-size="40" font-family="'Noto Sans TC', sans-serif">章節式閱讀與操作練習</text>
   <rect x="120" y="1030" width="260" height="64" rx="32" fill="#141A24"/>

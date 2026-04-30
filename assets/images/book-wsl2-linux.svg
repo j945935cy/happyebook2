@@ -1,9 +1,9 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
   <rect width="960" height="1440" fill="#F5EFE4"/>
   <rect x="72" y="72" width="816" height="1296" rx="40" fill="#FFFDF8" stroke="#C8B59A" stroke-width="4"/>
-  <text x="120" y="210" fill="#D46B2C" font-size="40" font-family="Georgia, serif" letter-spacing="5">INTERACTIVE EDITION</text>
-  <text x="120" y="390" fill="#111827" font-size="116" font-family="Georgia, serif">從 Windows</text>
-  <text x="120" y="520" fill="#111827" font-size="116" font-family="Georgia, serif">開始學 Linux</text>
+  <text x="120" y="210" fill="#D46B2C" font-size="40" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800" letter-spacing="5">INTERACTIVE EDITION</text>
+  <text x="120" y="390" fill="#111827" font-size="116" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">從 Windows</text>
+  <text x="120" y="520" fill="#111827" font-size="116" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">開始學 Linux</text>
   <text x="120" y="690" fill="#374151" font-size="40" font-family="'Noto Sans TC', sans-serif">WSL2 實作導向網頁電子書</text>
   <rect x="120" y="1030" width="260" height="64" rx="32" fill="#111827"/>
   <text x="182" y="1072" fill="#FFFDF8" font-size="30" font-family="'Noto Sans TC', sans-serif">Read Online</text>
