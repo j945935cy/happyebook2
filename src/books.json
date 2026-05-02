@@ -423,5 +423,22 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "免費閱讀"
+    },
+    {
+        "id":  "family-legacy-documentation",
+        "title":  "家族故事數位化服務",
+        "subtitle":  "把人物、故事、年表與家族價值整理成可傳承的網站",
+        "author":  "Happy eBook 編輯部",
+        "category":  "文化整理",
+        "type":  "free",
+        "format":  "網站閱讀 / 示範專案",
+        "cover":  "../assets/images/book-family-legacy.svg",
+        "description":  "以《我們家的故事》示範網站呈現家族人物、故事、年表、價值與照片牆，適合用於家族記憶保存、口述歷史整理與數位典藏展示。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://j945935cy.github.io/Family-Legacy-Documentation/",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "免費閱讀"
     }
 ]

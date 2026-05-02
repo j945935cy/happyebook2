@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900" role="img" aria-labelledby="title desc">
+  <title id="title">家族故事數位化服務封面</title>
+  <desc id="desc">以家族樹、年表與故事卡片構成的網站封面插圖。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef4fb"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="900" rx="36" fill="url(#bg)"/>
+  <rect x="52" y="52" width="536" height="796" rx="28" fill="url(#panel)" stroke="#c7d8ea"/>
+  <rect x="92" y="108" width="180" height="34" rx="17" fill="#e8f1ff"/>
+  <text x="182" y="131" text-anchor="middle" fill="#2563eb" font-size="18" font-family="Noto Sans TC, Segoe UI, sans-serif">Happy eBook</text>
+  <text x="92" y="206" fill="#18324a" font-size="42" font-weight="700" font-family="Noto Sans TC, Segoe UI, sans-serif">家族故事</text>
+  <text x="92" y="256" fill="#18324a" font-size="42" font-weight="700" font-family="Noto Sans TC, Segoe UI, sans-serif">數位化服務</text>
+  <text x="92" y="310" fill="#5c7184" font-size="24" font-family="Noto Sans TC, Segoe UI, sans-serif">人物、故事、年表、價值、照片整理</text>
+
+  <rect x="92" y="362" width="456" height="198" rx="24" fill="#ffffff" stroke="#d7e1eb"/>
+  <rect x="120" y="392" width="130" height="130" rx="22" fill="#e8f1ff"/>
+  <circle cx="185" cy="436" r="28" fill="#2563eb" opacity="0.16"/>
+  <rect x="160" y="470" width="50" height="24" rx="12" fill="#2563eb" opacity="0.16"/>
+  <text x="278" y="418" fill="#18324a" font-size="24" font-weight="700" font-family="Noto Sans TC, Segoe UI, sans-serif">我們家的故事</text>
+  <text x="278" y="456" fill="#5c7184" font-size="18" font-family="Noto Sans TC, Segoe UI, sans-serif">把記憶留下，把精神傳下去</text>
+  <rect x="278" y="485" width="128" height="28" rx="14" fill="#e9f7ec"/>
+  <text x="342" y="504" text-anchor="middle" fill="#2f9e44" font-size="16" font-family="Noto Sans TC, Segoe UI, sans-serif">免費閱讀</text>
+
+  <path d="M156 642 C156 604 210 604 210 642" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+  <path d="M320 642 C320 604 374 604 374 642" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+  <path d="M484 642 C484 604 538 604 538 642" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="183" cy="678" r="28" fill="#ffffff" stroke="#c7d8ea" stroke-width="6"/>
+  <circle cx="347" cy="678" r="28" fill="#ffffff" stroke="#c7d8ea" stroke-width="6"/>
+  <circle cx="511" cy="678" r="28" fill="#ffffff" stroke="#c7d8ea" stroke-width="6"/>
+  <path d="M211 678 H319" stroke="#f28c28" stroke-width="6" stroke-linecap="round"/>
+  <path d="M375 678 H483" stroke="#f28c28" stroke-width="6" stroke-linecap="round"/>
+  <rect x="96" y="754" width="448" height="34" rx="17" fill="#f5f9ff"/>
+  <text x="320" y="777" text-anchor="middle" fill="#5c7184" font-size="18" font-family="Noto Sans TC, Segoe UI, sans-serif">家族傳承・口述歷史・數位典藏</text>
+</svg>
