@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- 背景 -->
+  <rect width="1200" height="630" fill="#0f3460"/>
+  <!-- 裝飾色塊 -->
+  <rect x="0" y="0" width="8" height="630" fill="#f07d3b"/>
+  <rect x="1192" y="0" width="8" height="630" fill="#f07d3b"/>
+  <!-- 品牌名 -->
+  <text x="600" y="260" font-family="Georgia,serif" font-size="96" font-weight="bold" text-anchor="middle" fill="#ffffff">Happy eBook</text>
+  <!-- 副標 -->
+  <text x="600" y="350" font-family="Arial,sans-serif" font-size="40" text-anchor="middle" fill="#a8c8f0">電子書平台 · 免費 · 付費 · 網頁版</text>
+  <!-- 網址 -->
+  <text x="600" y="450" font-family="Arial,sans-serif" font-size="30" text-anchor="middle" fill="#f07d3b">happyebook.com</text>
+</svg>

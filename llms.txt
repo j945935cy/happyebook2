@@ -1,0 +1,34 @@
+# Happy eBook
+
+> Happy eBook 是一個以繁體中文為主的電子書平台，提供免費電子書、付費電子書、網頁版線上閱讀，以及作者投稿服務。內容以學習教材、程式設計、語言學習與職涯發展為主。
+
+## 平台性質
+
+- 電子書展示與閱讀平台（EPUB / PDF / 網頁版）
+- 支援免費與付費內容
+- 開放作者投稿，經人工審核後上架
+- 語言：繁體中文（台灣）
+
+## 主要頁面
+
+- 首頁: https://happyebook.com/src/index.html
+- 書籍列表: https://happyebook.com/src/books.html
+- 關於平台: https://happyebook.com/src/about.html
+- 聯絡: https://happyebook.com/src/contact.html
+- 作者投稿: https://happyebook.com/src/submit.html
+
+## 內容分類
+
+- 程式設計（Python、Linux、Git、SQL）
+- 英語學習（文法、口說、單字）
+- AI 應用與工具
+- 職涯與個人發展
+- 電子書製作教學
+
+## 版權
+
+本站所有作品版權歸原作者所有。平台僅提供展示與連結服務，未經授權不得轉載。
+
+## 聯絡
+
+Email: t945935@gmail.com
