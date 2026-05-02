@@ -56,7 +56,7 @@ const hasPreview = (book) => book.priceLabel?.includes("試閱") || isGoogleBook
 const hasExternalUrl = (value) => /^https?:\/\//.test(String(value || "").trim());
 const createTags = (book) => [
   getEffectiveType(book) === "free" ? "" : `<span class="tag ${getEffectiveType(book)}">${typeLabel[getEffectiveType(book)] || getEffectiveType(book)}</span>`,
-  isFreeBook(book) ? `<span class="tag free">免費閱讀</span>` : "",
+  isFreeBook(book) ? `<span class="tag free">分享閱讀</span>` : "",
   hasPreview(book) ? `<span class="tag preview">提供試閱版</span>` : "",
   `<span class="tag category">${getCategories(book).join(' / ')}</span>`
 ].filter(Boolean).join("");
