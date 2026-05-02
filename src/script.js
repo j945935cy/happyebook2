@@ -25,8 +25,7 @@ const siteConfig = {
   contactEmail: "t945935@gmail.com",
   contactFormEndpoint: "https://formsubmit.co/ajax/t945935@gmail.com",
   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
-  googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit",
-  homeVisitsBadgeUrl: "https://views-counter.vercel.app/badge?pageId=happyebook2.home&label=%E8%A8%AA%E5%AE%A2%E4%BA%BA%E6%95%B8&leftColor=2563eb&rightColor=f28c28&type=total&style=none"
+  googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
 };
 const isPublished = (book) => book.published !== false;
 const isGoogleBooksUrl = (value) => String(value || "").includes("play.google.com/store/books");
@@ -142,33 +141,11 @@ const createBookCard = (book) => {
 };
 const renderList = (selector, books) => { const target = document.querySelector(selector); if (!target) return; target.innerHTML = books.map(createBookCard).join(""); hydrateCoverImages(target); };
 const setText = (selector, value) => { const target = document.querySelector(selector); if (target) target.textContent = value; };
-const renderHomeVisits = () => {
-  const target = document.querySelector("[data-stat-visits]");
-  if (!target) return;
-  target.classList.remove("is-unavailable");
-  target.textContent = "讀取中";
-  const image = new Image();
-  image.src = siteConfig.homeVisitsBadgeUrl;
-  image.alt = "首頁訪問人數";
-  image.className = "visit-badge";
-  image.loading = "eager";
-  image.referrerPolicy = "no-referrer";
-  image.addEventListener("load", () => {
-    target.classList.add("has-visit-badge");
-    target.replaceChildren(image);
-  });
-  image.addEventListener("error", () => {
-    target.classList.remove("has-visit-badge");
-    target.classList.add("is-unavailable");
-    target.textContent = "統計維護中";
-  });
-};
 const populateStats = async (books) => {
   const categories = uniqueCategories(books);
   setText("[data-stat-total]", formatNumber(books.length));
   setText("[data-stat-categories]", formatNumber(categories.length));
   setText("[data-stat-web]", formatNumber(books.filter((book) => getEffectiveType(book) === "web").length));
-  renderHomeVisits();
   return categories;
 };
 const getCategories = (book) => Array.isArray(book.category) ? book.category : [book.category];
@@ -269,9 +246,27 @@ const initContactPage = () => {
     window.location.href = mailtoUrl;
   });
 };
+const createMiniBookCard = (book, isPrimary = false) => {
+  const href = book.readUrl || `book.html?id=${book.id}`;
+  const attrs = hasExternalUrl(href) ? ` target="_blank" rel="noopener noreferrer"` : "";
+  const effectiveType = getEffectiveType(book);
+  const tagClass = effectiveType === "free" ? "free" : effectiveType === "paid" ? "paid" : "web";
+  return `<a class="hero-mini-book${isPrimary ? " hero-mini-book-primary" : ""}" href="${href}"${attrs}><span class="tag ${tagClass}">${typeLabel[effectiveType] || effectiveType}</span><h3>${book.title}</h3><p>${book.subtitle || ""}</p></a>`;
+};
 const initHome = async () => {
   const books = (await loadBooks()).filter(isPublished);
   await populateStats(books);
+  const shelf = document.querySelector("[data-home-shelf]");
+  if (shelf) {
+    const shelfBooks = books.filter((b) => b.featured).slice(0, 3);
+    shelf.innerHTML = shelfBooks.map((book, i) => createMiniBookCard(book, i === 0)).join("");
+  }
+  const featuredGrid = document.querySelector("[data-featured-grid]");
+  if (featuredGrid) {
+    const featuredBooks = books.filter((b) => b.featured).slice(0, 8);
+    featuredGrid.innerHTML = featuredBooks.map(createBookCard).join("");
+    hydrateCoverImages(featuredGrid);
+  }
 };
 const renderCategoryFilters = (books) => {
   document.querySelectorAll("[data-category-filter-list]").forEach((list) => {

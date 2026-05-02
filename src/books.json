@@ -147,7 +147,7 @@
         "description":  "整理作者相關作品入口，方便從搜尋結果快速查看已公開的英文與證照類書籍。",
         "downloadUrl":  "",
         "buyUrl":  "",
-        "readUrl":  "https://www.google.com.tw/search?q=inauthor%3A%22%E8%AD%89%E7%85%A7%E9%81%94%E4%BA%BA%E7%A0%94%E7%A9%B6%E5%AE%A4%22&sca_esv=829b6725c1213f11&hl=zh-TW&udm=36&biw=1870&bih=927&sxsrf=ANbL-n65RJZjyeEfEOxeAdRtsc7fHdFPtQ%3A1776161409058&ei=gRLeadqhA8Xg2roP_-aX4As&ved=0ahUKEwia5ubujO2TAxVFsFYBHX_zBbwQ4dUDCBM&uact=5&oq=inauthor%3A%22%E8%AD%89%E7%85%A7%E9%81%94%E4%BA%BA%E7%A0%94%E7%A9%B6%E5%AE%A4%22&gs_lp=EhBnd3Mtd2l6LW1vZGVsZXNzIiBpbmF1dGhvcjoi6K2J54Wn6YGU5Lq656CU56m25a6kIkiUFlDmDVjGEnABeACQAQCYATOgAY8BqgEBM7gBA8gBAPgBAZgCAKACAJgDAIgGAZIHAKAHmQGyBwC4BwDCBwDIBwCACAA&sclient=gws-wiz-modeless",
+        "readUrl":  "https://www.google.com.tw/search?q=inauthor%3A%22%E8%AD%89%E7%85%A7%E9%81%94%E4%BA%BA%E7%A0%94%E7%A9%B6%E5%AE%A4%22&hl=zh-TW&tbm=bks",
         "featured":  true,
         "popular":  false,
         "priceLabel":  "瀏覽作品"
@@ -399,7 +399,6 @@
         "type":  "paid",
         "format":  "Google Play Books 電子書",
         "cover":  "../assets/images/book-word-root-vocabulary.svg",
-        "heroCopy":  "給讀者的介紹目前書的內容文案",
         "description":  "以英文單字結構為核心，透過字首、字根與字尾拆解常用單字，幫助讀者理解組字邏輯、建立字彙記憶力，適合英文初學者、考試準備者與想用字根法打底的學習者。",
         "downloadUrl":  "",
         "buyUrl":  "https://play.google.com/store/books/details?id=xRPUEQAAQBAJ",

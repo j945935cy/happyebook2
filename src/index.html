@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy eBook | 電子書平台</title>
-  <meta name="description" content="Happy eBook 提供電子書展示、網頁版閱讀、投稿與內容整理服務。">
+  <meta name="description" content="Happy eBook 整理免費電子書、網頁版教材與付費好書，涵蓋程式設計、英語學習與證照備考，讓你快速找到值得讀的內容。">
   <link rel="canonical" href="https://happyebook.com/src/index.html">
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Happy eBook | 電子書平台">
-  <meta property="og:description" content="Happy eBook 提供電子書展示、網頁版閱讀、投稿與內容整理服務。">
+  <meta property="og:description" content="Happy eBook 整理免費電子書、網頁版教材與付費好書，涵蓋程式設計、英語學習與證照備考，讓你快速找到值得讀的內容。">
   <meta property="og:url" content="https://happyebook.com/src/index.html">
   <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
   <meta property="og:site_name" content="Happy eBook">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Happy eBook | 電子書平台">
-  <meta name="twitter:description" content="Happy eBook 提供電子書展示、網頁版閱讀、投稿與內容整理服務。">
+  <meta name="twitter:description" content="Happy eBook 整理免費電子書、網頁版教材與付費好書，涵蓋程式設計、英語學習與證照備考，讓你快速找到值得讀的內容。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
   <link rel="stylesheet" href="styles.css?v=20260428-2">
   <script type="application/ld+json">
@@ -35,7 +35,7 @@
   }
   </script>
 </head>
-<body data-page="books">
+<body data-page="home">
   <div class="site-shell">
     <header class="site-header">
       <div class="container header-row">
@@ -55,41 +55,52 @@
     </header>
 
     <main>
-      <section class="page-hero">
-        <div class="container">
-          <span class="eyebrow">Books</span>
-          <h1>書籍列表</h1>
-          <p>目前提供免費、付費與網頁版三種內容型態，方便依需求快速挑選。</p>
-          <dl class="hero-stats page-stats" aria-label="平台內容摘要">
-            <div><dt data-stat-total>0</dt><dd>總冊數</dd></div>
-            <div><dt data-stat-visits>讀取中</dt><dd>首頁總訪問人數</dd></div>
-            <div><dt data-stat-categories>0</dt><dd>個分類</dd></div>
-            <div><dt data-stat-web>0</dt><dd>本網頁版</dd></div>
-          </dl>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Happy eBook</span>
+            <h1>找到適合你的<br>電子書與教材</h1>
+            <p>整理免費網頁書、付費電子書與學習教材，涵蓋程式設計、英語學習、證照備考與職場應用。</p>
+            <div class="hero-actions">
+              <a class="button primary" href="books.html">瀏覽所有書籍</a>
+              <a class="button secondary" href="submit.html">投稿作品</a>
+            </div>
+            <dl class="hero-stats" aria-label="平台內容摘要">
+              <div><dt data-stat-total>0</dt><dd>本書籍</dd></div>
+              <div><dt data-stat-categories>0</dt><dd>個分類</dd></div>
+              <div><dt data-stat-web>0</dt><dd>本網頁版</dd></div>
+            </dl>
+          </div>
+          <div class="hero-panel hero-platform-panel">
+            <div class="hero-shelf-preview" data-home-shelf aria-label="精選書籍預覽"></div>
+          </div>
         </div>
       </section>
-      <section class="section">
+
+      <section class="section section-soft">
         <div class="container">
-          <div class="filter-shell">
-            <div class="filter-bar">
-              <div class="filter-group">
-                <button class="filter-chip is-active" data-type-filter="all" type="button">全部</button>
-                <button class="filter-chip" data-type-filter="free" type="button">免費</button>
-                <button class="filter-chip" data-type-filter="paid" type="button">付費</button>
-                <button class="filter-chip" data-type-filter="web" type="button">網頁版</button>
-              </div>
-              <div class="filter-group" data-category-filter-list>
-                <button class="filter-chip is-active" data-category-filter="all" type="button">全部分類</button>
-              </div>
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Featured</span>
+              <h2>精選書籍</h2>
             </div>
+            <a class="button secondary compact" href="books.html">查看全部</a>
           </div>
-          <div class="book-grid" data-books-grid></div>
+          <div class="book-grid" data-featured-grid></div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer-bar"><span>Happy eBook</span><span>幫讀者找到好書</span></div>
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="books.html">書籍列表</a>
+          <a href="submit.html">投稿</a>
+          <a href="about.html">關於</a>
+          <a href="contact.html">聯絡</a>
+        </nav>
+      </div>
     </footer>
   </div>
   <script src="script.js?v=20260428-5"></script>
