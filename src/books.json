@@ -51,6 +51,23 @@
         "priceLabel":  "提供試閱版"
     },
     {
+        "id":  "ipas-ai-application-planner-basic-exam-guide",
+        "title":  "不死背也能高分的 iPAS AI 應用規劃師（初級）考試攻略",
+        "subtitle":  "重點統整、歷屆試題解析與解題思路，一次掌握人工智慧基礎與生成式 AI 應用",
+        "author":  "Happy eBook",
+        "category":  "證照學習",
+        "type":  "web",
+        "format":  "Google Books 試閱",
+        "cover":  "../assets/images/book-ipas-ai-application-planner-basic.svg",
+        "description":  "以理解代替死背，系統化整理人工智慧基礎概念、生成式 AI 應用重點與試題解析，幫助準備 iPAS AI 應用規劃師（初級）的讀者掌握命題方向與解題邏輯。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://books.google.com.tw/books/about?id=IlDWEQAAQBAJ&redir_esc=y",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "提供試閱版"
+    },
+    {
         "id":  "ipas-ai-high-score-play-book",
         "title":  "不死背，也能高分的 iPAS AI",
         "subtitle":  "以理解取代死背的 iPAS AI 應考學習書",

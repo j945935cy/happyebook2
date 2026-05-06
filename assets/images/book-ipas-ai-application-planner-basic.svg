@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-labelledby="title desc">
+  <title id="title">不死背也能高分的 iPAS AI 應用規劃師初級考試攻略</title>
+  <desc id="desc">iPAS AI 應用規劃師初級考試攻略書封圖</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="58%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#ffedd5"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect x="42" y="42" width="516" height="716" rx="28" fill="#ffffff" stroke="#2563eb" stroke-width="4"/>
+  <rect x="72" y="76" width="206" height="42" rx="21" fill="#f97316"/>
+  <text x="96" y="105" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="700">iPAS AI 初級</text>
+  <text x="72" y="178" fill="#1e3a8a" font-family="'Segoe UI', sans-serif" font-size="30" font-weight="700">應用規劃師考試攻略</text>
+  <text x="72" y="282" fill="#111827" font-family="'Noto Serif TC', serif" font-size="64" font-weight="800">不死背也能</text>
+  <text x="72" y="360" fill="#111827" font-family="'Noto Serif TC', serif" font-size="64" font-weight="800">高分通關</text>
+  <text x="72" y="448" fill="#f97316" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="92" font-weight="800">AI</text>
+  <text x="196" y="442" fill="#1d4ed8" font-family="'Segoe UI', sans-serif" font-size="34" font-weight="700">重點統整</text>
+  <text x="196" y="490" fill="#1d4ed8" font-family="'Segoe UI', sans-serif" font-size="34" font-weight="700">試題解析</text>
+  <rect x="72" y="548" width="456" height="2" fill="#bfdbfe"/>
+  <text x="72" y="608" fill="#334155" font-family="'Segoe UI', sans-serif" font-size="26">人工智慧基礎 ． 生成式 AI 應用</text>
+  <text x="72" y="652" fill="#334155" font-family="'Segoe UI', sans-serif" font-size="26">解題思路 ． 命題方向</text>
+  <text x="72" y="714" fill="#1e3a8a" font-family="'Segoe UI', sans-serif" font-size="28" font-weight="700">Happy eBook</text>
+</svg>
