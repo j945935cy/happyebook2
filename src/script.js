@@ -150,6 +150,20 @@ const populateStats = async (books) => {
 };
 const getCategories = (book) => Array.isArray(book.category) ? book.category : [book.category];
 const uniqueCategories = (books) => [...new Set(books.flatMap(getCategories))];
+const normalizeSearchValue = (value) => String(value || "").trim().toLowerCase();
+const matchesSearchQuery = (book, query) => {
+  if (!query) return true;
+  const searchableText = [
+    book.title,
+    book.subtitle,
+    book.author,
+    book.description,
+    book.format,
+    book.priceLabel,
+    ...getCategories(book)
+  ].filter(Boolean).join(" ").toLowerCase();
+  return searchableText.includes(query);
+};
 const isPlaceholderUrl = (value) => !value || value.includes("REPLACE_WITH_YOUR");
 const bindExternalLinks = () => {
   document.querySelectorAll("[data-google-form-link]").forEach((link) => {
@@ -283,15 +297,28 @@ const initBooksPage = async () => {
   await populateStats(books);
   renderCategoryFilters(books);
   if (!grid) return;
+  const searchInput = document.querySelector("[data-search-input]");
   const typeFilters = [...document.querySelectorAll("[data-type-filter]")];
   const categoryFilters = [...document.querySelectorAll("[data-category-filter]")];
   let activeType = "all";
   let activeCategory = "all";
+  let activeSearch = "";
   const render = () => {
-    const filtered = books.filter((book) => (activeType === "all" || getEffectiveType(book) === activeType) && (activeCategory === "all" || getCategories(book).includes(activeCategory)));
-    grid.innerHTML = filtered.length ? filtered.map(createBookCard).join("") : `<div class="empty-state"><h3>目前沒有符合條件的作品</h3><p>你可以切換篩選條件，或之後再回來看看。</p></div>`;
+    const query = normalizeSearchValue(activeSearch);
+    const filtered = books.filter((book) =>
+      (activeType === "all" || getEffectiveType(book) === activeType) &&
+      (activeCategory === "all" || getCategories(book).includes(activeCategory)) &&
+      matchesSearchQuery(book, query)
+    );
+    const noResultsTitle = query ? `沒有符合「${activeSearch}」的作品` : "目前沒有符合條件的作品";
+    const noResultsCopy = query ? "請調整關鍵字或篩選條件後再試一次。" : "你可以切換篩選條件，或之後再回來看看。";
+    grid.innerHTML = filtered.length ? filtered.map(createBookCard).join("") : `<div class="empty-state"><h3>${noResultsTitle}</h3><p>${noResultsCopy}</p></div>`;
     hydrateCoverImages(grid);
   };
+  searchInput?.addEventListener("input", (event) => {
+    activeSearch = String(event.target.value || "");
+    render();
+  });
   typeFilters.forEach((button) => button.addEventListener("click", () => {
     activeType = button.dataset.typeFilter;
     typeFilters.forEach((item) => item.classList.toggle("is-active", item === button));

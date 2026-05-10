@@ -87,8 +87,8 @@ src/books.json
 | `subtitle` | 否 | 副標題。 |
 | `author` | 是 | 作者或單位名稱。 |
 | `category` | 是 | 分類名稱，例如「英語學習」、「證照學習」。 |
-| `type` | 是 | 類型，可用 `web`、`free`、`paid`。 |
-| `format` | 是 | 顯示格式，例如「網站閱讀」、「PDF」、「EPUB」。 |
+| `type` | 是 | 來源類型，可用 `web`、`google-books`、`other`。 |
+| `format` | 是 | 顯示格式，例如「網站閱讀」、「Google Play Books 書籍頁」、「EPUB」。 |
 | `cover` | 是 | 封面圖路徑，通常為 `../assets/images/檔名.svg`。 |
 | `description` | 是 | 作品簡介。 |
 | `downloadUrl` | 視情況 | 免費下載連結。 |
@@ -96,16 +96,18 @@ src/books.json
 | `readUrl` | 視情況 | 網頁閱讀或外部閱讀頁連結。 |
 | `featured` | 否 | 是否列入首頁精選。 |
 | `popular` | 否 | 是否列入首頁熱門。 |
-| `priceLabel` | 建議填寫 | 前台顯示的取得方式文字，例如「免費閱讀」、「提供試閱版」。 |
+| `priceLabel` | 建議填寫 | 前台顯示的取得方式文字，例如「免費閱讀」、「提供試讀」。 |
 | `published` | 否 | 是否公開顯示；未填時前台視為公開。 |
 
 ### 4.2 `type` 與按鈕對應
 
-前台按鈕會依 `type` 決定主要連結：
+前台顯示會先依 `type` 決定型態標籤，再依連結欄位決定主要按鈕：
 
-- `web`：主要按鈕連到 `readUrl`
-- `free`：主要按鈕連到 `downloadUrl`
-- `paid`：主要按鈕連到 `buyUrl`
+- `web`：卡片顯示「免費版」，主要按鈕通常連到 `readUrl`
+- `google-books`：卡片顯示「提供試讀」，主要按鈕優先連到 `readUrl`，按鈕文字為「查看試讀」
+- `other`：卡片不顯示型態標籤，主要按鈕會依 `readUrl` 或 `buyUrl` 決定
+
+另外，若有 `downloadUrl`，前台會優先顯示「下載閱讀」；若只有 `buyUrl`，則顯示「立即購買」。
 
 如果 `type` 設錯，前台按鈕就可能導到錯誤位置。
 
@@ -195,9 +197,11 @@ src/books.json
 
 ### 7.2 書籍列表頁
 
-書籍列表頁會依 `type` 與 `category` 篩選，但目前 `src/books.html` 內的分類按鈕是手動寫死的。
+書籍列表頁會依 `type` 與 `category` 篩選。
 
-這表示新增分類時，除了修改 `src/books.json`，還要同步檢查 `src/books.html` 是否需要補上新的分類按鈕。否則資料存在，但使用者可能無法直接用按鈕篩選到新分類。
+其中 `type` 篩選按鈕固定為「全部 / 免費版 / 提供試讀 / 其他」，而分類按鈕會依 `src/books.json` 的 `category` 自動產生。
+
+這表示新增分類時，通常只要修改 `src/books.json`，前台就會自動出現新的分類按鈕。
 
 ### 7.3 單本作品頁
 
@@ -274,7 +278,7 @@ src/admin.js
 - `src/books.json` 為合法 JSON
 - 每本書的 `id` 唯一
 - 書名、作者、分類與說明無錯字
-- `type` 與連結欄位相符
+- `type` 與來源相符，例如站內網頁為 `web`、Google 圖書為 `google-books`、其他外部入口為 `other`
 - 不公開作品已設定 `"published": false`
 
 ### 10.2 畫面檢查

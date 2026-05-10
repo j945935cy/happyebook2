@@ -652,9 +652,9 @@ build/
 
 ## type 說明
 
-- free：免費下載
-- paid：付費購買
-- web：網頁版閱讀
+- web：站內或自家網頁作品，前台顯示為「免費版」
+- google-books：Google Play Books 或 Google 圖書頁，前台顯示為「提供試讀」
+- other：其他外部來源或整理入口，前台不顯示型態標籤
 十一、docs/deployment-notes.md
 # Happy eBook 部署筆記
 

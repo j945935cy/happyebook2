@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow:
 
 # AI 搜尋爬蟲（明確允許）
 User-agent: GPTBot
