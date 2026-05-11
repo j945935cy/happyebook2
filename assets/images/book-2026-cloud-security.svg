@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#EEF6FF"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#FFFFFF" stroke="#2563EB" stroke-width="4"/>
+  <rect x="120" y="124" width="300" height="58" rx="29" fill="#2563EB"/>
+  <text x="154" y="162" fill="#FFFFFF" font-size="28" font-family="Arial, sans-serif" font-weight="700">CLOUD SECURITY</text>
+  <text x="120" y="330" fill="#111827" font-size="118" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">2026</text>
+  <text x="120" y="465" fill="#111827" font-size="96" font-family="'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif" font-weight="800">資安大轉折</text>
+  <text x="124" y="560" fill="#334155" font-size="38" font-family="'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif" font-weight="700">AI 原生時代的防護新規則</text>
+  <rect x="120" y="680" width="720" height="390" rx="32" fill="#DBEAFE"/>
+  <path d="M480 758L668 850V982L480 1074L292 982V850L480 758Z" fill="#F8FCFF" stroke="#2563EB" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M480 842V1012M386 895L480 842L574 895M386 948L480 1004L574 948" stroke="#2563EB" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="708" cy="820" r="54" fill="#F97316"/>
+  <path d="M684 820l17 18 34-42" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="120" y="1160" width="220" height="64" rx="32" fill="#16A34A"/>
+  <text x="168" y="1202" fill="#FFFFFF" font-size="30" font-family="'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif" font-weight="700">免費閱讀</text>
+  <text x="120" y="1300" fill="#64748B" font-size="28" font-family="'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif">Published by Happy eBook</text>
+</svg>
