@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">AI Coding 入門書封</title>
+  <desc id="desc">用 Codex 打造第一批網頁專案的入門教材封面圖</desc>
+  <rect width="960" height="1440" fill="#F5F7FB"/>
+  <rect x="72" y="72" width="816" height="1296" rx="40" fill="#FFFFFF" stroke="#7C3AED" stroke-width="4"/>
+  <rect x="120" y="132" width="220" height="64" rx="32" fill="#EEF2FF"/>
+  <text x="150" y="174" fill="#4338CA" font-size="30" font-family="'Noto Sans TC', 'Segoe UI', sans-serif" font-weight="700">網站閱讀</text>
+  <text x="120" y="270" fill="#2563EB" font-size="40" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800" letter-spacing="5">CODEX STARTER</text>
+  <text x="120" y="440" fill="#111827" font-size="110" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">AI</text>
+  <text x="120" y="570" fill="#111827" font-size="110" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">Coding</text>
+  <text x="120" y="700" fill="#111827" font-size="86" font-family="'Noto Sans TC', 'Segoe UI', sans-serif" font-weight="800">入門</text>
+  <text x="120" y="820" fill="#374151" font-size="38" font-family="'Noto Sans TC', 'Segoe UI', sans-serif">用 Codex 打造你的</text>
+  <text x="120" y="878" fill="#374151" font-size="38" font-family="'Noto Sans TC', 'Segoe UI', sans-serif">第一批網頁專案</text>
+  <g transform="translate(120 980)">
+    <rect width="520" height="182" rx="26" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="3"/>
+    <circle cx="42" cy="42" r="10" fill="#EF4444"/>
+    <circle cx="76" cy="42" r="10" fill="#F59E0B"/>
+    <circle cx="110" cy="42" r="10" fill="#10B981"/>
+    <path d="M70 104L108 142L70 180" stroke="#2563EB" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M152 180H266" stroke="#7C3AED" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <rect x="120" y="1230" width="220" height="64" rx="32" fill="#2563EB"/>
+  <text x="168" y="1272" fill="#FFFFFF" font-size="30" font-family="'Noto Sans TC', 'Segoe UI', sans-serif">免費閱讀</text>
+</svg>

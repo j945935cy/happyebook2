@@ -477,5 +477,22 @@
         "featured":  true,
         "popular":  true,
         "priceLabel":  "免費閱讀"
+    },
+    {
+        "id":  "windows-aicoding",
+        "title":  "AI Coding 入門：用 Codex 打造你的第一批網頁專案",
+        "subtitle":  "從零開始學會和 Codex 協作，做出可以執行、可以修改、可以展示的網頁專案",
+        "author":  "Happy eBook 編輯部",
+        "category":  ["AI 學習", "前端設計", "程式設計"],
+        "type":  "web",
+        "format":  "網站閱讀",
+        "cover":  "../assets/images/book-windows-aicoding.svg",
+        "description":  "用 Codex、VS Code、HTML、CSS、JavaScript 開始 AI coding 的入門教材。從檔案結構、瀏覽器執行與基本網頁專案開始，每章搭配 prompt 範例，適合想用 AI 協作完成第一批作品的初學者。",
+        "downloadUrl":  "",
+        "buyUrl":  "",
+        "readUrl":  "https://j945935cy.github.io/Windows-AICoding/",
+        "featured":  true,
+        "popular":  true,
+        "priceLabel":  "免費閱讀"
     }
 ]
