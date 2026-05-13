@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" fill="none">
+  <rect width="960" height="1440" fill="#FFF7ED"/>
+  <rect x="64" y="64" width="832" height="1312" rx="36" fill="#FFFFFF" stroke="#F9A853" stroke-width="4"/>
+  <rect x="64" y="64" width="832" height="260" rx="36" fill="#EA580C"/>
+  <path d="M64 272H896V324H64V272Z" fill="#2563EB"/>
+  <text x="120" y="170" fill="#FFFFFF" font-size="54" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-weight="700">用 AI + Sigil</text>
+  <text x="120" y="248" fill="#FED7AA" font-size="38" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif">製作 EPUB 電子書</text>
+  <!-- AI icon area -->
+  <rect x="120" y="380" width="160" height="160" rx="24" fill="#FFF7ED"/>
+  <text x="145" y="500" fill="#EA580C" font-size="90" font-family="'Trebuchet MS', sans-serif" font-weight="800">AI</text>
+  <!-- Plus sign -->
+  <text x="298" y="500" fill="#9CA3AF" font-size="72" font-family="sans-serif" font-weight="300">+</text>
+  <!-- Sigil icon area -->
+  <rect x="380" y="380" width="160" height="160" rx="24" fill="#EFF6FF"/>
+  <text x="405" y="490" fill="#2563EB" font-size="68" font-family="'Trebuchet MS', sans-serif" font-weight="800">Sig</text>
+  <text x="405" y="535" fill="#93C5FD" font-size="36" font-family="'Trebuchet MS', sans-serif">il</text>
+  <!-- EPUB badge -->
+  <rect x="600" y="390" width="200" height="72" rx="16" fill="#EA580C"/>
+  <text x="640" y="436" fill="#FFFFFF" font-size="40" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="800">EPUB</text>
+  <!-- Divider -->
+  <line x1="120" y1="600" x2="840" y2="600" stroke="#FED7AA" stroke-width="4"/>
+  <!-- Description lines -->
+  <g font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="34" fill="#374151">
+    <text x="120" y="680">EPUB 製作實作指南</text>
+    <text x="120" y="750">Sigil 安裝、排版到上架</text>
+    <text x="120" y="820">AI 協助寫作與校對</text>
+    <text x="120" y="890">Google Play Books 完整流程</text>
+  </g>
+  <!-- Platform badge -->
+  <rect x="120" y="975" width="360" height="72" rx="12" fill="#ECFDF5"/>
+  <text x="150" y="1023" fill="#047857" font-size="34" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-weight="700">Google Play Books</text>
+  <!-- Price badge -->
+  <rect x="120" y="1090" width="220" height="70" rx="12" fill="#EA580C"/>
+  <text x="158" y="1137" fill="#FFFFFF" font-size="34" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-weight="700">NT$ 105</text>
+  <!-- Author -->
+  <text x="120" y="1330" fill="#6B7280" font-size="30" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif">Happy eBook</text>
+</svg>
