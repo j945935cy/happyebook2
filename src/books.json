@@ -55,7 +55,7 @@
         "title": "快樂學習 iPAS 一次就過！",
         "subtitle": "iPAS AI 應用規劃師的講義、考綱與備考資源網站",
         "author": "Happy iPAS",
-        "category": "證照學習",
+        "category": "證照學習","iPAS AI 證照"
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/book-happy-ipas.svg",
@@ -72,7 +72,7 @@
         "title": "iPAS AI 規劃師一次考過",
         "subtitle": "Google Play Books 上的 iPAS AI 規劃師書籍頁",
         "author": "Google Play Books",
-        "category": "證照學習",
+        "category": "證照學習","iPAS AI 證照"
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/book-ipas-play.svg",
@@ -89,7 +89,7 @@
         "title": "不死背也能高分的 iPAS AI 應用規劃師（初級）考試攻略",
         "subtitle": "重點統整、歷屆試題解析與解題思路，一次掌握人工智慧基礎與生成式 AI 應用",
         "author": "Happy eBook",
-        "category": "證照學習",
+        "category": "證照學習","iPAS AI 證照"
         "type": "web",
         "format": "Google Books 試閱版",
         "cover": "../assets/images/book-ipas-ai-high-score.svg",
@@ -106,7 +106,7 @@
         "title": "不死背，也能高分的 iPAS AI",
         "subtitle": "以理解取代死背的 iPAS AI 應考學習書",
         "author": "證照達人研究室 AI 組",
-        "category": "證照學習",
+        "category": "證照學習","iPAS AI 證照"
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/book-ipas-ai-high-score.svg",
@@ -398,7 +398,7 @@
         "title": "iPAS 中級 AI 應用規劃師高分過關指南",
         "subtitle": "觀念 → 情境 → 判斷，以理解取代死背的備考攻略",
         "author": "證照達人研究室 AI 組",
-        "category": "證照學習",
+        "category": "證照學習","iPAS AI 證照"
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/book-ipas-mid-ai-guide.svg",
