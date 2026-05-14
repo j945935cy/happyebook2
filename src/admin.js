@@ -1,10 +1,19 @@
+/**
+ * admin.js — Happy eBook 書籍管理後台 CRUD 邏輯
+ * 版本：20260514
+ */
+(function initAdminModule() {
+
+/* ══════════════════════════════════════
+   1. 狀態與常數
+══════════════════════════════════════ */
 const adminState = {
   books: [],
-  submissions: [],
-  editingId: null
+  filter: "all",   // all | published | hidden | featured | paid | free
+  search: ""
 };
 
-const adminSubmissionsKey = "happyebook_author_submissions";
+const STORAGE_KEY = "happyebook_admin_books_v2";
 
 const emptyBook = () => ({
   id: "",
@@ -13,7 +22,7 @@ const emptyBook = () => ({
   author: "Happy eBook 編輯部",
   category: "教學應用",
   type: "web",
-  format: "網頁閱讀",
+  format: "網站閱讀",
   cover: "../assets/images/book-submission-placeholder.svg",
   description: "",
   downloadUrl: "",
@@ -25,359 +34,487 @@ const emptyBook = () => ({
   published: true
 });
 
-const normalizeBook = (book) => ({
+const normalizeBook = (raw) => ({
   ...emptyBook(),
-  ...book,
-  featured: book.featured === true,
-  popular: book.popular === true,
-  published: book.published !== false
+  ...raw,
+  featured:  raw.featured  !== false && raw.featured  !== "false",
+  popular:   raw.popular   === true  || raw.popular   === "true",
+  published: raw.published !== false && raw.published !== "false"
 });
 
-const form = document.querySelector("[data-book-form]");
-const list = document.querySelector("[data-admin-list]");
-const summary = document.querySelector("[data-admin-summary]");
-const output = document.querySelector("[data-json-output]");
-const formTitle = document.querySelector("[data-admin-form-title]");
-const submissionList = document.querySelector("[data-submission-list]");
-const submissionSummary = document.querySelector("[data-submission-summary]");
+/* ══════════════════════════════════════
+   2. DOM 選取
+══════════════════════════════════════ */
+const $  = (sel) => document.querySelector(sel);
+const $$ = (sel) => [...document.querySelectorAll(sel)];
 
-const escapeHtml = (value = "") => String(value)
+const elList       = $("[data-admin-list]");
+const elEmpty      = $("[data-empty-state]");
+const elOutput     = $("[data-json-output]");
+const elOverlay    = $("[data-modal-overlay]");
+const elModalTitle = $("[data-modal-title]");
+const elForm       = $("[data-book-form]");
+const elMessage    = $("[data-form-message]");
+const elTopStats   = $("[data-admin-top-stats]");
+const elFooterCnt  = $("[data-footer-count]");
+const elBtnDelete  = $("[data-delete-book]");
+const elSearch     = $("[data-admin-search]");
+
+/* ══════════════════════════════════════
+   3. 工具函式
+══════════════════════════════════════ */
+const esc = (v = "") => String(v)
   .replace(/&/g, "&amp;")
   .replace(/</g, "&lt;")
   .replace(/>/g, "&gt;")
-  .replace(/"/g, "&quot;")
-  .replace(/'/g, "&#039;");
+  .replace(/"/g, "&quot;");
 
-const toSlug = (value) => value
-  .trim()
-  .toLowerCase()
+const toSlug = (v = "") => v.trim().toLowerCase()
   .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-")
   .replace(/^-+|-+$/g, "") || "book";
 
-const uniqueBookId = (baseId) => {
-  const base = toSlug(baseId);
-  const ids = new Set(adminState.books.map((book) => book.id));
-  if (!ids.has(base)) return base;
-  let index = 2;
-  while (ids.has(`${base}-${index}`)) index += 1;
-  return `${base}-${index}`;
+const uniqueId = (base) => {
+  const ids = new Set(adminState.books.map((b) => b.id));
+  const slug = toSlug(base);
+  if (!ids.has(slug)) return slug;
+  let i = 2;
+  while (ids.has(`${slug}-${i}`)) i++;
+  return `${slug}-${i}`;
 };
 
-const readStoredSubmissions = () => {
+const showMessage = (text, type = "success") => {
+  elMessage.textContent = text;
+  elMessage.className = `form-message ${type}`;
+  setTimeout(() => { elMessage.textContent = ""; elMessage.className = "form-message"; }, 3000);
+};
+
+/* ══════════════════════════════════════
+   4. 資料儲存（localStorage 暫存）
+══════════════════════════════════════ */
+const saveLocal = () => {
   try {
-    return JSON.parse(localStorage.getItem(adminSubmissionsKey) || "[]");
-  } catch (error) {
-    console.warn("待審投稿讀取失敗：", error);
-    return [];
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(adminState.books));
+  } catch (_) {}
+};
+
+const loadLocal = () => {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (_) {}
+  return null;
+};
+
+/* ══════════════════════════════════════
+   5. 篩選 / 搜尋邏輯
+══════════════════════════════════════ */
+const matchFilter = (book) => {
+  const f = adminState.filter;
+  if (f === "published") return book.published !== false;
+  if (f === "hidden")    return book.published === false;
+  if (f === "featured")  return book.featured === true;
+  if (f === "paid")      return book.type === "paid";
+  if (f === "free")      return book.type === "free";
+  return true;
+};
+
+const matchSearch = (book) => {
+  const q = adminState.search.toLowerCase().trim();
+  if (!q) return true;
+  return [book.title, book.author, book.category, book.id, book.subtitle]
+    .some((v) => String(v || "").toLowerCase().includes(q));
+};
+
+/* ══════════════════════════════════════
+   6. 統計列
+══════════════════════════════════════ */
+const renderStats = () => {
+  const total     = adminState.books.length;
+  const live      = adminState.books.filter((b) => b.published !== false).length;
+  const hidden    = total - live;
+  const paid      = adminState.books.filter((b) => b.type === "paid").length;
+  const featured  = adminState.books.filter((b) => b.featured === true).length;
+
+  elTopStats.innerHTML = `
+    <span class="stat-pill"><span class="stat-num">${total}</span> 本書籍</span>
+    <span class="stat-pill live"><span class="stat-num">${live}</span> 已上架</span>
+    <span class="stat-pill hidden-pill"><span class="stat-num">${hidden}</span> 未上架</span>
+    <span class="stat-pill paid-pill"><span class="stat-num">${paid}</span> 付費</span>
+    <span class="stat-pill"><span class="stat-num">${featured}</span> 精選</span>
+  `;
+  if (elFooterCnt) {
+    elFooterCnt.textContent = `共 ${total} 本書籍`;
   }
 };
 
-const writeStoredSubmissions = () => {
-  localStorage.setItem(adminSubmissionsKey, JSON.stringify(adminState.submissions));
+/* ══════════════════════════════════════
+   7. 書籍清單渲染
+══════════════════════════════════════ */
+const typeBadge = (type) => {
+  if (type === "paid")  return `<span class="badge type-paid">付費</span>`;
+  if (type === "free")  return `<span class="badge type-free">免費</span>`;
+  return `<span class="badge type-web">網頁版</span>`;
 };
 
-const getSubmissionKey = (submission) => submission.submissionId || submission.id;
-
-const formatSubmissionDate = (submittedAt) => {
-  const parsed = new Date(submittedAt);
-  return Number.isNaN(parsed.getTime()) ? "未提供" : parsed.toLocaleString("zh-TW");
+const coverHtml = (cover, title) => {
+  if (cover && cover !== "../assets/images/book-submission-placeholder.svg") {
+    return `<img src="${esc(cover)}" alt="${esc(title)}" loading="lazy" onerror="this.replaceWith(document.createTextNode(''))">`;
+  }
+  return `<svg class="admin-book-cover-placeholder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10M7 11h6"/></svg>`;
 };
 
-const bookForOutput = (book) => {
-  const normalized = normalizeBook(book);
+const renderList = () => {
+  const visible = adminState.books.filter((b) => matchFilter(b) && matchSearch(b));
+  elEmpty.hidden = visible.length > 0;
+
+  elList.innerHTML = adminState.books.map((book, idx) => {
+    const show = matchFilter(book) && matchSearch(book);
+    const hiddenClass = book.published === false ? "is-hidden" : "";
+    const filterClass = show ? "" : "is-filtered-out";
+    const statusBadge = book.published === false
+      ? `<span class="badge draft">未上架</span>`
+      : `<span class="badge live">已上架</span>`;
+    const featBadge   = book.featured ? `<span class="badge featured">精選</span>` : "";
+    const meta = [book.category, book.author].filter(Boolean).join(" · ");
+
+    return `
+      <div class="admin-book-card ${hiddenClass} ${filterClass}" data-book-id="${esc(book.id)}">
+        <span class="admin-book-num">${idx + 1}</span>
+        <div class="admin-book-cover">${coverHtml(book.cover, book.title)}</div>
+        <div class="admin-book-info">
+          <h3>${esc(book.title || "（未命名）")}</h3>
+          <p class="admin-book-meta">${esc(meta || "未填資料")}</p>
+        </div>
+        <div class="admin-book-badges">
+          ${statusBadge}
+          ${typeBadge(book.type)}
+          ${featBadge}
+        </div>
+        <div class="admin-book-actions">
+          <button type="button" class="btn-up"    data-action="up"     data-id="${esc(book.id)}" ${idx === 0 ? "disabled" : ""} title="上移">↑</button>
+          <button type="button" class="btn-down"  data-action="down"   data-id="${esc(book.id)}" ${idx === adminState.books.length - 1 ? "disabled" : ""} title="下移">↓</button>
+          <button type="button" class="btn-toggle" data-action="toggle" data-id="${esc(book.id)}" title="${book.published === false ? "上架" : "下架"}">${book.published === false ? "上架" : "下架"}</button>
+          <button type="button" class="btn-edit"  data-action="edit"   data-id="${esc(book.id)}">編輯</button>
+          <button type="button" class="btn-delete" data-action="delete" data-id="${esc(book.id)}">刪除</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  updateOutput();
+  renderStats();
+};
+
+/* ══════════════════════════════════════
+   8. JSON 輸出
+══════════════════════════════════════ */
+const bookForOutput = (b) => {
+  const n = normalizeBook(b);
   return {
-    id: normalized.id,
-    title: normalized.title,
-    subtitle: normalized.subtitle,
-    author: normalized.author,
-    category: normalized.category,
-    type: normalized.type,
-    format: normalized.format,
-    cover: normalized.cover,
-    description: normalized.description,
-    downloadUrl: normalized.downloadUrl,
-    buyUrl: normalized.buyUrl,
-    readUrl: normalized.readUrl,
-    featured: normalized.featured,
-    popular: normalized.popular,
-    priceLabel: normalized.priceLabel,
-    published: normalized.published
+    id: n.id, title: n.title, subtitle: n.subtitle,
+    author: n.author, category: n.category,
+    type: n.type, format: n.format, cover: n.cover,
+    description: n.description,
+    downloadUrl: n.downloadUrl, buyUrl: n.buyUrl, readUrl: n.readUrl,
+    featured: n.featured, popular: n.popular, priceLabel: n.priceLabel
   };
 };
 
 const updateOutput = () => {
-  output.value = JSON.stringify(adminState.books.map(bookForOutput), null, 2);
+  if (elOutput) {
+    elOutput.value = JSON.stringify(adminState.books.map(bookForOutput), null, 4);
+  }
 };
 
-const updateSummary = () => {
-  const total = adminState.books.length;
-  const published = adminState.books.filter((book) => book.published !== false).length;
-  const hidden = total - published;
-  summary.innerHTML = `<span>全部 ${total} 本</span><span>已上架 ${published} 本</span><span>未上架 ${hidden} 本</span>`;
-};
+/* ══════════════════════════════════════
+   9. Modal 開關
+══════════════════════════════════════ */
+const openModal = (book = null) => {
+  const isEdit = !!book;
+  elModalTitle.textContent = isEdit ? `編輯：${book.title || "書籍"}` : "新增書籍";
+  elBtnDelete.hidden = !isEdit;
+  elMessage.textContent = "";
 
-const updateSubmissionSummary = () => {
-  if (!submissionSummary) return;
-  const pending = adminState.submissions.filter((item) => item.status === "pending").length;
-  const approved = adminState.submissions.filter((item) => item.status === "approved").length;
-  const rejected = adminState.submissions.filter((item) => item.status === "rejected").length;
-  submissionSummary.innerHTML = `<span>待審 ${pending} 件</span><span>已核准 ${approved} 件</span><span>已退回 ${rejected} 件</span>`;
-};
+  const b = normalizeBook(book || emptyBook());
+  const fields = elForm.elements;
 
-const renderAdminList = () => {
-  updateSummary();
-  updateOutput();
-  list.innerHTML = adminState.books.map((book, index) => {
-    const status = book.published === false ? "未上架" : "已上架";
-    const statusClass = book.published === false ? "is-hidden" : "is-live";
-    return `
-      <article class="admin-book-row ${statusClass}">
-        <div class="admin-book-main">
-          <span class="admin-order">#${index + 1}</span>
-          <div>
-            <h3>${escapeHtml(book.title || "未命名作品")}</h3>
-            <p>${escapeHtml(book.category || "未分類")} ・ ${escapeHtml(book.author || "未填作者")}</p>
-            <span class="admin-status">${status}</span>
-          </div>
-        </div>
-        <div class="admin-row-actions">
-          <button type="button" data-action="up" data-id="${escapeHtml(book.id)}" ${index === 0 ? "disabled" : ""}>上移</button>
-          <button type="button" data-action="down" data-id="${escapeHtml(book.id)}" ${index === adminState.books.length - 1 ? "disabled" : ""}>下移</button>
-          <button type="button" data-action="toggle" data-id="${escapeHtml(book.id)}">${book.published === false ? "上架" : "下架"}</button>
-          <button type="button" data-action="edit" data-id="${escapeHtml(book.id)}">編輯</button>
-          <button type="button" data-action="delete" data-id="${escapeHtml(book.id)}">刪除</button>
-        </div>
-      </article>
-    `;
-  }).join("");
-};
+  // 填入表單
+  const setText = (name, val) => { if (fields[name]) fields[name].value = String(val ?? ""); };
+  const setChk  = (name, val) => { if (fields[name]) fields[name].checked = val === true; };
 
-const submissionStatusLabel = (status) => ({ pending: "待審", approved: "已核准", rejected: "已退回" }[status] || "待審");
+  setText("editingId",   isEdit ? b.id : "");
+  setText("id",          b.id);
+  setText("title",       b.title);
+  setText("subtitle",    b.subtitle);
+  setText("author",      b.author);
+  setText("category",    b.category);
+  setText("type",        b.type);
+  setText("format",      b.format);
+  setText("priceLabel",  b.priceLabel);
+  setText("cover",       b.cover);
+  setText("readUrl",     b.readUrl);
+  setText("buyUrl",      b.buyUrl);
+  setText("downloadUrl", b.downloadUrl);
+  setText("description", b.description);
+  setChk("published", b.published);
+  setChk("featured",  b.featured);
+  setChk("popular",   b.popular);
 
-const renderSubmissionList = () => {
-  if (!submissionList) return;
-  updateSubmissionSummary();
-  const submissions = adminState.submissions;
-  if (!submissions.length) {
-    submissionList.innerHTML = `<div class="empty-state"><h3>目前沒有待審投稿</h3><p>作者送出投稿後，會出現在這裡等待版主審核。</p></div>`;
-    return;
+  elOverlay.hidden = false;
+  document.body.style.overflow = "hidden";
+
+  // 自動產生 ID（新增時，書名輸入後）
+  if (!isEdit) {
+    fields.id.dataset.autoId = "true";
+    fields.title.addEventListener("input", handleAutoId);
+  } else {
+    delete fields.id.dataset.autoId;
+    fields.title.removeEventListener("input", handleAutoId);
   }
 
-  submissionList.innerHTML = submissions.map((item) => `
-    <article class="submission-review-card is-${escapeHtml(item.status || "pending")}">
-      <div class="submission-review-main">
-        <div>
-          <span class="admin-status">${submissionStatusLabel(item.status)}</span>
-          <h3>${escapeHtml(item.title || "未命名作品")}</h3>
-          <p>${escapeHtml(item.author || "未填作者")} ・ ${escapeHtml(item.category || "未分類")} ・ ${escapeHtml(item.format || "未填格式")}</p>
-        </div>
-        <p>${escapeHtml(item.description || "尚未提供作品簡介")}</p>
-        <dl class="submission-meta">
-          <div><dt>Email</dt><dd>${escapeHtml(item.contactEmail || "未提供")}</dd></div>
-          <div><dt>送出時間</dt><dd>${escapeHtml(formatSubmissionDate(item.submittedAt))}</dd></div>
-          <div><dt>取得方式</dt><dd>${escapeHtml(item.priceLabel || "未填")}</dd></div>
-          <div><dt>備註</dt><dd>${escapeHtml(item.note || "無")}</dd></div>
-        </dl>
-      </div>
-      <div class="admin-row-actions">
-        <button type="button" data-submission-action="approve" data-id="${escapeHtml(getSubmissionKey(item))}" ${item.status === "approved" ? "disabled" : ""}>核准上架</button>
-        <button type="button" data-submission-action="edit" data-id="${escapeHtml(getSubmissionKey(item))}">載入編輯</button>
-        <button type="button" data-submission-action="reject" data-id="${escapeHtml(getSubmissionKey(item))}" ${item.status === "rejected" ? "disabled" : ""}>退回</button>
-        <button type="button" data-submission-action="remove" data-id="${escapeHtml(getSubmissionKey(item))}">移除</button>
-      </div>
-    </article>
-  `).join("");
+  setTimeout(() => fields.title.focus(), 100);
 };
 
-const submissionToBook = (submission, options = {}) => normalizeBook({
-  id: options.keepId ? submission.id : uniqueBookId(submission.title || submission.id || "book"),
-  title: submission.title,
-  subtitle: submission.subtitle,
-  author: submission.author,
-  category: submission.category,
-  type: submission.type,
-  format: submission.format,
-  cover: submission.cover || "../assets/images/book-submission-placeholder.svg",
-  description: submission.description,
-  downloadUrl: submission.downloadUrl,
-  buyUrl: submission.buyUrl,
-  readUrl: submission.readUrl,
-  featured: false,
-  popular: false,
-  priceLabel: submission.priceLabel,
-  published: true
-});
+const handleAutoId = () => {
+  const idField = elForm.elements.id;
+  if (idField.dataset.autoId !== "true") return;
+  idField.value = toSlug(elForm.elements.title.value);
+};
 
-const setFormBook = (book = emptyBook()) => {
-  const normalized = normalizeBook(book);
-  formTitle.textContent = adminState.editingId ? "編輯書籍" : "新增書籍";
-  Object.entries(normalized).forEach(([key, value]) => {
-    const field = form.elements[key];
-    if (!field) return;
-    if (field.type === "checkbox") {
-      field.checked = value === true;
-    } else {
-      field.value = String(value ?? "");
+const closeModal = () => {
+  elOverlay.hidden = true;
+  document.body.style.overflow = "";
+  elForm.elements.title.removeEventListener("input", handleAutoId);
+};
+
+/* ══════════════════════════════════════
+   10. CRUD 操作
+══════════════════════════════════════ */
+const validateForm = () => {
+  const fields = elForm.elements;
+  let ok = true;
+  ["id", "title"].forEach((name) => {
+    const el = fields[name];
+    if (!el) return;
+    el.classList.remove("is-error");
+    if (!el.value.trim()) {
+      el.classList.add("is-error");
+      ok = false;
     }
   });
+  return ok;
 };
 
 const readFormBook = () => {
-  const data = Object.fromEntries(new FormData(form).entries());
+  const fd = new FormData(elForm);
+  const data = Object.fromEntries(fd.entries());
   return normalizeBook({
     ...data,
-    id: data.id.trim() || toSlug(data.title || "book"),
-    featured: form.elements.featured.checked,
-    popular: form.elements.popular.checked,
-    published: data.published === "true"
+    id:         (data.id || "").trim() || toSlug(data.title || "book"),
+    published:  elForm.elements.published.checked,
+    featured:   elForm.elements.featured.checked,
+    popular:    elForm.elements.popular.checked
   });
 };
 
-const resetEditor = () => {
-  adminState.editingId = null;
-  form.reset();
-  setFormBook(emptyBook());
-};
-
-const moveBook = (id, direction) => {
-  const index = adminState.books.findIndex((book) => book.id === id);
-  const target = index + direction;
-  if (index < 0 || target < 0 || target >= adminState.books.length) return;
-  const [book] = adminState.books.splice(index, 1);
-  adminState.books.splice(target, 0, book);
-  renderAdminList();
-};
-
-const handleListAction = (event) => {
-  const button = event.target.closest("button[data-action]");
-  if (!button) return;
-  const id = button.dataset.id;
-  const action = button.dataset.action;
-  const book = adminState.books.find((item) => item.id === id);
-  if (!book) return;
-
-  if (action === "up") moveBook(id, -1);
-  if (action === "down") moveBook(id, 1);
-  if (action === "toggle") {
-    book.published = book.published === false;
-    renderAdminList();
-  }
-  if (action === "edit") {
-    adminState.editingId = id;
-    setFormBook(book);
-    form.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  if (action === "delete" && confirm(`確定要刪除「${book.title}」嗎？`)) {
-    adminState.books = adminState.books.filter((item) => item.id !== id);
-    resetEditor();
-    renderAdminList();
-  }
-};
-
-const handleSubmissionAction = (event) => {
-  const button = event.target.closest("button[data-submission-action]");
-  if (!button) return;
-  const id = button.dataset.id;
-  const action = button.dataset.submissionAction;
-  const submission = adminState.submissions.find((item) => getSubmissionKey(item) === id);
-  if (!submission) return;
-
-  if (action === "approve") {
-    adminState.books.unshift(submissionToBook(submission));
-    submission.status = "approved";
-    submission.reviewedAt = new Date().toISOString();
-    writeStoredSubmissions();
-    renderAdminList();
-    renderSubmissionList();
-  }
-  if (action === "edit") {
-    adminState.editingId = null;
-    setFormBook(submissionToBook(submission));
-    form.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-  if (action === "reject") {
-    submission.status = "rejected";
-    submission.reviewedAt = new Date().toISOString();
-    writeStoredSubmissions();
-    renderSubmissionList();
-  }
-  if (action === "remove" && confirm("確定要移除此投稿資料嗎？")) {
-    adminState.submissions = adminState.submissions.filter((item) => getSubmissionKey(item) !== id);
-    writeStoredSubmissions();
-    renderSubmissionList();
-  }
-};
-
-const saveBook = (event) => {
-  event.preventDefault();
-  const nextBook = readFormBook();
-  const duplicate = adminState.books.some((book) => book.id === nextBook.id && book.id !== adminState.editingId);
-  if (duplicate) {
-    alert("這個 ID 已經存在，請改用其他 ID。");
+// CREATE / UPDATE
+const saveBook = (e) => {
+  e.preventDefault();
+  if (!validateForm()) {
+    showMessage("請填寫書籍 ID 與書名。", "error");
     return;
   }
 
-  if (adminState.editingId) {
-    adminState.books = adminState.books.map((book) => book.id === adminState.editingId ? nextBook : book);
-  } else {
-    adminState.books.unshift(nextBook);
+  const next = readFormBook();
+  const editingId = (elForm.elements.editingId.value || "").trim();
+  const isDuplicate = adminState.books.some((b) => b.id === next.id && b.id !== editingId);
+
+  if (isDuplicate) {
+    showMessage(`ID「${next.id}」已存在，請改用其他 ID。`, "error");
+    elForm.elements.id.classList.add("is-error");
+    return;
   }
 
-  resetEditor();
-  renderAdminList();
+  if (editingId) {
+    // UPDATE
+    adminState.books = adminState.books.map((b) => b.id === editingId ? next : b);
+    showMessage("書籍已更新。");
+  } else {
+    // CREATE
+    adminState.books.unshift(next);
+    showMessage("書籍已新增。");
+  }
+
+  saveLocal();
+  renderList();
+  setTimeout(closeModal, 800);
 };
 
-const downloadTextFile = (filename, content, type = "application/json;charset=utf-8") => {
+// READ — list 點擊事件
+const handleListClick = (e) => {
+  const btn = e.target.closest("button[data-action]");
+  if (!btn) return;
+
+  const id     = btn.dataset.id;
+  const action = btn.dataset.action;
+  const idx    = adminState.books.findIndex((b) => b.id === id);
+  if (idx === -1) return;
+  const book = adminState.books[idx];
+
+  if (action === "up" || action === "down") {
+    const target = idx + (action === "up" ? -1 : 1);
+    if (target < 0 || target >= adminState.books.length) return;
+    [adminState.books[idx], adminState.books[target]] = [adminState.books[target], adminState.books[idx]];
+    saveLocal();
+    renderList();
+    return;
+  }
+
+  if (action === "toggle") {
+    adminState.books[idx] = { ...book, published: !book.published };
+    saveLocal();
+    renderList();
+    return;
+  }
+
+  if (action === "edit") {
+    openModal(book);
+    return;
+  }
+
+  if (action === "delete") {
+    if (!confirm(`確定要刪除「${book.title}」嗎？\n\n此操作無法復原。`)) return;
+    adminState.books.splice(idx, 1);
+    saveLocal();
+    renderList();
+  }
+};
+
+// DELETE from modal
+const deleteFromModal = () => {
+  const editingId = (elForm.elements.editingId.value || "").trim();
+  if (!editingId) return;
+  const book = adminState.books.find((b) => b.id === editingId);
+  if (!book) return;
+  if (!confirm(`確定要刪除「${book.title}」嗎？\n\n此操作無法復原。`)) return;
+  adminState.books = adminState.books.filter((b) => b.id !== editingId);
+  saveLocal();
+  renderList();
+  closeModal();
+};
+
+/* ══════════════════════════════════════
+   11. 匯出功能
+══════════════════════════════════════ */
+const downloadFile = (filename, content, type = "application/json;charset=utf-8") => {
   const blob = new Blob([content], { type });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = filename;
-  link.click();
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement("a");
+  a.href = url; a.download = filename; a.click();
   URL.revokeObjectURL(url);
 };
 
-const downloadJson = () => downloadTextFile("books.json", output.value);
+const downloadJson = () => downloadFile("books.json", elOutput.value);
 
 const copyJson = async () => {
-  if (navigator.clipboard) {
-    await navigator.clipboard.writeText(output.value);
-  } else {
-    output.select();
-    document.execCommand("copy");
+  const text = elOutput.value;
+  try {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      elOutput.select();
+      document.execCommand("copy");
+    }
+    alert("已複製 books.json 內容到剪貼簿。");
+  } catch (_) {
+    alert("複製失敗，請手動選取 JSON 輸出區後複製。");
   }
-  alert("已複製 books.json 內容。");
 };
 
-const exportSubmissions = () => {
-  downloadTextFile("author-submissions.json", JSON.stringify(adminState.submissions, null, 2));
+/* ══════════════════════════════════════
+   12. 篩選 & 搜尋事件
+══════════════════════════════════════ */
+const applyFilter = (filter) => {
+  adminState.filter = filter;
+  $$("[data-filter]").forEach((btn) => {
+    btn.classList.toggle("is-active", btn.dataset.filter === filter);
+  });
+  renderList();
 };
 
-const clearReviewed = () => {
-  adminState.submissions = adminState.submissions.filter((item) => item.status === "pending");
-  writeStoredSubmissions();
-  renderSubmissionList();
-};
-
+/* ══════════════════════════════════════
+   13. 初始化
+══════════════════════════════════════ */
 const initAdmin = async () => {
-  const books = await loadBooks();
-  adminState.books = books.map(normalizeBook);
-  adminState.submissions = readStoredSubmissions();
-  setFormBook(emptyBook());
-  renderAdminList();
-  renderSubmissionList();
+  // 1. 載入 books.json（直接 fetch，不依賴 script.js 的 loadBooks 以避免排序干擾）
+  let books = [];
+  try {
+    const res = await fetch("books.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    books = await res.json();
+  } catch (err) {
+    console.warn("[admin] books.json 載入失敗：", err);
+    books = [];
+  }
 
-  form.addEventListener("submit", saveBook);
-  list.addEventListener("click", handleListAction);
-  submissionList?.addEventListener("click", handleSubmissionAction);
-  document.querySelector("[data-new-book]").addEventListener("click", resetEditor);
-  document.querySelector("[data-reset-form]").addEventListener("click", resetEditor);
-  document.querySelector("[data-download-json]").addEventListener("click", downloadJson);
-  document.querySelector("[data-copy-json]").addEventListener("click", copyJson);
-  document.querySelector("[data-export-submissions]")?.addEventListener("click", exportSubmissions);
-  document.querySelector("[data-clear-reviewed]")?.addEventListener("click", clearReviewed);
+  // 2. 若 localStorage 有暫存資料，優先使用（版主本次修改狀態）
+  const local = loadLocal();
+  adminState.books = (local || books).map(normalizeBook);
+
+  // 3. 初次渲染
+  renderList();
+
+  // ── 事件綁定 ──
+
+  // 書籍列表操作
+  elList.addEventListener("click", handleListClick);
+
+  // Modal 開關
+  $("[data-new-book]").addEventListener("click", () => openModal());
+  $("[data-modal-close]").addEventListener("click", closeModal);
+  elOverlay.addEventListener("click", (e) => { if (e.target === elOverlay) closeModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+  // 表單儲存 / 刪除
+  elForm.addEventListener("submit", saveBook);
+  elBtnDelete.addEventListener("click", deleteFromModal);
+
+  // 匯出
+  $("[data-download-json]").addEventListener("click", downloadJson);
+  $("[data-copy-json]").addEventListener("click", copyJson);
+
+  // 篩選
+  document.addEventListener("click", (e) => {
+    const chip = e.target.closest("[data-filter]");
+    if (chip) applyFilter(chip.dataset.filter);
+  });
+
+  // 搜尋（防抖）
+  let searchTimer;
+  elSearch.addEventListener("input", () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      adminState.search = elSearch.value;
+      renderList();
+    }, 180);
+  });
+
+  // 重設 localStorage（開發用）
+  const resetBtn = $("[data-reset-local]");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      if (!confirm("確定清除暫存資料，重新從 books.json 載入？")) return;
+      localStorage.removeItem(STORAGE_KEY);
+      adminState.books = books.map(normalizeBook);
+      saveLocal();
+      renderList();
+    });
+  }
 };
 
+// 僅在 admin 頁執行
 if (document.body.dataset.page === "admin") {
   initAdmin();
 }
+
+})(); // end initAdminModule

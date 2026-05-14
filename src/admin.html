@@ -3,124 +3,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>版主管理 | Happy eBook</title>
-  <meta name="description" content="Happy eBook 版主管理頁，用於查看 Google 表單回應、編輯書籍資料並匯出 books.json。">
-  <link rel="stylesheet" href="styles.css?v=20260428-2">
+  <title>書籍管理後台 | Happy eBook</title>
+  <meta name="description" content="Happy eBook 書籍上架管理後台，支援新增、編輯、刪除、排序與匯出。">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="styles.css?v=20260514">
+  <link rel="stylesheet" href="admin-extra.css?v=20260514">
 </head>
 <body data-page="admin">
   <div class="site-shell">
     <header class="site-header">
       <div class="container header-row">
-        <a class="brand" href="index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">版主管理</span></a>
-        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單"><span class="nav-toggle-bars" aria-hidden="true"></span><span>選單</span></button>
-        <nav class="site-nav" data-site-nav><a href="index.html">首頁</a><a href="books.html">書籍列表</a><a href="submit.html">投稿</a><a href="about.html">關於</a><a href="contact.html">聯絡</a><a class="is-active" href="admin.html">管理</a></nav>
+        <a class="brand" href="index.html">
+          <span class="brand-mark">Happy eBook</span>
+          <span class="brand-sub">書籍管理後台</span>
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span><span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="index.html">首頁</a>
+          <a href="books.html">書籍列表</a>
+          <a class="is-active" href="admin.html">管理後台</a>
+        </nav>
       </div>
     </header>
 
     <main>
+      <!-- 頁頭 -->
       <section class="page-hero">
         <div class="container">
-          <span class="eyebrow">Moderator</span>
-          <h1>Google 表單回應整理與書籍上架</h1>
-          <p>版主可先查看 Google 表單收件內容，確認資料完整度與授權資訊後，再加入書籍目錄並匯出 <code>books.json</code>。</p>
+          <span class="eyebrow">Admin</span>
+          <h1>書籍上架管理</h1>
+          <p>新增、編輯、刪除書籍，調整排序，匯出 <code>books.json</code>，完整管理平台書目。</p>
+          <div class="admin-top-stats" data-admin-top-stats></div>
         </div>
       </section>
 
+      <!-- 主要管理區 -->
       <section class="section">
-        <div class="container admin-layout">
-          <aside class="admin-panel">
-            <div class="admin-panel-head">
-              <div><span class="eyebrow">Editor</span><h2 data-admin-form-title>新增書籍</h2></div>
-              <button class="button secondary compact" type="button" data-new-book>新增空白書籍</button>
-            </div>
+        <div class="container">
 
-            <form class="admin-form" data-book-form>
-              <label>公開狀態
-                <select name="published">
-                  <option value="true">已上架</option>
-                  <option value="false">未上架</option>
-                </select>
-              </label>
-              <div class="admin-form-grid">
-                <label>ID<input name="id" type="text" required placeholder="例如：my-book-id"></label>
-                <label>分類<input name="category" type="text" required placeholder="例如：英語學習"></label>
-              </div>
-              <label>作品名稱<input name="title" type="text" required placeholder="請輸入作品名稱"></label>
-              <label>副標題<input name="subtitle" type="text" placeholder="請輸入副標題"></label>
-              <div class="admin-form-grid">
-                <label>作者<input name="author" type="text" placeholder="作者名稱"></label>
-                <label>內容型態
-                  <select name="type">
-                    <option value="web">網頁版</option>
-                    <option value="free">免費</option>
-                    <option value="paid">付費</option>
-                  </select>
-                </label>
-              </div>
-              <div class="admin-form-grid">
-                <label>格式<input name="format" type="text" placeholder="網頁閱讀 / PDF / EPUB"></label>
-                <label>取得方式<input name="priceLabel" type="text" placeholder="免費閱讀 / 提供試閱版"></label>
-              </div>
-              <label>封面圖路徑<input name="cover" type="text" placeholder="../assets/images/book-submission-placeholder.svg"></label>
-              <label>閱讀連結<input name="readUrl" type="url" placeholder="https://..."></label>
-              <div class="admin-form-grid">
-                <label>下載連結<input name="downloadUrl" type="url" placeholder="https://..."></label>
-                <label>購買連結<input name="buyUrl" type="url" placeholder="https://..."></label>
-              </div>
-              <label>作品簡介<textarea name="description" rows="4" placeholder="請輸入作品介紹"></textarea></label>
-              <div class="admin-checks">
-                <label><input name="featured" type="checkbox"> 顯示在精選書櫃</label>
-                <label><input name="popular" type="checkbox"> 標示為熱門作品</label>
-              </div>
-              <div class="admin-actions">
-                <button class="button primary" type="submit">儲存書籍</button>
-                <button class="button secondary" type="button" data-reset-form>重設表單</button>
-              </div>
-            </form>
-          </aside>
-
-          <section class="admin-panel">
-            <div class="admin-panel-head">
-              <div><span class="eyebrow">Google Form</span><h2>投稿回應整理</h2></div>
+          <!-- 搜尋與篩選列 -->
+          <div class="admin-filter-bar">
+            <div class="admin-search-wrap">
+              <label for="admin-search" class="sr-only">搜尋書籍</label>
+              <input id="admin-search" class="admin-search-input" type="search" placeholder="搜尋書名、作者、分類..." data-admin-search autocomplete="off">
             </div>
-            <p class="google-form-status" data-google-responses-status aria-live="polite"></p>
-            <div class="google-form-actions">
-              <a class="button primary compact" data-google-form-responses-link href="#">查看表單回應</a>
-              <a class="button secondary compact" data-google-form-link href="#">查看投稿表單</a>
+            <div class="admin-filter-chips" data-filter-chips>
+              <button class="filter-chip is-active" type="button" data-filter="all">全部</button>
+              <button class="filter-chip" type="button" data-filter="published">已上架</button>
+              <button class="filter-chip" type="button" data-filter="hidden">未上架</button>
+              <button class="filter-chip" type="button" data-filter="featured">精選</button>
+              <button class="filter-chip" type="button" data-filter="paid">付費</button>
+              <button class="filter-chip" type="button" data-filter="free">免費</button>
             </div>
-            <div class="google-form-note">
-              <h3>建議整理步驟</h3>
-              <ol class="flow-list">
-                <li>到 Google 表單回應表檢查作品名稱、作者、連結與授權欄位。</li>
-                <li>將通過審核的內容整理成書籍資料，填入左側編輯表單。</li>
-                <li>確認分類、封面與取得方式後，輸出新版 <code>books.json</code>。</li>
-              </ol>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container admin-panel">
-          <div class="admin-panel-head">
-            <div><span class="eyebrow">Catalog</span><h2>書籍目錄</h2></div>
-            <div class="admin-toolbar">
+            <div class="admin-header-actions">
+              <button class="button secondary compact" type="button" data-new-book>新增書籍</button>
               <button class="button secondary compact" type="button" data-copy-json>複製 JSON</button>
               <button class="button primary compact" type="button" data-download-json>下載 books.json</button>
             </div>
           </div>
-          <div class="admin-summary" data-admin-summary></div>
-          <div class="admin-list" data-admin-list></div>
-          <label class="json-output-label">JSON 輸出
-            <textarea class="json-output" rows="12" readonly data-json-output></textarea>
-          </label>
+
+          <!-- 書籍列表 -->
+          <div class="admin-book-list" data-admin-list aria-live="polite"></div>
+
+          <!-- 空白狀態 -->
+          <div class="empty-state" data-empty-state hidden>
+            <h3>找不到符合的書籍</h3>
+            <p>請調整搜尋條件或篩選器。</p>
+          </div>
+
+          <!-- JSON 輸出區 -->
+          <details class="admin-json-details">
+            <summary>JSON 輸出預覽</summary>
+            <div class="admin-json-wrap">
+              <textarea class="json-output" rows="16" readonly data-json-output aria-label="books.json 輸出內容"></textarea>
+            </div>
+          </details>
+
         </div>
       </section>
     </main>
 
-    <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><span>Google 表單回應整理與書籍管理</span></div></footer>
+    <!-- 編輯 Modal -->
+    <div class="admin-modal-overlay" data-modal-overlay hidden aria-modal="true" role="dialog" aria-labelledby="modal-title">
+      <div class="admin-modal">
+        <div class="admin-modal-head">
+          <h2 id="modal-title" data-modal-title>新增書籍</h2>
+          <button class="admin-modal-close" type="button" data-modal-close aria-label="關閉">&#x2715;</button>
+        </div>
+
+        <form class="admin-form" data-book-form novalidate>
+          <input type="hidden" name="editingId">
+
+          <!-- 狀態列 -->
+          <div class="admin-form-status-row">
+            <label class="check-line">
+              <input name="published" type="checkbox" checked>
+              <span>已上架（公開顯示）</span>
+            </label>
+            <label class="check-line">
+              <input name="featured" type="checkbox" checked>
+              <span>列入精選書櫃</span>
+            </label>
+            <label class="check-line">
+              <input name="popular" type="checkbox">
+              <span>標示為熱門</span>
+            </label>
+          </div>
+
+          <div class="admin-form-grid">
+            <label>書籍 ID <span class="req">*</span>
+              <input name="id" type="text" required placeholder="my-book-id" pattern="[a-z0-9\-]+" id="field-id">
+              <span class="field-hint">英文小寫、數字、連字號</span>
+            </label>
+            <label>內容型態
+              <select name="type">
+                <option value="web">網頁版（web）</option>
+                <option value="free">免費下載（free）</option>
+                <option value="paid">付費（paid）</option>
+              </select>
+            </label>
+          </div>
+
+          <label>書名 <span class="req">*</span>
+            <input name="title" type="text" required placeholder="請輸入書名" id="field-title">
+          </label>
+
+          <label>副標題
+            <input name="subtitle" type="text" placeholder="請輸入副標題（選填）">
+          </label>
+
+          <div class="admin-form-grid">
+            <label>作者
+              <input name="author" type="text" placeholder="作者或出版單位">
+            </label>
+            <label>分類
+              <input name="category" type="text" placeholder="例如：英語學習、程式設計">
+            </label>
+          </div>
+
+          <div class="admin-form-grid">
+            <label>格式
+              <input name="format" type="text" placeholder="網站閱讀 / Google Play Books 電子書">
+            </label>
+            <label>取得方式 / 定價說明
+              <input name="priceLabel" type="text" placeholder="免費閱讀 / NT$105，提供試閱版">
+            </label>
+          </div>
+
+          <label>封面圖路徑
+            <input name="cover" type="text" placeholder="../assets/images/book-xxx.svg">
+          </label>
+
+          <label>閱讀連結
+            <input name="readUrl" type="url" placeholder="https://...">
+          </label>
+
+          <div class="admin-form-grid">
+            <label>購買連結
+              <input name="buyUrl" type="url" placeholder="https://play.google.com/...">
+            </label>
+            <label>下載連結
+              <input name="downloadUrl" type="url" placeholder="https://...（選填）">
+            </label>
+          </div>
+
+          <label>作品簡介
+            <textarea name="description" rows="4" placeholder="請輸入作品介紹（建議 80～150 字）"></textarea>
+          </label>
+
+          <div class="admin-form-actions">
+            <button class="button primary" type="submit" id="btn-save-book">儲存書籍</button>
+            <button class="button secondary" type="button" data-modal-close>取消</button>
+            <button class="button danger" type="button" data-delete-book hidden>刪除此書</button>
+          </div>
+
+          <p class="form-message" data-form-message aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook 書籍管理後台</span>
+        <span data-footer-count></span>
+      </div>
+    </footer>
   </div>
+
   <script src="script.js?v=20260428-5"></script>
-  <script src="admin.js"></script>
+  <script src="admin.js?v=20260514"></script>
 </body>
 </html>
