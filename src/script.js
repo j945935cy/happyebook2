@@ -11,6 +11,7 @@ const getCoverSources = (cover) => {
   if (primary.startsWith("../")) candidates.push(primary.slice(3));
   return [...new Set(candidates)];
 };
+const isGoogleBookCover = (cover) => String(cover || "").includes("books.google.com.tw/books/publisher/content");
 let coverObserver;
 let coverLoadSuccessCount = 0;
 let coverLoadFailureCount = 0;
@@ -137,7 +138,8 @@ const createBookCard = (book) => {
   const readHref = book.readUrl || `book.html?id=${book.id}`;
   const readAttrs = hasExternalUrl(readHref) ? ` target="_blank" rel="noopener noreferrer"` : "";
   const [coverSrc = "", coverSrc2 = ""] = getCoverSources(book.cover);
-  return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-src="${coverSrc}" data-cover-src-2="${coverSrc2}" data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）" loading="lazy" decoding="async"></a></div><div class="book-card-body"><div class="book-card-content"><h3>${book.title}</h3><p class="book-subtitle">${book.subtitle || ""}</p><p class="book-meta">${book.author} ・ ${book.format}</p><div class="tag-row">${createTags(book)}</div><p class="book-description">${book.description}</p></div><div class="card-actions">${primaryAction(book)}<a class="card-link" href="book.html?id=${book.id}">更多資訊</a></div></div></article>`;
+  const coverClass = isGoogleBookCover(book.cover) ? " google-book-cover" : "";
+  return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img class="${coverClass.trim()}" data-cover-image src="${fallbackCoverDataUrl}" data-cover-src="${coverSrc}" data-cover-src-2="${coverSrc2}" data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）" loading="lazy" decoding="async"></a></div><div class="book-card-body"><div class="book-card-content"><h3>${book.title}</h3><p class="book-subtitle">${book.subtitle || ""}</p><p class="book-meta">${book.author} ・ ${book.format}</p><div class="tag-row">${createTags(book)}</div><p class="book-description">${book.description}</p></div><div class="card-actions">${primaryAction(book)}<a class="card-link" href="book.html?id=${book.id}">更多資訊</a></div></div></article>`;
 };
 const renderList = (selector, books) => { const target = document.querySelector(selector); if (!target) return; target.innerHTML = books.map(createBookCard).join(""); hydrateCoverImages(target); };
 const setText = (selector, value) => { const target = document.querySelector(selector); if (target) target.textContent = value; };
