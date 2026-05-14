@@ -2,7 +2,7 @@
   { id: "sample-web-book", title: "Happy eBook 範例作品", subtitle: "books.json 載入失敗時的備援資料", author: "Happy eBook 編輯部", category: "平台說明", type: "web", format: "網站閱讀", cover: "../assets/images/book-linux-beginner.svg", description: "這是離線或資料載入失敗時顯示的最小範例，正式書籍資料請以 books.json 為準。", downloadUrl: "", buyUrl: "", readUrl: "books.html", featured: true, popular: false, priceLabel: "免費閱讀" },
   { id: "sample-submit-guide", title: "作者投稿說明", subtitle: "了解如何提交作品給 Happy eBook", author: "Happy eBook 編輯部", category: "平台說明", type: "free", format: "投稿說明", cover: "../assets/images/book-git-github-start.svg", description: "提供投稿流程、作品資料準備與人工審核方向，方便作者快速理解平台收件方式。", downloadUrl: "", buyUrl: "", readUrl: "submit.html", featured: false, popular: false, priceLabel: "免費閱讀" }
 ];
-const typeLabel = { free: "免費", paid: "付費", web: "網頁版" };
+const typeLabel = { free: "免費閱讀", paid: "付費購買", web: "網站教材" };
 const fallbackCoverDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900"><rect width="640" height="900" fill="#dbeafe"/><rect x="52" y="52" width="536" height="796" rx="24" fill="#eff6ff"/><text x="320" y="420" text-anchor="middle" fill="#1e3a5f" font-size="34" font-family="Noto Sans TC, sans-serif">封面載入中</text><text x="320" y="468" text-anchor="middle" fill="#4b6b8d" font-size="24" font-family="Noto Sans TC, sans-serif">已改用預設封面</text></svg>')}`;
 const getCoverSources = (cover) => {
   const primary = String(cover || "").trim();
@@ -29,12 +29,19 @@ const siteConfig = {
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
 };
 const isPublished = (book) => book.published !== false;
-const isGoogleBooksUrl = (value) => String(value || "").includes("play.google.com/store/books");
+const isGoogleBooksUrl = (value) => {
+  const url = String(value || "");
+  return url.includes("play.google.com/store/books") || url.includes("books.google.com");
+};
 const formatNumber = (value) => new Intl.NumberFormat("zh-TW").format(Number(value || 0));
+const isWebsiteBook = (book) => book.type === "web" || String(book.format || "").includes("網站");
+const isPreviewBook = (book) => book.priceLabel?.includes("試閱") || isGoogleBooksUrl(book.readUrl);
+const isPaidBook = (book) => book.type === "paid" || !!book.buyUrl;
+const isFreeAccessBook = (book) => book.type === "free" || book.priceLabel?.includes("免費") || (!!book.downloadUrl && !book.buyUrl);
 const getEffectiveType = (book) => {
-  if (book.type === "paid" || book.buyUrl) return "paid";
+  if (isPaidBook(book)) return "paid";
   if (isGoogleBooksUrl(book.readUrl)) return "web";
-  if (book.type === "free" || book.downloadUrl || book.readUrl || book.priceLabel?.includes("免費")) return "free";
+  if (isFreeAccessBook(book)) return "free";
   return book.type || "web";
 };
 const isFreeWebBook = (book) => getEffectiveType(book) === "free" && !!book.readUrl;
@@ -53,8 +60,16 @@ const loadBooks = async () => {
   }
 };
 const isFreeBook = (book) => getEffectiveType(book) === "free";
-const hasPreview = (book) => book.priceLabel?.includes("試閱") || isGoogleBooksUrl(book.readUrl);
+const hasPreview = isPreviewBook;
 const hasExternalUrl = (value) => /^https?:\/\//.test(String(value || "").trim());
+const matchesTypeFilter = (book, filter) => {
+  if (filter === "all") return true;
+  if (filter === "free") return isFreeAccessBook(book);
+  if (filter === "preview") return isPreviewBook(book);
+  if (filter === "paid") return isPaidBook(book);
+  if (filter === "web") return isWebsiteBook(book);
+  return getEffectiveType(book) === filter;
+};
 const createTags = (book) => [
   getEffectiveType(book) === "free" ? "" : `<span class="tag ${getEffectiveType(book)}">${typeLabel[getEffectiveType(book)] || getEffectiveType(book)}</span>`,
   isFreeBook(book) ? `<span class="tag free">分享閱讀</span>` : "",
@@ -147,7 +162,7 @@ const populateStats = async (books) => {
   const categories = uniqueCategories(books);
   setText("[data-stat-total]", formatNumber(books.length));
   setText("[data-stat-categories]", formatNumber(categories.length));
-  setText("[data-stat-web]", formatNumber(books.filter((book) => getEffectiveType(book) === "web").length));
+  setText("[data-stat-web]", formatNumber(books.filter(isWebsiteBook).length));
   return categories;
 };
 const getCategories = (book) => Array.isArray(book.category) ? book.category : [book.category];
@@ -308,7 +323,7 @@ const initBooksPage = async () => {
   const render = () => {
     const query = normalizeSearchValue(activeSearch);
     const filtered = books.filter((book) =>
-      (activeType === "all" || getEffectiveType(book) === activeType) &&
+      matchesTypeFilter(book, activeType) &&
       (activeCategory === "all" || getCategories(book).includes(activeCategory)) &&
       matchesSearchQuery(book, query)
     );
@@ -362,4 +377,3 @@ const boot = () => {
   if (page === "admin") initAdminPageLinks();
 };
 boot();
-
