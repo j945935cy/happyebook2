@@ -414,14 +414,14 @@
     },
     {
         "id": "speak-clearly-book",
-        "title": "學會講清楚",
-        "subtitle": "用結構化方法提升表達與說明力",
+        "title": "學會講清楚 (中英雙語對照版)",
+        "subtitle": "用結構化方法提升表達與說明力，含英文朗讀功能",
         "author": "Speak Clearly Book 專案",
         "category": "教學應用",
         "type": "free",
         "format": "網站閱讀 / EPUB",
         "cover": "../assets/images/book-speak-clearly.svg",
-        "description": "《學會講清楚》聚焦日常溝通、工作說明與教學表達，帶你建立清楚的說話結構與重點整理能力，適合想提升表達邏輯與說明效率的讀者。",
+        "description": "《學會講清楚》聚焦日常溝通、工作說明與教學表達，帶你建立清楚的說話結構與重點整理能力，適合想提升表達邏輯與說明效率的讀者。本版本為中英雙語對照版，並內建英文朗讀功能，方便同步學習英語表達。",
         "downloadUrl": "",
         "buyUrl": "",
         "readUrl": "https://j945935cy.github.io/speak-clearly-book/",
@@ -951,5 +951,26 @@
         "featured": false,
         "popular": false,
         "priceLabel": "優惠價 261 元"
+    },
+    {
+        "id": "english-daily-sentence-hub",
+        "title": "每日英文學習入口站",
+        "subtitle": "每日一句英文、小學生英語、勵志英語、文法、片語與句型練習",
+        "author": "Happy eBook 編輯部",
+        "category": [
+            "英語學習",
+            "每日英文",
+            "句型練習"
+        ],
+        "type": "web",
+        "format": "網站閱讀",
+        "cover": "../assets/images/book-english-speaking.svg",
+        "description": "整合六個每日英文學習入口，適合想用短時間累積英文語感的學生、教師與自學者。每天讀一句、聽一句、練一個文法或片語重點，逐步建立英文閱讀與表達能力。",
+        "downloadUrl": "",
+        "buyUrl": "",
+        "readUrl": "https://english-daily-sentence.vercel.app/",
+        "featured": true,
+        "popular": true,
+        "priceLabel": "免費閱讀"
     }
 ]
