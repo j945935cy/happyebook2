@@ -37,6 +37,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/html-css-18h-codex-ai.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/codex-javascript-18h.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/ai-python-automation.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
