@@ -8,7 +8,6 @@ happyebook2 是一個以內容展示為核心的電子書平台網站，用來�
 - 網頁版電子書
 - 免費閱讀內容
 - 付費或試讀內容
-- 作者投稿作品
 
 網站風格以教學平台、數位書櫃、簡潔易讀為主，不走花俏商城路線。
 
@@ -43,7 +42,6 @@ happyebook2/
 │  ├─ index.html            # 首頁
 │  ├─ books.html            # 書籍列表
 │  ├─ book.html             # 單本作品頁
-│  ├─ submit.html           # 投稿頁
 │  ├─ about.html            # 關於頁
 │  ├─ contact.html          # 聯絡頁
 │  ├─ admin.html            # 管理頁
@@ -64,7 +62,6 @@ happyebook2/
 - 依 `books.json` 自動產生分類篩選按鈕
 - 書籍卡片顯示書封、書名、副標、作者、格式、標籤與簡介
 - 單本作品詳細頁
-- Google 表單投稿入口
 - 聯絡表單與 mailto 備援
 - 手機版導覽選單
 - 響應式書籍卡片排版
@@ -107,7 +104,7 @@ src/books.json
 
 ## 本機預覽
 
-建議從專案根目錄啟動靜態伺服器，讓 `src/` 頁面可以正確讀取 `../assets/images/...` 書封路徑。
+建議從專案根目錄啟動靜態伺服器，公開頁面位於根目錄，`src/` 主要保留樣式、腳本與資料檔。
 
 ```powershell
 python -m http.server 8090 --bind 127.0.0.1 --directory C:\happyebook2
@@ -116,11 +113,12 @@ python -m http.server 8090 --bind 127.0.0.1 --directory C:\happyebook2
 開啟：
 
 ```text
-http://127.0.0.1:8090/src/index.html
-http://127.0.0.1:8090/src/books.html
+http://127.0.0.1:8090/
+http://127.0.0.1:8090/books.html
+http://127.0.0.1:8090/books/ai-python-automation.html
 ```
 
-如果書封出現破圖，通常是伺服器根目錄開錯。不要只用 `C:\happyebook2\src` 當根目錄，請使用 `C:\happyebook2`。
+如果書封或樣式出現破圖，通常是伺服器根目錄開錯。不要只用 `C:\happyebook2\src` 當根目錄，請使用 `C:\happyebook2`。
 
 ## 常用指令
 
@@ -206,7 +204,6 @@ happyebook2-commands
 - 強化首頁平台介紹與精選書區塊
 - 增加單本作品推薦
 - 補強 SEO 與社群分享 meta
-- 改善投稿審核流程
 - 規劃正式後台與內容管理流程
 
 ## 授權

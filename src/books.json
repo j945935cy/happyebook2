@@ -4,10 +4,7 @@
         "title": "iPAS AI 應用規劃師初級題庫完全攻略",
         "subtitle": "人工智慧基礎概論 × 生成式 AI 應用與規劃：400 題擬真題庫、逐題解析與考前衝刺",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "證照學習",
-            "iPAS AI 證照"
-        ],
+        "category": "iPAS AI",
         "type": "paid",
         "format": "Google Play Book 電子書",
         "cover": "https://books.google.com.tw/books/publisher/content?id=rzjZEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73OrtXfQ3D4L7fNCJID6082G3Lv5bhiCay2P4z4ZbFaRB2j1eWKYE0x_TJPvjA7EGIjNCtrJGEA_PykiW8USg0LNS-SYl4DSndOkefoiZ39uskhmJNIs7ZDGbal0wVgyAcL7QrB",
@@ -24,10 +21,7 @@
         "title": "用 AI + Sigil 製作 EPUB 電子書",
         "subtitle": "Make EPUB eBooks with AI + Sigil",
         "author": "Happy eBook",
-        "category": [
-            "數位出版",
-            "AI 應用"
-        ],
+        "category": "數位出版",
         "type": "paid",
         "format": "Google Play Books 電子書",
         "cover": "https://books.google.com.tw/books/publisher/content?id=MMbYEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -44,11 +38,7 @@
         "title": "AI Python 自動化實戰",
         "subtitle": "用 Python 與 AI 工具提升工作效率",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "程式設計",
-            "Python",
-            "AI 應用"
-        ],
+        "category": "Python",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-ai-python-automation.png",
@@ -65,10 +55,7 @@
         "title": "快樂學習 iPAS 一次就過！",
         "subtitle": "iPAS AI 應用規劃師的講義、考綱與備考資源網站",
         "author": "Happy iPAS",
-        "category": [
-            "證照學習",
-            "iPAS AI 證照"
-        ],
+        "category": "iPAS AI",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-happy-ipas-site.png",
@@ -85,10 +72,7 @@
         "title": "iPAS AI 規劃師一次考過",
         "subtitle": "Google Play Books 上的 iPAS AI 規劃師書籍頁",
         "author": "Google Play Books",
-        "category": [
-            "證照學習",
-            "iPAS AI 證照"
-        ],
+        "category": "iPAS AI",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://books.google.com.tw/books/publisher/content?id=Q3itEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -105,10 +89,7 @@
         "title": "不死背也能高分的 iPAS AI 應用規劃師（初級）考試攻略",
         "subtitle": "重點統整、歷屆試題解析與解題思路，一次掌握人工智慧基礎與生成式 AI 應用",
         "author": "Happy eBook",
-        "category": [
-            "證照學習",
-            "iPAS AI 證照"
-        ],
+        "category": "iPAS AI",
         "type": "web",
         "format": "Google Books 試閱版",
         "cover": "https://books.google.com.tw/books/publisher/content?id=IlDWEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -125,10 +106,7 @@
         "title": "不死背，也能高分的 iPAS AI",
         "subtitle": "以理解取代死背的 iPAS AI 應考學習書",
         "author": "證照達人研究室 AI 組",
-        "category": [
-            "證照學習",
-            "iPAS AI 證照"
-        ],
+        "category": "iPAS AI",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://books.google.com.tw/books/publisher/content?id=gB2zEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -145,7 +123,7 @@
         "title": "漸進式英語會話訓練",
         "subtitle": "100 句入門，400 句輕鬆開口",
         "author": "證照達人研究室英文組",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://books.google.com.tw/books/publisher/content?id=t8iwEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -162,7 +140,7 @@
         "title": "英文語法入門教學書",
         "subtitle": "用句型理解，不靠死背",
         "author": "證照達人研究室英文組",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://books.google.com.tw/books/publisher/content?id=c8GxEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -179,7 +157,7 @@
         "title": "英文文法從零開始：最簡單的學習法",
         "subtitle": "用最簡單的方法，重新建立英文文法基礎",
         "author": "證照達人研究室英文組",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://books.google.com.tw/books/publisher/content?id=GaPSEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -196,7 +174,7 @@
         "title": "用演說學英文",
         "subtitle": "用演說文本建立英語表達力",
         "author": "證照達人研究室英文組",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://books.google.com.tw/books/publisher/content?id=IN2uEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -213,11 +191,7 @@
         "title": "證照達人研究室作品總覽",
         "subtitle": "用 Google 搜尋快速瀏覽作者公開書籍與作品入口",
         "author": "證照達人研究室",
-        "category": [
-            "英語學習",
-            "證照學習",
-            "iPAS AI 證照"
-        ],
+        "category": "數位出版",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/author-directory-thumb.svg",
@@ -234,7 +208,7 @@
         "title": "資料怎麼排，事情就怎麼順",
         "subtitle": "一本用生活與工作案例理解資料結構的靜態網頁書",
         "author": "Happy eBook 編輯部",
-        "category": "資料結構",
+        "category": "程式設計",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-data-structure-life.png",
@@ -251,7 +225,7 @@
         "title": "日常與職場的演算法應用",
         "subtitle": "用日常與職場情境帶讀者理解資料結構與演算法",
         "author": "Happy eBook 編輯部",
-        "category": "演算法",
+        "category": "程式設計",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-algorithm-life-work.png",
@@ -268,7 +242,7 @@
         "title": "英文文法 Day 42",
         "subtitle": "Grammar for Beginners V2 規劃 42 天教材",
         "author": "Happy eBook 編輯部",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-grammar-beginners-day42.png",
@@ -285,7 +259,7 @@
         "title": "英文文法 Day 21",
         "subtitle": "Grammar for Beginners V2 規劃 21 天教材",
         "author": "Happy eBook 編輯部",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-grammar-beginners-day21.png",
@@ -302,10 +276,7 @@
         "title": "從 Windows 開始學 Linux",
         "subtitle": "用 WSL2 從安裝一路走到實作、工具鏈與學習節奏",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "Linux 入門",
-            "Windows"
-        ],
+        "category": "作業系統",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://j945935cy.github.io/ebook-wsl2/cover-art.svg",
@@ -322,10 +293,7 @@
         "title": "Python for Beginners",
         "subtitle": "給初學者的 Python 網頁版入門電子書",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "程式設計",
-            "Python"
-        ],
+        "category": "Python",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://j945935cy.github.io/Python-for-Beginners-Book/assets/images/python-intro.svg",
@@ -342,7 +310,7 @@
         "title": "Word Builder 1200",
         "subtitle": "1200 個核心英文單字的互動式網頁版閱讀教材",
         "author": "Happy eBook 編輯部",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-word-builder-1200.png",
@@ -359,7 +327,7 @@
         "title": "Linux 入門",
         "subtitle": "基礎 Linux 教學電子書，10 章 + 1 附錄",
         "author": "Happy eBook 編輯部",
-        "category": "Linux 入門",
+        "category": "作業系統",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://j945935cy.github.io/ebook2026linux/social-cover.svg",
@@ -376,11 +344,7 @@
         "title": "Vibe Coding 入門 HTML / CSS / JavaScript",
         "subtitle": "用 AI 當你的學習夥伴，從零打造你的第一個網頁",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "前端設計",
-            "網頁設計",
-            "程式設計"
-        ],
+        "category": "AI 學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-vibe-coding-html-css-js.png",
@@ -397,10 +361,7 @@
         "title": "從零開始，慢慢學會用 PowerShell 自動處理工作",
         "subtitle": "10 章帶你從指令入門到腳本自動化",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "程式設計",
-            "Windows"
-        ],
+        "category": "程式設計",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-powershell-ebook.png",
@@ -417,7 +378,7 @@
         "title": "學會講清楚 (中英雙語對照版)",
         "subtitle": "用結構化方法提升表達與說明力，含英文朗讀功能",
         "author": "Speak Clearly Book 專案",
-        "category": "教學應用",
+        "category": "英語／文學習",
         "type": "free",
         "format": "網站閱讀 / EPUB",
         "cover": "../assets/images/book-speak-clearly.svg",
@@ -434,10 +395,7 @@
         "title": "iPAS 中級 AI 應用規劃師高分過關指南",
         "subtitle": "觀念 → 情境 → 判斷，以理解取代死背的備考攻略",
         "author": "證照達人研究室 AI 組",
-        "category": [
-            "證照學習",
-            "iPAS AI 證照"
-        ],
+        "category": "iPAS AI",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://books.google.com.tw/books/publisher/content?id=5ki3EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -454,7 +412,7 @@
         "title": "Keeping Up with the Joneses：用故事學生活英文（中英對照）",
         "subtitle": "透過 Jones 一家的日常情境，學最實用的生活英文",
         "author": "陳蕙芳 Monica",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "https://books.google.com.tw/books/publisher/content?id=hVLSEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -471,10 +429,7 @@
         "title": "Git Start Book：Git 與 GitHub 入門",
         "subtitle": "用清楚路線完成第一個版本控制專案",
         "author": "Git Start Book 專案",
-        "category": [
-            "程式設計",
-            "版本控制"
-        ],
+        "category": "程式設計",
         "type": "free",
         "format": "網站閱讀",
         "cover": "../assets/images/book-git-github-start.svg",
@@ -491,7 +446,7 @@
         "title": "字根組字彙教學",
         "subtitle": "用字首、字根、字尾拆解 1200 個常用英文單字",
         "author": "Happy eBook",
-        "category": "英語學習",
+        "category": "英語／文學習",
         "type": "paid",
         "format": "Google Play Books 電子書",
         "cover": "https://books.google.com.tw/books/publisher/content?id=xRPUEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
@@ -508,10 +463,7 @@
         "title": "2026 現代 SQL 全書",
         "subtitle": "從零開始的 SQLite 學習指南",
         "author": "Happy eBook",
-        "category": [
-            "程式設計",
-            "資料庫"
-        ],
+        "category": "程式設計",
         "type": "free",
         "format": "網站閱讀",
         "cover": "../assets/images/book-sql2026.svg",
@@ -528,7 +480,7 @@
         "title": "家族故事數位化服務",
         "subtitle": "把人物、故事、年表與家族價值整理成可傳承的網站",
         "author": "Happy eBook 編輯部",
-        "category": "文化整理",
+        "category": "數位出版",
         "type": "free",
         "format": "網站閱讀 / 示範專案",
         "cover": "../assets/images/firstpage-family-legacy-documentation.png",
@@ -545,10 +497,7 @@
         "title": "2026 資安大轉折",
         "subtitle": "AI 原生時代的雲端安全、零信任與企業防護趨勢",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "雲端資安",
-            "AI 學習"
-        ],
+        "category": "雲端資安",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/book-2026-cloud-security.svg",
@@ -565,11 +514,7 @@
         "title": "AI Coding 入門：用 Codex 打造你的第一批網頁專案",
         "subtitle": "從零開始學會和 Codex 協作，做出可以執行、可以修改、可以展示的網頁專案",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "AI 學習",
-            "前端設計",
-            "程式設計"
-        ],
+        "category": "AI 學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-windows-aicoding.png",
@@ -586,12 +531,7 @@
         "title": "AI 提問 X 學習 X 應用：ChatGPT、NotebookLM、Gemini、GitHub Copilot從零到完全實戰",
         "subtitle": "AI 提問、學習、工作、創作與程式設計應用實戰，碁峰，2025/06/09",
         "author": "吳進北",
-        "category": [
-            "電腦資訊",
-            "人工智慧",
-            "英語學習",
-            "AI 應用"
-        ],
+        "category": "AI 學習",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/102/25/0011022505.jpg",
@@ -608,12 +548,7 @@
         "title": "AI 提問 X 學習 X 應用：ChatGPT、NotebookLM、Gemini、GitHub Copilot從零到完全實戰（電子書）",
         "subtitle": "AI 提問、學習、工作、創作與程式設計應用實戰電子書",
         "author": "吳進北",
-        "category": [
-            "電腦資訊",
-            "人工智慧",
-            "英語學習",
-            "AI 應用"
-        ],
+        "category": "AI 學習",
         "type": "paid",
         "format": "博客來中文電子書",
         "cover": "https://www.books.com.tw/img/E05/029/01/E050290185.jpg",
@@ -630,12 +565,7 @@
         "title": "AI助攻！Python最強學習法｜跟ChatGPT一起寫程式、練邏輯、做專案",
         "subtitle": "用 ChatGPT 輔助 Python 學習、程式邏輯與專案實作",
         "author": "吳進北",
-        "category": [
-            "電腦資訊",
-            "Python",
-            "程式設計",
-            "AI 學習"
-        ],
+        "category": "Python",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/103/76/0011037623.jpg",
@@ -652,11 +582,7 @@
         "title": "電腦網路原理(第六版)(含ITS Networking 網路管理與應用國際認證模擬試題)",
         "subtitle": "電腦網路基礎、網路管理與 ITS Networking 認證模擬試題",
         "author": "吳進北、范文雄",
-        "category": [
-            "電腦資訊",
-            "網路",
-            "認證考試"
-        ],
+        "category": "網路與認證",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/093/37/0010933779.jpg",
@@ -673,13 +599,7 @@
         "title": "APCS 7級必勝秘笈：學習、練習、突破｜觀念題C+實作題Python",
         "subtitle": "APCS 觀念題 C 與實作題 Python 應考教材",
         "author": "吳進北",
-        "category": [
-            "電腦資訊",
-            "APCS",
-            "Python",
-            "C++",
-            "程式設計"
-        ],
+        "category": "程式檢定",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/100/43/0011004302.jpg",
@@ -696,12 +616,7 @@
         "title": "技術士技能檢定 電腦軟體設計丙級學術科｜Python解題（電子書）",
         "subtitle": "電腦軟體設計丙級學術科 Python 解題電子書",
         "author": "吳進北、林文恭研究室",
-        "category": [
-            "電腦資訊",
-            "技能檢定",
-            "程式設計",
-            "Python"
-        ],
+        "category": "程式檢定",
         "type": "paid",
         "format": "博客來中文電子書",
         "cover": "https://www.books.com.tw/img/E05/024/69/E050246938.jpg",
@@ -718,11 +633,7 @@
         "title": "Scratch 3.0多媒體遊戲設計&Tello無人機",
         "subtitle": "Scratch 3.0 遊戲設計與 Tello 無人機應用",
         "author": "吳進北、林文恭",
-        "category": [
-            "電腦資訊",
-            "Scratch",
-            "程式設計"
-        ],
+        "category": "程式設計",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/085/41/0010854171.jpg",
@@ -739,12 +650,7 @@
         "title": "技術士技能檢定 電腦軟體設計丙級學術科｜Python解題",
         "subtitle": "電腦軟體設計丙級學術科 Python 解題紙本書",
         "author": "吳進北、林文恭研究室",
-        "category": [
-            "電腦資訊",
-            "技能檢定",
-            "程式設計",
-            "Python"
-        ],
+        "category": "程式檢定",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/100/48/0011004854.jpg",
@@ -761,11 +667,7 @@
         "title": "電腦網路原理(第六版)(含ITS Networking 網路管理與應用國際認證模擬試題)（電子書）",
         "subtitle": "電腦網路原理與 ITS Networking 認證電子書",
         "author": "吳進北、范文雄",
-        "category": [
-            "電腦資訊",
-            "網路",
-            "認證考試"
-        ],
+        "category": "網路與認證",
         "type": "paid",
         "format": "博客來中文電子書",
         "cover": "https://www.books.com.tw/img/E05/014/34/E050143406.jpg",
@@ -782,12 +684,7 @@
         "title": "電腦軟體設計丙級技能檢定學術科｜適用C++（第三版）",
         "subtitle": "C++ 版本電腦軟體設計丙級技能檢定教材",
         "author": "吳進北、林文恭研究室",
-        "category": [
-            "電腦資訊",
-            "程式設計",
-            "技能檢定",
-            "C++"
-        ],
+        "category": "程式檢定",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/098/62/0010986292.jpg",
@@ -804,12 +701,7 @@
         "title": "電腦軟體設計丙級技能檢定學術科｜使用C#（電子書）",
         "subtitle": "C# 版本電腦軟體設計丙級技能檢定電子書",
         "author": "吳進北、林文恭研究室",
-        "category": [
-            "電腦資訊",
-            "技能檢定",
-            "程式設計",
-            "C#"
-        ],
+        "category": "程式檢定",
         "type": "paid",
         "format": "博客來中文電子書",
         "cover": "https://www.books.com.tw/img/E05/018/32/E050183280.jpg",
@@ -826,12 +718,7 @@
         "title": "電腦軟體設計丙級技能檢定學術科｜使用C#",
         "subtitle": "C# 版本電腦軟體設計丙級技能檢定紙本書",
         "author": "吳進北、林文恭研究室",
-        "category": [
-            "電腦資訊",
-            "技能檢定",
-            "程式設計",
-            "C#"
-        ],
+        "category": "程式檢定",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/096/63/0010966388.jpg",
@@ -848,13 +735,7 @@
         "title": "APCS 7級必勝秘笈：學習、練習、突破｜觀念題C+實作題Python（電子書）",
         "subtitle": "APCS 觀念題 C 與實作題 Python 電子書",
         "author": "吳進北",
-        "category": [
-            "電腦資訊",
-            "APCS",
-            "Python",
-            "C++",
-            "程式設計"
-        ],
+        "category": "程式檢定",
         "type": "paid",
         "format": "博客來中文電子書",
         "cover": "https://www.books.com.tw/img/E05/024/69/E050246937.jpg",
@@ -871,12 +752,7 @@
         "title": "電腦軟體設計丙級技能檢定學術科｜適用C++（第三版）（電子書）",
         "subtitle": "C++ 版本電腦軟體設計丙級技能檢定電子書",
         "author": "吳進北、林文恭研究室",
-        "category": [
-            "電腦資訊",
-            "技能檢定",
-            "程式設計",
-            "C++"
-        ],
+        "category": "程式檢定",
         "type": "paid",
         "format": "博客來中文電子書",
         "cover": "https://www.books.com.tw/img/E05/023/34/E050233405.jpg",
@@ -893,12 +769,7 @@
         "title": "Python範例學習書｜輕鬆、有趣學習Python程式設計（電子書）",
         "subtitle": "Python 入門、GUI、解題與 ChatGPT 學習電子書",
         "author": "吳進北",
-        "category": [
-            "電腦資訊",
-            "Python",
-            "AI 學習",
-            "程式設計"
-        ],
+        "category": "Python",
         "type": "paid",
         "format": "博客來中文電子書",
         "cover": "https://www.books.com.tw/img/E05/018/32/E050183279.jpg",
@@ -915,11 +786,7 @@
         "title": "Python範例學習書｜輕鬆、有趣學習Python程式設計",
         "subtitle": "Python 入門、GUI、解題與 ChatGPT 學習紙本書",
         "author": "吳進北",
-        "category": [
-            "電腦資訊",
-            "Python",
-            "程式設計"
-        ],
+        "category": "Python",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/096/54/0010965426.jpg",
@@ -936,11 +803,7 @@
         "title": "Scratch多媒體遊戲設計&Tello無人機",
         "subtitle": "Scratch 遊戲設計與 Tello 無人機入門",
         "author": "吳進北、林文恭",
-        "category": [
-            "電腦資訊",
-            "Scratch",
-            "程式設計"
-        ],
+        "category": "程式設計",
         "type": "paid",
         "format": "博客來中文書",
         "cover": "https://www.books.com.tw/img/001/080/38/0010803881.jpg",
@@ -957,11 +820,7 @@
         "title": "每日英文學習入口站",
         "subtitle": "每日一句英文、小學生英語、勵志英語、文法、片語與句型練習",
         "author": "Happy eBook 編輯部",
-        "category": [
-            "英語學習",
-            "每日英文",
-            "句型練習"
-        ],
+        "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/book-english-speaking.svg",

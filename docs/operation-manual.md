@@ -1,6 +1,6 @@
 ﻿# happyebook2 使用手冊
 
-本手冊整理 happyebook2 目前可直接使用的操作方式，包含本機預覽、書籍維護、投稿審核、上線前檢查與已知限制。內容以目前專案實作為準，適合站台管理者、內容編輯與後續接手維護的工程師參考。
+本手冊整理 happyebook2 目前可直接使用的操作方式，包含本機預覽、書籍維護、上線前檢查與已知限制。內容以目前專案實作為準，適合站台管理者、內容編輯與後續接手維護的工程師參考。
 
 ## 1. 專案定位
 
@@ -8,7 +8,6 @@ happyebook2 是一個靜態電子書平台，使用 HTML5、CSS3 與 Vanilla Jav
 
 - 網頁版電子書入口
 - 免費與付費內容整理
-- 作者投稿資訊收集
 - 教學型與內容導向的書籍展示頁
 
 目前前台書籍資料來源為 `src/books.json`，頁面會依這份資料顯示書籍卡片、標籤、分類、按鈕與單本作品頁。
@@ -27,10 +26,14 @@ happyebook2/
 │  ├─ script.js               前台互動
 │  ├─ admin.html              管理頁
 │  ├─ admin.js                管理頁互動
-│  ├─ submit.html             投稿頁
 │  └─ book.html               單本作品頁
 ├─ AGENTS.md                  專案規範
-├─ index.html                 根目錄入口，會轉址到 /src/index.html
+├─ index.html                 公開首頁
+├─ books.html                 公開書籍列表頁
+├─ book.html                  舊版動態單本作品頁
+├─ books/                     靜態單本作品頁
+├─ about.html                 公開關於頁
+├─ contact.html               公開聯絡頁
 └─ readme.md                  專案總覽
 ```
 
@@ -49,15 +52,14 @@ python -m http.server 8000
 然後開啟：
 
 ```text
-http://localhost:8000/src/
+http://localhost:8000/
 ```
 
 ### 3.2 預覽時要檢查的頁面
 
-- 首頁：`/src/index.html`
-- 書籍列表：`/src/books.html`
-- 單本作品頁：`/src/book.html?id=作品ID`
-- 投稿頁：`/src/submit.html`
+- 首頁：`/`
+- 書籍列表：`/books.html`
+- 單本作品頁：`/books/作品ID.html`
 - 管理頁：`/src/admin.html`
 
 ### 3.3 預覽檢查重點
@@ -205,13 +207,13 @@ src/books.json
 
 ### 7.3 單本作品頁
 
-單本頁使用網址參數載入資料：
+公開單本頁使用靜態 HTML，方便搜尋引擎與社群分享工具直接讀取書名與摘要：
 
 ```text
-book.html?id=grammar-beginners-v2
+books/grammar-beginners-v2.html
 ```
 
-若網址中的 `id` 找不到對應作品，頁面目前會退回顯示第一本公開作品。上線前請務必抽查每張卡片的「更多資訊」連結。
+舊版 `book.html?id=作品ID` 仍保留相容，但前台「更多資訊」連結應優先指向 `books/作品ID.html`。
 
 ## 8. 封面圖與素材管理
 
@@ -283,7 +285,7 @@ src/admin.js
 
 ### 10.2 畫面檢查
 
-- 首頁、書籍列表、單本頁、投稿頁、關於頁、聯絡頁都能開啟
+- 首頁、書籍列表、單本頁、關於頁、聯絡頁都能開啟
 - 桌機、平板、手機沒有爆版
 - 手機選單可以展開與收合
 - 書籍卡片按鈕可點擊
@@ -293,7 +295,7 @@ src/admin.js
 
 - 大量 CSS 仍集中在 `src/styles.css`
 - 大量互動仍集中在 `src/script.js` 與 `src/admin.js`
-- 根目錄 `index.html` 可正確導向 `/src/index.html`
+- 根目錄 `index.html` 可直接作為公開首頁
 - 沒有引入被禁止的前端框架
 
 ## 11. 常見問題

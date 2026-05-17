@@ -75,7 +75,7 @@ button:disabled { opacity: 0.48; cursor: not-allowed; }
 .search-input::placeholder { color: var(--muted); }
 .hero-support { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .hero-pill { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; border-radius: 999px; background: rgba(37, 99, 235, 0.1); color: var(--primary-dark); font-size: 0.92rem; font-weight: 700; }
-.hero-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 28px 0 0; }
+.hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 28px 0 0; }
 .hero-stats div { padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255, 255, 255, 0.72); }
 .hero-stats dt { margin: 0 0 2px; min-height: 34px; color: var(--primary-dark); font-size: 1.55rem; font-weight: 900; }
 .hero-stats dd { margin: 0; font-size: 0.92rem; }
