@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/codex-python.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/classic-english-writing.html</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
