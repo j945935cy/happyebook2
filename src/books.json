@@ -6,7 +6,8 @@
         "author": "Happy eBook",
         "category": [
             "AI 學習",
-            "Python"
+            "Python",
+            "Codex"
         ],
         "type": "paid",
         "format": "Google Play Books 電子書",
@@ -26,7 +27,8 @@
         "author": "Happy eBook",
         "category": [
             "AI 學習",
-            "程式設計"
+            "程式設計",
+            "Codex"
         ],
         "type": "paid",
         "format": "Google Play Books 電子書",
@@ -86,7 +88,8 @@
         "author": "Happy eBook",
         "category": [
             "AI 學習",
-            "程式設計"
+            "程式設計",
+            "Codex"
         ],
         "type": "paid",
         "format": "Google Play Books 電子書",
@@ -106,7 +109,8 @@
         "author": "Happy eBook",
         "category": [
             "AI 學習",
-            "程式設計"
+            "程式設計",
+            "Codex"
         ],
         "type": "paid",
         "format": "Google Play Books 電子書",
@@ -634,7 +638,10 @@
         "title": "AI Coding 入門：用 Codex 打造你的第一批網頁專案",
         "subtitle": "從零開始學會和 Codex 協作，做出可以執行、可以修改、可以展示的網頁專案",
         "author": "Happy eBook 編輯部",
-        "category": "AI 學習",
+        "category": [
+            "AI 學習",
+            "Codex"
+        ],
         "type": "web",
         "format": "網站閱讀",
         "cover": "../assets/images/firstpage-windows-aicoding.png",
