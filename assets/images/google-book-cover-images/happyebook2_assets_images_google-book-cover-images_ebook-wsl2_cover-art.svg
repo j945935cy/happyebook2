@@ -1,0 +1,27 @@
+﻿<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="900" rx="72" fill="url(#bg)"/>
+  <circle cx="694" cy="172" r="92" fill="url(#sun)" opacity="0.85"/>
+  <path d="M122 610C122 555.876 165.876 512 220 512H674C728.124 512 772 555.876 772 610V688C772 742.124 728.124 786 674 786H220C165.876 786 122 742.124 122 688V610Z" fill="#1B2227"/>
+  <path d="M215 228C215 199.281 238.281 176 267 176H633C661.719 176 685 199.281 685 228V585H215V228Z" fill="#F8EFE1"/>
+  <path d="M231 243C231 223.67 246.67 208 266 208H634C653.33 208 669 223.67 669 243V569H231V243Z" fill="#FFF8ED"/>
+  <path d="M450 176V585" stroke="#D9C5AB" stroke-width="8" stroke-linecap="round"/>
+  <path d="M215 228C215 199.281 238.281 176 267 176H450V585H215V228Z" fill="url(#pageL)"/>
+  <path d="M685 228C685 199.281 661.719 176 633 176H450V585H685V228Z" fill="url(#pageR)"/>
+  <rect x="279" y="258" width="124" height="14" rx="7" fill="#D3794E"/>
+  <rect x="279" y="297" width="134" height="10" rx="5" fill="#D1C1AD"/>
+  <rect x="279" y="327" width="122" height="10" rx="5" fill="#D1C1AD"/>
+  <rect x="279" y="357" width="94" height="10" rx="5" fill="#D1C1AD"/>
+  <rect x="501" y="258" width="132" height="88" rx="18" fill="#202A30"/>
+  <rect x="520" y="280" width="93" height="8" rx="4" fill="#8FD3A8"/>
+  <rect x="520" y="301" width="67" height="8" rx="4" fill="#72A8FF"/>
+  <rect x="520" y="322" width="52" height="8" rx="4" fill="#F3B76A"/>
+  <path d="M235 584H665L734 648H166L235 584Z" fill="#D57546"/>
+  <path d="M198 640H702C726.301 640 746 659.699 746 684C746 708.301 726.301 728 702 728H198C173.699 728 154 708.301 154 684C154 659.699 173.699 640 198 640Z" fill="#E89D64"/>
+  <path d="M172 649H728" stroke="#FFF3DF" stroke-width="10" stroke-linecap="round" opacity="0.65"/>
+  <defs>
+    <linearGradient id="bg" x1="88" y1="83" x2="815" y2="838" gradientUnits="userSpaceOnUse"><stop stop-color="#F8E7CF"/><stop offset="1" stop-color="#E7C09C"/></linearGradient>
+    <linearGradient id="sun" x1="602" y1="80" x2="781" y2="264" gradientUnits="userSpaceOnUse"><stop stop-color="#FFEBC1"/><stop offset="1" stop-color="#E9A466"/></linearGradient>
+    <linearGradient id="pageL" x1="215" y1="176" x2="450" y2="585" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF9EF"/><stop offset="1" stop-color="#F2DFCA"/></linearGradient>
+    <linearGradient id="pageR" x1="450" y1="176" x2="685" y2="585" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF8EB"/><stop offset="1" stop-color="#EEDBC4"/></linearGradient>
+  </defs>
+</svg>

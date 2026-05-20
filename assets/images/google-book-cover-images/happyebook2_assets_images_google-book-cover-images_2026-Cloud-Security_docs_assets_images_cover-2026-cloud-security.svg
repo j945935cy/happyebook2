@@ -1,0 +1,26 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1600" fill="#F3EFE4"/>
+  <rect x="58" y="58" width="1084" height="1484" rx="36" fill="#0F2F2F"/>
+  <rect x="96" y="96" width="1008" height="1408" rx="28" fill="url(#bg)"/>
+  <path d="M154 1160C294 950 443 834 603 812C751 792 855 689 1004 430" stroke="#EAB75F" stroke-width="16" stroke-linecap="round"/>
+  <path d="M164 1268C329 1038 489 928 681 916C817 907 914 842 1046 662" stroke="#A8DADC" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="911" cy="356" r="133" stroke="#EAB75F" stroke-width="18"/>
+  <circle cx="911" cy="356" r="78" stroke="#A8DADC" stroke-width="8" opacity="0.85"/>
+  <path d="M255 281H946" stroke="#D9C8A1" stroke-width="2" opacity="0.45"/>
+  <path d="M255 318H946" stroke="#D9C8A1" stroke-width="2" opacity="0.18"/>
+  <path d="M255 355H762" stroke="#D9C8A1" stroke-width="2" opacity="0.18"/>
+  <text x="154" y="250" fill="#F7F3E8" font-family="Georgia, 'Times New Roman', serif" font-size="52" letter-spacing="6">2026 CLOUD SECURITY</text>
+  <text x="154" y="530" fill="#F7F3E8" font-family="'Noto Serif TC', Georgia, serif" font-size="126" font-weight="700">資安</text>
+  <text x="154" y="665" fill="#F7F3E8" font-family="'Noto Serif TC', Georgia, serif" font-size="126" font-weight="700">大轉折</text>
+  <text x="160" y="780" fill="#DDE7E1" font-family="'Noto Sans TC', Arial, sans-serif" font-size="34" letter-spacing="3">AI 時代的網路防禦新規則</text>
+  <text x="160" y="1240" fill="#F1D49A" font-family="'Noto Sans TC', Arial, sans-serif" font-size="28" letter-spacing="2">AI 原生經濟 / 零信任 / 雲端韌性 / 供應鏈治理</text>
+  <text x="160" y="1312" fill="#A8DADC" font-family="'Noto Sans TC', Arial, sans-serif" font-size="28" letter-spacing="2">PQC / 瀏覽器安全 / AI 治理 / 人才學習地圖</text>
+  <text x="160" y="1452" fill="#F7F3E8" font-family="Georgia, 'Times New Roman', serif" font-size="30" letter-spacing="8">BOOK PREVIEW EDITION</text>
+  <defs>
+    <linearGradient id="bg" x1="96" y1="96" x2="1104" y2="1504" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#163F3E"/>
+      <stop offset="0.55" stop-color="#102829"/>
+      <stop offset="1" stop-color="#251A17"/>
+    </linearGradient>
+  </defs>
+</svg>

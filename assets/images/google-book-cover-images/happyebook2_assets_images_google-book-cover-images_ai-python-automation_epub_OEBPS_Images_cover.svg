@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2560" viewBox="0 0 1600 2560">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5fbff"/>
+      <stop offset="100%" stop-color="#cfe7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="2560" fill="url(#bg)"/>
+  <circle cx="1280" cy="440" r="280" fill="#a9d3ff" opacity="0.45"/>
+  <circle cx="350" cy="1970" r="340" fill="#dff1ff" opacity="0.9"/>
+  <text x="140" y="340" font-size="72" font-family="Segoe UI, Noto Sans TC, sans-serif" fill="#2474c9">Python + AI 自動化教材</text>
+  <text x="140" y="620" font-size="152" font-family="Segoe UI, Noto Sans TC, sans-serif" font-weight="700" fill="#10314b">AI 自動化</text>
+  <text x="140" y="790" font-size="152" font-family="Segoe UI, Noto Sans TC, sans-serif" font-weight="700" fill="#10314b">工具書</text>
+  <text x="140" y="965" font-size="112" font-family="Segoe UI, Noto Sans TC, sans-serif" fill="#2f5f84">Python 實戰版</text>
+  <text x="140" y="1240" font-size="58" font-family="Segoe UI, Noto Sans TC, sans-serif" fill="#4b7395">檔案自動化 / Excel / 爬蟲 / Selenium / 報表專案</text>
+  <rect x="140" y="1420" width="460" height="8" fill="#2d84d8"/>
+  <text x="140" y="2260" font-size="56" font-family="Segoe UI, Noto Sans TC, sans-serif" fill="#4b7395">OpenAI Codex</text>
+  <text x="140" y="2340" font-size="48" font-family="Segoe UI, Noto Sans TC, sans-serif" fill="#2474c9">https://happyebook.com/</text>
+</svg>
