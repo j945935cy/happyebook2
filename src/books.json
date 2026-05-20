@@ -403,7 +403,7 @@
         "category": "作業系統",
         "type": "web",
         "format": "網站閱讀",
-        "cover": "https://j945935cy.github.io/ebook-wsl2/cover-art.svg",
+        "cover": "../assets/images/wsl2-beginner-cover.png",
         "description": "以多頁式閱讀與實作導向設計整理 WSL2、Linux 指令、工具鏈與學習路線。",
         "downloadUrl": "",
         "buyUrl": "",
