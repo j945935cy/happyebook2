@@ -72,7 +72,7 @@
         ],
         "type": "paid",
         "format": "Google Play Books 電子書",
-        "cover": "https://books.google.com.tw/books/publisher/content?id=5xvaEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
+        "cover": "../assets/images/classic-english-writing-cover.png",
         "description": "一本結合經典文學與英文作文訓練的句型教材，適合高中高年級、大一學生，以及想補強學測英文作文的自學讀者。內容把經典文學語境轉化為可練習、可模仿、可延伸的英文句型，幫助讀者把抽象概念說清楚，並用例子、因果、推論與證據展開段落。",
         "downloadUrl": "",
         "buyUrl": "https://books.google.com.tw/books/about?id=5xvaEQAAQBAJ&redir_esc=y",
