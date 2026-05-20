@@ -556,7 +556,7 @@
         "category": "程式設計",
         "type": "free",
         "format": "網站閱讀",
-        "cover": "../assets/images/book-git-github-start.svg",
+        "cover": "../assets/images/book-git-github-start.png",
         "description": "從 Git 與 GitHub 基本觀念開始，循序帶你完成 clone、add、commit、push 與 Pull Request，適合初學者建立版本控制與協作實作能力。",
         "downloadUrl": "",
         "buyUrl": "",
