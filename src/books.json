@@ -322,7 +322,7 @@
         "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
-        "cover": "https://books.google.com.tw/books/publisher/content?id=IN2uEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
+        "cover": "../assets/images/speech-english-cover-20260521.png",
         "description": "透過演說與表達情境學英文，兼顧句型、語感與口語表達。",
         "downloadUrl": "",
         "buyUrl": "",
