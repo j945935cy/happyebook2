@@ -55,6 +55,7 @@ const googleBookCovers = {
   "2026-cloud-security": ["2026-Cloud-Security_docs_assets_images_cover-2026-cloud-security.svg"],
 
   "word-vba-examples": ["happyebook2_assets_images_word-vba-examples-cover.png"],
+  "ipas-ai-high-score-2026-03-exam": ["ipas-ai-high-score-2026-03-cover.png"],
   "windows-aicoding": ["Windows-AICoding_google ebook cover.png"]
 
 };

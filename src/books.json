@@ -243,6 +243,27 @@
         "priceLabel": "提供試閱版"
     },
     {
+        "id": "ipas-ai-high-score-2026-03-exam",
+        "title": "不死背，也能高分的 iPAS AI：2026-3月試題版",
+        "subtitle": "用對觀念，穩穩考過 AI 規劃師",
+        "author": "證照達人研究室 AI 組",
+        "category": [
+            "iPAS AI",
+            "AI 學習",
+            "考試準備"
+        ],
+        "type": "paid",
+        "format": "Google Play Books 電子書",
+        "cover": "../assets/images/google-book-cover-images/ipas-ai-high-score-2026-03-cover.png",
+        "description": "新版收錄 2026-3 月公告試題，整理 iPAS AI 應用規劃師考試的第一科、第二科重點，搭配題目、選項、答案解析與考前速讀觀念。適合想用理解取代硬背、在考前快速抓住高頻考點的讀者。",
+        "downloadUrl": "",
+        "buyUrl": "https://books.google.com.tw/books/about?id=CznbEQAAQBAJ&redir_esc=y",
+        "readUrl": "https://books.google.com.tw/books/about?id=CznbEQAAQBAJ&redir_esc=y",
+        "featured": true,
+        "popular": true,
+        "priceLabel": "提供試閱版"
+    },
+    {
         "id": "english-speaking-play",
         "title": "漸進式英語會話訓練",
         "subtitle": "100 句入門，400 句輕鬆開口",
