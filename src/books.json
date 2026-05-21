@@ -271,7 +271,7 @@
         "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
-        "cover": "https://books.google.com.tw/books/publisher/content?id=t8iwEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
+        "cover": "../assets/images/english-speaking-play-cover-20260521.png",
         "description": "用漸進式句型練習英文會話，從入門到自然開口。",
         "downloadUrl": "",
         "buyUrl": "",
