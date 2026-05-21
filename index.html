@@ -57,14 +57,15 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero home-hero">
         <div class="container hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Happy eBook</span>
-            <h1>AI 時代的學習與出版平台</h1>
-            <p>用最白話的方式，學 AI、學程式、學數位技能，並整理成容易閱讀的電子書與教材。</p>
+            <h1><span>用白話與實作，</span><span>進入 AI 時代。</span></h1>
+            <p>Happy eBook 整理 AI、Python、iPAS AI、Prompt Engineering、英文學習與數位出版教材，讓學生、教師與自學者能從一本書、一個範例、一個網站開始學。</p>
             <div class="hero-actions">
               <a class="button primary" href="books.html">瀏覽電子書</a>
+              <a class="button secondary" href="books.html?category=iPAS%20AI">查看 iPAS AI</a>
             </div>
             <div class="hero-support">
               <a href="books.html?category=AI%20學習" class="hero-pill">AI 學習</a>
@@ -79,7 +80,51 @@
             </dl>
           </div>
           <div class="hero-panel hero-platform-panel">
+            <div class="platform-card-head">
+              <span class="eyebrow hero-panel-eyebrow">Start Here</span>
+              <h2>從最需要的主題開始</h2>
+              <p>精選教材會依照學習路徑排序，先讀觀念，再做實作，最後整理成可複習的電子書。</p>
+            </div>
+            <div class="learning-map" aria-label="首頁學習路徑">
+              <span>入門觀念</span>
+              <span>實作練習</span>
+              <span>考試整理</span>
+            </div>
             <div class="hero-shelf-preview" data-home-shelf aria-label="精選書籍預覽"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section topic-section">
+        <div class="container">
+          <div class="section-head section-head-centered">
+            <div>
+              <span class="eyebrow">Learning Paths</span>
+              <h2>依你的目標選教材</h2>
+            </div>
+            <p class="section-lead">不需要先知道所有名詞，先選一條路，從能讀懂、能操作、能複習的內容開始。</p>
+          </div>
+          <div class="topic-grid">
+            <a class="topic-card topic-ai" href="books.html?category=iPAS%20AI">
+              <span>iPAS AI</span>
+              <h3>證照與 AI 應用規劃</h3>
+              <p>整理考綱、情境題、AI 基礎觀念與規劃判斷，適合短期備考與教學補充。</p>
+            </a>
+            <a class="topic-card topic-code" href="books.html?category=Python">
+              <span>Python</span>
+              <h3>程式設計與自動化</h3>
+              <p>用範例理解程式邏輯，從基礎語法走到資料處理、工具應用與 AI 協作。</p>
+            </a>
+            <a class="topic-card topic-prompt" href="books.html?q=Prompt%20Engineering">
+              <span>Prompt Engineering</span>
+              <h3>AI 工具與工作流</h3>
+              <p>把 AI 當成學習夥伴與工作助手，練習提問、驗證、整理與產出。</p>
+            </a>
+            <a class="topic-card topic-english" href="books.html?category=英語／文學習">
+              <span>英文學習</span>
+              <h3>閱讀、字彙與表達</h3>
+              <p>以清楚的主題教材累積英文能力，適合自學、課堂延伸與每日練習。</p>
+            </a>
           </div>
         </div>
       </section>
@@ -94,6 +139,34 @@
             <a class="button secondary compact" href="books.html">查看全部</a>
           </div>
           <div class="book-grid" data-featured-grid></div>
+        </div>
+      </section>
+
+      <section class="section brand-section">
+        <div class="container brand-grid">
+          <div class="brand-copy">
+            <span class="eyebrow">Why Happy eBook</span>
+            <h2>清楚、可信任、好閱讀</h2>
+            <p>Happy eBook 不把首頁做成單純賣書頁，而是把學習者最常遇到的問題整理成可以長期閱讀的內容：觀念要白話，範例要能做，複習要找得到。</p>
+          </div>
+          <div class="principle-grid">
+            <article class="principle-card">
+              <h3>白話教學</h3>
+              <p>先講人能理解的邏輯，再補名詞與技術細節。</p>
+            </article>
+            <article class="principle-card">
+              <h3>實作導向</h3>
+              <p>用範例、題目、流程與檢查點幫讀者真的開始做。</p>
+            </article>
+            <article class="principle-card">
+              <h3>靜態友善</h3>
+              <p>教材與網站優先支援 GitHub Pages，方便保存、分享與閱讀。</p>
+            </article>
+            <article class="principle-card">
+              <h3>適合自學</h3>
+              <p>學生、教師、在職進修者都能依自己的時間逐步前進。</p>
+            </article>
+          </div>
         </div>
       </section>
 
