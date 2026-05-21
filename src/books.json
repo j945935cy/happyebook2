@@ -148,7 +148,7 @@
         "category": "數位出版",
         "type": "paid",
         "format": "Google Play Books 電子書",
-        "cover": "https://books.google.com.tw/books/publisher/content?id=MMbYEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
+        "cover": "../assets/images/epub-sigil-ai-cover-20260521.png",
         "description": "實作導向的 EPUB 電子書製作指南。從 Sigil 安裝、EPUB 內部結構、HTML/CSS 排版、Pandoc 自動轉檔，到 EPUBCheck 除錯與 Google Play Books 上架，並示範如何運用 AI 協助章節規劃、文字改寫與校對，建立可持續維護的出版流程。",
         "downloadUrl": "",
         "buyUrl": "https://play.google.com/store/books/details?id=MMbYEQAAQBAJ",
