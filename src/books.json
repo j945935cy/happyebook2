@@ -305,7 +305,7 @@
         "category": "英語／文學習",
         "type": "web",
         "format": "網站閱讀",
-        "cover": "https://books.google.com.tw/books/publisher/content?id=GaPSEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
+        "cover": "../assets/images/english-grammar-zero-cover-20260521.png",
         "description": "以初學者也能理解的方式拆解英文句子的基本結構與常見文法觀念，強調直覺理解、避免常見錯誤，適合想從零開始或重新打穩基礎的讀者。",
         "downloadUrl": "",
         "buyUrl": "",

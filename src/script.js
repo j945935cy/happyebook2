@@ -94,7 +94,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260521-6";
+const booksDataVersion = "20260521-7";
 
 const siteConfig = {
 
