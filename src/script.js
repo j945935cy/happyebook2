@@ -94,6 +94,8 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
+const booksDataVersion = "20260521-6";
+
 const siteConfig = {
 
   contactEmail: "t945935@gmail.com",
@@ -158,7 +160,11 @@ const loadBooks = async () => {
 
   try {
 
-    const response = await fetch(new URL("books.json", scriptBase));
+    const booksUrl = new URL("books.json", scriptBase);
+
+    booksUrl.searchParams.set("v", booksDataVersion);
+
+    const response = await fetch(booksUrl, { cache: "no-store" });
 
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
