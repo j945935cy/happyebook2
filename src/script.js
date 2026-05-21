@@ -38,17 +38,7 @@ const googleBookCovers = {
 
   "linux-beginner-2026": ["happyebook2_assets_images_linux-beginner-cover.png", "ebook2026linux_social-cover.svg"],
 
-  "speak-clearly-book": [
-
-    "speak-clearly-book_google_cover.png",
-
-    "speak-clearly-book_cover.svg",
-
-    "speak-clearly-book_cover_bg.png",
-
-    "speak-clearly-book_dist_cover_bg.png"
-
-  ],
+  "speak-clearly-book": [],
 
   "sql2026": ["SQL2026_cover1.png", "SQL2026_build_epub_cover1.png"],
 
