@@ -22,7 +22,7 @@ const googleBookCovers = {
 
   "ai-python-automation": ["ai-python-automation_epub_cover1.png", "ai-python-automation_epub_OEBPS_Images_cover.svg"],
 
-  "ebook-wsl2-online": ["ebook-wsl2_cover-art.svg"],
+  "ebook-wsl2-online": [],
 
   "python-for-beginners-book": [
 
