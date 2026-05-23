@@ -999,5 +999,93 @@
         "featured": true,
         "popular": true,
         "priceLabel": "NT$118，提供試閱版"
+    },
+    {
+        "id": "college-2026-cybersecurity-intro",
+        "title": "大學生的 2026 資安入門",
+        "subtitle": "從 AI 風險、雲端安全到數位韌性",
+        "author": "Happy eBook 編輯部",
+        "category": [
+            "AI 學習",
+            "雲端資安",
+            "資安入門"
+        ],
+        "type": "paid",
+        "format": "Google Play Books 電子書",
+        "cover": "../assets/images/20260523/collage _frontcover_fixed.png",
+        "description": "面向大學生與初學者的 2026 資安入門書，從 AI 風險、雲端安全、零信任、SOC、SBOM 到 PQC，拆解現代資安需要理解的資料、權限、責任與影響，適合課程、社團帶讀與自學使用。",
+        "downloadUrl": "",
+        "buyUrl": "https://books.google.com.tw/books/about?id=98LbEQAAQBAJ&redir_esc=y",
+        "readUrl": "https://books.google.com.tw/books/about?id=98LbEQAAQBAJ&redir_esc=y",
+        "featured": true,
+        "popular": true,
+        "launchRank": 1,
+        "priceLabel": "提供試閱"
+    },
+    {
+        "id": "high-school-ai-cybersecurity",
+        "title": "高中生也看得懂的 AI 資安",
+        "subtitle": "從詐騙、防駭到雲端安全",
+        "author": "Happy eBook 編輯部",
+        "category": [
+            "AI 學習",
+            "資安入門",
+            "學生自學"
+        ],
+        "type": "paid",
+        "format": "Google Play Books 電子書",
+        "cover": "../assets/images/20260523/highschool_fixed.png",
+        "description": "用生活案例、圖解觀念與課後練習，帶高中生、資訊社團與初學者理解 AI 時代的帳號保護、詐騙辨識、雲端安全與安全使用 AI。文字白話，適合做為入門教材與自學讀物。",
+        "downloadUrl": "",
+        "buyUrl": "https://books.google.com.tw/books/about?id=N8PbEQAAQBAJ&redir_esc=y",
+        "readUrl": "https://books.google.com.tw/books/about?id=N8PbEQAAQBAJ&redir_esc=y",
+        "featured": true,
+        "popular": true,
+        "launchRank": 2,
+        "priceLabel": "提供試閱"
+    },
+    {
+        "id": "digital-self-defense-ai-era",
+        "title": "AI 時代的數位防身術",
+        "subtitle": "給一般人的網路安全、AI 詐騙與帳號保護入門",
+        "author": "Happy eBook 編輯部",
+        "category": [
+            "AI 學習",
+            "資安入門",
+            "數位生活"
+        ],
+        "type": "paid",
+        "format": "Google Play Books 電子書",
+        "cover": "../assets/images/20260523/general_fixed.png",
+        "description": "寫給一般人的數位安全入門。從訊息查證、帳號保護、手機權限、付款前檢查、雲端分享到 AI 深偽風險，整理成「先停、查證、再行動」的判斷流程，幫助讀者在日常生活中降低受騙與資料外洩風險。",
+        "downloadUrl": "",
+        "buyUrl": "https://books.google.com.tw/books/about?id=xMTbEQAAQBAJ&redir_esc=y",
+        "readUrl": "https://books.google.com.tw/books/about?id=xMTbEQAAQBAJ&redir_esc=y",
+        "featured": true,
+        "popular": true,
+        "launchRank": 3,
+        "priceLabel": "提供試閱"
+    },
+    {
+        "id": "hermes-agent-guide",
+        "title": "Hermes 使用經驗分享與簡捷使用指引",
+        "subtitle": "給 AI Agent 協作者的實戰工作法",
+        "author": "Happy eBook 編輯部",
+        "category": [
+            "AI 學習",
+            "AI 工具應用",
+            "Vibe Coding"
+        ],
+        "type": "paid",
+        "format": "Google Play Books 電子書",
+        "cover": "../assets/images/20260523/hermes_frontcover.png",
+        "description": "整理 Hermes 的使用經驗與簡捷指引，從工具、記憶、技能、人工作業 Gate 到可驗證行動流程，幫助 AI Agent 協作者建立更穩定的實戰工作法。",
+        "downloadUrl": "",
+        "buyUrl": "https://books.google.com.tw/books/about?id=--nbEQAAQBAJ&redir_esc=y",
+        "readUrl": "https://books.google.com.tw/books/about?id=--nbEQAAQBAJ&redir_esc=y",
+        "featured": true,
+        "popular": true,
+        "launchRank": 4,
+        "priceLabel": "提供試閱"
     }
 ]

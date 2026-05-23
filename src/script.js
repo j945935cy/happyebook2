@@ -153,9 +153,16 @@ const sortBooksForDisplay = (books) => books
   .slice()
 
   .reverse()
-
-  .sort((left, right) => Number(isFreeWebBook(right)) - Number(isFreeWebBook(left)));
-
+  .sort((left, right) => {
+    const leftLaunchRank = Number(left.launchRank || 0);
+    const rightLaunchRank = Number(right.launchRank || 0);
+    if (leftLaunchRank || rightLaunchRank) {
+      if (!leftLaunchRank) return 1;
+      if (!rightLaunchRank) return -1;
+      return leftLaunchRank - rightLaunchRank;
+    }
+    return Number(isFreeWebBook(right)) - Number(isFreeWebBook(left));
+  });
 const loadBooks = async () => {
 
   try {
@@ -761,4 +768,3 @@ const boot = () => {
 };
 
 boot();
-
