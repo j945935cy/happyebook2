@@ -10,6 +10,8 @@ const fallbackCoverDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent('<svg
 
 const googleBookCovers = {
 
+  "hermes-learning-by-doing": ["hermes-learning-by-doing-cover-1400x2100.png"],
+
   "codex-python": ["python-codex-exercises-cover-1400x2100.png"],
 
   "codex-coding": ["codex-coding-exercises-cover-1400x2100.png", "codex-learning-by-doing-cover-1400x2100.png"],
