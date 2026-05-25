@@ -10,18 +10,18 @@
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Happy eBook｜AI、Python、iPAS AI、電子書學習平台">
-  <meta property="og:description" content="Happy eBook 提供 AI、Python、iPAS AI、Prompt Engineering、英文學習與數位出版教材，適合學生、教師與自學者。">
+  <meta property="og:description" content="用白話、實作與電子書，幫助學生、教師與自學者進入 AI 時代。">
   <meta property="og:url" content="https://happyebook.com/">
   <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
-  <meta property="og:image:alt" content="Happy eBook 平台封面圖">
+  <meta property="og:image:alt" content="Happy eBook AI 與數位學習出版平台">
   <meta property="og:site_name" content="Happy eBook">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Happy eBook｜AI、Python、iPAS AI、電子書學習平台">
-  <meta name="twitter:description" content="Happy eBook 提供 AI、Python、iPAS AI、Prompt Engineering、英文學習與數位出版教材，適合學生、教師與自學者。">
+  <meta name="twitter:description" content="AI、Python、iPAS AI、Prompt Engineering 與數位出版教材，從看得懂到做得出來。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
-  <meta name="twitter:image:alt" content="Happy eBook 平台封面圖">
-  <link rel="stylesheet" href="styles.css?v=20260521-2">
+  <meta name="twitter:image:alt" content="Happy eBook AI 與數位學習出版平台">
+  <link rel="stylesheet" href="styles.css?v=20260525-2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,14 +42,16 @@
   <div class="site-shell">
     <header class="site-header">
       <div class="container header-row">
-        <a class="brand" href="index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">電子書平台</span></a>
+        <a class="brand" href="index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">AI 學習出版平台</span></a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
           <span class="nav-toggle-bars" aria-hidden="true"></span>
           <span>選單</span>
         </button>
         <nav class="site-nav" data-site-nav>
           <a class="is-active" href="index.html">首頁</a>
-          <a href="books.html">書籍列表</a><a href="books.html?category=iPAS%20AI">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a>
+          <a href="books.html">書籍列表</a>
+          <a href="books.html?category=iPAS%20AI">iPAS AI</a>
+          <a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a>
           <a href="about.html">關於</a>
           <a href="contact.html">聯絡</a>
         </nav>
@@ -57,63 +59,102 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero home-hero brand-home-hero">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Happy eBook</span>
-            <h1>AI 時代的學習與出版平台</h1>
-            <p>用最白話的方式，學 AI、學程式、學數位技能，並整理成容易閱讀的電子書與教材。</p>
+            <span class="eyebrow">AI Learning Publisher</span>
+            <h1><span>用 AI 與實作，</span><span>建立真正能帶走的能力</span></h1>
+            <p class="hero-lead">AI、Python、iPAS AI、Prompt Engineering 與數位出版教材，從「看得懂」到「做得出來」。</p>
             <div class="hero-actions">
-              <a class="button primary" href="books.html">瀏覽電子書</a>
+              <a class="button primary button-large" href="books.html">開始學習</a>
+              <a class="button secondary button-large" href="books.html?type=free">免費閱讀</a>
             </div>
-            <div class="hero-support">
+            <div class="proof-ribbon" aria-label="平台可信度">
+              <span><strong data-stat-total>0</strong> 本學習作品</span>
+              <span><strong>AI x Python x iPAS AI</strong></span>
+              <span>適合學生、教師、自學者</span>
+            </div>
+            <div class="hero-support" aria-label="熱門主題">
               <a href="books.html?category=AI%20學習" class="hero-pill">AI 學習</a>
-              <a href="books.html?category=Python" class="hero-pill">Python 實作</a>
+              <a href="books.html?category=Python" class="hero-pill">Python 自動化</a>
               <a href="books.html?q=Prompt%20Engineering" class="hero-pill">Prompt Engineering</a>
-              <a href="books.html?category=英語／文學習" class="hero-pill">英文學習</a>
+              <a href="books.html?category=英語／文學習" class="hero-pill">英文閱讀力</a>
             </div>
-            <dl class="hero-stats" aria-label="平台內容摘要">
-              <div><dt data-stat-total>0</dt><dd>本書籍</dd></div>
-              <div><dt data-stat-categories>0</dt><dd>個分類</dd></div>
-              <div><dt data-stat-web>0</dt><dd>本網站教材</dd></div>
-            </dl>
           </div>
-          <div class="hero-panel hero-platform-panel">
-            <div class="hero-shelf-preview" data-home-shelf aria-label="精選書籍預覽"></div>
+          <div class="hero-brand-visual" aria-label="Happy eBook 精選書封">
+            <div class="cover-showcase">
+              <img class="cover-large" src="../assets/images/google-book-cover-images/hermes-learning-by-doing-cover-1400x2100.png" alt="Hermes 做中學 書封" loading="eager" decoding="async">
+              <img class="cover-medium cover-one" src="../assets/images/python-for-beginners-cover.png" alt="Python 初學者教材書封" loading="eager" decoding="async">
+              <img class="cover-medium cover-two" src="../assets/images/ipas-ai-planner-pass-cover-20260521.png" alt="iPAS AI 高分學習教材書封" loading="eager" decoding="async">
+              <img class="cover-small cover-three" src="../assets/images/classic-english-writing-cover.png" alt="經典英文寫作書封" loading="lazy" decoding="async">
+            </div>
+            <div class="platform-metrics">
+              <div><strong data-stat-categories>0</strong><span>主題分類</span></div>
+              <div><strong data-stat-web>0</strong><span>網站教材</span></div>
+              <div><strong>白話實作</strong><span>教學風格</span></div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section section-soft">
+      <section class="section outcome-section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head section-head-centered">
             <div>
-              <span class="eyebrow">Featured</span>
-              <h2>精選書籍</h2>
+              <span class="eyebrow">Outcomes</span>
+              <h2>不只分類，更重視你能學會什麼</h2>
             </div>
-            <a class="button secondary compact" href="books.html">查看全部</a>
+            <p class="section-lead">Happy eBook 把 AI、程式、證照與英文教材整理成可以直接行動的學習成果，讓每一本書都有清楚用途。</p>
           </div>
-          <div class="book-grid" data-featured-grid></div>
+          <div class="outcome-grid">
+            <a class="outcome-card outcome-blue" href="books.html?category=Python"><span>Python 程式設計</span><h3>用 Python 自動化工作</h3><p>從小工具、資料整理到 AI 協作練習，建立能重複使用的實作能力。</p></a>
+            <a class="outcome-card outcome-purple" href="books.html?q=Prompt%20Engineering"><span>Prompt Engineering</span><h3>學會 AI 提問與工作流</h3><p>把需求說清楚、把任務拆小，讓 AI 變成可靠的學習與工作夥伴。</p></a>
+            <a class="outcome-card outcome-green" href="books.html?category=iPAS%20AI"><span>iPAS AI</span><h3>快速掌握 AI 證照重點</h3><p>用白話整理觀念、題庫與準備方向，降低第一次備考的摸索成本。</p></a>
+            <a class="outcome-card outcome-warm" href="books.html?category=英語／文學習"><span>英文學習</span><h3>用 AI 建立英文閱讀力</h3><p>從文法、句型、單字與朗讀練習開始，把英文變成每天可累積的能力。</p></a>
+          </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section-soft featured-platform-section">
         <div class="container">
           <div class="section-head">
-            <div>
-              <span class="eyebrow">Service</span>
-              <h2>家族故事數位化服務</h2>
-            </div>
-            <a class="button secondary compact" href="https://j945935cy.github.io/Family-Legacy-Documentation/" target="_blank" rel="noopener noreferrer">查看示範網站</a>
+            <div><span class="eyebrow">Featured</span><h2>精選書籍與最新教材</h2></div>
+            <a class="button secondary compact" href="books.html">瀏覽全部</a>
           </div>
-          <article class="feature-card">
-            <h3>把家族記憶整理成可閱讀、可傳承的數位內容</h3>
-            <p class="section-copy">將人物、故事、年表、價值與照片整理成清楚的家族網站，適合用於家族傳承、長輩口述歷史整理、紀念專案與數位典藏展示。</p>
-            <div class="hero-actions">
-              <a class="button primary" href="https://j945935cy.github.io/Family-Legacy-Documentation/" target="_blank" rel="noopener noreferrer">前往閱讀示範</a>
-              <a class="button secondary" href="books.html">回到作品列表</a>
-            </div>
-          </article>
+          <div class="hero-shelf-preview platform-shelf" data-home-shelf aria-label="本週推薦書籍"></div>
+          <div class="book-grid featured-grid" data-featured-grid></div>
+        </div>
+      </section>
+
+      <section class="section path-section">
+        <div class="container learning-path-layout">
+          <div class="brand-copy">
+            <span class="eyebrow">Learning Map</span>
+            <h2>從 AI 新手到能做出作品</h2>
+            <p>不用一次學完所有工具。先理解 AI 怎麼協作，再用 Prompt 與 Python 做出可檢查的小成果，最後整理成自己的專案或教材。</p>
+          </div>
+          <div class="path-timeline" aria-label="AI 新手學習路徑">
+            <article><span>01</span><h3>AI 基礎</h3><p>理解生成式 AI、資料判讀與工具使用限制。</p></article>
+            <article><span>02</span><h3>Prompt 工作流</h3><p>練習描述需求、拆解任務、檢查輸出與修正方向。</p></article>
+            <article><span>03</span><h3>Python 自動化</h3><p>把重複工作變成小程式，學會資料、檔案與流程整理。</p></article>
+            <article><span>04</span><h3>AI 專案</h3><p>把學到的內容做成教材、網站、書籍或可分享作品。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section brand-section">
+        <div class="container brand-grid">
+          <div class="brand-copy">
+            <span class="eyebrow">Why Happy eBook</span>
+            <h2>由教學現場出發的 AI 與程式教材</h2>
+            <p>我們把複雜工具拆成初學者能跟上的步驟，保留實作、檢查與複習的節奏。網站不是單純放文章，而是讓讀者可以依主題、系列與作品逐步探索。</p>
+          </div>
+          <div class="principle-grid">
+            <article class="principle-card"><h3>看得懂</h3><p>用白話與例子解釋觀念，先讓讀者知道自己正在學什麼。</p></article>
+            <article class="principle-card"><h3>做得出來</h3><p>每個主題都盡量連回實作任務，讓學習有可驗證的成果。</p></article>
+            <article class="principle-card"><h3>能複習</h3><p>以電子書與靜態網站保存內容，適合課後查找、備考與自學。</p></article>
+            <article class="principle-card"><h3>可分享</h3><p>封面、書頁與分類清楚，讓教材更像作品，也更容易被推薦。</p></article>
+          </div>
         </div>
       </section>
     </main>
@@ -122,13 +163,15 @@
       <div class="container footer-bar">
         <span>Happy eBook</span>
         <nav class="footer-nav" aria-label="頁尾導覽">
-          <a href="books.html">書籍列表</a><a href="books.html?category=iPAS%20AI">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a>
+          <a href="books.html">書籍列表</a>
+          <a href="books.html?category=iPAS%20AI">iPAS AI</a>
+          <a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a>
           <a href="about.html">關於</a>
           <a href="contact.html">聯絡</a>
         </nav>
       </div>
     </footer>
   </div>
-  <script src="script.js?v=20260523-1"></script>
+  <script src="script.js?v=20260525-2"></script>
 </body>
 </html>

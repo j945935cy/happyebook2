@@ -96,7 +96,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260521-10";
+const booksDataVersion = "20260525-1";
 
 const siteConfig = {
 
@@ -573,7 +573,11 @@ const createMiniBookCard = (book, isPrimary = false) => {
 
   const tagClass = effectiveType === "free" ? "free" : effectiveType === "paid" ? "paid" : "web";
 
-  return `<a class="hero-mini-book${isPrimary ? " hero-mini-book-primary" : ""}" href="${href}"${attrs}><span class="tag ${tagClass}">${typeLabel[effectiveType] || effectiveType}</span><h3>${book.title}</h3><p>${book.subtitle || ""}</p></a>`;
+  const coverSources = getCoverSources(book.cover, book.id);
+
+  const coverSourcesJson = JSON.stringify(coverSources);
+
+  return `<a class="hero-mini-book${isPrimary ? " hero-mini-book-primary" : ""}" href="${href}"${attrs}><span class="tag ${tagClass}">${typeLabel[effectiveType] || effectiveType}</span><div class="hero-mini-cover"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）" loading="lazy" decoding="async"></div><h3>${book.title}</h3><p>${book.subtitle || ""}</p></a>`;
 
 };
 
@@ -590,6 +594,8 @@ const initHome = async () => {
     const shelfBooks = books.filter((b) => b.featured).slice(0, 3);
 
     shelf.innerHTML = shelfBooks.map((book, i) => createMiniBookCard(book, i === 0)).join("");
+
+    hydrateCoverImages(shelf);
 
   }
 
