@@ -79,6 +79,7 @@ const getCoverSources = (cover, bookId) => {
   candidates.push(primary);
 
   if (primary.startsWith("../")) candidates.push(primary.slice(3));
+  if (primary.startsWith("assets/")) candidates.push(`../${primary}`);
 
   return [...new Set(candidates)];
 
