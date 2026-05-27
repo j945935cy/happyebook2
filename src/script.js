@@ -973,6 +973,9 @@ const initResourceEmailForms = () => {
       const body = [
         "您好，我想索取7日考前復習資料。",
         "",
+        `name: ${name}`,
+        `email: ${email}`,
+        "",
         `姓名：${name}`,
         `電子郵件：${email}`,
         `申請資源：${lead.resource}`,
