@@ -995,6 +995,8 @@ const initResourceEmailForms = () => {
               _subject: subject,
               _template: "table",
               _replyto: email,
+              name,
+              email,
               "姓名": name,
               "電子郵件": email,
               "申請資源": lead.resource,
