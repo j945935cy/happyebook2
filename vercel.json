@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/resource-leads.js": {
+      "runtime": "nodejs22.x"
+    }
+  }
+}

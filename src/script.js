@@ -95,13 +95,13 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260527-3";
+const booksDataVersion = "20260527-11";
 
 const siteConfig = {
 
   contactEmail: "t945935@gmail.com",
 
-  googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfA4WUicLs82uVOzCBuAwa1AOUrKbloS0bRK_jepfrGULliag/viewform",
+  googleFormUrl: "https://forms.gle/prhWVZwyqho8atpa6",
 
   googleResponsesUrl: "https://docs.google.com/spreadsheets/d/REPLACE_WITH_YOUR_RESPONSE_SHEET/edit"
 
@@ -214,6 +214,50 @@ const routeFilters = {
   ai: ["AI 學習", "AI 工具應用", "AI Agent", "Prompt Engineering", "Vibe Coding", "Hermes"],
   ipas: ["iPAS AI", "考試準備"],
   "python-codex": ["Python", "Codex", "程式設計", "Vibe Coding"]
+};
+
+const resourcePromos = [
+  {
+    id: "ai-roadmap",
+    title: "免費下載 AI 學習新手路線圖",
+    copy: "整理從 AI 基礎、Prompt、Codex、AI Agent 到 AI 出版的學習順序。",
+    url: "free-resources.html#ai-roadmap",
+    bookIds: ["ai-publishing-book", "smart-ai-evolution", "hermes-learning-by-doing", "hermes-agent-guide", "codex-coding", "antigravity-coding"]
+  },
+  {
+    id: "ipas-review",
+    title: "考前使用 iPAS AI 7 日複習表",
+    copy: "把考綱、題庫、錯題與模擬考拆成一週可執行的複習任務。",
+    url: "ipas-ai-7-day-review.html",
+    bookIds: ["ipas-ai-應用規劃師初級題庫完全攻略", "ipas-ai-high-score-2026-03-exam", "ipas-ai-high-score-play-book", "ipas-mid-ai-guide", "ipas-ai-application-planner-basic-exam-guide", "happy-ipas-site", "ipas-ai-planner-play-book"]
+  },
+  {
+    id: "codex-prompts",
+    title: "免費下載 Codex / Python 學程式 Prompt 範本",
+    copy: "提供初學者可套用的 Prompt，練習請 Codex 解釋程式、修正錯誤與整理筆記。",
+    url: "free-resources.html#codex-prompts",
+    bookIds: ["codex-python", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
+  }
+];
+
+const getResourcePromoForBook = (bookId) => resourcePromos.find((promo) => promo.bookIds.includes(bookId));
+
+const addResourcePromo = (bookId, target = document) => {
+  const promo = getResourcePromoForBook(bookId);
+  const panel = target.querySelector?.(".book-content-panel") || document.querySelector(".book-content-panel");
+  if (!promo || !panel || panel.querySelector("[data-resource-promo]")) return;
+  const prefix = window.location.pathname.includes("/books/") ? "../" : "";
+  const promoUrl = promo.url || "free-resources.html#" + promo.id;
+  const promoElement = document.createElement("aside");
+  promoElement.className = "resource-promo";
+  promoElement.dataset.resourcePromo = promo.id;
+  promoElement.innerHTML = '<h2>' + promo.title + '</h2><p>' + promo.copy + '</p><a class="button secondary compact" href="' + prefix + promoUrl + '">查看免費資源</a>';
+  const ctaRow = panel.querySelector(".cta-row");
+  if (ctaRow) {
+    ctaRow.insertAdjacentElement("afterend", promoElement);
+    return;
+  }
+  panel.appendChild(promoElement);
 };
 
 const matchesRouteFilter = (book, route) => {
@@ -456,9 +500,101 @@ const matchesSearchQuery = (book, query) => {
 
 const isPlaceholderUrl = (value) => !value || value.includes("REPLACE_WITH_YOUR");
 
+const resourceLeadStorageKey = "happyebookResourceLeads";
+
+const getStoredResourceLeads = () => {
+  try {
+    const leads = JSON.parse(window.localStorage.getItem(resourceLeadStorageKey) || "[]");
+    return Array.isArray(leads) ? leads : [];
+  } catch {
+    return [];
+  }
+};
+
+const initResourceForms = () => {
+  document.querySelectorAll("[data-resource-form]").forEach((form) => {
+    if (form.dataset.resourceFormBound) return;
+    form.dataset.resourceFormBound = "true";
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const status = form.querySelector("[data-resource-form-status]");
+      const submitButton = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const website = String(formData.get("website") || "").trim();
+      if (!name || !email) {
+        if (status) {
+          status.textContent = "請填寫 Name 與 email。";
+          status.classList.add("is-error");
+        }
+        return;
+      }
+      const lead = {
+        name,
+        email,
+        resource: form.dataset.resourceName || "網站資源",
+        page: window.location.pathname,
+        createdAt: new Date().toISOString()
+      };
+      if (status) {
+        status.textContent = "正在送出資料。";
+        status.classList.remove("is-error");
+      }
+      if (submitButton) submitButton.disabled = true;
+      try {
+        const endpoint = form.dataset.resourceEndpoint;
+        if (endpoint) {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ...lead, website })
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || data.ok === false) {
+            throw new Error(data.error || "名單保存失敗，請稍後再試。");
+          }
+        } else {
+          const leads = getStoredResourceLeads();
+          leads.push(lead);
+          window.localStorage.setItem(resourceLeadStorageKey, JSON.stringify(leads));
+        }
+      } catch (error) {
+        if (submitButton) submitButton.disabled = false;
+        if (status) {
+          status.textContent = error.message || "名單保存失敗，請稍後再試。";
+          status.classList.add("is-error");
+        }
+        return;
+      }
+      if (status) {
+        status.textContent = "已保存，正在前往複習表。";
+        status.classList.remove("is-error");
+      }
+      window.setTimeout(() => {
+        window.location.assign(form.dataset.resourceRedirect || "ipas-ai-7-day-review.html");
+      }, 300);
+    });
+  });
+};
+
 const bindExternalLinks = () => {
 
   document.querySelectorAll("[data-google-form-link]").forEach((link) => {
+
+    const nextUrl = link.dataset.googleFormNext;
+    if (nextUrl && !link.dataset.googleFormNextBound) {
+      link.href = siteConfig.googleFormUrl;
+      link.removeAttribute("target");
+      link.rel = "noreferrer";
+      link.dataset.googleFormNextBound = "true";
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.open(siteConfig.googleFormUrl, "_blank", "noopener,noreferrer");
+        window.location.assign(nextUrl);
+      });
+      return;
+    }
 
     link.href = siteConfig.googleFormUrl;
 
@@ -748,7 +884,17 @@ const initBooksPage = async () => {
 
 };
 
-const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); const heroCopy = document.querySelector("[data-book-hero-copy]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; const bookUrl = `https://happyebook.com/books/${encodeURIComponent(book.id)}.html`; const bookDesc = book.description || book.subtitle || "查看作品詳細資料、格式、作者與閱讀或購買方式。"; const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute("content", val); }; setMeta('meta[property="og:title"]', `${book.title} | Happy eBook`); setMeta('meta[property="og:description"]', bookDesc); setMeta('meta[property="og:url"]', bookUrl); setMeta('meta[name="twitter:title"]', `${book.title} | Happy eBook`); setMeta('meta[name="twitter:description"]', bookDesc); setMeta('meta[name="description"]', bookDesc); let canon = document.querySelector('link[rel="canonical"]'); if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); } canon.href = bookUrl; const breadcrumbJson = document.createElement("script"); breadcrumbJson.type = "application/ld+json"; breadcrumbJson.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Happy eBook", "item": "https://happyebook.com/" }, { "@type": "ListItem", "position": 2, "name": "書籍列表", "item": "https://happyebook.com/books.html" }, { "@type": "ListItem", "position": 3, "name": book.title, "item": bookUrl } ] }); document.head.appendChild(breadcrumbJson); const ldJson = document.createElement("script"); ldJson.type = "application/ld+json"; const categories = getCategories(book); const bookSchema = { "@context": "https://schema.org", "@type": "Book", "name": book.title, "description": book.description, "author": { "@type": "Person", "name": book.author }, "inLanguage": "zh-TW", "genre": categories[0] || "", "url": bookUrl, "isPartOf": { "@type": "WebSite", "name": "Happy eBook", "url": "https://happyebook.com/" } }; if (book.buyUrl) bookSchema["offers"] = { "@type": "Offer", "url": book.buyUrl, "priceCurrency": "TWD" }; ldJson.textContent = JSON.stringify(bookSchema); document.head.appendChild(ldJson); if (heroCopy) heroCopy.textContent = book.heroCopy || "這裡會顯示書封、書名、副標、作者、分類、標籤、簡介、格式與操作按鈕。"; const coverSources = getCoverSources(book.cover, book.id); const coverSourcesJson = JSON.stringify(coverSources); target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><h1>${book.title}</h1><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${getCategories(book).join(' / ')}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; hydrateCoverImages(target); };
+const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); const heroCopy = document.querySelector("[data-book-hero-copy]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; const bookUrl = `https://happyebook.com/books/${encodeURIComponent(book.id)}.html`; const bookDesc = book.description || book.subtitle || "查看作品詳細資料、格式、作者與閱讀或購買方式。"; const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute("content", val); }; setMeta('meta[property="og:title"]', `${book.title} | Happy eBook`); setMeta('meta[property="og:description"]', bookDesc); setMeta('meta[property="og:url"]', bookUrl); setMeta('meta[name="twitter:title"]', `${book.title} | Happy eBook`); setMeta('meta[name="twitter:description"]', bookDesc); setMeta('meta[name="description"]', bookDesc); let canon = document.querySelector('link[rel="canonical"]'); if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); } canon.href = bookUrl; const breadcrumbJson = document.createElement("script"); breadcrumbJson.type = "application/ld+json"; breadcrumbJson.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Happy eBook", "item": "https://happyebook.com/" }, { "@type": "ListItem", "position": 2, "name": "書籍列表", "item": "https://happyebook.com/books.html" }, { "@type": "ListItem", "position": 3, "name": book.title, "item": bookUrl } ] }); document.head.appendChild(breadcrumbJson); const ldJson = document.createElement("script"); ldJson.type = "application/ld+json"; const categories = getCategories(book); const bookSchema = { "@context": "https://schema.org", "@type": "Book", "name": book.title, "description": book.description, "author": { "@type": "Person", "name": book.author }, "inLanguage": "zh-TW", "genre": categories[0] || "", "url": bookUrl, "isPartOf": { "@type": "WebSite", "name": "Happy eBook", "url": "https://happyebook.com/" } }; if (book.buyUrl) bookSchema["offers"] = { "@type": "Offer", "url": book.buyUrl, "priceCurrency": "TWD" }; ldJson.textContent = JSON.stringify(bookSchema); document.head.appendChild(ldJson); if (heroCopy) heroCopy.textContent = book.heroCopy || "這裡會顯示書封、書名、副標、作者、分類、標籤、簡介、格式與操作按鈕。"; const coverSources = getCoverSources(book.cover, book.id); const coverSourcesJson = JSON.stringify(coverSources); target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><h1>${book.title}</h1><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${getCategories(book).join(' / ')}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; hydrateCoverImages(target); addResourcePromo(book.id, target); };
+
+const initStaticBookResourcePromo = () => {
+
+  const match = window.location.pathname.match(/\/books\/([^/]+)\.html$/);
+
+  if (!match) return;
+
+  addResourcePromo(decodeURIComponent(match[1]));
+
+};
 
 const initNav = () => {
 
@@ -788,6 +934,8 @@ const boot = () => {
 
   bindExternalLinks();
 
+  initResourceForms();
+
   const page = document.body.dataset.page;
 
   if (page === "home") initHome();
@@ -795,6 +943,8 @@ const boot = () => {
   if (page === "books") initBooksPage();
 
   if (page === "book") initBookPage();
+
+  if (page === "static-book") initStaticBookResourcePromo();
 
   if (page === "submit") initSubmitPage();
 
