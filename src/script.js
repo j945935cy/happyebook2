@@ -964,7 +964,7 @@ const initResourceEmailForms = () => {
 
       if (submitButton) submitButton.disabled = true;
       if (status) {
-        status.textContent = "正在留存 email 並準備開啟信箱...";
+        status.textContent = "正在送出申請信...";
         status.classList.remove("is-error");
       }
 
@@ -973,11 +973,11 @@ const initResourceEmailForms = () => {
       const body = [
         "您好，我想索取7日考前復習資料。",
         "",
-        `Name：${name}`,
+        `姓名：${name}`,
         `Email：${email}`,
-        `資源：${lead.resource}`,
-        `頁面：${window.location.href}`,
-        `時間：${lead.createdAt}`
+        `申請資源：${lead.resource}`,
+        `來源頁面：${window.location.href}`,
+        `送出時間：${lead.createdAt}`
       ].join("\n");
 
       let openMailClient = true;
@@ -993,12 +993,12 @@ const initResourceEmailForms = () => {
             },
             body: JSON.stringify({
               _subject: subject,
-              name,
-              email,
-              resource: lead.resource,
-              page: window.location.href,
-              createdAt: lead.createdAt,
-              message: body
+              "姓名": name,
+              "Email": email,
+              "申請資源": lead.resource,
+              "來源頁面": window.location.href,
+              "送出時間": lead.createdAt,
+              "訊息內容": body
             })
           });
           const data = await response.json().catch(() => ({}));
