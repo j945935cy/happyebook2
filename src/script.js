@@ -10,6 +10,8 @@ const fallbackCoverDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent('<svg
 
 const googleBookCovers = {
 
+  "ai-publishing-book": ["ai-publishing-book-cover.jpg"],
+
   "hermes-learning-by-doing": ["hermes-learning-by-doing-cover-1400x2100.png"],
 
   "codex-python": ["python-codex-exercises-cover-1400x2100.png"],
@@ -97,7 +99,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260525-1";
+const booksDataVersion = "20260527-1";
 
 const siteConfig = {
 
