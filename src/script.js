@@ -928,65 +928,6 @@ const initNav = () => {
 
 };
 
-const initMailResourceForms = () => {
-  document.querySelectorAll("[data-resource-form][data-resource-mailto]").forEach((form) => {
-    if (form.dataset.resourceFormBound) return;
-    form.dataset.resourceFormBound = "true";
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const status = form.querySelector("[data-resource-form-status]");
-      const submitButton = form.querySelector('button[type="submit"]');
-      const formData = new FormData(form);
-      const name = String(formData.get("name") || "").trim();
-      const email = String(formData.get("email") || "").trim();
-
-      if (!name || !email) {
-        if (status) {
-          status.textContent = "請填寫 Name 與 email。";
-          status.classList.add("is-error");
-        }
-        return;
-      }
-
-      const lead = {
-        name,
-        email,
-        resource: form.dataset.resourceName || "網站資源",
-        page: window.location.pathname,
-        createdAt: new Date().toISOString()
-      };
-
-      const leads = getStoredResourceLeads();
-      leads.push(lead);
-      window.localStorage.setItem(resourceLeadStorageKey, JSON.stringify(leads));
-
-      const mailTo = form.dataset.resourceMailto || siteConfig.contactEmail;
-      const subject = form.dataset.resourceMailSubject || "索取7日考前復習，email 留存";
-      const body = [
-        "您好，我想索取7日考前復習資料。",
-        "",
-        `Name：${name}`,
-        `Email：${email}`,
-        `資源：${lead.resource}`,
-        `頁面：${window.location.href}`,
-        `時間：${lead.createdAt}`
-      ].join("\n");
-
-      if (submitButton) submitButton.disabled = true;
-      if (status) {
-        status.textContent = "已保留 email，正在開啟信箱並前往複習表。";
-        status.classList.remove("is-error");
-      }
-
-      window.location.href = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.setTimeout(() => {
-        window.location.assign(form.dataset.resourceRedirect || "ipas-ai-7-day-review.html");
-      }, 900);
-    });
-  });
-};
-
 const initResourceEmailForms = () => {
   document.querySelectorAll("[data-resource-form][data-resource-mailto]").forEach((form) => {
     if (form.dataset.resourceFormBound) return;
@@ -1061,7 +1002,7 @@ const initResourceEmailForms = () => {
             })
           });
           const data = await response.json().catch(() => ({}));
-          if (!response.ok || data.success === false) {
+          if (!response.ok || String(data.success).toLowerCase() === "false") {
             throw new Error(data.message || "Email 寄送服務回應失敗。");
           }
           openMailClient = false;
