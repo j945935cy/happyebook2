@@ -1,8 +1,4 @@
-const sampleBooks = [
-
-  { id: "sample-web-book", title: "Happy eBook 範例作品", subtitle: "books.json 載入失敗時的備援資料", author: "Happy eBook 編輯部", category: "平台說明", type: "web", format: "網站閱讀", cover: "../assets/images/book-linux-beginner.svg", description: "這是離線或資料載入失敗時顯示的最小範例，正式書籍資料請以 books.json 為準。", downloadUrl: "", buyUrl: "", readUrl: "books.html", featured: true, popular: false, priceLabel: "免費閱讀" }
-
-];
+const sampleBooks = [];
 
 const typeLabel = { free: "免費閱讀", paid: "付費購買", web: "網站教材" };
 
@@ -99,7 +95,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260527-1";
+const booksDataVersion = "20260527-3";
 
 const siteConfig = {
 
@@ -184,7 +180,7 @@ const loadBooks = async () => {
 
   } catch (error) {
 
-    console.warn("books.json 載入失敗，改用內建資料：", error);
+    console.warn("books.json 載入失敗，暫不渲染書籍資料：", error);
 
     return sortBooksForDisplay(sampleBooks);
 
@@ -211,6 +207,26 @@ const matchesTypeFilter = (book, filter) => {
   if (filter === "web") return isWebsiteBook(book);
 
   return getEffectiveType(book) === filter;
+
+};
+
+const routeFilters = {
+  ai: ["AI 學習", "AI 工具應用", "AI Agent", "Prompt Engineering", "Vibe Coding", "Hermes"],
+  ipas: ["iPAS AI", "考試準備"],
+  "python-codex": ["Python", "Codex", "程式設計", "Vibe Coding"]
+};
+
+const matchesRouteFilter = (book, route) => {
+
+  if (!route) return true;
+
+  const routeCategories = routeFilters[route];
+
+  if (!routeCategories) return true;
+
+  const categories = getCategories(book);
+
+  return routeCategories.some((category) => categories.includes(category));
 
 };
 
@@ -588,11 +604,11 @@ const initHome = async () => {
 
   const books = (await loadBooks()).filter(isPublished);
 
-  await populateStats(books);
+  if (books.length) await populateStats(books);
 
   const shelf = document.querySelector("[data-home-shelf]");
 
-  if (shelf) {
+  if (shelf && books.length) {
 
     const shelfBooks = books.filter((b) => b.featured).slice(0, 3);
 
@@ -604,7 +620,7 @@ const initHome = async () => {
 
   const featuredGrid = document.querySelector("[data-featured-grid]");
 
-  if (featuredGrid) {
+  if (featuredGrid && books.length) {
 
     const featuredBooks = books.filter((b) => b.featured).slice(0, 8);
 
@@ -660,6 +676,8 @@ const initBooksPage = async () => {
 
   let activeSearch = params.get("q") || "";
 
+  let activeRoute = params.get("route") || "";
+
   if (searchInput && activeSearch) searchInput.value = activeSearch;
 
   typeFilters.forEach((item) => item.classList.toggle("is-active", item.dataset.typeFilter === activeType));
@@ -671,6 +689,8 @@ const initBooksPage = async () => {
     const query = normalizeSearchValue(activeSearch);
 
     const filtered = books.filter((book) =>
+
+      matchesRouteFilter(book, activeRoute) &&
 
       matchesTypeFilter(book, activeType) &&
 
@@ -694,6 +714,8 @@ const initBooksPage = async () => {
 
     activeSearch = String(event.target.value || "");
 
+    activeRoute = "";
+
     render();
 
   });
@@ -701,6 +723,8 @@ const initBooksPage = async () => {
   typeFilters.forEach((button) => button.addEventListener("click", () => {
 
     activeType = button.dataset.typeFilter;
+
+    activeRoute = "";
 
     typeFilters.forEach((item) => item.classList.toggle("is-active", item === button));
 
@@ -711,6 +735,8 @@ const initBooksPage = async () => {
   categoryFilters.forEach((button) => button.addEventListener("click", () => {
 
     activeCategory = button.dataset.categoryFilter;
+
+    activeRoute = "";
 
     categoryFilters.forEach((item) => item.classList.toggle("is-active", item === button));
 
