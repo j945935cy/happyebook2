@@ -974,7 +974,7 @@ const initResourceEmailForms = () => {
         "您好，我想索取7日考前復習資料。",
         "",
         `姓名：${name}`,
-        `Email：${email}`,
+        `電子郵件：${email}`,
         `申請資源：${lead.resource}`,
         `來源頁面：${window.location.href}`,
         `送出時間：${lead.createdAt}`
@@ -993,8 +993,10 @@ const initResourceEmailForms = () => {
             },
             body: JSON.stringify({
               _subject: subject,
+              _template: "table",
+              _replyto: email,
               "姓名": name,
-              "Email": email,
+              "電子郵件": email,
               "申請資源": lead.resource,
               "來源頁面": window.location.href,
               "送出時間": lead.createdAt,
