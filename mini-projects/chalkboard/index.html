@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1f4f46">
   <title>電子白板｜7 色粉筆與打字工具｜Happy eBook 小作品</title>
-  <meta name="description" content="一個純前端網頁版電子白板小作品，提供 7 色粉筆、手寫繪圖、文字輸入、清除與下載圖片功能。">
+  <meta name="description" content="一個純前端網頁版電子白板小作品，提供 7 色粉筆、手寫繪圖、文字輸入、復原、瀏覽器保存、清除與下載圖片功能。">
   <link rel="canonical" href="https://happyebook.com/mini-projects/chalkboard/">
   <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:title" content="電子白板｜7 色粉筆與打字工具｜Happy eBook 小作品">
-  <meta property="og:description" content="可直接在瀏覽器操作的電子白板，支援 7 色粉筆、手寫與打字。">
+  <meta property="og:description" content="可直接在瀏覽器操作的電子白板，支援 7 色粉筆、手寫、打字、復原與保存。">
   <meta property="og:url" content="https://happyebook.com/mini-projects/chalkboard/">
   <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
   <meta property="og:image:alt" content="Happy eBook 電子白板小作品">
@@ -18,7 +18,7 @@
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="電子白板｜7 色粉筆與打字工具">
-  <meta name="twitter:description" content="純前端電子白板，支援 7 色粉筆、手寫繪圖、文字輸入與下載圖片。">
+  <meta name="twitter:description" content="純前端電子白板，支援 7 色粉筆、手寫繪圖、文字輸入、復原、保存與下載圖片。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
   <style>
     :root {
@@ -154,8 +154,8 @@
             <p>一個可以直接操作的網頁版白板。使用 7 色粉筆畫線，也可以切換到文字模式，把重點句子打在白板上。</p>
           </div>
           <aside class="hero-card">
-            <h2>最小可用版本</h2>
-            <p>這版完成手寫、7 色粉筆、文字輸入、清除與下載圖片。所有功能都在瀏覽器中執行，不需要後端。</p>
+            <h2>完整練習版</h2>
+            <p>這版完成手寫、7 色粉筆、文字輸入、復原、瀏覽器保存、清除與下載圖片。所有功能都在瀏覽器中執行，不需要後端。</p>
           </aside>
         </div>
       </section>
@@ -206,10 +206,12 @@
             </label>
 
             <div class="button-row">
+              <button class="button secondary" type="button" data-undo>復原一步</button>
+              <button class="button secondary" type="button" data-save>儲存白板</button>
               <button class="button secondary" type="button" data-clear>清除白板</button>
               <button class="button" type="button" data-download>下載圖片</button>
             </div>
-            <p class="note">粉筆模式可拖曳畫線；打字模式先輸入文字，再點白板位置。</p>
+            <p class="note">粉筆模式可拖曳畫線；打字模式先輸入文字，再點白板位置。白板會自動保存在這台瀏覽器。</p>
             <p class="status" data-status>目前模式：粉筆</p>
           </aside>
         </div>
@@ -254,6 +256,9 @@
     let color = colorList[0].value;
     let isDrawing = false;
     let lastPoint = null;
+    const history = [];
+    const maxHistory = 18;
+    const storageKey = "happyebook-chalkboard-image";
 
     const colorGrid = document.querySelector("[data-colors]");
     const sizeSelect = document.querySelector("[data-size]");
@@ -266,6 +271,33 @@
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
+    };
+
+    const saveSnapshot = () => {
+      history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+      if (history.length > maxHistory) history.shift();
+    };
+
+    const saveBoard = (message = "白板已儲存到這台瀏覽器。") => {
+      try {
+        window.localStorage.setItem(storageKey, canvas.toDataURL("image/png"));
+        status.textContent = message;
+      } catch (error) {
+        status.textContent = "瀏覽器儲存空間不足，無法保存白板。";
+      }
+    };
+
+    const restoreBoard = () => {
+      const saved = window.localStorage.getItem(storageKey);
+      if (!saved) return false;
+      const image = new Image();
+      image.onload = () => {
+        setupBoard();
+        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+        status.textContent = "已載入上次儲存的白板。";
+      };
+      image.src = saved;
+      return true;
     };
 
     const toCanvasPoint = (event) => {
@@ -293,6 +325,7 @@
         status.textContent = "請先輸入要放到白板上的文字。";
         return;
       }
+      saveSnapshot();
       ctx.fillStyle = color;
       ctx.font = `900 ${fontSizeSelect.value}px "Noto Sans TC", "Segoe UI", sans-serif`;
       ctx.textBaseline = "top";
@@ -301,6 +334,7 @@
       ctx.fillText(text, point.x, point.y);
       ctx.shadowBlur = 0;
       status.textContent = "文字已放到白板。";
+      saveBoard("文字已放到白板，並已自動儲存。");
     };
 
     const setMode = (nextMode) => {
@@ -340,6 +374,7 @@
         drawText(point);
         return;
       }
+      saveSnapshot();
       isDrawing = true;
       lastPoint = point;
       canvas.setPointerCapture(event.pointerId);
@@ -353,6 +388,7 @@
     });
 
     const stopDrawing = () => {
+      if (isDrawing) saveBoard("白板已自動儲存。");
       isDrawing = false;
       lastPoint = null;
     };
@@ -361,8 +397,23 @@
     canvas.addEventListener("pointerleave", stopDrawing);
 
     document.querySelector("[data-clear]")?.addEventListener("click", () => {
+      saveSnapshot();
       setupBoard();
-      status.textContent = "白板已清除。";
+      saveBoard("白板已清除，並已自動儲存。");
+    });
+
+    document.querySelector("[data-undo]")?.addEventListener("click", () => {
+      const previous = history.pop();
+      if (!previous) {
+        status.textContent = "目前沒有可復原的步驟。";
+        return;
+      }
+      ctx.putImageData(previous, 0, 0);
+      saveBoard("已復原一步，並已自動儲存。");
+    });
+
+    document.querySelector("[data-save]")?.addEventListener("click", () => {
+      saveBoard();
     });
 
     document.querySelector("[data-download]")?.addEventListener("click", () => {
@@ -375,6 +426,7 @@
 
     setColor(color);
     setupBoard();
+    restoreBoard();
   </script>
 </body>
 </html>
