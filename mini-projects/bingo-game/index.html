@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#2459d6">
   <title>賓果遊戲｜Happy eBook 小作品</title>
-  <meta name="description" content="一個純前端賓果遊戲小作品，可產生 5x5 賓果卡、抽號、自動標記、判斷 Bingo 與重新開始。">
+  <meta name="description" content="一個純前端賓果遊戲小作品，可產生 5x5 賓果卡、抽號、自動標記、判斷 Bingo、房間代碼與分享連結。">
   <link rel="canonical" href="https://happyebook.com/mini-projects/bingo-game/">
   <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:title" content="賓果遊戲｜Happy eBook 小作品">
-  <meta property="og:description" content="產生賓果卡、抽號、標記與判斷 Bingo 的純前端小遊戲。">
+  <meta property="og:description" content="產生賓果卡、抽號、標記、判斷 Bingo 與分享房間的純前端小遊戲。">
   <meta property="og:url" content="https://happyebook.com/mini-projects/bingo-game/">
   <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
   <meta property="og:image:alt" content="Happy eBook 賓果遊戲">
@@ -18,7 +18,7 @@
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="賓果遊戲｜Happy eBook 小作品">
-  <meta name="twitter:description" content="純前端 5x5 賓果遊戲，適合練習抽號、狀態管理與勝負判斷。">
+  <meta name="twitter:description" content="純前端 5x5 賓果遊戲，適合練習抽號、狀態管理、勝負判斷與分享房間。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
   <style>
     :root {
@@ -46,7 +46,8 @@
         linear-gradient(180deg, #f8fbff 0%, var(--bg) 44%, #ffffff 100%);
     }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
 
     .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
     .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
@@ -99,6 +100,12 @@
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 16px; border: 1px solid transparent; border-radius: 999px; background: var(--primary); color: #fff; font-weight: 850; }
     .button.secondary { background: #ffffff; border-color: var(--line); color: var(--ink); }
     .button.warm { background: var(--warm); }
+    .room-box { display: grid; gap: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 20px; background: #f7fbff; }
+    .room-code { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .room-code strong { color: var(--primary-dark); font-size: 1.28rem; letter-spacing: 0.08em; }
+    .field { display: grid; gap: 8px; color: #13233a; font-weight: 850; }
+    .field input { width: 100%; min-height: 46px; border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; color: var(--ink); background: #ffffff; }
+    .copy-status { min-height: 1.5em; margin: 0; color: var(--accent); font-weight: 800; line-height: 1.6; }
     .called-list { display: flex; flex-wrap: wrap; gap: 8px; min-height: 44px; padding: 12px; border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; }
     .called-number { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 34px; border-radius: 999px; background: #e4efff; color: var(--primary-dark); font-weight: 900; }
     .rule-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
@@ -120,9 +127,9 @@
       .hero-grid, .game-layout { grid-template-columns: 1fr; }
       .hero-card, .panel { min-width: 0; }
       h1 { width: min(5.8em, 100%); overflow-wrap: anywhere; font-size: clamp(2.5rem, 13vw, 4rem); }
-      .hero p, .hero-card p { width: min(320px, 100%); overflow-wrap: anywhere; word-break: break-all; }
+      .hero p, .hero-card p { width: min(320px, 100%); overflow-wrap: break-word; word-break: normal; }
       .status-row, .footer-bar { flex-direction: column; align-items: flex-start; }
-      .board { width: min(100%, 330px); max-width: 100%; gap: 6px; padding: 8px; }
+      .board { width: min(100%, 300px); max-width: 100%; gap: 6px; padding: 8px; }
       .cell { border-radius: 12px; font-size: clamp(1.25rem, 7vw, 1.8rem); }
       .button-row { flex-direction: column; align-items: stretch; }
       .button-row .button { width: 100%; }
@@ -158,7 +165,7 @@
           </div>
           <aside class="hero-card">
             <h2>最小可用版本</h2>
-            <p>這版先完成產生卡片、抽號、標記、判斷 Bingo 與重新開始。之後可以再加入多人房間或題目版賓果。</p>
+            <p>這版完成產生卡片、抽號、標記、判斷 Bingo、房間代碼與分享連結。它是純靜態網頁，適合放在 GitHub Pages。</p>
           </aside>
         </div>
       </section>
@@ -175,6 +182,23 @@
           </section>
 
           <aside class="panel side-panel">
+            <div class="room-box">
+              <span class="eyebrow">Room</span>
+              <div class="room-code">
+                <span>房間代碼</span>
+                <strong data-room-code>ROOM</strong>
+              </div>
+              <label class="field">
+                加入房間
+                <input data-room-input type="text" maxlength="12" placeholder="輸入房間代碼">
+              </label>
+              <div class="button-row">
+                <button class="button secondary" type="button" data-new-room>新房間</button>
+                <button class="button secondary" type="button" data-join-room>加入</button>
+                <button class="button" type="button" data-copy-room>複製連結</button>
+              </div>
+              <p class="copy-status" data-copy-status></p>
+            </div>
             <span class="eyebrow">Draw</span>
             <div class="draw-card">
               <span>目前號碼</span>
@@ -192,7 +216,7 @@
             <ul class="rule-list">
               <li><strong>玩法</strong>抽到卡片上的號碼會自動標記，也可以手動點格子修正。</li>
               <li><strong>勝利</strong>橫線、直線或斜線任一條連成 5 格，就是 Bingo。</li>
-              <li><strong>自由格</strong>中間 FREE 一開始就算完成。</li>
+              <li><strong>分享</strong>複製連結會帶出目前房間、卡片與抽號進度；同一台裝置的分頁會自動同步。</li>
             </ul>
           </aside>
         </div>
@@ -226,15 +250,24 @@
     const calledListEl = document.querySelector("[data-called-list]");
     const messageEl = document.querySelector("[data-message]");
     const bingoCountEl = document.querySelector("[data-bingo-count]");
+    const roomCodeEl = document.querySelector("[data-room-code]");
+    const roomInput = document.querySelector("[data-room-input]");
+    const copyStatus = document.querySelector("[data-copy-status]");
+    const channel = "BroadcastChannel" in window ? new BroadcastChannel("happyebook-bingo-game") : null;
     const lines = [
       [0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19], [20, 21, 22, 23, 24],
       [0, 5, 10, 15, 20], [1, 6, 11, 16, 21], [2, 7, 12, 17, 22], [3, 8, 13, 18, 23], [4, 9, 14, 19, 24],
       [0, 6, 12, 18, 24], [4, 8, 12, 16, 20]
     ];
+    const params = new URLSearchParams(window.location.search);
+    const makeRoomCode = () => Math.random().toString(36).slice(2, 8).toUpperCase();
+    const cleanRoomCode = (value) => String(value || "").toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
+    let roomCode = cleanRoomCode(params.get("room")) || makeRoomCode();
     let card = [];
     let marked = new Set([12]);
     let called = [];
     let current = "";
+    let applyingRemote = false;
 
     const shuffle = (items) => items
       .map((value) => ({ value, sort: Math.random() }))
@@ -259,9 +292,92 @@
 
     const getBingoLines = () => lines.filter((line) => line.every((index) => marked.has(index)));
 
+    const storageKey = () => `happyebook-bingo-game:${roomCode}`;
+
+    const encodeList = (items) => items.join(".");
+    const decodeNumbers = (value) => String(value || "")
+      .split(".")
+      .map((item) => Number(item))
+      .filter((number) => Number.isInteger(number) && number >= 0);
+
+    const encodeState = () => ({
+      roomCode,
+      card,
+      marked: [...marked],
+      called,
+      current,
+      updatedAt: Date.now()
+    });
+
+    const applyState = (payload) => {
+      if (!payload || payload.roomCode !== roomCode || !Array.isArray(payload.card) || payload.card.length !== 25) return;
+      applyingRemote = true;
+      card = payload.card.map((value, index) => index === 12 ? "FREE" : Number(value));
+      marked = new Set(Array.isArray(payload.marked) ? payload.marked.filter((index) => Number.isInteger(index) && index >= 0 && index < 25) : [12]);
+      marked.add(12);
+      called = Array.isArray(payload.called) ? payload.called.filter((number) => Number.isInteger(number) && number >= 1 && number <= 75) : [];
+      current = Number.isInteger(payload.current) ? payload.current : "";
+      render();
+      updateUrl();
+      applyingRemote = false;
+    };
+
+    const updateUrl = () => {
+      const next = new URL(window.location.href);
+      next.searchParams.set("room", roomCode);
+      next.searchParams.set("card", encodeList(card.map((value) => value === "FREE" ? 0 : value)));
+      next.searchParams.set("marked", encodeList([...marked]));
+      next.searchParams.set("called", encodeList(called));
+      if (current) next.searchParams.set("current", current);
+      else next.searchParams.delete("current");
+      window.history.replaceState(null, "", next);
+    };
+
+    const saveState = (broadcast = true) => {
+      const payload = encodeState();
+      window.localStorage.setItem(storageKey(), JSON.stringify(payload));
+      updateUrl();
+      if (broadcast && !applyingRemote) channel?.postMessage(payload);
+    };
+
+    const loadFromUrl = () => {
+      const urlCard = decodeNumbers(params.get("card"));
+      const urlMarked = decodeNumbers(params.get("marked"));
+      const urlCalled = decodeNumbers(params.get("called")).filter((number) => number >= 1 && number <= 75);
+      if (urlCard.length !== 25) return false;
+      card = urlCard.map((value, index) => index === 12 ? "FREE" : value);
+      marked = new Set(urlMarked.filter((index) => index >= 0 && index < 25));
+      marked.add(12);
+      called = urlCalled;
+      const urlCurrent = Number(params.get("current"));
+      current = Number.isInteger(urlCurrent) && urlCurrent >= 1 && urlCurrent <= 75 ? urlCurrent : "";
+      return true;
+    };
+
+    const loadRoom = (code) => {
+      const nextCode = cleanRoomCode(code);
+      if (!nextCode) return;
+      roomCode = nextCode;
+      const stored = window.localStorage.getItem(storageKey());
+      if (stored) {
+        try {
+          applyState(JSON.parse(stored));
+          copyStatus.textContent = "已載入這個房間的本機進度。";
+          saveState(false);
+          return;
+        } catch (error) {
+          console.warn("Unable to load bingo room.", error);
+        }
+      }
+      newCard(false);
+      copyStatus.textContent = "已建立這個房間的新賓果卡。";
+    };
+
     const render = () => {
       const bingoLines = getBingoLines();
       const winCells = new Set(bingoLines.flat());
+      roomCodeEl.textContent = roomCode;
+      if (roomInput) roomInput.value = roomCode;
       boardEl.innerHTML = card.map((value, index) => {
         const isMarked = marked.has(index);
         const isFree = value === "FREE";
@@ -287,11 +403,16 @@
       called = [];
       current = "";
       render();
+      saveState(true);
     };
 
-    const newCard = () => {
+    const newCard = (broadcast = true) => {
       card = makeCard();
-      resetDraws();
+      marked = new Set([12]);
+      called = [];
+      current = "";
+      render();
+      saveState(broadcast);
     };
 
     const drawNumber = () => {
@@ -306,6 +427,7 @@
         if (value === current) marked.add(index);
       });
       render();
+      saveState(true);
     };
 
     boardEl.addEventListener("click", (event) => {
@@ -316,13 +438,53 @@
       if (marked.has(index)) marked.delete(index);
       else marked.add(index);
       render();
+      saveState(true);
     });
 
     document.querySelector("[data-draw]")?.addEventListener("click", drawNumber);
     document.querySelector("[data-new-card]")?.addEventListener("click", newCard);
     document.querySelector("[data-reset]")?.addEventListener("click", resetDraws);
+    document.querySelector("[data-new-room]")?.addEventListener("click", () => {
+      roomCode = makeRoomCode();
+      newCard(true);
+      copyStatus.textContent = "已建立新房間。";
+    });
+    document.querySelector("[data-join-room]")?.addEventListener("click", () => loadRoom(roomInput.value));
+    document.querySelector("[data-copy-room]")?.addEventListener("click", async () => {
+      saveState(false);
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyStatus.textContent = "已複製目前進度連結。";
+      } catch (error) {
+        copyStatus.textContent = "瀏覽器不允許自動複製，請直接複製網址列連結。";
+      }
+    });
 
-    newCard();
+    channel?.addEventListener("message", (event) => applyState(event.data));
+    window.addEventListener("storage", (event) => {
+      if (event.key !== storageKey() || !event.newValue) return;
+      try {
+        applyState(JSON.parse(event.newValue));
+      } catch (error) {
+        console.warn("Unable to sync bingo room.", error);
+      }
+    });
+
+    if (loadFromUrl()) {
+      render();
+      saveState(false);
+    } else {
+      const stored = window.localStorage.getItem(storageKey());
+      if (stored) {
+        try {
+          applyState(JSON.parse(stored));
+        } catch (error) {
+          newCard(false);
+        }
+      } else {
+        newCard(false);
+      }
+    }
   </script>
 </body>
 </html>
