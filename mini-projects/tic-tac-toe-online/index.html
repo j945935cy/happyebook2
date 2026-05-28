@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#2459d6">
-  <title>井字遊戲網路版原型｜Happy eBook 小作品</title>
-  <meta name="description" content="一個純前端井字遊戲網路版原型，支援房間代碼、邀請連結、雙人輪流下棋、勝負判斷與棋局分享。">
+  <title>井字遊戲網路版｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端井字遊戲網路版，支援房間代碼、邀請連結、雙人輪流下棋、勝負判斷、棋局分享與計分板。">
   <link rel="canonical" href="https://happyebook.com/mini-projects/tic-tac-toe-online/">
   <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="井字遊戲網路版原型｜Happy eBook 小作品">
+  <meta property="og:title" content="井字遊戲網路版｜Happy eBook 小作品">
   <meta property="og:description" content="用 HTML、CSS、Vanilla JS 做出可分享房間連結的井字遊戲。">
   <meta property="og:url" content="https://happyebook.com/mini-projects/tic-tac-toe-online/">
   <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
-  <meta property="og:image:alt" content="Happy eBook 井字遊戲網路版原型">
+  <meta property="og:image:alt" content="Happy eBook 井字遊戲網路版">
   <meta property="og:site_name" content="Happy eBook">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="井字遊戲網路版原型｜Happy eBook 小作品">
-  <meta name="twitter:description" content="支援房間代碼、邀請連結與棋局分享的純前端井字遊戲。">
+  <meta name="twitter:title" content="井字遊戲網路版｜Happy eBook 小作品">
+  <meta name="twitter:description" content="支援房間代碼、邀請連結、棋局分享與計分板的純前端井字遊戲。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
   <style>
     :root {
@@ -179,6 +179,12 @@
     .note-list li { padding: 12px; border: 1px solid var(--line); border-radius: 16px; background: #fbfdff; color: var(--muted); line-height: 1.7; }
     .note-list strong { display: block; margin-bottom: 4px; color: #13233a; }
     .copy-status { min-height: 1.5em; margin: 0; color: var(--accent); font-weight: 800; line-height: 1.6; }
+    .score-box { display: grid; gap: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; }
+    .score-box h2 { margin: 0; color: #13233a; font-size: 1.1rem; }
+    .score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .score-item { display: grid; gap: 4px; padding: 10px; border-radius: 14px; background: var(--surface-soft); text-align: center; }
+    .score-item span { color: var(--muted); font-size: 0.82rem; font-weight: 800; }
+    .score-item strong { color: #13233a; font-size: 1.5rem; line-height: 1; }
 
     .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
     .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
@@ -197,7 +203,7 @@
       .hero-grid, .game-layout { grid-template-columns: 1fr; }
       .hero-grid, .game-layout, .hero-card, .game-panel, .side-panel { min-width: 0; }
       h1 { width: min(5.8em, 100%); max-width: 100%; overflow-wrap: anywhere; font-size: clamp(2.45rem, 12vw, 4rem); }
-      .hero p, .hero-card p { width: min(300px, 100%); max-width: 100%; overflow-wrap: anywhere; word-break: break-all; }
+      .hero p, .hero-card p { width: min(300px, 100%); max-width: 100%; overflow-wrap: break-word; word-break: normal; }
       .game-panel { overflow: hidden; }
       .status-row, .footer-bar { flex-direction: column; align-items: flex-start; }
       .board { width: min(100%, 300px); max-width: 100%; min-width: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -230,12 +236,12 @@
         <div class="container hero-grid">
           <div>
             <span class="eyebrow">Tic Tac Toe</span>
-            <h1>井字遊戲網路版原型</h1>
-            <p>建立房間、複製邀請連結、輪流下 X 與 O。這是可部署在 GitHub Pages 的靜態版原型，適合先理解棋盤狀態、勝負判斷與分享連結。</p>
+            <h1>井字遊戲網路版</h1>
+            <p>建立房間、複製邀請連結、輪流下 X 與 O。這是可部署在 GitHub Pages 的靜態版，包含棋盤狀態、勝負判斷、分享連結與計分板。</p>
           </div>
           <aside class="hero-card">
             <h2>靜態版說明</h2>
-            <p>同一瀏覽器不同分頁可用房間代碼同步。跨裝置即時同步需要後端或即時資料庫，這版先保留純靜態架構。</p>
+            <p>同一瀏覽器不同分頁可用房間代碼同步。跨裝置即時同步需要後端或即時資料庫，這版保留純靜態架構。</p>
           </aside>
         </div>
       </section>
@@ -272,6 +278,16 @@
                 <button class="button" type="button" data-copy-room>複製邀請連結</button>
               </div>
               <p class="copy-status" data-copy-status></p>
+            </div>
+
+            <div class="score-box">
+              <h2>計分板</h2>
+              <div class="score-grid">
+                <div class="score-item"><span>X 獲勝</span><strong data-score-x>0</strong></div>
+                <div class="score-item"><span>O 獲勝</span><strong data-score-o>0</strong></div>
+                <div class="score-item"><span>平手</span><strong data-score-draw>0</strong></div>
+              </div>
+              <button class="button secondary" type="button" data-reset-score>重設計分</button>
             </div>
 
             <ul class="note-list">
@@ -312,6 +328,9 @@
     const roomCodeLabel = document.querySelector("[data-room-code]");
     const roomInput = document.querySelector("[data-room-input]");
     const copyStatus = document.querySelector("[data-copy-status]");
+    const scoreX = document.querySelector("[data-score-x]");
+    const scoreO = document.querySelector("[data-score-o]");
+    const scoreDraw = document.querySelector("[data-score-draw]");
     const channel = "BroadcastChannel" in window ? new BroadcastChannel("happyebook-tic-tac-toe") : null;
 
     const wins = [
@@ -328,8 +347,16 @@
     while (board.length < 9) board.push("");
     let currentPlayer = params.get("turn") === "O" ? "O" : "X";
     let winnerLine = [];
+    let score = { X: 0, O: 0, draw: 0 };
+    let roundResolved = false;
 
     const storageKey = () => `happyebook-tic-tac-toe:${roomCode}`;
+
+    const normalizeScore = (value) => ({
+      X: Number.isInteger(value?.X) ? value.X : 0,
+      O: Number.isInteger(value?.O) ? value.O : 0,
+      draw: Number.isInteger(value?.draw) ? value.draw : 0
+    });
 
     const getWinner = () => {
       for (const line of wins) {
@@ -352,10 +379,18 @@
     };
 
     const saveRoom = (broadcast = true) => {
-      const payload = { roomCode, board, currentPlayer, updatedAt: Date.now() };
+      const payload = { roomCode, board, currentPlayer, score, roundResolved, updatedAt: Date.now() };
       window.localStorage.setItem(storageKey(), JSON.stringify(payload));
       updateUrl();
       if (broadcast) channel?.postMessage(payload);
+    };
+
+    const applyPayload = (payload) => {
+      board = Array.isArray(payload.board) ? payload.board.slice(0, 9) : emptyBoard();
+      while (board.length < 9) board.push("");
+      currentPlayer = payload.currentPlayer === "O" ? "O" : "X";
+      score = normalizeScore(payload.score);
+      roundResolved = Boolean(payload.roundResolved);
     };
 
     const loadRoom = (code) => {
@@ -366,16 +401,18 @@
       if (stored) {
         try {
           const payload = JSON.parse(stored);
-          board = Array.isArray(payload.board) ? payload.board.slice(0, 9) : emptyBoard();
-          while (board.length < 9) board.push("");
-          currentPlayer = payload.currentPlayer === "O" ? "O" : "X";
+          applyPayload(payload);
         } catch (error) {
           board = emptyBoard();
           currentPlayer = "X";
+          score = { X: 0, O: 0, draw: 0 };
+          roundResolved = false;
         }
       } else {
         board = emptyBoard();
         currentPlayer = "X";
+        score = { X: 0, O: 0, draw: 0 };
+        roundResolved = false;
       }
       render();
       saveRoom(false);
@@ -383,9 +420,16 @@
 
     const render = () => {
       const result = getWinner();
+      if (result.winner && !roundResolved) {
+        score[result.winner] += 1;
+        roundResolved = true;
+      }
       winnerLine = result.line;
       roomCodeLabel.textContent = roomCode;
       if (roomInput) roomInput.value = roomCode;
+      scoreX.textContent = score.X;
+      scoreO.textContent = score.O;
+      scoreDraw.textContent = score.draw;
       boardElement.innerHTML = board.map((mark, index) => {
         const stateClass = mark ? ` mark-${mark.toLowerCase()}` : "";
         const winClass = winnerLine.includes(index) ? " is-win" : "";
@@ -418,6 +462,7 @@
     document.querySelector("[data-new-game]")?.addEventListener("click", () => {
       board = emptyBoard();
       currentPlayer = "X";
+      roundResolved = false;
       render();
       saveRoom(true);
     });
@@ -426,9 +471,18 @@
       roomCode = makeRoomCode();
       board = emptyBoard();
       currentPlayer = "X";
+      score = { X: 0, O: 0, draw: 0 };
+      roundResolved = false;
       render();
       saveRoom(true);
       copyStatus.textContent = "已建立新房間。";
+    });
+
+    document.querySelector("[data-reset-score]")?.addEventListener("click", () => {
+      score = { X: 0, O: 0, draw: 0 };
+      render();
+      saveRoom(true);
+      copyStatus.textContent = "已重設計分。";
     });
 
     document.querySelector("[data-join-room]")?.addEventListener("click", () => {
@@ -458,9 +512,7 @@
     channel?.addEventListener("message", (event) => {
       const payload = event.data;
       if (!payload || payload.roomCode !== roomCode) return;
-      board = Array.isArray(payload.board) ? payload.board.slice(0, 9) : emptyBoard();
-      while (board.length < 9) board.push("");
-      currentPlayer = payload.currentPlayer === "O" ? "O" : "X";
+      applyPayload(payload);
       render();
       updateUrl();
     });
@@ -469,9 +521,7 @@
       if (event.key !== storageKey() || !event.newValue) return;
       try {
         const payload = JSON.parse(event.newValue);
-        board = Array.isArray(payload.board) ? payload.board.slice(0, 9) : emptyBoard();
-        while (board.length < 9) board.push("");
-        currentPlayer = payload.currentPlayer === "O" ? "O" : "X";
+        applyPayload(payload);
         render();
         updateUrl();
       } catch (error) {
