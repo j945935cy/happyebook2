@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>Codex 小作品學習路線｜Happy eBook</title>
+  <meta name="description" content="用 Happy eBook 的 2 本中英童書與 8 個小作品，循序學會用 Codex 實作 AI coding，包含任務 prompt、檢查方式與修正流程。">
+  <link rel="canonical" href="https://happyebook.com/codex-mini-projects-roadmap.html">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Codex 小作品學習路線｜Happy eBook">
+  <meta property="og:description" content="從童書頁、表單工具、Canvas、遊戲與動畫，練習用 Codex 完成 AI coding 小作品。">
+  <meta property="og:url" content="https://happyebook.com/codex-mini-projects-roadmap.html">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook Codex 小作品學習路線">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Codex 小作品學習路線｜Happy eBook">
+  <meta name="twitter:description" content="用 2 本中英童書與 8 個小作品，練習 Codex AI coding。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <link rel="stylesheet" href="src/styles.css?v=20260528-4">
+  <style>
+    .roadmap-page {
+      overflow-x: hidden;
+    }
+
+    .roadmap-page pre {
+      max-width: 100%;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .roadmap-page code {
+      overflow-wrap: anywhere;
+    }
+
+    .roadmap-page p,
+    .roadmap-page li,
+    .roadmap-page h2,
+    .roadmap-page h3,
+    .roadmap-page a {
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 760px) {
+      .roadmap-page .container {
+        width: calc(100% - 32px);
+        padding-inline: 0;
+      }
+
+      .roadmap-page .page-hero h1 {
+        max-width: 100%;
+        font-size: clamp(2.35rem, 11vw, 3.4rem);
+        overflow-wrap: anywhere;
+      }
+
+      .roadmap-page .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .roadmap-page .landing-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .roadmap-page .hero-actions .button {
+        width: 100%;
+        justify-content: center;
+        min-width: 0;
+        white-space: normal;
+      }
+
+      .roadmap-page .landing-panel,
+      .roadmap-page .article-card,
+      .roadmap-page .start-card {
+        min-width: 0;
+      }
+
+      .roadmap-page .landing-panel,
+      .roadmap-page .article-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="roadmap-page">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">Codex 小作品路線</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="index.html">首頁</a>
+          <a href="books.html">書籍列表</a>
+          <a href="mini-projects/">小作品</a>
+          <a href="python-codex.html">Python / Codex</a>
+          <a href="ai-learning.html">AI 學習</a>
+          <a href="contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero landing-hero">
+        <div class="container">
+          <span class="eyebrow">Codex Learning Path</span>
+          <h1>Codex 小作品<br>學習路線</h1>
+          <p>用 2 本中英童書與 8 個小作品，練習把需求說清楚、請 Codex 實作、自己檢查結果，再把問題修到可用。</p>
+          <div class="hero-actions">
+            <a class="button primary button-large" href="#first-task">從第一個任務開始</a>
+            <a class="button secondary button-large" href="mini-projects/">查看小作品</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container landing-layout">
+          <div class="landing-panel">
+            <h2>使用範圍</h2>
+            <ul class="landing-list">
+              <li><strong>包含</strong>2 本中英童書與 8 個小作品。</li>
+              <li><strong>排除</strong><code>mini-projects/hermes-agent/</code> 任務代理工具不用進入這條路線。</li>
+              <li><strong>目標</strong>學會 Codex AI coding 的需求描述、實作、檢查與修正循環。</li>
+            </ul>
+          </div>
+          <div class="landing-panel">
+            <h2>固定 Prompt 格式</h2>
+            <p>每次請 Codex 做事，都用同一個骨架：目標、檔案位置、功能限制、完成後檢查。這樣比較容易得到可驗證的結果。</p>
+            <pre><code>請修改 [檔案或目錄]。
+目標：[一句話說明要完成什麼]
+限制：使用 HTML/CSS/Vanilla JS，不加後端，不引入框架。
+功能：[列出 3 到 5 個具體功能]
+完成後請檢查：手機版、JS 語法、本機連結、主要操作流程。</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Four Stages</span>
+              <h2>四階段練習流程</h2>
+            </div>
+            <p class="section-lead">每個小作品都走同一套流程：準備、執行、檢查、修正。</p>
+          </div>
+          <div class="start-grid">
+            <article class="start-card start-ai">
+              <span>準備</span>
+              <h3>先看作品，再寫一句目標</h3>
+              <p>打開作品，說出它做什麼、主要檔案在哪裡、要修改哪一塊。不要一開始就要求大改。</p>
+            </article>
+            <article class="start-card start-code">
+              <span>執行</span>
+              <h3>一次只給 Codex 一個任務</h3>
+              <p>例如新增一頁童書、加一個按鈕、修一個手機版問題。任務越小，越容易檢查。</p>
+            </article>
+            <article class="start-card start-ipas">
+              <span>檢查</span>
+              <h3>自己驗證，不只看回覆</h3>
+              <p>確認頁面能開、手機版正常、按鈕能操作、沒有破壞首頁連結。</p>
+            </article>
+            <article class="start-card start-ai">
+              <span>修正</span>
+              <h3>把問題改成清楚修正任務</h3>
+              <p>例如「手機版右側溢出」比「畫面怪怪的」更容易讓 Codex 修好。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">10 Works</span>
+              <h2>10 個學習素材與任務</h2>
+            </div>
+            <p class="section-lead">照順序做。每一格都有「學什麼」、「給 Codex 的 prompt」和「完成後檢查」。</p>
+          </div>
+          <div class="article-grid">
+            <article class="article-card" id="first-task">
+              <span>1. 童書頁</span>
+              <h3><a href="mini-projects/school-day-picture-book/">Leo 的學校一天</a></h3>
+              <p><strong>學什麼：</strong>靜態頁、SEO、封面 SVG、頁卡結構、中英對照句。</p>
+              <p><strong>Prompt：</strong>請在 Leo 的學校一天新增第 9 頁，英文句子、繁中翻譯、朗讀提示、單字 chips 與簡單 SVG 插圖都要有。</p>
+              <p><strong>檢查：</strong>第 9 頁出現在頁面最後，手機版不溢出，文字沒有重疊。</p>
+            </article>
+            <article class="article-card">
+              <span>2. 童書頁</span>
+              <h3><a href="mini-projects/little-sister-home-day/">Mia 在家的一天</a></h3>
+              <p><strong>學什麼：</strong>沿用既有版型、改主角與情境、保持低幼短句。</p>
+              <p><strong>Prompt：</strong>請把 Mia 童書其中一頁改成「Mia helps Mommy clean up toys」，保留中英對照與朗讀提示。</p>
+              <p><strong>檢查：</strong>英文適合 4 歲親子共讀，插圖內容和句子一致。</p>
+            </article>
+            <article class="article-card">
+              <span>3. 文字互動</span>
+              <h3><a href="mini-projects/english-cai/">英文單字照打練習</a></h3>
+              <p><strong>學什麼：</strong>輸入框、即時比對、資料陣列、狀態提示。</p>
+              <p><strong>Prompt：</strong>請新增 5 個英文單字資料，每個包含中文解釋、用法與例句。</p>
+              <p><strong>檢查：</strong>每個單字都能切換，輸入正確和錯誤時提示正常。</p>
+            </article>
+            <article class="article-card">
+              <span>4. 表單工具</span>
+              <h3><a href="mini-projects/lucky-draw/">抽籤程式</a></h3>
+              <p><strong>學什麼：</strong>多行文字解析、隨機抽選、紀錄、選項開關。</p>
+              <p><strong>Prompt：</strong>請新增「複製抽籤紀錄」按鈕，把目前紀錄複製到剪貼簿。</p>
+              <p><strong>檢查：</strong>有紀錄時可複製；沒有紀錄時顯示清楚提示。</p>
+            </article>
+            <article class="article-card">
+              <span>5. 狀態遊戲</span>
+              <h3><a href="mini-projects/bingo-game/">賓果遊戲</a></h3>
+              <p><strong>學什麼：</strong>5x5 陣列、抽號、標記、Bingo 判斷、房間狀態。</p>
+              <p><strong>Prompt：</strong>請新增「顯示剩餘號碼數」資訊，抽號後即時更新。</p>
+              <p><strong>檢查：</strong>抽號後數字會減少，重新開始會回到 75。</p>
+            </article>
+            <article class="article-card">
+              <span>6. 回合遊戲</span>
+              <h3><a href="mini-projects/tic-tac-toe-online/">井字遊戲網路版</a></h3>
+              <p><strong>學什麼：</strong>棋盤狀態、勝負判斷、計分、localStorage 同步。</p>
+              <p><strong>Prompt：</strong>請新增「下一局先手切換」功能，上一局 X 先手，下一局改 O 先手。</p>
+              <p><strong>檢查：</strong>重新開局後先手會輪替，計分不會被清掉。</p>
+            </article>
+            <article class="article-card">
+              <span>7. Canvas</span>
+              <h3><a href="mini-projects/chalkboard/">電子白板</a></h3>
+              <p><strong>學什麼：</strong>Canvas、滑鼠與觸控、文字繪製、復原、保存。</p>
+              <p><strong>Prompt：</strong>請新增「橡皮擦模式」，可用同樣的拖曳方式擦除白板內容。</p>
+              <p><strong>檢查：</strong>橡皮擦不影響粉筆顏色選擇，復原仍可用。</p>
+            </article>
+            <article class="article-card">
+              <span>8. Canvas 遊戲</span>
+              <h3><a href="mini-projects/brick-battle-duo/">打磚塊雙人左右對戰版</a></h3>
+              <p><strong>學什麼：</strong>動畫迴圈、碰撞判斷、道具、鍵盤與觸控。</p>
+              <p><strong>Prompt：</strong>請新增「慢速球」道具，接到後球速降低 6 秒。</p>
+              <p><strong>檢查：</strong>道具被接到後狀態列更新，6 秒後球速恢復。</p>
+            </article>
+            <article class="article-card">
+              <span>9. 隨機遊戲</span>
+              <h3><a href="mini-projects/slot-777/">777 拉霸遊戲</a></h3>
+              <p><strong>學什麼：</strong>亂數、條件判斷、動畫、分數紀錄。</p>
+              <p><strong>Prompt：</strong>請新增「最高分紀錄」，用 localStorage 保存目前最高總分。</p>
+              <p><strong>檢查：</strong>重新整理後最高分仍存在，重新開始不會清掉最高分。</p>
+            </article>
+            <article class="article-card">
+              <span>10. CSS 3D</span>
+              <h3><a href="mini-projects/ferris-wheel-3d/">3D 摩天輪網頁</a></h3>
+              <p><strong>學什麼：</strong>CSS 3D、動畫速度、控制項、視覺檢查。</p>
+              <p><strong>Prompt：</strong>請新增「夜晚模式」切換，背景變暗、燈光更明顯。</p>
+              <p><strong>檢查：</strong>切換模式後摩天輪仍旋轉，手機版控制項不重疊。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">First Prompt</span>
+              <h2>第一個 Codex 練習：修改 Leo 的學校一天</h2>
+            </div>
+            <p class="section-lead">先從內容型頁面開始，風險低、容易檢查，也能練習看懂既有 HTML 結構。</p>
+          </div>
+          <div class="landing-panel">
+            <h3>可直接使用的 prompt</h3>
+            <pre><code>請修改 mini-projects/school-day-picture-book/index.html。
+目標：在「Leo 的學校一天」最後新增第 9 頁。
+內容：
+- 英文句子：Leo packs his school bag for tomorrow.
+- 繁中翻譯：Leo 整理明天要用的書包。
+- 朗讀提示：packs 是「整理、打包」；tomorrow 是「明天」。
+- 單字 chips：pack、school bag、tomorrow
+- 新增一張簡單 SVG 插圖，畫面是 Leo 把書放進書包。
+限制：
+- 使用現有 page-card 結構。
+- 不引入外部圖片、框架或後端。
+- 保持手機版可讀，不要讓文字或插圖溢出。
+完成後請檢查 JavaScript 語法、手機版版面和本機連結。</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="index.html">首頁</a>
+          <a href="mini-projects/">小作品</a>
+          <a href="python-codex.html">Python / Codex</a>
+          <a href="contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script src="src/script.js?v=20260527-11"></script>
+</body>
+</html>
