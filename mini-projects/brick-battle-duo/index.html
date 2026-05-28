@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#172554">
   <title>打磚塊雙人左右對戰版｜Happy eBook 小作品</title>
-  <meta name="description" content="一個純前端 Canvas 打磚塊雙人左右對戰版，左右玩家各守一邊，打掉中間磚塊並避免球穿過自己的防線。">
+  <meta name="description" content="一個純前端 Canvas 打磚塊雙人左右對戰版，包含雙人控制、關卡難度、音效開關、道具掉落與得分勝負。">
   <link rel="canonical" href="https://happyebook.com/mini-projects/brick-battle-duo/">
   <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:title" content="打磚塊雙人左右對戰版｜Happy eBook 小作品">
-  <meta property="og:description" content="左右玩家各守一邊的打磚塊對戰小遊戲，支援鍵盤與觸控控制。">
+  <meta property="og:description" content="左右玩家各守一邊的打磚塊對戰小遊戲，支援鍵盤、觸控、難度、音效與道具。">
   <meta property="og:url" content="https://happyebook.com/mini-projects/brick-battle-duo/">
   <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
   <meta property="og:image:alt" content="Happy eBook 打磚塊雙人左右對戰版">
@@ -18,7 +18,7 @@
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="打磚塊雙人左右對戰版｜Happy eBook 小作品">
-  <meta name="twitter:description" content="純前端 Canvas 雙人左右對戰打磚塊遊戲。">
+  <meta name="twitter:description" content="純前端 Canvas 雙人左右對戰打磚塊遊戲，支援難度、音效與道具。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
   <style>
     :root {
@@ -47,7 +47,8 @@
         linear-gradient(180deg, #0f1d34 0%, var(--bg) 62%, #101827 100%);
     }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; }
+    button, select { font: inherit; }
+    button { cursor: pointer; }
 
     .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
     .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
@@ -98,6 +99,7 @@
       gap: 18px;
       align-items: start;
     }
+    .game-shell > * { min-width: 0; }
     .arena-card, .side-card {
       border: 1px solid var(--line);
       border-radius: 24px;
@@ -179,6 +181,9 @@
     }
     .rule-list strong { display: block; margin-bottom: 4px; color: #fff; }
     .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .field { display: grid; gap: 8px; color: #fff; font-weight: 850; }
+    .field select { width: 100%; min-height: 46px; border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; color: #0f172a; background: rgba(255, 255, 255, 0.92); }
+    .power-status { min-height: 1.6em; margin: 0; color: #bfdbfe; font-weight: 850; line-height: 1.6; }
 
     .footer { margin-top: auto; padding: 24px 0 36px; color: #cbd5e1; }
     .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
@@ -186,7 +191,7 @@
     .footer-nav a { color: #cbd5e1; font-weight: 700; }
 
     @media (max-width: 900px) {
-      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .container { width: calc(100% - 56px); padding-inline: 0; }
       .header-row { min-height: auto; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
       .brand-sub { display: none; }
       .nav-toggle { display: inline-flex; }
@@ -195,7 +200,7 @@
       .site-nav a { width: 100%; border-radius: 14px; }
       .hero-grid, .game-shell { grid-template-columns: 1fr; }
       h1 { width: min(5.8em, 100%); overflow-wrap: anywhere; font-size: clamp(2.35rem, 12vw, 4rem); }
-      .hero p, .hero-card p { width: min(310px, 100%); overflow-wrap: anywhere; word-break: break-all; }
+      .hero p, .hero-card p { width: min(310px, 100%); overflow-wrap: break-word; word-break: normal; }
       .hero-card, .arena-card, .side-card { min-width: 0; }
       .score-row { grid-template-columns: 1fr; }
       .score-right { text-align: left; }
@@ -235,8 +240,8 @@
             <p>左右兩位玩家各守一邊，用球打掉中間磚塊。球穿過自己的防線，對手就得分。先拿到 5 分的人獲勝。</p>
           </div>
           <aside class="hero-card">
-            <h2>最小可用版本</h2>
-            <p>這版先完成雙人控制、磚塊碰撞、得分與重新開始。之後可以再加入關卡、音效與道具。</p>
+            <h2>完整練習版</h2>
+            <p>這版完成雙人控制、磚塊碰撞、得分、關卡難度、音效開關、道具掉落與重新開始，仍然是純靜態網頁。</p>
           </aside>
         </div>
       </section>
@@ -267,12 +272,22 @@
               <li><strong>左玩家</strong>使用 W / S 控制左側擋板上下移動。</li>
               <li><strong>右玩家</strong>使用 ↑ / ↓ 控制右側擋板上下移動。</li>
               <li><strong>得分</strong>球穿過對方底線即可得 1 分，先到 5 分獲勝。</li>
-              <li><strong>磚塊</strong>球打到中間磚塊會消除磚塊並改變方向。</li>
+              <li><strong>道具</strong>打掉部分磚塊會掉落道具，碰到擋板後會加長擋板或加快球速。</li>
             </ul>
+            <label class="field">
+              關卡難度
+              <select data-level>
+                <option value="easy">入門</option>
+                <option value="normal" selected>標準</option>
+                <option value="hard">挑戰</option>
+              </select>
+            </label>
+            <p class="power-status" data-power-status>目前沒有道具效果。</p>
             <div class="control-grid">
               <button class="button" type="button" data-start>開始 / 繼續</button>
               <button class="button secondary" type="button" data-pause>暫停</button>
               <button class="button orange" type="button" data-reset>重新開始</button>
+              <button class="button secondary" type="button" data-sound>音效：開</button>
               <a class="button secondary" href="../">其他小作品</a>
             </div>
           </aside>
@@ -307,9 +322,14 @@
     const leftScoreEl = document.querySelector("[data-left-score]");
     const rightScoreEl = document.querySelector("[data-right-score]");
     const statusEl = document.querySelector("[data-status]");
+    const levelSelect = document.querySelector("[data-level]");
+    const soundButton = document.querySelector("[data-sound]");
+    const powerStatus = document.querySelector("[data-power-status]");
     const keys = new Set();
     const touches = new Set();
     const targetScore = 5;
+    let soundOn = true;
+    let audioContext = null;
 
     const state = {
       running: false,
@@ -319,13 +339,34 @@
       left: { x: 28, y: 210, w: 16, h: 120, speed: 520 },
       right: { x: 916, y: 210, w: 16, h: 120, speed: 520 },
       ball: { x: 480, y: 270, r: 9, vx: 360, vy: 220 },
-      bricks: []
+      bricks: [],
+      powerUps: [],
+      effects: { left: 0, right: 0, speed: 0 }
+    };
+
+    const levels = {
+      easy: { rows: 4, cols: 3, speed: 300, paddle: 140 },
+      normal: { rows: 6, cols: 4, speed: 340, paddle: 120 },
+      hard: { rows: 7, cols: 5, speed: 410, paddle: 100 }
+    };
+    const getLevel = () => levels[levelSelect?.value] || levels.normal;
+
+    const playTone = (frequency, duration = 0.08) => {
+      if (!soundOn) return;
+      audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      oscillator.frequency.value = frequency;
+      gain.gain.setValueAtTime(0.045, audioContext.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + duration);
+      oscillator.connect(gain).connect(audioContext.destination);
+      oscillator.start();
+      oscillator.stop(audioContext.currentTime + duration);
     };
 
     const makeBricks = () => {
       const bricks = [];
-      const cols = 4;
-      const rows = 6;
+      const { cols, rows } = getLevel();
       const brickW = 58;
       const brickH = 32;
       const gap = 10;
@@ -339,6 +380,7 @@
             w: brickW,
             h: brickH,
             alive: true,
+            power: Math.random() < 0.18 ? (Math.random() < 0.55 ? "paddle" : "speed") : "",
             color: row % 2 ? "#22d3ee" : "#f97316"
           });
         }
@@ -347,20 +389,26 @@
     };
 
     const resetBall = (direction = Math.random() > 0.5 ? 1 : -1) => {
+      const { speed } = getLevel();
       state.ball.x = canvas.width / 2;
       state.ball.y = canvas.height / 2;
-      state.ball.vx = 340 * direction;
-      state.ball.vy = (Math.random() > 0.5 ? 1 : -1) * 210;
+      state.ball.vx = speed * direction;
+      state.ball.vy = (Math.random() > 0.5 ? 1 : -1) * speed * 0.62;
     };
 
     const resetGame = () => {
+      const { paddle } = getLevel();
       state.running = false;
       state.winner = "";
       state.leftScore = 0;
       state.rightScore = 0;
+      state.left.h = paddle;
+      state.right.h = paddle;
       state.left.y = canvas.height / 2 - state.left.h / 2;
       state.right.y = canvas.height / 2 - state.right.h / 2;
       state.bricks = makeBricks();
+      state.powerUps = [];
+      state.effects = { left: 0, right: 0, speed: 0 };
       resetBall(1);
       updateHud("按開始");
       draw();
@@ -370,6 +418,9 @@
       leftScoreEl.textContent = String(state.leftScore);
       rightScoreEl.textContent = String(state.rightScore);
       statusEl.textContent = text;
+      powerStatus.textContent = state.effects.left || state.effects.right || state.effects.speed
+        ? `道具效果中：左 ${Math.ceil(state.effects.left)} 秒、右 ${Math.ceil(state.effects.right)} 秒、加速 ${Math.ceil(state.effects.speed)} 秒`
+        : "目前沒有道具效果。";
     };
 
     const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
@@ -399,6 +450,7 @@
       b.vx = Math.abs(b.vx) * direction * 1.035;
       b.vy = relative * 360;
       b.x = direction > 0 ? paddle.x + paddle.w + b.r : paddle.x - b.r;
+      playTone(520);
     };
 
     const hitBricks = () => {
@@ -406,6 +458,16 @@
       for (const brick of state.bricks) {
         if (!brick.alive || !rectHit(b, brick)) continue;
         brick.alive = false;
+        if (brick.power) {
+          state.powerUps.push({
+            x: brick.x + brick.w / 2,
+            y: brick.y + brick.h / 2,
+            r: 10,
+            vx: b.vx > 0 ? -120 : 120,
+            vy: 70,
+            type: brick.power
+          });
+        }
         const overlapLeft = b.x + b.r - brick.x;
         const overlapRight = brick.x + brick.w - (b.x - b.r);
         const overlapTop = b.y + b.r - brick.y;
@@ -415,8 +477,48 @@
         else b.vy *= -1;
         b.vx *= 1.01;
         b.vy *= 1.01;
+        playTone(brick.power ? 760 : 640);
         break;
       }
+    };
+
+    const applyPower = (side, type) => {
+      if (type === "paddle") {
+        const paddle = side === "left" ? state.left : state.right;
+        paddle.h = Math.min(170, paddle.h + 34);
+        state.effects[side] = 8;
+        updateHud(`${side === "left" ? "左玩家" : "右玩家"} 擋板加長`);
+        playTone(860, 0.12);
+        return;
+      }
+      state.ball.vx *= 1.18;
+      state.ball.vy *= 1.18;
+      state.effects.speed = 6;
+      updateHud("球速提升");
+      playTone(980, 0.12);
+    };
+
+    const updatePowerUps = (dt) => {
+      for (const key of ["left", "right", "speed"]) {
+        if (state.effects[key] > 0) state.effects[key] = Math.max(0, state.effects[key] - dt);
+      }
+      const basePaddle = getLevel().paddle;
+      if (state.effects.left <= 0) state.left.h = basePaddle;
+      if (state.effects.right <= 0) state.right.h = basePaddle;
+      for (const power of state.powerUps) {
+        power.x += power.vx * dt;
+        power.y += power.vy * dt;
+        power.vy += 40 * dt;
+        if (rectHit(power, state.left)) {
+          power.collected = true;
+          applyPower("left", power.type);
+        }
+        if (rectHit(power, state.right)) {
+          power.collected = true;
+          applyPower("right", power.type);
+        }
+      }
+      state.powerUps = state.powerUps.filter((power) => !power.collected && power.x > -40 && power.x < canvas.width + 40 && power.y < canvas.height + 40);
     };
 
     const scorePoint = (side) => {
@@ -426,15 +528,18 @@
         state.winner = state.leftScore > state.rightScore ? "左玩家獲勝" : "右玩家獲勝";
         state.running = false;
         updateHud(state.winner);
+        playTone(300, 0.2);
         return;
       }
       resetBall(side === "left" ? 1 : -1);
       updateHud(`${side === "left" ? "左玩家" : "右玩家"} 得分`);
+      playTone(260, 0.16);
     };
 
     const update = (dt) => {
       if (!state.running || state.winner) return;
       movePaddles(dt);
+      updatePowerUps(dt);
       const b = state.ball;
       b.x += b.vx * dt;
       b.y += b.vy * dt;
@@ -442,6 +547,7 @@
       if (b.y - b.r <= 0 || b.y + b.r >= canvas.height) {
         b.vy *= -1;
         b.y = clamp(b.y, b.r, canvas.height - b.r);
+        playTone(420);
       }
 
       hitPaddle(state.left, 1);
@@ -478,6 +584,21 @@
         ctx.shadowBlur = 0;
         ctx.fillStyle = "rgba(255,255,255,0.22)";
         ctx.fillRect(brick.x + 8, brick.y + 6, brick.w - 16, 5);
+      }
+
+      for (const power of state.powerUps) {
+        ctx.fillStyle = power.type === "paddle" ? "#22c55e" : "#fde047";
+        ctx.shadowColor = ctx.fillStyle;
+        ctx.shadowBlur = 14;
+        ctx.beginPath();
+        ctx.arc(power.x, power.y, power.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "#0f172a";
+        ctx.font = "900 12px Segoe UI";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(power.type === "paddle" ? "P" : "S", power.x, power.y + 1);
       }
 
       const drawPaddle = (paddle, color) => {
@@ -529,6 +650,12 @@
       updateHud("暫停");
     });
     document.querySelector("[data-reset]")?.addEventListener("click", resetGame);
+    levelSelect?.addEventListener("change", resetGame);
+    soundButton?.addEventListener("click", () => {
+      soundOn = !soundOn;
+      soundButton.textContent = soundOn ? "音效：開" : "音效：關";
+      if (soundOn) playTone(700);
+    });
 
     document.querySelectorAll("[data-touch]").forEach((button) => {
       const value = button.dataset.touch;
