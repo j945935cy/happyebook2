@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2459d6">
+  <title>賓果遊戲｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端賓果遊戲小作品，可產生 5x5 賓果卡、抽號、自動標記、判斷 Bingo 與重新開始。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/bingo-game/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="賓果遊戲｜Happy eBook 小作品">
+  <meta property="og:description" content="產生賓果卡、抽號、標記與判斷 Bingo 的純前端小遊戲。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/bingo-game/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 賓果遊戲">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="賓果遊戲｜Happy eBook 小作品">
+  <meta name="twitter:description" content="純前端 5x5 賓果遊戲，適合練習抽號、狀態管理與勝負判斷。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --ink: #182332;
+      --muted: #64748b;
+      --primary: #2459d6;
+      --primary-dark: #173f9d;
+      --accent: #287a71;
+      --warm: #c87137;
+      --line: #dfe6ef;
+      --shadow: 0 18px 40px rgba(24, 35, 50, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(36, 89, 214, 0.12), transparent 30%),
+        radial-gradient(circle at 88% 12%, rgba(40, 122, 113, 0.12), transparent 28%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 44%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(248, 251, 255, 0.9); border-bottom: 1px solid rgba(215, 225, 235, 0.9); backdrop-filter: blur(14px); }
+    .header-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { color: #13233a; font-size: 1.3rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.92rem; }
+    .site-nav { display: flex; align-items: center; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 999px; color: var(--muted); font-weight: 700; }
+    .site-nav a:hover, .site-nav a.is-active { background: var(--surface); color: var(--primary-dark); box-shadow: 0 10px 24px rgba(24, 35, 50, 0.08); }
+    .nav-toggle { display: none; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 10px 14px; border-radius: 999px; font-weight: 850; }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display: block; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; }
+    .nav-toggle-bars { position: relative; }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { position: absolute; left: 0; }
+    .nav-toggle-bars::before { top: -6px; }
+    .nav-toggle-bars::after { top: 6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+    .hero { padding: 56px 0 24px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; align-items: end; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; color: #102033; font-size: clamp(3rem, 7vw, 6rem); line-height: 1.04; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 42rem; color: #405066; font-size: clamp(1.04rem, 2vw, 1.24rem); line-height: 1.85; }
+    .hero-card { padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255, 255, 255, 0.84); box-shadow: var(--shadow); }
+    .hero-card h2 { margin: 0 0 10px; color: #13233a; font-size: 1.22rem; }
+    .hero-card p { color: var(--muted); font-size: 0.96rem; }
+
+    .game-section { padding: 18px 0 64px; }
+    .game-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 22px; align-items: start; }
+    .panel { border: 1px solid var(--line); border-radius: 24px; background: rgba(255, 255, 255, 0.92); box-shadow: var(--shadow); }
+    .board-panel { padding: clamp(16px, 3vw, 26px); }
+    .side-panel { display: grid; gap: 18px; padding: 22px; }
+    .status-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+    .status-row h2 { margin: 0; color: #13233a; font-size: clamp(1.45rem, 3vw, 2rem); }
+    .bingo-pill { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 12px; border-radius: 999px; background: #edf8f6; color: #17655d; font-weight: 900; white-space: nowrap; }
+    .board { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(6px, 1.3vw, 10px); width: min(100%, 620px); margin: 0 auto; padding: clamp(8px, 2vw, 14px); border-radius: 24px; background: linear-gradient(135deg, rgba(36, 89, 214, 0.14), rgba(40, 122, 113, 0.12)); }
+    .cell { display: grid; place-items: center; aspect-ratio: 1; min-width: 0; border: 1px solid rgba(255, 255, 255, 0.82); border-radius: 16px; background: #ffffff; color: #13233a; font-size: clamp(1.35rem, 5vw, 2.4rem); font-weight: 950; box-shadow: 0 12px 24px rgba(24, 35, 50, 0.08); transition: transform 0.16s ease, background-color 0.16s ease; }
+    .cell:hover { transform: translateY(-2px); }
+    .cell.is-marked { background: #e4efff; color: var(--primary-dark); border-color: rgba(36, 89, 214, 0.3); }
+    .cell.is-free { background: #edf8f6; color: #17655d; }
+    .cell.is-win { background: #fff3e8; color: #9a5624; border-color: rgba(200, 113, 55, 0.35); }
+    .message { min-height: 1.7em; margin: 18px 0 0; color: var(--muted); font-weight: 800; line-height: 1.7; text-align: center; }
+    .draw-card { display: grid; place-items: center; min-height: 170px; padding: 20px; border: 1px solid var(--line); border-radius: 20px; background: #f7fbff; text-align: center; }
+    .draw-card span { color: var(--muted); font-weight: 850; }
+    .draw-card strong { display: block; margin-top: 8px; color: var(--primary-dark); font-size: clamp(3rem, 8vw, 5rem); line-height: 1; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 16px; border: 1px solid transparent; border-radius: 999px; background: var(--primary); color: #fff; font-weight: 850; }
+    .button.secondary { background: #ffffff; border-color: var(--line); color: var(--ink); }
+    .button.warm { background: var(--warm); }
+    .called-list { display: flex; flex-wrap: wrap; gap: 8px; min-height: 44px; padding: 12px; border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; }
+    .called-number { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 34px; border-radius: 999px; background: #e4efff; color: var(--primary-dark); font-weight: 900; }
+    .rule-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .rule-list li { padding: 12px; border: 1px solid var(--line); border-radius: 16px; background: #fbfdff; color: var(--muted); line-height: 1.7; }
+    .rule-list strong { display: block; margin-bottom: 4px; color: #13233a; }
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .header-row { min-height: auto; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
+      .brand-sub { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .site-nav { width: 100%; display: none; flex-direction: column; align-items: stretch; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); }
+      .site-nav.is-open { display: flex; }
+      .site-nav a { width: 100%; border-radius: 14px; }
+      .hero-grid, .game-layout { grid-template-columns: 1fr; }
+      .hero-card, .panel { min-width: 0; }
+      h1 { width: min(5.8em, 100%); overflow-wrap: anywhere; font-size: clamp(2.5rem, 13vw, 4rem); }
+      .hero p, .hero-card p { width: min(320px, 100%); overflow-wrap: anywhere; word-break: break-all; }
+      .status-row, .footer-bar { flex-direction: column; align-items: flex-start; }
+      .board { width: min(100%, 330px); max-width: 100%; gap: 6px; padding: 8px; }
+      .cell { border-radius: 12px; font-size: clamp(1.25rem, 7vw, 1.8rem); }
+      .button-row { flex-direction: column; align-items: stretch; }
+      .button-row .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">賓果遊戲</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Bingo Game</span>
+            <h1>賓果遊戲</h1>
+            <p>產生一張 5x5 賓果卡，按下抽號後系統會自動標記。只要橫線、直線或斜線連成一條，就完成 Bingo。</p>
+          </div>
+          <aside class="hero-card">
+            <h2>最小可用版本</h2>
+            <p>這版先完成產生卡片、抽號、標記、判斷 Bingo 與重新開始。之後可以再加入多人房間或題目版賓果。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="game-section">
+        <div class="container game-layout">
+          <section class="panel board-panel" aria-label="賓果卡">
+            <div class="status-row">
+              <h2>我的賓果卡</h2>
+              <span class="bingo-pill" data-bingo-count>目前 0 條線</span>
+            </div>
+            <div class="board" data-board></div>
+            <p class="message" data-message>按「抽下一個號碼」開始遊戲。</p>
+          </section>
+
+          <aside class="panel side-panel">
+            <span class="eyebrow">Draw</span>
+            <div class="draw-card">
+              <span>目前號碼</span>
+              <strong data-current-number>--</strong>
+            </div>
+            <div class="button-row">
+              <button class="button" type="button" data-draw>抽下一個號碼</button>
+              <button class="button secondary" type="button" data-new-card>換一張卡</button>
+              <button class="button warm" type="button" data-reset>重新開始</button>
+            </div>
+            <div>
+              <h2>已抽號碼</h2>
+              <div class="called-list" data-called-list></div>
+            </div>
+            <ul class="rule-list">
+              <li><strong>玩法</strong>抽到卡片上的號碼會自動標記，也可以手動點格子修正。</li>
+              <li><strong>勝利</strong>橫線、直線或斜線任一條連成 5 格，就是 Bingo。</li>
+              <li><strong>自由格</strong>中間 FREE 一開始就算完成。</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../">小作品</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
+    navToggle?.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
+    });
+
+    const boardEl = document.querySelector("[data-board]");
+    const currentEl = document.querySelector("[data-current-number]");
+    const calledListEl = document.querySelector("[data-called-list]");
+    const messageEl = document.querySelector("[data-message]");
+    const bingoCountEl = document.querySelector("[data-bingo-count]");
+    const lines = [
+      [0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19], [20, 21, 22, 23, 24],
+      [0, 5, 10, 15, 20], [1, 6, 11, 16, 21], [2, 7, 12, 17, 22], [3, 8, 13, 18, 23], [4, 9, 14, 19, 24],
+      [0, 6, 12, 18, 24], [4, 8, 12, 16, 20]
+    ];
+    let card = [];
+    let marked = new Set([12]);
+    let called = [];
+    let current = "";
+
+    const shuffle = (items) => items
+      .map((value) => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map((item) => item.value);
+
+    const makeCard = () => {
+      const columns = [
+        shuffle([...Array(15)].map((_, i) => i + 1)).slice(0, 5),
+        shuffle([...Array(15)].map((_, i) => i + 16)).slice(0, 5),
+        shuffle([...Array(15)].map((_, i) => i + 31)).slice(0, 5),
+        shuffle([...Array(15)].map((_, i) => i + 46)).slice(0, 5),
+        shuffle([...Array(15)].map((_, i) => i + 61)).slice(0, 5)
+      ];
+      const next = [];
+      for (let row = 0; row < 5; row += 1) {
+        for (let col = 0; col < 5; col += 1) next.push(columns[col][row]);
+      }
+      next[12] = "FREE";
+      return next;
+    };
+
+    const getBingoLines = () => lines.filter((line) => line.every((index) => marked.has(index)));
+
+    const render = () => {
+      const bingoLines = getBingoLines();
+      const winCells = new Set(bingoLines.flat());
+      boardEl.innerHTML = card.map((value, index) => {
+        const isMarked = marked.has(index);
+        const isFree = value === "FREE";
+        const isWin = winCells.has(index);
+        return `<button class="cell${isMarked ? " is-marked" : ""}${isFree ? " is-free" : ""}${isWin ? " is-win" : ""}" type="button" data-cell="${index}">${value}</button>`;
+      }).join("");
+      currentEl.textContent = current || "--";
+      bingoCountEl.textContent = `目前 ${bingoLines.length} 條線`;
+      calledListEl.innerHTML = called.length
+        ? called.map((number) => `<span class="called-number">${number}</span>`).join("")
+        : "<span style=\"color:#64748b;font-weight:800;\">尚未抽號</span>";
+      if (bingoLines.length) {
+        messageEl.textContent = `Bingo！你已完成 ${bingoLines.length} 條線。`;
+      } else if (current) {
+        messageEl.textContent = `剛抽到 ${current}，如果卡片上有這個號碼，系統已幫你標記。`;
+      } else {
+        messageEl.textContent = "按「抽下一個號碼」開始遊戲。";
+      }
+    };
+
+    const resetDraws = () => {
+      marked = new Set([12]);
+      called = [];
+      current = "";
+      render();
+    };
+
+    const newCard = () => {
+      card = makeCard();
+      resetDraws();
+    };
+
+    const drawNumber = () => {
+      const pool = [...Array(75)].map((_, i) => i + 1).filter((number) => !called.includes(number));
+      if (!pool.length) {
+        messageEl.textContent = "所有號碼都抽完了。";
+        return;
+      }
+      current = pool[Math.floor(Math.random() * pool.length)];
+      called.push(current);
+      card.forEach((value, index) => {
+        if (value === current) marked.add(index);
+      });
+      render();
+    };
+
+    boardEl.addEventListener("click", (event) => {
+      const cell = event.target.closest("[data-cell]");
+      if (!cell) return;
+      const index = Number(cell.dataset.cell);
+      if (index === 12) return;
+      if (marked.has(index)) marked.delete(index);
+      else marked.add(index);
+      render();
+    });
+
+    document.querySelector("[data-draw]")?.addEventListener("click", drawNumber);
+    document.querySelector("[data-new-card]")?.addEventListener("click", newCard);
+    document.querySelector("[data-reset]")?.addEventListener("click", resetDraws);
+
+    newCard();
+  </script>
+</body>
+</html>
