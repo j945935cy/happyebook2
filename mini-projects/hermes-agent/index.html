@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>Hermes Agent｜自己寫一個 AI 任務代理工具｜Happy eBook</title>
+  <meta name="description" content="用純前端方式建立一個 Hermes Agent 任務產生器，幫助初學者把目標轉成角色設定、任務拆解、檢查點與可複製 Prompt。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/hermes-agent/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hermes Agent｜自己寫一個 AI 任務代理工具｜Happy eBook">
+  <meta property="og:description" content="輸入任務目標，產生 Hermes Agent 工作流、檢查清單與可複製 Prompt。適合 AI Agent 與 Prompt Engineering 初學者。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/hermes-agent/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook Hermes Agent 任務產生器">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hermes Agent｜自己寫一個 AI 任務代理工具｜Happy eBook">
+  <meta name="twitter:description" content="一個不需要後端的 Hermes Agent 任務產生器，適合練習 AI Agent 工作流。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <link rel="stylesheet" href="../../src/styles.css?v=20260528-3">
+</head>
+<body data-page="hermes-agent">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">AI Agent 工具練習</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../">小作品</a>
+          <a class="is-active" href="./">Hermes Agent</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hermes-hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Hermes Agent</span>
+            <h1><span>自己寫一個</span><span>AI 任務代理工具</span></h1>
+            <p class="hero-lead">這是一個純前端 Hermes Agent 範例。你輸入任務目標，它會整理成角色設定、工作流程、檢查點與可複製 Prompt，適合拿來練習 AI Agent 協作。</p>
+            <div class="hero-actions">
+              <a class="button primary button-large" href="#agent-builder">開始產生任務</a>
+              <a class="button secondary button-large" href="../">看其他小作品</a>
+              <a class="button secondary button-large" href="../../books/hermes-learning-by-doing.html">閱讀 Hermes 教材</a>
+            </div>
+          </div>
+          <div class="hermes-console" aria-label="Hermes Agent 工作流預覽">
+            <div class="console-head">
+              <span></span><span></span><span></span>
+              <strong>Hermes Agent</strong>
+            </div>
+            <div class="console-line"><span>01</span><p>讀懂目標與限制</p></div>
+            <div class="console-line"><span>02</span><p>拆成可檢查的小任務</p></div>
+            <div class="console-line"><span>03</span><p>先問關鍵問題，再開始執行</p></div>
+            <div class="console-line"><span>04</span><p>輸出 Prompt、檢查清單與下一步</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="agent-builder" class="section">
+        <div class="container hermes-agent-layout">
+          <form class="hermes-agent-panel" data-hermes-agent-form>
+            <div class="section-head hermes-form-head">
+              <div>
+                <span class="eyebrow">Builder</span>
+                <h2>建立你的 Hermes Agent 任務</h2>
+              </div>
+              <p class="section-lead">不用登入、不送出資料，所有內容只在瀏覽器內產生。</p>
+            </div>
+
+            <label>
+              任務目標
+              <textarea name="goal" rows="5" required placeholder="例如：幫我規劃一個高中生可以跟著做的 Python 小專案，最後要能整理成教材。"></textarea>
+            </label>
+
+            <div class="hermes-form-grid">
+              <label>
+                Agent 角色
+                <select name="role">
+                  <option value="learning-coach">學習教練</option>
+                  <option value="coding-agent">程式協作代理</option>
+                  <option value="publishing-agent">電子書出版助手</option>
+                  <option value="exam-coach">考照複習教練</option>
+                </select>
+              </label>
+              <label>
+                輸出格式
+                <select name="format">
+                  <option value="plan">任務計畫</option>
+                  <option value="checklist">檢查清單</option>
+                  <option value="prompt">可複製 Prompt</option>
+                  <option value="lesson">教學大綱</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="hermes-form-grid">
+              <label>
+                任務範圍
+                <select name="scope">
+                  <option value="small">小任務，30 分鐘內完成</option>
+                  <option value="medium">中型任務，半天內完成</option>
+                  <option value="large">大型任務，需要分階段</option>
+                </select>
+              </label>
+              <label>
+                風險控管
+                <select name="guardrail">
+                  <option value="ask-first">先問問題再執行</option>
+                  <option value="draft-only">只產生草稿，不直接修改</option>
+                  <option value="checkpoint">每一步都建立檢查點</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              限制與偏好
+              <input name="constraints" type="text" placeholder="例如：使用繁體中文、不要太行銷、適合初學者、只用 HTML/CSS/JS">
+            </label>
+
+            <div class="hermes-agent-actions">
+              <button class="button primary" type="submit">產生 Hermes 任務</button>
+              <button class="button secondary" type="reset">清空</button>
+            </div>
+          </form>
+
+          <aside class="hermes-output-panel" aria-live="polite">
+            <div class="hermes-output-head">
+              <div>
+                <span class="eyebrow">Output</span>
+                <h2>Agent 輸出</h2>
+              </div>
+              <button class="button secondary compact" type="button" data-hermes-copy disabled>複製</button>
+            </div>
+            <pre class="hermes-output" data-hermes-output>先輸入任務目標，再按「產生 Hermes 任務」。</pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">How It Works</span>
+              <h2>這個 Agent 做了什麼</h2>
+            </div>
+            <p class="section-lead">重點不是假裝它會自動完成所有事，而是把 AI 協作流程整理成可檢查、可複製、可教學的格式。</p>
+          </div>
+          <div class="start-grid">
+            <article class="start-card start-ai">
+              <span>01</span>
+              <h3>先定義角色</h3>
+              <p>讓 AI 知道它是學習教練、程式協作代理，還是出版助手，避免回答方向發散。</p>
+            </article>
+            <article class="start-card start-ipas">
+              <span>02</span>
+              <h3>再拆成步驟</h3>
+              <p>把大任務拆成理解、提問、執行、檢查與交付，讓每一步都有明確輸出。</p>
+            </article>
+            <article class="start-card start-code">
+              <span>03</span>
+              <h3>最後留下檢查點</h3>
+              <p>要求 AI 說明假設、列出風險，並在重要修改前先產生可確認的草稿。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../">小作品</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../about.html">關於</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script src="../../src/script.js?v=20260528-3"></script>
+</body>
+</html>

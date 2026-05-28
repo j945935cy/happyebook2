@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>小作品｜Happy eBook</title>
+  <meta name="description" content="Happy eBook 小作品區，集中整理可直接操作的英文學習、AI 學習與教學小工具。每個作品獨立一個目錄，適合靜態網站部署。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="小作品｜Happy eBook">
+  <meta property="og:description" content="可直接操作的學習小工具，適合學生、教師與自學者。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 小作品區">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="小作品｜Happy eBook">
+  <meta name="twitter:description" content="集中整理 Happy eBook 的互動學習小工具。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <link rel="stylesheet" href="../src/styles.css?v=20260528-3">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">小作品區</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../index.html">首頁</a>
+          <a href="../books.html">書籍列表</a>
+          <a class="is-active" href="./">小作品</a>
+          <a href="../english-learning.html">英文學習</a>
+          <a href="../ai-learning.html">AI 學習</a>
+          <a href="../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero landing-hero">
+        <div class="container">
+          <span class="eyebrow">Mini Projects</span>
+          <h1>小作品</h1>
+          <p>這裡放可以直接操作的小程式與教學工具。每個作品都獨立放在自己的目錄，方便維護、擴充，也適合 GitHub Pages 靜態部署。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Projects</span>
+              <h2>目前收錄</h2>
+            </div>
+            <p class="section-lead">先從最小可用版本開始，之後可以逐步加入題庫、成績紀錄或更多練習模式。</p>
+          </div>
+          <div class="start-grid">
+            <a class="start-card start-code" href="hermes-agent/">
+              <span>Hermes Agent</span>
+              <h3>AI 任務代理產生器</h3>
+              <p>輸入任務目標，產生角色設定、任務拆解、檢查規則與可複製 Prompt，適合練習 AI Agent 工作流。</p>
+            </a>
+            <a class="start-card start-ai" href="english-cai/">
+              <span>English CAI</span>
+              <h3>英文單字照打練習</h3>
+              <p>顯示英文單字、中文解釋、使用方法與例句。使用者照著輸入，系統即時標示字母正確或錯誤。</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container landing-layout">
+          <div class="landing-panel">
+            <h2>放置規則</h2>
+            <ul class="landing-list">
+              <li><strong>一個作品一個資料夾</strong>例如 <code>mini-projects/english-cai/</code>。</li>
+              <li><strong>作品可獨立開啟</strong>每個作品都有自己的 <code>index.html</code>。</li>
+              <li><strong>優先純靜態</strong>使用 HTML、CSS、Vanilla JS，不依賴後端。</li>
+            </ul>
+          </div>
+          <div class="landing-panel">
+            <h2>適合放什麼</h2>
+            <p>英文照打、單字卡、句型練習、Prompt 練習、iPAS AI 小測驗、Python 概念互動範例，都可以放在這個區域。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../index.html">首頁</a>
+          <a href="../books.html">書籍列表</a>
+          <a href="../english-learning.html">英文學習</a>
+          <a href="../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script src="../src/script.js?v=20260528-3"></script>
+</body>
+</html>

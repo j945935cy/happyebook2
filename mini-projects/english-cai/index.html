@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>英文單字照打 CAI｜Happy eBook</title>
+  <meta name="description" content="一個簡單的英文單字照打 CAI 練習頁，顯示單字解釋、使用方法與例句，使用者照著輸入並即時檢查。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/english-cai/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="英文單字照打 CAI｜Happy eBook">
+  <meta property="og:description" content="看英文、理解意思、照著輸入，適合初學者建立單字熟悉度。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/english-cai/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 英文單字照打 CAI">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="英文單字照打 CAI｜Happy eBook">
+  <meta name="twitter:description" content="顯示單字、解釋、用法與例句，照著輸入並即時檢查。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <link rel="stylesheet" href="../../src/styles.css?v=20260528-3">
+</head>
+<body data-page="english-cai">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">英文照打練習</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../">小作品</a>
+          <a href="../../english-learning.html">英文學習</a>
+          <a class="is-active" href="./">英文 CAI</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero landing-hero">
+        <div class="container">
+          <span class="eyebrow">English CAI</span>
+          <h1>英文單字照打練習</h1>
+          <p>畫面會同時顯示英文單字、中文解釋、使用方法與例句。請照著輸入單字，系統會即時提醒是否正確。</p>
+          <div class="hero-actions">
+            <a class="button primary button-large" href="#typing-practice">開始練習</a>
+            <a class="button secondary button-large" href="../">看其他小作品</a>
+            <a class="button secondary button-large" href="../../english-learning.html">回英文學習路線</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="typing-practice" class="section">
+        <div class="container cai-layout">
+          <article class="cai-card cai-practice-panel">
+            <div class="cai-panel-head">
+              <div>
+                <span class="eyebrow">Practice</span>
+                <h2 data-cai-word>practice</h2>
+              </div>
+              <span class="cai-progress" data-cai-progress>1 / 8</span>
+            </div>
+
+            <div class="cai-word-preview" data-cai-letter-preview aria-label="照打單字"></div>
+
+            <label class="cai-input-label">
+              請照著輸入
+              <input data-cai-input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="在這裡輸入英文單字">
+            </label>
+
+            <p class="cai-feedback" data-cai-feedback>準備好後，請輸入上方單字。</p>
+
+            <div class="cai-actions">
+              <button class="button secondary" type="button" data-cai-prev>上一題</button>
+              <button class="button primary" type="button" data-cai-next>下一題</button>
+              <button class="button secondary" type="button" data-cai-reset>重新開始</button>
+            </div>
+          </article>
+
+          <aside class="cai-card cai-info-panel">
+            <span class="eyebrow">Word Note</span>
+            <h2 data-cai-note-title>practice</h2>
+            <dl class="cai-note-list">
+              <div>
+                <dt>中文解釋</dt>
+                <dd data-cai-meaning>練習；實作</dd>
+              </div>
+              <div>
+                <dt>使用方法</dt>
+                <dd data-cai-usage>常用作名詞或動詞，表示反覆做一件事讓自己更熟。</dd>
+              </div>
+              <div>
+                <dt>例句</dt>
+                <dd data-cai-example>Daily practice helps you remember new words.</dd>
+              </div>
+            </dl>
+
+            <div class="cai-score-grid" aria-label="練習統計">
+              <div><strong data-cai-correct>0</strong><span>答對</span></div>
+              <div><strong data-cai-accuracy>0%</strong><span>目前正確率</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-soft">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">How To Use</span>
+              <h2>建議使用方式</h2>
+            </div>
+            <p class="section-lead">先看懂意思，再照打英文。答錯時不要急著下一題，先觀察哪個字母容易打錯。</p>
+          </div>
+          <div class="start-grid">
+            <article class="start-card start-ai"><span>01</span><h3>先讀解釋</h3><p>確認中文意思與用法，不只是記字母順序。</p></article>
+            <article class="start-card start-ipas"><span>02</span><h3>照著輸入</h3><p>慢慢輸入，讓眼睛、手與記憶一起熟悉單字。</p></article>
+            <article class="start-card start-code"><span>03</span><h3>看例句</h3><p>完成後讀一次例句，知道這個字在句子裡怎麼用。</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../">小作品</a>
+          <a href="../../english-learning.html">英文學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script src="../../src/script.js?v=20260528-3"></script>
+</body>
+</html>

@@ -1045,6 +1045,299 @@ const initResourceEmailForms = () => {
   });
 };
 
+const initHermesAgentPage = () => {
+  const form = document.querySelector("[data-hermes-agent-form]");
+  const output = document.querySelector("[data-hermes-output]");
+  const copyButton = document.querySelector("[data-hermes-copy]");
+  if (!form || !output) return;
+
+  const roleLabels = {
+    "learning-coach": "學習教練",
+    "coding-agent": "程式協作代理",
+    "publishing-agent": "電子書出版助手",
+    "exam-coach": "考照複習教練"
+  };
+
+  const roleFocus = {
+    "learning-coach": "用白話拆解觀念，安排循序練習，讓初學者知道下一步要做什麼。",
+    "coding-agent": "先理解需求與檔案範圍，再規劃修改、檢查風險與列出驗證方式。",
+    "publishing-agent": "協助整理書籍定位、章節架構、讀者需求、SEO 文案與上架檢查。",
+    "exam-coach": "把考點拆成複習順序、題型判斷、錯題檢討與考前檢查。"
+  };
+
+  const formatLabels = {
+    plan: "任務計畫",
+    checklist: "檢查清單",
+    prompt: "可複製 Prompt",
+    lesson: "教學大綱"
+  };
+
+  const scopeGuide = {
+    small: "控制在 3 到 5 個步驟，先完成最小可用成果。",
+    medium: "分成準備、執行、檢查、修正四個階段。",
+    large: "先切成里程碑，每個里程碑都要有可交付成果與回顧點。"
+  };
+
+  const guardrailGuide = {
+    "ask-first": "遇到需求不明、資料不足或會影響範圍時，先提出 1 到 3 個關鍵問題。",
+    "draft-only": "先輸出草稿與建議，不直接做不可逆的修改或承諾。",
+    checkpoint: "每完成一個階段，都列出檢查點、風險與下一步。"
+  };
+
+  const buildOutput = (data) => {
+    const goal = String(data.get("goal") || "").trim();
+    const role = String(data.get("role") || "learning-coach");
+    const format = String(data.get("format") || "plan");
+    const scope = String(data.get("scope") || "small");
+    const guardrail = String(data.get("guardrail") || "ask-first");
+    const constraints = String(data.get("constraints") || "").trim() || "使用繁體中文，語氣清楚，適合初學者。";
+
+    const roleName = roleLabels[role] || roleLabels["learning-coach"];
+    const outputName = formatLabels[format] || formatLabels.plan;
+
+    return [
+      `# Hermes Agent 任務設定`,
+      ``,
+      `## 角色`,
+      `你是「${roleName}」。${roleFocus[role]}`,
+      ``,
+      `## 任務目標`,
+      goal,
+      ``,
+      `## 輸出格式`,
+      `請輸出「${outputName}」，內容要能讓使用者直接照著執行。`,
+      ``,
+      `## 任務範圍`,
+      scopeGuide[scope],
+      ``,
+      `## 限制與偏好`,
+      constraints,
+      ``,
+      `## 安全與檢查規則`,
+      guardrailGuide[guardrail],
+      `不要誇大能力。遇到不確定的資訊，要明確標示假設。`,
+      ``,
+      `## 工作流程`,
+      `1. 先用 3 句話確認你理解的任務。`,
+      `2. 列出目前缺少的資訊。如果資訊足夠，就直接說明「可先開始」。`,
+      `3. 把任務拆成可檢查的小步驟。`,
+      `4. 對每一步列出輸入、動作、輸出與檢查方法。`,
+      `5. 最後整理下一步建議，讓使用者知道要先做哪一件事。`,
+      ``,
+      `## 請直接開始`,
+      `請依照上面的角色、限制與流程，協助我完成這個任務。`
+    ].join("\n");
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const result = buildOutput(new FormData(form));
+    output.textContent = result;
+    output.classList.add("is-ready");
+    if (copyButton) copyButton.disabled = false;
+  });
+
+  form.addEventListener("reset", () => {
+    window.setTimeout(() => {
+      output.textContent = "先輸入任務目標，再按「產生 Hermes 任務」。";
+      output.classList.remove("is-ready");
+      if (copyButton) copyButton.disabled = true;
+    }, 0);
+  });
+
+  copyButton?.addEventListener("click", async () => {
+    const text = output.textContent || "";
+    if (!text || copyButton.disabled) return;
+    try {
+      await navigator.clipboard.writeText(text);
+      copyButton.textContent = "已複製";
+      window.setTimeout(() => { copyButton.textContent = "複製"; }, 1400);
+    } catch (error) {
+      console.warn("Clipboard copy failed.", error);
+      copyButton.textContent = "請手動複製";
+    }
+  });
+};
+
+const initEnglishCaiPage = () => {
+  const practiceWords = [
+    {
+      word: "practice",
+      meaning: "練習；實作",
+      usage: "可作名詞或動詞，表示反覆做一件事，讓自己更熟。",
+      example: "Daily practice helps you remember new words."
+    },
+    {
+      word: "explain",
+      meaning: "解釋；說明",
+      usage: "常用來表示把事情講清楚，後面可以接概念、原因或方法。",
+      example: "Can you explain this sentence in simple English?"
+    },
+    {
+      word: "example",
+      meaning: "例子；範例",
+      usage: "學英文時，example 可以幫你知道單字在句子裡怎麼使用。",
+      example: "This book gives one example for each new word."
+    },
+    {
+      word: "useful",
+      meaning: "有用的；實用的",
+      usage: "用來形容工具、方法或資訊對你有幫助。",
+      example: "This is a useful app for English learners."
+    },
+    {
+      word: "review",
+      meaning: "複習；回顧",
+      usage: "學過新單字後，可以用 review 表示再次看過並加深記憶。",
+      example: "I review five words before I go to bed."
+    },
+    {
+      word: "sentence",
+      meaning: "句子",
+      usage: "sentence 是英文學習的基本單位，可以用來練文法與表達。",
+      example: "Please write one sentence with this word."
+    },
+    {
+      word: "meaning",
+      meaning: "意思；含義",
+      usage: "常用來詢問或說明一個字、句子或文章的意思。",
+      example: "What is the meaning of this word?"
+    },
+    {
+      word: "improve",
+      meaning: "進步；改善",
+      usage: "用來描述能力、成績或狀況變得更好。",
+      example: "You can improve your English by reading every day."
+    }
+  ];
+
+  const wordTitle = document.querySelector("[data-cai-word]");
+  const noteTitle = document.querySelector("[data-cai-note-title]");
+  const meaning = document.querySelector("[data-cai-meaning]");
+  const usage = document.querySelector("[data-cai-usage]");
+  const example = document.querySelector("[data-cai-example]");
+  const preview = document.querySelector("[data-cai-letter-preview]");
+  const input = document.querySelector("[data-cai-input]");
+  const feedback = document.querySelector("[data-cai-feedback]");
+  const progress = document.querySelector("[data-cai-progress]");
+  const correctCount = document.querySelector("[data-cai-correct]");
+  const accuracy = document.querySelector("[data-cai-accuracy]");
+  const prevButton = document.querySelector("[data-cai-prev]");
+  const nextButton = document.querySelector("[data-cai-next]");
+  const resetButton = document.querySelector("[data-cai-reset]");
+
+  if (!wordTitle || !preview || !input) return;
+
+  let currentIndex = 0;
+  const answered = new Array(practiceWords.length).fill(false);
+  const attempts = new Array(practiceWords.length).fill(0);
+
+  const updateStats = () => {
+    const correct = answered.filter(Boolean).length;
+    const tried = attempts.filter((count) => count > 0).length;
+    if (correctCount) correctCount.textContent = String(correct);
+    if (accuracy) accuracy.textContent = tried ? `${Math.round((correct / tried) * 100)}%` : "0%";
+  };
+
+  const renderLetters = (typedValue = "") => {
+    const word = practiceWords[currentIndex].word;
+    preview.innerHTML = word.split("").map((letter, index) => {
+      const typed = typedValue[index] || "";
+      const state = typed ? (typed.toLowerCase() === letter ? " is-correct" : " is-wrong") : "";
+      return `<span class="cai-letter${state}">${letter}</span>`;
+    }).join("");
+  };
+
+  const renderWord = () => {
+    const item = practiceWords[currentIndex];
+    wordTitle.textContent = item.word;
+    if (noteTitle) noteTitle.textContent = item.word;
+    if (meaning) meaning.textContent = item.meaning;
+    if (usage) usage.textContent = item.usage;
+    if (example) example.textContent = item.example;
+    if (progress) progress.textContent = `${currentIndex + 1} / ${practiceWords.length}`;
+    input.value = "";
+    input.maxLength = item.word.length;
+    input.placeholder = `請輸入 ${item.word}`;
+    renderLetters("");
+    if (feedback) {
+      feedback.textContent = answered[currentIndex] ? "這題已完成，可以繼續下一題。" : "準備好後，請輸入上方單字。";
+      feedback.className = "cai-feedback";
+    }
+    if (prevButton) prevButton.disabled = currentIndex === 0;
+    if (nextButton) nextButton.textContent = currentIndex === practiceWords.length - 1 ? "完成" : "下一題";
+    updateStats();
+    input.focus();
+  };
+
+  const checkInput = () => {
+    const word = practiceWords[currentIndex].word;
+    const typed = input.value.trim().toLowerCase();
+    renderLetters(typed);
+    if (!typed) {
+      if (feedback) {
+        feedback.textContent = "準備好後，請輸入上方單字。";
+        feedback.className = "cai-feedback";
+      }
+      return;
+    }
+
+    attempts[currentIndex] += 1;
+    if (typed === word) {
+      answered[currentIndex] = true;
+      if (feedback) {
+        feedback.textContent = "正確。請讀一次例句，再進入下一題。";
+        feedback.className = "cai-feedback is-correct";
+      }
+      updateStats();
+      return;
+    }
+
+    if (feedback) {
+      feedback.textContent = "還差一點，請檢查紅色字母。";
+      feedback.className = "cai-feedback is-wrong";
+    }
+    updateStats();
+  };
+
+  input.addEventListener("input", checkInput);
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      if (currentIndex < practiceWords.length - 1) {
+        currentIndex += 1;
+        renderWord();
+      }
+    }
+  });
+
+  prevButton?.addEventListener("click", () => {
+    currentIndex = Math.max(0, currentIndex - 1);
+    renderWord();
+  });
+
+  nextButton?.addEventListener("click", () => {
+    if (currentIndex < practiceWords.length - 1) {
+      currentIndex += 1;
+      renderWord();
+      return;
+    }
+    if (feedback) {
+      feedback.textContent = "本輪練習完成。可以按「重新開始」再練一次。";
+      feedback.className = "cai-feedback is-correct";
+    }
+  });
+
+  resetButton?.addEventListener("click", () => {
+    currentIndex = 0;
+    answered.fill(false);
+    attempts.fill(0);
+    renderWord();
+  });
+
+  renderWord();
+};
+
 const boot = () => {
 
   initNav();
@@ -1070,6 +1363,10 @@ const boot = () => {
   if (page === "contact") initContactPage();
 
   if (page === "admin") initAdminPageLinks();
+
+  if (page === "hermes-agent") initHermesAgentPage();
+
+  if (page === "english-cai") initEnglishCaiPage();
 
 };
 
