@@ -1,5 +1,27 @@
 [
   {
+    "id": "ipas-ai-daily",
+    "title": "iPAS AI 每日學習",
+    "subtitle": "每天用短時間複習 iPAS AI 觀念、題目與考點",
+    "author": "Happy eBook",
+    "category": [
+      "iPAS AI",
+      "AI 學習",
+      "考試準備"
+    ],
+    "type": "web",
+    "format": "網站教材",
+    "cover": "assets/images/book-ipas-ai-high-score.svg",
+    "description": "iPAS AI 每日學習是一個適合考前複習與平日累積的外部學習入口，透過短時間的每日練習，幫助讀者整理 iPAS AI 應用規劃師相關觀念、題目與常見考點。適合正在準備 iPAS AI 證照、想建立固定複習節奏，或希望用零碎時間保持手感的學生、教師與自學者。",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "https://ipas-ai-daily.vercel.app/",
+    "featured": true,
+    "popular": true,
+    "launchRank": 5,
+    "priceLabel": "免費網站"
+  },
+  {
     "id": "ai-publishing-book",
     "title": "用 AI 出版一本書",
     "subtitle": "從主題規劃、AI 寫稿、EPUB 製作到 Google Play Books 上架",
