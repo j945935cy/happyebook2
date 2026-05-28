@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7ec8e3">
+  <title>3D 摩天輪｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端網頁版 3D 摩天輪小作品，使用 HTML、CSS 3D 與 Vanilla JS 製作，可調整速度與暫停動畫。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/ferris-wheel-3d/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="3D 摩天輪｜Happy eBook 小作品">
+  <meta property="og:description" content="可直接在瀏覽器中操作的 3D 摩天輪小作品。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/ferris-wheel-3d/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 3D 摩天輪小作品">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="3D 摩天輪｜Happy eBook 小作品">
+  <meta name="twitter:description" content="使用 HTML、CSS 3D 與 Vanilla JS 製作的摩天輪網頁。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --sky: #a9dcf0;
+      --sky-deep: #7ec8e3;
+      --sun: #ffe49b;
+      --ink: #182332;
+      --muted: #5f6d7c;
+      --primary: #2459d6;
+      --line: rgba(24, 35, 50, 0.14);
+      --surface: rgba(255, 255, 255, 0.84);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background: #f7fbff;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.74);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(14px);
+    }
+    .header-row {
+      width: min(1120px, calc(100% - 32px));
+      min-height: 68px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: grid; gap: 2px; }
+    .brand-mark { font-size: 1.22rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.9rem; }
+    .site-nav { display: flex; gap: 10px; align-items: center; }
+    .site-nav a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+    .site-nav a:hover, .site-nav a.is-active { background: #fff; color: var(--primary); }
+
+    .nav-toggle { display: none; align-items: center; gap: 8px; border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 9px 12px; border-radius: 999px; font-weight: 800; }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display: block; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; }
+    .nav-toggle-bars { position: relative; }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { position: absolute; left: 0; }
+    .nav-toggle-bars::before { top: -6px; }
+    .nav-toggle-bars::after { top: 6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+    .wheel-stage {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(255, 228, 155, 0.96) 0 52px, transparent 54px),
+        linear-gradient(180deg, #92d7f3 0%, var(--sky) 48%, #dff6ff 68%, #e8f4df 69%, #a8d29b 100%);
+    }
+    .wheel-stage::before {
+      content: "";
+      position: absolute;
+      inset: auto -8% 0;
+      height: 30vh;
+      background:
+        radial-gradient(60% 120% at 20% 105%, #7dbd75 0 50%, transparent 51%),
+        radial-gradient(55% 105% at 72% 110%, #8fcf82 0 54%, transparent 55%),
+        linear-gradient(180deg, #a8d29b, #7fb66d);
+    }
+    .cloud {
+      position: absolute;
+      width: 180px;
+      height: 58px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 48px 8px 0 12px rgba(255, 255, 255, 0.72), 96px -2px 0 4px rgba(255, 255, 255, 0.68);
+      opacity: 0.82;
+    }
+    .cloud-one { left: 8vw; top: 18vh; transform: scale(0.78); }
+    .cloud-two { right: 18vw; top: 30vh; transform: scale(0.56); }
+
+    .scene-copy {
+      position: absolute;
+      z-index: 5;
+      left: max(24px, 8vw);
+      top: 15vh;
+      max-width: 34rem;
+    }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #17655d;
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 0 14px;
+      color: #102033;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .scene-copy p {
+      margin: 0;
+      max-width: 32rem;
+      color: #405066;
+      font-size: clamp(1rem, 2vw, 1.28rem);
+      line-height: 1.8;
+    }
+
+    .wheel-wrap {
+      position: absolute;
+      right: max(12px, 10vw);
+      bottom: 8vh;
+      z-index: 4;
+      width: min(62vw, 680px);
+      aspect-ratio: 1 / 1;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+    }
+    .wheel-axis {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 64%;
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%) rotateX(8deg) rotateY(-18deg);
+      transform-style: preserve-3d;
+    }
+    .wheel {
+      position: absolute;
+      inset: 0;
+      border: clamp(8px, 1.2vw, 14px) solid #f8fbff;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      box-shadow: 0 28px 56px rgba(24, 35, 50, 0.2), inset 0 0 0 5px rgba(36, 89, 214, 0.16);
+    }
+    .wheel::before, .wheel::after {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 100%;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      transform-origin: center;
+    }
+    .wheel::before { transform: translate(-50%, -50%) rotate(0deg); }
+    .wheel::after { transform: translate(-50%, -50%) rotate(90deg); }
+    .spoke {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 50%;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      transform-origin: left center;
+    }
+    .spoke:nth-child(1) { transform: rotate(30deg); }
+    .spoke:nth-child(2) { transform: rotate(60deg); }
+    .spoke:nth-child(3) { transform: rotate(120deg); }
+    .spoke:nth-child(4) { transform: rotate(150deg); }
+    .hub {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 3;
+      width: 18%;
+      aspect-ratio: 1;
+      border: 8px solid #fff;
+      border-radius: 50%;
+      background: #2459d6;
+      transform: translate(-50%, -50%) translateZ(32px);
+      box-shadow: 0 12px 24px rgba(24, 35, 50, 0.24);
+    }
+    .cabins {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+    }
+    .cabin {
+      --angle: 0deg;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: grid;
+      place-items: center;
+      width: clamp(48px, 8vw, 82px);
+      height: clamp(42px, 7vw, 70px);
+      border: 4px solid rgba(255, 255, 255, 0.94);
+      border-radius: 14px 14px 18px 18px;
+      background: linear-gradient(180deg, var(--cabin-color), rgba(255, 255, 255, 0.9));
+      color: #102033;
+      font-weight: 900;
+      box-shadow: 0 16px 26px rgba(24, 35, 50, 0.18);
+      transform:
+        translate(-50%, -50%)
+        rotate(var(--angle))
+        translateY(calc(-1 * min(31vw, 330px)))
+        rotate(calc(-1 * var(--angle)))
+        translateZ(56px);
+      transform-origin: center;
+    }
+    .cabin::before {
+      content: "";
+      position: absolute;
+      left: 16%;
+      right: 16%;
+      top: 18%;
+      height: 28%;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.54);
+    }
+    .cabin span { position: relative; margin-top: 20px; font-size: 0.86rem; }
+
+    .support {
+      position: absolute;
+      left: 50%;
+      bottom: 2%;
+      width: 56%;
+      height: 52%;
+      transform: translateX(-50%) rotateX(8deg) rotateY(-18deg);
+      transform-style: preserve-3d;
+      pointer-events: none;
+    }
+    .leg {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 10px;
+      height: 100%;
+      border-radius: 999px;
+      background: #f8fbff;
+      box-shadow: 0 18px 24px rgba(24, 35, 50, 0.16);
+      transform-origin: bottom center;
+    }
+    .leg-left { transform: translateX(-50%) rotate(22deg); }
+    .leg-right { transform: translateX(-50%) rotate(-22deg); }
+    .base {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 70%;
+      height: 14px;
+      border-radius: 999px;
+      background: #f8fbff;
+      transform: translateX(-50%);
+      box-shadow: 0 16px 28px rgba(24, 35, 50, 0.18);
+    }
+
+    .controls {
+      position: absolute;
+      z-index: 8;
+      left: max(20px, 8vw);
+      bottom: max(20px, 7vh);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      width: min(520px, calc(100% - 40px));
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 18px 38px rgba(24, 35, 50, 0.12);
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 850;
+      cursor: pointer;
+    }
+    .button.secondary {
+      background: #fff;
+      border-color: rgba(24, 35, 50, 0.12);
+      color: var(--ink);
+    }
+    .speed-control {
+      display: grid;
+      grid-template-columns: auto minmax(120px, 1fr);
+      gap: 10px;
+      align-items: center;
+      flex: 1 1 220px;
+      color: var(--ink);
+      font-weight: 850;
+    }
+    .speed-control input { accent-color: var(--primary); }
+
+    .footer-link {
+      position: absolute;
+      right: max(20px, 8vw);
+      bottom: max(20px, 7vh);
+      z-index: 8;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink);
+      font-weight: 850;
+      backdrop-filter: blur(14px);
+    }
+
+    @media (max-width: 900px) {
+      .header-row { flex-wrap: wrap; padding: 12px 0; }
+      .brand-sub { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .site-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+      }
+      .site-nav.is-open { display: flex; }
+      .site-nav a { width: 100%; border-radius: 14px; }
+      .scene-copy {
+        left: 24px;
+        right: 24px;
+        width: calc(100% - 48px);
+        max-width: calc(100% - 48px);
+        top: 96px;
+      }
+      .scene-copy p { width: min(300px, 100%); max-width: 100%; overflow-wrap: anywhere; }
+      .wheel-wrap {
+        right: 50%;
+        bottom: 14vh;
+        width: min(92vw, 600px);
+        transform: translateX(50%);
+      }
+      .cabin {
+        transform:
+          translate(-50%, -50%)
+          rotate(var(--angle))
+          translateY(calc(-1 * min(45vw, 300px)))
+          rotate(calc(-1 * var(--angle)))
+          translateZ(44px);
+      }
+      .controls {
+        left: 20px;
+        bottom: 20px;
+      }
+      .footer-link {
+        right: 20px;
+        bottom: 100px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wheel-stage { min-height: 108vh; }
+      .scene-copy { top: 92px; }
+      h1 { font-size: clamp(2.5rem, 15vw, 4rem); }
+      .scene-copy p { font-size: 0.98rem; }
+      .wheel-wrap { bottom: 27vh; width: 86vw; }
+      .controls { align-items: stretch; flex-direction: column; }
+      .controls .button, .speed-control { width: 100%; }
+      .footer-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-row">
+      <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">3D 小作品</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span>選單</span>
+      </button>
+      <nav class="site-nav" data-site-nav>
+        <a href="../../index.html">首頁</a>
+        <a class="is-active" href="../">小作品</a>
+        <a href="../../ai-learning.html">AI 學習</a>
+        <a href="../../books.html">書籍列表</a>
+        <a href="../../contact.html">聯絡</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wheel-stage" aria-label="3D 摩天輪場景">
+      <div class="cloud cloud-one" aria-hidden="true"></div>
+      <div class="cloud cloud-two" aria-hidden="true"></div>
+
+      <div class="scene-copy">
+        <span class="eyebrow">3D Ferris Wheel</span>
+        <h1>摩天輪</h1>
+        <p>純前端小作品，用 CSS 3D 建出會旋轉的摩天輪，適合練習網頁動畫與互動控制。</p>
+      </div>
+
+      <div class="wheel-wrap">
+        <div class="support" aria-hidden="true">
+          <span class="leg leg-left"></span>
+          <span class="leg leg-right"></span>
+          <span class="base"></span>
+        </div>
+        <div class="wheel-axis" data-wheel-axis>
+          <div class="wheel">
+            <span class="spoke"></span>
+            <span class="spoke"></span>
+            <span class="spoke"></span>
+            <span class="spoke"></span>
+            <span class="hub"></span>
+          </div>
+          <div class="cabins" data-cabins>
+            <div class="cabin" style="--angle: 0deg; --cabin-color: #fef3c7;"><span>01</span></div>
+            <div class="cabin" style="--angle: 45deg; --cabin-color: #dbeafe;"><span>02</span></div>
+            <div class="cabin" style="--angle: 90deg; --cabin-color: #dcfce7;"><span>03</span></div>
+            <div class="cabin" style="--angle: 135deg; --cabin-color: #fce7f3;"><span>04</span></div>
+            <div class="cabin" style="--angle: 180deg; --cabin-color: #ede9fe;"><span>05</span></div>
+            <div class="cabin" style="--angle: 225deg; --cabin-color: #cffafe;"><span>06</span></div>
+            <div class="cabin" style="--angle: 270deg; --cabin-color: #ffedd5;"><span>07</span></div>
+            <div class="cabin" style="--angle: 315deg; --cabin-color: #e0f2fe;"><span>08</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls" aria-label="摩天輪控制">
+        <button class="button" type="button" data-toggle-spin>暫停</button>
+        <button class="button secondary" type="button" data-direction>反向</button>
+        <label class="speed-control">
+          速度
+          <input data-speed type="range" min="0.25" max="2.5" value="1" step="0.05">
+        </label>
+      </div>
+      <a class="footer-link" href="../">看其他小作品</a>
+    </section>
+  </main>
+
+  <script>
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
+    navToggle?.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
+    });
+
+    const wheelAxis = document.querySelector("[data-wheel-axis]");
+    const cabins = [...document.querySelectorAll(".cabin")];
+    const toggleButton = document.querySelector("[data-toggle-spin]");
+    const directionButton = document.querySelector("[data-direction]");
+    const speedInput = document.querySelector("[data-speed]");
+
+    let angle = 0;
+    let speed = 1;
+    let direction = 1;
+    let spinning = true;
+    let lastTime = performance.now();
+
+    const getCabinRadius = () => {
+      if (!wheelAxis) return 220;
+      return wheelAxis.getBoundingClientRect().width * 0.5;
+    };
+
+    const render = (time) => {
+      const delta = Math.min(40, time - lastTime);
+      lastTime = time;
+      const radius = getCabinRadius();
+      if (spinning) angle = (angle + delta * 0.018 * speed * direction) % 360;
+      if (wheelAxis) wheelAxis.style.setProperty("--spin", `${angle}deg`);
+      if (wheelAxis) wheelAxis.style.transform = `translate(-50%, -50%) rotateX(8deg) rotateY(-18deg) rotate(${angle}deg)`;
+      cabins.forEach((cabin) => {
+        const cabinAngle = Number.parseFloat(cabin.style.getPropertyValue("--angle")) || 0;
+        cabin.style.transform = `translate(-50%, -50%) rotate(${cabinAngle}deg) translateY(${-radius}px) rotate(${-cabinAngle - angle}deg) translateZ(56px)`;
+      });
+      requestAnimationFrame(render);
+    };
+
+    toggleButton?.addEventListener("click", () => {
+      spinning = !spinning;
+      toggleButton.textContent = spinning ? "暫停" : "繼續";
+    });
+
+    directionButton?.addEventListener("click", () => {
+      direction *= -1;
+    });
+
+    speedInput?.addEventListener("input", () => {
+      speed = Number(speedInput.value || 1);
+    });
+
+    requestAnimationFrame(render);
+  </script>
+</body>
+</html>
