@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172554">
+  <title>打磚塊雙人左右對戰版｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端 Canvas 打磚塊雙人左右對戰版，左右玩家各守一邊，打掉中間磚塊並避免球穿過自己的防線。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/brick-battle-duo/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="打磚塊雙人左右對戰版｜Happy eBook 小作品">
+  <meta property="og:description" content="左右玩家各守一邊的打磚塊對戰小遊戲，支援鍵盤與觸控控制。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/brick-battle-duo/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 打磚塊雙人左右對戰版">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="打磚塊雙人左右對戰版｜Happy eBook 小作品">
+  <meta name="twitter:description" content="純前端 Canvas 雙人左右對戰打磚塊遊戲。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: rgba(255, 255, 255, 0.9);
+      --ink: #182332;
+      --muted: #64748b;
+      --blue: #2563eb;
+      --cyan: #22d3ee;
+      --orange: #f97316;
+      --green: #22c55e;
+      --line: rgba(226, 232, 240, 0.22);
+      --shadow: 0 20px 44px rgba(8, 17, 31, 0.26);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: #f8fafc;
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(34, 211, 238, 0.22), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(249, 115, 22, 0.2), transparent 26%),
+        linear-gradient(180deg, #0f1d34 0%, var(--bg) 62%, #101827 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(8, 17, 31, 0.78);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+    .header-row { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { font-size: 1.28rem; font-weight: 900; }
+    .brand-sub { color: #cbd5e1; font-size: 0.92rem; }
+    .site-nav { display: flex; align-items: center; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 999px; color: #cbd5e1; font-weight: 750; }
+    .site-nav a:hover, .site-nav a.is-active { background: rgba(255, 255, 255, 0.12); color: #fff; }
+    .nav-toggle { display: none; align-items: center; gap: 8px; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.1); color: #fff; padding: 10px 14px; border-radius: 999px; font-weight: 850; }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display: block; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; }
+    .nav-toggle-bars { position: relative; }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { position: absolute; left: 0; }
+    .nav-toggle-bars::before { top: -6px; }
+    .nav-toggle-bars::after { top: 6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+    .hero { padding: 54px 0 22px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 28px; align-items: end; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--cyan); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; font-size: clamp(2.7rem, 7vw, 6rem); line-height: 1.05; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 42rem; color: #cbd5e1; font-size: clamp(1.03rem, 2vw, 1.22rem); line-height: 1.85; }
+    .hero-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+    }
+    .hero-card h2 { margin: 0 0 10px; font-size: 1.18rem; }
+    .hero-card p { color: #dbeafe; font-size: 0.94rem; }
+
+    .game-section { padding: 18px 0 64px; }
+    .game-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 18px;
+      align-items: start;
+    }
+    .arena-card, .side-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+    }
+    .arena-card { padding: clamp(12px, 2vw, 18px); }
+    .score-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .score-box {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .score-box strong { display: block; font-size: 1.8rem; line-height: 1; }
+    .score-box span { color: #cbd5e1; font-size: 0.88rem; font-weight: 800; }
+    .score-right { text-align: right; }
+    .round-status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #0f172a;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .canvas-wrap {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      background: #07111f;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      touch-action: none;
+    }
+    .touch-controls {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 16px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 900;
+    }
+    .button.secondary { background: rgba(255, 255, 255, 0.9); color: #0f172a; }
+    .button.orange { background: var(--orange); }
+    .side-card { display: grid; gap: 16px; padding: 20px; }
+    .side-card h2 { margin: 0; font-size: 1.35rem; }
+    .rule-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .rule-list li {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #dbeafe;
+      line-height: 1.7;
+    }
+    .rule-list strong { display: block; margin-bottom: 4px; color: #fff; }
+    .control-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .footer { margin-top: auto; padding: 24px 0 36px; color: #cbd5e1; }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: #cbd5e1; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .header-row { min-height: auto; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
+      .brand-sub { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .site-nav { width: 100%; display: none; flex-direction: column; align-items: stretch; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 18px; background: rgba(8, 17, 31, 0.96); }
+      .site-nav.is-open { display: flex; }
+      .site-nav a { width: 100%; border-radius: 14px; }
+      .hero-grid, .game-shell { grid-template-columns: 1fr; }
+      h1 { width: min(5.8em, 100%); overflow-wrap: anywhere; font-size: clamp(2.35rem, 12vw, 4rem); }
+      .hero p, .hero-card p { width: min(310px, 100%); overflow-wrap: anywhere; word-break: break-all; }
+      .hero-card, .arena-card, .side-card { min-width: 0; }
+      .score-row { grid-template-columns: 1fr; }
+      .score-right { text-align: left; }
+      .round-status { width: 100%; }
+      canvas { aspect-ratio: 10 / 13; }
+      .touch-controls { grid-template-columns: repeat(2, 1fr); }
+      .control-grid { grid-template-columns: 1fr; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">打磚塊雙人對戰</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Brick Battle Duo</span>
+            <h1>打磚塊雙人左右對戰版</h1>
+            <p>左右兩位玩家各守一邊，用球打掉中間磚塊。球穿過自己的防線，對手就得分。先拿到 5 分的人獲勝。</p>
+          </div>
+          <aside class="hero-card">
+            <h2>最小可用版本</h2>
+            <p>這版先完成雙人控制、磚塊碰撞、得分與重新開始。之後可以再加入關卡、音效與道具。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="game-section">
+        <div class="container game-shell">
+          <section class="arena-card" aria-label="打磚塊對戰遊戲">
+            <div class="score-row">
+              <div class="score-box"><span>左玩家</span><strong data-left-score>0</strong></div>
+              <div class="round-status" data-status>按開始</div>
+              <div class="score-box score-right"><span>右玩家</span><strong data-right-score>0</strong></div>
+            </div>
+            <div class="canvas-wrap">
+              <canvas data-game width="960" height="540" aria-label="打磚塊雙人對戰畫面"></canvas>
+            </div>
+            <div class="touch-controls" aria-label="觸控控制">
+              <button class="button secondary" type="button" data-touch="left-up">左上</button>
+              <button class="button secondary" type="button" data-touch="left-down">左下</button>
+              <button class="button secondary" type="button" data-touch="right-up">右上</button>
+              <button class="button secondary" type="button" data-touch="right-down">右下</button>
+            </div>
+          </section>
+
+          <aside class="side-card">
+            <span class="eyebrow">How To Play</span>
+            <h2>操作方式</h2>
+            <ul class="rule-list">
+              <li><strong>左玩家</strong>使用 W / S 控制左側擋板上下移動。</li>
+              <li><strong>右玩家</strong>使用 ↑ / ↓ 控制右側擋板上下移動。</li>
+              <li><strong>得分</strong>球穿過對方底線即可得 1 分，先到 5 分獲勝。</li>
+              <li><strong>磚塊</strong>球打到中間磚塊會消除磚塊並改變方向。</li>
+            </ul>
+            <div class="control-grid">
+              <button class="button" type="button" data-start>開始 / 繼續</button>
+              <button class="button secondary" type="button" data-pause>暫停</button>
+              <button class="button orange" type="button" data-reset>重新開始</button>
+              <a class="button secondary" href="../">其他小作品</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../">小作品</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
+    navToggle?.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
+    });
+
+    const canvas = document.querySelector("[data-game]");
+    const ctx = canvas.getContext("2d");
+    const leftScoreEl = document.querySelector("[data-left-score]");
+    const rightScoreEl = document.querySelector("[data-right-score]");
+    const statusEl = document.querySelector("[data-status]");
+    const keys = new Set();
+    const touches = new Set();
+    const targetScore = 5;
+
+    const state = {
+      running: false,
+      winner: "",
+      leftScore: 0,
+      rightScore: 0,
+      left: { x: 28, y: 210, w: 16, h: 120, speed: 520 },
+      right: { x: 916, y: 210, w: 16, h: 120, speed: 520 },
+      ball: { x: 480, y: 270, r: 9, vx: 360, vy: 220 },
+      bricks: []
+    };
+
+    const makeBricks = () => {
+      const bricks = [];
+      const cols = 4;
+      const rows = 6;
+      const brickW = 58;
+      const brickH = 32;
+      const gap = 10;
+      const startX = canvas.width / 2 - (cols * brickW + (cols - 1) * gap) / 2;
+      const startY = canvas.height / 2 - (rows * brickH + (rows - 1) * gap) / 2;
+      for (let row = 0; row < rows; row += 1) {
+        for (let col = 0; col < cols; col += 1) {
+          bricks.push({
+            x: startX + col * (brickW + gap),
+            y: startY + row * (brickH + gap),
+            w: brickW,
+            h: brickH,
+            alive: true,
+            color: row % 2 ? "#22d3ee" : "#f97316"
+          });
+        }
+      }
+      return bricks;
+    };
+
+    const resetBall = (direction = Math.random() > 0.5 ? 1 : -1) => {
+      state.ball.x = canvas.width / 2;
+      state.ball.y = canvas.height / 2;
+      state.ball.vx = 340 * direction;
+      state.ball.vy = (Math.random() > 0.5 ? 1 : -1) * 210;
+    };
+
+    const resetGame = () => {
+      state.running = false;
+      state.winner = "";
+      state.leftScore = 0;
+      state.rightScore = 0;
+      state.left.y = canvas.height / 2 - state.left.h / 2;
+      state.right.y = canvas.height / 2 - state.right.h / 2;
+      state.bricks = makeBricks();
+      resetBall(1);
+      updateHud("按開始");
+      draw();
+    };
+
+    const updateHud = (text) => {
+      leftScoreEl.textContent = String(state.leftScore);
+      rightScoreEl.textContent = String(state.rightScore);
+      statusEl.textContent = text;
+    };
+
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+    const rectHit = (ball, rect) =>
+      ball.x + ball.r > rect.x &&
+      ball.x - ball.r < rect.x + rect.w &&
+      ball.y + ball.r > rect.y &&
+      ball.y - ball.r < rect.y + rect.h;
+
+    const movePaddles = (dt) => {
+      const leftUp = keys.has("w") || keys.has("W") || touches.has("left-up");
+      const leftDown = keys.has("s") || keys.has("S") || touches.has("left-down");
+      const rightUp = keys.has("ArrowUp") || touches.has("right-up");
+      const rightDown = keys.has("ArrowDown") || touches.has("right-down");
+      if (leftUp) state.left.y -= state.left.speed * dt;
+      if (leftDown) state.left.y += state.left.speed * dt;
+      if (rightUp) state.right.y -= state.right.speed * dt;
+      if (rightDown) state.right.y += state.right.speed * dt;
+      state.left.y = clamp(state.left.y, 0, canvas.height - state.left.h);
+      state.right.y = clamp(state.right.y, 0, canvas.height - state.right.h);
+    };
+
+    const hitPaddle = (paddle, direction) => {
+      const b = state.ball;
+      if (!rectHit(b, paddle)) return;
+      const relative = (b.y - (paddle.y + paddle.h / 2)) / (paddle.h / 2);
+      b.vx = Math.abs(b.vx) * direction * 1.035;
+      b.vy = relative * 360;
+      b.x = direction > 0 ? paddle.x + paddle.w + b.r : paddle.x - b.r;
+    };
+
+    const hitBricks = () => {
+      const b = state.ball;
+      for (const brick of state.bricks) {
+        if (!brick.alive || !rectHit(b, brick)) continue;
+        brick.alive = false;
+        const overlapLeft = b.x + b.r - brick.x;
+        const overlapRight = brick.x + brick.w - (b.x - b.r);
+        const overlapTop = b.y + b.r - brick.y;
+        const overlapBottom = brick.y + brick.h - (b.y - b.r);
+        const minOverlap = Math.min(overlapLeft, overlapRight, overlapTop, overlapBottom);
+        if (minOverlap === overlapLeft || minOverlap === overlapRight) b.vx *= -1;
+        else b.vy *= -1;
+        b.vx *= 1.01;
+        b.vy *= 1.01;
+        break;
+      }
+    };
+
+    const scorePoint = (side) => {
+      if (side === "left") state.leftScore += 1;
+      if (side === "right") state.rightScore += 1;
+      if (state.leftScore >= targetScore || state.rightScore >= targetScore) {
+        state.winner = state.leftScore > state.rightScore ? "左玩家獲勝" : "右玩家獲勝";
+        state.running = false;
+        updateHud(state.winner);
+        return;
+      }
+      resetBall(side === "left" ? 1 : -1);
+      updateHud(`${side === "left" ? "左玩家" : "右玩家"} 得分`);
+    };
+
+    const update = (dt) => {
+      if (!state.running || state.winner) return;
+      movePaddles(dt);
+      const b = state.ball;
+      b.x += b.vx * dt;
+      b.y += b.vy * dt;
+
+      if (b.y - b.r <= 0 || b.y + b.r >= canvas.height) {
+        b.vy *= -1;
+        b.y = clamp(b.y, b.r, canvas.height - b.r);
+      }
+
+      hitPaddle(state.left, 1);
+      hitPaddle(state.right, -1);
+      hitBricks();
+
+      if (b.x + b.r < 0) scorePoint("right");
+      if (b.x - b.r > canvas.width) scorePoint("left");
+      if (state.bricks.every((brick) => !brick.alive)) state.bricks = makeBricks();
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, "#0f172a");
+      gradient.addColorStop(1, "#111827");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.strokeStyle = "rgba(255,255,255,0.18)";
+      ctx.setLineDash([10, 14]);
+      ctx.beginPath();
+      ctx.moveTo(canvas.width / 2, 18);
+      ctx.lineTo(canvas.width / 2, canvas.height - 18);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      for (const brick of state.bricks) {
+        if (!brick.alive) continue;
+        ctx.fillStyle = brick.color;
+        ctx.shadowColor = brick.color;
+        ctx.shadowBlur = 14;
+        ctx.fillRect(brick.x, brick.y, brick.w, brick.h);
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "rgba(255,255,255,0.22)";
+        ctx.fillRect(brick.x + 8, brick.y + 6, brick.w - 16, 5);
+      }
+
+      const drawPaddle = (paddle, color) => {
+        ctx.fillStyle = color;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 18;
+        ctx.fillRect(paddle.x, paddle.y, paddle.w, paddle.h);
+        ctx.shadowBlur = 0;
+      };
+      drawPaddle(state.left, "#22d3ee");
+      drawPaddle(state.right, "#f97316");
+
+      ctx.fillStyle = "#ffffff";
+      ctx.shadowColor = "#ffffff";
+      ctx.shadowBlur = 16;
+      ctx.beginPath();
+      ctx.arc(state.ball.x, state.ball.y, state.ball.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    };
+
+    let lastTime = performance.now();
+    const loop = (time) => {
+      const dt = Math.min(0.033, (time - lastTime) / 1000);
+      lastTime = time;
+      update(dt);
+      draw();
+      requestAnimationFrame(loop);
+    };
+
+    window.addEventListener("keydown", (event) => {
+      if (["w", "W", "s", "S", "ArrowUp", "ArrowDown", " "].includes(event.key)) event.preventDefault();
+      if (event.key === " ") {
+        state.running = !state.running;
+        updateHud(state.running ? "對戰中" : "暫停");
+        return;
+      }
+      keys.add(event.key);
+    });
+    window.addEventListener("keyup", (event) => keys.delete(event.key));
+
+    document.querySelector("[data-start]")?.addEventListener("click", () => {
+      if (state.winner) resetGame();
+      state.running = true;
+      updateHud("對戰中");
+    });
+    document.querySelector("[data-pause]")?.addEventListener("click", () => {
+      state.running = false;
+      updateHud("暫停");
+    });
+    document.querySelector("[data-reset]")?.addEventListener("click", resetGame);
+
+    document.querySelectorAll("[data-touch]").forEach((button) => {
+      const value = button.dataset.touch;
+      const start = (event) => {
+        event.preventDefault();
+        touches.add(value);
+      };
+      const end = (event) => {
+        event.preventDefault();
+        touches.delete(value);
+      };
+      button.addEventListener("pointerdown", start);
+      button.addEventListener("pointerup", end);
+      button.addEventListener("pointerleave", end);
+      button.addEventListener("pointercancel", end);
+    });
+
+    resetGame();
+    requestAnimationFrame(loop);
+  </script>
+</body>
+</html>
