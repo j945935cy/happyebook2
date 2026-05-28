@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6bb7d6">
+  <title>Leo 的學校一天｜中英對照童書｜Happy eBook 小作品</title>
+  <meta name="description" content="一本給 8 歲小朋友閱讀的中英對照插圖童書，介紹 Leo 在學校的一天，包含英文、繁體中文與簡單朗讀提示。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/school-day-picture-book/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Leo 的學校一天｜中英對照童書">
+  <meta property="og:description" content="給 8 歲小朋友的中英對照插圖童書，從上學、上課、午餐到回家。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/school-day-picture-book/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Leo 的學校一天中英對照童書">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Leo 的學校一天｜中英對照童書">
+  <meta name="twitter:description" content="8 頁中英對照插圖童書，適合親子共讀與英文初學。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --bg: #f7fbff;
+      --paper: #fffdf8;
+      --ink: #1d2a3a;
+      --muted: #64748b;
+      --blue: #2866d8;
+      --sky: #dff4ff;
+      --green: #3f9b7a;
+      --yellow: #f7c948;
+      --pink: #f6d7e6;
+      --line: #dfe6ef;
+      --shadow: 0 18px 40px rgba(24, 35, 50, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 12%, rgba(247, 201, 72, 0.18), transparent 28%),
+        radial-gradient(circle at 88% 10%, rgba(107, 183, 214, 0.2), transparent 30%),
+        linear-gradient(180deg, #f8fbff 0%, #f2f7fb 42%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(248, 251, 255, 0.9); border-bottom: 1px solid rgba(215, 225, 235, 0.9); backdrop-filter: blur(14px); }
+    .header-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { color: #13233a; font-size: 1.3rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.92rem; }
+    .site-nav { display: flex; align-items: center; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 999px; color: var(--muted); font-weight: 700; }
+    .site-nav a:hover, .site-nav a.is-active { background: #fff; color: var(--blue); box-shadow: 0 10px 24px rgba(24, 35, 50, 0.08); }
+    .nav-toggle { display: none; align-items: center; gap: 8px; border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 10px 14px; border-radius: 999px; font-weight: 850; }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display: block; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; }
+    .nav-toggle-bars { position: relative; }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { position: absolute; left: 0; }
+    .nav-toggle-bars::before { top: -6px; }
+    .nav-toggle-bars::after { top: 6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+    .hero { padding: 60px 0 28px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 30px; align-items: end; }
+    .hero-grid > * { min-width: 0; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; color: #102033; font-size: clamp(3rem, 7vw, 5.8rem); line-height: 1.05; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 42rem; color: #405066; font-size: clamp(1.05rem, 2vw, 1.24rem); line-height: 1.85; }
+    .cover-card { width: 100%; max-width: 330px; justify-self: end; padding: 18px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255, 255, 255, 0.84); box-shadow: var(--shadow); }
+    .cover-card svg { display: block; width: 100%; height: auto; border-radius: 18px; background: var(--sky); }
+    .section { padding: 28px 0 64px; }
+    .book-grid { display: grid; gap: 22px; }
+    .page-card { display: grid; grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr); gap: 22px; align-items: center; padding: clamp(18px, 3vw, 26px); border: 1px solid var(--line); border-radius: 26px; background: var(--paper); box-shadow: var(--shadow); }
+    .art-frame { overflow: hidden; border: 1px solid #e8dcc8; border-radius: 22px; background: #eaf7ff; }
+    .art-frame svg { display: block; width: 100%; height: auto; }
+    .page-copy { display: grid; gap: 14px; }
+    .page-number { color: var(--green); font-size: 0.86rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+    .english { margin: 0; color: #102033; font-size: clamp(1.45rem, 3vw, 2.1rem); line-height: 1.35; font-weight: 900; }
+    .chinese { margin: 0; color: #405066; font-size: clamp(1.05rem, 2vw, 1.22rem); line-height: 1.8; }
+    .read-tip { margin: 0; padding: 12px 14px; border-radius: 16px; background: #eef5ff; color: #173f9d; font-weight: 800; line-height: 1.7; }
+    .word-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .word-list li { padding: 7px 10px; border-radius: 999px; background: #edf8f6; color: #17655d; font-weight: 850; }
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    .sun { fill: #ffe49b; }
+    .sky { fill: #dff4ff; }
+    .ground { fill: #9fd18b; }
+    .school { fill: #f8fbff; stroke: #6b8dad; stroke-width: 3; }
+    .roof { fill: #f7c948; }
+    .person-skin { fill: #f4b183; }
+    .person-shirt { fill: #2866d8; }
+    .person-shorts { fill: #24476f; }
+    .bag { fill: #f97316; }
+    .desk { fill: #c98b4f; }
+    .book { fill: #ffffff; stroke: #6b8dad; stroke-width: 2; }
+    .tree { fill: #3f9b7a; }
+    .trunk { fill: #9a5a16; }
+    .bus { fill: #f7c948; stroke: #9a7a16; stroke-width: 2; }
+    .plate { fill: #ffffff; stroke: #6b8dad; stroke-width: 2; }
+
+    @media (max-width: 860px) {
+      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .header-row { min-height: auto; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
+      .brand-sub { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .site-nav { width: 100%; display: none; flex-direction: column; align-items: stretch; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: var(--shadow); }
+      .site-nav.is-open { display: flex; }
+      .site-nav a { width: 100%; border-radius: 14px; }
+      .hero-grid, .page-card { grid-template-columns: 1fr; }
+      .cover-card { max-width: min(330px, 100%); justify-self: center; padding: 16px; }
+      h1 { width: min(6em, 100%); overflow-wrap: anywhere; font-size: clamp(2.5rem, 13vw, 4rem); }
+      .hero p { width: min(320px, 100%); overflow-wrap: anywhere; word-break: break-all; }
+      .page-card { padding: 16px; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">中英對照童書</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../english-learning.html">英文學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Bilingual Picture Book</span>
+            <h1>Leo 的學校一天</h1>
+            <p>一本給 8 歲小朋友看的中英對照童書。每一頁都有簡單英文、繁體中文、插圖與朗讀提示，適合親子共讀。</p>
+          </div>
+          <div class="cover-card" aria-label="童書封面插圖">
+            <svg viewBox="0 0 420 520" role="img" aria-label="Leo 背著書包站在學校前面">
+              <rect class="sky" width="420" height="520"/>
+              <circle class="sun" cx="340" cy="74" r="42"/>
+              <rect class="ground" y="368" width="420" height="152"/>
+              <path class="school" d="M88 210h244v168H88z"/>
+              <path class="roof" d="M70 210l140-82 140 82z"/>
+              <rect fill="#9fd1ff" x="118" y="244" width="48" height="54" rx="8"/>
+              <rect fill="#9fd1ff" x="254" y="244" width="48" height="54" rx="8"/>
+              <rect fill="#24476f" x="180" y="294" width="62" height="84" rx="8"/>
+              <circle class="person-skin" cx="210" cy="358" r="24"/>
+              <rect class="person-shirt" x="184" y="382" width="52" height="56" rx="12"/>
+              <rect class="person-shorts" x="188" y="434" width="18" height="38" rx="6"/>
+              <rect class="person-shorts" x="214" y="434" width="18" height="38" rx="6"/>
+              <rect class="bag" x="240" y="392" width="24" height="42" rx="8"/>
+              <text x="210" y="74" text-anchor="middle" fill="#102033" font-size="34" font-weight="900">Leo's School Day</text>
+              <text x="210" y="112" text-anchor="middle" fill="#405066" font-size="22" font-weight="800">Leo 的學校一天</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container book-grid">
+          <article class="page-card">
+            <div class="art-frame">
+              <svg viewBox="0 0 520 360" role="img" aria-label="Leo 早上起床">
+                <rect class="sky" width="520" height="360"/><circle class="sun" cx="420" cy="70" r="40"/><rect fill="#fff" x="80" y="150" width="250" height="120" rx="20"/><rect fill="#dbeafe" x="95" y="168" width="110" height="74" rx="14"/><circle class="person-skin" cx="275" cy="134" r="24"/><rect class="person-shirt" x="250" y="158" width="52" height="58" rx="12"/><text x="112" y="80" fill="#102033" font-size="26" font-weight="900">Good morning!</text>
+              </svg>
+            </div>
+            <div class="page-copy">
+              <span class="page-number">Page 1</span>
+              <p class="english">Leo wakes up early in the morning.</p>
+              <p class="chinese">Leo 早上很早起床。</p>
+              <p class="read-tip">朗讀提示：wakes up 是「起床」；early 是「早」。</p>
+              <ul class="word-list"><li>wake up</li><li>early</li><li>morning</li></ul>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="art-frame">
+              <svg viewBox="0 0 520 360" role="img" aria-label="Leo 背書包去學校">
+                <rect class="sky" width="520" height="360"/><rect class="ground" y="258" width="520" height="102"/><path fill="#f7c948" d="M78 220h120v72H78z"/><path fill="#c98b4f" d="M58 220l80-52 80 52z"/><circle class="person-skin" cx="310" cy="178" r="24"/><rect class="person-shirt" x="284" y="202" width="52" height="56" rx="12"/><rect class="bag" x="340" y="210" width="26" height="42" rx="8"/><path stroke="#24476f" stroke-width="8" stroke-linecap="round" d="M292 258l-18 44M326 258l24 44"/><text x="88" y="94" fill="#102033" font-size="24" font-weight="900">I go to school.</text>
+              </svg>
+            </div>
+            <div class="page-copy">
+              <span class="page-number">Page 2</span>
+              <p class="english">He puts on his backpack and walks to school.</p>
+              <p class="chinese">他背上書包，走路去學校。</p>
+              <p class="read-tip">朗讀提示：puts on 是「穿上、戴上、背上」；walks to school 是「走路去學校」。</p>
+              <ul class="word-list"><li>backpack</li><li>walk</li><li>school</li></ul>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="art-frame">
+              <svg viewBox="0 0 520 360" role="img" aria-label="Leo 在校門口跟老師打招呼">
+                <rect class="sky" width="520" height="360"/><rect class="ground" y="270" width="520" height="90"/><path class="school" d="M160 118h210v158H160z"/><path class="roof" d="M140 118l125-74 125 74z"/><circle class="person-skin" cx="110" cy="210" r="22"/><rect class="person-shirt" x="88" y="232" width="44" height="52" rx="10"/><circle class="person-skin" cx="420" cy="205" r="22"/><rect fill="#3f9b7a" x="398" y="227" width="44" height="54" rx="10"/><text x="72" y="92" fill="#102033" font-size="24" font-weight="900">Hello, teacher!</text>
+              </svg>
+            </div>
+            <div class="page-copy">
+              <span class="page-number">Page 3</span>
+              <p class="english">Leo says hello to his teacher.</p>
+              <p class="chinese">Leo 向老師說早安。</p>
+              <p class="read-tip">朗讀提示：says hello to 是「向某人打招呼」。</p>
+              <ul class="word-list"><li>hello</li><li>teacher</li><li>say</li></ul>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="art-frame">
+              <svg viewBox="0 0 520 360" role="img" aria-label="Leo 在教室上英文課">
+                <rect fill="#f5fbff" width="520" height="360"/><rect fill="#24476f" x="72" y="58" width="210" height="110" rx="12"/><text x="104" y="125" fill="#fff" font-size="28" font-weight="900">A B C</text><rect class="desk" x="84" y="245" width="120" height="42" rx="10"/><rect class="desk" x="306" y="245" width="120" height="42" rx="10"/><circle class="person-skin" cx="144" cy="210" r="22"/><rect class="person-shirt" x="122" y="232" width="44" height="42" rx="10"/><circle class="person-skin" cx="366" cy="210" r="22"/><rect fill="#3f9b7a" x="344" y="232" width="44" height="42" rx="10"/>
+              </svg>
+            </div>
+            <div class="page-copy">
+              <span class="page-number">Page 4</span>
+              <p class="english">In class, Leo reads English words.</p>
+              <p class="chinese">上課時，Leo 讀英文單字。</p>
+              <p class="read-tip">朗讀提示：in class 是「上課時」；reads English words 是「讀英文單字」。</p>
+              <ul class="word-list"><li>class</li><li>read</li><li>words</li></ul>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="art-frame">
+              <svg viewBox="0 0 520 360" role="img" aria-label="Leo 和同學吃午餐">
+                <rect fill="#fff8ef" width="520" height="360"/><rect class="desk" x="126" y="178" width="270" height="80" rx="18"/><circle class="person-skin" cx="170" cy="134" r="22"/><rect class="person-shirt" x="148" y="156" width="44" height="54" rx="10"/><circle class="person-skin" cx="350" cy="134" r="22"/><rect fill="#3f9b7a" x="328" y="156" width="44" height="54" rx="10"/><ellipse class="plate" cx="206" cy="214" rx="42" ry="20"/><ellipse class="plate" cx="318" cy="214" rx="42" ry="20"/><circle fill="#f97316" cx="202" cy="211" r="8"/><circle fill="#3f9b7a" cx="325" cy="211" r="8"/>
+              </svg>
+            </div>
+            <div class="page-copy">
+              <span class="page-number">Page 5</span>
+              <p class="english">At lunch, he eats rice and vegetables.</p>
+              <p class="chinese">午餐時，他吃飯和蔬菜。</p>
+              <p class="read-tip">朗讀提示：at lunch 是「午餐時」；vegetables 是「蔬菜」。</p>
+              <ul class="word-list"><li>lunch</li><li>rice</li><li>vegetables</li></ul>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="art-frame">
+              <svg viewBox="0 0 520 360" role="img" aria-label="Leo 在操場玩球">
+                <rect class="sky" width="520" height="360"/><rect class="ground" y="240" width="520" height="120"/><circle fill="#ffffff" stroke="#24476f" stroke-width="4" cx="344" cy="220" r="26"/><circle class="person-skin" cx="190" cy="176" r="24"/><rect class="person-shirt" x="164" y="200" width="52" height="56" rx="12"/><path stroke="#24476f" stroke-width="8" stroke-linecap="round" d="M178 256l-28 44M206 256l34 40"/><path stroke="#2866d8" stroke-width="8" stroke-linecap="round" d="M166 212l-42 20M214 212l48-22"/><text x="70" y="88" fill="#102033" font-size="24" font-weight="900">Play time!</text>
+              </svg>
+            </div>
+            <div class="page-copy">
+              <span class="page-number">Page 6</span>
+              <p class="english">After lunch, Leo plays ball with his friends.</p>
+              <p class="chinese">午餐後，Leo 和朋友一起玩球。</p>
+              <p class="read-tip">朗讀提示：after lunch 是「午餐後」；with his friends 是「和他的朋友」。</p>
+              <ul class="word-list"><li>after</li><li>play</li><li>friends</li></ul>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="art-frame">
+              <svg viewBox="0 0 520 360" role="img" aria-label="Leo 在圖書館看書">
+                <rect fill="#f4fbf7" width="520" height="360"/><rect fill="#c98b4f" x="78" y="88" width="88" height="190" rx="10"/><rect fill="#c98b4f" x="354" y="88" width="88" height="190" rx="10"/><rect class="book" x="104" y="112" width="38" height="18"/><rect class="book" x="380" y="160" width="38" height="18"/><circle class="person-skin" cx="260" cy="160" r="24"/><rect class="person-shirt" x="234" y="184" width="52" height="58" rx="12"/><path class="book" d="M198 236h58c18 0 28 10 28 24h-86z"/><path class="book" d="M284 236h58v24h-86c0-14 10-24 28-24z"/><text x="206" y="70" fill="#102033" font-size="24" font-weight="900">Library</text>
+              </svg>
+            </div>
+            <div class="page-copy">
+              <span class="page-number">Page 7</span>
+              <p class="english">In the library, Leo reads a storybook.</p>
+              <p class="chinese">在圖書館裡，Leo 讀一本故事書。</p>
+              <p class="read-tip">朗讀提示：library 是「圖書館」；storybook 是「故事書」。</p>
+              <ul class="word-list"><li>library</li><li>read</li><li>storybook</li></ul>
+            </div>
+          </article>
+
+          <article class="page-card">
+            <div class="art-frame">
+              <svg viewBox="0 0 520 360" role="img" aria-label="Leo 放學回家">
+                <rect fill="#ffeec7" width="520" height="360"/><circle fill="#f7c948" cx="420" cy="80" r="38"/><rect class="ground" y="260" width="520" height="100"/><rect class="bus" x="72" y="178" width="210" height="72" rx="16"/><circle fill="#24476f" cx="118" cy="252" r="16"/><circle fill="#24476f" cx="238" cy="252" r="16"/><circle class="person-skin" cx="360" cy="184" r="24"/><rect class="person-shirt" x="334" y="208" width="52" height="56" rx="12"/><rect class="bag" x="390" y="214" width="26" height="42" rx="8"/><text x="70" y="92" fill="#102033" font-size="24" font-weight="900">See you tomorrow!</text>
+              </svg>
+            </div>
+            <div class="page-copy">
+              <span class="page-number">Page 8</span>
+              <p class="english">After school, Leo goes home and smiles.</p>
+              <p class="chinese">放學後，Leo 回家，他開心地笑了。</p>
+              <p class="read-tip">朗讀提示：after school 是「放學後」；goes home 是「回家」。</p>
+              <ul class="word-list"><li>after school</li><li>home</li><li>smile</li></ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../">小作品</a>
+          <a href="../../english-learning.html">英文學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
+    navToggle?.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
+    });
+  </script>
+</body>
+</html>
