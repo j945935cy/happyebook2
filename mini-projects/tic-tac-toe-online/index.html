@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2459d6">
+  <title>井字遊戲網路版原型｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端井字遊戲網路版原型，支援房間代碼、邀請連結、雙人輪流下棋、勝負判斷與棋局分享。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/tic-tac-toe-online/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="井字遊戲網路版原型｜Happy eBook 小作品">
+  <meta property="og:description" content="用 HTML、CSS、Vanilla JS 做出可分享房間連結的井字遊戲。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/tic-tac-toe-online/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 井字遊戲網路版原型">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="井字遊戲網路版原型｜Happy eBook 小作品">
+  <meta name="twitter:description" content="支援房間代碼、邀請連結與棋局分享的純前端井字遊戲。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-soft: #eef5ff;
+      --ink: #182332;
+      --muted: #667085;
+      --primary: #2459d6;
+      --primary-dark: #173f9d;
+      --accent: #287a71;
+      --warm: #c87137;
+      --line: #dfe6ef;
+      --shadow: 0 18px 40px rgba(24, 35, 50, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(36, 89, 214, 0.1), transparent 30%),
+        radial-gradient(circle at 88% 18%, rgba(40, 122, 113, 0.12), transparent 26%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 44%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(248, 251, 255, 0.88);
+      border-bottom: 1px solid rgba(215, 225, 235, 0.9);
+      backdrop-filter: blur(14px);
+    }
+    .header-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { color: #13233a; font-size: 1.3rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.92rem; }
+    .site-nav { display: flex; align-items: center; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 999px; color: var(--muted); font-weight: 700; }
+    .site-nav a:hover, .site-nav a.is-active { background: var(--surface); color: var(--primary-dark); box-shadow: 0 10px 24px rgba(24, 35, 50, 0.08); }
+    .nav-toggle { display: none; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 10px 14px; border-radius: 999px; font-weight: 800; }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display: block; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; }
+    .nav-toggle-bars { position: relative; }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { position: absolute; left: 0; }
+    .nav-toggle-bars::before { top: -6px; }
+    .nav-toggle-bars::after { top: 6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+    .hero { padding: 58px 0 24px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.7fr); gap: 28px; align-items: end; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; color: #102033; font-size: clamp(2.8rem, 7vw, 6rem); line-height: 1.04; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 42rem; color: #405066; font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.85; }
+    .hero-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow);
+    }
+    .hero-card h2 { margin: 0 0 10px; color: #13233a; font-size: 1.24rem; }
+    .hero-card p { margin: 0; color: var(--muted); font-size: 0.96rem; line-height: 1.75; }
+
+    .game-section { padding: 20px 0 64px; }
+    .game-layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 22px; align-items: start; }
+    .game-panel, .side-panel {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+    }
+    .game-panel { padding: clamp(18px, 3vw, 28px); }
+    .side-panel { display: grid; gap: 18px; padding: 22px; }
+    .status-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+    .status-row h2 { margin: 0; color: #13233a; font-size: clamp(1.5rem, 3vw, 2rem); }
+    .turn-pill { display: inline-flex; align-items: center; min-height: 42px; padding: 8px 12px; border-radius: 999px; background: #edf8f6; color: #17655d; font-weight: 900; white-space: nowrap; }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(8px, 2vw, 14px);
+      width: min(100%, 560px);
+      margin: 0 auto;
+      aspect-ratio: 1;
+      padding: clamp(8px, 2vw, 14px);
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(36, 89, 214, 0.14), rgba(40, 122, 113, 0.12));
+    }
+    .cell {
+      display: grid;
+      place-items: center;
+      min-width: 0;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 18px;
+      background: #ffffff;
+      color: #13233a;
+      font-size: clamp(3rem, 11vw, 6.4rem);
+      font-weight: 950;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 14px 26px rgba(24, 35, 50, 0.08);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+    }
+    .cell:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 18px 32px rgba(24, 35, 50, 0.12); }
+    .cell:disabled { cursor: default; }
+    .cell.mark-x { color: var(--primary); }
+    .cell.mark-o { color: var(--warm); }
+    .cell.is-win { background: #edf8f6; border-color: rgba(40, 122, 113, 0.32); }
+    .message { min-height: 1.7em; margin: 18px 0 0; color: var(--muted); font-weight: 800; line-height: 1.7; text-align: center; }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 16px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 850;
+    }
+    .button.secondary { background: #ffffff; border-color: var(--line); color: var(--ink); }
+    .button:disabled { opacity: 0.52; cursor: not-allowed; }
+
+    .room-box { display: grid; gap: 12px; }
+    .room-code {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface-soft);
+    }
+    .room-code strong { color: var(--primary-dark); font-size: 1.4rem; letter-spacing: 0.08em; }
+    .field { display: grid; gap: 8px; color: #13233a; font-weight: 850; }
+    .field input {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      color: var(--ink);
+      background: #ffffff;
+    }
+    .note-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .note-list li { padding: 12px; border: 1px solid var(--line); border-radius: 16px; background: #fbfdff; color: var(--muted); line-height: 1.7; }
+    .note-list strong { display: block; margin-bottom: 4px; color: #13233a; }
+    .copy-status { min-height: 1.5em; margin: 0; color: var(--accent); font-weight: 800; line-height: 1.6; }
+
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .header-row { min-height: auto; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
+      .brand-sub { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .container { width: calc(100% - 32px); padding-inline: 0; }
+      .site-nav { width: 100%; display: none; flex-direction: column; align-items: stretch; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); }
+      .site-nav.is-open { display: flex; }
+      .site-nav a { width: 100%; border-radius: 14px; }
+      .hero { padding-top: 36px; }
+      .hero-grid, .game-layout { grid-template-columns: 1fr; }
+      .hero-grid, .game-layout, .hero-card, .game-panel, .side-panel { min-width: 0; }
+      h1 { width: min(5.8em, 100%); max-width: 100%; overflow-wrap: anywhere; font-size: clamp(2.45rem, 12vw, 4rem); }
+      .hero p, .hero-card p { width: min(300px, 100%); max-width: 100%; overflow-wrap: anywhere; word-break: break-all; }
+      .game-panel { overflow: hidden; }
+      .status-row, .footer-bar { flex-direction: column; align-items: flex-start; }
+      .board { width: min(100%, 300px); max-width: 100%; min-width: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .button-row { flex-direction: column; align-items: stretch; }
+      .button-row .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">井字遊戲網路版</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Tic Tac Toe</span>
+            <h1>井字遊戲網路版原型</h1>
+            <p>建立房間、複製邀請連結、輪流下 X 與 O。這是可部署在 GitHub Pages 的靜態版原型，適合先理解棋盤狀態、勝負判斷與分享連結。</p>
+          </div>
+          <aside class="hero-card">
+            <h2>靜態版說明</h2>
+            <p>同一瀏覽器不同分頁可用房間代碼同步。跨裝置即時同步需要後端或即時資料庫，這版先保留純靜態架構。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="game-section">
+        <div class="container game-layout">
+          <section class="game-panel" aria-label="井字遊戲棋盤">
+            <div class="status-row">
+              <h2>棋盤</h2>
+              <span class="turn-pill" data-turn-label>輪到 X</span>
+            </div>
+            <div class="board" data-board aria-label="九宮格棋盤"></div>
+            <p class="message" data-message>玩家 X 先下。點選任一空格開始。</p>
+            <div class="button-row">
+              <button class="button" type="button" data-new-game>重新開局</button>
+              <button class="button secondary" type="button" data-copy-state>複製目前棋局連結</button>
+            </div>
+          </section>
+
+          <aside class="side-panel">
+            <div class="room-box">
+              <span class="eyebrow">Room</span>
+              <div class="room-code">
+                <span>房間代碼</span>
+                <strong data-room-code>ROOM</strong>
+              </div>
+              <label class="field">
+                加入房間
+                <input data-room-input type="text" maxlength="12" placeholder="輸入房間代碼">
+              </label>
+              <div class="button-row">
+                <button class="button secondary" type="button" data-create-room>建立新房間</button>
+                <button class="button secondary" type="button" data-join-room>加入</button>
+                <button class="button" type="button" data-copy-room>複製邀請連結</button>
+              </div>
+              <p class="copy-status" data-copy-status></p>
+            </div>
+
+            <ul class="note-list">
+              <li><strong>玩法</strong>兩位玩家輪流點格子，先連成一條線的人獲勝。</li>
+              <li><strong>分享</strong>邀請連結會帶上房間代碼與目前棋局狀態。</li>
+              <li><strong>限制</strong>這是純靜態版本，跨裝置不會自動即時同步。</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../">小作品</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
+    navToggle?.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
+    });
+
+    const boardElement = document.querySelector("[data-board]");
+    const turnLabel = document.querySelector("[data-turn-label]");
+    const message = document.querySelector("[data-message]");
+    const roomCodeLabel = document.querySelector("[data-room-code]");
+    const roomInput = document.querySelector("[data-room-input]");
+    const copyStatus = document.querySelector("[data-copy-status]");
+    const channel = "BroadcastChannel" in window ? new BroadcastChannel("happyebook-tic-tac-toe") : null;
+
+    const wins = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6]
+    ];
+
+    const makeRoomCode = () => Math.random().toString(36).slice(2, 8).toUpperCase();
+    const emptyBoard = () => Array(9).fill("");
+    const params = new URLSearchParams(window.location.search);
+    let roomCode = (params.get("room") || makeRoomCode()).toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
+    let board = (params.get("b") || "").split("").map((mark) => mark === "X" || mark === "O" ? mark : "").slice(0, 9);
+    while (board.length < 9) board.push("");
+    let currentPlayer = params.get("turn") === "O" ? "O" : "X";
+    let winnerLine = [];
+
+    const storageKey = () => `happyebook-tic-tac-toe:${roomCode}`;
+
+    const getWinner = () => {
+      for (const line of wins) {
+        const [a, b, c] = line;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+          return { winner: board[a], line };
+        }
+      }
+      if (board.every(Boolean)) return { winner: "draw", line: [] };
+      return { winner: "", line: [] };
+    };
+
+    const encodeBoard = () => board.map((mark) => mark || "-").join("");
+    const updateUrl = () => {
+      const next = new URL(window.location.href);
+      next.searchParams.set("room", roomCode);
+      next.searchParams.set("b", encodeBoard());
+      next.searchParams.set("turn", currentPlayer);
+      window.history.replaceState(null, "", next);
+    };
+
+    const saveRoom = (broadcast = true) => {
+      const payload = { roomCode, board, currentPlayer, updatedAt: Date.now() };
+      window.localStorage.setItem(storageKey(), JSON.stringify(payload));
+      updateUrl();
+      if (broadcast) channel?.postMessage(payload);
+    };
+
+    const loadRoom = (code) => {
+      const nextCode = code.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12);
+      if (!nextCode) return;
+      roomCode = nextCode;
+      const stored = window.localStorage.getItem(storageKey());
+      if (stored) {
+        try {
+          const payload = JSON.parse(stored);
+          board = Array.isArray(payload.board) ? payload.board.slice(0, 9) : emptyBoard();
+          while (board.length < 9) board.push("");
+          currentPlayer = payload.currentPlayer === "O" ? "O" : "X";
+        } catch (error) {
+          board = emptyBoard();
+          currentPlayer = "X";
+        }
+      } else {
+        board = emptyBoard();
+        currentPlayer = "X";
+      }
+      render();
+      saveRoom(false);
+    };
+
+    const render = () => {
+      const result = getWinner();
+      winnerLine = result.line;
+      roomCodeLabel.textContent = roomCode;
+      if (roomInput) roomInput.value = roomCode;
+      boardElement.innerHTML = board.map((mark, index) => {
+        const stateClass = mark ? ` mark-${mark.toLowerCase()}` : "";
+        const winClass = winnerLine.includes(index) ? " is-win" : "";
+        return `<button class="cell${stateClass}${winClass}" type="button" data-cell="${index}" ${mark || result.winner ? "disabled" : ""}>${mark}</button>`;
+      }).join("");
+
+      if (result.winner === "draw") {
+        turnLabel.textContent = "平手";
+        message.textContent = "棋盤已滿，這局平手。";
+      } else if (result.winner) {
+        turnLabel.textContent = `${result.winner} 獲勝`;
+        message.textContent = `玩家 ${result.winner} 連成一線，這局獲勝。`;
+      } else {
+        turnLabel.textContent = `輪到 ${currentPlayer}`;
+        message.textContent = `玩家 ${currentPlayer} 下棋。`;
+      }
+    };
+
+    boardElement.addEventListener("click", (event) => {
+      const cell = event.target.closest("[data-cell]");
+      if (!cell) return;
+      const index = Number(cell.dataset.cell);
+      if (board[index] || getWinner().winner) return;
+      board[index] = currentPlayer;
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+      render();
+      saveRoom(true);
+    });
+
+    document.querySelector("[data-new-game]")?.addEventListener("click", () => {
+      board = emptyBoard();
+      currentPlayer = "X";
+      render();
+      saveRoom(true);
+    });
+
+    document.querySelector("[data-create-room]")?.addEventListener("click", () => {
+      roomCode = makeRoomCode();
+      board = emptyBoard();
+      currentPlayer = "X";
+      render();
+      saveRoom(true);
+      copyStatus.textContent = "已建立新房間。";
+    });
+
+    document.querySelector("[data-join-room]")?.addEventListener("click", () => {
+      loadRoom(roomInput.value || roomCode);
+      copyStatus.textContent = "已切換房間。";
+    });
+
+    const copyText = async (text, doneText) => {
+      try {
+        await navigator.clipboard.writeText(text);
+        copyStatus.textContent = doneText;
+      } catch (error) {
+        copyStatus.textContent = "瀏覽器不允許自動複製，請手動複製網址列。";
+      }
+    };
+
+    document.querySelector("[data-copy-room]")?.addEventListener("click", () => {
+      saveRoom(false);
+      copyText(window.location.href, "已複製邀請連結。");
+    });
+
+    document.querySelector("[data-copy-state]")?.addEventListener("click", () => {
+      saveRoom(false);
+      copyText(window.location.href, "已複製目前棋局連結。");
+    });
+
+    channel?.addEventListener("message", (event) => {
+      const payload = event.data;
+      if (!payload || payload.roomCode !== roomCode) return;
+      board = Array.isArray(payload.board) ? payload.board.slice(0, 9) : emptyBoard();
+      while (board.length < 9) board.push("");
+      currentPlayer = payload.currentPlayer === "O" ? "O" : "X";
+      render();
+      updateUrl();
+    });
+
+    window.addEventListener("storage", (event) => {
+      if (event.key !== storageKey() || !event.newValue) return;
+      try {
+        const payload = JSON.parse(event.newValue);
+        board = Array.isArray(payload.board) ? payload.board.slice(0, 9) : emptyBoard();
+        while (board.length < 9) board.push("");
+        currentPlayer = payload.currentPlayer === "O" ? "O" : "X";
+        render();
+        updateUrl();
+      } catch (error) {
+        console.warn("Unable to sync room.", error);
+      }
+    });
+
+    render();
+    saveRoom(false);
+  </script>
+</body>
+</html>
