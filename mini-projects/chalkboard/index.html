@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1f4f46">
+  <title>電子白板｜7 色粉筆與打字工具｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端網頁版電子白板小作品，提供 7 色粉筆、手寫繪圖、文字輸入、清除與下載圖片功能。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/chalkboard/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="電子白板｜7 色粉筆與打字工具｜Happy eBook 小作品">
+  <meta property="og:description" content="可直接在瀏覽器操作的電子白板，支援 7 色粉筆、手寫與打字。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/chalkboard/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 電子白板小作品">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="電子白板｜7 色粉筆與打字工具">
+  <meta name="twitter:description" content="純前端電子白板，支援 7 色粉筆、手寫繪圖、文字輸入與下載圖片。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --bg: #f5f8f7;
+      --surface: #ffffff;
+      --ink: #172335;
+      --muted: #667085;
+      --board: #153f38;
+      --board-edge: #b98d56;
+      --primary: #1f6f64;
+      --primary-dark: #16544c;
+      --line: #dfe8e5;
+      --shadow: 0 18px 40px rgba(22, 35, 45, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 12%, rgba(31, 111, 100, 0.12), transparent 28%),
+        radial-gradient(circle at 90% 8%, rgba(185, 141, 86, 0.14), transparent 26%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 48%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(248, 251, 255, 0.9); border-bottom: 1px solid rgba(215, 225, 235, 0.9); backdrop-filter: blur(14px); }
+    .header-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { color: #13233a; font-size: 1.3rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.92rem; }
+    .site-nav { display: flex; align-items: center; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 999px; color: var(--muted); font-weight: 700; }
+    .site-nav a:hover, .site-nav a.is-active { background: var(--surface); color: var(--primary-dark); box-shadow: 0 10px 24px rgba(24, 35, 50, 0.08); }
+    .nav-toggle { display: none; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 10px 14px; border-radius: 999px; font-weight: 850; }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display: block; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; }
+    .nav-toggle-bars { position: relative; }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { position: absolute; left: 0; }
+    .nav-toggle-bars::before { top: -6px; }
+    .nav-toggle-bars::after { top: 6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+    .hero { padding: 54px 0 22px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 28px; align-items: end; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--primary); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; color: #102033; font-size: clamp(2.9rem, 7vw, 5.8rem); line-height: 1.04; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 42rem; color: #405066; font-size: clamp(1.04rem, 2vw, 1.24rem); line-height: 1.85; }
+    .hero-card { padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255, 255, 255, 0.84); box-shadow: var(--shadow); }
+    .hero-card h2 { margin: 0 0 10px; color: #13233a; font-size: 1.22rem; }
+    .hero-card p { margin: 0; color: var(--muted); font-size: 0.96rem; line-height: 1.75; }
+
+    .board-section { padding: 18px 0 64px; }
+    .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 22px; align-items: start; }
+    .workspace > * { min-width: 0; }
+    .board-frame { width: 100%; max-width: 100%; min-width: 0; padding: clamp(12px, 2vw, 18px); border: 10px solid var(--board-edge); border-radius: 22px; background: #966f3d; box-shadow: var(--shadow); }
+    .canvas-wrap { position: relative; overflow: hidden; border-radius: 12px; background: var(--board); }
+    canvas { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 16 / 10; touch-action: none; cursor: crosshair; background: var(--board); }
+    .text-marker { position: absolute; width: 18px; height: 18px; border: 3px solid rgba(255, 255, 255, 0.78); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; box-shadow: 0 0 0 4px rgba(31, 111, 100, 0.22); }
+
+    .tools { display: grid; gap: 16px; padding: 20px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255, 255, 255, 0.92); box-shadow: var(--shadow); }
+    .tool-group { display: grid; gap: 10px; }
+    .tool-title { margin: 0; color: #13233a; font-size: 1rem; font-weight: 900; }
+    .mode-row, .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 14px; border: 1px solid transparent; border-radius: 999px; background: var(--primary); color: #ffffff; font-weight: 850; }
+    .button.secondary { background: #ffffff; border-color: var(--line); color: var(--ink); }
+    .button.is-active { background: #173f38; color: #fff; }
+    .color-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .color-button { width: 100%; aspect-ratio: 1; border: 2px solid #ffffff; border-radius: 999px; box-shadow: 0 0 0 1px rgba(24, 35, 50, 0.14); }
+    .color-button.is-active { outline: 3px solid rgba(31, 111, 100, 0.28); outline-offset: 3px; }
+    .field { display: grid; gap: 8px; color: #13233a; font-weight: 850; }
+    .field input, .field select { width: 100%; min-height: 46px; border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; color: var(--ink); background: #ffffff; }
+    .note { margin: 0; color: var(--muted); font-size: 0.94rem; line-height: 1.7; }
+    .status { min-height: 1.5em; margin: 0; color: var(--primary-dark); font-weight: 800; line-height: 1.6; }
+
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .header-row { min-height: auto; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
+      .brand-sub { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .site-nav { width: 100%; display: none; flex-direction: column; align-items: stretch; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); }
+      .site-nav.is-open { display: flex; }
+      .site-nav a { width: 100%; border-radius: 14px; }
+      .hero-grid, .workspace { grid-template-columns: 1fr; }
+      h1 { width: min(5.8em, 100%); overflow-wrap: break-word; font-size: clamp(2.5rem, 13vw, 4rem); }
+      .hero p, .hero-card p { width: min(320px, 100%); overflow-wrap: break-word; }
+      .board-frame { width: min(100%, 300px); margin: 0 auto; border-width: 7px; }
+      canvas { aspect-ratio: 4 / 3; }
+      .color-grid { grid-template-columns: repeat(4, 42px); }
+      .button-row .button, .mode-row .button { flex: 1 1 130px; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">電子白板</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../english-learning.html">英文學習</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Chalkboard</span>
+            <h1>電子白板</h1>
+            <p>一個可以直接操作的網頁版白板。使用 7 色粉筆畫線，也可以切換到文字模式，把重點句子打在白板上。</p>
+          </div>
+          <aside class="hero-card">
+            <h2>最小可用版本</h2>
+            <p>這版完成手寫、7 色粉筆、文字輸入、清除與下載圖片。所有功能都在瀏覽器中執行，不需要後端。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="board-section">
+        <div class="container workspace">
+          <section class="board-frame" aria-label="電子白板畫布">
+            <div class="canvas-wrap" data-canvas-wrap>
+              <canvas data-board width="1280" height="800" aria-label="可畫線與打字的電子白板"></canvas>
+            </div>
+          </section>
+
+          <aside class="tools" aria-label="電子白板工具">
+            <div class="tool-group">
+              <h2 class="tool-title">模式</h2>
+              <div class="mode-row">
+                <button class="button is-active" type="button" data-mode="draw">粉筆</button>
+                <button class="button secondary" type="button" data-mode="text">打字</button>
+              </div>
+            </div>
+
+            <div class="tool-group">
+              <h2 class="tool-title">7 色粉筆</h2>
+              <div class="color-grid" data-colors></div>
+            </div>
+
+            <label class="field">
+              粉筆粗細
+              <select data-size>
+                <option value="4">細</option>
+                <option value="8" selected>中</option>
+                <option value="14">粗</option>
+              </select>
+            </label>
+
+            <label class="field">
+              打字內容
+              <input data-text-input type="text" value="今天的重點" maxlength="36" placeholder="輸入要放到白板上的文字">
+            </label>
+
+            <label class="field">
+              文字大小
+              <select data-font-size>
+                <option value="32">小字</option>
+                <option value="46" selected>中字</option>
+                <option value="64">大字</option>
+              </select>
+            </label>
+
+            <div class="button-row">
+              <button class="button secondary" type="button" data-clear>清除白板</button>
+              <button class="button" type="button" data-download>下載圖片</button>
+            </div>
+            <p class="note">粉筆模式可拖曳畫線；打字模式先輸入文字，再點白板位置。</p>
+            <p class="status" data-status>目前模式：粉筆</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../">小作品</a>
+          <a href="../../english-learning.html">英文學習</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
+    navToggle?.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
+    });
+
+    const canvas = document.querySelector("[data-board]");
+    const wrap = document.querySelector("[data-canvas-wrap]");
+    const ctx = canvas.getContext("2d");
+    const colorList = [
+      { name: "白色", value: "#f8fbff" },
+      { name: "黃色", value: "#ffe66d" },
+      { name: "粉紅", value: "#ff8fab" },
+      { name: "藍色", value: "#7dd3fc" },
+      { name: "綠色", value: "#86efac" },
+      { name: "橘色", value: "#fdba74" },
+      { name: "紫色", value: "#c4b5fd" }
+    ];
+    let mode = "draw";
+    let color = colorList[0].value;
+    let isDrawing = false;
+    let lastPoint = null;
+
+    const colorGrid = document.querySelector("[data-colors]");
+    const sizeSelect = document.querySelector("[data-size]");
+    const textInput = document.querySelector("[data-text-input]");
+    const fontSizeSelect = document.querySelector("[data-font-size]");
+    const status = document.querySelector("[data-status]");
+
+    const setupBoard = () => {
+      ctx.fillStyle = "#153f38";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+    };
+
+    const toCanvasPoint = (event) => {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: (event.clientX - rect.left) * (canvas.width / rect.width),
+        y: (event.clientY - rect.top) * (canvas.height / rect.height)
+      };
+    };
+
+    const drawLine = (from, to) => {
+      ctx.strokeStyle = color;
+      ctx.lineWidth = Number(sizeSelect.value);
+      ctx.globalAlpha = 0.92;
+      ctx.beginPath();
+      ctx.moveTo(from.x, from.y);
+      ctx.lineTo(to.x, to.y);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    };
+
+    const drawText = (point) => {
+      const text = textInput.value.trim();
+      if (!text) {
+        status.textContent = "請先輸入要放到白板上的文字。";
+        return;
+      }
+      ctx.fillStyle = color;
+      ctx.font = `900 ${fontSizeSelect.value}px "Noto Sans TC", "Segoe UI", sans-serif`;
+      ctx.textBaseline = "top";
+      ctx.shadowColor = "rgba(255,255,255,0.12)";
+      ctx.shadowBlur = 2;
+      ctx.fillText(text, point.x, point.y);
+      ctx.shadowBlur = 0;
+      status.textContent = "文字已放到白板。";
+    };
+
+    const setMode = (nextMode) => {
+      mode = nextMode;
+      document.querySelectorAll("[data-mode]").forEach((button) => {
+        const active = button.dataset.mode === mode;
+        button.classList.toggle("is-active", active);
+        button.classList.toggle("secondary", !active);
+      });
+      canvas.style.cursor = mode === "draw" ? "crosshair" : "text";
+      status.textContent = mode === "draw" ? "目前模式：粉筆" : "目前模式：打字";
+    };
+
+    const setColor = (nextColor) => {
+      color = nextColor;
+      document.querySelectorAll("[data-color]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.color === color);
+      });
+    };
+
+    colorGrid.innerHTML = colorList.map((item) =>
+      `<button class="color-button" type="button" data-color="${item.value}" style="background:${item.value}" aria-label="${item.name}粉筆"></button>`
+    ).join("");
+    colorGrid.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-color]");
+      if (!button) return;
+      setColor(button.dataset.color);
+    });
+
+    document.querySelectorAll("[data-mode]").forEach((button) => {
+      button.addEventListener("click", () => setMode(button.dataset.mode));
+    });
+
+    canvas.addEventListener("pointerdown", (event) => {
+      const point = toCanvasPoint(event);
+      if (mode === "text") {
+        drawText(point);
+        return;
+      }
+      isDrawing = true;
+      lastPoint = point;
+      canvas.setPointerCapture(event.pointerId);
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!isDrawing || mode !== "draw") return;
+      const point = toCanvasPoint(event);
+      drawLine(lastPoint, point);
+      lastPoint = point;
+    });
+
+    const stopDrawing = () => {
+      isDrawing = false;
+      lastPoint = null;
+    };
+    canvas.addEventListener("pointerup", stopDrawing);
+    canvas.addEventListener("pointercancel", stopDrawing);
+    canvas.addEventListener("pointerleave", stopDrawing);
+
+    document.querySelector("[data-clear]")?.addEventListener("click", () => {
+      setupBoard();
+      status.textContent = "白板已清除。";
+    });
+
+    document.querySelector("[data-download]")?.addEventListener("click", () => {
+      const link = document.createElement("a");
+      link.download = "happyebook-chalkboard.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+      status.textContent = "已產生下載圖片。";
+    });
+
+    setColor(color);
+    setupBoard();
+  </script>
+</body>
+</html>
