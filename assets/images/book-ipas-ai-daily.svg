@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" role="img" aria-labelledby="title desc">
+  <title id="title">iPAS AI 每日學習</title>
+  <desc id="desc">Happy eBook 的 iPAS AI 每日學習網站教材封面</desc>
+  <rect width="960" height="1440" fill="#EFF6FF"/>
+  <rect x="70" y="70" width="820" height="1300" rx="44" fill="#FFFFFF" stroke="#B7C8E6" stroke-width="4"/>
+  <rect x="118" y="122" width="724" height="190" rx="28" fill="#DBEAFE"/>
+  <text x="148" y="210" fill="#1D4ED8" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="44" font-weight="800">iPAS AI DAILY</text>
+  <text x="148" y="266" fill="#475569" font-family="'Noto Sans TC', sans-serif" font-size="32">每日短練習</text>
+  <circle cx="738" cy="214" r="58" fill="#FFFFFF" stroke="#93C5FD" stroke-width="6"/>
+  <path d="M738 176v42l28 18" fill="none" stroke="#2563EB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="118" y="470" fill="#111827" font-family="'Noto Serif TC', serif" font-size="78" font-weight="800">iPAS AI</text>
+  <text x="118" y="570" fill="#111827" font-family="'Noto Serif TC', serif" font-size="78" font-weight="800">每日學習</text>
+  <text x="122" y="675" fill="#334155" font-family="'Noto Sans TC', sans-serif" font-size="38">觀念、題目、考點</text>
+  <text x="122" y="728" fill="#334155" font-family="'Noto Sans TC', sans-serif" font-size="38">每天一點，穩定累積</text>
+  <g transform="translate(122 850)">
+    <rect width="716" height="250" rx="30" fill="#F8FAFC" stroke="#D8E2F2" stroke-width="4"/>
+    <rect x="44" y="48" width="76" height="76" rx="18" fill="#BFDBFE"/>
+    <path d="M64 88l16 18 34-42" fill="none" stroke="#1D4ED8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="154" y="80" fill="#1E293B" font-family="'Noto Sans TC', sans-serif" font-size="34" font-weight="700">每日複習</text>
+    <text x="154" y="132" fill="#475569" font-family="'Noto Sans TC', sans-serif" font-size="30">用零碎時間保持手感</text>
+    <rect x="44" y="160" width="628" height="26" rx="13" fill="#DBEAFE"/>
+    <rect x="44" y="160" width="438" height="26" rx="13" fill="#60A5FA"/>
+  </g>
+  <rect x="122" y="1190" width="270" height="70" rx="35" fill="#1D4ED8"/>
+  <text x="174" y="1236" fill="#FFFFFF" font-family="'Noto Sans TC', sans-serif" font-size="32" font-weight="700">免費網站</text>
+  <text x="122" y="1316" fill="#64748B" font-family="'Noto Sans TC', sans-serif" font-size="28">Happy eBook</text>
+</svg>
