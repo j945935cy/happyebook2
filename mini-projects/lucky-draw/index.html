@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>抽籤程式｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端網頁版抽籤程式，可輸入名單、隨機抽出結果、選擇是否移除已抽中項目，並保留抽籤紀錄。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/lucky-draw/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="抽籤程式｜Happy eBook 小作品">
+  <meta property="og:description" content="輸入名單後隨機抽出結果，適合課堂點名、活動抽獎與任務分配。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/lucky-draw/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 抽籤程式小作品">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="抽籤程式｜Happy eBook 小作品">
+  <meta name="twitter:description" content="純前端抽籤工具，支援名單輸入、隨機抽選、移除已抽中項目與紀錄。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --surface: #ffffff;
+      --ink: #182332;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #0f766e;
+      --warm: #f97316;
+      --line: #dfe6ef;
+      --shadow: 0 18px 40px rgba(24, 35, 50, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(37, 99, 235, 0.12), transparent 30%),
+        radial-gradient(circle at 86% 10%, rgba(15, 118, 110, 0.13), transparent 28%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 48%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, textarea, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(248, 251, 255, 0.9); border-bottom: 1px solid rgba(215, 225, 235, 0.9); backdrop-filter: blur(14px); }
+    .header-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { color: #13233a; font-size: 1.3rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.92rem; }
+    .site-nav { display: flex; align-items: center; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 999px; color: var(--muted); font-weight: 700; }
+    .site-nav a:hover, .site-nav a.is-active { background: var(--surface); color: var(--primary-dark); box-shadow: 0 10px 24px rgba(24, 35, 50, 0.08); }
+    .nav-toggle { display: none; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 10px 14px; border-radius: 999px; font-weight: 850; }
+    .nav-toggle-bars, .nav-toggle-bars::before, .nav-toggle-bars::after { display: block; width: 18px; height: 2px; border-radius: 999px; background: currentColor; content: ""; }
+    .nav-toggle-bars { position: relative; }
+    .nav-toggle-bars::before, .nav-toggle-bars::after { position: absolute; left: 0; }
+    .nav-toggle-bars::before { top: -6px; }
+    .nav-toggle-bars::after { top: 6px; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+
+    .hero { padding: 54px 0 22px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; align-items: end; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; color: #102033; font-size: clamp(3rem, 7vw, 5.8rem); line-height: 1.04; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 42rem; color: #405066; font-size: clamp(1.04rem, 2vw, 1.24rem); line-height: 1.85; }
+    .hero-card { padding: 22px; border: 1px solid var(--line); border-radius: 24px; background: rgba(255, 255, 255, 0.84); box-shadow: var(--shadow); }
+    .hero-card h2 { margin: 0 0 10px; color: #13233a; font-size: 1.22rem; }
+    .hero-card p { margin: 0; color: var(--muted); font-size: 0.96rem; line-height: 1.75; }
+
+    .draw-section { padding: 18px 0 64px; }
+    .draw-layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr); gap: 22px; align-items: start; }
+    .panel { border: 1px solid var(--line); border-radius: 24px; background: rgba(255, 255, 255, 0.92); box-shadow: var(--shadow); }
+    .input-panel, .result-panel { display: grid; gap: 16px; padding: clamp(18px, 3vw, 24px); }
+    .panel h2 { margin: 0; color: #13233a; font-size: clamp(1.35rem, 3vw, 1.8rem); }
+    .field { display: grid; gap: 8px; color: #13233a; font-weight: 850; }
+    textarea {
+      width: 100%;
+      min-height: 300px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      color: var(--ink);
+      background: #fbfdff;
+      line-height: 1.7;
+    }
+    .options { display: grid; gap: 10px; }
+    .check-row { display: flex; align-items: center; gap: 10px; color: #405066; font-weight: 800; }
+    .check-row input { width: 18px; height: 18px; accent-color: var(--primary); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 16px; border: 1px solid transparent; border-radius: 999px; background: var(--primary); color: #fff; font-weight: 850; }
+    .button.secondary { background: #ffffff; border-color: var(--line); color: var(--ink); }
+    .button.warm { background: var(--warm); }
+    .draw-stage {
+      display: grid;
+      place-items: center;
+      min-height: 250px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(15, 118, 110, 0.1));
+      text-align: center;
+    }
+    .draw-stage span { color: var(--muted); font-weight: 850; }
+    .draw-result { margin: 8px 0 0; color: #102033; font-size: clamp(2.2rem, 6vw, 4.2rem); line-height: 1.1; font-weight: 950; overflow-wrap: anywhere; }
+    .meta-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .meta-card { padding: 12px; border: 1px solid var(--line); border-radius: 16px; background: #fbfdff; }
+    .meta-card span { display: block; color: var(--muted); font-size: 0.88rem; font-weight: 800; }
+    .meta-card strong { color: #13233a; font-size: 1.5rem; }
+    .history-list { display: grid; gap: 8px; min-height: 54px; margin: 0; padding: 0; list-style: none; }
+    .history-list li { padding: 10px 12px; border-radius: 14px; background: #eef5ff; color: #173f9d; font-weight: 850; }
+    .status { min-height: 1.6em; margin: 0; color: var(--accent); font-weight: 850; line-height: 1.6; }
+
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .header-row { min-height: auto; padding: 14px 0; flex-wrap: wrap; gap: 12px; }
+      .brand-sub { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .site-nav { width: 100%; display: none; flex-direction: column; align-items: stretch; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); box-shadow: var(--shadow); }
+      .site-nav.is-open { display: flex; }
+      .site-nav a { width: 100%; border-radius: 14px; }
+      .hero-grid, .draw-layout { grid-template-columns: 1fr; }
+      .hero-card, .panel, .draw-layout > * { min-width: 0; }
+      h1 { width: min(5.8em, 100%); overflow-wrap: break-word; font-size: clamp(2.5rem, 13vw, 4rem); }
+      .hero p, .hero-card p { width: min(320px, 100%); overflow-wrap: break-word; }
+      textarea { min-height: 240px; }
+      .meta-row { grid-template-columns: 1fr; }
+      .button-row { flex-direction: column; align-items: stretch; }
+      .button-row .button { width: 100%; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">抽籤程式</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../english-learning.html">英文學習</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Lucky Draw</span>
+            <h1>抽籤程式</h1>
+            <p>輸入名單後按下抽籤，就能隨機抽出一個結果。適合課堂點名、活動抽獎、分組任務或每日練習題。</p>
+          </div>
+          <aside class="hero-card">
+            <h2>純前端工具</h2>
+            <p>這版完成名單輸入、隨機抽選、移除已抽中項目、範例名單、清除結果與抽籤紀錄，可直接部署到 GitHub Pages。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="draw-section">
+        <div class="container draw-layout">
+          <section class="panel input-panel" aria-label="抽籤名單">
+            <h2>候選名單</h2>
+            <label class="field">
+              一行輸入一個項目
+              <textarea data-items spellcheck="false">A 組
+B 組
+C 組
+D 組
+E 組</textarea>
+            </label>
+            <div class="options">
+              <label class="check-row">
+                <input data-remove-winner type="checkbox" checked>
+                抽中後從名單移除，避免重複抽到
+              </label>
+            </div>
+            <div class="button-row">
+              <button class="button secondary" type="button" data-load-example>載入範例名單</button>
+              <button class="button secondary" type="button" data-clear-list>清空名單</button>
+            </div>
+          </section>
+
+          <section class="panel result-panel" aria-label="抽籤結果">
+            <h2>抽籤結果</h2>
+            <div class="draw-stage">
+              <div>
+                <span data-stage-label>準備抽籤</span>
+                <p class="draw-result" data-result>--</p>
+              </div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-card"><span>目前可抽</span><strong data-count>0</strong></div>
+              <div class="meta-card"><span>已抽次數</span><strong data-history-count>0</strong></div>
+            </div>
+            <div class="button-row">
+              <button class="button" type="button" data-draw>開始抽籤</button>
+              <button class="button warm" type="button" data-clear-result>清除結果</button>
+            </div>
+            <p class="status" data-status>請確認名單後開始抽籤。</p>
+            <div>
+              <h2>抽籤紀錄</h2>
+              <ul class="history-list" data-history></ul>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../">小作品</a>
+          <a href="../../english-learning.html">英文學習</a>
+          <a href="../../ai-learning.html">AI 學習</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const navToggle = document.querySelector("[data-nav-toggle]");
+    const nav = document.querySelector("[data-site-nav]");
+    navToggle?.addEventListener("click", () => {
+      const isOpen = nav?.classList.toggle("is-open") || false;
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
+    });
+
+    const itemsInput = document.querySelector("[data-items]");
+    const removeWinner = document.querySelector("[data-remove-winner]");
+    const resultEl = document.querySelector("[data-result]");
+    const stageLabel = document.querySelector("[data-stage-label]");
+    const countEl = document.querySelector("[data-count]");
+    const historyCountEl = document.querySelector("[data-history-count]");
+    const historyEl = document.querySelector("[data-history]");
+    const statusEl = document.querySelector("[data-status]");
+    const history = [];
+
+    const getItems = () => itemsInput.value
+      .split(/\r?\n/)
+      .map((item) => item.trim())
+      .filter(Boolean);
+
+    const setItems = (items) => {
+      itemsInput.value = items.join("\n");
+      updateMeta();
+    };
+
+    const updateMeta = () => {
+      const items = getItems();
+      countEl.textContent = String(items.length);
+      historyCountEl.textContent = String(history.length);
+      historyEl.innerHTML = history.length
+        ? history.map((item, index) => `<li>${index + 1}. ${item}</li>`).join("")
+        : "<li>尚未抽籤</li>";
+    };
+
+    const draw = () => {
+      const items = getItems();
+      if (!items.length) {
+        resultEl.textContent = "--";
+        stageLabel.textContent = "沒有可抽項目";
+        statusEl.textContent = "請先輸入至少一個候選項目。";
+        updateMeta();
+        return;
+      }
+      const index = Math.floor(Math.random() * items.length);
+      const winner = items[index];
+      resultEl.textContent = winner;
+      stageLabel.textContent = "抽中的結果";
+      history.unshift(winner);
+      if (removeWinner.checked) {
+        items.splice(index, 1);
+        setItems(items);
+        statusEl.textContent = `已抽中「${winner}」，並從名單移除。`;
+      } else {
+        statusEl.textContent = `已抽中「${winner}」。`;
+      }
+      updateMeta();
+    };
+
+    document.querySelector("[data-draw]")?.addEventListener("click", draw);
+    document.querySelector("[data-load-example]")?.addEventListener("click", () => {
+      setItems(["第 1 組", "第 2 組", "第 3 組", "第 4 組", "第 5 組", "第 6 組"]);
+      resultEl.textContent = "--";
+      stageLabel.textContent = "準備抽籤";
+      statusEl.textContent = "已載入範例名單。";
+    });
+    document.querySelector("[data-clear-list]")?.addEventListener("click", () => {
+      setItems([]);
+      statusEl.textContent = "名單已清空。";
+    });
+    document.querySelector("[data-clear-result]")?.addEventListener("click", () => {
+      history.length = 0;
+      resultEl.textContent = "--";
+      stageLabel.textContent = "準備抽籤";
+      statusEl.textContent = "結果與紀錄已清除。";
+      updateMeta();
+    });
+    itemsInput.addEventListener("input", updateMeta);
+
+    updateMeta();
+  </script>
+</body>
+</html>
