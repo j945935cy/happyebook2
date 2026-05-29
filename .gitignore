@@ -17,6 +17,12 @@ node_modules/
 dist/
 build/
 
+# Publication output files
+publication/**/output/
+publication/**/google_books_upload/
+*.epub
+*.pdf
+
 # Env
 .env
 .env.local

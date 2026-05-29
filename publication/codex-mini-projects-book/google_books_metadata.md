@@ -4,7 +4,7 @@
 | --- | --- |
 | Title | 用 Codex 做出 10 個小作品 |
 | Subtitle | 2 本故事書與 8 個網頁遊戲實作入門 |
-| Author | TBD |
+| Author | Happy eBook |
 | Publisher | Happy eBook |
 | Language | zh-Hant |
 | Book type | EPUB ebook |
@@ -33,47 +33,4 @@
 
 ## Author Bio
 
-TBD
-
-## Public Upload Package Rules
-
-Google Books 上傳資料夾只放公開上架需要的檔案：
-
-- EPUB
-- 封面 JPG 或 PNG
-- 上架文案
-- metadata
-
-不要放入：
-
-- 原始網站整包資料
-- 測試截圖
-- 開發紀錄
-- 草稿提示
-- 內部檢查報告
-- 尚未整理的程式碼備份
-
-## Manuscript Progress
-
-- 已完成：使用說明
-- 已完成：第 1 章，如何請 Codex 做小作品
-- 已完成：第 2 章，作品 1：Leo 的學校一天
-- 已完成：第 3 章，作品 2：Mia 在家的一天
-- 待完成：第 4 章到第 11 章，8 個網頁小遊戲
-- 待完成：第 12 章，整理成可發布的小作品集
-- 待完成：封面、EPUB、Google Books 上傳包
-
-## Preflight Terms
-
-正式輸出 EPUB 前，請搜尋公開書稿與上傳資料夾，確認沒有不適合上架的字樣：
-
-```text
-TODO
-draft
-internal
-QA
-測試
-草稿
-未完成
-開發中
-```
+Happy eBook 是以 AI 學習、程式設計、英文學習與數位出版為核心的繁體中文學習品牌，專注用白話教學與實作範例，幫助初學者一步一步完成可檢查的小作品。

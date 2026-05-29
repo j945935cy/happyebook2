@@ -95,7 +95,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260527-11";
+const booksDataVersion = "20260529-1";
 
 const siteConfig = {
 
@@ -236,7 +236,7 @@ const resourcePromos = [
     title: "免費下載 Codex / Python 學程式 Prompt 範本",
     copy: "提供初學者可套用的 Prompt，練習請 Codex 解釋程式、修正錯誤與整理筆記。",
     url: "free-resources.html#codex-prompts",
-    bookIds: ["codex-python", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
+    bookIds: ["codex-mini-projects-book", "codex-python", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
   }
 ];
 
