@@ -18,7 +18,7 @@ try:
         content = response.read().decode('utf-8')
 
         # Save raw HTML to debug if needed
-        with open('scratch/raw_page.html', 'w', encoding='utf-8') as f:
+        with open('scratch/data/raw_page.html', 'w', encoding='utf-8') as f:
             f.write(content)
 
         # Parse og elements
@@ -79,6 +79,6 @@ try:
 except Exception as e:
     result['error'] = str(e)
 
-with open('scratch/scraped_details.json', 'w', encoding='utf-8') as f:
+with open('scratch/data/scraped_details.json', 'w', encoding='utf-8') as f:
     json.dump(result, f, indent=4, ensure_ascii=False)
 print("Finished scraping details.")

@@ -1636,7 +1636,7 @@ Happy eBook 是一個以 AI 學習、程式設計、英文學習與數位出版�
 
 - Happy eBook 首頁：https://happyebook.com/
 - 小作品區：https://happyebook.com/mini-projects/
-- Codex 小作品學習路線：https://happyebook.com/codex-mini-projects-roadmap.html
+- Codex 小作品學習路線：https://happyebook.com/learning/codex-mini-projects-roadmap.html
 - 書籍列表：https://happyebook.com/books.html
 - 關於 Happy eBook：https://happyebook.com/about.html
 

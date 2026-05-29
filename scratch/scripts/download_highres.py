@@ -2,7 +2,7 @@
 import json
 import os
 
-with open('scratch/scraped_details.json', 'r', encoding='utf-8') as f:
+with open('scratch/data/scraped_details.json', 'r', encoding='utf-8') as f:
     details = json.load(f)
 
 img_url_scraped = details.get('cover')

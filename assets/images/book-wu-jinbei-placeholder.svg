@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1440" viewBox="0 0 960 1440" role="img" aria-labelledby="title desc">
+  <title id="title">吳進北作品封面</title>
+  <desc id="desc">Happy eBook 用於吳進北相關作品的穩定預設封面縮圖。</desc>
+  <rect width="960" height="1440" fill="#eef5ff"/>
+  <rect x="86" y="96" width="788" height="1248" rx="34" fill="#ffffff" stroke="#b8cbef" stroke-width="6"/>
+  <rect x="86" y="96" width="788" height="130" rx="34" fill="#f7fbff"/>
+  <text x="130" y="178" fill="#2563eb" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="4">HAPPY EBOOK</text>
+  <text x="130" y="330" fill="#18324a" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="76" font-weight="900">吳進北</text>
+  <text x="130" y="430" fill="#18324a" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="76" font-weight="900">作品資料</text>
+  <text x="130" y="536" fill="#52677a" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="34">程式設計、AI 學習與證照教材</text>
+  <rect x="130" y="650" width="700" height="145" rx="22" fill="#f4f8ff" stroke="#d7e1eb" stroke-width="4"/>
+  <text x="176" y="710" fill="#2563eb" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="34" font-weight="800">外部購買連結</text>
+  <text x="176" y="762" fill="#52677a" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="28">封面改用站內穩定縮圖</text>
+  <rect x="130" y="850" width="700" height="270" rx="26" fill="#18324a"/>
+  <text x="176" y="930" fill="#ffffff" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="40" font-weight="800">AI / Python / APCS</text>
+  <text x="176" y="1000" fill="#dbeafe" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="34">Software Design</text>
+  <text x="176" y="1060" fill="#dbeafe" font-family="'Noto Sans TC', 'Microsoft JhengHei', sans-serif" font-size="34">Networking / Scratch</text>
+  <circle cx="734" cy="1238" r="58" fill="#f28c28"/>
+  <path d="M706 1238h56M734 1210v56" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+</svg>

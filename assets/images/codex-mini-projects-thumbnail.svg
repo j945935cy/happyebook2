@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2100" viewBox="0 0 1400 2100" role="img" aria-labelledby="title desc">
+  <title id="title">用 Codex 做出 10 個小作品</title>
+  <desc id="desc">Happy eBook AI Coding 入門實作書縮圖，介紹用 Codex 做出 10 個小作品。</desc>
+  <rect width="1400" height="2100" fill="#f7f9fc"/>
+  <rect x="0" y="0" width="50" height="2100" fill="#111827"/>
+  <rect x="50" y="0" width="12" height="2100" fill="#2f72ff"/>
+  <rect x="62" y="0" width="10" height="2100" fill="#dbe7ff"/>
+
+  <text x="138" y="154" fill="#111827" font-size="42" font-weight="700" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">Happy eBook</text>
+  <text x="138" y="222" fill="#2368d8" font-size="34" font-weight="700" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">AI Coding 入門實作書</text>
+
+  <rect x="130" y="295" width="1170" height="610" fill="#131c2e"/>
+  <text x="214" y="478" fill="#ffffff" font-size="86" font-weight="700" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">用 Codex 做出</text>
+  <text x="214" y="684" fill="#ffffff" font-size="166" font-weight="800" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">10 個小作品</text>
+  <rect x="194" y="760" width="984" height="6" fill="#2f72ff"/>
+  <text x="203" y="843" fill="#ffffff" font-size="48" font-weight="700" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">2 本故事書 × 8 個網頁遊戲</text>
+
+  <rect x="130" y="988" width="1170" height="375" rx="8" fill="#eaf1ff"/>
+  <text x="203" y="1103" fill="#111827" font-size="48" font-weight="800" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">從 prompt 到檢查清單</text>
+  <text x="203" y="1165" fill="#4b5563" font-size="34" font-weight="400" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">練習把需求拆小，請 Codex 修改，自己檢查，再逐步修正。</text>
+  <rect x="194" y="1236" width="950" height="82" rx="6" fill="#ffffff"/>
+  <text x="236" y="1289" fill="#168491" font-size="30" font-family="Consolas, 'Courier New', monospace">prompt  →  edit  →  check  →  fix</text>
+
+  <rect x="130" y="1448" width="1170" height="375" rx="7" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="203" y="1545" fill="#111827" font-size="46" font-weight="800" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">本書實作作品</text>
+  <g fill="#f3f6fb" stroke="#cbd5e1" stroke-width="2">
+    <rect x="192" y="1603" width="300" height="52" rx="6"/>
+    <rect x="512" y="1603" width="300" height="52" rx="6"/>
+    <rect x="832" y="1603" width="210" height="52" rx="6"/>
+    <rect x="1060" y="1603" width="155" height="52" rx="6"/>
+    <rect x="192" y="1675" width="155" height="52" rx="6"/>
+    <rect x="365" y="1675" width="210" height="52" rx="6"/>
+    <rect x="592" y="1675" width="210" height="52" rx="6"/>
+    <rect x="820" y="1675" width="180" height="52" rx="6"/>
+    <rect x="192" y="1747" width="270" height="52" rx="6"/>
+    <rect x="480" y="1747" width="270" height="52" rx="6"/>
+  </g>
+  <g fill="#334155" font-size="28" font-weight="700" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">
+    <text x="222" y="1640">Leo 故事書</text>
+    <text x="542" y="1640">Mia 故事書</text>
+    <text x="863" y="1640">英文單字</text>
+    <text x="1088" y="1640">抽籤</text>
+    <text x="222" y="1712">賓果</text>
+    <text x="394" y="1712">井字遊戲</text>
+    <text x="622" y="1712">電子白板</text>
+    <text x="850" y="1712">打磚塊</text>
+    <text x="222" y="1784">777 遊戲</text>
+    <text x="510" y="1784">3D 摩天輪</text>
+  </g>
+
+  <text x="138" y="1953" fill="#2368d8" font-size="38" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">HTML / CSS / Vanilla JavaScript / GitHub Pages</text>
+  <text x="138" y="2010" fill="#374151" font-size="30" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">適合初學者、自學者、教師與親子共學</text>
+  <text x="138" y="2072" fill="#111827" font-size="42" font-weight="700" font-family="'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', Arial, sans-serif">Happy eBook</text>
+</svg>

@@ -1,6 +1,6 @@
 import re
 
-with open('scratch/raw_page.html', 'r', encoding='utf-8') as f:
+with open('scratch/data/raw_page.html', 'r', encoding='utf-8') as f:
     html = f.read()
 
 # Let's search for "Happy eBook" or names

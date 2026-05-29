@@ -1,4 +1,4 @@
-# DESIGN_SYSTEM.md
+# Happy eBook Full Design System Notes
 
 ## Happy eBook Design System
 

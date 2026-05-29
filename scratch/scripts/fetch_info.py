@@ -40,6 +40,6 @@ try:
 except Exception as e:
     result['scraped_error'] = str(e)
 
-with open('scratch/info.json', 'w', encoding='utf-8') as f:
+with open('scratch/data/info.json', 'w', encoding='utf-8') as f:
     json.dump(result, f, indent=4, ensure_ascii=False)
-print("Done writing to scratch/info.json")
+print("Done writing to scratch/data/info.json")

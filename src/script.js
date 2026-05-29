@@ -221,21 +221,21 @@ const resourcePromos = [
     id: "ai-roadmap",
     title: "免費下載 AI 學習新手路線圖",
     copy: "整理從 AI 基礎、Prompt、Codex、AI Agent 到 AI 出版的學習順序。",
-    url: "free-resources.html#ai-roadmap",
+    url: "resources/free-resources.html#ai-roadmap",
     bookIds: ["ai-publishing-book", "smart-ai-evolution", "hermes-learning-by-doing", "hermes-agent-guide", "codex-coding", "antigravity-coding"]
   },
   {
     id: "ipas-review",
     title: "考前使用 iPAS AI 7 日複習表",
     copy: "把考綱、題庫、錯題與模擬考拆成一週可執行的複習任務。",
-    url: "ipas-ai-7-day-review.html",
+    url: "resources/ipas-ai-7-day-review.html",
     bookIds: ["ipas-ai-應用規劃師初級題庫完全攻略", "ipas-ai-high-score-2026-03-exam", "ipas-ai-high-score-play-book", "ipas-mid-ai-guide", "ipas-ai-application-planner-basic-exam-guide", "happy-ipas-site", "ipas-ai-planner-play-book"]
   },
   {
     id: "codex-prompts",
     title: "免費下載 Codex / Python 學程式 Prompt 範本",
     copy: "提供初學者可套用的 Prompt，練習請 Codex 解釋程式、修正錯誤與整理筆記。",
-    url: "free-resources.html#codex-prompts",
+    url: "resources/free-resources.html#codex-prompts",
     bookIds: ["codex-mini-projects-book", "codex-python", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
   }
 ];
@@ -247,7 +247,7 @@ const addResourcePromo = (bookId, target = document) => {
   const panel = target.querySelector?.(".book-content-panel") || document.querySelector(".book-content-panel");
   if (!promo || !panel || panel.querySelector("[data-resource-promo]")) return;
   const prefix = window.location.pathname.includes("/books/") ? "../" : "";
-  const promoUrl = promo.url || "free-resources.html#" + promo.id;
+  const promoUrl = promo.url || "resources/free-resources.html#" + promo.id;
   const promoElement = document.createElement("aside");
   promoElement.className = "resource-promo";
   promoElement.dataset.resourcePromo = promo.id;
@@ -572,7 +572,7 @@ const initResourceForms = () => {
         status.classList.remove("is-error");
       }
       window.setTimeout(() => {
-        window.location.assign(form.dataset.resourceRedirect || "ipas-ai-7-day-review.html");
+        window.location.assign(form.dataset.resourceRedirect || "resources/ipas-ai-7-day-review.html");
       }, 300);
     });
   });
@@ -1039,7 +1039,7 @@ const initResourceEmailForms = () => {
         window.location.href = `mailto:${mailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       }
       window.setTimeout(() => {
-        window.location.assign(form.dataset.resourceRedirect || "ipas-ai-7-day-review.html");
+        window.location.assign(form.dataset.resourceRedirect || "resources/ipas-ai-7-day-review.html");
       }, 1800);
     });
   });

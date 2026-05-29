@@ -1,4 +1,4 @@
-# CONTENT_STYLE_GUIDE.md
+# Happy eBook Content Style Guide
 
 # Happy eBook Content Style Guide
 

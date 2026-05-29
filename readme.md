@@ -1,4 +1,4 @@
-﻿# happyebook2
+# happyebook2
 
 happyebook2 是一個以內容展示為核心的電子書平台網站，用來整理、展示與導流多種電子書作品。
 
@@ -34,24 +34,30 @@ happyebook2 是一個以內容展示為核心的電子書平台網站，用來�
 
 ```text
 happyebook2/
+├─ index.html               # 首頁
+├─ books.html               # 書籍列表
+├─ book.html                # 動態單本作品頁
+├─ about.html               # 關於頁
+├─ contact.html             # 聯絡頁
+├─ articles/                # 學習短文入口與短文頁
+├─ learning/                # AI、iPAS、Python/Codex、英文學習路線
+├─ resources/               # 免費資源與複習表
+├─ books/                   # 靜態單本作品頁
+├─ mini-projects/           # 小作品與互動練習
 ├─ assets/                  # 圖片與書封素材
 │  └─ images/
 ├─ docs/                    # 專案文件
 ├─ PROMPTS/                 # 階段提示詞與規劃提示
-├─ src/                     # 主要網站前端檔案
-│  ├─ index.html            # 首頁
-│  ├─ books.html            # 書籍列表
-│  ├─ book.html             # 單本作品頁
-│  ├─ about.html            # 關於頁
-│  ├─ contact.html          # 聯絡頁
-│  ├─ admin.html            # 管理頁
+├─ publication/             # 出版上架資料
+├─ scratch/                 # 一次性腳本與暫存資料
+├─ archive/                 # 舊版頁與大型單檔備份
+├─ src/                     # 共用資料、樣式與腳本
 │  ├─ books.json            # 書籍資料
 │  ├─ script.js             # 前台互動
 │  ├─ admin.js              # 管理頁互動
 │  └─ styles.css            # 全站樣式
 ├─ AGENTS.md                # Codex 專案規則
 ├─ CNAME                    # GitHub Pages 自訂網域
-├─ index.html               # 根目錄導向頁
 └─ readme.md
 ```
 
@@ -198,6 +204,11 @@ happyebook2-commands
 - `docs/site-map.md`：網站地圖
 - `docs/deployment-notes.md`：部署筆記
 - `docs/design-system.md`：設計系統
+- `docs/design-system-full.md`：完整設計規範草稿
+- `docs/content-style-guide.md`：內容語氣與文案規範
+- `docs/prebuild.md`：預建置檢查與操作筆記
+- `docs/tasks.md`：待辦事項
+- `scratch/`：一次性腳本與暫存資料
 
 ## 後續規劃
 

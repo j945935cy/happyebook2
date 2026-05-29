@@ -7,7 +7,25 @@
   <meta name="description" content="找不到你要瀏覽的頁面，請返回 Happy eBook 首頁或前往書籍列表。">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://happyebook.com/">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <script>
+    const redirects = {
+      "/ai-learning.html": "/learning/ai.html",
+      "/python-codex.html": "/learning/python-codex.html",
+      "/english-learning.html": "/learning/english.html",
+      "/ipas-ai.html": "/learning/ipas-ai.html",
+      "/codex-mini-projects-roadmap.html": "/learning/codex-mini-projects-roadmap.html",
+      "/free-resources.html": "/resources/free-resources.html",
+      "/ipas-ai-7-day-review.html": "/resources/ipas-ai-7-day-review.html",
+      "/articles.html": "/articles/",
+      "/english-cai.html": "/mini-projects/english-cai/",
+      "/hermes-agent.html": "/mini-projects/hermes-agent/",
+      "/remote-src-index.html": "/archive/remote-src-index.html",
+      "/word-builder-1200-single-file.html": "/archive/word-builder-1200-single-file.html"
+    };
+    const target = redirects[window.location.pathname];
+    if (target) window.location.replace(target + window.location.search + window.location.hash);
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -51,8 +69,8 @@
     <h1>找不到這個頁面</h1>
     <p>這個連結可能已經移動或不存在。你可以回到首頁，或直接前往書籍列表尋找學習資源。</p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="index.html">返回首頁</a>
-      <a class="btn btn-secondary" href="books.html">瀏覽書籍</a>
+      <a class="btn btn-primary" href="/index.html">返回首頁</a>
+      <a class="btn btn-secondary" href="/books.html">瀏覽書籍</a>
     </div>
   </div>
 </body>
