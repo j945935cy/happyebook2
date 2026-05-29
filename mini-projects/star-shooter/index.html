@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星際射擊小遊戲 | Happy eBook</title>
+  <meta name="description" content="一個用 HTML、CSS、Vanilla JavaScript 製作的星際射擊小遊戲，練習移動、射擊、碰撞與得分。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/star-shooter/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="game-panel" aria-label="星際射擊小遊戲">
+      <header class="game-header">
+        <a class="back-link" href="../">Happy eBook 小作品</a>
+        <div class="score-board" aria-live="polite">
+          <div><span>分數</span><strong data-score>0</strong></div>
+          <div><span>等級</span><strong data-level>1</strong></div>
+          <div><span>生命</span><strong data-lives>3</strong></div>
+          <div><span>最高分</span><strong data-best-score>0</strong></div>
+        </div>
+        <button class="pause-button" type="button" data-pause-button disabled>暫停</button>
+      </header>
+
+      <div class="game-stage" data-game-stage tabindex="0" aria-label="遊戲區，使用左右鍵或 A D 移動，空白鍵射擊">
+        <div class="stars" aria-hidden="true"></div>
+        <div class="player" data-player aria-label="玩家飛船"></div>
+        <div class="message" data-message>
+          <h1>星際射擊</h1>
+          <p>左右鍵或 A / D 移動，空白鍵射擊。</p>
+          <button type="button" data-start-button>開始遊戲</button>
+        </div>
+      </div>
+
+      <div class="touch-controls" aria-label="觸控操作">
+        <button type="button" data-control="left" aria-label="向左移動">←</button>
+        <button class="shoot-button" type="button" data-control="shoot" aria-label="發射">射擊</button>
+        <button type="button" data-control="right" aria-label="向右移動">→</button>
+      </div>
+
+      <footer class="game-help">
+        <span>移動：← → 或 A D</span>
+        <span>射擊：Space 或觸控按鈕</span>
+        <span>暫停：P 或暫停按鈕</span>
+        <span>目標：擊中敵機得分，碰撞或漏掉會扣生命</span>
+      </footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

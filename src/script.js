@@ -1338,6 +1338,140 @@ const initEnglishCaiPage = () => {
   renderWord();
 };
 
+const projectStatusLabels = {
+  planning: "規劃中",
+  writing: "寫作中",
+  reviewing: "校稿中",
+  packaging: "製作上架檔",
+  submitted: "已送審",
+  published: "已出版",
+  paused: "暫停"
+};
+
+const projectDataVersion = "20260530-1";
+
+const loadBookProjects = async () => {
+  const projectsUrl = new URL("book-projects.json", scriptBase);
+  projectsUrl.searchParams.set("v", projectDataVersion);
+  const response = await fetch(projectsUrl, { cache: "no-store" });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
+};
+
+const formatProjectDate = (value) => {
+  if (!value) return "未設定";
+  const date = new Date(`${value}T00:00:00+08:00`);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat("zh-TW", { year: "numeric", month: "2-digit", day: "2-digit" }).format(date);
+};
+
+const isProjectOverdue = (project) => {
+  if (!project.targetDate || ["published", "paused"].includes(project.status)) return false;
+  const target = new Date(`${project.targetDate}T23:59:59+08:00`);
+  return !Number.isNaN(target.getTime()) && target.getTime() < Date.now();
+};
+
+const createProgressSummary = (projects) => {
+  const activeCount = projects.filter((project) => !["published", "paused"].includes(project.status)).length;
+  const average = projects.length
+    ? Math.round(projects.reduce((sum, project) => sum + Number(project.percent || 0), 0) / projects.length)
+    : 0;
+  const dueCount = projects.filter(isProjectOverdue).length;
+  const publishedCount = projects.filter((project) => project.status === "published").length;
+
+  return [
+    ["新書總數", projects.length],
+    ["進行中", activeCount],
+    ["平均完成度", `${average}%`],
+    ["已出版", publishedCount],
+    ["逾期提醒", dueCount]
+  ].map(([label, value]) => `<article class="progress-summary-card"><span>${label}</span><strong>${value}</strong></article>`).join("");
+};
+
+const createProjectCard = (project) => {
+  const percent = Math.max(0, Math.min(100, Number(project.percent || 0)));
+  const status = project.status || "planning";
+  const stages = Array.isArray(project.stages) ? project.stages : [];
+  const links = project.links || {};
+  const linkEntries = [
+    ["書稿", links.manuscript],
+    ["Metadata", links.metadata],
+    ["狀態文件", links.status],
+    ["書籍頁", links.bookPage]
+  ].filter(([, href]) => href);
+
+  return `<article class="progress-project-card">
+    <div class="progress-project-head">
+      <div>
+        <h2>${project.title || project.id}</h2>
+        <p class="progress-project-meta">${project.category || "未分類"} · 更新：${formatProjectDate(project.updatedAt)} · 期限：${formatProjectDate(project.targetDate)}</p>
+      </div>
+      <span class="status-badge status-${status}">${projectStatusLabels[status] || status}</span>
+    </div>
+    <div class="progress-meter" aria-label="${project.title || project.id} 完成度 ${percent}%">
+      <div class="progress-meter-row"><span>完成度</span><strong>${percent}%</strong></div>
+      <div class="progress-track"><span class="progress-fill" style="width: ${percent}%"></span></div>
+    </div>
+    ${isProjectOverdue(project) ? '<p class="progress-alert">已超過目標日期，建議先確認卡住的階段。</p>' : ""}
+    <ul class="progress-stage-list">
+      ${stages.map((stage) => `<li class="${stage.done ? "is-done" : ""}">${stage.name}</li>`).join("")}
+    </ul>
+    <p class="progress-next-step"><strong>下一步：</strong>${project.nextStep || "尚未設定下一步。"}</p>
+    ${project.notes ? `<p class="progress-project-meta">${project.notes}</p>` : ""}
+    <div class="progress-link-row">
+      ${linkEntries.map(([label, href]) => `<a class="progress-link" href="${href}">${label}</a>`).join("")}
+    </div>
+  </article>`;
+};
+
+const initBookProgressDashboard = async () => {
+  const dashboard = document.querySelector("[data-book-progress-dashboard]");
+  if (!dashboard) return;
+
+  const summary = dashboard.querySelector("[data-progress-summary]");
+  const grid = dashboard.querySelector("[data-project-grid]");
+  const searchInput = dashboard.querySelector("[data-project-search]");
+  const filterButtons = [...dashboard.querySelectorAll("[data-project-status]")];
+  let activeStatus = "all";
+  let projects = [];
+
+  const render = () => {
+    const query = String(searchInput?.value || "").trim().toLowerCase();
+    const filtered = projects.filter((project) => {
+      const statusMatches = activeStatus === "all" || project.status === activeStatus;
+      const haystack = [project.title, project.category, project.nextStep, project.notes, project.owner].join(" ").toLowerCase();
+      return statusMatches && (!query || haystack.includes(query));
+    });
+
+    if (summary) summary.innerHTML = createProgressSummary(projects);
+    if (grid) {
+      grid.innerHTML = filtered.length
+        ? filtered.map(createProjectCard).join("")
+        : '<div class="progress-empty">目前沒有符合條件的新書專案。</div>';
+    }
+  };
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeStatus = button.dataset.projectStatus || "all";
+      filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+      render();
+    });
+  });
+
+  searchInput?.addEventListener("input", render);
+
+  try {
+    projects = await loadBookProjects();
+  } catch (error) {
+    console.warn("book-projects.json load failed.", error);
+    if (grid) grid.innerHTML = '<div class="progress-empty">目前無法讀取新書進度資料，請檢查 src/book-projects.json。</div>';
+    return;
+  }
+
+  render();
+};
+
 const boot = () => {
 
   initNav();
@@ -1367,6 +1501,8 @@ const boot = () => {
   if (page === "hermes-agent") initHermesAgentPage();
 
   if (page === "english-cai") initEnglishCaiPage();
+
+  if (page === "book-progress") initBookProgressDashboard();
 
 };
 

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新書進度儀表板 | Happy eBook</title>
+  <meta name="description" content="Happy eBook 新書進度儀表板，用來追蹤書稿、校稿、封面、上架資料與送審狀態。">
+  <link rel="canonical" href="https://happyebook.com/dashboard/books-progress.html">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="新書進度儀表板 | Happy eBook">
+  <meta property="og:description" content="追蹤 Happy eBook 新書目前完成度、下一步、期限與出版階段。">
+  <meta property="og:url" content="https://happyebook.com/dashboard/books-progress.html">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="新書進度儀表板 | Happy eBook">
+  <meta name="twitter:description" content="追蹤 Happy eBook 新書目前完成度、下一步、期限與出版階段。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <link rel="stylesheet" href="../src/styles.css?v=20260530-1">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "新書進度儀表板 | Happy eBook",
+    "url": "https://happyebook.com/dashboard/books-progress.html",
+    "description": "Happy eBook 新書進度儀表板，用來追蹤書稿、校稿、封面、上架資料與送審狀態。",
+    "inLanguage": "zh-TW",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Happy eBook",
+      "url": "https://happyebook.com/"
+    }
+  }
+  </script>
+</head>
+<body data-page="book-progress">
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">出版進度</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單"><span class="nav-toggle-bars" aria-hidden="true"></span><span>選單</span></button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../index.html">首頁</a>
+          <a href="../books.html">書籍列表</a>
+          <a href="../articles/">學習文章</a>
+          <a href="../mini-projects/">小作品</a>
+          <a href="../resources/free-resources.html">免費資源</a>
+          <a class="is-active" href="books-progress.html">新書進度</a>
+          <a href="../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Publishing Dashboard</span>
+          <h1>新書進度儀表板</h1>
+          <p>追蹤每一本新書目前卡在哪個階段，先看完成度、下一步與期限，再進入子目錄處理細節。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="progress-dashboard" data-book-progress-dashboard>
+            <div class="progress-summary-grid" data-progress-summary></div>
+            <div class="filter-shell progress-filter-shell">
+              <div class="filter-bar">
+                <div class="search-group">
+                  <label class="search-label" for="project-search">搜尋新書</label>
+                  <input id="project-search" class="search-input" data-project-search type="search" placeholder="輸入書名、分類或下一步" autocomplete="off">
+                </div>
+                <div class="filter-group" data-project-status-filters>
+                  <button class="filter-chip is-active" data-project-status="all" type="button">全部</button>
+                  <button class="filter-chip" data-project-status="planning" type="button">規劃中</button>
+                  <button class="filter-chip" data-project-status="writing" type="button">寫作中</button>
+                  <button class="filter-chip" data-project-status="reviewing" type="button">校稿中</button>
+                  <button class="filter-chip" data-project-status="packaging" type="button">製作上架檔</button>
+                  <button class="filter-chip" data-project-status="submitted" type="button">已送審</button>
+                  <button class="filter-chip" data-project-status="published" type="button">已出版</button>
+                  <button class="filter-chip" data-project-status="paused" type="button">暫停</button>
+                </div>
+              </div>
+            </div>
+            <div class="progress-project-grid" data-project-grid></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../books.html">書籍列表</a>
+          <a href="../articles/">學習文章</a>
+          <a href="../resources/free-resources.html">免費資源</a>
+          <a href="books-progress.html">新書進度</a>
+          <a href="../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script src="../src/script.js?v=20260530-1"></script>
+</body>
+</html>

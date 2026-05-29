@@ -1,0 +1,33 @@
+[
+  {
+    "id": "codex-mini-projects-book",
+    "title": "用 Codex 做出 10 個小作品",
+    "status": "published",
+    "targetDate": "2026-05-29",
+    "updatedAt": "2026-05-30",
+    "percent": 100,
+    "owner": "Happy eBook",
+    "category": "AI Coding",
+    "nextStep": "部署後檢查書籍頁、縮圖與購買連結。",
+    "folder": "../publication/codex-mini-projects-book/",
+    "stages": [
+      { "name": "選題", "done": true },
+      { "name": "大綱", "done": true },
+      { "name": "初稿", "done": true },
+      { "name": "校稿", "done": true },
+      { "name": "封面", "done": true },
+      { "name": "上架資料", "done": true },
+      { "name": "EPUB / PDF", "done": true },
+      { "name": "送審", "done": true },
+      { "name": "已出版", "done": true }
+    ],
+    "links": {
+      "folder": "../publication/codex-mini-projects-book/",
+      "manuscript": "../publication/codex-mini-projects-book/manuscript.md",
+      "metadata": "../publication/codex-mini-projects-book/google_books_metadata.md",
+      "status": "../publication/codex-mini-projects-book/publication_status.md",
+      "bookPage": "../books/codex-mini-projects-book.html"
+    },
+    "notes": "書稿、Google Books 文案、metadata 與網站書籍頁已完成。"
+  }
+]

@@ -42,6 +42,7 @@ happyebook2/
 ├─ articles/                # 學習短文入口與短文頁
 ├─ learning/                # AI、iPAS、Python/Codex、英文學習路線
 ├─ resources/               # 免費資源與複習表
+├─ dashboard/               # 內部進度儀表板
 ├─ books/                   # 靜態單本作品頁
 ├─ mini-projects/           # 小作品與互動練習
 ├─ assets/                  # 圖片與書封素材
@@ -53,6 +54,7 @@ happyebook2/
 ├─ archive/                 # 舊版頁與大型單檔備份
 ├─ src/                     # 共用資料、樣式與腳本
 │  ├─ books.json            # 書籍資料
+│  ├─ book-projects.json    # 新書進度資料
 │  ├─ script.js             # 前台互動
 │  ├─ admin.js              # 管理頁互動
 │  └─ styles.css            # 全站樣式
@@ -78,6 +80,7 @@ happyebook2/
 
 ```text
 src/books.json
+src/book-projects.json
 ```
 
 每本書常見欄位：
@@ -174,6 +177,7 @@ git -C C:\happyebook2 push origin main
 - 所有樣式集中在 `src/styles.css`
 - 所有前台互動集中在 `src/script.js`
 - 書籍資料以 `src/books.json` 為主
+- 新書進度儀表板讀取 `src/book-projects.json`
 - 文案使用繁體中文與台灣用語
 - 圖片需有 `alt`
 - 表單欄位需有 `label`
