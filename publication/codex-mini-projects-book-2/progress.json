@@ -5,13 +5,13 @@
   "status": "drafting",
   "targetDate": "",
   "updatedAt": "2026-05-31",
-  "percent": 58,
-  "nextStep": "繼續擴寫 manuscript.md 第 9 章與第 10 章，補強台灣簡易飛行模擬與星際射擊小遊戲的鍵盤控制、遊戲迴圈與檢查流程。",
+  "percent": 64,
+  "nextStep": "繼續擴寫 manuscript.md 第 11 章與第 12 章，補強 Hermes Agent 任務代理產生器與第二組小作品集整理流程。",
   "stages": [
     { "name": "選題", "done": true },
     { "name": "大綱", "done": true },
     { "name": "初稿骨架", "done": true },
-    { "name": "章節擴寫", "done": false, "note": "第 1 到第 8 章已補強" },
+    { "name": "章節擴寫", "done": false, "note": "第 1 到第 10 章已補強" },
     { "name": "校稿", "done": false },
     { "name": "封面", "done": false },
     { "name": "上架資料草稿", "done": true },
@@ -31,5 +31,5 @@
     { "name": "星際射擊小遊戲", "url": "https://happyebook.com/mini-projects/star-shooter/", "included": true },
     { "name": "Hermes Agent 任務代理產生器", "url": "https://happyebook.com/mini-projects/hermes-agent/", "included": true }
   ],
-  "notes": "第二本已建立 outline.md、manuscript.md 初稿骨架與 google_books_copy.md。第 1 到第 8 章已擴寫，下一步補強第 9 章與第 10 章。"
+  "notes": "第二本已建立 outline.md、manuscript.md 初稿骨架與 google_books_copy.md。第 1 到第 10 章已擴寫，下一步補強第 11 章、第 12 章與附錄。"
 }
