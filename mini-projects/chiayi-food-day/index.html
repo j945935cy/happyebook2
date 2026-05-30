@@ -163,14 +163,20 @@
       .container { width: calc(100% - 28px); padding-inline: 0; }
       .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
       .hero-grid, .tour-layout { grid-template-columns: 1fr; }
-      .route-map { min-height: 420px; }
+      .tour-layout { gap: 12px; }
+      .route-map { min-height: 360px; }
+      .stop-panel { padding-top: 14px; }
+      .stop-card { gap: 12px; }
       .map-food { grid-template-columns: 48px minmax(0, 1fr); width: 140px; right: 10px; bottom: 10px; padding: 7px; }
       .food-art { width: 48px; height: 44px; }
       .food-art svg { width: 42px; height: 36px; }
       .food-caption strong { font-size: 0.84rem; }
       .walker-marker { width: 36px; height: 42px; }
       .facts, .total-grid, .summary-grid, .checklist { grid-template-columns: 1fr; }
-      .button-row { flex-direction: column; align-items: stretch; }
+      .button-row { order: -1; flex-direction: column; align-items: stretch; }
+      .button-row [data-next] { order: -3; }
+      .button-row [data-prev] { order: -2; }
+      .button-row [data-reset] { order: -1; }
       .button { width: 100%; }
       .footer-bar { flex-direction: column; align-items: flex-start; }
     }
