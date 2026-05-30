@@ -124,6 +124,13 @@
     .ink-dot { fill: rgba(31, 41, 36, calc(0.18 * var(--ink-opacity))); }
     .rock { fill: rgba(31, 41, 36, calc(0.11 * var(--ink-opacity))); stroke: rgba(31, 41, 36, calc(0.28 * var(--ink-opacity))); stroke-width: 3; stroke-linejoin: round; filter: url(#softInk); }
     .grass { fill: none; stroke: rgba(31, 41, 36, calc(0.26 * var(--ink-opacity))); stroke-width: 2.4; stroke-linecap: round; }
+    .water { fill: rgba(92, 142, 145, 0.24); stroke: rgba(31, 41, 36, calc(0.16 * var(--ink-opacity))); stroke-width: 3; filter: url(#softInk); }
+    .reflection { fill: none; stroke: rgba(31, 41, 36, calc(0.12 * var(--ink-opacity))); stroke-width: 3; stroke-linecap: round; }
+    .stone-path { fill: rgba(255, 252, 244, 0.62); stroke: rgba(31, 41, 36, calc(0.22 * var(--ink-opacity))); stroke-width: 3; stroke-linejoin: round; }
+    .stone-line { fill: none; stroke: rgba(31, 41, 36, calc(0.18 * var(--ink-opacity))); stroke-width: 2; stroke-linecap: round; }
+    .village-wall { fill: rgba(255, 252, 244, 0.78); stroke: rgba(31, 41, 36, calc(0.23 * var(--ink-opacity))); stroke-width: 3; }
+    .roof { fill: rgba(31, 41, 36, calc(0.30 * var(--ink-opacity))); stroke: rgba(31, 41, 36, calc(0.42 * var(--ink-opacity))); stroke-width: 3; stroke-linejoin: round; }
+    .window { fill: rgba(31, 41, 36, calc(0.22 * var(--ink-opacity))); }
     .leaf { fill: var(--season); opacity: 0.82; transform-box: fill-box; transform-origin: center; transition: fill 700ms ease, opacity 700ms ease, transform 700ms ease; }
     .leaf-dot { fill: var(--season); opacity: 0.74; transform-box: fill-box; transform-origin: center; transition: fill 700ms ease, opacity 700ms ease, transform 700ms ease; }
     .blossom { fill: #efb9c6; opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 700ms ease, transform 700ms ease; }
@@ -351,6 +358,23 @@
                 <path class="mist" d="M74 248 C164 228 236 266 318 244 C410 220 474 258 588 234"/>
                 <path class="mist" d="M126 302 C220 284 306 320 404 296 C492 276 568 306 678 284"/>
                 <path class="mist" d="M52 360 C158 344 236 370 340 350 C452 330 546 356 700 336"/>
+                <path class="village-wall" d="M424 274h84v54h-84z"/>
+                <path class="roof" d="M414 276h104l-18-22h-68Z"/>
+                <rect class="window" x="456" y="292" width="14" height="18" rx="1"/>
+                <path class="village-wall" d="M522 286h110v58H522z"/>
+                <path class="roof" d="M510 288h132l-22-24h-84Z"/>
+                <rect class="window" x="552" y="306" width="15" height="19" rx="1"/>
+                <rect class="window" x="594" y="306" width="15" height="19" rx="1"/>
+                <path class="village-wall" d="M640 302h84v50h-84z"/>
+                <path class="roof" d="M630 304h104l-18-20h-66Z"/>
+                <path class="water" d="M300 336 C430 314 572 326 728 304 L728 500 C548 492 410 482 278 508 C232 516 198 506 174 486 C198 420 230 368 300 336Z"/>
+                <path class="reflection" d="M342 374 C410 362 492 368 564 356M374 404 C472 392 570 404 684 386M326 438 C420 426 526 440 650 420M454 342v86M574 352v74M664 362v54"/>
+                <path class="stone-path" d="M34 522 C82 470 126 426 184 384 C222 356 254 350 304 352 C260 408 228 456 214 536Z"/>
+                <path class="stone-line" d="M76 486 C120 492 166 488 216 472M110 444 C154 452 194 448 246 430M150 406 C190 412 224 410 278 396M84 512 L132 452M136 536 L174 430M194 532 L218 400"/>
+                <path class="village-wall" d="M24 236h96v166H24z"/>
+                <path class="roof" d="M4 238h132l-24-34H28Z"/>
+                <rect class="window" x="48" y="280" width="22" height="42" rx="2"/>
+                <path class="roof" d="M40 202h82l-18-28H54Z"/>
                 <path class="ground" d="M118 458 C210 432 302 466 386 442 C480 416 576 448 668 420"/>
                 <path class="ridge" d="M160 474 C214 462 260 472 318 462M448 458 C506 442 574 452 628 436"/>
                 <path class="rock" d="M120 448 C144 420 178 416 198 444 C180 466 144 468 120 448Z"/>
