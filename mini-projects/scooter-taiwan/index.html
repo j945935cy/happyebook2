@@ -71,7 +71,7 @@
     .panel { border: 1px solid var(--line); border-radius: 8px; background: rgba(255, 255, 255, 0.94); box-shadow: var(--shadow); }
     .map-panel, .stop-panel, .table-panel { padding: clamp(18px, 3vw, 24px); }
     .panel h2 { margin: 0 0 16px; color: #13233a; font-size: clamp(1.35rem, 3vw, 1.8rem); }
-    .route-map { position: relative; min-height: 520px; border: 1px solid var(--line); border-radius: 8px; background: #fbfdff; overflow: hidden; }
+    .route-map { position: relative; min-height: 520px; border: 1px solid #8ed7d1; border-radius: 8px; background: #44bfb7; overflow: hidden; }
     .route-line { position: absolute; inset: 28px; width: calc(100% - 56px); height: calc(100% - 56px); pointer-events: none; }
     .stop-dot {
       position: absolute;
@@ -241,10 +241,11 @@
             <h2>環台路線</h2>
             <div class="route-map" data-map>
               <svg class="route-line" viewBox="0 0 420 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                <path d="M248 28 C276 41 296 68 302 104 C306 132 294 159 300 187 C306 219 329 247 326 289 C322 344 288 382 269 426 C248 475 233 518 199 544 C176 562 145 540 133 500 C119 455 111 405 106 360 C101 326 82 302 82 262 C82 223 99 194 115 164 C135 127 145 91 179 59 C202 38 228 19 248 28 Z" fill="#eaf4ff" stroke="#bfdbfe" stroke-width="10"/>
-                <path d="M248 28 C276 41 296 68 302 104 C306 132 294 159 300 187 C306 219 329 247 326 289 C322 344 288 382 269 426 C248 475 233 518 199 544 C176 562 145 540 133 500 C119 455 111 405 106 360 C101 326 82 302 82 262 C82 223 99 194 115 164 C135 127 145 91 179 59 C202 38 228 19 248 28 Z" fill="none" stroke="#93c5fd" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M234 64 C252 111 247 164 260 212 C276 271 263 326 239 381 C221 423 218 468 190 512" fill="none" stroke="#dbeafe" stroke-width="10" stroke-linecap="round"/>
-                <path data-progress-path d="M248 28 C276 41 296 68 302 104 C306 132 294 159 300 187 C306 219 329 247 326 289 C322 344 288 382 269 426 C248 475 233 518 199 544 C176 562 145 540 133 500 C119 455 111 405 106 360 C101 326 82 302 82 262 C82 223 99 194 115 164 C135 127 145 91 179 59 C202 38 228 19 248 28 Z" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M44 104c9 8 18 8 27 0 9 8 18 8 27 0M320 72c9 8 18 8 27 0 9 8 18 8 27 0M330 238c9 8 18 8 27 0 9 8 18 8 27 0M52 420c9 8 18 8 27 0 9 8 18 8 27 0M300 494c9 8 18 8 27 0 9 8 18 8 27 0" fill="none" stroke="#dffdfa" stroke-width="5" stroke-linecap="round"/>
+                <path d="M258 25 C278 34 282 48 296 55 C316 66 323 86 315 109 C309 126 315 143 326 158 C341 178 334 201 316 217 C302 230 309 254 325 272 C344 293 337 322 313 342 C292 359 286 383 278 410 C267 449 245 474 229 510 C218 535 197 558 174 544 C155 533 154 506 151 484 C147 454 129 439 116 414 C101 384 103 353 93 325 C82 294 68 270 80 238 C90 211 110 196 119 170 C130 137 146 112 168 89 C190 67 206 42 229 29 C240 23 249 20 258 25 Z" fill="#f7cf86" stroke="#4b3b2f" stroke-width="7" stroke-linejoin="round"/>
+                <path d="M232 63 C251 110 244 154 259 204 C276 260 263 320 241 371 C222 415 215 462 190 512" fill="none" stroke="#d9a85d" stroke-width="12" stroke-linecap="round"/>
+                <path d="M258 25 C278 34 282 48 296 55 C316 66 323 86 315 109 C309 126 315 143 326 158 C341 178 334 201 316 217 C302 230 309 254 325 272 C344 293 337 322 313 342 C292 359 286 383 278 410 C267 449 245 474 229 510 C218 535 197 558 174 544 C155 533 154 506 151 484 C147 454 129 439 116 414 C101 384 103 353 93 325 C82 294 68 270 80 238 C90 211 110 196 119 170 C130 137 146 112 168 89 C190 67 206 42 229 29 C240 23 249 20 258 25 Z" fill="none" stroke="#fff0b8" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                <path data-progress-path d="M258 25 C278 34 282 48 296 55 C316 66 323 86 315 109 C309 126 315 143 326 158 C341 178 334 201 316 217 C302 230 309 254 325 272 C344 293 337 322 313 342 C292 359 286 383 278 410 C267 449 245 474 229 510 C218 535 197 558 174 544 C155 533 154 506 151 484 C147 454 129 439 116 414 C101 384 103 353 93 325 C82 294 68 270 80 238 C90 211 110 196 119 170 C130 137 146 112 168 89 C190 67 206 42 229 29 C240 23 249 20 258 25 Z" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <div class="food-visual map-food" aria-label="目前站點美食簡圖" data-map-food>
                 <div class="food-art" data-food-art></div>
