@@ -116,28 +116,28 @@
       position: absolute;
       z-index: 7;
       width: 184px;
-      transform: translate(-50%, -112%);
+      right: 14px;
+      bottom: 14px;
       box-shadow: 0 16px 30px rgba(23, 32, 51, 0.16);
       pointer-events: none;
     }
     .map-food .food-art { width: 100%; height: 92px; }
     .map-food .food-caption strong { font-size: 1.08rem; }
     .map-food .food-caption p { display: none; }
-    .map-food::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -10px;
-      width: 18px;
-      height: 18px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #fffaf2;
-      transform: translateX(-50%) rotate(45deg);
-    }
     .food-caption span { display: block; color: var(--warm); font-size: 0.86rem; font-weight: 900; }
     .food-caption strong { display: block; margin-top: 4px; color: #13233a; font-size: 1.28rem; }
     .food-caption p { margin: 6px 0 0; color: var(--muted); line-height: 1.65; font-weight: 700; }
+    .wolf-marker {
+      position: absolute;
+      z-index: 8;
+      width: 58px;
+      height: 42px;
+      transform: translate(-50%, -92%);
+      filter: drop-shadow(0 10px 12px rgba(23, 32, 51, 0.22));
+      pointer-events: none;
+      transition: left 0.25s ease, top 0.25s ease;
+    }
+    .wolf-marker svg { width: 100%; height: 100%; display: block; }
     .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .fact { padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: #fbfdff; }
     .fact span { display: block; color: var(--muted); font-size: 0.86rem; font-weight: 800; }
@@ -180,7 +180,8 @@
       .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
       .hero-grid, .trip-layout { grid-template-columns: 1fr; }
       .route-map { min-height: 420px; }
-      .map-food { width: 154px; transform: translate(-50%, -108%); }
+      .map-food { width: 148px; right: 10px; bottom: 10px; }
+      .wolf-marker { width: 50px; height: 36px; }
       .food-visual { grid-template-columns: 1fr; }
       .food-art { width: 100%; }
       .facts, .total-grid, .island-grid, .summary-grid, .checklist { grid-template-columns: 1fr; }
@@ -254,6 +255,16 @@
                   <strong data-food-title></strong>
                   <p data-food-note></p>
                 </div>
+              </div>
+              <div class="wolf-marker" aria-hidden="true" data-wolf-marker>
+                <svg viewBox="0 0 120 80">
+                  <path d="M18 54h82" stroke="#172033" stroke-width="6" stroke-linecap="round"/>
+                  <circle cx="32" cy="58" r="13" fill="#ffffff" stroke="#172033" stroke-width="6"/>
+                  <circle cx="88" cy="58" r="13" fill="#ffffff" stroke="#172033" stroke-width="6"/>
+                  <path d="M35 47c12-22 31-30 58-25l10 18-23 10H42c-6 0-9-1-7-3z" fill="#f97316" stroke="#172033" stroke-width="4" stroke-linejoin="round"/>
+                  <path d="M57 24h28l10 17" fill="none" stroke="#172033" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M49 43h30" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                </svg>
               </div>
             </div>
             <p class="notice">地圖是台灣形狀的簡化示意圖，不代表實際道路形狀。點選圓點可以跳到該站。</p>
@@ -520,9 +531,9 @@
       $("[data-food-title]").textContent = stop.food;
       $("[data-food-note]").textContent = foodNotes[stop.food] || "這一站的地方美食補給。";
       $("[data-food-art]").innerHTML = foodArt[foodKinds[stop.food] || "plate"];
-      const mapFood = $("[data-map-food]");
-      mapFood.style.left = `${Math.min(84, Math.max(16, stop.x + 8))}%`;
-      mapFood.style.top = `${Math.min(90, Math.max(22, stop.y - 2))}%`;
+      const wolfMarker = $("[data-wolf-marker]");
+      wolfMarker.style.left = `${stop.x}%`;
+      wolfMarker.style.top = `${stop.y}%`;
       $("[data-distance]").textContent = `${stop.km} km`;
       $("[data-hours]").textContent = hours(stop.hours);
       $("[data-cost]").textContent = money(stop.cost);
