@@ -133,9 +133,9 @@
       inset: 0;
       z-index: 3;
       pointer-events: none;
-      opacity: 0.85;
+      opacity: 0.46;
       background-repeat: repeat;
-      background-size: 180px 180px;
+      background-size: 220px 220px;
       transition: opacity 700ms ease, background-image 700ms ease;
     }
     .ink-art { display: none; position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
@@ -219,24 +219,25 @@
     .ink-stage.is-winter .reference-ink-image { filter: grayscale(0.42) sepia(0.08) saturate(0.68) brightness(1.05) contrast(calc(0.86 + (var(--ink-opacity) * 0.16))); }
     .ink-stage.is-spring .season-particles {
       background-image:
-        radial-gradient(circle at 18px 28px, rgba(238, 185, 198, 0.86) 0 3px, transparent 4px),
-        radial-gradient(circle at 82px 72px, rgba(255, 252, 244, 0.9) 0 2px, transparent 3px);
+        radial-gradient(circle at 18px 28px, rgba(238, 185, 198, 0.46) 0 1px, transparent 2px),
+        radial-gradient(circle at 104px 82px, rgba(255, 252, 244, 0.58) 0 1px, transparent 2px);
     }
     .ink-stage.is-summer .season-particles {
       background-image:
-        radial-gradient(circle at 32px 42px, rgba(47, 128, 80, 0.34) 0 3px, transparent 4px),
-        radial-gradient(circle at 120px 90px, rgba(47, 128, 80, 0.24) 0 2px, transparent 3px);
-      opacity: 0.34;
+        radial-gradient(circle at 32px 42px, rgba(47, 128, 80, 0.22) 0 1px, transparent 2px),
+        radial-gradient(circle at 138px 94px, rgba(47, 128, 80, 0.16) 0 1px, transparent 2px);
+      opacity: 0.22;
     }
     .ink-stage.is-autumn .season-particles {
       background-image:
-        radial-gradient(ellipse at 30px 46px, rgba(191, 95, 47, 0.76) 0 4px, transparent 5px),
-        radial-gradient(ellipse at 120px 92px, rgba(214, 138, 70, 0.72) 0 3px, transparent 4px);
+        radial-gradient(ellipse at 30px 46px, rgba(191, 95, 47, 0.46) 0 2px, transparent 3px),
+        radial-gradient(ellipse at 142px 96px, rgba(214, 138, 70, 0.38) 0 1.5px, transparent 3px);
     }
     .ink-stage.is-winter .season-particles {
       background-image:
-        radial-gradient(circle at 38px 36px, rgba(255, 255, 255, 0.92) 0 3px, transparent 4px),
-        radial-gradient(circle at 126px 104px, rgba(255, 255, 255, 0.82) 0 2px, transparent 3px);
+        radial-gradient(circle at 38px 36px, rgba(255, 255, 255, 0.68) 0 1px, transparent 2px),
+        radial-gradient(circle at 148px 116px, rgba(255, 255, 255, 0.52) 0 1px, transparent 2px);
+      opacity: 0.42;
     }
     .ink-stage.is-playing .trunk,
     .ink-stage.is-playing .branch,
