@@ -162,7 +162,8 @@ button:disabled {
 
 .player,
 .enemy,
-.bullet {
+.bullet,
+.powerup {
   position: absolute;
   left: 0;
   top: 0;
@@ -192,6 +193,10 @@ button:disabled {
   animation: player-hit 160ms ease-in-out 6;
 }
 
+.player.is-healed {
+  animation: player-healed 220ms ease-in-out 4;
+}
+
 @keyframes player-hit {
   0%, 100% {
     opacity: 1;
@@ -201,6 +206,16 @@ button:disabled {
   50% {
     opacity: 0.32;
     filter: drop-shadow(0 0 22px rgba(255, 107, 107, 0.82));
+  }
+}
+
+@keyframes player-healed {
+  0%, 100% {
+    filter: drop-shadow(0 0 16px rgba(90, 167, 255, 0.66));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 26px rgba(126, 224, 195, 0.92));
   }
 }
 
@@ -239,6 +254,26 @@ button:disabled {
   border-radius: 999px;
   background: linear-gradient(180deg, #ffffff, var(--accent));
   box-shadow: 0 0 14px rgba(126, 224, 195, 0.86);
+}
+
+.powerup {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0 18%, var(--accent) 24% 58%, rgba(126, 224, 195, 0.2) 64%);
+  box-shadow: 0 0 22px rgba(126, 224, 195, 0.76);
+}
+
+.powerup::after {
+  content: "+";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #07111f;
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 
 .burst {

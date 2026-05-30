@@ -13,6 +13,7 @@ const keys = new Set();
 const touchControls = { left: false, right: false, shoot: false };
 const bullets = [];
 const enemies = [];
+const powerups = [];
 
 let stageRect = stage.getBoundingClientRect();
 let playerX = 0;
@@ -24,6 +25,7 @@ let bestScore = Number(localStorage.getItem("star-shooter-best-score") || 0);
 let lastTime = 0;
 let lastShotAt = 0;
 let enemyTimer = 0;
+let powerupTimer = 0;
 let invulnerableUntil = 0;
 let isPlaying = false;
 let isPaused = false;
@@ -34,6 +36,7 @@ const bulletSpeed = 560;
 const baseEnemySpeed = 120;
 const playerSpeed = 360;
 const shotCooldown = 220;
+const maxLives = 5;
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -69,6 +72,7 @@ const resetStageRect = () => {
 const clearObjects = () => {
   bullets.splice(0).forEach((item) => item.element.remove());
   enemies.splice(0).forEach((item) => item.element.remove());
+  powerups.splice(0).forEach((item) => item.element.remove());
 };
 
 const createBullet = (now) => {
@@ -106,6 +110,23 @@ const createEnemy = () => {
 
   enemies.push(enemy);
   setTransform(element, enemy.x, enemy.y);
+};
+
+const createPowerup = () => {
+  const element = document.createElement("div");
+  element.className = "powerup";
+  stage.appendChild(element);
+
+  const powerup = {
+    element,
+    x: Math.random() * Math.max(1, stageRect.width - 42) + 6,
+    y: -38,
+    width: 30,
+    height: 30
+  };
+
+  powerups.push(powerup);
+  setTransform(element, powerup.x, powerup.y);
 };
 
 const overlaps = (a, b) => (
@@ -161,6 +182,14 @@ const hitPlayer = (now) => {
   loseLife();
 };
 
+const healPlayer = () => {
+  lives = Math.min(maxLives, lives + 1);
+  updateScore();
+  player.classList.remove("is-healed");
+  void player.offsetWidth;
+  player.classList.add("is-healed");
+};
+
 const update = (time) => {
   if (!isPlaying) return;
   if (isPaused) return;
@@ -186,6 +215,12 @@ const update = (time) => {
     createEnemy();
   }
 
+  powerupTimer += delta;
+  if (powerupTimer >= 9) {
+    powerupTimer = 0;
+    createPowerup();
+  }
+
   for (let i = bullets.length - 1; i >= 0; i -= 1) {
     const bullet = bullets[i];
     bullet.y -= bulletSpeed * delta;
@@ -197,6 +232,25 @@ const update = (time) => {
   }
 
   const playerBox = { x: playerX, y: playerY, width: playerSize.width, height: playerSize.height };
+
+  for (let i = powerups.length - 1; i >= 0; i -= 1) {
+    const powerup = powerups[i];
+    powerup.y += 95 * delta;
+
+    if (overlaps(powerup, playerBox)) {
+      createBurst(powerup.x - 6, powerup.y - 6);
+      removeItem(powerups, i);
+      healPlayer();
+      continue;
+    }
+
+    if (powerup.y > stageRect.height) {
+      removeItem(powerups, i);
+    } else {
+      setTransform(powerup.element, powerup.x, powerup.y);
+    }
+  }
+
   for (let i = enemies.length - 1; i >= 0; i -= 1) {
     const enemy = enemies[i];
     enemy.y += getEnemySpeed() * delta;
@@ -242,6 +296,7 @@ const startGame = () => {
   level = 1;
   lives = 3;
   enemyTimer = 0;
+  powerupTimer = 0;
   lastShotAt = 0;
   invulnerableUntil = 0;
   isPaused = false;
@@ -252,6 +307,7 @@ const startGame = () => {
   pauseButton.textContent = "暫停";
   stage.classList.remove("is-paused");
   player.classList.remove("is-hit");
+  player.classList.remove("is-healed");
   message.classList.add("is-hidden");
   isPlaying = true;
   lastTime = performance.now();
