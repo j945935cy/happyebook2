@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#26332d">
+  <title>水墨畫中的四季流轉｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端互動小作品，以動態水墨畫風格呈現一棵古樹在數秒內經歷春夏秋冬的變化。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/ink-seasons-tree/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="水墨畫中的四季流轉｜Happy eBook 小作品">
+  <meta property="og:description" content="按下播放，觀看一棵水墨古樹在幾秒內經歷春夏秋冬。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/ink-seasons-tree/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 水墨畫中的四季流轉">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="水墨畫中的四季流轉｜Happy eBook 小作品">
+  <meta name="twitter:description" content="純前端水墨四季動畫，練習 CSS、SVG 與 JavaScript 時間軸。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --paper: #f8f4ea;
+      --ink: #1f2924;
+      --muted: #69756d;
+      --line: #ded6c7;
+      --panel: rgba(255, 252, 244, 0.92);
+      --accent: #2f6f5f;
+      --accent-dark: #244f44;
+      --shadow: 0 18px 48px rgba(31, 41, 36, 0.12);
+      --season: #8fbf8f;
+      --season-soft: #e7f2dc;
+      --fall: #c77739;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(207, 217, 199, 0.42), transparent 28%),
+        linear-gradient(180deg, #fbf8ef 0%, var(--paper) 58%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font: inherit; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(222, 214, 199, 0.9); background: rgba(248, 244, 234, 0.9); backdrop-filter: blur(14px); }
+    .header-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { color: #17201c; font-size: 1.28rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.92rem; }
+    .site-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 8px; color: var(--muted); font-weight: 760; }
+    .site-nav a:hover, .site-nav a.is-active { background: #fffaf0; color: var(--accent-dark); box-shadow: 0 10px 24px rgba(31, 41, 36, 0.08); }
+
+    .hero { padding: 48px 0 20px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 30px; align-items: center; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.82rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; color: #17201c; font-size: clamp(2.4rem, 5.8vw, 4.8rem); line-height: 1.08; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 45rem; color: #4b5a51; font-size: clamp(1.04rem, 2vw, 1.18rem); line-height: 1.85; }
+    .note-card { padding: 20px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); box-shadow: var(--shadow); }
+    .note-card strong { display: block; margin-bottom: 8px; color: #17201c; font-size: 1.15rem; }
+    .note-card p { margin: 0; color: var(--muted); line-height: 1.75; font-weight: 700; }
+
+    .section { padding: 20px 0 58px; }
+    .stage-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 22px; align-items: start; }
+    .panel { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); box-shadow: var(--shadow); }
+    .stage-panel { position: relative; overflow: hidden; padding: clamp(14px, 2.6vw, 22px); }
+    .ink-stage {
+      position: relative;
+      min-height: 560px;
+      border: 1px solid #d8cdb9;
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, var(--season-soft), rgba(255, 250, 240, 0.88) 48%, #f3ead8 100%);
+      transition: background 700ms ease;
+    }
+    .ink-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 22% 22%, rgba(31, 41, 36, 0.08) 0 2px, transparent 3px),
+        radial-gradient(circle at 72% 18%, rgba(31, 41, 36, 0.07) 0 1px, transparent 2px);
+      background-size: 34px 34px, 28px 28px;
+      opacity: 0.45;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
+    .ink-art { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .mountain { fill: none; stroke: rgba(31, 41, 36, 0.2); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .mist { fill: none; stroke: rgba(31, 41, 36, 0.13); stroke-width: 6; stroke-linecap: round; }
+    .trunk { fill: none; stroke: #1d241f; stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+    .branch { fill: none; stroke: #26312b; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .thin-branch { fill: none; stroke: #2f3a34; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+    .leaf { fill: var(--season); opacity: 0.82; transform-box: fill-box; transform-origin: center; transition: fill 700ms ease, opacity 700ms ease, transform 700ms ease; }
+    .blossom { fill: #efb9c6; opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 700ms ease, transform 700ms ease; }
+    .fall-leaf { fill: var(--fall); opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 700ms ease, transform 700ms ease; }
+    .snow { fill: #ffffff; stroke: rgba(93, 107, 101, 0.28); stroke-width: 1; opacity: 0; transition: opacity 700ms ease, transform 700ms ease; }
+    .ground { fill: none; stroke: rgba(31, 41, 36, 0.26); stroke-width: 8; stroke-linecap: round; }
+    .seal { fill: #b73b2f; opacity: 0.85; }
+    .season-badge {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      z-index: 2;
+      display: grid;
+      gap: 2px;
+      min-width: 96px;
+      padding: 10px 12px;
+      border: 1px solid rgba(31, 41, 36, 0.16);
+      border-radius: 8px;
+      background: rgba(255, 252, 244, 0.76);
+      backdrop-filter: blur(8px);
+    }
+    .season-badge span { color: var(--muted); font-size: 0.78rem; font-weight: 850; }
+    .season-badge strong { color: var(--accent-dark); font-size: 1.5rem; line-height: 1.1; }
+
+    .ink-stage.is-spring { --season: #88b96b; --season-soft: #eaf4df; --fall: #d68a46; }
+    .ink-stage.is-summer { --season: #2f8050; --season-soft: #dceee2; --fall: #d68a46; }
+    .ink-stage.is-autumn { --season: #c9783d; --season-soft: #f4e4cf; --fall: #bf5f2f; }
+    .ink-stage.is-winter { --season: #9aa5a0; --season-soft: #edf1ef; --fall: #9aa5a0; }
+    .ink-stage.is-spring .blossom { opacity: 0.92; transform: scale(1.04); }
+    .ink-stage.is-summer .leaf { opacity: 0.95; transform: scale(1.18); }
+    .ink-stage.is-autumn .leaf { opacity: 0.72; transform: translateY(5px) rotate(7deg); }
+    .ink-stage.is-autumn .fall-leaf { opacity: 0.9; transform: translateY(14px) rotate(12deg); }
+    .ink-stage.is-winter .leaf { opacity: 0.18; transform: scale(0.62); }
+    .ink-stage.is-winter .blossom, .ink-stage.is-winter .fall-leaf { opacity: 0; }
+    .ink-stage.is-winter .snow { opacity: 0.94; transform: translateY(8px); }
+
+    .control-panel { padding: 20px; }
+    .control-panel h2 { margin: 0 0 12px; color: #17201c; font-size: 1.5rem; }
+    .season-copy { margin: 0 0 18px; color: #4b5a51; line-height: 1.78; }
+    .button-row { display: grid; gap: 10px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 16px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 850;
+    }
+    .button.secondary { background: #fffaf0; border-color: var(--line); color: var(--ink); }
+    .season-steps { display: grid; gap: 8px; margin-top: 18px; }
+    .season-step { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fffaf0; color: var(--muted); font-weight: 800; }
+    .season-step.is-active { border-color: rgba(47, 111, 95, 0.42); background: #e9f2ec; color: var(--accent-dark); }
+    .notice { margin: 14px 0 0; color: var(--muted); line-height: 1.7; font-size: 0.95rem; }
+
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
+      .hero-grid, .stage-layout { grid-template-columns: 1fr; }
+      .ink-stage { min-height: 430px; }
+      .control-panel { padding: 16px; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">水墨四季動畫</span></a>
+        <nav class="site-nav" aria-label="主選單">
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../learning/ai.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Ink Seasons</span>
+            <h1>水墨畫中的四季流轉</h1>
+            <p>一棵古樹站在宣紙般的畫面中央，幾秒內依序經歷春芽、夏蔭、秋葉與冬雪。這是最小可用版，重點放在看得懂的四季變化與可操作的播放流程。</p>
+          </div>
+          <aside class="note-card" aria-label="作品說明">
+            <strong>練習重點</strong>
+            <p>用 SVG 畫出古樹，用 CSS 控制四季視覺狀態，再用 JavaScript 排出簡單時間軸。畫面是示意水墨風格，不追求真實筆觸模擬。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container stage-layout">
+          <section class="panel stage-panel" aria-label="水墨四季動畫舞台">
+            <div class="ink-stage is-spring" data-stage>
+              <div class="season-badge">
+                <span>目前季節</span>
+                <strong data-season-title>春</strong>
+              </div>
+              <svg class="ink-art" viewBox="0 0 760 560" preserveAspectRatio="xMidYMid meet" role="img" aria-label="一棵水墨古樹經歷春夏秋冬">
+                <path class="mountain" d="M64 190 C150 118 218 146 294 90 C388 22 448 116 534 70 C604 34 668 78 716 136"/>
+                <path class="mist" d="M90 250 C180 232 232 264 318 246 C406 228 470 254 566 236"/>
+                <path class="mist" d="M140 314 C230 296 316 326 402 304 C486 284 560 306 650 288"/>
+                <path class="ground" d="M138 458 C220 436 304 462 382 444 C478 422 560 448 650 426"/>
+
+                <path class="trunk" d="M374 448 C352 382 374 326 350 272 C328 220 344 166 392 104"/>
+                <path class="trunk" d="M382 448 C412 370 404 314 432 254 C456 202 444 150 410 104"/>
+                <path class="branch" d="M384 246 C326 212 278 190 224 144"/>
+                <path class="branch" d="M392 226 C448 180 506 142 590 116"/>
+                <path class="branch" d="M366 314 C304 300 252 312 188 348"/>
+                <path class="branch" d="M404 300 C480 292 536 314 616 358"/>
+                <path class="thin-branch" d="M226 144 C198 126 176 108 154 82"/>
+                <path class="thin-branch" d="M260 174 C238 164 220 158 194 158"/>
+                <path class="thin-branch" d="M588 116 C626 104 650 92 682 66"/>
+                <path class="thin-branch" d="M512 146 C548 142 574 150 614 164"/>
+                <path class="thin-branch" d="M188 348 C150 366 124 386 96 416"/>
+                <path class="thin-branch" d="M616 358 C650 374 674 396 706 430"/>
+
+                <g aria-hidden="true">
+                  <ellipse class="leaf" cx="178" cy="106" rx="28" ry="15" transform="rotate(-24 178 106)"/>
+                  <ellipse class="leaf" cx="230" cy="154" rx="30" ry="16" transform="rotate(18 230 154)"/>
+                  <ellipse class="leaf" cx="282" cy="188" rx="26" ry="14" transform="rotate(-12 282 188)"/>
+                  <ellipse class="leaf" cx="508" cy="136" rx="30" ry="16" transform="rotate(-18 508 136)"/>
+                  <ellipse class="leaf" cx="586" cy="124" rx="32" ry="17" transform="rotate(-12 586 124)"/>
+                  <ellipse class="leaf" cx="648" cy="88" rx="26" ry="14" transform="rotate(-28 648 88)"/>
+                  <ellipse class="leaf" cx="176" cy="354" rx="28" ry="16" transform="rotate(-18 176 354)"/>
+                  <ellipse class="leaf" cx="250" cy="316" rx="32" ry="17" transform="rotate(12 250 316)"/>
+                  <ellipse class="leaf" cx="520" cy="318" rx="34" ry="18" transform="rotate(18 520 318)"/>
+                  <ellipse class="leaf" cx="608" cy="362" rx="28" ry="15" transform="rotate(24 608 362)"/>
+                </g>
+
+                <g aria-hidden="true">
+                  <circle class="blossom" cx="196" cy="122" r="8"/>
+                  <circle class="blossom" cx="256" cy="164" r="7"/>
+                  <circle class="blossom" cx="548" cy="132" r="8"/>
+                  <circle class="blossom" cx="628" cy="104" r="7"/>
+                  <circle class="blossom" cx="226" cy="330" r="7"/>
+                  <circle class="blossom" cx="560" cy="332" r="8"/>
+                </g>
+
+                <g aria-hidden="true">
+                  <ellipse class="fall-leaf" cx="236" cy="248" rx="12" ry="7" transform="rotate(22 236 248)"/>
+                  <ellipse class="fall-leaf" cx="480" cy="244" rx="13" ry="7" transform="rotate(-18 480 244)"/>
+                  <ellipse class="fall-leaf" cx="312" cy="380" rx="12" ry="7" transform="rotate(38 312 380)"/>
+                  <ellipse class="fall-leaf" cx="562" cy="410" rx="13" ry="7" transform="rotate(-28 562 410)"/>
+                </g>
+
+                <g aria-hidden="true">
+                  <circle class="snow" cx="180" cy="92" r="5"/>
+                  <circle class="snow" cx="284" cy="138" r="4"/>
+                  <circle class="snow" cx="486" cy="104" r="5"/>
+                  <circle class="snow" cx="618" cy="154" r="4"/>
+                  <circle class="snow" cx="230" cy="280" r="5"/>
+                  <circle class="snow" cx="560" cy="286" r="5"/>
+                  <circle class="snow" cx="384" cy="396" r="4"/>
+                </g>
+
+                <rect class="seal" x="622" y="438" width="46" height="46" rx="4"/>
+                <path d="M634 452h22M634 468h22M644 452v22" stroke="#f8f4ea" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="notice">按播放後會自動跑一輪春、夏、秋、冬。你也可以用單步切換觀察每一季的差異。</p>
+          </section>
+
+          <aside class="panel control-panel" aria-label="動畫控制">
+            <h2>動畫控制</h2>
+            <p class="season-copy" data-season-copy>春天先長出淡綠新芽與花點，讓古樹從靜止畫面開始甦醒。</p>
+            <div class="button-row">
+              <button class="button" type="button" data-play>播放四季</button>
+              <button class="button secondary" type="button" data-prev>上一季</button>
+              <button class="button secondary" type="button" data-next>下一季</button>
+              <button class="button secondary" type="button" data-reset>回到春天</button>
+            </div>
+            <div class="season-steps" aria-label="四季步驟">
+              <div class="season-step is-active" data-step="0">春：新芽與花點</div>
+              <div class="season-step" data-step="1">夏：葉色變深</div>
+              <div class="season-step" data-step="2">秋：橘葉飄落</div>
+              <div class="season-step" data-step="3">冬：葉落與雪點</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../../index.html">首頁</a>
+          <a href="../">小作品</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const seasons = [
+      { key: "spring", title: "春", copy: "春天先長出淡綠新芽與花點，讓古樹從靜止畫面開始甦醒。" },
+      { key: "summer", title: "夏", copy: "夏天葉色變深、樹冠更厚，畫面像墨色慢慢暈開。" },
+      { key: "autumn", title: "秋", copy: "秋天轉成橘褐色，幾片葉子往下飄，讓時間感更明顯。" },
+      { key: "winter", title: "冬", copy: "冬天葉片淡去，只留下枝幹、冷霧與雪點，回到安靜的水墨留白。" }
+    ];
+
+    let current = 0;
+    let timer = null;
+
+    const $ = (selector) => document.querySelector(selector);
+    const stage = $("[data-stage]");
+
+    const render = () => {
+      const season = seasons[current];
+      stage.className = `ink-stage is-${season.key}`;
+      $("[data-season-title]").textContent = season.title;
+      $("[data-season-copy]").textContent = season.copy;
+      document.querySelectorAll("[data-step]").forEach((step, index) => {
+        step.classList.toggle("is-active", index === current);
+      });
+    };
+
+    const stopPlayback = () => {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    };
+
+    $("[data-play]").addEventListener("click", () => {
+      stopPlayback();
+      current = 0;
+      render();
+      timer = setInterval(() => {
+        current += 1;
+        if (current >= seasons.length) {
+          stopPlayback();
+          current = seasons.length - 1;
+        }
+        render();
+      }, 1800);
+    });
+
+    $("[data-prev]").addEventListener("click", () => {
+      stopPlayback();
+      current = Math.max(0, current - 1);
+      render();
+    });
+
+    $("[data-next]").addEventListener("click", () => {
+      stopPlayback();
+      current = Math.min(seasons.length - 1, current + 1);
+      render();
+    });
+
+    $("[data-reset]").addEventListener("click", () => {
+      stopPlayback();
+      current = 0;
+      render();
+    });
+
+    document.querySelectorAll("[data-step]").forEach((step) => {
+      step.addEventListener("click", () => {
+        stopPlayback();
+        current = Number(step.dataset.step);
+        render();
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>
