@@ -115,6 +115,13 @@
     .island-card p { margin: 0; color: #405066; line-height: 1.7; }
     .island-meta { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; color: #304054; font-weight: 760; line-height: 1.55; }
     .island-meta strong { color: #0f2b58; }
+    .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .summary-box { padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fbfdff; }
+    .summary-box span { display: block; color: var(--muted); font-size: 0.86rem; font-weight: 850; }
+    .summary-box strong { display: block; margin-top: 4px; color: #0f2b58; font-size: clamp(1.35rem, 3vw, 1.8rem); }
+    .checklist { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 18px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .checklist li { position: relative; padding-left: 26px; color: #304054; line-height: 1.7; font-weight: 760; }
+    .checklist li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
     .notice { margin: 14px 0 0; color: var(--muted); line-height: 1.7; font-size: 0.95rem; }
 
     .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
@@ -127,7 +134,7 @@
       .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
       .hero-grid, .trip-layout { grid-template-columns: 1fr; }
       .route-map { min-height: 420px; }
-      .facts, .total-grid, .island-grid { grid-template-columns: 1fr; }
+      .facts, .total-grid, .island-grid, .summary-grid, .checklist { grid-template-columns: 1fr; }
       .button-row { flex-direction: column; align-items: stretch; }
       .button { width: 100%; }
       .footer-bar { flex-direction: column; align-items: flex-start; }
@@ -256,6 +263,28 @@
           </section>
         </div>
       </section>
+
+      <section class="section">
+        <div class="container">
+          <section class="panel table-panel" aria-label="旅程總結與安全檢查">
+            <h2>旅程總結</h2>
+            <div class="summary-grid">
+              <div class="summary-box"><span>本島主線里程</span><strong data-summary-km></strong></div>
+              <div class="summary-box"><span>本島主線時間</span><strong data-summary-hours></strong></div>
+              <div class="summary-box"><span>本島主線花費</span><strong data-summary-cost></strong></div>
+              <div class="summary-box"><span>含離島支線花費</span><strong data-summary-all-cost></strong></div>
+            </div>
+            <ul class="checklist">
+              <li>出發前檢查輪胎、煞車、燈號、機油與雨衣。</li>
+              <li>50cc 車速有限，長距離請拆成多天，不要夜騎趕路。</li>
+              <li>山路、蘇花、濱海路段需先確認天氣與道路公告。</li>
+              <li>離島支線要先查船班或航班，並確認是否托運車輛。</li>
+              <li>每天保留休息時間，餐費、油錢與住宿要另外加安全預算。</li>
+              <li>本頁資料是練習用估算，正式出發前請重新查地圖與規則。</li>
+            </ul>
+          </section>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -359,6 +388,15 @@
       `).join("");
     };
 
+    const renderSummary = () => {
+      const mainTotal = totals[totals.length - 1];
+      const islandCost = islandTrips.reduce((sum, trip) => sum + trip.cost, 0);
+      $("[data-summary-km]").textContent = `${mainTotal.km} km`;
+      $("[data-summary-hours]").textContent = hours(mainTotal.hours);
+      $("[data-summary-cost]").textContent = money(mainTotal.cost);
+      $("[data-summary-all-cost]").textContent = money(mainTotal.cost + islandCost);
+    };
+
     const render = () => {
       const stop = stops[current];
       const total = totals[current];
@@ -402,6 +440,7 @@
     renderDots();
     renderTable();
     renderIslands();
+    renderSummary();
     render();
   </script>
 </body>
