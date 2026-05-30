@@ -5,8 +5,8 @@
   "status": "reviewing",
   "targetDate": "",
   "updatedAt": "2026-05-31",
-  "percent": 76,
-  "nextStep": "進行 manuscript.md 全稿校稿，檢查語氣一致性、prompt 限制、章節長度、截圖需求與出版 metadata。",
+  "percent": 80,
+  "nextStep": "進行 manuscript.md 全稿校稿，補作品截圖說明，並確認 Google Books metadata 欄位、價格、DRM、預覽比例與 ISBN/GGKEY。",
   "stages": [
     { "name": "選題", "done": true },
     { "name": "大綱", "done": true },
@@ -14,7 +14,7 @@
     { "name": "章節擴寫", "done": true, "note": "第 1 到第 12 章與附錄已完成初版擴寫" },
     { "name": "校稿", "done": false, "note": "已進入通讀校稿階段" },
     { "name": "封面", "done": false },
-    { "name": "上架資料草稿", "done": true },
+    { "name": "上架資料草稿", "done": true, "note": "google_books_copy.md、google_books_metadata.md、google_books_metadata.csv 已建立" },
     { "name": "EPUB / PDF", "done": false },
     { "name": "送審", "done": false },
     { "name": "已出版", "done": false }
@@ -31,5 +31,5 @@
     { "name": "星際射擊小遊戲", "url": "https://happyebook.com/mini-projects/star-shooter/", "included": true },
     { "name": "Hermes Agent 任務代理產生器", "url": "https://happyebook.com/mini-projects/hermes-agent/", "included": true }
   ],
-  "notes": "第二本已建立 outline.md、manuscript.md、google_books_copy.md 與 progress.json。第 1 到第 12 章與附錄已完成初版擴寫，已進入全稿通讀校稿階段。"
+  "notes": "第二本已建立 outline.md、manuscript.md、google_books_copy.md、google_books_metadata.md、google_books_metadata.csv 與 progress.json。第 1 到第 12 章與附錄已完成初版擴寫，已進入全稿通讀校稿階段。"
 }
