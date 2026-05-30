@@ -4,9 +4,9 @@
   "subtitle": "地圖、動畫、穿搭、任務代理與飛行模擬實作入門",
   "status": "drafting",
   "targetDate": "",
-  "updatedAt": "2026-05-30",
-  "percent": 30,
-  "nextStep": "建立 google_books_copy.md，先完成 Google Books 上架短簡介、長簡介、讀者對象與關鍵字草稿。",
+  "updatedAt": "2026-05-31",
+  "percent": 38,
+  "nextStep": "開始逐章擴寫 manuscript.md，先補強第 1 章與第 2 章，讓內容接近正式書稿。",
   "stages": [
     { "name": "選題", "done": true },
     { "name": "大綱", "done": true },
@@ -14,7 +14,7 @@
     { "name": "章節擴寫", "done": false },
     { "name": "校稿", "done": false },
     { "name": "封面", "done": false },
-    { "name": "上架資料", "done": false },
+    { "name": "上架資料草稿", "done": true },
     { "name": "EPUB / PDF", "done": false },
     { "name": "送審", "done": false },
     { "name": "已出版", "done": false }
