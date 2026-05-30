@@ -103,6 +103,7 @@
       position: absolute;
       inset: 0;
       z-index: 3;
+      display: none;
       width: 100%;
       height: 100%;
       pointer-events: none;
@@ -250,7 +251,7 @@
               <div class="occasion-badge" data-visual-title>日常上班</div>
               <div class="occasion-prop" data-visual-prop aria-hidden="true"></div>
               <div class="character-art">
-                <img src="office-lady.png" alt="Office lady 卡通主角" loading="eager">
+                <img src="outfit-daily.png" alt="日常上班 Office lady 穿搭圖" loading="eager" data-character-image>
                 <svg class="clothing-overlay" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                   <path class="top-piece" d="M436 430 C474 448 530 448 568 430 C602 500 612 600 594 704 C550 724 476 724 430 704 C416 594 420 500 436 430Z"/>
                   <path class="outer-piece" d="M334 420 C378 398 424 392 464 410 C426 502 390 656 356 812 C322 780 300 700 302 612 C304 528 314 462 334 420Z"/>
@@ -343,10 +344,10 @@
     };
 
     const occasions = {
-      daily: { label: "日常上班", pick: { top: "knit", outer: "cardigan", shoes: "loafers" }, summary: "柔和、舒服、適合一般辦公日。" },
-      meeting: { label: "重要會議", pick: { top: "shirt", outer: "blazer", shoes: "heels" }, summary: "正式感最高，適合簡報、面談或主管會議。" },
-      date: { label: "下班約會", pick: { top: "knit", outer: "trench", shoes: "heels" }, summary: "保留職場俐落感，也有下班後的柔和氣質。" },
-      casual: { label: "週五休閒", pick: { top: "tee", outer: "cardigan", shoes: "sneakers" }, summary: "輕鬆、好活動，但仍維持乾淨整齊。" }
+      daily: { label: "日常上班", image: "outfit-daily.png", imageAlt: "日常上班 Office lady 穿搭圖", pick: { top: "knit", outer: "cardigan", shoes: "loafers" }, summary: "柔和、舒服、適合一般辦公日。" },
+      meeting: { label: "重要會議", image: "outfit-meeting.png", imageAlt: "重要會議 Office lady 穿搭圖", pick: { top: "shirt", outer: "blazer", shoes: "heels" }, summary: "正式感最高，適合簡報、面談或主管會議。" },
+      date: { label: "下班約會", image: "outfit-date.png", imageAlt: "下班約會 Office lady 穿搭圖", pick: { top: "knit", outer: "trench", shoes: "heels" }, summary: "保留職場俐落感，也有下班後的柔和氣質。" },
+      casual: { label: "週五休閒", image: "outfit-casual.png", imageAlt: "週五休閒 Office lady 穿搭圖", pick: { top: "tee", outer: "cardigan", shoes: "sneakers" }, summary: "輕鬆、好活動，但仍維持乾淨整齊。" }
     };
 
     const visuals = {
@@ -406,7 +407,9 @@
 
     const renderVisual = () => {
       const visual = visuals[currentOccasion];
+      const occasion = occasions[currentOccasion];
       const frame = $("[data-character-frame]");
+      const characterImage = $("[data-character-image]");
       frame.dataset.occasion = currentOccasion;
       frame.dataset.top = outfit.top;
       frame.dataset.outer = outfit.outer;
@@ -414,7 +417,9 @@
       frame.style.setProperty("--top-color", items.top[outfit.top].color);
       frame.style.setProperty("--outer-color", items.outer[outfit.outer].color);
       frame.style.setProperty("--shoe-color", items.shoes[outfit.shoes].color);
-      $("[data-visual-title]").textContent = occasions[currentOccasion].label;
+      characterImage.src = occasion.image;
+      characterImage.alt = occasion.imageAlt;
+      $("[data-visual-title]").textContent = occasion.label;
       $("[data-visual-prop]").innerHTML = visual.prop;
       $("[data-style-chips]").innerHTML = visual.chips.map((chip) => `<span class="style-chip">${chip}</span>`).join("");
     };
