@@ -110,17 +110,25 @@
       mix-blend-mode: multiply;
     }
     .ink-art { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
+    .distant-wash { fill: rgba(31, 41, 36, calc(0.055 * var(--ink-opacity))); }
     .mountain { fill: none; stroke: rgba(31, 41, 36, calc(0.20 * var(--ink-opacity))); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .mountain.light { stroke: rgba(31, 41, 36, calc(0.11 * var(--ink-opacity))); stroke-width: 7; }
+    .ridge { fill: none; stroke: rgba(31, 41, 36, calc(0.16 * var(--ink-opacity))); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
     .mist { fill: none; stroke: rgba(31, 41, 36, calc(0.13 * var(--ink-opacity))); stroke-width: 6; stroke-linecap: round; }
     .trunk { fill: none; stroke: rgba(29, 36, 31, var(--ink-opacity)); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
     .branch { fill: none; stroke: rgba(38, 49, 43, var(--ink-opacity)); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
     .thin-branch { fill: none; stroke: rgba(47, 58, 52, var(--ink-opacity)); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+    .dry-brush { fill: none; stroke: rgba(255, 252, 244, 0.45); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .bark-mark { fill: none; stroke: rgba(31, 41, 36, calc(0.42 * var(--ink-opacity))); stroke-width: 3; stroke-linecap: round; }
+    .ink-dot { fill: rgba(31, 41, 36, calc(0.18 * var(--ink-opacity))); }
     .leaf { fill: var(--season); opacity: 0.82; transform-box: fill-box; transform-origin: center; transition: fill 700ms ease, opacity 700ms ease, transform 700ms ease; }
+    .leaf-dot { fill: var(--season); opacity: 0.74; transform-box: fill-box; transform-origin: center; transition: fill 700ms ease, opacity 700ms ease, transform 700ms ease; }
     .blossom { fill: #efb9c6; opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 700ms ease, transform 700ms ease; }
     .fall-leaf { fill: var(--fall); opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 700ms ease, transform 700ms ease; }
     .snow { fill: #ffffff; stroke: rgba(93, 107, 101, 0.28); stroke-width: 1; opacity: 0; transition: opacity 700ms ease, transform 700ms ease; }
     .ground { fill: none; stroke: rgba(31, 41, 36, 0.26); stroke-width: 8; stroke-linecap: round; }
     .seal { fill: #b73b2f; opacity: 0.85; }
+    .signature { fill: rgba(31, 41, 36, calc(0.54 * var(--ink-opacity))); font-family: "Noto Serif TC", serif; font-size: 18px; writing-mode: vertical-rl; letter-spacing: 3px; }
     .season-badge {
       position: absolute;
       left: 18px;
@@ -175,11 +183,11 @@
     .ink-stage.is-playing::after { animation: inkWashFlow 6200ms ease-in-out infinite alternate; }
     .ink-stage.is-playing .mist { animation: mistFlow 3600ms ease-in-out infinite alternate; }
     .ink-stage.is-spring .blossom { opacity: 0.92; transform: scale(1.04); }
-    .ink-stage.is-summer .leaf { opacity: 0.95; transform: scale(1.18); }
-    .ink-stage.is-autumn .leaf { opacity: 0.72; transform: translateY(5px) rotate(7deg); }
+    .ink-stage.is-summer .leaf, .ink-stage.is-summer .leaf-dot { opacity: 0.95; transform: scale(1.18); }
+    .ink-stage.is-autumn .leaf, .ink-stage.is-autumn .leaf-dot { opacity: 0.72; transform: translateY(5px) rotate(7deg); }
     .ink-stage.is-autumn .fall-leaf { opacity: 0.9; transform: translateY(14px) rotate(12deg); }
     .ink-stage.is-playing.is-autumn .fall-leaf { animation: leafDrift 1600ms ease-in-out infinite alternate; }
-    .ink-stage.is-winter .leaf { opacity: 0.18; transform: scale(0.62); }
+    .ink-stage.is-winter .leaf, .ink-stage.is-winter .leaf-dot { opacity: 0.18; transform: scale(0.62); }
     .ink-stage.is-winter .blossom, .ink-stage.is-winter .fall-leaf { opacity: 0; }
     .ink-stage.is-winter .snow { opacity: 0.94; transform: translateY(8px); }
     .ink-stage.is-playing.is-winter .snow { animation: snowFall 1800ms ease-in-out infinite alternate; }
@@ -321,23 +329,42 @@
               </div>
               <div class="play-progress" aria-hidden="true"><span data-progress></span></div>
               <svg class="ink-art" viewBox="0 0 760 560" preserveAspectRatio="xMidYMid meet" role="img" aria-label="一棵水墨古樹經歷春夏秋冬">
-                <path class="mountain" d="M64 190 C150 118 218 146 294 90 C388 22 448 116 534 70 C604 34 668 78 716 136"/>
-                <path class="mist" d="M90 250 C180 232 232 264 318 246 C406 228 470 254 566 236"/>
-                <path class="mist" d="M140 314 C230 296 316 326 402 304 C486 284 560 306 650 288"/>
-                <path class="ground" d="M138 458 C220 436 304 462 382 444 C478 422 560 448 650 426"/>
+                <path class="distant-wash" d="M36 184 C116 116 174 148 244 92 C328 26 388 106 468 72 C548 38 632 62 724 128 L724 210 C600 190 526 174 430 190 C330 206 246 190 156 206 C94 218 58 210 36 184Z"/>
+                <path class="mountain light" d="M42 178 C112 126 172 138 230 98 C308 44 366 110 438 82 C522 50 624 58 718 122"/>
+                <path class="mountain" d="M66 206 C146 134 218 160 292 98 C386 28 448 124 536 78 C606 42 668 86 718 144"/>
+                <path class="ridge" d="M154 156 C184 142 204 126 224 108M308 102 C340 94 358 74 382 52M520 96 C552 88 582 72 610 62M626 116 C656 112 680 124 704 140"/>
+                <path class="mist" d="M74 248 C164 228 236 266 318 244 C410 220 474 258 588 234"/>
+                <path class="mist" d="M126 302 C220 284 306 320 404 296 C492 276 568 306 678 284"/>
+                <path class="mist" d="M52 360 C158 344 236 370 340 350 C452 330 546 356 700 336"/>
+                <path class="ground" d="M118 458 C210 432 302 466 386 442 C480 416 576 448 668 420"/>
+                <path class="ridge" d="M160 474 C214 462 260 472 318 462M448 458 C506 442 574 452 628 436"/>
 
-                <path class="trunk" d="M374 448 C352 382 374 326 350 272 C328 220 344 166 392 104"/>
-                <path class="trunk" d="M382 448 C412 370 404 314 432 254 C456 202 444 150 410 104"/>
-                <path class="branch" d="M384 246 C326 212 278 190 224 144"/>
-                <path class="branch" d="M392 226 C448 180 506 142 590 116"/>
-                <path class="branch" d="M366 314 C304 300 252 312 188 348"/>
-                <path class="branch" d="M404 300 C480 292 536 314 616 358"/>
-                <path class="thin-branch" d="M226 144 C198 126 176 108 154 82"/>
-                <path class="thin-branch" d="M260 174 C238 164 220 158 194 158"/>
-                <path class="thin-branch" d="M588 116 C626 104 650 92 682 66"/>
-                <path class="thin-branch" d="M512 146 C548 142 574 150 614 164"/>
-                <path class="thin-branch" d="M188 348 C150 366 124 386 96 416"/>
-                <path class="thin-branch" d="M616 358 C650 374 674 396 706 430"/>
+                <path class="trunk" d="M360 452 C344 386 370 334 350 278 C330 224 346 158 394 98"/>
+                <path class="trunk" d="M386 452 C418 374 404 316 434 254 C462 196 446 144 410 98"/>
+                <path class="dry-brush" d="M372 432 C360 378 382 324 366 276 C352 230 362 166 398 116"/>
+                <path class="dry-brush" d="M394 426 C410 360 402 310 426 258 C448 210 432 152 410 118"/>
+                <path class="bark-mark" d="M362 394 C376 382 380 366 370 348M390 370 C406 354 408 338 398 320M360 306 C374 292 378 276 368 258M414 286 C430 270 430 248 418 230M376 210 C392 194 394 174 384 156"/>
+                <path class="branch" d="M382 248 C322 214 276 190 220 142"/>
+                <path class="branch" d="M394 226 C456 178 512 142 604 112"/>
+                <path class="branch" d="M366 314 C302 296 246 314 182 352"/>
+                <path class="branch" d="M404 300 C484 288 542 316 628 360"/>
+                <path class="branch" d="M392 180 C350 156 318 128 294 92"/>
+                <path class="thin-branch" d="M220 142 C190 122 170 104 146 76"/>
+                <path class="thin-branch" d="M254 172 C228 160 206 154 176 156"/>
+                <path class="thin-branch" d="M604 112 C638 96 662 82 692 56"/>
+                <path class="thin-branch" d="M520 142 C558 138 590 148 628 166"/>
+                <path class="thin-branch" d="M182 352 C146 370 120 390 90 422"/>
+                <path class="thin-branch" d="M628 360 C660 376 686 398 714 430"/>
+                <path class="thin-branch" d="M294 92 C274 72 258 58 236 44"/>
+                <path class="thin-branch" d="M324 126 C302 118 282 116 260 122"/>
+
+                <g aria-hidden="true">
+                  <circle class="ink-dot" cx="116" cy="434" r="4"/>
+                  <circle class="ink-dot" cx="146" cy="446" r="2.5"/>
+                  <circle class="ink-dot" cx="610" cy="424" r="3"/>
+                  <circle class="ink-dot" cx="648" cy="410" r="2.5"/>
+                  <circle class="ink-dot" cx="392" cy="462" r="3"/>
+                </g>
 
                 <g aria-hidden="true">
                   <ellipse class="leaf" cx="178" cy="106" rx="28" ry="15" transform="rotate(-24 178 106)"/>
@@ -350,6 +377,20 @@
                   <ellipse class="leaf" cx="250" cy="316" rx="32" ry="17" transform="rotate(12 250 316)"/>
                   <ellipse class="leaf" cx="520" cy="318" rx="34" ry="18" transform="rotate(18 520 318)"/>
                   <ellipse class="leaf" cx="608" cy="362" rx="28" ry="15" transform="rotate(24 608 362)"/>
+                </g>
+                <g aria-hidden="true">
+                  <circle class="leaf-dot" cx="150" cy="86" r="7"/>
+                  <circle class="leaf-dot" cx="198" cy="132" r="5"/>
+                  <circle class="leaf-dot" cx="264" cy="132" r="6"/>
+                  <circle class="leaf-dot" cx="316" cy="104" r="5"/>
+                  <circle class="leaf-dot" cx="548" cy="96" r="6"/>
+                  <circle class="leaf-dot" cx="626" cy="132" r="7"/>
+                  <circle class="leaf-dot" cx="680" cy="76" r="5"/>
+                  <circle class="leaf-dot" cx="126" cy="394" r="6"/>
+                  <circle class="leaf-dot" cx="210" cy="334" r="5"/>
+                  <circle class="leaf-dot" cx="282" cy="304" r="7"/>
+                  <circle class="leaf-dot" cx="570" cy="346" r="6"/>
+                  <circle class="leaf-dot" cx="664" cy="388" r="5"/>
                 </g>
 
                 <g aria-hidden="true">
@@ -378,8 +419,9 @@
                   <circle class="snow" cx="384" cy="396" r="4"/>
                 </g>
 
-                <rect class="seal" x="622" y="438" width="46" height="46" rx="4"/>
-                <path d="M634 452h22M634 468h22M644 452v22" stroke="#f8f4ea" stroke-width="4" stroke-linecap="round"/>
+                <text class="signature" x="682" y="372">四時一樹</text>
+                <rect class="seal" x="646" y="438" width="42" height="42" rx="4"/>
+                <path d="M656 450h20M656 464h20M666 450v20" stroke="#f8f4ea" stroke-width="3.5" stroke-linecap="round"/>
               </svg>
             </div>
             <p class="notice">按播放後會自動跑一輪春、夏、秋、冬。你也可以用單步切換觀察每一季的差異。</p>
