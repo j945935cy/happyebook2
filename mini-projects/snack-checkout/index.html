@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>小吃店結帳程式｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端小吃店結帳程式，可輸入餐點數量，自動計算小計、總金額與結帳明細，適合初學者練習 HTML、CSS 與 JavaScript。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/snack-checkout/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="小吃店結帳程式｜Happy eBook 小作品">
+  <meta property="og:description" content="輸入餐點數量後自動計算小計與總金額，適合練習網頁互動與基礎結帳邏輯。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/snack-checkout/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook 小吃店結帳程式">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="小吃店結帳程式｜Happy eBook 小作品">
+  <meta name="twitter:description" content="純前端小吃店結帳工具，支援菜單數量輸入、小計、總金額與清空訂單。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --surface: #ffffff;
+      --ink: #172033;
+      --muted: #64748b;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #0f766e;
+      --warm: #f97316;
+      --line: #dfe6ef;
+      --shadow: 0 18px 42px rgba(23, 32, 51, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 54%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(248, 251, 255, 0.92); border-bottom: 1px solid rgba(215, 225, 235, 0.9); backdrop-filter: blur(14px); }
+    .header-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { color: #13233a; font-size: 1.3rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.92rem; }
+    .site-nav { display: flex; align-items: center; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 999px; color: var(--muted); font-weight: 700; }
+    .site-nav a:hover, .site-nav a.is-active { background: var(--surface); color: var(--primary-dark); box-shadow: 0 10px 24px rgba(24, 35, 50, 0.08); }
+
+    .hero { padding: 54px 0 24px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; align-items: end; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.82rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; color: #102033; font-size: clamp(2.6rem, 6vw, 5.2rem); line-height: 1.08; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 43rem; color: #405066; font-size: clamp(1.04rem, 2vw, 1.22rem); line-height: 1.85; }
+    .hero-card { padding: 22px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255, 255, 255, 0.9); box-shadow: var(--shadow); }
+    .hero-card h2 { margin: 0 0 10px; color: #13233a; font-size: 1.18rem; }
+    .hero-card p { margin: 0; color: var(--muted); font-size: 0.96rem; line-height: 1.75; }
+
+    .checkout-section { padding: 18px 0 64px; }
+    .checkout-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(310px, 0.6fr); gap: 22px; align-items: start; }
+    .panel { border: 1px solid var(--line); border-radius: 8px; background: rgba(255, 255, 255, 0.94); box-shadow: var(--shadow); }
+    .menu-panel, .summary-panel { display: grid; gap: 16px; padding: clamp(18px, 3vw, 24px); }
+    .panel h2 { margin: 0; color: #13233a; font-size: clamp(1.35rem, 3vw, 1.8rem); }
+    .menu-grid { display: grid; gap: 12px; }
+    .menu-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 112px;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdff;
+    }
+    .item-name { display: block; color: #13233a; font-size: 1.08rem; font-weight: 900; }
+    .item-meta { display: block; margin-top: 4px; color: var(--muted); font-size: 0.94rem; }
+    .qty-control { display: grid; gap: 6px; }
+    .qty-control label { color: var(--muted); font-size: 0.86rem; font-weight: 800; }
+    .qty-control input {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--ink);
+      background: #ffffff;
+      text-align: center;
+      font-weight: 900;
+    }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 16px; border: 1px solid transparent; border-radius: 8px; background: var(--primary); color: #fff; font-weight: 850; }
+    .button.secondary { background: #ffffff; border-color: var(--line); color: var(--ink); }
+    .button.warm { background: var(--warm); }
+    .total-card { padding: 18px; border-radius: 8px; background: #eef5ff; border: 1px solid #cfe0ff; }
+    .total-card span { display: block; color: #31517d; font-weight: 850; }
+    .total-card strong { display: block; margin-top: 4px; color: #0f2b58; font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; }
+    .receipt-list { display: grid; gap: 10px; min-height: 80px; margin: 0; padding: 0; list-style: none; }
+    .receipt-list li { display: flex; justify-content: space-between; gap: 14px; padding: 12px; border-radius: 8px; background: #fbfdff; border: 1px solid var(--line); color: #203044; font-weight: 800; }
+    .empty { color: var(--muted); line-height: 1.7; }
+    .status { min-height: 1.5em; margin: 0; color: var(--accent); font-weight: 850; line-height: 1.6; }
+
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 860px) {
+      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
+      .site-nav { width: 100%; flex-wrap: wrap; gap: 6px; }
+      .site-nav a { border-radius: 8px; background: rgba(255, 255, 255, 0.7); }
+      .hero-grid, .checkout-layout { grid-template-columns: 1fr; }
+      .hero-card, .panel { min-width: 0; }
+      h1 { overflow-wrap: break-word; font-size: clamp(2.35rem, 12vw, 3.6rem); }
+      .menu-item { grid-template-columns: 1fr; }
+      .qty-control input { text-align: left; }
+      .button-row { flex-direction: column; align-items: stretch; }
+      .button-row .button { width: 100%; }
+      .receipt-list li { display: grid; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">小吃店結帳程式</span></a>
+        <nav class="site-nav" aria-label="主選單">
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../learning/ai.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Snack Checkout</span>
+            <h1>小吃店結帳程式</h1>
+            <p>選擇餐點數量後，系統會自動計算每項小計與總金額。這是一個適合初學者練習資料、輸入、計算與畫面更新的純前端小作品。</p>
+          </div>
+          <aside class="hero-card">
+            <h2>最小可用版本</h2>
+            <p>這版先固定菜單，不連資料庫。完成菜單、數量輸入、結帳明細、總金額與清空訂單，能直接放在 GitHub Pages。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="checkout-section">
+        <div class="container checkout-layout">
+          <section class="panel menu-panel" aria-label="菜單">
+            <h2>菜單</h2>
+            <div class="menu-grid" data-menu></div>
+            <div class="button-row">
+              <button class="button warm" type="button" data-demo>載入範例訂單</button>
+              <button class="button secondary" type="button" data-clear>清空訂單</button>
+            </div>
+            <p class="status" data-status>請輸入各餐點數量，總金額會自動更新。</p>
+          </section>
+
+          <aside class="panel summary-panel" aria-label="結帳明細">
+            <h2>結帳明細</h2>
+            <div class="total-card">
+              <span>總金額</span>
+              <strong data-total>NT$0</strong>
+            </div>
+            <ul class="receipt-list" data-receipt>
+              <li class="empty">尚未選擇餐點。</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../../index.html">首頁</a>
+          <a href="../">小作品</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const menuItems = [
+      { id: "rice", name: "滷肉飯", price: 50, note: "經典主食" },
+      { id: "noodle", name: "乾麵", price: 45, note: "簡單快速" },
+      { id: "soup", name: "貢丸湯", price: 35, note: "熱湯搭配" },
+      { id: "greens", name: "燙青菜", price: 40, note: "均衡配菜" },
+      { id: "egg", name: "滷蛋", price: 15, note: "加點小菜" }
+    ];
+
+    const quantities = new Map(menuItems.map((item) => [item.id, 0]));
+    const menuEl = document.querySelector("[data-menu]");
+    const receiptEl = document.querySelector("[data-receipt]");
+    const totalEl = document.querySelector("[data-total]");
+    const statusEl = document.querySelector("[data-status]");
+
+    const money = (value) => `NT$${value.toLocaleString("zh-TW")}`;
+
+    const renderMenu = () => {
+      menuEl.innerHTML = menuItems.map((item) => `
+        <article class="menu-item">
+          <div>
+            <span class="item-name">${item.name}</span>
+            <span class="item-meta">${money(item.price)}｜${item.note}</span>
+          </div>
+          <div class="qty-control">
+            <label for="qty-${item.id}">數量</label>
+            <input id="qty-${item.id}" type="number" min="0" max="99" step="1" inputmode="numeric" value="${quantities.get(item.id)}" data-qty="${item.id}">
+          </div>
+        </article>
+      `).join("");
+    };
+
+    const readQuantities = () => {
+      document.querySelectorAll("[data-qty]").forEach((input) => {
+        const value = Math.max(0, Math.floor(Number(input.value) || 0));
+        input.value = value;
+        quantities.set(input.dataset.qty, value);
+      });
+    };
+
+    const updateReceipt = () => {
+      readQuantities();
+      const lines = menuItems
+        .map((item) => ({ ...item, qty: quantities.get(item.id), subtotal: item.price * quantities.get(item.id) }))
+        .filter((item) => item.qty > 0);
+      const total = lines.reduce((sum, item) => sum + item.subtotal, 0);
+
+      totalEl.textContent = money(total);
+      receiptEl.innerHTML = lines.length
+        ? lines.map((item) => `<li><span>${item.name} x ${item.qty}</span><span>${money(item.subtotal)}</span></li>`).join("")
+        : `<li class="empty">尚未選擇餐點。</li>`;
+      statusEl.textContent = lines.length ? `目前共有 ${lines.reduce((sum, item) => sum + item.qty, 0)} 份餐點。` : "請輸入各餐點數量，總金額會自動更新。";
+    };
+
+    const setOrder = (order) => {
+      menuItems.forEach((item) => quantities.set(item.id, order[item.id] || 0));
+      renderMenu();
+      updateReceipt();
+    };
+
+    menuEl.addEventListener("input", (event) => {
+      if (event.target.matches("[data-qty]")) updateReceipt();
+    });
+
+    document.querySelector("[data-demo]").addEventListener("click", () => {
+      setOrder({ rice: 2, soup: 1, greens: 1, egg: 2 });
+      statusEl.textContent = "已載入範例訂單，可繼續調整數量。";
+    });
+
+    document.querySelector("[data-clear]").addEventListener("click", () => {
+      setOrder({});
+      statusEl.textContent = "已清空訂單。";
+    });
+
+    renderMenu();
+    updateReceipt();
+  </script>
+</body>
+</html>
