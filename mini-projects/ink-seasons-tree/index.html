@@ -121,18 +121,67 @@
     }
     .season-badge span { color: var(--muted); font-size: 0.78rem; font-weight: 850; }
     .season-badge strong { color: var(--accent-dark); font-size: 1.5rem; line-height: 1.1; }
+    .play-progress {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(31, 41, 36, 0.12);
+    }
+    .play-progress span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #88b96b, #2f8050, #c9783d, #edf1ef);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
 
     .ink-stage.is-spring { --season: #88b96b; --season-soft: #eaf4df; --fall: #d68a46; }
     .ink-stage.is-summer { --season: #2f8050; --season-soft: #dceee2; --fall: #d68a46; }
     .ink-stage.is-autumn { --season: #c9783d; --season-soft: #f4e4cf; --fall: #bf5f2f; }
     .ink-stage.is-winter { --season: #9aa5a0; --season-soft: #edf1ef; --fall: #9aa5a0; }
+    .ink-stage.is-playing .trunk,
+    .ink-stage.is-playing .branch,
+    .ink-stage.is-playing .thin-branch {
+      stroke-dasharray: 640;
+      stroke-dashoffset: 640;
+      animation: inkGrow 1200ms ease-out forwards;
+    }
+    .ink-stage.is-playing .branch { animation-delay: 260ms; }
+    .ink-stage.is-playing .thin-branch { animation-delay: 560ms; }
+    .ink-stage.is-playing .play-progress span { animation: seasonProgress 7200ms linear forwards; }
     .ink-stage.is-spring .blossom { opacity: 0.92; transform: scale(1.04); }
     .ink-stage.is-summer .leaf { opacity: 0.95; transform: scale(1.18); }
     .ink-stage.is-autumn .leaf { opacity: 0.72; transform: translateY(5px) rotate(7deg); }
     .ink-stage.is-autumn .fall-leaf { opacity: 0.9; transform: translateY(14px) rotate(12deg); }
+    .ink-stage.is-playing.is-autumn .fall-leaf { animation: leafDrift 1600ms ease-in-out infinite alternate; }
     .ink-stage.is-winter .leaf { opacity: 0.18; transform: scale(0.62); }
     .ink-stage.is-winter .blossom, .ink-stage.is-winter .fall-leaf { opacity: 0; }
     .ink-stage.is-winter .snow { opacity: 0.94; transform: translateY(8px); }
+    .ink-stage.is-playing.is-winter .snow { animation: snowFall 1800ms ease-in-out infinite alternate; }
+
+    @keyframes inkGrow {
+      from { stroke-dashoffset: 640; opacity: 0.35; }
+      to { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes seasonProgress {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    @keyframes leafDrift {
+      from { transform: translateY(8px) rotate(4deg); }
+      to { transform: translateY(26px) rotate(18deg); }
+    }
+    @keyframes snowFall {
+      from { transform: translateY(0); }
+      to { transform: translateY(16px); }
+    }
 
     .control-panel { padding: 20px; }
     .control-panel h2 { margin: 0 0 12px; color: #17201c; font-size: 1.5rem; }
@@ -209,6 +258,7 @@
                 <span>目前季節</span>
                 <strong data-season-title>春</strong>
               </div>
+              <div class="play-progress" aria-hidden="true"><span data-progress></span></div>
               <svg class="ink-art" viewBox="0 0 760 560" preserveAspectRatio="xMidYMid meet" role="img" aria-label="一棵水墨古樹經歷春夏秋冬">
                 <path class="mountain" d="M64 190 C150 118 218 146 294 90 C388 22 448 116 534 70 C604 34 668 78 716 136"/>
                 <path class="mist" d="M90 250 C180 232 232 264 318 246 C406 228 470 254 566 236"/>
@@ -316,13 +366,14 @@
 
     let current = 0;
     let timer = null;
+    let isPlaying = false;
 
     const $ = (selector) => document.querySelector(selector);
     const stage = $("[data-stage]");
 
     const render = () => {
       const season = seasons[current];
-      stage.className = `ink-stage is-${season.key}`;
+      stage.className = `ink-stage is-${season.key}${isPlaying ? " is-playing" : ""}`;
       $("[data-season-title]").textContent = season.title;
       $("[data-season-copy]").textContent = season.copy;
       document.querySelectorAll("[data-step]").forEach((step, index) => {
@@ -335,11 +386,13 @@
         clearInterval(timer);
         timer = null;
       }
+      isPlaying = false;
     };
 
     $("[data-play]").addEventListener("click", () => {
       stopPlayback();
       current = 0;
+      isPlaying = true;
       render();
       timer = setInterval(() => {
         current += 1;
