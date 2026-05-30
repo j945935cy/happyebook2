@@ -563,8 +563,9 @@
         row.classList.toggle("is-active-row", index === current);
       });
       const path = $("[data-progress-path]");
-      path.style.strokeDasharray = "1000";
-      path.style.strokeDashoffset = 1000 - (current / (stops.length - 1)) * 1000;
+      const routeLength = path.getTotalLength();
+      path.style.strokeDasharray = routeLength;
+      path.style.strokeDashoffset = routeLength - (current / (stops.length - 1)) * routeLength;
     };
 
     $("[data-prev]").addEventListener("click", () => {
