@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5b5f97">
+  <title>Office Lady 穿搭學習｜Happy eBook 小作品</title>
+  <meta name="description" content="一個純前端穿搭學習小工具，透過 office lady 卡通主角，練習依場合選擇上衣、外套、鞋子與穿搭理由。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/office-outfit/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Office Lady 穿搭學習｜Happy eBook 小作品">
+  <meta property="og:description" content="選場合、換單品、讀懂 office lady 穿搭邏輯。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/office-outfit/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="Happy eBook Office Lady 穿搭學習">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Office Lady 穿搭學習｜Happy eBook 小作品">
+  <meta name="twitter:description" content="純前端穿搭學習小工具，適合初學者理解職場穿搭。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --surface: #fffdf8;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --primary: #5b5f97;
+      --primary-dark: #42466f;
+      --soft: #eef0ff;
+      --line: #ded7cb;
+      --warm: #c87952;
+      --shadow: 0 18px 44px rgba(31, 41, 55, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #fbf8f2 0%, var(--bg) 58%, #ffffff 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font: inherit; }
+
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding-inline: 16px; }
+    .site-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid rgba(222, 215, 203, 0.9); background: rgba(247, 244, 239, 0.9); backdrop-filter: blur(14px); }
+    .header-row { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: grid; gap: 3px; }
+    .brand-mark { color: #111827; font-size: 1.28rem; font-weight: 900; }
+    .brand-sub { color: var(--muted); font-size: 0.92rem; }
+    .site-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+    .site-nav a { padding: 10px 14px; border-radius: 8px; color: var(--muted); font-weight: 760; }
+    .site-nav a:hover, .site-nav a.is-active { background: var(--surface); color: var(--primary-dark); box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08); }
+
+    .hero { padding: 46px 0 20px; }
+    .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--primary); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.82rem; font-weight: 900; }
+    h1 { margin: 0 0 16px; color: #111827; font-size: clamp(2.35rem, 5.8vw, 4.8rem); line-height: 1.08; letter-spacing: 0; }
+    .hero p { margin: 0; max-width: 48rem; color: #4b5563; font-size: clamp(1.04rem, 2vw, 1.18rem); line-height: 1.85; }
+
+    .section { padding: 20px 0 58px; }
+    .app-layout { display: grid; grid-template-columns: minmax(280px, 0.74fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+    .panel { border: 1px solid var(--line); border-radius: 8px; background: rgba(255, 253, 248, 0.94); box-shadow: var(--shadow); }
+    .character-panel { padding: clamp(18px, 3vw, 24px); display: grid; gap: 16px; }
+    .character-frame { display: grid; place-items: center; min-height: 430px; border: 1px solid #e7ded0; border-radius: 8px; background: linear-gradient(180deg, #f3f2ff 0%, #fff9ef 100%); overflow: hidden; }
+    .character-frame img { display: block; width: min(92%, 360px); height: auto; object-fit: contain; filter: drop-shadow(0 18px 22px rgba(31, 41, 55, 0.12)); }
+    .outfit-card { padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fffaf1; }
+    .outfit-card span { display: block; color: var(--muted); font-size: 0.86rem; font-weight: 850; }
+    .outfit-card strong { display: block; margin-top: 4px; color: #111827; font-size: 1.3rem; line-height: 1.35; }
+
+    .control-panel { padding: clamp(18px, 3vw, 24px); }
+    .control-panel h2 { margin: 0 0 14px; color: #111827; font-size: clamp(1.35rem, 3vw, 1.75rem); }
+    .control-group { display: grid; gap: 10px; margin-bottom: 20px; }
+    .control-label { color: var(--muted); font-size: 0.9rem; font-weight: 850; }
+    .choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .choice-button {
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffaf1;
+      color: #374151;
+      font-weight: 850;
+      text-align: left;
+    }
+    .choice-button.is-active { border-color: rgba(91, 95, 151, 0.55); background: var(--soft); color: var(--primary-dark); box-shadow: inset 0 0 0 1px rgba(91, 95, 151, 0.12); }
+    .item-section { display: grid; gap: 14px; }
+    .item-row { display: grid; gap: 8px; }
+    .item-row h3 { margin: 0; color: #111827; font-size: 1.05rem; }
+    .advice-panel { margin-top: 20px; padding: 16px; border: 1px solid #d6daf7; border-radius: 8px; background: #f5f6ff; }
+    .advice-panel h2 { margin: 0 0 10px; font-size: 1.25rem; }
+    .advice-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .advice-list li { padding: 10px 12px; border-radius: 8px; background: #ffffff; color: #4b5563; line-height: 1.65; font-weight: 720; }
+    .score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+    .score-box { padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: #fffdf8; }
+    .score-box span { display: block; color: var(--muted); font-size: 0.82rem; font-weight: 850; }
+    .score-box strong { display: block; margin-top: 3px; color: var(--warm); font-size: 1.3rem; }
+    .notice { margin: 14px 0 0; color: var(--muted); line-height: 1.7; font-size: 0.95rem; }
+
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .container { width: calc(100% - 28px); padding-inline: 0; }
+      .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
+      .app-layout { grid-template-columns: 1fr; }
+      .character-frame { min-height: 360px; }
+      .choice-grid, .score-grid { grid-template-columns: 1fr; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">穿搭學習</span></a>
+        <nav class="site-nav" aria-label="主選單">
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../learning/ai.html">AI 學習</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <span class="eyebrow">Office Outfit</span>
+          <h1>Office Lady 穿搭學習</h1>
+          <p>用卡通主角練習職場穿搭。先選場合，再調整上衣、外套與鞋子，系統會用白話說明這套搭配的正式感、親和感與行動方便度。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container app-layout">
+          <section class="panel character-panel" aria-label="穿搭主角">
+            <div class="character-frame">
+              <img src="office-lady.png" alt="Office lady 卡通主角" loading="eager">
+            </div>
+            <div class="outfit-card">
+              <span>目前穿搭</span>
+              <strong data-outfit-title></strong>
+              <p class="notice" data-outfit-summary></p>
+            </div>
+          </section>
+
+          <section class="panel control-panel" aria-label="穿搭控制">
+            <div class="control-group">
+              <span class="control-label">場合模式</span>
+              <div class="choice-grid" data-occasion-buttons></div>
+            </div>
+
+            <div class="item-section">
+              <div class="item-row">
+                <h3>上衣</h3>
+                <div class="choice-grid" data-category="top"></div>
+              </div>
+              <div class="item-row">
+                <h3>外套</h3>
+                <div class="choice-grid" data-category="outer"></div>
+              </div>
+              <div class="item-row">
+                <h3>鞋子</h3>
+                <div class="choice-grid" data-category="shoes"></div>
+              </div>
+            </div>
+
+            <div class="advice-panel">
+              <h2>搭配理由</h2>
+              <ul class="advice-list" data-advice-list></ul>
+              <div class="score-grid">
+                <div class="score-box"><span>正式感</span><strong data-score-formal></strong></div>
+                <div class="score-box"><span>親和感</span><strong data-score-friendly></strong></div>
+                <div class="score-box"><span>行動方便</span><strong data-score-comfort></strong></div>
+              </div>
+            </div>
+            <p class="notice">這是學習版建議，不代表每個職場都適用。實際穿搭仍要依公司規範、天氣與個人舒適度調整。</p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../../index.html">首頁</a>
+          <a href="../">小作品</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const items = {
+      top: {
+        shirt: { label: "白襯衫", note: "白襯衫最容易帶出清楚、正式的印象，適合需要專業感的場合。", formal: 3, friendly: 2, comfort: 2 },
+        knit: { label: "針織衫", note: "針織衫線條柔和，會讓整體看起來比較親切，適合一般辦公日。", formal: 2, friendly: 3, comfort: 3 },
+        tee: { label: "素色上衣", note: "素色上衣簡單乾淨，但正式感較低，適合較輕鬆的職場氛圍。", formal: 1, friendly: 3, comfort: 3 }
+      },
+      outer: {
+        blazer: { label: "西裝外套", note: "西裝外套能快速提高正式感，開會或簡報時很穩。", formal: 3, friendly: 1, comfort: 2 },
+        cardigan: { label: "開襟外套", note: "開襟外套比西裝柔和，適合想降低距離感的工作日。", formal: 2, friendly: 3, comfort: 3 },
+        trench: { label: "風衣", note: "風衣有俐落感，也適合通勤或下班行程，但室內正式感中等。", formal: 2, friendly: 2, comfort: 2 }
+      },
+      shoes: {
+        heels: { label: "低跟鞋", note: "低跟鞋比高跟鞋更好走，也能保留專業與正式感。", formal: 3, friendly: 2, comfort: 2 },
+        loafers: { label: "樂福鞋", note: "樂福鞋正式與舒適取得平衡，很適合長時間辦公。", formal: 2, friendly: 2, comfort: 3 },
+        sneakers: { label: "白鞋", note: "白鞋乾淨但偏休閒，適合週五或不需要正式會議的日子。", formal: 1, friendly: 3, comfort: 3 }
+      }
+    };
+
+    const occasions = {
+      daily: { label: "日常上班", pick: { top: "knit", outer: "cardigan", shoes: "loafers" }, summary: "柔和、舒服、適合一般辦公日。" },
+      meeting: { label: "重要會議", pick: { top: "shirt", outer: "blazer", shoes: "heels" }, summary: "正式感最高，適合簡報、面談或主管會議。" },
+      date: { label: "下班約會", pick: { top: "knit", outer: "trench", shoes: "heels" }, summary: "保留職場俐落感，也有下班後的柔和氣質。" },
+      casual: { label: "週五休閒", pick: { top: "tee", outer: "cardigan", shoes: "sneakers" }, summary: "輕鬆、好活動，但仍維持乾淨整齊。" }
+    };
+
+    let currentOccasion = "daily";
+    let outfit = { ...occasions.daily.pick };
+
+    const $ = (selector) => document.querySelector(selector);
+
+    const labelOf = (category) => items[category][outfit[category]].label;
+    const scoreLabel = (value) => `${value}/9`;
+
+    const renderButtons = () => {
+      $("[data-occasion-buttons]").innerHTML = Object.entries(occasions).map(([key, occasion]) => `
+        <button class="choice-button ${key === currentOccasion ? "is-active" : ""}" type="button" data-occasion="${key}">${occasion.label}</button>
+      `).join("");
+
+      Object.entries(items).forEach(([category, choices]) => {
+        $(`[data-category="${category}"]`).innerHTML = Object.entries(choices).map(([key, item]) => `
+          <button class="choice-button ${key === outfit[category] ? "is-active" : ""}" type="button" data-item-category="${category}" data-item="${key}">${item.label}</button>
+        `).join("");
+      });
+    };
+
+    const renderAdvice = () => {
+      const selected = [items.top[outfit.top], items.outer[outfit.outer], items.shoes[outfit.shoes]];
+      const total = selected.reduce((sum, item) => ({
+        formal: sum.formal + item.formal,
+        friendly: sum.friendly + item.friendly,
+        comfort: sum.comfort + item.comfort
+      }), { formal: 0, friendly: 0, comfort: 0 });
+
+      $("[data-outfit-title]").textContent = `${labelOf("top")} + ${labelOf("outer")} + ${labelOf("shoes")}`;
+      $("[data-outfit-summary]").textContent = occasions[currentOccasion].summary;
+      $("[data-advice-list]").innerHTML = selected.map((item) => `<li>${item.note}</li>`).join("");
+      $("[data-score-formal]").textContent = scoreLabel(total.formal);
+      $("[data-score-friendly]").textContent = scoreLabel(total.friendly);
+      $("[data-score-comfort]").textContent = scoreLabel(total.comfort);
+    };
+
+    const bindEvents = () => {
+      document.querySelectorAll("[data-occasion]").forEach((button) => {
+        button.addEventListener("click", () => {
+          currentOccasion = button.dataset.occasion;
+          outfit = { ...occasions[currentOccasion].pick };
+          render();
+        });
+      });
+
+      document.querySelectorAll("[data-item-category]").forEach((button) => {
+        button.addEventListener("click", () => {
+          outfit[button.dataset.itemCategory] = button.dataset.item;
+          render();
+        });
+      });
+    };
+
+    const render = () => {
+      renderButtons();
+      renderAdvice();
+      bindEvents();
+    };
+
+    render();
+  </script>
+</body>
+</html>
