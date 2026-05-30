@@ -191,12 +191,13 @@
           <section class="panel map-panel" aria-label="環台路線地圖">
             <h2>環台路線</h2>
             <div class="route-map" data-map>
-              <svg class="route-line" viewBox="0 0 420 520" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M238 52 C314 62 350 126 330 190 C378 252 348 330 300 392 C258 462 178 478 120 424 C56 360 68 280 96 224 C58 146 118 70 238 52 Z" fill="none" stroke="#bfdbfe" stroke-width="14" stroke-linecap="round"/>
-                <path data-progress-path d="M238 52 C314 62 350 126 330 190 C378 252 348 330 300 392 C258 462 178 478 120 424 C56 360 68 280 96 224 C58 146 118 70 238 52 Z" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+              <svg class="route-line" viewBox="0 0 420 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                <path d="M252 30 C292 50 314 92 304 142 C298 173 323 204 329 241 C338 299 305 349 282 392 C260 433 248 474 216 515 C194 543 151 530 130 492 C100 438 91 374 103 318 C74 270 70 213 101 164 C127 122 147 80 188 50 C209 34 232 24 252 30 Z" fill="#eaf4ff" stroke="#bfdbfe" stroke-width="10"/>
+                <path d="M252 30 C292 50 314 92 304 142 C298 173 323 204 329 241 C338 299 305 349 282 392 C260 433 248 474 216 515 C194 543 151 530 130 492 C100 438 91 374 103 318 C74 270 70 213 101 164 C127 122 147 80 188 50 C209 34 232 24 252 30 Z" fill="none" stroke="#93c5fd" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                <path data-progress-path d="M252 30 C292 50 314 92 304 142 C298 173 323 204 329 241 C338 299 305 349 282 392 C260 433 248 474 216 515 C194 543 151 530 130 492 C100 438 91 374 103 318 C74 270 70 213 101 164 C127 122 147 80 188 50 C209 34 232 24 252 30 Z" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <p class="notice">地圖是簡化示意圖，不代表實際道路形狀。點選圓點可以跳到該站。</p>
+            <p class="notice">地圖是台灣形狀的簡化示意圖，不代表實際道路形狀。點選圓點可以跳到該站。</p>
           </section>
 
           <aside class="panel stop-panel" aria-label="目前站點">
@@ -301,25 +302,25 @@
 
   <script>
     const stops = [
-      { city: "台北市", attraction: "台北 101", food: "牛肉麵", km: 0, hours: 0, cost: 0, x: 57, y: 10, story: "小綿羊從台北出發，先在城市裡檢查胎壓、油量與雨衣。今天的重點是準備好，而不是騎很遠。" },
-      { city: "新北市", attraction: "淡水老街", food: "阿給", km: 25, hours: 1.2, cost: 180, x: 49, y: 15, story: "沿著河岸慢慢騎到淡水，先用短距離熟悉節奏，也練習把第一段里程加進總表。" },
-      { city: "基隆市", attraction: "和平島公園", food: "廟口小吃", km: 38, hours: 1.5, cost: 220, x: 66, y: 12, story: "往東北角前進，海風變明顯。小綿羊抵達基隆，補充熱食，也把海線旅程正式打開。" },
-      { city: "宜蘭縣", attraction: "幾米公園", food: "蔥油餅", km: 78, hours: 2.4, cost: 260, x: 77, y: 24, story: "翻過東北角後到宜蘭，路線開始拉長。這一站適合提醒自己：50cc 不趕路，安全比速度重要。" },
-      { city: "花蓮縣", attraction: "太魯閣", food: "扁食", km: 118, hours: 3.5, cost: 360, x: 82, y: 42, story: "東部路段風景漂亮，但也需要更專心。小綿羊把時間拉長，慢慢抵達花蓮。" },
-      { city: "台東縣", attraction: "鐵花村", food: "米苔目", km: 175, hours: 5.0, cost: 460, x: 77, y: 65, story: "花東線是長距離練習。這一段學會看累計時間，也知道旅程不能只看里程。" },
-      { city: "屏東縣", attraction: "墾丁大街", food: "綠豆蒜", km: 150, hours: 4.4, cost: 420, x: 62, y: 85, story: "一路往南，來到台灣尾端。小綿羊在屏東停下來，把南台灣的熱度收進行程表。" },
-      { city: "高雄市", attraction: "駁二藝術特區", food: "鴨肉飯", km: 105, hours: 3.1, cost: 330, x: 46, y: 77, story: "從屏東回到西部城市，高雄是補給站。這裡適合檢查油錢、餐費與剩餘預算。" },
-      { city: "台南市", attraction: "赤崁樓", food: "牛肉湯", km: 55, hours: 1.8, cost: 300, x: 38, y: 68, story: "台南站很適合做美食紀錄。小綿羊不用騎很快，慢慢吃、慢慢記。" },
-      { city: "嘉義縣", attraction: "阿里山森林遊樂區", food: "火雞肉飯", km: 78, hours: 2.7, cost: 360, x: 33, y: 57, story: "往嘉義前進，開始進入中南部山海轉換路線。這一站練習把景點與食物分欄記錄。" },
-      { city: "雲林縣", attraction: "北港朝天宮", food: "鴨肉羹", km: 52, hours: 1.7, cost: 240, x: 30, y: 49, story: "雲林距離不長，但很適合安排休息。小綿羊在廟口附近補充體力。" },
-      { city: "彰化縣", attraction: "鹿港老街", food: "肉圓", km: 62, hours: 2.0, cost: 260, x: 28, y: 40, story: "來到彰化，路線逐漸往北。這一站讓累計里程突破一大段，是很有成就感的節點。" },
-      { city: "南投縣", attraction: "日月潭", food: "茶葉蛋", km: 70, hours: 2.4, cost: 300, x: 42, y: 43, story: "轉進內陸看湖景。小綿羊這站提醒我們：縣市順序可以依路線調整，不一定只照地圖上下排列。" },
-      { city: "台中市", attraction: "國家歌劇院", food: "太陽餅", km: 62, hours: 2.0, cost: 280, x: 34, y: 33, story: "台中是中部大站，可以整理前半圈資料。這裡也很適合做一次總花費檢查。" },
-      { city: "苗栗縣", attraction: "勝興車站", food: "客家粄條", km: 55, hours: 1.8, cost: 250, x: 39, y: 26, story: "苗栗路段多山線風景。小綿羊在這裡放慢速度，感受環台進入北返階段。" },
-      { city: "新竹縣", attraction: "內灣老街", food: "野薑花粽", km: 45, hours: 1.5, cost: 230, x: 47, y: 21, story: "新竹縣站是北部邊界的前奏。距離不長，但很適合練習短段累計。" },
-      { city: "新竹市", attraction: "城隍廟", food: "貢丸米粉", km: 28, hours: 1.0, cost: 220, x: 44, y: 18, story: "來到新竹市，小綿羊用一碗米粉做補給。城市短站讓資料更新很清楚。" },
-      { city: "桃園市", attraction: "大溪老街", food: "豆干", km: 62, hours: 2.0, cost: 250, x: 51, y: 14, story: "離台北越來越近，但旅程還沒結束。這一站把北台灣的老街味道補進紀錄。" },
-      { city: "台北市", attraction: "大稻埕碼頭", food: "青草茶", km: 42, hours: 1.4, cost: 180, x: 57, y: 10, story: "小綿羊回到台北，完成一圈教學版環台。最後一步是檢查總里程、總時間與總花費是否合理。" }
+      { city: "台北市", attraction: "台北 101", food: "牛肉麵", km: 0, hours: 0, cost: 0, x: 60, y: 9, story: "小綿羊從台北出發，先在城市裡檢查胎壓、油量與雨衣。今天的重點是準備好，而不是騎很遠。" },
+      { city: "新北市", attraction: "淡水老街", food: "阿給", km: 25, hours: 1.2, cost: 180, x: 55, y: 12, story: "沿著河岸慢慢騎到淡水，先用短距離熟悉節奏，也練習把第一段里程加進總表。" },
+      { city: "基隆市", attraction: "和平島公園", food: "廟口小吃", km: 38, hours: 1.5, cost: 220, x: 68, y: 11, story: "往東北角前進，海風變明顯。小綿羊抵達基隆，補充熱食，也把海線旅程正式打開。" },
+      { city: "宜蘭縣", attraction: "幾米公園", food: "蔥油餅", km: 78, hours: 2.4, cost: 260, x: 72, y: 22, story: "翻過東北角後到宜蘭，路線開始拉長。這一站適合提醒自己：50cc 不趕路，安全比速度重要。" },
+      { city: "花蓮縣", attraction: "太魯閣", food: "扁食", km: 118, hours: 3.5, cost: 360, x: 70, y: 42, story: "東部路段風景漂亮，但也需要更專心。小綿羊把時間拉長，慢慢抵達花蓮。" },
+      { city: "台東縣", attraction: "鐵花村", food: "米苔目", km: 175, hours: 5.0, cost: 460, x: 65, y: 67, story: "花東線是長距離練習。這一段學會看累計時間，也知道旅程不能只看里程。" },
+      { city: "屏東縣", attraction: "墾丁大街", food: "綠豆蒜", km: 150, hours: 4.4, cost: 420, x: 51, y: 88, story: "一路往南，來到台灣尾端。小綿羊在屏東停下來，把南台灣的熱度收進行程表。" },
+      { city: "高雄市", attraction: "駁二藝術特區", food: "鴨肉飯", km: 105, hours: 3.1, cost: 330, x: 40, y: 76, story: "從屏東回到西部城市，高雄是補給站。這裡適合檢查油錢、餐費與剩餘預算。" },
+      { city: "台南市", attraction: "赤崁樓", food: "牛肉湯", km: 55, hours: 1.8, cost: 300, x: 35, y: 66, story: "台南站很適合做美食紀錄。小綿羊不用騎很快，慢慢吃、慢慢記。" },
+      { city: "嘉義縣", attraction: "阿里山森林遊樂區", food: "火雞肉飯", km: 78, hours: 2.7, cost: 360, x: 34, y: 56, story: "往嘉義前進，開始進入中南部山海轉換路線。這一站練習把景點與食物分欄記錄。" },
+      { city: "雲林縣", attraction: "北港朝天宮", food: "鴨肉羹", km: 52, hours: 1.7, cost: 240, x: 33, y: 48, story: "雲林距離不長，但很適合安排休息。小綿羊在廟口附近補充體力。" },
+      { city: "彰化縣", attraction: "鹿港老街", food: "肉圓", km: 62, hours: 2.0, cost: 260, x: 32, y: 40, story: "來到彰化，路線逐漸往北。這一站讓累計里程突破一大段，是很有成就感的節點。" },
+      { city: "南投縣", attraction: "日月潭", food: "茶葉蛋", km: 70, hours: 2.4, cost: 300, x: 45, y: 44, story: "轉進內陸看湖景。小綿羊這站提醒我們：縣市順序可以依路線調整，不一定只照地圖上下排列。" },
+      { city: "台中市", attraction: "國家歌劇院", food: "太陽餅", km: 62, hours: 2.0, cost: 280, x: 37, y: 33, story: "台中是中部大站，可以整理前半圈資料。這裡也很適合做一次總花費檢查。" },
+      { city: "苗栗縣", attraction: "勝興車站", food: "客家粄條", km: 55, hours: 1.8, cost: 250, x: 43, y: 25, story: "苗栗路段多山線風景。小綿羊在這裡放慢速度，感受環台進入北返階段。" },
+      { city: "新竹縣", attraction: "內灣老街", food: "野薑花粽", km: 45, hours: 1.5, cost: 230, x: 50, y: 20, story: "新竹縣站是北部邊界的前奏。距離不長，但很適合練習短段累計。" },
+      { city: "新竹市", attraction: "城隍廟", food: "貢丸米粉", km: 28, hours: 1.0, cost: 220, x: 47, y: 18, story: "來到新竹市，小綿羊用一碗米粉做補給。城市短站讓資料更新很清楚。" },
+      { city: "桃園市", attraction: "大溪老街", food: "豆干", km: 62, hours: 2.0, cost: 250, x: 55, y: 14, story: "離台北越來越近，但旅程還沒結束。這一站把北台灣的老街味道補進紀錄。" },
+      { city: "台北市", attraction: "大稻埕碼頭", food: "青草茶", km: 42, hours: 1.4, cost: 180, x: 60, y: 9, story: "小綿羊回到台北，完成一圈教學版環台。最後一步是檢查總里程、總時間與總花費是否合理。" }
     ];
 
     const islandTrips = [
