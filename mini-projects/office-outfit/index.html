@@ -83,16 +83,40 @@
       background: radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.76), transparent 42%);
       pointer-events: none;
     }
-    .character-frame img {
+    .character-art {
       position: relative;
       z-index: 2;
-      display: block;
       width: min(92%, 360px);
-      height: auto;
-      object-fit: contain;
+      aspect-ratio: 2 / 3;
+    }
+    .character-frame img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       filter: drop-shadow(0 18px 22px rgba(31, 41, 55, 0.12));
       transition: filter 260ms ease, transform 260ms ease;
     }
+    .clothing-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .clothing-overlay .top-piece { fill: var(--top-color, rgba(255,255,255,0.1)); opacity: 0.58; mix-blend-mode: multiply; }
+    .clothing-overlay .outer-piece { fill: var(--outer-color, rgba(65,72,96,0.2)); opacity: 0.54; mix-blend-mode: multiply; }
+    .clothing-overlay .shoe-piece { fill: var(--shoe-color, rgba(32,32,38,0.32)); opacity: 0.62; mix-blend-mode: multiply; }
+    .clothing-overlay .detail-line { fill: none; stroke: rgba(255,255,255,0.62); stroke-width: 4; stroke-linecap: round; opacity: 0.72; }
+    .clothing-overlay .trench-line { fill: none; stroke: rgba(84, 57, 42, 0.36); stroke-width: 5; stroke-linecap: round; opacity: 0; }
+    .clothing-overlay .cardigan-soft { fill: none; stroke: rgba(255,255,255,0.52); stroke-width: 8; stroke-linecap: round; opacity: 0; }
+    .character-frame[data-outer="trench"] .trench-line { opacity: 0.86; }
+    .character-frame[data-outer="cardigan"] .cardigan-soft { opacity: 0.82; }
+    .character-frame[data-top="tee"] .detail-line { opacity: 0.18; }
+    .character-frame[data-shoes="sneakers"] .shoe-piece { opacity: 0.38; }
     .occasion-badge {
       position: absolute;
       left: 14px;
@@ -222,10 +246,26 @@
       <section class="section">
         <div class="container app-layout">
           <section class="panel character-panel" aria-label="穿搭主角">
-            <div class="character-frame" data-character-frame data-occasion="daily">
+            <div class="character-frame" data-character-frame data-occasion="daily" data-top="knit" data-outer="cardigan" data-shoes="loafers">
               <div class="occasion-badge" data-visual-title>日常上班</div>
               <div class="occasion-prop" data-visual-prop aria-hidden="true"></div>
-              <img src="office-lady.png" alt="Office lady 卡通主角" loading="eager">
+              <div class="character-art">
+                <img src="office-lady.png" alt="Office lady 卡通主角" loading="eager">
+                <svg class="clothing-overlay" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <path class="top-piece" d="M436 430 C474 448 530 448 568 430 C602 500 612 600 594 704 C550 724 476 724 430 704 C416 594 420 500 436 430Z"/>
+                  <path class="outer-piece" d="M334 420 C378 398 424 392 464 410 C426 502 390 656 356 812 C322 780 300 700 302 612 C304 528 314 462 334 420Z"/>
+                  <path class="outer-piece" d="M566 410 C622 392 686 414 724 468 C738 556 736 710 696 800 C650 792 616 710 606 624 C596 542 586 472 566 410Z"/>
+                  <path class="outer-piece" d="M410 698 C462 724 554 724 612 696 C624 744 626 794 612 836 C546 858 454 856 398 832 C390 792 394 742 410 698Z"/>
+                  <path class="detail-line" d="M508 452 C502 520 504 596 510 676"/>
+                  <path class="detail-line" d="M462 486 C488 500 530 500 560 486"/>
+                  <path class="trench-line" d="M390 438 C356 548 352 682 382 808"/>
+                  <path class="trench-line" d="M676 470 C706 584 704 704 678 804"/>
+                  <path class="cardigan-soft" d="M410 432 C388 552 386 686 406 802"/>
+                  <path class="cardigan-soft" d="M612 432 C636 552 636 686 614 802"/>
+                  <path class="shoe-piece" d="M432 1368 C474 1362 506 1382 514 1418 C496 1448 450 1458 412 1444 C396 1414 404 1384 432 1368Z"/>
+                  <path class="shoe-piece" d="M594 1356 C636 1352 674 1374 684 1410 C668 1444 614 1458 578 1440 C562 1410 566 1376 594 1356Z"/>
+                </svg>
+              </div>
               <div class="style-chip-row" data-style-chips></div>
             </div>
             <div class="outfit-card">
@@ -286,19 +326,19 @@
   <script>
     const items = {
       top: {
-        shirt: { label: "白襯衫", note: "白襯衫最容易帶出清楚、正式的印象，適合需要專業感的場合。", formal: 3, friendly: 2, comfort: 2 },
-        knit: { label: "針織衫", note: "針織衫線條柔和，會讓整體看起來比較親切，適合一般辦公日。", formal: 2, friendly: 3, comfort: 3 },
-        tee: { label: "素色上衣", note: "素色上衣簡單乾淨，但正式感較低，適合較輕鬆的職場氛圍。", formal: 1, friendly: 3, comfort: 3 }
+        shirt: { label: "白襯衫", note: "白襯衫最容易帶出清楚、正式的印象，適合需要專業感的場合。", formal: 3, friendly: 2, comfort: 2, color: "rgba(248, 249, 252, 0.84)" },
+        knit: { label: "針織衫", note: "針織衫線條柔和，會讓整體看起來比較親切，適合一般辦公日。", formal: 2, friendly: 3, comfort: 3, color: "rgba(214, 196, 180, 0.66)" },
+        tee: { label: "素色上衣", note: "素色上衣簡單乾淨，但正式感較低，適合較輕鬆的職場氛圍。", formal: 1, friendly: 3, comfort: 3, color: "rgba(206, 225, 218, 0.72)" }
       },
       outer: {
-        blazer: { label: "西裝外套", note: "西裝外套能快速提高正式感，開會或簡報時很穩。", formal: 3, friendly: 1, comfort: 2 },
-        cardigan: { label: "開襟外套", note: "開襟外套比西裝柔和，適合想降低距離感的工作日。", formal: 2, friendly: 3, comfort: 3 },
-        trench: { label: "風衣", note: "風衣有俐落感，也適合通勤或下班行程，但室內正式感中等。", formal: 2, friendly: 2, comfort: 2 }
+        blazer: { label: "西裝外套", note: "西裝外套能快速提高正式感，開會或簡報時很穩。", formal: 3, friendly: 1, comfort: 2, color: "rgba(47, 57, 86, 0.72)" },
+        cardigan: { label: "開襟外套", note: "開襟外套比西裝柔和，適合想降低距離感的工作日。", formal: 2, friendly: 3, comfort: 3, color: "rgba(152, 132, 164, 0.56)" },
+        trench: { label: "風衣", note: "風衣有俐落感，也適合通勤或下班行程，但室內正式感中等。", formal: 2, friendly: 2, comfort: 2, color: "rgba(190, 144, 101, 0.62)" }
       },
       shoes: {
-        heels: { label: "低跟鞋", note: "低跟鞋比高跟鞋更好走，也能保留專業與正式感。", formal: 3, friendly: 2, comfort: 2 },
-        loafers: { label: "樂福鞋", note: "樂福鞋正式與舒適取得平衡，很適合長時間辦公。", formal: 2, friendly: 2, comfort: 3 },
-        sneakers: { label: "白鞋", note: "白鞋乾淨但偏休閒，適合週五或不需要正式會議的日子。", formal: 1, friendly: 3, comfort: 3 }
+        heels: { label: "低跟鞋", note: "低跟鞋比高跟鞋更好走，也能保留專業與正式感。", formal: 3, friendly: 2, comfort: 2, color: "rgba(20, 22, 28, 0.72)" },
+        loafers: { label: "樂福鞋", note: "樂福鞋正式與舒適取得平衡，很適合長時間辦公。", formal: 2, friendly: 2, comfort: 3, color: "rgba(82, 66, 52, 0.70)" },
+        sneakers: { label: "白鞋", note: "白鞋乾淨但偏休閒，適合週五或不需要正式會議的日子。", formal: 1, friendly: 3, comfort: 3, color: "rgba(248, 248, 242, 0.78)" }
       }
     };
 
@@ -366,7 +406,14 @@
 
     const renderVisual = () => {
       const visual = visuals[currentOccasion];
-      $("[data-character-frame]").dataset.occasion = currentOccasion;
+      const frame = $("[data-character-frame]");
+      frame.dataset.occasion = currentOccasion;
+      frame.dataset.top = outfit.top;
+      frame.dataset.outer = outfit.outer;
+      frame.dataset.shoes = outfit.shoes;
+      frame.style.setProperty("--top-color", items.top[outfit.top].color);
+      frame.style.setProperty("--outer-color", items.outer[outfit.outer].color);
+      frame.style.setProperty("--shoe-color", items.shoes[outfit.shoes].color);
       $("[data-visual-title]").textContent = occasions[currentOccasion].label;
       $("[data-visual-prop]").innerHTML = visual.prop;
       $("[data-style-chips]").innerHTML = visual.chips.map((chip) => `<span class="style-chip">${chip}</span>`).join("");
