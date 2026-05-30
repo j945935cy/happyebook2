@@ -168,6 +168,37 @@
       font-weight: 800;
       line-height: 1.55;
     }
+    .nav-indicator {
+      position: absolute;
+      right: 16px;
+      top: 118px;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: min(320px, calc(100% - 32px));
+      padding: 10px 12px;
+      border: 1px solid rgba(31, 41, 55, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 12px 28px rgba(31, 41, 55, 0.1);
+    }
+    .nav-arrow {
+      display: grid;
+      place-items: center;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--blue-dark);
+      font-size: 1.55rem;
+      line-height: 1;
+      transform: rotate(0deg);
+    }
+    .nav-text { display: grid; gap: 2px; min-width: 0; }
+    .nav-text span { color: var(--muted); font-size: 0.78rem; font-weight: 850; }
+    .nav-text strong { color: #111827; font-size: 0.98rem; line-height: 1.25; }
     .info-panel { padding: 18px; display: grid; gap: 16px; }
     .info-panel h2 { margin: 0; font-size: 1.35rem; }
     .info-panel p { margin: 0; color: var(--muted); line-height: 1.75; }
@@ -233,6 +264,7 @@
       .sim-layout { grid-template-columns: 1fr; }
       .flight-stage { min-height: 560px; }
       .hud { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-indicator { top: 150px; }
       .world { width: 650px; height: 785px; }
     }
 
@@ -244,6 +276,8 @@
       .meter { padding: 8px 9px; }
       .meter strong { font-size: 1rem; }
       .plane { width: 126px; height: 126px; }
+      .nav-indicator { top: 132px; right: 10px; padding: 8px 9px; }
+      .nav-arrow { width: 36px; height: 36px; flex-basis: 36px; font-size: 1.35rem; }
       .hint-strip { left: 10px; right: 10px; bottom: 10px; font-size: 0.84rem; }
       .world { width: 560px; height: 680px; }
     }
@@ -323,6 +357,13 @@
                 <div class="meter"><span>航向</span><strong data-heading>北</strong></div>
                 <div class="meter"><span>地圖比例</span><strong data-scale>100%</strong></div>
               </div>
+              <div class="nav-indicator" aria-label="下一站導航">
+                <div class="nav-arrow" data-nav-arrow aria-hidden="true">↑</div>
+                <div class="nav-text">
+                  <span>下一站導航</span>
+                  <strong data-nav-text>尋找台北</strong>
+                </div>
+              </div>
               <div class="hint-strip">請先點一下畫面，再用方向鍵、A、D 操作。</div>
             </div>
           </section>
@@ -345,6 +386,7 @@
                 <h3>巡航任務</h3>
               </div>
               <p data-current-city>讓城市點靠近飛機，就能完成該站。</p>
+              <p data-next-distance>距離：-- km</p>
               <ul class="mission-list" data-mission-list></ul>
               <p data-mission-progress>完成 0 / 5</p>
             </div>
@@ -384,8 +426,11 @@
     const speedText = document.querySelector("[data-speed]");
     const headingText = document.querySelector("[data-heading]");
     const scaleText = document.querySelector("[data-scale]");
+    const navArrow = document.querySelector("[data-nav-arrow]");
+    const navText = document.querySelector("[data-nav-text]");
     const cityDots = [...document.querySelectorAll("[data-city]")];
     const currentCityText = document.querySelector("[data-current-city]");
+    const nextDistanceText = document.querySelector("[data-next-distance]");
     const missionList = document.querySelector("[data-mission-list]");
     const missionProgressText = document.querySelector("[data-mission-progress]");
     const cityNames = cityDots.map((dot) => dot.dataset.city);
@@ -467,6 +512,40 @@
       currentCityText.textContent = nextCity ? `下一站：${nextCity}。讓地圖上的城市點靠近飛機中央。` : "任務完成：五個城市都巡航到了。";
     };
 
+    const getNextCityInfo = () => {
+      const nextCity = cityNames.find((name) => !visitedCities.has(name));
+      const dot = nextCity ? cityDots.find((item) => item.dataset.city === nextCity) : null;
+      if (!dot) return null;
+
+      const stageRect = stage.getBoundingClientRect();
+      const planeX = stageRect.left + stageRect.width / 2;
+      const planeY = stageRect.top + stageRect.height / 2;
+      const rect = dot.getBoundingClientRect();
+      const dotX = rect.left + rect.width / 2;
+      const dotY = rect.top + rect.height / 2;
+      const dx = dotX - planeX;
+      const dy = dotY - planeY;
+      const distance = Math.hypot(dx, dy);
+      const angle = Math.atan2(dy, dx) * 180 / Math.PI + 90;
+
+      return { name: nextCity, distance, angle };
+    };
+
+    const renderNavigation = () => {
+      const info = getNextCityInfo();
+      if (!info) {
+        navArrow.style.transform = "rotate(0deg)";
+        navText.textContent = "巡航完成";
+        nextDistanceText.textContent = "距離：任務完成";
+        return;
+      }
+
+      const km = Math.max(1, Math.round(info.distance * 0.42));
+      navArrow.style.transform = `rotate(${info.angle}deg)`;
+      navText.textContent = `${info.name} 約 ${km} km`;
+      nextDistanceText.textContent = `距離：${km} km`;
+    };
+
     const checkCityVisits = () => {
       const stageRect = stage.getBoundingClientRect();
       const planeX = stageRect.left + stageRect.width / 2;
@@ -521,11 +600,13 @@
       headingText.textContent = headingName(state.heading);
       scaleText.textContent = `${Math.round(mapScale * 100)}%`;
       checkCityVisits();
+      renderNavigation();
 
       requestAnimationFrame(tick);
     };
 
     renderMission();
+    renderNavigation();
     stage.focus();
     tick();
   </script>
