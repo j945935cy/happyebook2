@@ -110,17 +110,20 @@
       mix-blend-mode: multiply;
     }
     .ink-art { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
-    .distant-wash { fill: rgba(31, 41, 36, calc(0.055 * var(--ink-opacity))); }
+    .distant-wash { fill: rgba(31, 41, 36, calc(0.055 * var(--ink-opacity))); filter: url(#softInk); }
+    .cloud-wash { fill: rgba(255, 252, 244, 0.42); filter: url(#softInk); }
     .mountain { fill: none; stroke: rgba(31, 41, 36, calc(0.20 * var(--ink-opacity))); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
     .mountain.light { stroke: rgba(31, 41, 36, calc(0.11 * var(--ink-opacity))); stroke-width: 7; }
     .ridge { fill: none; stroke: rgba(31, 41, 36, calc(0.16 * var(--ink-opacity))); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
     .mist { fill: none; stroke: rgba(31, 41, 36, calc(0.13 * var(--ink-opacity))); stroke-width: 6; stroke-linecap: round; }
-    .trunk { fill: none; stroke: rgba(29, 36, 31, var(--ink-opacity)); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
-    .branch { fill: none; stroke: rgba(38, 49, 43, var(--ink-opacity)); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .trunk { fill: none; stroke: rgba(29, 36, 31, var(--ink-opacity)); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; filter: url(#roughInk); }
+    .branch { fill: none; stroke: rgba(38, 49, 43, var(--ink-opacity)); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; filter: url(#roughInk); }
     .thin-branch { fill: none; stroke: rgba(47, 58, 52, var(--ink-opacity)); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
     .dry-brush { fill: none; stroke: rgba(255, 252, 244, 0.45); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
     .bark-mark { fill: none; stroke: rgba(31, 41, 36, calc(0.42 * var(--ink-opacity))); stroke-width: 3; stroke-linecap: round; }
     .ink-dot { fill: rgba(31, 41, 36, calc(0.18 * var(--ink-opacity))); }
+    .rock { fill: rgba(31, 41, 36, calc(0.11 * var(--ink-opacity))); stroke: rgba(31, 41, 36, calc(0.28 * var(--ink-opacity))); stroke-width: 3; stroke-linejoin: round; filter: url(#softInk); }
+    .grass { fill: none; stroke: rgba(31, 41, 36, calc(0.26 * var(--ink-opacity))); stroke-width: 2.4; stroke-linecap: round; }
     .leaf { fill: var(--season); opacity: 0.82; transform-box: fill-box; transform-origin: center; transition: fill 700ms ease, opacity 700ms ease, transform 700ms ease; }
     .leaf-dot { fill: var(--season); opacity: 0.74; transform-box: fill-box; transform-origin: center; transition: fill 700ms ease, opacity 700ms ease, transform 700ms ease; }
     .blossom { fill: #efb9c6; opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 700ms ease, transform 700ms ease; }
@@ -329,7 +332,19 @@
               </div>
               <div class="play-progress" aria-hidden="true"><span data-progress></span></div>
               <svg class="ink-art" viewBox="0 0 760 560" preserveAspectRatio="xMidYMid meet" role="img" aria-label="一棵水墨古樹經歷春夏秋冬">
+                <defs>
+                  <filter id="softInk" x="-20%" y="-20%" width="140%" height="140%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="8"/>
+                    <feDisplacementMap in="SourceGraphic" scale="5"/>
+                    <feGaussianBlur stdDeviation="0.45"/>
+                  </filter>
+                  <filter id="roughInk" x="-20%" y="-20%" width="140%" height="140%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.075" numOctaves="3" seed="12"/>
+                    <feDisplacementMap in="SourceGraphic" scale="3"/>
+                  </filter>
+                </defs>
                 <path class="distant-wash" d="M36 184 C116 116 174 148 244 92 C328 26 388 106 468 72 C548 38 632 62 724 128 L724 210 C600 190 526 174 430 190 C330 206 246 190 156 206 C94 218 58 210 36 184Z"/>
+                <path class="cloud-wash" d="M88 218 C176 196 240 226 326 204 C420 180 498 210 616 190 C666 182 704 188 734 204 L734 250 C624 232 540 246 438 236 C334 226 242 250 142 236 C96 230 66 230 44 236Z"/>
                 <path class="mountain light" d="M42 178 C112 126 172 138 230 98 C308 44 366 110 438 82 C522 50 624 58 718 122"/>
                 <path class="mountain" d="M66 206 C146 134 218 160 292 98 C386 28 448 124 536 78 C606 42 668 86 718 144"/>
                 <path class="ridge" d="M154 156 C184 142 204 126 224 108M308 102 C340 94 358 74 382 52M520 96 C552 88 582 72 610 62M626 116 C656 112 680 124 704 140"/>
@@ -338,6 +353,9 @@
                 <path class="mist" d="M52 360 C158 344 236 370 340 350 C452 330 546 356 700 336"/>
                 <path class="ground" d="M118 458 C210 432 302 466 386 442 C480 416 576 448 668 420"/>
                 <path class="ridge" d="M160 474 C214 462 260 472 318 462M448 458 C506 442 574 452 628 436"/>
+                <path class="rock" d="M120 448 C144 420 178 416 198 444 C180 466 144 468 120 448Z"/>
+                <path class="rock" d="M518 430 C546 396 590 400 620 428 C590 452 548 456 518 430Z"/>
+                <path class="grass" d="M154 438 C148 424 150 414 158 402M174 438 C174 424 180 414 190 406M562 424 C558 408 562 398 574 386M596 426 C600 412 610 404 624 398"/>
 
                 <path class="trunk" d="M360 452 C344 386 370 334 350 278 C330 224 346 158 394 98"/>
                 <path class="trunk" d="M386 452 C418 374 404 316 434 254 C462 196 446 144 410 98"/>
@@ -364,6 +382,9 @@
                   <circle class="ink-dot" cx="610" cy="424" r="3"/>
                   <circle class="ink-dot" cx="648" cy="410" r="2.5"/>
                   <circle class="ink-dot" cx="392" cy="462" r="3"/>
+                  <circle class="ink-dot" cx="184" cy="430" r="2"/>
+                  <circle class="ink-dot" cx="540" cy="442" r="2"/>
+                  <circle class="ink-dot" cx="580" cy="406" r="2.5"/>
                 </g>
 
                 <g aria-hidden="true">
@@ -392,6 +413,23 @@
                   <circle class="leaf-dot" cx="570" cy="346" r="6"/>
                   <circle class="leaf-dot" cx="664" cy="388" r="5"/>
                 </g>
+                <g aria-hidden="true">
+                  <circle class="leaf-dot" cx="166" cy="116" r="3.5"/>
+                  <circle class="leaf-dot" cx="186" cy="96" r="3"/>
+                  <circle class="leaf-dot" cx="214" cy="118" r="3.5"/>
+                  <circle class="leaf-dot" cx="242" cy="178" r="3"/>
+                  <circle class="leaf-dot" cx="304" cy="166" r="3.5"/>
+                  <circle class="leaf-dot" cx="526" cy="116" r="3"/>
+                  <circle class="leaf-dot" cx="570" cy="108" r="3.5"/>
+                  <circle class="leaf-dot" cx="610" cy="92" r="3"/>
+                  <circle class="leaf-dot" cx="654" cy="118" r="3.5"/>
+                  <circle class="leaf-dot" cx="156" cy="370" r="3"/>
+                  <circle class="leaf-dot" cx="194" cy="356" r="3.5"/>
+                  <circle class="leaf-dot" cx="244" cy="342" r="3"/>
+                  <circle class="leaf-dot" cx="528" cy="346" r="3.5"/>
+                  <circle class="leaf-dot" cx="602" cy="338" r="3"/>
+                  <circle class="leaf-dot" cx="636" cy="374" r="3.5"/>
+                </g>
 
                 <g aria-hidden="true">
                   <circle class="blossom" cx="196" cy="122" r="8"/>
@@ -400,6 +438,10 @@
                   <circle class="blossom" cx="628" cy="104" r="7"/>
                   <circle class="blossom" cx="226" cy="330" r="7"/>
                   <circle class="blossom" cx="560" cy="332" r="8"/>
+                  <circle class="blossom" cx="174" cy="98" r="4"/>
+                  <circle class="blossom" cx="292" cy="150" r="4"/>
+                  <circle class="blossom" cx="604" cy="126" r="4"/>
+                  <circle class="blossom" cx="608" cy="348" r="4"/>
                 </g>
 
                 <g aria-hidden="true">
