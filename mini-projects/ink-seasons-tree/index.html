@@ -33,6 +33,7 @@
       --season: #8fbf8f;
       --season-soft: #e7f2dc;
       --fall: #c77739;
+      --ink-opacity: 1;
     }
 
     * { box-sizing: border-box; }
@@ -81,6 +82,21 @@
         linear-gradient(180deg, var(--season-soft), rgba(255, 250, 240, 0.88) 48%, #f3ead8 100%);
       transition: background 700ms ease;
     }
+    .ink-stage::after {
+      content: "";
+      position: absolute;
+      inset: -18%;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse at 22% 36%, rgba(31, 41, 36, calc(0.10 * var(--ink-opacity))) 0 12%, transparent 34%),
+        radial-gradient(ellipse at 74% 24%, rgba(31, 41, 36, calc(0.08 * var(--ink-opacity))) 0 10%, transparent 30%),
+        radial-gradient(ellipse at 56% 76%, rgba(31, 41, 36, calc(0.07 * var(--ink-opacity))) 0 12%, transparent 32%);
+      filter: blur(10px);
+      opacity: 0.72;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      transform: translate3d(0, 0, 0);
+    }
     .ink-stage::before {
       content: "";
       position: absolute;
@@ -93,12 +109,12 @@
       pointer-events: none;
       mix-blend-mode: multiply;
     }
-    .ink-art { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .mountain { fill: none; stroke: rgba(31, 41, 36, 0.2); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
-    .mist { fill: none; stroke: rgba(31, 41, 36, 0.13); stroke-width: 6; stroke-linecap: round; }
-    .trunk { fill: none; stroke: #1d241f; stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
-    .branch { fill: none; stroke: #26312b; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
-    .thin-branch { fill: none; stroke: #2f3a34; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+    .ink-art { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
+    .mountain { fill: none; stroke: rgba(31, 41, 36, calc(0.20 * var(--ink-opacity))); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .mist { fill: none; stroke: rgba(31, 41, 36, calc(0.13 * var(--ink-opacity))); stroke-width: 6; stroke-linecap: round; }
+    .trunk { fill: none; stroke: rgba(29, 36, 31, var(--ink-opacity)); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+    .branch { fill: none; stroke: rgba(38, 49, 43, var(--ink-opacity)); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+    .thin-branch { fill: none; stroke: rgba(47, 58, 52, var(--ink-opacity)); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
     .leaf { fill: var(--season); opacity: 0.82; transform-box: fill-box; transform-origin: center; transition: fill 700ms ease, opacity 700ms ease, transform 700ms ease; }
     .blossom { fill: #efb9c6; opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 700ms ease, transform 700ms ease; }
     .fall-leaf { fill: var(--fall); opacity: 0; transform-box: fill-box; transform-origin: center; transition: opacity 700ms ease, transform 700ms ease; }
@@ -156,6 +172,8 @@
     .ink-stage.is-playing .branch { animation-delay: 260ms; }
     .ink-stage.is-playing .thin-branch { animation-delay: 560ms; }
     .ink-stage.is-playing .play-progress span { animation: seasonProgress var(--play-duration, 7200ms) linear forwards; }
+    .ink-stage.is-playing::after { animation: inkWashFlow 6200ms ease-in-out infinite alternate; }
+    .ink-stage.is-playing .mist { animation: mistFlow 3600ms ease-in-out infinite alternate; }
     .ink-stage.is-spring .blossom { opacity: 0.92; transform: scale(1.04); }
     .ink-stage.is-summer .leaf { opacity: 0.95; transform: scale(1.18); }
     .ink-stage.is-autumn .leaf { opacity: 0.72; transform: translateY(5px) rotate(7deg); }
@@ -181,6 +199,14 @@
     @keyframes snowFall {
       from { transform: translateY(0); }
       to { transform: translateY(16px); }
+    }
+    @keyframes inkWashFlow {
+      from { transform: translate3d(-10px, 0, 0) scale(1); opacity: 0.58; }
+      to { transform: translate3d(14px, 10px, 0) scale(1.04); opacity: 0.82; }
+    }
+    @keyframes mistFlow {
+      from { transform: translateX(-10px); opacity: 0.58; }
+      to { transform: translateX(18px); opacity: 0.95; }
     }
 
     .control-panel { padding: 20px; }
@@ -224,6 +250,16 @@
       font-weight: 850;
     }
     .loop-toggle input { width: 18px; height: 18px; accent-color: var(--accent); }
+    .ink-range {
+      display: grid;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffaf0;
+    }
+    .ink-range input { width: 100%; accent-color: var(--accent); }
+    .ink-range-output { color: var(--accent-dark); font-weight: 900; }
     .season-steps { display: grid; gap: 8px; margin-top: 18px; }
     .season-step { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fffaf0; color: var(--muted); font-weight: 800; }
     .season-step.is-active { border-color: rgba(47, 111, 95, 0.42); background: #e9f2ec; color: var(--accent-dark); }
@@ -369,6 +405,10 @@
                 <input type="checkbox" data-loop>
                 <span>循環播放</span>
               </label>
+              <label class="ink-range">
+                <span class="option-label">墨色濃淡 <strong class="ink-range-output" data-ink-value>100%</strong></span>
+                <input type="range" min="60" max="130" value="100" step="5" data-ink-range>
+              </label>
             </div>
             <div class="season-steps" aria-label="四季步驟">
               <div class="season-step is-active" data-step="0">春：新芽與花點</div>
@@ -414,6 +454,11 @@
 
     const $ = (selector) => document.querySelector(selector);
     const stage = $("[data-stage]");
+
+    const updateInkStrength = (value) => {
+      stage.style.setProperty("--ink-opacity", `${Number(value) / 100}`);
+      $("[data-ink-value]").textContent = `${value}%`;
+    };
 
     const render = () => {
       const season = seasons[current];
@@ -494,6 +539,11 @@
       });
     });
 
+    $("[data-ink-range]").addEventListener("input", (event) => {
+      updateInkStrength(event.target.value);
+    });
+
+    updateInkStrength($("[data-ink-range]").value);
     render();
   </script>
 </body>
