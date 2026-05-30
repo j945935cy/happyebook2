@@ -226,10 +226,17 @@
             <h2>一日路線</h2>
             <div class="route-map" data-map>
               <svg class="route-line" viewBox="0 0 420 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                <rect x="58" y="54" width="304" height="386" rx="34" fill="#fff3d7" stroke="#d99b4a" stroke-width="6"/>
-                <path d="M96 112h232M92 182h236M96 252h232M92 322h236M96 392h232M146 76v334M222 76v334M298 76v334" stroke="#f1c27d" stroke-width="8" stroke-linecap="round"/>
-                <path d="M96 360 C128 320 145 284 176 252 C204 222 236 214 260 182 C282 154 298 124 328 100" fill="none" stroke="#ffe9b8" stroke-width="16" stroke-linecap="round"/>
-                <path data-progress-path d="M96 360 C128 320 145 284 176 252 C204 222 236 214 260 182 C282 154 298 124 328 100" fill="none" stroke="#0f766e" stroke-width="8" stroke-linecap="round"/>
+                <rect x="42" y="42" width="336" height="410" rx="34" fill="#fff3d7" stroke="#d99b4a" stroke-width="6"/>
+                <path d="M42 330 C74 300 90 268 96 222 C101 178 122 119 164 42 L42 42Z" fill="#d9f99d" stroke="#bddb7a" stroke-width="4"/>
+                <path d="M252 70h88v74h-88zM238 178h104v86H238zM238 314h96v92h-96zM92 84h104v110H92zM92 236h110v122H92z" fill="#fffaf2" stroke="#f3c981" stroke-width="4"/>
+                <path d="M76 118h270M70 206h286M76 292h262M72 382h282M126 68v342M210 66v356M292 68v340" stroke="#f1c27d" stroke-width="7" stroke-linecap="round"/>
+                <path d="M92 384 C124 304 174 305 178 222 C181 153 242 138 296 114 C238 184 244 252 198 292 C150 334 202 382 316 330" fill="none" stroke="#ffe9b8" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                <path data-progress-path d="M92 384 C124 304 174 305 178 222 C181 153 242 138 296 114 C238 184 244 252 198 292 C150 334 202 382 316 330" fill="none" stroke="#0f766e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="90" y="64" fill="#9a5a1f" font-size="18" font-weight="800">安平</text>
+                <text x="238" y="164" fill="#9a5a1f" font-size="18" font-weight="800">老城區</text>
+                <text x="246" y="302" fill="#9a5a1f" font-size="18" font-weight="800">孔廟</text>
+                <text x="76" y="426" fill="#9a5a1f" font-size="18" font-weight="800">早餐</text>
+                <text x="284" y="430" fill="#9a5a1f" font-size="18" font-weight="800">夜市</text>
               </svg>
               <div class="map-food" aria-label="目前站點美食簡圖" data-map-food>
                 <div class="food-art" data-food-art></div>
@@ -259,7 +266,7 @@
               <div class="facts">
                 <div class="fact"><span>附近景點</span><strong data-attraction></strong></div>
                 <div class="fact"><span>推薦美食</span><strong data-food></strong></div>
-                <div class="fact"><span>建議時間</span><strong data-time></strong></div>
+                <div class="fact"><span>建議時段</span><strong data-time></strong></div>
                 <div class="fact"><span>移動時間</span><strong data-move></strong></div>
                 <div class="fact"><span>本站花費</span><strong data-cost></strong></div>
                 <div class="fact"><span>目前進度</span><strong data-progress></strong></div>
@@ -290,7 +297,7 @@
                 <thead>
                   <tr>
                     <th>站次</th>
-                    <th>時間</th>
+                    <th>時段</th>
                     <th>地點</th>
                     <th>美食</th>
                     <th>附近景點</th>
@@ -343,13 +350,13 @@
 
   <script>
     const stops = [
-      { place: "六千牛肉湯周邊", time: "08:00", attraction: "海安路散步", food: "牛肉湯", move: 0, hours: 0.6, cost: 180, x: 23, y: 70, story: "用一碗熱牛肉湯開場，先暖胃，再慢慢走進台南老城區。若店家排隊太久，可以改成附近牛肉湯店。" },
-      { place: "國華街", time: "09:30", attraction: "水仙宮市場", food: "碗粿", move: 12, hours: 0.8, cost: 80, x: 35, y: 61, story: "國華街一帶小吃密集，很適合做第二站。碗粿份量不大，可以保留後面繼續吃的空間。" },
-      { place: "赤崁樓", time: "11:00", attraction: "赤崁樓", food: "蝦仁飯", move: 10, hours: 1.1, cost: 140, x: 47, y: 52, story: "中午前後到赤崁樓附近，先吃一份蝦仁飯，再把古蹟放進行程，不只是吃，也能認識城市。" },
-      { place: "孔廟商圈", time: "13:00", attraction: "台南孔廟", food: "莉莉水果冰", move: 12, hours: 1.0, cost: 120, x: 56, y: 44, story: "午後安排水果冰和孔廟商圈，節奏放慢一點。這站適合躲太陽、休息、整理照片。" },
-      { place: "安平老街", time: "15:30", attraction: "安平古堡", food: "蝦捲", move: 22, hours: 1.4, cost: 160, x: 68, y: 35, story: "下午轉往安平，吃蝦捲、逛老街，再看古堡與巷弄。這站移動時間較長，適合騎車或搭公車。" },
-      { place: "漁光島", time: "17:30", attraction: "漁光島海岸", food: "冬瓜茶", move: 15, hours: 1.0, cost: 60, x: 75, y: 25, story: "傍晚到海邊看光線變化，用一杯冬瓜茶收住下午的熱度。若天氣不好，可以改回市區咖啡店。" },
-      { place: "武聖夜市周邊", time: "19:30", attraction: "夜市散步", food: "蚵仔煎", move: 20, hours: 1.2, cost: 180, x: 80, y: 18, story: "晚上用夜市當結尾，蚵仔煎、飲料與小點心都可以彈性選。吃到這裡，今天就不要再硬塞了。" }
+      { place: "六千牛肉湯周邊", time: "08:00 早餐", attraction: "海安路散步", food: "牛肉湯", move: 0, hours: 0.6, cost: 180, x: 22, y: 74, story: "早餐先用一碗熱牛肉湯開場，讓身體醒過來。若排隊太久，可以改成附近牛肉湯店，不必硬等。" },
+      { place: "國華街", time: "09:30 上午點心", attraction: "水仙宮市場", food: "碗粿", move: 12, hours: 0.8, cost: 80, x: 42, y: 59, story: "上午點心安排在國華街一帶。碗粿份量剛好，不會太飽，還能保留午餐空間。" },
+      { place: "赤崁樓", time: "11:30 午餐", attraction: "赤崁樓", food: "蝦仁飯", move: 10, hours: 1.1, cost: 140, x: 42, y: 42, story: "午餐回到赤崁樓附近吃蝦仁飯，再順路看古蹟。這站把午餐與城市歷史放在一起。" },
+      { place: "孔廟商圈", time: "13:30 下午點心", attraction: "台南孔廟", food: "莉莉水果冰", move: 12, hours: 1.0, cost: 120, x: 61, y: 30, story: "午後不適合吃太重，改用水果冰降溫。孔廟商圈也適合慢慢走，讓胃休息一下。" },
+      { place: "安平老街", time: "16:00 傍晚點心", attraction: "安平古堡", food: "蝦捲", move: 22, hours: 1.4, cost: 160, x: 71, y: 22, story: "傍晚往安平走，吃蝦捲、逛老街，再看古堡。這段可以反向往西，不必一直沿著市中心直線移動。" },
+      { place: "漁光島", time: "17:40 休息飲料", attraction: "漁光島海岸", food: "冬瓜茶", move: 15, hours: 0.8, cost: 60, x: 48, y: 56, story: "從安平繞到漁光島看夕陽，用一杯冬瓜茶當休息點。若天氣不好，可以改回市區咖啡店。" },
+      { place: "武聖夜市周邊", time: "19:30 晚餐/宵夜", attraction: "夜市散步", food: "蚵仔煎", move: 20, hours: 1.2, cost: 180, x: 76, y: 64, story: "最後再折回夜市，用蚵仔煎或其他熱食收尾。這一站可以當晚餐，也可以當宵夜，不必每樣都吃。" }
     ];
 
     const foodNotes = {
