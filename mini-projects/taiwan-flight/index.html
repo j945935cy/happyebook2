@@ -104,7 +104,8 @@
       stroke: rgba(255, 255, 255, 0.9);
       stroke-width: 5px;
     }
-    .city-dot { fill: #f97316; stroke: #ffffff; stroke-width: 5; }
+    .city-dot { fill: #f97316; stroke: #ffffff; stroke-width: 5; transition: fill 180ms ease, r 180ms ease; }
+    .city-dot.is-visited { fill: #22c55e; r: 15; }
     .landmark { fill: rgba(37, 99, 235, 0.18); stroke: #2563eb; stroke-width: 4; }
     .cloud {
       position: absolute;
@@ -184,6 +185,31 @@
     .control-button:active { transform: translateY(1px); background: #edf4ff; }
     .key-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
     .key-list li { padding: 10px 12px; border-radius: 8px; background: #f7f9fd; color: #374151; line-height: 1.55; }
+    .mission-card {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid #cfe0f7;
+      border-radius: 8px;
+      background: #f5f9ff;
+    }
+    .mission-card h3 { margin: 0; font-size: 1.05rem; }
+    .mission-card p { margin: 0; }
+    .mission-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+    .mission-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #374151;
+      font-weight: 800;
+    }
+    .mission-list span { color: var(--muted); font-size: 0.84rem; }
+    .mission-list li.is-visited { color: #166534; background: #ecfdf3; }
+    .mission-list li.is-next { outline: 2px solid rgba(37, 99, 235, 0.22); }
     kbd {
       display: inline-block;
       min-width: 1.8em;
@@ -261,15 +287,15 @@
                   <path class="landmark" d="M410 126l30 48h-60Z"/>
                   <path class="landmark" d="M250 664h82v54h-82Z"/>
                   <path class="landmark" d="M482 548c42 6 72 34 80 76c-52 10-94-16-112-58Z"/>
-                  <circle class="city-dot" cx="486" cy="144" r="12"/>
+                  <circle class="city-dot" cx="486" cy="144" r="12" data-city="台北"/>
                   <text class="city-label" x="506" y="151">台北</text>
-                  <circle class="city-dot" cx="414" cy="314" r="12"/>
+                  <circle class="city-dot" cx="414" cy="314" r="12" data-city="台中"/>
                   <text class="city-label" x="434" y="321">台中</text>
-                  <circle class="city-dot" cx="300" cy="582" r="12"/>
+                  <circle class="city-dot" cx="300" cy="582" r="12" data-city="台南"/>
                   <text class="city-label" x="320" y="589">台南</text>
-                  <circle class="city-dot" cx="336" cy="706" r="12"/>
+                  <circle class="city-dot" cx="336" cy="706" r="12" data-city="高雄"/>
                   <text class="city-label" x="356" y="713">高雄</text>
-                  <circle class="city-dot" cx="548" cy="446" r="12"/>
+                  <circle class="city-dot" cx="548" cy="446" r="12" data-city="花蓮"/>
                   <text class="city-label" x="568" y="453">花蓮</text>
                 </svg>
               </div>
@@ -313,6 +339,15 @@
               <li><kbd>A</kbd>：加速，背景移動更快</li>
               <li><kbd>D</kbd>：減速，背景移動變慢</li>
             </ul>
+            <div class="mission-card">
+              <div>
+                <span class="eyebrow">Mission</span>
+                <h3>巡航任務</h3>
+              </div>
+              <p data-current-city>讓城市點靠近飛機，就能完成該站。</p>
+              <ul class="mission-list" data-mission-list></ul>
+              <p data-mission-progress>完成 0 / 5</p>
+            </div>
             <div class="control-grid" aria-label="觸控控制">
               <button class="control-button" type="button" data-hold="left">左轉</button>
               <button class="control-button" type="button" data-hold="up">拉高</button>
@@ -349,6 +384,12 @@
     const speedText = document.querySelector("[data-speed]");
     const headingText = document.querySelector("[data-heading]");
     const scaleText = document.querySelector("[data-scale]");
+    const cityDots = [...document.querySelectorAll("[data-city]")];
+    const currentCityText = document.querySelector("[data-current-city]");
+    const missionList = document.querySelector("[data-mission-list]");
+    const missionProgressText = document.querySelector("[data-mission-progress]");
+    const cityNames = cityDots.map((dot) => dot.dataset.city);
+    const visitedCities = new Set();
 
     const keys = new Set();
     const state = {
@@ -408,9 +449,48 @@
       state.speed = 90;
       state.x = 0;
       state.y = 0;
+      visitedCities.clear();
+      cityDots.forEach((dot) => dot.classList.remove("is-visited"));
+      renderMission();
       keys.clear();
       stage.focus();
     });
+
+    const renderMission = () => {
+      const nextCity = cityNames.find((name) => !visitedCities.has(name));
+      missionList.innerHTML = cityNames.map((name) => {
+        const status = visitedCities.has(name) ? "已到達" : name === nextCity ? "下一站" : "等待";
+        const stateClass = visitedCities.has(name) ? "is-visited" : name === nextCity ? "is-next" : "";
+        return `<li class="${stateClass}">${name}<span>${status}</span></li>`;
+      }).join("");
+      missionProgressText.textContent = `完成 ${visitedCities.size} / ${cityNames.length}`;
+      currentCityText.textContent = nextCity ? `下一站：${nextCity}。讓地圖上的城市點靠近飛機中央。` : "任務完成：五個城市都巡航到了。";
+    };
+
+    const checkCityVisits = () => {
+      const stageRect = stage.getBoundingClientRect();
+      const planeX = stageRect.left + stageRect.width / 2;
+      const planeY = stageRect.top + stageRect.height / 2;
+      let changed = false;
+
+      cityDots.forEach((dot) => {
+        const name = dot.dataset.city;
+        if (visitedCities.has(name)) return;
+
+        const rect = dot.getBoundingClientRect();
+        const dotX = rect.left + rect.width / 2;
+        const dotY = rect.top + rect.height / 2;
+        const distance = Math.hypot(dotX - planeX, dotY - planeY);
+
+        if (distance < 72) {
+          visitedCities.add(name);
+          dot.classList.add("is-visited");
+          changed = true;
+        }
+      });
+
+      if (changed) renderMission();
+    };
 
     const tick = () => {
       if (keys.has("arrowleft")) state.heading -= 2.2;
@@ -440,10 +520,12 @@
       speedText.textContent = `${Math.round(state.speed)} km/h`;
       headingText.textContent = headingName(state.heading);
       scaleText.textContent = `${Math.round(mapScale * 100)}%`;
+      checkCityVisits();
 
       requestAnimationFrame(tick);
     };
 
+    renderMission();
     stage.focus();
     tick();
   </script>
