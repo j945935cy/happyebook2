@@ -155,7 +155,7 @@
     }
     .ink-stage.is-playing .branch { animation-delay: 260ms; }
     .ink-stage.is-playing .thin-branch { animation-delay: 560ms; }
-    .ink-stage.is-playing .play-progress span { animation: seasonProgress 7200ms linear forwards; }
+    .ink-stage.is-playing .play-progress span { animation: seasonProgress var(--play-duration, 7200ms) linear forwards; }
     .ink-stage.is-spring .blossom { opacity: 0.92; transform: scale(1.04); }
     .ink-stage.is-summer .leaf { opacity: 0.95; transform: scale(1.18); }
     .ink-stage.is-autumn .leaf { opacity: 0.72; transform: translateY(5px) rotate(7deg); }
@@ -200,6 +200,30 @@
       font-weight: 850;
     }
     .button.secondary { background: #fffaf0; border-color: var(--line); color: var(--ink); }
+    .option-group { display: grid; gap: 10px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .option-label { color: var(--muted); font-size: 0.88rem; font-weight: 850; }
+    .speed-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .speed-button {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffaf0;
+      color: var(--muted);
+      font-weight: 850;
+    }
+    .speed-button.is-active { border-color: rgba(47, 111, 95, 0.42); background: #e9f2ec; color: var(--accent-dark); }
+    .loop-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffaf0;
+      color: #4b5a51;
+      font-weight: 850;
+    }
+    .loop-toggle input { width: 18px; height: 18px; accent-color: var(--accent); }
     .season-steps { display: grid; gap: 8px; margin-top: 18px; }
     .season-step { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fffaf0; color: var(--muted); font-weight: 800; }
     .season-step.is-active { border-color: rgba(47, 111, 95, 0.42); background: #e9f2ec; color: var(--accent-dark); }
@@ -216,6 +240,7 @@
       .hero-grid, .stage-layout { grid-template-columns: 1fr; }
       .ink-stage { min-height: 430px; }
       .control-panel { padding: 16px; }
+      .speed-row { grid-template-columns: 1fr; }
       .footer-bar { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -333,6 +358,18 @@
               <button class="button secondary" type="button" data-next>下一季</button>
               <button class="button secondary" type="button" data-reset>回到春天</button>
             </div>
+            <div class="option-group" aria-label="播放設定">
+              <span class="option-label">播放速度</span>
+              <div class="speed-row">
+                <button class="speed-button" type="button" data-speed="slow">慢速</button>
+                <button class="speed-button is-active" type="button" data-speed="normal">標準</button>
+                <button class="speed-button" type="button" data-speed="fast">快速</button>
+              </div>
+              <label class="loop-toggle">
+                <input type="checkbox" data-loop>
+                <span>循環播放</span>
+              </label>
+            </div>
             <div class="season-steps" aria-label="四季步驟">
               <div class="season-step is-active" data-step="0">春：新芽與花點</div>
               <div class="season-step" data-step="1">夏：葉色變深</div>
@@ -364,20 +401,31 @@
       { key: "winter", title: "冬", copy: "冬天葉片淡去，只留下枝幹、冷霧與雪點，回到安靜的水墨留白。" }
     ];
 
+    const speeds = {
+      slow: 2600,
+      normal: 1800,
+      fast: 1050
+    };
+
     let current = 0;
     let timer = null;
     let isPlaying = false;
+    let speed = "normal";
 
     const $ = (selector) => document.querySelector(selector);
     const stage = $("[data-stage]");
 
     const render = () => {
       const season = seasons[current];
+      stage.style.setProperty("--play-duration", `${speeds[speed] * seasons.length}ms`);
       stage.className = `ink-stage is-${season.key}${isPlaying ? " is-playing" : ""}`;
       $("[data-season-title]").textContent = season.title;
       $("[data-season-copy]").textContent = season.copy;
       document.querySelectorAll("[data-step]").forEach((step, index) => {
         step.classList.toggle("is-active", index === current);
+      });
+      document.querySelectorAll("[data-speed]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.speed === speed);
       });
     };
 
@@ -397,11 +445,15 @@
       timer = setInterval(() => {
         current += 1;
         if (current >= seasons.length) {
-          stopPlayback();
-          current = seasons.length - 1;
+          if ($("[data-loop]").checked) {
+            current = 0;
+          } else {
+            stopPlayback();
+            current = seasons.length - 1;
+          }
         }
         render();
-      }, 1800);
+      }, speeds[speed]);
     });
 
     $("[data-prev]").addEventListener("click", () => {
@@ -427,6 +479,18 @@
         stopPlayback();
         current = Number(step.dataset.step);
         render();
+      });
+    });
+
+    document.querySelectorAll("[data-speed]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const wasPlaying = isPlaying;
+        speed = button.dataset.speed;
+        stopPlayback();
+        render();
+        if (wasPlaying) {
+          $("[data-play]").click();
+        }
       });
     });
 
