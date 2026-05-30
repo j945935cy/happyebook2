@@ -64,8 +64,89 @@
     .app-layout { display: grid; grid-template-columns: minmax(280px, 0.74fr) minmax(0, 1fr); gap: 22px; align-items: start; }
     .panel { border: 1px solid var(--line); border-radius: 8px; background: rgba(255, 253, 248, 0.94); box-shadow: var(--shadow); }
     .character-panel { padding: clamp(18px, 3vw, 24px); display: grid; gap: 16px; }
-    .character-frame { display: grid; place-items: center; min-height: 430px; border: 1px solid #e7ded0; border-radius: 8px; background: linear-gradient(180deg, #f3f2ff 0%, #fff9ef 100%); overflow: hidden; }
-    .character-frame img { display: block; width: min(92%, 360px); height: auto; object-fit: contain; filter: drop-shadow(0 18px 22px rgba(31, 41, 55, 0.12)); }
+    .character-frame {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 430px;
+      border: 1px solid #e7ded0;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #f3f2ff 0%, #fff9ef 100%);
+      overflow: hidden;
+      transition: background 260ms ease, border-color 260ms ease;
+    }
+    .character-frame::before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border-radius: 8px;
+      background: radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.76), transparent 42%);
+      pointer-events: none;
+    }
+    .character-frame img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: min(92%, 360px);
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 22px rgba(31, 41, 55, 0.12));
+      transition: filter 260ms ease, transform 260ms ease;
+    }
+    .occasion-badge {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      z-index: 4;
+      padding: 8px 10px;
+      border: 1px solid rgba(31, 41, 55, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.9);
+      color: var(--primary-dark);
+      font-weight: 900;
+      box-shadow: 0 10px 22px rgba(31, 41, 55, 0.08);
+    }
+    .style-chip-row {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 4;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .style-chip {
+      padding: 7px 9px;
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.92);
+      color: #374151;
+      font-size: 0.84rem;
+      font-weight: 850;
+      box-shadow: 0 8px 18px rgba(31, 41, 55, 0.08);
+    }
+    .occasion-prop {
+      position: absolute;
+      right: 18px;
+      top: 72px;
+      z-index: 3;
+      display: grid;
+      place-items: center;
+      width: 74px;
+      height: 74px;
+      border: 1px solid rgba(31, 41, 55, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.88);
+      box-shadow: 0 12px 26px rgba(31, 41, 55, 0.12);
+    }
+    .occasion-prop svg { width: 54px; height: 54px; }
+    .character-frame[data-occasion="daily"] { background: linear-gradient(180deg, #f1f3ff 0%, #fff9ef 100%); }
+    .character-frame[data-occasion="meeting"] { border-color: #b9bfdc; background: linear-gradient(180deg, #e7eafa 0%, #f9fafb 100%); }
+    .character-frame[data-occasion="meeting"] img { filter: drop-shadow(0 18px 22px rgba(31, 41, 55, 0.14)) saturate(0.88) contrast(1.04); }
+    .character-frame[data-occasion="date"] { border-color: #f1c7ba; background: linear-gradient(180deg, #fff0ea 0%, #fffaf4 100%); }
+    .character-frame[data-occasion="date"] img { filter: drop-shadow(0 18px 22px rgba(31, 41, 55, 0.12)) saturate(1.08) brightness(1.03); }
+    .character-frame[data-occasion="casual"] { border-color: #c8dfd3; background: linear-gradient(180deg, #eaf7ef 0%, #fffaf0 100%); }
+    .character-frame[data-occasion="casual"] img { transform: translateY(2px); filter: drop-shadow(0 18px 22px rgba(31, 41, 55, 0.11)) saturate(1.08); }
     .outfit-card { padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fffaf1; }
     .outfit-card span { display: block; color: var(--muted); font-size: 0.86rem; font-weight: 850; }
     .outfit-card strong { display: block; margin-top: 4px; color: #111827; font-size: 1.3rem; line-height: 1.35; }
@@ -141,8 +222,11 @@
       <section class="section">
         <div class="container app-layout">
           <section class="panel character-panel" aria-label="穿搭主角">
-            <div class="character-frame">
+            <div class="character-frame" data-character-frame data-occasion="daily">
+              <div class="occasion-badge" data-visual-title>日常上班</div>
+              <div class="occasion-prop" data-visual-prop aria-hidden="true"></div>
               <img src="office-lady.png" alt="Office lady 卡通主角" loading="eager">
+              <div class="style-chip-row" data-style-chips></div>
             </div>
             <div class="outfit-card">
               <span>目前穿搭</span>
@@ -225,6 +309,25 @@
       casual: { label: "週五休閒", pick: { top: "tee", outer: "cardigan", shoes: "sneakers" }, summary: "輕鬆、好活動，但仍維持乾淨整齊。" }
     };
 
+    const visuals = {
+      daily: {
+        chips: ["柔和針織", "好走樂福鞋", "日常親和"],
+        prop: `<svg viewBox="0 0 80 80" role="img" aria-label="辦公桌圖示"><rect x="16" y="24" width="48" height="32" rx="4" fill="#ffffff" stroke="#374151" stroke-width="4"/><path d="M22 34h36M22 44h24" stroke="#5b5f97" stroke-width="4" stroke-linecap="round"/><path d="M28 58h24" stroke="#374151" stroke-width="5" stroke-linecap="round"/></svg>`
+      },
+      meeting: {
+        chips: ["俐落襯衫", "西裝外套", "會議正式"],
+        prop: `<svg viewBox="0 0 80 80" role="img" aria-label="簡報文件圖示"><path d="M22 14h28l10 10v42H22Z" fill="#ffffff" stroke="#374151" stroke-width="4" stroke-linejoin="round"/><path d="M50 14v12h12" fill="none" stroke="#374151" stroke-width="4" stroke-linejoin="round"/><path d="M30 34h22M30 44h18M30 54h24" stroke="#5b5f97" stroke-width="4" stroke-linecap="round"/></svg>`
+      },
+      date: {
+        chips: ["柔和色調", "風衣線條", "下班氣質"],
+        prop: `<svg viewBox="0 0 80 80" role="img" aria-label="花束圖示"><path d="M40 42 28 66M40 42l12 24M40 42v26" stroke="#2f6f5f" stroke-width="4" stroke-linecap="round"/><circle cx="30" cy="28" r="9" fill="#f3a6a1" stroke="#374151" stroke-width="3"/><circle cx="50" cy="28" r="9" fill="#f8c7b4" stroke="#374151" stroke-width="3"/><circle cx="40" cy="20" r="8" fill="#f4b7d0" stroke="#374151" stroke-width="3"/></svg>`
+      },
+      casual: {
+        chips: ["素色上衣", "白鞋休閒", "週五輕鬆"],
+        prop: `<svg viewBox="0 0 80 80" role="img" aria-label="托特包圖示"><path d="M22 30h36l-4 36H26Z" fill="#ffffff" stroke="#374151" stroke-width="4" stroke-linejoin="round"/><path d="M32 30c0-10 16-10 16 0" fill="none" stroke="#5b5f97" stroke-width="4" stroke-linecap="round"/><path d="M32 44h16" stroke="#c87952" stroke-width="4" stroke-linecap="round"/></svg>`
+      }
+    };
+
     let currentOccasion = "daily";
     let outfit = { ...occasions.daily.pick };
 
@@ -261,6 +364,14 @@
       $("[data-score-comfort]").textContent = scoreLabel(total.comfort);
     };
 
+    const renderVisual = () => {
+      const visual = visuals[currentOccasion];
+      $("[data-character-frame]").dataset.occasion = currentOccasion;
+      $("[data-visual-title]").textContent = occasions[currentOccasion].label;
+      $("[data-visual-prop]").innerHTML = visual.prop;
+      $("[data-style-chips]").innerHTML = visual.chips.map((chip) => `<span class="style-chip">${chip}</span>`).join("");
+    };
+
     const bindEvents = () => {
       document.querySelectorAll("[data-occasion]").forEach((button) => {
         button.addEventListener("click", () => {
@@ -281,6 +392,7 @@
     const render = () => {
       renderButtons();
       renderAdvice();
+      renderVisual();
       bindEvents();
     };
 
