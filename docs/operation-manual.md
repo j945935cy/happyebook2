@@ -46,7 +46,7 @@ happyebook2/
 在專案根目錄執行：
 
 ```powershell
-python -m http.server 8000
+python3 -m http.server 8000
 ```
 
 然後開啟：

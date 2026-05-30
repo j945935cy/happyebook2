@@ -103,7 +103,7 @@ src/index.html
 
 可使用簡單靜態伺服器，例如：
 
-python -m http.server
+python3 -m http.server
 
 或使用 VS Code Live Server。
 

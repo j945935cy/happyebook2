@@ -7,7 +7,7 @@
 因為這個後台是純靜態的前端程式，你可以用以下兩種方式開啟它：
 
 - **方法 A（推薦）：透過本地伺服器開啟**  
-  在終端機輸入 `python -m http.server 8765`，然後在瀏覽器網址列輸入 `http://localhost:8765/src/admin.html`。
+  在終端機輸入 `python3 -m http.server 8765`，然後在瀏覽器網址列輸入 `http://localhost:8765/src/admin.html`。
 - **方法 B：直接點擊檔案**  
   在資料夾中找到 `c:\ebooks\happyebook2\src\admin.html`，點擊兩下直接用瀏覽器（Chrome/Edge 等）開啟即可。
 

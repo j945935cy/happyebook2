@@ -116,7 +116,7 @@ src/book-projects.json
 建議從專案根目錄啟動靜態伺服器，公開頁面位於根目錄，`src/` 主要保留樣式、腳本與資料檔。
 
 ```powershell
-python -m http.server 8090 --bind 127.0.0.1 --directory C:\happyebook2
+python3 -m http.server 8090 --bind 127.0.0.1 --directory C:\happyebook2
 ```
 
 開啟：
@@ -153,6 +153,16 @@ git -C C:\happyebook2 diff --stat
 
 ```powershell
 node --check C:\happyebook2\src\script.js
+```
+
+檢查開發環境：
+
+```bash
+git --version
+python3 --version
+node --version
+npm --version
+gh auth status
 ```
 
 推送到 GitHub：
@@ -206,6 +216,7 @@ happyebook2-commands
 - `docs/operation-manual.md`：網站操作手冊
 - `docs/content-model.md`：內容資料模型
 - `docs/site-map.md`：網站地圖
+- `docs/development-environment.md`：開發環境檢查與本機預覽
 - `docs/deployment-notes.md`：部署筆記
 - `docs/design-system.md`：設計系統
 - `docs/design-system-full.md`：完整設計規範草稿
