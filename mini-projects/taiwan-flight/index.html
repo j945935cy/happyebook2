@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2563eb">
+  <title>台灣簡易飛行模擬｜Happy eBook 小作品</title>
+  <meta name="description" content="以台灣地圖為背景的簡易飛行模擬小作品。使用方向鍵控制轉彎與高度，A 加速，D 減速，練習鍵盤事件、縮放與動畫。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/taiwan-flight/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="台灣簡易飛行模擬｜Happy eBook 小作品">
+  <meta property="og:description" content="方向鍵控制飛機，A/D 控制速度，高度會改變台灣地圖背景大小。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/taiwan-flight/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:image:alt" content="台灣簡易飛行模擬">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="台灣簡易飛行模擬｜Happy eBook 小作品">
+  <meta name="twitter:description" content="方向鍵控制飛機，A/D 控制速度，高度會改變台灣地圖背景大小。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5b6473;
+      --line: #d8e1ee;
+      --blue: #2563eb;
+      --blue-dark: #1e40af;
+      --sky: #dff3ff;
+      --panel: rgba(255, 255, 255, 0.92);
+      --shadow: 0 20px 50px rgba(31, 41, 55, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background: #f6f8fb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .site-header { border-bottom: 1px solid rgba(216, 225, 238, 0.8); background: rgba(255, 255, 255, 0.86); backdrop-filter: blur(16px); }
+    .header-row { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: baseline; gap: 10px; font-weight: 900; }
+    .brand-mark { color: var(--blue-dark); }
+    .brand-sub { color: var(--muted); font-size: 0.9rem; }
+    .site-nav { display: flex; flex-wrap: wrap; gap: 14px; color: var(--muted); font-weight: 720; }
+    .site-nav a.is-active { color: var(--blue-dark); }
+    .hero { padding: 42px 0 18px; }
+    .eyebrow { color: var(--blue-dark); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 10px 0 12px; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.08; letter-spacing: 0; }
+    .hero p { max-width: 52rem; margin: 0; color: var(--muted); font-size: 1.06rem; line-height: 1.8; }
+    .section { padding: 22px 0 58px; }
+    .sim-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 18px; align-items: start; }
+    .sim-panel, .info-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .sim-panel { overflow: hidden; }
+    .flight-stage {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.82), transparent 18%),
+        linear-gradient(180deg, #cdefff 0%, #eef9ff 56%, #f8fcff 100%);
+      outline: none;
+    }
+    .flight-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: 0.45;
+    }
+    .world {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 760px;
+      height: 920px;
+      transform-origin: center;
+      transition: transform 90ms linear;
+    }
+    .taiwan-map {
+      position: absolute;
+      inset: 0;
+      overflow: visible;
+      filter: drop-shadow(0 24px 32px rgba(25, 86, 61, 0.18));
+    }
+    .city-label {
+      font: 800 20px system-ui, sans-serif;
+      fill: #215442;
+      paint-order: stroke;
+      stroke: rgba(255, 255, 255, 0.9);
+      stroke-width: 5px;
+    }
+    .city-dot { fill: #f97316; stroke: #ffffff; stroke-width: 5; }
+    .landmark { fill: rgba(37, 99, 235, 0.18); stroke: #2563eb; stroke-width: 4; }
+    .cloud {
+      position: absolute;
+      width: 150px;
+      height: 58px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 34px -12px 0 10px rgba(255, 255, 255, 0.62), 70px 4px 0 0 rgba(255, 255, 255, 0.58);
+    }
+    .cloud-a { left: -40px; top: 90px; }
+    .cloud-b { right: 20px; top: 580px; transform: scale(0.76); }
+    .cloud-c { left: 70px; bottom: 90px; transform: scale(0.6); }
+    .plane {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 5;
+      width: 150px;
+      height: 150px;
+      transform: translate(-50%, -50%);
+      filter: drop-shadow(0 18px 18px rgba(31, 41, 55, 0.2));
+      pointer-events: none;
+    }
+    .propeller {
+      transform-origin: 75px 28px;
+      animation: spin 140ms linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hud {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 16px;
+      z-index: 6;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .meter {
+      padding: 10px 12px;
+      border: 1px solid rgba(31, 41, 55, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08);
+    }
+    .meter span { display: block; color: var(--muted); font-size: 0.76rem; font-weight: 850; }
+    .meter strong { display: block; margin-top: 2px; color: var(--blue-dark); font-size: 1.18rem; line-height: 1.2; }
+    .hint-strip {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 6;
+      max-width: calc(100% - 32px);
+      padding: 10px 12px;
+      border: 1px solid rgba(31, 41, 55, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.88);
+      color: #374151;
+      font-size: 0.92rem;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+    .info-panel { padding: 18px; display: grid; gap: 16px; }
+    .info-panel h2 { margin: 0; font-size: 1.35rem; }
+    .info-panel p { margin: 0; color: var(--muted); line-height: 1.75; }
+    .control-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .control-grid .wide { grid-column: span 3; }
+    .control-button {
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--blue-dark);
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(31, 41, 55, 0.06);
+    }
+    .control-button:active { transform: translateY(1px); background: #edf4ff; }
+    .key-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .key-list li { padding: 10px 12px; border-radius: 8px; background: #f7f9fd; color: #374151; line-height: 1.55; }
+    kbd {
+      display: inline-block;
+      min-width: 1.8em;
+      padding: 2px 7px;
+      border: 1px solid #cbd5e1;
+      border-bottom-width: 2px;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #111827;
+      font: 800 0.88rem ui-monospace, SFMono-Regular, Menlo, monospace;
+      text-align: center;
+    }
+    .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
+    .footer-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-nav a { color: var(--muted); font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .container { width: calc(100% - 24px); }
+      .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; }
+      .sim-layout { grid-template-columns: 1fr; }
+      .flight-stage { min-height: 560px; }
+      .hud { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .world { width: 650px; height: 785px; }
+    }
+
+    @media (max-width: 560px) {
+      .site-nav { gap: 10px; font-size: 0.92rem; }
+      .hero { padding-top: 30px; }
+      .flight-stage { min-height: 520px; }
+      .hud { left: 10px; right: 10px; top: 10px; gap: 7px; }
+      .meter { padding: 8px 9px; }
+      .meter strong { font-size: 1rem; }
+      .plane { width: 126px; height: 126px; }
+      .hint-strip { left: 10px; right: 10px; bottom: 10px; font-size: 0.84rem; }
+      .world { width: 560px; height: 680px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">小作品區</span></a>
+        <nav class="site-nav" aria-label="主選單">
+          <a href="../../index.html">首頁</a>
+          <a class="is-active" href="../">小作品</a>
+          <a href="../../learning/ai.html">AI 學習</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <span class="eyebrow">Flight Simulator</span>
+          <h1>台灣簡易飛行模擬</h1>
+          <p>用方向鍵控制卡通螺旋槳飛機。拉高時台灣地圖會變小，拉低時地圖會變大；A 加速、D 減速，先做出最小可玩的飛行感。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container sim-layout">
+          <section class="sim-panel" aria-label="飛行模擬畫面">
+            <div class="flight-stage" tabindex="0" data-stage>
+              <div class="world" data-world>
+                <div class="cloud cloud-a"></div>
+                <div class="cloud cloud-b"></div>
+                <div class="cloud cloud-c"></div>
+                <svg class="taiwan-map" viewBox="0 0 760 920" role="img" aria-label="簡化台灣地圖背景">
+                  <path d="M475 45 C544 92 584 166 600 246 C616 326 592 396 615 470 C640 552 596 632 548 700 C506 760 470 806 454 872 C450 890 424 898 410 882 C364 832 330 790 292 748 C244 696 204 646 176 582 C150 522 166 458 144 400 C120 336 130 274 166 218 C210 150 246 100 318 62 C374 32 428 18 475 45Z" fill="#c8e6aa" stroke="#276749" stroke-width="10" stroke-linejoin="round"/>
+                  <path d="M467 58 C524 110 558 178 572 250 C588 328 560 400 586 474 C612 548 570 620 526 684 C486 742 448 800 432 866" fill="none" stroke="rgba(255,255,255,0.46)" stroke-width="24" stroke-linecap="round"/>
+                  <path d="M260 176 C338 220 394 274 450 356 C506 438 538 526 526 632" fill="none" stroke="#8ec7ff" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
+                  <path class="landmark" d="M410 126l30 48h-60Z"/>
+                  <path class="landmark" d="M250 664h82v54h-82Z"/>
+                  <path class="landmark" d="M482 548c42 6 72 34 80 76c-52 10-94-16-112-58Z"/>
+                  <circle class="city-dot" cx="486" cy="144" r="12"/>
+                  <text class="city-label" x="506" y="151">台北</text>
+                  <circle class="city-dot" cx="414" cy="314" r="12"/>
+                  <text class="city-label" x="434" y="321">台中</text>
+                  <circle class="city-dot" cx="300" cy="582" r="12"/>
+                  <text class="city-label" x="320" y="589">台南</text>
+                  <circle class="city-dot" cx="336" cy="706" r="12"/>
+                  <text class="city-label" x="356" y="713">高雄</text>
+                  <circle class="city-dot" cx="548" cy="446" r="12"/>
+                  <text class="city-label" x="568" y="453">花蓮</text>
+                </svg>
+              </div>
+
+              <svg class="plane" viewBox="0 0 150 150" aria-hidden="true" data-plane>
+                <g>
+                  <ellipse cx="75" cy="76" rx="20" ry="48" fill="#ffffff" stroke="#1f2937" stroke-width="5"/>
+                  <path d="M75 22 C88 36 96 56 98 78 C90 84 60 84 52 78 C54 56 62 36 75 22Z" fill="#f97316" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M51 78 L14 98 C8 101 8 112 16 114 L58 104Z" fill="#60a5fa" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M99 78 L136 98 C142 101 142 112 134 114 L92 104Z" fill="#60a5fa" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M62 119 L42 138 L66 132Z" fill="#93c5fd" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M88 119 L108 138 L84 132Z" fill="#93c5fd" stroke="#1f2937" stroke-width="5" stroke-linejoin="round"/>
+                  <circle cx="75" cy="62" r="10" fill="#bfdbfe" stroke="#1f2937" stroke-width="4"/>
+                  <g class="propeller">
+                    <rect x="70" y="4" width="10" height="48" rx="5" fill="#374151" opacity="0.55"/>
+                    <rect x="51" y="23" width="48" height="10" rx="5" fill="#374151" opacity="0.45"/>
+                    <circle cx="75" cy="28" r="8" fill="#facc15" stroke="#1f2937" stroke-width="4"/>
+                  </g>
+                </g>
+              </svg>
+
+              <div class="hud" aria-label="飛行儀表">
+                <div class="meter"><span>高度</span><strong data-altitude>1200 m</strong></div>
+                <div class="meter"><span>速度</span><strong data-speed>90 km/h</strong></div>
+                <div class="meter"><span>航向</span><strong data-heading>北</strong></div>
+                <div class="meter"><span>地圖比例</span><strong data-scale>100%</strong></div>
+              </div>
+              <div class="hint-strip">請先點一下畫面，再用方向鍵、A、D 操作。</div>
+            </div>
+          </section>
+
+          <aside class="info-panel" aria-label="操作說明">
+            <div>
+              <span class="eyebrow">Controls</span>
+              <h2>操作方式</h2>
+            </div>
+            <ul class="key-list">
+              <li><kbd>←</kbd> <kbd>→</kbd>：左右轉彎</li>
+              <li><kbd>↑</kbd>：拉高，背景景物變小</li>
+              <li><kbd>↓</kbd>：拉低，背景景物變大</li>
+              <li><kbd>A</kbd>：加速，背景移動更快</li>
+              <li><kbd>D</kbd>：減速，背景移動變慢</li>
+            </ul>
+            <div class="control-grid" aria-label="觸控控制">
+              <button class="control-button" type="button" data-hold="left">左轉</button>
+              <button class="control-button" type="button" data-hold="up">拉高</button>
+              <button class="control-button" type="button" data-hold="right">右轉</button>
+              <button class="control-button" type="button" data-hold="slow">減速</button>
+              <button class="control-button" type="button" data-reset>重置</button>
+              <button class="control-button" type="button" data-hold="fast">加速</button>
+              <button class="control-button wide" type="button" data-hold="down">拉低</button>
+            </div>
+            <p>這是初版飛行感練習：飛機固定在中央，台灣地圖會依航向、速度與高度移動。之後可以再加入航線、任務點或碰到縣市時顯示介紹。</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../../index.html">首頁</a>
+          <a href="../">小作品</a>
+          <a href="../../learning/ai.html">AI 學習</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const stage = document.querySelector("[data-stage]");
+    const world = document.querySelector("[data-world]");
+    const plane = document.querySelector("[data-plane]");
+    const altitudeText = document.querySelector("[data-altitude]");
+    const speedText = document.querySelector("[data-speed]");
+    const headingText = document.querySelector("[data-heading]");
+    const scaleText = document.querySelector("[data-scale]");
+
+    const keys = new Set();
+    const state = {
+      heading: 0,
+      altitude: 1200,
+      speed: 90,
+      x: 0,
+      y: 0
+    };
+
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+    const headingName = (degree) => {
+      const names = ["北", "東北", "東", "東南", "南", "西南", "西", "西北"];
+      return names[Math.round((((degree % 360) + 360) % 360) / 45) % 8];
+    };
+
+    const setKey = (key, isDown) => {
+      if (isDown) keys.add(key);
+      else keys.delete(key);
+    };
+
+    window.addEventListener("keydown", (event) => {
+      const key = event.key.toLowerCase();
+      if (["arrowleft", "arrowright", "arrowup", "arrowdown", "a", "d"].includes(key)) {
+        event.preventDefault();
+        setKey(key, true);
+      }
+    });
+
+    window.addEventListener("keyup", (event) => {
+      setKey(event.key.toLowerCase(), false);
+    });
+
+    document.querySelectorAll("[data-hold]").forEach((button) => {
+      const map = {
+        left: "arrowleft",
+        right: "arrowright",
+        up: "arrowup",
+        down: "arrowdown",
+        fast: "a",
+        slow: "d"
+      };
+      const key = map[button.dataset.hold];
+      const release = () => setKey(key, false);
+      button.addEventListener("pointerdown", () => {
+        stage.focus();
+        setKey(key, true);
+      });
+      button.addEventListener("pointerup", release);
+      button.addEventListener("pointercancel", release);
+      button.addEventListener("pointerleave", release);
+    });
+
+    document.querySelector("[data-reset]").addEventListener("click", () => {
+      state.heading = 0;
+      state.altitude = 1200;
+      state.speed = 90;
+      state.x = 0;
+      state.y = 0;
+      keys.clear();
+      stage.focus();
+    });
+
+    const tick = () => {
+      if (keys.has("arrowleft")) state.heading -= 2.2;
+      if (keys.has("arrowright")) state.heading += 2.2;
+      if (keys.has("arrowup")) state.altitude += 22;
+      if (keys.has("arrowdown")) state.altitude -= 22;
+      if (keys.has("a")) state.speed += 1.8;
+      if (keys.has("d")) state.speed -= 1.8;
+
+      state.altitude = clamp(state.altitude, 300, 3200);
+      state.speed = clamp(state.speed, 0, 260);
+
+      const rad = (state.heading - 90) * Math.PI / 180;
+      const drift = state.speed / 38;
+      state.x -= Math.cos(rad) * drift;
+      state.y -= Math.sin(rad) * drift;
+
+      const altitudeRatio = (state.altitude - 300) / (3200 - 300);
+      const mapScale = 1.55 - altitudeRatio * 0.72;
+      const worldX = -50 + state.x * 0.045;
+      const worldY = -50 + state.y * 0.045;
+
+      world.style.transform = `translate(${worldX}%, ${worldY}%) rotate(${-state.heading}deg) scale(${mapScale})`;
+      plane.style.transform = `translate(-50%, -50%) rotate(${state.heading}deg)`;
+
+      altitudeText.textContent = `${Math.round(state.altitude)} m`;
+      speedText.textContent = `${Math.round(state.speed)} km/h`;
+      headingText.textContent = headingName(state.heading);
+      scaleText.textContent = `${Math.round(mapScale * 100)}%`;
+
+      requestAnimationFrame(tick);
+    };
+
+    stage.focus();
+    tick();
+  </script>
+</body>
+</html>
