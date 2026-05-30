@@ -115,14 +115,16 @@
     .map-food {
       position: absolute;
       z-index: 7;
-      width: 184px;
+      width: 142px;
       right: 14px;
       bottom: 14px;
       box-shadow: 0 16px 30px rgba(23, 32, 51, 0.16);
       pointer-events: none;
     }
-    .map-food .food-art { width: 100%; height: 92px; }
-    .map-food .food-caption strong { font-size: 1.08rem; }
+    .map-food .food-art { width: 100%; height: 68px; }
+    .map-food .food-art svg { width: 76px; height: 60px; }
+    .map-food .food-caption strong { font-size: 0.98rem; }
+    .map-food .food-caption span { font-size: 0.76rem; }
     .map-food .food-caption p { display: none; }
     .food-caption span { display: block; color: var(--warm); font-size: 0.86rem; font-weight: 900; }
     .food-caption strong { display: block; margin-top: 4px; color: #13233a; font-size: 1.28rem; }
@@ -130,8 +132,8 @@
     .wolf-marker {
       position: absolute;
       z-index: 8;
-      width: 58px;
-      height: 42px;
+      width: 44px;
+      height: 32px;
       transform: translate(-50%, -92%);
       filter: drop-shadow(0 10px 12px rgba(23, 32, 51, 0.22));
       pointer-events: none;
@@ -180,8 +182,8 @@
       .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
       .hero-grid, .trip-layout { grid-template-columns: 1fr; }
       .route-map { min-height: 420px; }
-      .map-food { width: 148px; right: 10px; bottom: 10px; }
-      .wolf-marker { width: 50px; height: 36px; }
+      .map-food { width: 118px; right: 10px; bottom: 10px; }
+      .wolf-marker { width: 38px; height: 28px; }
       .food-visual { grid-template-columns: 1fr; }
       .food-art { width: 100%; }
       .facts, .total-grid, .island-grid, .summary-grid, .checklist { grid-template-columns: 1fr; }
@@ -243,10 +245,10 @@
             <div class="route-map" data-map>
               <svg class="route-line" viewBox="0 0 420 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
                 <path d="M44 104c9 8 18 8 27 0 9 8 18 8 27 0M320 72c9 8 18 8 27 0 9 8 18 8 27 0M330 238c9 8 18 8 27 0 9 8 18 8 27 0M52 420c9 8 18 8 27 0 9 8 18 8 27 0M300 494c9 8 18 8 27 0 9 8 18 8 27 0" fill="none" stroke="#dffdfa" stroke-width="5" stroke-linecap="round"/>
-                <path d="M258 25 C278 34 282 48 296 55 C316 66 323 86 315 109 C309 126 315 143 326 158 C341 178 334 201 316 217 C302 230 309 254 325 272 C344 293 337 322 313 342 C292 359 286 383 278 410 C267 449 245 474 229 510 C218 535 197 558 174 544 C155 533 154 506 151 484 C147 454 129 439 116 414 C101 384 103 353 93 325 C82 294 68 270 80 238 C90 211 110 196 119 170 C130 137 146 112 168 89 C190 67 206 42 229 29 C240 23 249 20 258 25 Z" fill="#f7cf86" stroke="#4b3b2f" stroke-width="7" stroke-linejoin="round"/>
-                <path d="M232 63 C251 110 244 154 259 204 C276 260 263 320 241 371 C222 415 215 462 190 512" fill="none" stroke="#d9a85d" stroke-width="12" stroke-linecap="round"/>
-                <path d="M258 25 C278 34 282 48 296 55 C316 66 323 86 315 109 C309 126 315 143 326 158 C341 178 334 201 316 217 C302 230 309 254 325 272 C344 293 337 322 313 342 C292 359 286 383 278 410 C267 449 245 474 229 510 C218 535 197 558 174 544 C155 533 154 506 151 484 C147 454 129 439 116 414 C101 384 103 353 93 325 C82 294 68 270 80 238 C90 211 110 196 119 170 C130 137 146 112 168 89 C190 67 206 42 229 29 C240 23 249 20 258 25 Z" fill="none" stroke="#fff0b8" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-                <path data-progress-path d="M258 25 C278 34 282 48 296 55 C316 66 323 86 315 109 C309 126 315 143 326 158 C341 178 334 201 316 217 C302 230 309 254 325 272 C344 293 337 322 313 342 C292 359 286 383 278 410 C267 449 245 474 229 510 C218 535 197 558 174 544 C155 533 154 506 151 484 C147 454 129 439 116 414 C101 384 103 353 93 325 C82 294 68 270 80 238 C90 211 110 196 119 170 C130 137 146 112 168 89 C190 67 206 42 229 29 C240 23 249 20 258 25 Z" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M250 18 C269 25 279 42 296 50 C319 61 329 82 319 107 C312 124 320 142 331 160 C345 183 333 205 313 221 C300 232 304 254 322 275 C343 299 334 329 309 350 C286 370 283 393 272 425 C258 467 236 493 220 531 C211 553 193 563 175 547 C158 532 155 505 150 478 C143 441 123 426 111 398 C96 363 100 329 88 301 C75 270 66 242 83 211 C99 182 116 168 124 142 C135 106 156 82 184 60 C207 42 226 19 250 18 Z" fill="#f7cf86" stroke="#4b3b2f" stroke-width="7" stroke-linejoin="round"/>
+                <path d="M229 58 C247 111 244 161 260 213 C278 272 263 331 239 388 C222 429 215 473 191 520" fill="none" stroke="#d9a85d" stroke-width="12" stroke-linecap="round"/>
+                <path d="M250 18 C269 25 279 42 296 50 C319 61 329 82 319 107 C312 124 320 142 331 160 C345 183 333 205 313 221 C300 232 304 254 322 275 C343 299 334 329 309 350 C286 370 283 393 272 425 C258 467 236 493 220 531 C211 553 193 563 175 547 C158 532 155 505 150 478 C143 441 123 426 111 398 C96 363 100 329 88 301 C75 270 66 242 83 211 C99 182 116 168 124 142 C135 106 156 82 184 60 C207 42 226 19 250 18 Z" fill="none" stroke="#fff0b8" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+                <path data-progress-path d="M250 18 C269 25 279 42 296 50 C319 61 329 82 319 107 C312 124 320 142 331 160 C345 183 333 205 313 221 C300 232 304 254 322 275 C343 299 334 329 309 350 C286 370 283 393 272 425 C258 467 236 493 220 531 C211 553 193 563 175 547 C158 532 155 505 150 478 C143 441 123 426 111 398 C96 363 100 329 88 301 C75 270 66 242 83 211 C99 182 116 168 124 142 C135 106 156 82 184 60 C207 42 226 19 250 18 Z" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <div class="food-visual map-food" aria-label="目前站點美食簡圖" data-map-food>
                 <div class="food-art" data-food-art></div>
