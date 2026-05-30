@@ -241,6 +241,41 @@
     .mission-list span { color: var(--muted); font-size: 0.84rem; }
     .mission-list li.is-visited { color: #166534; background: #ecfdf3; }
     .mission-list li.is-next { outline: 2px solid rgba(37, 99, 235, 0.22); }
+    .flight-log {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .flight-log li {
+      padding: 9px 10px;
+      border-radius: 8px;
+      background: #fffaf0;
+      color: #4b5563;
+      line-height: 1.5;
+      font-size: 0.92rem;
+      font-weight: 760;
+    }
+    .flight-log strong { color: #92400e; }
+    .arrival-toast {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 7;
+      padding: 12px 16px;
+      border: 1px solid rgba(34, 197, 94, 0.36);
+      border-radius: 8px;
+      background: rgba(240, 253, 244, 0.96);
+      color: #166534;
+      font-weight: 950;
+      box-shadow: 0 16px 34px rgba(22, 101, 52, 0.16);
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.92);
+      transition: opacity 180ms ease, transform 180ms ease;
+      pointer-events: none;
+    }
+    .arrival-toast.is-visible { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     kbd {
       display: inline-block;
       min-width: 1.8em;
@@ -364,6 +399,7 @@
                   <strong data-nav-text>尋找台北</strong>
                 </div>
               </div>
+              <div class="arrival-toast" data-arrival-toast aria-live="polite"></div>
               <div class="hint-strip">請先點一下畫面，再用方向鍵、A、D 操作。</div>
             </div>
           </section>
@@ -389,6 +425,7 @@
               <p data-next-distance>距離：-- km</p>
               <ul class="mission-list" data-mission-list></ul>
               <p data-mission-progress>完成 0 / 5</p>
+              <ul class="flight-log" data-flight-log></ul>
             </div>
             <div class="control-grid" aria-label="觸控控制">
               <button class="control-button" type="button" data-hold="left">左轉</button>
@@ -428,13 +465,17 @@
     const scaleText = document.querySelector("[data-scale]");
     const navArrow = document.querySelector("[data-nav-arrow]");
     const navText = document.querySelector("[data-nav-text]");
+    const arrivalToast = document.querySelector("[data-arrival-toast]");
     const cityDots = [...document.querySelectorAll("[data-city]")];
     const currentCityText = document.querySelector("[data-current-city]");
     const nextDistanceText = document.querySelector("[data-next-distance]");
     const missionList = document.querySelector("[data-mission-list]");
     const missionProgressText = document.querySelector("[data-mission-progress]");
+    const flightLog = document.querySelector("[data-flight-log]");
     const cityNames = cityDots.map((dot) => dot.dataset.city);
     const visitedCities = new Set();
+    const arrivalLog = [];
+    let toastTimer = 0;
 
     const keys = new Set();
     const state = {
@@ -495,11 +536,33 @@
       state.x = 0;
       state.y = 0;
       visitedCities.clear();
+      arrivalLog.length = 0;
       cityDots.forEach((dot) => dot.classList.remove("is-visited"));
       renderMission();
+      renderFlightLog();
       keys.clear();
       stage.focus();
     });
+
+    const renderFlightLog = () => {
+      if (!arrivalLog.length) {
+        flightLog.innerHTML = "<li>尚未抵達城市，靠近第一站台北開始紀錄。</li>";
+        return;
+      }
+
+      flightLog.innerHTML = arrivalLog.map((item) => `
+        <li><strong>${item.city}</strong> ${item.time}<br>速度 ${item.speed} km/h，高度 ${item.altitude} m</li>
+      `).join("");
+    };
+
+    const showArrivalToast = (city) => {
+      arrivalToast.textContent = `抵達 ${city}`;
+      arrivalToast.classList.add("is-visible");
+      window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(() => {
+        arrivalToast.classList.remove("is-visible");
+      }, 1200);
+    };
 
     const renderMission = () => {
       const nextCity = cityNames.find((name) => !visitedCities.has(name));
@@ -564,6 +627,14 @@
         if (distance < 72) {
           visitedCities.add(name);
           dot.classList.add("is-visited");
+          arrivalLog.unshift({
+            city: name,
+            time: new Date().toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+            speed: Math.round(state.speed),
+            altitude: Math.round(state.altitude)
+          });
+          renderFlightLog();
+          showArrivalToast(name);
           changed = true;
         }
       });
@@ -606,6 +677,7 @@
     };
 
     renderMission();
+    renderFlightLog();
     renderNavigation();
     stage.focus();
     tick();
