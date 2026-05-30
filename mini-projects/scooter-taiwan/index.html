@@ -109,6 +109,12 @@
     th { color: #31517d; background: #eef5ff; font-size: 0.9rem; }
     td { color: #304054; line-height: 1.55; }
     tr.is-active-row td { background: #fff7ed; }
+    .island-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .island-card { display: grid; gap: 10px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: #fbfdff; }
+    .island-card h3 { margin: 0; color: #13233a; font-size: 1.28rem; }
+    .island-card p { margin: 0; color: #405066; line-height: 1.7; }
+    .island-meta { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; color: #304054; font-weight: 760; line-height: 1.55; }
+    .island-meta strong { color: #0f2b58; }
     .notice { margin: 14px 0 0; color: var(--muted); line-height: 1.7; font-size: 0.95rem; }
 
     .footer { margin-top: auto; padding: 24px 0 36px; color: var(--muted); }
@@ -121,7 +127,7 @@
       .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
       .hero-grid, .trip-layout { grid-template-columns: 1fr; }
       .route-map { min-height: 420px; }
-      .facts, .total-grid { grid-template-columns: 1fr; }
+      .facts, .total-grid, .island-grid { grid-template-columns: 1fr; }
       .button-row { flex-direction: column; align-items: stretch; }
       .button { width: 100%; }
       .footer-bar { flex-direction: column; align-items: flex-start; }
@@ -236,7 +242,17 @@
                 <tbody data-table></tbody>
               </table>
             </div>
-            <p class="notice">最小可用成果先完成互動與累計邏輯。下一版可以加入住宿、加油、每日分段、天氣提醒與實際地圖連結。</p>
+            <p class="notice">主線先計算本島環台。澎湖、金門、連江是離島縣，交通方式與費用變動較大，因此放在下方支線，避免把教學估算誤當成實際導航。</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <section class="panel table-panel" aria-label="離島支線">
+            <h2>離島支線</h2>
+            <div class="island-grid" data-islands></div>
+            <p class="notice">離島支線的時間與金額包含船班或航班的教學估算，不代表即時票價。真正規劃旅行前，請再查詢交通公司公告、車輛托運規則與天氣狀況。</p>
           </section>
         </div>
       </section>
@@ -275,6 +291,12 @@
       { city: "新竹市", attraction: "城隍廟", food: "貢丸米粉", km: 28, hours: 1.0, cost: 220, x: 44, y: 18, story: "來到新竹市，小綿羊用一碗米粉做補給。城市短站讓資料更新很清楚。" },
       { city: "桃園市", attraction: "大溪老街", food: "豆干", km: 62, hours: 2.0, cost: 250, x: 51, y: 14, story: "離台北越來越近，但旅程還沒結束。這一站把北台灣的老街味道補進紀錄。" },
       { city: "台北市", attraction: "大稻埕碼頭", food: "青草茶", km: 42, hours: 1.4, cost: 180, x: 57, y: 10, story: "小綿羊回到台北，完成一圈教學版環台。最後一步是檢查總里程、總時間與總花費是否合理。" }
+    ];
+
+    const islandTrips = [
+      { county: "澎湖縣", base: "嘉義布袋或高雄港", attraction: "雙心石滬", food: "仙人掌冰", transport: "搭船或飛機，機車另查托運或當地租車", hours: 8, cost: 2600, note: "適合安排成環台途中從嘉義或高雄延伸的海島支線。" },
+      { county: "金門縣", base: "台中或高雄機場", attraction: "莒光樓", food: "廣東粥", transport: "以飛機為主，50cc 建議改用當地租車", hours: 10, cost: 3600, note: "金門距離本島較遠，適合做成獨立 2 到 3 天支線。" },
+      { county: "連江縣", base: "基隆港或松山機場", attraction: "北海坑道", food: "老酒麵線", transport: "搭船或飛機，需特別確認天候與班次", hours: 12, cost: 4200, note: "馬祖受天候影響較明顯，教學版先列為可選進階支線。" }
     ];
 
     let current = 0;
@@ -320,6 +342,23 @@
       `).join("");
     };
 
+    const renderIslands = () => {
+      $("[data-islands]").innerHTML = islandTrips.map((trip) => `
+        <article class="island-card">
+          <h3>${trip.county}</h3>
+          <p>${trip.note}</p>
+          <ul class="island-meta">
+            <li><strong>出發接點：</strong>${trip.base}</li>
+            <li><strong>代表景點：</strong>${trip.attraction}</li>
+            <li><strong>美食：</strong>${trip.food}</li>
+            <li><strong>交通提醒：</strong>${trip.transport}</li>
+            <li><strong>估算時間：</strong>${hours(trip.hours)}</li>
+            <li><strong>估算花費：</strong>${money(trip.cost)}</li>
+          </ul>
+        </article>
+      `).join("");
+    };
+
     const render = () => {
       const stop = stops[current];
       const total = totals[current];
@@ -362,6 +401,7 @@
 
     renderDots();
     renderTable();
+    renderIslands();
     render();
   </script>
 </body>
