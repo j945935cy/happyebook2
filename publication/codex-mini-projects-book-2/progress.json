@@ -5,13 +5,13 @@
   "status": "drafting",
   "targetDate": "",
   "updatedAt": "2026-05-31",
-  "percent": 48,
-  "nextStep": "繼續擴寫 manuscript.md 第 5 章與第 6 章，補強嘉義、彰化美食一日遊的範本複製與城市資料替換教學。",
+  "percent": 53,
+  "nextStep": "繼續擴寫 manuscript.md 第 7 章與第 8 章，補強水墨四季動畫與 Office Lady 穿搭學習的狀態切換教學。",
   "stages": [
     { "name": "選題", "done": true },
     { "name": "大綱", "done": true },
     { "name": "初稿骨架", "done": true },
-    { "name": "章節擴寫", "done": false, "note": "第 1 到第 4 章已補強" },
+    { "name": "章節擴寫", "done": false, "note": "第 1 到第 6 章已補強" },
     { "name": "校稿", "done": false },
     { "name": "封面", "done": false },
     { "name": "上架資料草稿", "done": true },
@@ -31,5 +31,5 @@
     { "name": "星際射擊小遊戲", "url": "https://happyebook.com/mini-projects/star-shooter/", "included": true },
     { "name": "Hermes Agent 任務代理產生器", "url": "https://happyebook.com/mini-projects/hermes-agent/", "included": true }
   ],
-  "notes": "第二本已建立 outline.md、manuscript.md 初稿骨架與 google_books_copy.md。第 1 到第 4 章已擴寫，下一步補強第 5 章與第 6 章。"
+  "notes": "第二本已建立 outline.md、manuscript.md 初稿骨架與 google_books_copy.md。第 1 到第 6 章已擴寫，下一步補強第 7 章與第 8 章。"
 }
