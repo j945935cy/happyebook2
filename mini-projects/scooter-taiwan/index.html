@@ -112,6 +112,29 @@
       border: 1px solid #fed7aa;
     }
     .food-art svg { width: 92px; height: 78px; }
+    .map-food {
+      position: absolute;
+      z-index: 7;
+      width: 184px;
+      transform: translate(-50%, -112%);
+      box-shadow: 0 16px 30px rgba(23, 32, 51, 0.16);
+      pointer-events: none;
+    }
+    .map-food .food-art { width: 100%; height: 92px; }
+    .map-food .food-caption strong { font-size: 1.08rem; }
+    .map-food .food-caption p { display: none; }
+    .map-food::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      width: 18px;
+      height: 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #fffaf2;
+      transform: translateX(-50%) rotate(45deg);
+    }
     .food-caption span { display: block; color: var(--warm); font-size: 0.86rem; font-weight: 900; }
     .food-caption strong { display: block; margin-top: 4px; color: #13233a; font-size: 1.28rem; }
     .food-caption p { margin: 6px 0 0; color: var(--muted); line-height: 1.65; font-weight: 700; }
@@ -157,6 +180,7 @@
       .header-row { min-height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
       .hero-grid, .trip-layout { grid-template-columns: 1fr; }
       .route-map { min-height: 420px; }
+      .map-food { width: 154px; transform: translate(-50%, -108%); }
       .food-visual { grid-template-columns: 1fr; }
       .food-art { width: 100%; }
       .facts, .total-grid, .island-grid, .summary-grid, .checklist { grid-template-columns: 1fr; }
@@ -222,6 +246,14 @@
                 <path d="M234 64 C252 111 247 164 260 212 C276 271 263 326 239 381 C221 423 218 468 190 512" fill="none" stroke="#dbeafe" stroke-width="10" stroke-linecap="round"/>
                 <path data-progress-path d="M248 28 C276 41 296 68 302 104 C306 132 294 159 300 187 C306 219 329 247 326 289 C322 344 288 382 269 426 C248 475 233 518 199 544 C176 562 145 540 133 500 C119 455 111 405 106 360 C101 326 82 302 82 262 C82 223 99 194 115 164 C135 127 145 91 179 59 C202 38 228 19 248 28 Z" fill="none" stroke="#2563eb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
+              <div class="food-visual map-food" aria-label="目前站點美食簡圖" data-map-food>
+                <div class="food-art" data-food-art></div>
+                <div class="food-caption">
+                  <span>本站補給</span>
+                  <strong data-food-title></strong>
+                  <p data-food-note></p>
+                </div>
+              </div>
             </div>
             <p class="notice">地圖是台灣形狀的簡化示意圖，不代表實際道路形狀。點選圓點可以跳到該站。</p>
           </section>
@@ -231,14 +263,6 @@
               <span class="stop-kicker" data-step-label>第 1 站</span>
               <h2 class="stop-title" data-city>台北市</h2>
               <p class="stop-text" data-story></p>
-              <div class="food-visual" aria-label="本站美食簡圖">
-                <div class="food-art" data-food-art></div>
-                <div class="food-caption">
-                  <span>本站補給</span>
-                  <strong data-food-title></strong>
-                  <p data-food-note></p>
-                </div>
-              </div>
               <div class="facts">
                 <div class="fact"><span>代表景點</span><strong data-attraction></strong></div>
                 <div class="fact"><span>沿路美食</span><strong data-food></strong></div>
@@ -495,6 +519,9 @@
       $("[data-food-title]").textContent = stop.food;
       $("[data-food-note]").textContent = foodNotes[stop.food] || "這一站的地方美食補給。";
       $("[data-food-art]").innerHTML = foodArt[foodKinds[stop.food] || "plate"];
+      const mapFood = $("[data-map-food]");
+      mapFood.style.left = `${Math.min(84, Math.max(16, stop.x + 8))}%`;
+      mapFood.style.top = `${Math.min(90, Math.max(22, stop.y - 2))}%`;
       $("[data-distance]").textContent = `${stop.km} km`;
       $("[data-hours]").textContent = hours(stop.hours);
       $("[data-cost]").textContent = money(stop.cost);
