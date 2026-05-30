@@ -2,17 +2,17 @@
   "id": "codex-mini-projects-book-2",
   "title": "用 Codex 做出 10 個小作品 2",
   "subtitle": "地圖、動畫、穿搭、任務代理與飛行模擬實作入門",
-  "status": "drafting",
+  "status": "reviewing",
   "targetDate": "",
   "updatedAt": "2026-05-31",
-  "percent": 72,
-  "nextStep": "通讀 manuscript.md，統一語氣、章節長度與檢查清單格式，準備進入校稿。",
+  "percent": 76,
+  "nextStep": "進行 manuscript.md 全稿校稿，檢查語氣一致性、prompt 限制、章節長度、截圖需求與出版 metadata。",
   "stages": [
     { "name": "選題", "done": true },
     { "name": "大綱", "done": true },
     { "name": "初稿骨架", "done": true },
     { "name": "章節擴寫", "done": true, "note": "第 1 到第 12 章與附錄已完成初版擴寫" },
-    { "name": "校稿", "done": false },
+    { "name": "校稿", "done": false, "note": "已進入通讀校稿階段" },
     { "name": "封面", "done": false },
     { "name": "上架資料草稿", "done": true },
     { "name": "EPUB / PDF", "done": false },
@@ -31,5 +31,5 @@
     { "name": "星際射擊小遊戲", "url": "https://happyebook.com/mini-projects/star-shooter/", "included": true },
     { "name": "Hermes Agent 任務代理產生器", "url": "https://happyebook.com/mini-projects/hermes-agent/", "included": true }
   ],
-  "notes": "第二本已建立 outline.md、manuscript.md、google_books_copy.md 與 progress.json。第 1 到第 12 章與附錄已完成初版擴寫，下一步通讀校稿。"
+  "notes": "第二本已建立 outline.md、manuscript.md、google_books_copy.md 與 progress.json。第 1 到第 12 章與附錄已完成初版擴寫，已進入全稿通讀校稿階段。"
 }
