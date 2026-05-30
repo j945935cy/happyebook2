@@ -423,6 +423,7 @@
               </div>
               <p data-current-city>讓城市點靠近飛機，就能完成該站。</p>
               <p data-next-distance>距離：-- km</p>
+              <p data-flight-stats>飛行時間：00:00，累計里程：0 km</p>
               <ul class="mission-list" data-mission-list></ul>
               <p data-mission-progress>完成 0 / 5</p>
               <ul class="flight-log" data-flight-log></ul>
@@ -469,6 +470,7 @@
     const cityDots = [...document.querySelectorAll("[data-city]")];
     const currentCityText = document.querySelector("[data-current-city]");
     const nextDistanceText = document.querySelector("[data-next-distance]");
+    const flightStatsText = document.querySelector("[data-flight-stats]");
     const missionList = document.querySelector("[data-mission-list]");
     const missionProgressText = document.querySelector("[data-mission-progress]");
     const flightLog = document.querySelector("[data-flight-log]");
@@ -483,7 +485,10 @@
       altitude: 1200,
       speed: 90,
       x: 0,
-      y: 0
+      y: 0,
+      elapsed: 0,
+      distance: 0,
+      complete: false
     };
 
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -535,11 +540,16 @@
       state.speed = 90;
       state.x = 0;
       state.y = 0;
+      state.elapsed = 0;
+      state.distance = 0;
+      state.complete = false;
+      lastFrameTime = 0;
       visitedCities.clear();
       arrivalLog.length = 0;
       cityDots.forEach((dot) => dot.classList.remove("is-visited"));
       renderMission();
       renderFlightLog();
+      renderFlightStats();
       keys.clear();
       stage.focus();
     });
@@ -555,8 +565,18 @@
       `).join("");
     };
 
-    const showArrivalToast = (city) => {
-      arrivalToast.textContent = `抵達 ${city}`;
+    const formatElapsed = (seconds) => {
+      const minutes = Math.floor(seconds / 60).toString().padStart(2, "0");
+      const rest = Math.floor(seconds % 60).toString().padStart(2, "0");
+      return `${minutes}:${rest}`;
+    };
+
+    const renderFlightStats = () => {
+      flightStatsText.textContent = `飛行時間：${formatElapsed(state.elapsed)}，累計里程：${Math.round(state.distance)} km`;
+    };
+
+    const showArrivalToast = (message, isSummary = false) => {
+      arrivalToast.textContent = isSummary ? message : `抵達 ${message}`;
       arrivalToast.classList.add("is-visible");
       window.clearTimeout(toastTimer);
       toastTimer = window.setTimeout(() => {
@@ -640,9 +660,18 @@
       });
 
       if (changed) renderMission();
+      if (!state.complete && visitedCities.size === cityNames.length) {
+        state.complete = true;
+        showArrivalToast(`巡航完成，用時 ${formatElapsed(state.elapsed)}，${Math.round(state.distance)} km`, true);
+      }
     };
 
-    const tick = () => {
+    let lastFrameTime = 0;
+
+    const tick = (time = 0) => {
+      const deltaSeconds = lastFrameTime ? Math.min((time - lastFrameTime) / 1000, 0.08) : 0;
+      lastFrameTime = time;
+
       if (keys.has("arrowleft")) state.heading -= 2.2;
       if (keys.has("arrowright")) state.heading += 2.2;
       if (keys.has("arrowup")) state.altitude += 22;
@@ -652,6 +681,8 @@
 
       state.altitude = clamp(state.altitude, 300, 3200);
       state.speed = clamp(state.speed, 0, 260);
+      state.elapsed += deltaSeconds;
+      state.distance += state.speed * deltaSeconds / 3600;
 
       const rad = (state.heading - 90) * Math.PI / 180;
       const drift = state.speed / 38;
@@ -670,6 +701,7 @@
       speedText.textContent = `${Math.round(state.speed)} km/h`;
       headingText.textContent = headingName(state.heading);
       scaleText.textContent = `${Math.round(mapScale * 100)}%`;
+      renderFlightStats();
       checkCityVisits();
       renderNavigation();
 
@@ -678,6 +710,7 @@
 
     renderMission();
     renderFlightLog();
+    renderFlightStats();
     renderNavigation();
     stage.focus();
     tick();
