@@ -8,6 +8,8 @@ const googleBookCovers = {
 
   "ai-publishing-book": ["ai-publishing-book-cover.jpg"],
 
+  "codex-mini-projects-book-2": ["codex-mini-projects-book-2-cover.jpg"],
+
   "hermes-learning-by-doing": ["hermes-learning-by-doing-cover-1400x2100.png"],
 
   "codex-python": ["python-codex-exercises-cover-1400x2100.png"],
@@ -95,7 +97,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260529-1";
+const booksDataVersion = "20260531-2";
 
 const siteConfig = {
 
@@ -236,7 +238,7 @@ const resourcePromos = [
     title: "免費下載 Codex / Python 學程式 Prompt 範本",
     copy: "提供初學者可套用的 Prompt，練習請 Codex 解釋程式、修正錯誤與整理筆記。",
     url: "resources/free-resources.html#codex-prompts",
-    bookIds: ["codex-mini-projects-book", "codex-python", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
+    bookIds: ["codex-mini-projects-book", "codex-mini-projects-book-2", "codex-python", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
   }
 ];
 
