@@ -10,7 +10,7 @@ const googleBookCovers = {
 
   "codex-mini-projects-book": ["codex-mini-projects-book-imagegen-cover.png"],
 
-  "codex-mini-projects-book-2": ["codex-mini-projects-book-2-cover.jpg"],
+  "codex-mini-projects-book-2": ["codex-mini-projects-book-2-screenshot-cover.jpg", "codex-mini-projects-book-2-cover.jpg"],
 
   "hermes-learning-by-doing": ["hermes-learning-by-doing-cover-1400x2100.png"],
 
