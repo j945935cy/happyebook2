@@ -13,7 +13,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/codex-mini-projects-thumbnail.svg",
+    "cover": "assets/images/google-book-cover-images/codex-mini-projects-book-imagegen-cover.png",
     "description": "《用 Codex 做出 10 個小作品》用 2 本中英故事書與 8 個網頁小遊戲，帶初學者練習和 Codex 協作。每一章都用固定流程說明作品目標、可直接使用的 prompt、Codex 可能修改的地方、完成後怎麼檢查，以及發現問題時如何請 Codex 修正。適合第一次使用 Codex 的自學者、想用 AI 輔助教學的老師、想陪孩子做小作品的家長，以及想從小型網頁作品開始練習程式的人。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=UK3eEQAAQBAJ&redir_esc=y",

@@ -8,6 +8,8 @@ const googleBookCovers = {
 
   "ai-publishing-book": ["ai-publishing-book-cover.jpg"],
 
+  "codex-mini-projects-book": ["codex-mini-projects-book-imagegen-cover.png"],
+
   "codex-mini-projects-book-2": ["codex-mini-projects-book-2-cover.jpg"],
 
   "hermes-learning-by-doing": ["hermes-learning-by-doing-cover-1400x2100.png"],
@@ -97,7 +99,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260531-2";
+const booksDataVersion = "20260531-3";
 
 const siteConfig = {
 
