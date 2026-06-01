@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小精靈迷宮：收集星星 | Happy eBook</title>
+  <meta name="description" content="控制小精靈在迷宮中收集星星，避開巡邏角色。這是 Happy eBook 的 JavaScript 單關小遊戲。">
+  <link rel="canonical" href="https://happyebook.com/mini-projects/pixie-maze/">
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="小精靈迷宮：收集星星 | Happy eBook">
+  <meta property="og:description" content="控制小精靈在迷宮中收集星星，避開巡邏角色。">
+  <meta property="og:url" content="https://happyebook.com/mini-projects/pixie-maze/">
+  <meta property="og:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <meta property="og:site_name" content="Happy eBook">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="小精靈迷宮：收集星星 | Happy eBook">
+  <meta name="twitter:description" content="控制小精靈在迷宮中收集星星，避開巡邏角色。">
+  <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <link rel="stylesheet" href="../../src/styles.css?v=20260527-11">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">小作品遊戲</span></a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
+          <span class="nav-toggle-bars" aria-hidden="true"></span><span>選單</span>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="../../index.html">首頁</a>
+          <a href="../../books.html">書籍列表</a>
+          <a href="../">小作品</a>
+          <a href="../../about.html">關於</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="pixie-hero">
+        <div class="container pixie-layout">
+          <div class="pixie-copy">
+            <span class="eyebrow">JavaScript Game</span>
+            <h1>小精靈迷宮：收集星星</h1>
+            <p>移動小精靈收集全部星星，避開巡邏角色。桌機可用方向鍵或 WASD，H 提示，Z 撤回，P 暫停，R 重新開始；手機可用下方方向鍵。</p>
+            <div class="pixie-actions">
+              <button class="button primary" type="button" data-restart>重新開始</button>
+              <button class="button secondary" type="button" data-undo disabled>撤回一步</button>
+              <button class="button secondary" type="button" data-pause>暫停</button>
+              <button class="button secondary" type="button" data-hint>提示一步</button>
+              <a class="button secondary" href="../">返回小作品</a>
+            </div>
+          </div>
+
+          <section class="game-panel" aria-label="小精靈迷宮遊戲">
+            <div class="game-topbar">
+              <div><span>星星</span><strong data-score>0 / 0</strong></div>
+              <div><span>步數</span><strong data-steps>0</strong></div>
+              <div><span>狀態</span><strong data-status>準備開始</strong></div>
+            </div>
+
+            <div class="game-objective" data-objective>收集全部星星後，前往綠色出口。</div>
+
+            <div class="maze-wrap">
+              <div class="maze" data-maze role="grid" aria-label="迷宮地圖"></div>
+              <div class="game-message" data-message hidden>
+                <h2 data-message-title>過關</h2>
+                <p data-message-copy>你收集了所有星星。</p>
+                <div class="message-actions">
+                  <button class="button primary" type="button" data-message-restart>再玩一次</button>
+                  <button class="button secondary" type="button" data-resume hidden>繼續遊戲</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-progress" aria-label="遊戲進度">
+              <span data-exit-state>出口尚未解鎖</span>
+              <span data-best-score>最佳步數：尚未過關</span>
+              <span data-hint-text>提示：先觀察路線</span>
+              <span data-undo-state>撤回：尚無步驟</span>
+            </div>
+
+            <div class="touch-controls" aria-label="觸控方向鍵">
+              <button type="button" data-move="up" aria-label="向上">上</button>
+              <button type="button" data-move="left" aria-label="向左">左</button>
+              <button type="button" data-move="down" aria-label="向下">下</button>
+              <button type="button" data-move="right" aria-label="向右">右</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container lesson-strip">
+          <article>
+            <span>練習重點</span>
+            <h2>這個小作品練到什麼</h2>
+            <p>2D 陣列地圖、鍵盤事件、碰撞判斷、狀態管理、DOM 更新與手機觸控操作。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-bar">
+        <span>Happy eBook</span>
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="../../books.html">書籍列表</a>
+          <a href="../">小作品</a>
+          <a href="../../contact.html">聯絡</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script src="../../src/script.js?v=20260531-3"></script>
+  <script src="script.js"></script>
+</body>
+</html>
