@@ -1287,5 +1287,52 @@
     "popular": true,
     "launchRank": 5,
     "priceLabel": "提供試閱"
+  },
+  {
+    "id": "harness-engineering",
+    "title": "Harness Engineering 實戰：從 Prompt 到 Agent 的完整工作流",
+    "subtitle": "從 Prompt 到 Agent 的完整工作流",
+    "author": "Happy eBook",
+    "category": [
+      "AI 學習",
+      "Prompt Engineering",
+      "AI Agent",
+      "AI 工具應用",
+      "Vibe Coding"
+    ],
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "cover": "https://books.google.com.tw/books/publisher/content?id=c7HiEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
+    "description": "《Harness Engineering 實戰：從 Prompt 到 Agent 的完整工作流》是一本給 AI 初學者的工程工作流手冊。如果你已會使用 ChatGPT、Codex、Claude Code 等 AI 工具，卻發現只會寫 Prompt 不夠，本書將教你把 Prompt、Context、RAG、Agent、Sandbox 與 Human-in-the-loop 串成一條可落地、可驗證的 AI 流程。這不是只追求神奇提示詞的書，而是教你設計 AI 任務的資料、工具、權限、驗證與人工審核的實戰手冊。",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=c7HiEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=c7HiEQAAQBAJ&redir_esc=y",
+    "featured": true,
+    "popular": true,
+    "launchRank": 1,
+    "priceLabel": "NT$189，提供試閱版"
+  },
+  {
+    "id": "ipas-ai-mid-learning-handbook-2026-06",
+    "title": "iPAS AI 應用規劃師學習手冊：2026-06 月最新版",
+    "subtitle": "中級三科考點解析、AI 專案導入、生成式 AI、RAG、Agent 與模擬練習",
+    "author": "證照達人研究室 AI 組",
+    "category": [
+      "iPAS AI",
+      "AI 學習",
+      "考試準備",
+      "AI Agent"
+    ],
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "cover": "https://books.google.com.tw/books/publisher/content?id=ciriEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
+    "description": "一本面向 iPAS AI 應用規劃師中級考試的備考手冊，整理三大考科核心內容，涵蓋 AI 專案導入、資料處理、機器學習、生成式 AI、RAG、Agent、MLOps、AI 治理與考點模擬練習，協助讀者建立完整的中級備考框架。",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=ciriEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=ciriEQAAQBAJ&redir_esc=y",
+    "featured": true,
+    "popular": true,
+    "launchRank": 2,
+    "priceLabel": "NT$321，提供試閱版"
   }
 ]

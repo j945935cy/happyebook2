@@ -226,14 +226,14 @@ const resourcePromos = [
     title: "免費下載 AI 學習新手路線圖",
     copy: "整理從 AI 基礎、Prompt、Codex、AI Agent 到 AI 出版的學習順序。",
     url: "resources/free-resources.html#ai-roadmap",
-    bookIds: ["ai-publishing-book", "smart-ai-evolution", "hermes-learning-by-doing", "hermes-agent-guide", "codex-coding", "antigravity-coding"]
+    bookIds: ["ai-publishing-book", "smart-ai-evolution", "hermes-learning-by-doing", "hermes-agent-guide", "harness-engineering", "codex-coding", "antigravity-coding"]
   },
   {
     id: "ipas-review",
     title: "考前使用 iPAS AI 7 日複習表",
     copy: "把考綱、題庫、錯題與模擬考拆成一週可執行的複習任務。",
     url: "resources/ipas-ai-7-day-review.html",
-    bookIds: ["ipas-ai-應用規劃師初級題庫完全攻略", "ipas-ai-high-score-2026-03-exam", "ipas-ai-high-score-play-book", "ipas-mid-ai-guide", "ipas-ai-application-planner-basic-exam-guide", "happy-ipas-site", "ipas-ai-planner-play-book"]
+    bookIds: ["ipas-ai-應用規劃師初級題庫完全攻略", "ipas-ai-high-score-2026-03-exam", "ipas-ai-high-score-play-book", "ipas-mid-ai-guide", "ipas-ai-mid-learning-handbook-2026-06", "ipas-ai-application-planner-basic-exam-guide", "happy-ipas-site", "ipas-ai-planner-play-book"]
   },
   {
     id: "codex-prompts",
