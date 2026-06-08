@@ -199,6 +199,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/ai-soft-hardcover.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/ai-publishing-book.html</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -285,6 +291,12 @@
   <url>
     <loc>https://happyebook.com/books/html-css-18h-codex-ai.html</loc>
     <lastmod>2026-05-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/codex-html-18h.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
