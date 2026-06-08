@@ -22,6 +22,8 @@ const googleBookCovers = {
 
   "classic-english-writing": ["happyebook2_assets_images_classic-english-writing-cover.png"],
 
+  "codex-html-18h": ["codex-html-18h-cover.webp"],
+
   "codex-javascript-18h": ["codex-javascript-18hr-course-cover-1400x2100.png"],
 
   "ai-python-automation": ["ai-python-automation_epub_cover1.png", "ai-python-automation_epub_OEBPS_Images_cover.svg"],
@@ -99,7 +101,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260531-3";
+const booksDataVersion = "20260609-1";
 
 const siteConfig = {
 
@@ -240,7 +242,7 @@ const resourcePromos = [
     title: "免費下載 Codex / Python 學程式 Prompt 範本",
     copy: "提供初學者可套用的 Prompt，練習請 Codex 解釋程式、修正錯誤與整理筆記。",
     url: "resources/free-resources.html#codex-prompts",
-    bookIds: ["codex-mini-projects-book", "codex-mini-projects-book-2", "codex-python", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
+    bookIds: ["codex-mini-projects-book", "codex-mini-projects-book-2", "codex-python", "codex-html-18h", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
   }
 ];
 
