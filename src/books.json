@@ -264,6 +264,27 @@
     "priceLabel": "NT$118，提供試閱版"
   },
   {
+    "id": "codex-css-18h",
+    "title": "用 Codex 學 CSS 18 小時教材",
+    "subtitle": "從版面、響應式到作品頁發佈的 AI 輔助實作課",
+    "author": "Happy eBook",
+    "category": [
+      "AI 學習",
+      "程式設計",
+      "Codex"
+    ],
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "cover": "https://books.google.com.tw/books/publisher/content?id=J9HjEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl",
+    "description": "《用 Codex 學 CSS 18 小時教材》是一本為懂基本 HTML、想建立 CSS 實作能力的讀者設計的入門教材。本書不是 CSS 語法大全，而是一條清楚的實作路線。你會從 CSS 載入、選擇器、盒模型、文字與色彩開始，逐步學會 Flexbox、Grid、響應式設計、表單狀態、圖片比例、CSS 變數、可存取性與作品頁發佈檢查。每一小時都包含核心觀念、HTML/CSS 範例、Codex 提示詞、常見錯誤、DevTools 檢查清單與作品頁整合方向。讀完後，你將完成一個可展示、可檢查、可持續修改的 CSS 個人作品頁。",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=J9HjEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=J9HjEQAAQBAJ&redir_esc=y",
+    "featured": true,
+    "popular": true,
+    "priceLabel": "NT$181，提供試閱版"
+  },
+  {
     "id": "codex-javascript-18h",
     "title": "用 Codex 學 JavaScript：18 小時入門教材",
     "subtitle": "從網頁互動到完整小專案，一邊實作，一邊學會用 Codex 輔助寫程式",
