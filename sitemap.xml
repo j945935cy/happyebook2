@@ -661,6 +661,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/ai-modern-intro-python-ai-agent.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/mini-projects/star-shooter/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>

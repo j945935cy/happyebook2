@@ -1,5 +1,29 @@
 [
   {
+    "id": "ai-modern-intro-python-ai-agent",
+    "title": "AI 現代導論：從 Python 到 AI Agent",
+    "subtitle": "用 AIMA 的 Agent 思維重寫現代人工智慧入門",
+    "author": "Happy eBook",
+    "category": [
+      "AI 學習",
+      "Python",
+      "AI Agent",
+      "AIMA",
+      "自學"
+    ],
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "cover": "assets/images/20260523/0611 newbook/coverAI0611.png",
+    "description": "《AI 現代導論：從 Python 到 AI Agent》寫給想用現代方式重新理解人工智慧的初學者與自學者。本書以 AIMA 的 Agent 思維為主軸，從 Python 基礎、問題表示、搜尋、知識與推理，到 AI Agent 的任務拆解與工作流程，協助讀者把抽象的 AI 觀念連到可以實作、可以檢查、可以延伸的學習路線。",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=sHbkEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=sHbkEQAAQBAJ&redir_esc=y",
+    "featured": true,
+    "popular": true,
+    "launchRank": 1,
+    "priceLabel": "Google Play Books，提供試閱版"
+  },
+  {
     "id": "smart-ai-evolution-chatgpt-ai-agent",
     "title": "聰明人的 AI 進化論",
     "subtitle": "從 ChatGPT 到 AI Agent，建立未來十年的核心競爭力",
