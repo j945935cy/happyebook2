@@ -101,7 +101,7 @@ let disableCoverRequests = false;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260609-2";
+const booksDataVersion = "20260611-1";
 
 const siteConfig = {
 
@@ -228,7 +228,7 @@ const resourcePromos = [
     title: "免費下載 AI 學習新手路線圖",
     copy: "整理從 AI 基礎、Prompt、Codex、AI Agent 到 AI 出版的學習順序。",
     url: "resources/free-resources.html#ai-roadmap",
-    bookIds: ["ai-publishing-book", "smart-ai-evolution", "hermes-learning-by-doing", "hermes-agent-guide", "harness-engineering", "codex-coding", "antigravity-coding"]
+    bookIds: ["ai-publishing-book", "smart-ai-evolution-chatgpt-ai-agent", "smart-ai-evolution", "hermes-learning-by-doing", "hermes-agent-guide", "harness-engineering", "codex-coding", "antigravity-coding"]
   },
   {
     id: "ipas-review",
