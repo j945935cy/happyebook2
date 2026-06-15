@@ -2,7 +2,7 @@ const sampleBooks = [];
 
 const typeLabel = { free: "免費閱讀", paid: "付費購買", web: "網站教材" };
 
-const fallbackCoverDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900"><rect width="640" height="900" fill="#dbeafe"/><rect x="52" y="52" width="536" height="796" rx="24" fill="#eff6ff"/><text x="320" y="420" text-anchor="middle" fill="#1e3a5f" font-size="34" font-family="Noto Sans TC, sans-serif">封面載入中</text><text x="320" y="468" text-anchor="middle" fill="#4b6b8d" font-size="24" font-family="Noto Sans TC, sans-serif">已改用預設封面</text></svg>')}`;
+const fallbackCoverDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900"><rect width="640" height="900" fill="#dbeafe"/><rect x="52" y="52" width="536" height="796" rx="24" fill="#eff6ff"/><text x="320" y="420" text-anchor="middle" fill="#1e3a5f" font-size="34" font-family="Noto Sans TC, sans-serif">Happy eBook</text><text x="320" y="468" text-anchor="middle" fill="#4b6b8d" font-size="24" font-family="Noto Sans TC, sans-serif">預設書封</text></svg>')}`;
 
 const googleBookCovers = {
 
@@ -56,6 +56,24 @@ const googleBookCovers = {
 
 };
 
+const encodeCoverCandidate = (value) => {
+
+  const source = String(value || "").trim();
+
+  if (!source || source.startsWith("data:")) return source;
+
+  try {
+
+    return encodeURI(source);
+
+  } catch {
+
+    return source;
+
+  }
+
+};
+
 const getCoverSources = (cover, bookId) => {
 
   const primary = String(cover || "").trim();
@@ -85,7 +103,7 @@ const getCoverSources = (cover, bookId) => {
   if (primary.startsWith("../")) candidates.push(primary.slice(3));
   if (primary.startsWith("assets/")) candidates.push(`../${primary}`);
 
-  return [...new Set(candidates)];
+  return [...new Set(candidates.map(encodeCoverCandidate))];
 
 };
 
@@ -97,11 +115,9 @@ let coverLoadSuccessCount = 0;
 
 let coverLoadFailureCount = 0;
 
-let disableCoverRequests = false;
-
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260611-2";
+const booksDataVersion = "20260615-1";
 
 const siteConfig = {
 
@@ -215,6 +231,32 @@ const matchesTypeFilter = (book, filter) => {
   return getEffectiveType(book) === filter;
 
 };
+
+const categoryAliases = {
+  "英語/文學習": "英語學習",
+  "證照學習": "考試準備",
+  "iPAS AI 證照": "iPAS AI"
+};
+
+const primaryCategoryFilters = [
+  "AI 學習",
+  "AI Agent",
+  "Prompt Engineering",
+  "Python",
+  "Codex",
+  "程式設計",
+  "iPAS AI",
+  "考試準備",
+  "英語學習",
+  "數位出版",
+  "電子書",
+  "資安入門",
+  "雲端資安",
+  "Vibe Coding",
+  "Hermes"
+];
+
+const normalizeCategory = (category) => categoryAliases[String(category || "").trim()] || String(category || "").trim();
 
 const routeFilters = {
   ai: ["AI 學習", "AI 工具應用", "AI Agent", "Prompt Engineering", "Vibe Coding", "Hermes"],
@@ -334,8 +376,6 @@ const loadCoverIntoImage = (image) => {
 
   if (image.dataset.coverHydrated === "true") return;
 
-  if (disableCoverRequests) return;
-
   image.dataset.coverHydrated = "true";
 
   const candidates = JSON.parse(image.dataset.coverSources || "[]");
@@ -348,7 +388,10 @@ const loadCoverIntoImage = (image) => {
 
   const tryNext = () => {
 
-    if (index >= candidates.length) return;
+    if (index >= candidates.length) {
+      image.alt = image.dataset.coverAlt ? `${image.dataset.coverAlt}（預設書封）` : image.alt;
+      return;
+    }
 
     const candidate = candidates[index++];
 
@@ -371,14 +414,6 @@ const loadCoverIntoImage = (image) => {
     probe.addEventListener("error", () => {
 
       coverLoadFailureCount += 1;
-
-      if (coverLoadSuccessCount === 0 && coverLoadFailureCount >= 6) {
-
-        disableCoverRequests = true;
-
-        return;
-
-      }
 
       tryNext();
 
@@ -419,19 +454,7 @@ const ensureCoverObserver = () => {
 };
 
 const hydrateCoverImages = (container = document) => {
-
-  const observer = ensureCoverObserver();
-
   container.querySelectorAll("img[data-cover-image]").forEach((image) => {
-
-    if (observer) {
-
-      observer.observe(image);
-
-      return;
-
-    }
-
     loadCoverIntoImage(image);
 
   });
@@ -472,7 +495,10 @@ const populateStats = async (books) => {
 
 };
 
-const getCategories = (book) => Array.isArray(book.category) ? book.category : [book.category];
+const getCategories = (book) => {
+  const categories = Array.isArray(book.category) ? book.category : [book.category];
+  return [...new Set(categories.map(normalizeCategory).filter(Boolean))];
+};
 
 const uniqueCategories = (books) => [...new Set(books.flatMap(getCategories))];
 
@@ -764,7 +790,7 @@ const initHome = async () => {
 
   if (featuredGrid && books.length) {
 
-    const featuredBooks = books.filter((b) => b.featured).slice(0, 8);
+    const featuredBooks = books.filter((b) => b.featured).slice(0, 6);
 
     featuredGrid.innerHTML = featuredBooks.map(createBookCard).join("");
 
@@ -780,9 +806,11 @@ const renderCategoryFilters = (books) => {
 
     const baseButton = list.querySelector('[data-category-filter="all"]')?.outerHTML || '<button class="filter-chip is-active" data-category-filter="all" type="button">全部分類</button>';
 
-    const buttons = uniqueCategories(books)
+    const availableCategories = uniqueCategories(books);
 
-      .sort((left, right) => left.localeCompare(right, "zh-Hant"))
+    const buttons = primaryCategoryFilters
+
+      .filter((category) => availableCategories.includes(category))
 
       .map((category) => `<button class="filter-chip" data-category-filter="${category}" type="button">${category}</button>`);
 
@@ -814,7 +842,7 @@ const initBooksPage = async () => {
 
   let activeType = params.get("type") || "all";
 
-  let activeCategory = params.get("category") || "all";
+  let activeCategory = params.get("category") ? normalizeCategory(params.get("category")) : "all";
 
   let activeSearch = params.get("q") || "";
 
