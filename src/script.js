@@ -14,17 +14,35 @@ const googleBookCovers = {
 
   "hermes-learning-by-doing": ["hermes-learning-by-doing-cover-1400x2100.png"],
 
-  "codex-python": ["python-codex-exercises-cover-1400x2100.png"],
+  "codex-python": ["codex-python-google-cover.png", "python-codex-exercises-cover-1400x2100.png"],
 
-  "codex-coding": ["codex-coding-exercises-cover-1400x2100.png", "codex-learning-by-doing-cover-1400x2100.png"],
+  "codex-coding": ["codex-coding-google-cover.png", "codex-coding-exercises-cover-1400x2100.png", "codex-learning-by-doing-cover-1400x2100.png"],
 
-  "antigravity-coding": ["antigravity-coding-exercises-cover-1400x2100.png"],
+  "antigravity-coding": ["antigravity-coding-google-cover.jpg", "antigravity-coding-exercises-cover-1400x2100.png"],
 
   "classic-english-writing": ["happyebook2_assets_images_classic-english-writing-cover.png"],
 
-  "codex-html-18h": ["codex-html-18h-cover.webp"],
+  "codex-html-18h": ["GGKEY_PG5C88JAPT0_frontcover.png", "codex-html-18h-cover.webp"],
 
-  "codex-javascript-18h": ["codex-javascript-18hr-course-cover-1400x2100.png"],
+  "codex-css-18h": ["GGKEY_T5Z67TRQA55_frontcover.png", "codex-css-18h-google-cover.jpg"],
+
+  "codex-javascript-18h": ["codex-javascript-18h-google-cover.jpg", "codex-javascript-18hr-course-cover-1400x2100.png"],
+
+  "html-css-18h-codex-ai": ["html-css-18h-codex-ai-google-cover.jpg"],
+
+  "ipas-ai-應用規劃師初級題庫完全攻略": ["ipas-ai-basic-question-bank-google-cover.jpg"],
+
+  "epub-sigil-ai": ["AI-Sigil.png", "epub-sigil-ai-google-cover.jpg"],
+
+  "ipas-ai-planner-play-book": ["ipas-ai-planner-play-book-google-cover.jpg"],
+
+  "english-grammar-zero-start": ["english-grammar-zero-start-google-cover.png"],
+
+  "speech-english-play": ["speech-english-play-google-cover.png"],
+
+  "keeping-up-joneses-bilingual": ["keeping-up-joneses-bilingual-google-cover.jpg"],
+
+  "vibe-coding-html-css-js": ["GGKEY_1TED5EGFLYL_frontcover.png"],
 
   "ai-python-automation": ["ai-python-automation_epub_cover1.png", "ai-python-automation_epub_OEBPS_Images_cover.svg"],
 
@@ -50,7 +68,9 @@ const googleBookCovers = {
 
   "2026-cloud-security": ["2026-Cloud-Security_docs_assets_images_cover-2026-cloud-security.svg"],
 
-  "word-vba-examples": ["happyebook2_assets_images_word-vba-examples-cover.png"],
+  "word-vba-examples": ["word-vba-examples-google-cover.png", "happyebook2_assets_images_word-vba-examples-cover.png"],
+  "harness-engineering": ["harness-engineering-google-cover.jpg"],
+  "ipas-ai-mid-learning-handbook-2026-06": ["ipas-ai-mid-learning-handbook-2026-06-google-cover.jpg"],
   "ipas-ai-high-score-2026-03-exam": ["ipas-ai-basic-question-bank-2026-500-cover.jpg"],
   "windows-aicoding": ["Windows-AICoding_google ebook cover.png"]
 
