@@ -24,7 +24,7 @@ const googleBookCovers = {
 
   "codex-html-18h": ["GGKEY_PG5C88JAPT0_frontcover.png", "codex-html-18h-cover.webp"],
 
-  "codex-css-18h": ["GGKEY_T5Z67TRQA55_frontcover.png", "codex-css-18h-google-cover.jpg"],
+  "codex-css-18h": ["GGKEY_T5Z67TRQA55_cover_option_2_style.png", "GGKEY_T5Z67TRQA55_frontcover.png", "codex-css-18h-google-cover.jpg"],
 
   "codex-javascript-18h": ["codex-javascript-18h-google-cover.jpg", "codex-javascript-18hr-course-cover-1400x2100.png"],
 
@@ -69,6 +69,7 @@ const googleBookCovers = {
   "2026-cloud-security": ["2026-Cloud-Security_docs_assets_images_cover-2026-cloud-security.svg"],
 
   "word-vba-examples": ["word-vba-examples-google-cover.png", "happyebook2_assets_images_word-vba-examples-cover.png"],
+  "word-builder-1200": ["GGKEY_JFUE6T0C6BS_frontcover.png"],
   "harness-engineering": ["harness-engineering-google-cover.jpg"],
   "ipas-ai-mid-learning-handbook-2026-06": ["ipas-ai-mid-learning-handbook-2026-06-google-cover.jpg"],
   "ipas-ai-high-score-2026-03-exam": ["ipas-ai-basic-question-bank-2026-500-cover.jpg"],
