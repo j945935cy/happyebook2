@@ -28,7 +28,7 @@ const googleBookCovers = {
 
   "codex-javascript-18h": ["codex-javascript-18h-google-cover.jpg", "codex-javascript-18hr-course-cover-1400x2100.png"],
 
-  "html-css-18h-codex-ai": ["html-css-18h-codex-ai-google-cover.jpg"],
+  "html-css-18h-codex-ai": ["GGKEY_T16QHNQSP55_frontcover.png", "html-css-18h-codex-ai-google-cover.jpg"],
 
   "ipas-ai-應用規劃師初級題庫完全攻略": ["ipas-ai-basic-question-bank-google-cover.jpg"],
 
