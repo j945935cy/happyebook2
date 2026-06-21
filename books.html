@@ -20,6 +20,9 @@
   <meta name="twitter:description" content="瀏覽 Happy eBook 的所有 AI、Python、iPAS AI、Prompt Engineering、英文學習與數位出版教材，依免費閱讀、提供試閱、付費購買、網站教材與分類快速篩選。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
   <meta name="twitter:image:alt" content="Happy eBook 書籍列表封面圖">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/styles.css?v=20260615-1">
   <script type="application/ld+json">
   {
@@ -51,17 +54,21 @@
   <div class="site-shell">
     <header class="site-header">
       <div class="container header-row">
-        <a class="brand" href="index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">書籍列表</span></a>
+        <a class="brand" href="index.html"><i data-lucide="book-open" class="icon-left"></i><span class="brand-mark">Happy eBook</span><span class="brand-sub">書籍列表</span></a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單"><span class="nav-toggle-bars" aria-hidden="true"></span><span>選單</span></button>
         <nav class="site-nav" data-site-nav><a href="index.html">首頁</a><a class="is-active" href="books.html">書籍列表</a><a href="learning/ipas-ai.html">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a><a href="about.html">關於</a><a href="contact.html">聯絡</a></nav>
       </div>
     </header>
     <main>
       <section class="page-hero"><div class="container"><span class="eyebrow">書籍</span><h1>書籍列表</h1><p>透過免費閱讀、提供試閱、付費購買與網站教材，搭配搜尋與主題分類，直接找到適合你的學習資源。</p></div></section>
-      <section class="section"><div class="container"><div class="filter-shell"><div class="filter-bar"><div class="search-group"><label class="search-label" for="book-search">搜尋作品</label><input id="book-search" class="search-input" data-search-input type="search" placeholder="搜尋書名、作者、分類" autocomplete="off"><p class="filter-hint">分類列保留常用主題；更細的標籤可直接用搜尋找到。</p></div><div class="filter-group"><button class="filter-chip is-active" data-type-filter="all" type="button">全部</button><button class="filter-chip" data-type-filter="free" type="button">免費閱讀</button><button class="filter-chip" data-type-filter="preview" type="button">提供試閱</button><button class="filter-chip" data-type-filter="paid" type="button">付費購買</button><button class="filter-chip" data-type-filter="web" type="button">網站教材</button></div><div class="filter-group" data-category-filter-list><button class="filter-chip is-active" data-category-filter="all" type="button">全部分類</button></div></div></div><div class="book-grid" data-books-grid></div></div></section>
+      <section class="section"><div class="container"><div class="filter-shell"><div class="filter-bar"><div class="search-group"><label class="search-label" for="book-search"><i data-lucide="search" class="icon-left"></i>搜尋作品</label><input id="book-search" class="search-input" data-search-input type="search" placeholder="搜尋書名、作者、分類" autocomplete="off"><p class="filter-hint">分類列保留常用主題；更細的標籤可直接用搜尋找到。</p></div><div class="filter-group"><button class="filter-chip is-active" data-type-filter="all" type="button">全部</button><button class="filter-chip" data-type-filter="free" type="button">免費閱讀</button><button class="filter-chip" data-type-filter="preview" type="button">提供試閱</button><button class="filter-chip" data-type-filter="paid" type="button">付費購買</button><button class="filter-chip" data-type-filter="web" type="button">網站教材</button></div><div class="filter-group" data-category-filter-list><button class="filter-chip is-active" data-category-filter="all" type="button">全部分類</button></div></div></div><div class="book-grid" data-books-grid></div></div></section>
     </main>
     <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><nav class="footer-nav" aria-label="頁尾導覽"><a href="books.html">書籍列表</a><a href="learning/ipas-ai.html">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a><a href="about.html">關於</a><a href="contact.html">聯絡</a></nav></div></footer>
   </div>
   <script src="src/script.js?v=20260615-1"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>

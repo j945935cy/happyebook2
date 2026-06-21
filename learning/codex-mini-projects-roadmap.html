@@ -20,6 +20,9 @@
   <meta name="twitter:title" content="Codex 小作品學習路線｜Happy eBook">
   <meta name="twitter:description" content="用 2 本中英童書與 8 個小作品，練習 Codex AI coding。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../src/styles.css?v=20260528-4">
   <style>
     .roadmap-page {
@@ -89,7 +92,7 @@
   <div class="site-shell">
     <header class="site-header">
       <div class="container header-row">
-        <a class="brand" href="../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">Codex 小作品路線</span></a>
+        <a class="brand" href="../index.html"><i data-lucide="map" class="icon-left"></i><span class="brand-mark">Happy eBook</span><span class="brand-sub">Codex 小作品路線</span></a>
         <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單">
           <span class="nav-toggle-bars" aria-hidden="true"></span>
           <span>選單</span>
@@ -112,8 +115,8 @@
           <h1>Codex 小作品<br>學習路線</h1>
           <p>用 2 本中英童書與 8 個小作品，練習把需求說清楚、請 Codex 實作、自己檢查結果，再把問題修到可用。</p>
           <div class="hero-actions">
-            <a class="button primary button-large" href="#first-task">從第一個任務開始</a>
-            <a class="button secondary button-large" href="../mini-projects/">查看小作品</a>
+            <a class="button primary button-large" href="#first-task"><i data-lucide="play" class="icon-left"></i>從第一個任務開始</a>
+            <a class="button secondary button-large" href="../mini-projects/"><i data-lucide="layout-grid" class="icon-left"></i>查看小作品</a>
           </div>
         </div>
       </section>
@@ -300,5 +303,9 @@
     </footer>
   </div>
   <script src="../src/script.js?v=20260527-11"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
