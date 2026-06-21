@@ -1,5 +1,72 @@
 [
   {
+    "id": "ai-agent-era-handbook",
+    "title": "《AI Agent 時代》從演算法、自動化到 AI 員工：掌握未來工作的學習與實戰指南",
+    "subtitle": "從技術脈絡到工作流設計，30 天學習路線、章末總結、分級實作任務",
+    "author": "Happy eBook",
+    "category": [
+      "AI Agent",
+      "AI 學習",
+      "AI 工具應用",
+      "自學"
+    ],
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "cover": "assets/images/google-book-cover-images/ai-agent-era-cover.png",
+    "description": "《AI Agent 時代》是一本引領讀者從演算法、自動化一路走向 AI 員工的學習與實戰指南。本書從技術脈絡出發，深入解析工作流設計，並規劃了 30 天學習路線、章末總結與分級實作任務，協助讀者在 AI Agent 時代掌握未來工作的核心競爭力。",
+    "downloadUrl": "https://books.google.com.tw/books/about?id=bfbsEQAAQBAJ&redir_esc=y",
+    "buyUrl": "https://books.google.com.tw/books/about?id=bfbsEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=bfbsEQAAQBAJ&redir_esc=y",
+    "featured": true,
+    "popular": false,
+    "launchRank": 1,
+    "priceLabel": "提供試閱版"
+  },
+  {
+    "id": "ipas-ai-mid-learning-handbook",
+    "title": "iPAS AI 應用規劃師中級學習手冊：115 年公告題延伸類似題強化版",
+    "subtitle": "考點整理、答案解析與高陷阱提醒，第一科、第二科、第三科全科整合",
+    "author": "Happy eBook",
+    "category": [
+      "iPAS AI",
+      "證照學習",
+      "AI 學習"
+    ],
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "cover": "assets/images/google-book-cover-images/ipas-ai-mid-learning-handbook-2026-cover.png",
+    "description": "《iPAS AI 應用規劃師中級學習手冊》針對 115 年最新公告題型進行延伸與類似題強化。內容涵蓋第一科、第二科、第三科全科整合，提供清晰的考點整理、逐題答案解析與常見高陷阱提醒，是考生考前衝刺、建立系統化記憶與解題邏輯的必備參考書。",
+    "downloadUrl": "https://books.google.com.tw/books/about?id=lALsEQAAQBAJ&redir_esc=y",
+    "buyUrl": "https://books.google.com.tw/books/about?id=lALsEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=lALsEQAAQBAJ&redir_esc=y",
+    "featured": true,
+    "popular": false,
+    "launchRank": 1,
+    "priceLabel": "提供試閱版"
+  },
+  {
+    "id": "ipas-ai-mid-question-bank",
+    "title": "iPAS AI 應用規劃師中級題庫：581 題分科練習、混合模擬與反向關鍵字複習",
+    "subtitle": "以考點理解與情境判斷為核心的 581 題模擬試題與完整訓練",
+    "author": "Happy eBook",
+    "category": [
+      "iPAS AI",
+      "證照學習",
+      "AI 學習"
+    ],
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "cover": "assets/images/google-book-cover-images/ipas-ai-mid-question-bank-2026-cover.png",
+    "description": "《iPAS AI 應用規劃師中級題庫》包含 450 題正式選擇題、131 題反向關鍵字複習與三回 90 分鐘混合模擬卷，共 581 題完整訓練。本書以考點理解與情境判斷為核心，協助考生熟悉題型結構、提升判斷速度，是考取 iPAS AI 中級證照的最佳解題工具書。",
+    "downloadUrl": "https://books.google.com.tw/books/about?id=UAbsEQAAQBAJ&redir_esc=y",
+    "buyUrl": "https://books.google.com.tw/books/about?id=UAbsEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=UAbsEQAAQBAJ&redir_esc=y",
+    "featured": true,
+    "popular": false,
+    "launchRank": 1,
+    "priceLabel": "提供試閱版"
+  },
+  {
     "id": "ai-modern-intro-python-ai-agent",
     "title": "AI 現代導論：從 Python 到 AI Agent",
     "subtitle": "用 AIMA 的 Agent 思維重寫現代人工智慧入門",
