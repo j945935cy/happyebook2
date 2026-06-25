@@ -1,5 +1,29 @@
 [
   {
+    "id": "vibe-coding-ai-html-css-js",
+    "title": "Vibe Coding 入門：用 AI 學 HTML / CSS / JavaScript",
+    "subtitle": "給完全初學者的網頁開發實作電子書",
+    "author": "Happy eBook",
+    "category": [
+      "AI 學習",
+      "網頁設計",
+      "程式設計",
+      "Vibe Coding",
+      "HTML / CSS / JavaScript"
+    ],
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "cover": "assets/images/google-book-cover-images/vibe-coding-ai-html-css-js-frontcover.png",
+    "description": "專為完全初學者設計的繁體中文電子書，帶你用 AI 當學習助教，理解 HTML、CSS、JavaScript 的基本概念，完成第一個個人介紹頁，並學會閱讀、測試與修正 AI 產生的程式碼。",
+    "downloadUrl": "",
+    "buyUrl": "https://play.google.com/store/books/details?id=2mLkEQAAQBAJ",
+    "readUrl": "https://play.google.com/store/books/details?id=2mLkEQAAQBAJ",
+    "featured": true,
+    "popular": true,
+    "launchRank": 1,
+    "priceLabel": "NT$118，提供試閱版"
+  },
+  {
     "id": "ai-agent-era-handbook",
     "title": "《AI Agent 時代》從演算法、自動化到 AI 員工：掌握未來工作的學習與實戰指南",
     "subtitle": "從技術脈絡到工作流設計，30 天學習路線、章末總結、分級實作任務",
