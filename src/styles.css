@@ -74,7 +74,7 @@ button:disabled { opacity: 0.48; cursor: not-allowed; }
 .hero-copy { min-width: 0; max-width: 44rem; }
 .eyebrow { display: inline-block; margin-bottom: 14px; color: var(--primary); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; font-weight: 700; }
 .home-hero .eyebrow { color: var(--color-sage); }
-.hero h1, .section-head h2, .page-hero h1, .book-content-panel h1 { margin: 0 0 16px; line-height: 1.12; font-size: clamp(2.2rem, 5vw, 4.2rem); }
+.hero h1, .section-head h2, .page-hero h1, .book-content-panel h1, .book-content-panel h2 { margin: 0 0 16px; line-height: 1.12; font-size: clamp(2.2rem, 5vw, 4.2rem); }
 .home-hero h1 { max-width: 12ch; color: #13233a; font-size: clamp(2.6rem, 5vw, 4.8rem); letter-spacing: 0; }
 .home-hero h1 span { display: block; }
 .home-hero .hero-copy > p { max-width: 42rem; font-size: 1.12rem; color: #4d5c6f; }
