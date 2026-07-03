@@ -138,7 +138,7 @@ let coverLoadFailureCount = 0;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20260627-1";
+const booksDataVersion = "20260703-1";
 
 const siteConfig = {
 
@@ -889,22 +889,46 @@ const initHome = async () => {
 
 };
 
+const getCategoryCounts = (books) => {
+  const counts = new Map();
+  books.forEach((book) => {
+    getCategories(book).forEach((category) => {
+      counts.set(category, (counts.get(category) || 0) + 1);
+    });
+  });
+  return counts;
+};
+
+const getOrderedCategories = (books) => {
+  const counts = getCategoryCounts(books);
+  const availableCategories = [...counts.keys()];
+  const preferredCategories = primaryCategoryFilters.filter((category) => counts.has(category));
+  const remainingCategories = availableCategories
+    .filter((category) => !primaryCategoryFilters.includes(category))
+    .sort((left, right) => {
+      const countDiff = (counts.get(right) || 0) - (counts.get(left) || 0);
+      return countDiff || left.localeCompare(right, "zh-Hant");
+    });
+  return [...preferredCategories, ...remainingCategories];
+};
+
+const createCategoryFilterButton = (category, isActive = false) => {
+  const button = document.createElement("button");
+  button.className = `filter-chip${isActive ? " is-active" : ""}`;
+  button.dataset.categoryFilter = category;
+  button.type = "button";
+  button.textContent = category === "all" ? "全部分類" : category;
+  return button;
+};
+
 const renderCategoryFilters = (books) => {
+  const orderedCategories = getOrderedCategories(books);
 
   document.querySelectorAll("[data-category-filter-list]").forEach((list) => {
-
-    const baseButton = list.querySelector('[data-category-filter="all"]')?.outerHTML || '<button class="filter-chip is-active" data-category-filter="all" type="button">全部分類</button>';
-
-    const availableCategories = uniqueCategories(books);
-
-    const buttons = primaryCategoryFilters
-
-      .filter((category) => availableCategories.includes(category))
-
-      .map((category) => `<button class="filter-chip" data-category-filter="${category}" type="button">${category}</button>`);
-
-    list.innerHTML = [baseButton, ...buttons].join("");
-
+    list.replaceChildren(
+      createCategoryFilterButton("all", true),
+      ...orderedCategories.map((category) => createCategoryFilterButton(category))
+    );
   });
 
 };

@@ -17,7 +17,7 @@ const publicHtmlPaths = collectPublicHtmlPaths();
 const sitemapUrls = extractSitemapUrls();
 const requiredPages = ["index.html", "books.html", "book.html", "about.html", "contact.html"];
 const CURRENT_CSS_VERSION = "20260627-3";
-const CURRENT_SCRIPT_VERSION = "20260627-3";
+const CURRENT_SCRIPT_VERSION = "20260703-1";
 const referencedImagePaths = new Set();
 
 function normalizeReferencedImagePath(pagePath, value) {
