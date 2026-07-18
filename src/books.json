@@ -3,6 +3,418 @@
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=yj3YEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=yj3YEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 120,
+    "id": "2026-4acfyqzrcwp",
+    "title": "2026 資安大轉折",
+    "subtitle": "AI 時代的網路防禦新規則",
+    "author": "Happy eBook",
+    "category": [
+      "資安",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_4ACFYQZRCWP_partner-cover.jpg",
+    "description": "《2026 資安大轉折》是 Happy eBook 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$368.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:4ACFYQZRCWP"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=BGHkEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=BGHkEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 119,
+    "id": "ai-sigil-epub-6385yfd4ybg",
+    "title": "用 AI + Sigil 製作 EPUB 電子書",
+    "subtitle": "從 Markdown、Pandoc 到 EPUBCheck 與 Google Play Books 上架",
+    "author": "Happy eBook",
+    "category": [
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_6385YFD4YBG_partner-cover.jpg",
+    "description": "《用 AI + Sigil 製作 EPUB 電子書》是 Happy eBook 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$168.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:6385YFD4YBG"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=6fjsEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=6fjsEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 118,
+    "id": "ai-agent-lk3gpet80qk",
+    "title": "AI Agent 開發工作流",
+    "subtitle": "中英對照版：Chinese-English Bilingual Edition",
+    "author": "Happy eBook",
+    "category": [
+      "英文學習",
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_LK3GPET80QK_partner-cover.jpg",
+    "description": "《AI Agent 開發工作流》是 Happy eBook 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$578.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:LK3GPET80QK"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=OX3tEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=OX3tEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 117,
+    "id": "ai-dnu596593xe",
+    "title": "AI 入門前的軟硬體基礎課",
+    "subtitle": "第二版增訂：硬體常識、常用實用基本知識與新手查修",
+    "author": "Happy eBook",
+    "category": [
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DNU596593XE_partner-cover.jpg",
+    "description": "《AI 入門前的軟硬體基礎課》是 Happy eBook 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$158.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:DNU596593XE"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=X8TzEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=X8TzEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 116,
+    "id": "ipas-4a2kchkyl8k",
+    "title": "iPAS 資訊安全工程師初級考試指南",
+    "subtitle": "管理概論 × 技術概論，一次建立完整應考架構",
+    "author": "Happy eBook Authors",
+    "category": [
+      "iPAS AI",
+      "證照考試",
+      "資安"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_4A2KCHKYL8K_partner-cover.jpg",
+    "description": "《iPAS 資訊安全工程師初級考試指南》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:4A2KCHKYL8K"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=d8TzEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=d8TzEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 115,
+    "id": "ipas-ty8qlqkttc9",
+    "title": "iPAS 資訊安全工程師中級考試指南",
+    "subtitle": "規劃實務 × 防護實務，從情境判斷到整合應用",
+    "author": "Happy eBook Authors",
+    "category": [
+      "iPAS AI",
+      "證照考試",
+      "資安"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_TY8QLQKTTC9_partner-cover.jpg",
+    "description": "《iPAS 資訊安全工程師中級考試指南》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:TY8QLQKTTC9"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=lB31EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=lB31EQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 114,
+    "id": "ai-10-3fwj870anqk",
+    "title": "用 AI 學英文的 10 種好方法",
+    "subtitle": "每天 10 分鐘，把 AI 變成你的英文教練",
+    "author": "Happy eBook Authors",
+    "category": [
+      "英文學習",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_3FWJ870ANQK_partner-cover.jpg",
+    "description": "《用 AI 學英文的 10 種好方法》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$156.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:3FWJ870ANQK"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=xSn1EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=xSn1EQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 113,
+    "id": "google-play-book-ayt5jhhcp4e",
+    "title": "當伊索遇上文法",
+    "subtitle": "這本英文書不無聊：從零到精通：寓言裡的文法圖解地圖",
+    "author": "Monica C.",
+    "category": [
+      "英文學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_AYT5JHHCP4E_partner-cover.jpg",
+    "description": "《當伊索遇上文法》是 Monica C. 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:AYT5JHHCP4E"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=8Jz1EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=8Jz1EQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 112,
+    "id": "chatgpt-codex-39h3f8uu1s9",
+    "title": "用 ChatGPT 思考，用 Codex 實作",
+    "subtitle": "從對話、企劃、寫作到程式與自動化的 AI 協作工作流",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_39H3F8UU1S9_partner-cover.jpg",
+    "description": "《用 ChatGPT 思考，用 Codex 實作》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:39H3F8UU1S9"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=4bX1EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=4bX1EQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 111,
+    "id": "sql-18-0sgn17n5gx0",
+    "title": "SQL 18 小時實戰",
+    "subtitle": "搭配 SQLite Playground，循序掌握 JOIN、CTE、視窗函數、交易、索引與 RFM",
+    "author": "Happy eBook",
+    "category": [
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_0SGN17N5GX0_partner-cover.jpg",
+    "description": "《SQL 18 小時實戰》是 Happy eBook 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:0SGN17N5GX0"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=Tb31EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=Tb31EQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 110,
+    "id": "the-taming-of-the-shrew-jhrbbbfuyn4",
+    "title": "The Taming of the Shrew",
+    "subtitle": "馴悍記：中英對照版（Parallel English–Traditional Chinese Edition）",
+    "author": "Happy eBook Authors",
+    "category": [
+      "英文學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_JHRBBBFUYN4_partner-cover.jpg",
+    "description": "《The Taming of the Shrew》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$156.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:JHRBBBFUYN4"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=vcL1EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=vcL1EQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 109,
+    "id": "the-taming-of-the-shrew-g0bpuygu8px",
+    "title": "The Taming of the Shrew",
+    "subtitle": "馴悍記：現代英文 × 繁體中文對照版",
+    "author": "Happy eBook Authors",
+    "category": [
+      "英文學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_G0BPUYGU8PX_partner-cover.jpg",
+    "description": "《The Taming of the Shrew》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$156.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:G0BPUYGU8PX"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=J8P1EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=J8P1EQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 108,
+    "id": "romeo-and-juliet-in-simple-modern-english-r0uekyr30pk",
+    "title": "Romeo and Juliet in Simple Modern English",
+    "subtitle": "A CEFR B1 Graded Reader with Original Quotes, Vocabulary Notes, and Reading Practice",
+    "author": "Happy eBook Authors",
+    "category": [
+      "英文學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_R0UEKYR30PK_partner-cover.jpg",
+    "description": "《Romeo and Juliet in Simple Modern English》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$156.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:R0UEKYR30PK"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=K9HzEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=K9HzEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 107,
+    "id": "llm-vol-2-etnaslldacn",
+    "title": "本地 LLM 部署指南（Vol.2）",
+    "subtitle": "低成本、高隱私的私有模型實戰",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_ETNASLLDACN_partner-cover.jpg",
+    "description": "《本地 LLM 部署指南（Vol.2）》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:ETNASLLDACN"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=l9vzEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=l9vzEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 106,
+    "id": "rag-vol-3-ep4zcuutp44",
+    "title": "RAG 知識庫系統實戰（Vol.3）",
+    "subtitle": "讓 AI 讀懂你的企業內部數據",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_EP4ZCUUTP44_partner-cover.jpg",
+    "description": "《RAG 知識庫系統實戰（Vol.3）》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:EP4ZCUUTP44"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=guPzEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=guPzEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 105,
+    "id": "mcp-vol-4-6yqr3e2be8b",
+    "title": "MCP 革命完全指南（Vol.4）",
+    "subtitle": "打破 AI 孤島，建立工具整合協作網",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_6YQR3E2BE8B_partner-cover.jpg",
+    "description": "《MCP 革命完全指南（Vol.4）》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:6YQR3E2BE8B"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=1-PzEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=1-PzEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 104,
+    "id": "ai-agent-vol-5-s6bbce7akwq",
+    "title": "AI Agent 開發工作流（Vol.5）",
+    "subtitle": "打造會自主思考與行動的超級助理",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_S6BBCE7AKWQ_partner-cover.jpg",
+    "description": "《AI Agent 開發工作流（Vol.5）》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:S6BBCE7AKWQ"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=W8D1EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=W8D1EQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 103,
+    "id": "ai-coding-vol-6-bgprdd2h1tl",
+    "title": "AI Coding 雙倍生產力（Vol.6）",
+    "subtitle": "Claude × Codex × Gemini 終極協作",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_BGPRDD2H1TL_partner-cover.jpg",
+    "description": "《AI Coding 雙倍生產力（Vol.6）》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:BGPRDD2H1TL"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=psbzEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=psbzEQAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": 102,
+    "id": "ai-vol-1-tthjs0c5y4g",
+    "title": "AI 開發工作站實戰（Vol.1）",
+    "subtitle": "從零打造可持續 5 年的個人智能大腦",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_TTHJS0C5Y4G_partner-cover.jpg",
+    "description": "《AI 開發工作站實戰（Vol.1）》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:TTHJS0C5Y4G"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=uzjxEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=uzjxEQAAQBAJ&redir_esc=y",
     "featured": true,
@@ -18,7 +430,7 @@
       "證照考試",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_W4UAB6LULAZ_frontcover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_W4UAB6LULAZ_partner-cover.jpg",
     "description": "《iPAS AIoT 應用工程師高分過關指南》是證照達人研究室 AIoT 組整理於 Google Play Books 的電子書作品，聚焦 iPAS AIoT 應用工程師考試準備，涵蓋四大考科、觀念理解、情境判斷與實作入門。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:W4UAB6LULAZ"
@@ -515,8 +927,8 @@
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=F_7sEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=F_7sEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=F_7sEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=F_7sEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 22,
@@ -529,9 +941,9 @@
       "AI Agent",
       "Prompt Engineering"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_NUXU947DBBW_frontcover-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_NUXU947DBBW_partner-cover.jpg",
     "description": "An English companion to the AI Agent workflow materials. The book explains how to describe goals, break work into tasks, connect tools, review outputs, and keep agentic workflows understandable for teams and individual learners.",
-    "priceLabel": "NT$850，提供試閱版",
+    "priceLabel": "NT$892.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:NUXU947DBBW"
   },
   {
@@ -560,8 +972,8 @@
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=CznbEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=CznbEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=CznbEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=CznbEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 20,
@@ -574,17 +986,17 @@
       "AI 學習",
       "證照學習"
     ],
-    "cover": "assets/images/google-book-cover-images/ipas-ai-basic-question-bank-2026-500-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_JY63E9ZCAR8_partner-cover.jpg",
     "description": "2026 年 5 月版聚焦 iPAS AI 應用規劃師考試準備，以白話整理重點觀念、常見題型與複習節奏。它適合不想只靠死背，而希望理解 AI、資料、模型與應用情境的考生。",
-    "priceLabel": "NT$290，提供試閱版",
+    "priceLabel": "NT$304.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:JY63E9ZCAR8"
   },
   {
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=04LtEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=04LtEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=04LtEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=04LtEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 19,
@@ -596,17 +1008,17 @@
       "英語/文學習",
       "寫作訓練"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_U96JEDW85S4_frontcover-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_U96JEDW85S4_partner-cover.jpg",
     "description": "第二版延續《經典英文寫作》的核心方向，透過名著句型練習清楚表達。內容適合想改善英文作文、段落展開與句型掌握的讀者，也適合作為教師設計寫作練習時的參考教材。",
-    "priceLabel": "NT$240，提供試閱版",
+    "priceLabel": "NT$252.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:U96JEDW85S4"
   },
   {
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=A7HUEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=A7HUEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=A7HUEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=A7HUEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 18,
@@ -619,17 +1031,17 @@
       "資料庫",
       "自學"
     ],
-    "cover": "assets/images/google-book-cover-images/SQL2026_cover1-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_X1YWAD6LFHT_partner-cover.jpg",
     "description": "這是一本專注 SQLite 的初學者指南，從資料表、欄位、查詢、排序、篩選、關聯到實用資料整理逐步說明。它與網站上的《2026 現代 SQL 全書》定位不同，更適合作為 Google Play Books 的獨立入門書。",
-    "priceLabel": "NT$100，提供試閱版",
+    "priceLabel": "NT$105.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:X1YWAD6LFHT"
   },
   {
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=SBjuEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=SBjuEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=SBjuEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=SBjuEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 17,
@@ -643,17 +1055,17 @@
       "Vibe Coding",
       "網頁開發"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_522CB56QK81_frontcover-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_522CB56QK81_partner-cover.jpg",
     "description": "《Agentic Web 開發實戰》討論 AI 代理時代的網頁開發工作流，包含需求拆解、頁面規劃、AI 協作修改、檢查清單與上線前驗證。內容聚焦初學者能理解的實作流程，而不是堆疊複雜框架。",
-    "priceLabel": "NT$100，提供試閱版",
+    "priceLabel": "NT$105.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:522CB56QK81"
   },
   {
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=5u3aEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=5u3aEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=5u3aEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=5u3aEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 16,
@@ -667,17 +1079,17 @@
       "Vibe Coding",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/codex-learning-by-doing-cover-1400x2100.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_EQSRWCAJPZ8_partner-cover.jpg",
     "description": "這本書用做中學的方式介紹 Codex 程式設計。讀者會從小任務開始，練習描述需求、閱讀修改結果、驗證頁面與整理錯誤，逐步建立與 AI coding 工具協作的基本能力。",
-    "priceLabel": "NT$280，提供試閱版",
+    "priceLabel": "NT$294.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:EQSRWCAJPZ8"
   },
   {
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=xijTEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=xijTEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=xijTEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=xijTEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 15,
@@ -690,17 +1102,17 @@
       "AI 工具應用",
       "自學"
     ],
-    "cover": "assets/images/google-book-cover-images/ai-python-automation_epub_cover1.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_HAG27QLFFRT_partner-cover.jpg",
     "description": "《AI 自動化工具書》整理 AI 工具、自動化腳本與工作流程設計的入門觀念，適合想把重複任務變簡單的學生、教師與自學者。內容以實際情境出發，強調先理解流程，再選擇合適工具。",
-    "priceLabel": "NT$100，提供試閱版",
+    "priceLabel": "NT$105.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:HAG27QLFFRT"
   },
   {
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=xFfTEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=xFfTEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=xFfTEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=xFfTEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 14,
@@ -713,17 +1125,17 @@
       "Python",
       "自學"
     ],
-    "cover": "assets/images/google-book-cover-images/Python-for-Beginners-Book_output_google-books_cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_01FGY6TR4SL_partner-cover.jpg",
     "description": "這是一本給初學者的 Python 入門書，從安裝環境、變數、輸入輸出、條件判斷、迴圈、串列到函式逐步建立基礎。重點不是背語法，而是用小練習理解程式如何拆解問題。",
-    "priceLabel": "NT$100，提供試閱版",
+    "priceLabel": "NT$105.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:01FGY6TR4SL"
   },
   {
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=ha3tEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=ha3tEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=ha3tEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=ha3tEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 13,
@@ -736,9 +1148,9 @@
       "Prompt Engineering",
       "數位出版"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_H0WYUBWUQP2_frontcover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_H0WYUBWUQP2_partner-cover.jpg",
     "description": "《用文字畫圖》介紹如何用 Mermaid 這種文字式圖表語法，把流程圖、架構圖、時序圖與學習筆記整理成清楚可維護的圖。內容適合想用 AI 協助整理概念、撰寫文件、規劃專案與製作教材的讀者。",
-    "priceLabel": "NT$400，提供試閱版",
+    "priceLabel": "NT$420.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:H0WYUBWUQP2"
   },
   {
@@ -791,8 +1203,8 @@
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=viDtEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=viDtEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=viDtEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=viDtEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
     "launchRank": 10,
@@ -805,9 +1217,9 @@
       "AI Agent",
       "AI 工具應用"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_SB1BS8Z5F3S_frontcover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_SB1BS8Z5F3S_partner-cover.jpg",
     "description": "An English-language guide for readers who want to understand how traditional automation has evolved into AI-assisted workflows and agent-based systems. The book introduces practical concepts in plain language, helping readers connect scripts, tools, prompts, and autonomous task execution.",
-    "priceLabel": "NT$750，提供試閱版",
+    "priceLabel": "NT$788.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:SB1BS8Z5F3S"
   },
   {
@@ -824,15 +1236,16 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/vibe-coding-ai-html-css-js-frontcover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_1TED5EGFLYL_partner-cover.jpg",
     "description": "專為完全初學者設計的繁體中文電子書，帶你用 AI 當學習助教，理解 HTML、CSS、JavaScript 的基本概念，完成第一個個人介紹頁，並學會閱讀、測試與修正 AI 產生的程式碼。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=2mLkEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=2mLkEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=2mLkEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=2mLkEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
     "launchRank": 1,
-    "priceLabel": "NT$118，提供試閱版"
+    "priceLabel": "NT$158.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:1TED5EGFLYL"
   },
   {
     "id": "ai-agent-era-handbook",
@@ -847,7 +1260,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/ai-agent-era-cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_JGAUENQCAYP_partner-cover.jpg",
     "description": "《AI Agent 時代》是一本引領讀者從演算法、自動化一路走向 AI 員工的學習與實戰指南。本書從技術脈絡出發，深入解析工作流設計，並規劃了 30 天學習路線、章末總結與分級實作任務，協助讀者在 AI Agent 時代掌握未來工作的核心競爭力。",
     "downloadUrl": "https://books.google.com.tw/books/about?id=bfbsEQAAQBAJ&redir_esc=y",
     "buyUrl": "https://books.google.com.tw/books/about?id=bfbsEQAAQBAJ&redir_esc=y",
@@ -855,7 +1268,8 @@
     "featured": true,
     "popular": false,
     "launchRank": 1,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$546.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:JGAUENQCAYP"
   },
   {
     "id": "ipas-ai-mid-learning-handbook",
@@ -891,7 +1305,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/ipas-ai-mid-question-bank-2026-cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_G7HYRG0JR7B_partner-cover.jpg",
     "description": "《iPAS AI 應用規劃師中級題庫》包含 450 題正式選擇題、131 題反向關鍵字複習與三回 90 分鐘混合模擬卷，共 581 題完整訓練。本書以考點理解與情境判斷為核心，協助考生熟悉題型結構、提升判斷速度，是考取 iPAS AI 中級證照的最佳解題工具書。",
     "downloadUrl": "https://books.google.com.tw/books/about?id=UAbsEQAAQBAJ&redir_esc=y",
     "buyUrl": "https://books.google.com.tw/books/about?id=UAbsEQAAQBAJ&redir_esc=y",
@@ -899,7 +1313,8 @@
     "featured": true,
     "popular": false,
     "launchRank": 1,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$315.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:G7HYRG0JR7B"
   },
   {
     "id": "ai-modern-intro-python-ai-agent",
@@ -915,7 +1330,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/content.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_W3U0B6YF03K_partner-cover.jpg",
     "description": "《AI 現代導論：從 Python 到 AI Agent》寫給想用現代方式重新理解人工智慧的初學者與自學者。本書以 AIMA 的 Agent 思維為主軸，從 Python 基礎、問題表示、搜尋、知識與推理，到 AI Agent 的任務拆解與工作流程，協助讀者把抽象的 AI 觀念連到可以實作、可以檢查、可以延伸的學習路線。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=sHbkEQAAQBAJ&redir_esc=y",
@@ -923,7 +1338,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 1,
-    "priceLabel": "Google Play Books，提供試閱版"
+    "priceLabel": "NT$472.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:W3U0B6YF03K"
   },
   {
     "id": "ai-evolution-70-year-map",
@@ -938,15 +1354,16 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/aichinese-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_AFABD53ST7C_partner-cover.jpg",
     "description": "《AI 演化論：70 年人工智慧知識地圖》用白話方式整理人工智慧從早期搜尋、知識表示、專家系統、機器學習、深度學習，到 ChatGPT 與 AI Agent 的重要脈絡。這本書適合想補齊 AI 基礎觀念的學生、教師與自學者，幫助讀者把分散的名詞放回歷史與應用脈絡中理解。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=PxTsEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=PxTsEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=PxTsEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=PxTsEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
     "launchRank": 1,
-    "priceLabel": "Google Play Books，提供試閱版"
+    "priceLabel": "NT$378.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:AFABD53ST7C"
   },
   {
     "id": "ai-evolution-70-year-map-bilingual",
@@ -1008,7 +1425,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/ai-agent-development-workflow-happy-ebook-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_WT86YWX6ZE0_partner-cover.jpg",
     "description": "《AI Agent 開發工作流》寫給已經會使用 AI 工具，但想進一步建立可重複、可檢查、可交接工作流的讀者。本書從 AI Coding 的演進與失控原因談起，進入 Skills、Agent Workflow、Agent 記憶、工具使用、Multi-Agent 協調、MCP、n8n、Claude Code、Codex、Fleet 與 Tailscale 等實務場景，協助讀者把 AI 從一次漂亮輸出，放進可管理、可驗證、可持續改進的工作方式。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=0N_sEQAAQBAJ&redir_esc=y",
@@ -1016,7 +1433,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 1,
-    "priceLabel": "Google Play Books，提供試閱版"
+    "priceLabel": "NT$546.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:WT86YWX6ZE0"
   },
   {
     "id": "smart-ai-evolution-chatgpt-ai-agent",
@@ -1032,7 +1450,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/cover2026-06-10-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_CYLQHQKS04R_partner-cover.jpg",
     "description": "《聰明人的 AI 進化論》寫給已經開始使用 ChatGPT、也想進一步理解 AI Agent 的學生、教師、知識工作者與自學者。本書用白話方式整理 AI 如何成為思考工具，協助讀者從單次問答，逐步建立更清楚的提問、拆解、驗證與工作流程。內容聚焦在 AI 時代需要長期累積的核心能力：如何描述問題、整理上下文、判斷回答品質、把任務拆成可執行步驟，並理解 AI Agent 在學習、工作與創作中的實際應用。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=yi3kEQAAQBAJ&redir_esc=y",
@@ -1040,7 +1458,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 1,
-    "priceLabel": "Google Play Books，提供試閱版"
+    "priceLabel": "NT$336.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:CYLQHQKS04R"
   },
   {
     "id": "ai-soft-hardcover",
@@ -1055,7 +1474,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/20260523/ai-soft-hardcover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_UBZK02BA9F8_partner-cover.jpg",
     "description": "《AI 入門前的軟硬體基礎課》寫給想學 AI、但對電腦硬體、軟體、資料、模型與基本判斷還不熟的初學者。本書用白話方式整理看得見的硬體、看不見的軟體、資料如何被使用、AI 模型如何做判斷，以及常見名詞與誤解，幫助讀者先建立穩定的電腦與 AI 基礎概念，再進入更進階的工具操作與應用學習。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=woDjEQAAQBAJ&redir_esc=y",
@@ -1063,7 +1482,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 1,
-    "priceLabel": "Google Play Books，提供試閱版"
+    "priceLabel": "NT$84.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:UBZK02BA9F8"
   },
   {
     "id": "codex-mini-projects-book",
@@ -1079,7 +1499,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/codex-mini-projects-book-imagegen-cover-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DAZW49ZRGYF_partner-cover.jpg",
     "description": "《用 Codex 做出 10 個小作品》用 2 本中英故事書與 8 個網頁小遊戲，帶初學者練習和 Codex 協作。每一章都用固定流程說明作品目標、可直接使用的 prompt、Codex 可能修改的地方、完成後怎麼檢查，以及發現問題時如何請 Codex 修正。適合第一次使用 Codex 的自學者、想用 AI 輔助教學的老師、想陪孩子做小作品的家長，以及想從小型網頁作品開始練習程式的人。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=UK3eEQAAQBAJ&redir_esc=y",
@@ -1087,7 +1507,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 3,
-    "priceLabel": "NT$158，提供試閱版"
+    "priceLabel": "NT$210.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:DAZW49ZRGYF"
   },
   {
     "id": "codex-mini-projects-book-2",
@@ -1103,7 +1524,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/codex-mini-projects-book-2-screenshot-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_F7LWKBJB5QQ_partner-cover.jpg",
     "description": "《用 Codex 做出 10 個小作品 2》延續第一本的學習方式，繼續用小任務帶初學者練習 AI coding。這次的作品更接近可展示的小工具與互動頁，包含小吃店結帳程式、野狼 125 遊台灣、台南美食一日遊、嘉義美食一日遊、彰化美食一日遊、水墨畫中的四季流轉、Office Lady 穿搭學習、台灣簡易飛行模擬、星際射擊小遊戲與 Hermes Agent 任務代理產生器。每一章都用固定流程說明作品目標、學習重點、可直接使用的 prompt、完成後檢查方式，以及發現問題時如何請 Codex 小步修正。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=L47fEQAAQBAJ&redir_esc=y",
@@ -1111,7 +1532,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 1,
-    "priceLabel": "Google Play Books，提供試閱版"
+    "priceLabel": "NT$210.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:F7LWKBJB5QQ"
   },
   {
     "id": "ipas-ai-daily",
@@ -1148,7 +1570,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/ai-publishing-book-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_EK6K8DKE6B5_partner-cover.jpg",
     "description": "《用 AI 出版一本書》是一本寫給知識工作者、教師、講師、顧問與個人創作者的 AI 出版實戰指南。本書不把 AI 視為自動寫書機，而是把 AI 放進一套可維護的出版工作流。你會學到如何從主題規劃、讀者定位、AI 對話、大綱設計、章節寫作、審稿查證、EPUB 製作，到 Google Play Books 上架資料與社群宣傳，一步步完成一本可閱讀、可更新、可交付的電子書。適合想出書但不知道如何開始、已有文章或課程內容想整理成電子書、會使用 AI 對話工具但不知道如何收斂成書稿，以及想建立 Markdown、EPUB、上架資料與行銷素材工作流的讀者。本書提供提示詞範例、表格、檢查表與出版前後的工作流程，協助你把零散想法變成可維護的電子書專案。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=_BzdEQAAQBAJ&redir_esc=y",
@@ -1156,7 +1578,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 2,
-    "priceLabel": "NT$286，提供試閱版"
+    "priceLabel": "NT$420.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:EK6K8DKE6B5"
   },
   {
     "id": "smart-ai-evolution",
@@ -1172,14 +1595,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "../assets/images/20260523/cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_49U0PJJ88HC_partner-cover.jpg",
     "description": "《聰明人的 AI 進化論》是一本寫給知識工作者、創作者、工程師與小團隊的 Hermes Agent 實作指南。AI 已經很會回答問題，但多數人的 AI 仍然不會真正累積經驗。你今天教它一次偏好，明天可能還要再教一次；你今天讓它修好一個工作流，下次遇到類似任務，它未必知道可以沿用之前的方法。本書要解決的，就是這種「聰明但不會長大」的 AI 使用困境。本書以 Hermes Agent 為核心，帶你建立一套會記憶、會沉澱技能、會整理流程、會在安全邊界內協助行動的個人 AI 工作系統。內容涵蓋 Agentic AI 基本觀念、低成本部署、OpenClaw 遷移、SOUL.md 人格設定、三層記憶架構、SKILL.md 技能生成、Curator 技能治理、GEPA 提示詞優化、Telegram / Discord / Slack 跨平台入口、職業 Profile、安全防禦與多 Agent 協作。這不是一本只提供提示詞範例的書，而是一本協助你把 AI 從「一次性問答工具」升級成「可訓練、可維護、可累積經驗的數位工作夥伴」的實作指南。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=mLrcEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=mLrcEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$300，提供試閱版"
+    "priceLabel": "NT$441.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:49U0PJJ88HC"
   },
   {
     "id": "hermes-learning-by-doing",
@@ -1194,14 +1618,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/hermes-learning-by-doing-cover-1400x2100.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_7UW80F2Y5F7_partner-cover.jpg",
     "description": "《Hermes 做中學》不是一本只介紹 Hermes 功能的書，而是一本跟著真實小專案做中學的 AI Agent 工作流範例書。本書以「網路版賓果遊戲」為主題，示範如何用 Hermes 從一個模糊想法開始，逐步完成需求釐清、範圍縮小、任務拆解、檔案建立、程式修改、檢查、修 bug、Git checkpoint 與專案結案整理。讀者會看到如何請 Hermes 先規劃而不是直接亂改檔案；如何把賓果遊戲拆成卡片產生、抽號、自動標記、Bingo 判斷、房間與玩家模型；如何從純前端單機版逐步演進到 Node.js + Express 的簡化網路版。本書也補上第一次安裝 Hermes 的新手引導，帶讀者理解安裝、設定模型、hermes doctor、安全練習資料夾、第一個安全 prompt，以及 API key、diff、commit 等基本注意事項。適合想學 Hermes、想理解 AI Agent 實際協作方式，也想看一個小型 web app 如何被逐步完成的讀者。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=kWPcEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=kWPcEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$300，提供試閱版"
+    "priceLabel": "NT$441.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:7UW80F2Y5F7"
   },
   {
     "id": "codex-python",
@@ -1215,14 +1640,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/codex-python-google-cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_8WURUE67RJN_partner-cover.jpg",
     "description": "《用 Codex 學 Python：10 個實例演習》是一本為 Python 初學者設計的 AI coding 協作練習書。它不是一般語法速查書，也不是只展示 AI 產出結果的工具書；它從一個可以執行的小程式開始，逐章建立「描述需求、請 Codex 協作、執行程式、人工檢查、修正錯誤」的學習循環。\n\n第 1 到第 3 章帶讀者完成自我介紹產生器、心情日記小幫手與猜數字遊戲。讀者會練習 print()、變數、input()、條件判斷、迴圈與隨機數，並學會把錯誤訊息交給 Codex 進行小範圍修正。\n\n第 4 到第 6 章開始建立終端機小工具，包括待辦事項 CLI、單字卡練習器與每日學習紀錄本。這幾章重點是 list、dict、函式、檔案讀寫，以及如何讓程式碼保持短小、容易檢查。\n\n第 7 到第 9 章進入資料處理：CSV 成績統計器、JSON 個人書單管理器，以及 API 前置練習的天氣查詢小程式。第 9 章刻意先用假資料模擬 API 回應，不直接呼叫真實線上服務，避免初學者卡在 API key、帳號 or 網路限制，先學會資料結構與錯誤處理流程。\n\n第 10 章是整合專案：學習進度儀表板。讀者會把學習紀錄、書單與成績資料整理成一份文字報表，練習函式拆分、資料整合與輸出摘要。\n\n附錄提供 Python 初學者可直接複製的 Codex prompt 模板，以及 10 張小練習卡。讀者可以用這些模板建立新練習、請 Codex 解釋程式、修正錯誤、縮小任務範圍，並用短時間任務複習輸入輸出、條件、迴圈、list、dict、檔案、CSV 與基本統計。\n\n本書每章都包含可直接貼給 Codex 的 prompt、範例程式、設計取捨、人工檢查點、卡住時的處理方式與延伸練習。目標不是讓 AI 取代學習，而是讓讀者在 AI 協助下更快做出成果，同時保留自己檢查與判斷的能力。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=s9vaEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=s9vaEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=s9vaEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=s9vaEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$118，提供試閱版"
+    "priceLabel": "NT$158.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:8WURUE67RJN"
   },
   {
     "id": "codex-coding",
@@ -1236,14 +1662,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/codex-coding-google-cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_1RZ5PENGKT7_partner-cover.jpg",
     "description": "《Codex Coding 實例演習》是一本為 coding 初學者設計的 AI 輔助程式練習書。它不假設讀者已經懂 Git、框架或大型專案，而是從「把 Codex 當成會幫忙的同學」開始，一步一步建立安全、可檢查、可重做的學習方式。\n\n本書前兩章先說明 Codex 可以幫忙讀程式、改程式、跑檢查，但最後仍由讀者決定目標與驗收；接著建立乾淨的練習資料夾，避免把真實密碼、重要檔案或大型專案交給 AI 亂改。\n\n第 3 到第 5 章用三個最小網頁練習帶讀者認識 HTML、CSS 與 JavaScript：先做自我介紹卡片，再加上好讀的樣式，最後做出按鈕計數器。每章都提供可直接貼給 Codex 的 prompt、實作步驟、人工檢查點，以及新手可能卡住時的處理方式。\n\n第 6 到第 8 章進一步練習真實 coding 流程：如何寫 bug report、要求 Codex 先重現再修復、看懂 diff、判斷能不能接受修改，並完成一個可新增、完成、刪除任務的學習看板。\n\n第 9 章把 coding 與英文學習結合，做一個「英文字根組字程式」。讀者不是自行輸入，而是從下拉選單選擇 prefix、root、suffix，組合出英文單字，並用瀏覽器內建 speechSynthesis 朗讀結果。章節也清楚說明：範例資料是從教育部國中小基本英語字彙 1200 字詞整理成教學範例；教育部公布的是基本字彙表，不是官方字根表，因此組合結果仍應查字典確認。\n\n附錄提供初學者 prompt 模板與 10 張小練習卡，方便讀者在 10 到 30 分鐘內完成一個小任務。這本書的目標不是讓讀者一次學會所有程式語法，而是先學會一個穩定循環：小任務、請 Codex 幫忙、自己檢查、發現問題、再修正。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=0IHaEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=0IHaEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=0IHaEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=0IHaEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$118，提供試閱版"
+    "priceLabel": "NT$158.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:1RZ5PENGKT7"
   },
   {
     "id": "antigravity-coding",
@@ -1256,14 +1683,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/antigravity-coding-google-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_WWUWZYA3CAS_partner-cover.jpg",
     "description": "《Antigravity Coding 實例演習》不是一本只教 prompt 的書，而是一本教你如何管理 agent 工作流的實作指南。本書從 agent-first coding 的基本觀念開始，帶讀者建立低風險 workspace、設定保守權限，並用 Todo App 練習第一個可委派、可驗證的 coding 任務。接著，你會學會如何用 Artifacts、diff summary、browser screenshot、recording、test evidence 與 residual risks 來審查 agent 的完成聲明，而不是只相信「已完成」三個字。中段章節聚焦常見工程場景：bug report 如何變成可重現任務、UI 實作如何透過 browser evidence 驗證、API 任務如何先定義 contract、全端出版工作台如何避免過度 scaffold。後段章節則進入進階使用：多 agent ownership、權限與安全邊界、團隊導入規則，以及如何讓 agent 協助維護 GitHub 書稿 repo。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=E2TaEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=E2TaEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=E2TaEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=E2TaEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$207，提供試閱版"
+    "priceLabel": "NT$304.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:WWUWZYA3CAS"
   },
   {
     "id": "classic-english-writing",
@@ -1276,14 +1704,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "../assets/images/classic-english-writing-cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_21LDZQXZJHJ_partner-cover.jpg",
     "description": "一本結合經典文學與英文作文訓練的句型教材，適合高中高年級、大一學生，以及想補強學測英文作文的自學讀者。內容把經典文學語境轉化為可練習、可模仿、可延伸的英文句型，幫助讀者把抽象概念說清楚，並用例子、因果、推論與證據展開段落。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=5xvaEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=5xvaEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
-    "priceLabel": "NT$87，提供試閱版"
+    "priceLabel": "NT$105.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:21LDZQXZJHJ"
   },
   {
     "id": "codex-html-18h",
@@ -1297,14 +1726,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/GGKEY_PG5C88JAPT0_frontcover-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_PG5C88JAPT0_partner-cover.jpg",
     "description": "《用 Codex 學 HTML：18 小時入門教材》是一本為 HTML 初學者設計的實作型電子書。本書以 18 個小時為學習節奏，從最基本的 HTML 文件骨架開始，逐步帶你認識標題、段落、清單、連結、圖片、表格、表單、語意化區塊、可存取性、metadata、響應式影像與發布前檢查。每一章都包含可參考範例、概念示意圖、範例截圖、練習任務、常見錯誤與驗收標準，適合想從零開始建立網頁基礎的人。這本書也加入 Codex 輔助學習的做法，協助讀者請 Codex 產生範例、檢查結構、改寫標記、找出錯誤，並逐步建立自己的個人作品介紹頁。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=hK7jEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=hK7jEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$118，提供試閱版"
+    "priceLabel": "NT$158.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:PG5C88JAPT0"
   },
   {
     "id": "codex-css-18h",
@@ -1318,14 +1748,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/GGKEY_T5Z67TRQA55_cover_option_2_style.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_T5Z67TRQA55_partner-cover.jpg",
     "description": "《用 Codex 學 CSS 18 小時教材》是一本為懂基本 HTML、想建立 CSS 實作能力的讀者設計的入門教材。本書不是 CSS 語法大全，而是一條清楚的實作路線。你會從 CSS 載入、選擇器、盒模型、文字與色彩開始，逐步學會 Flexbox、Grid、響應式設計、表單狀態、圖片比例、CSS 變數、可存取性與作品頁發佈檢查。每一小時都包含核心觀念、HTML/CSS 範例、Codex 提示詞、常見錯誤、DevTools 檢查清單與作品頁整合方向。讀完後，你將完成一個可展示、可檢查、可持續修改的 CSS 個人作品頁。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=J9HjEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=J9HjEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$181，提供試閱版"
+    "priceLabel": "NT$242.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:T5Z67TRQA55"
   },
   {
     "id": "codex-javascript-18h",
@@ -1339,14 +1770,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/codex-javascript-18h-google-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_G1TXZXSUGN7_partner-cover.jpg",
     "description": "一本給初學者的實作型 JavaScript 教材。從網頁互動、DOM、事件處理、表單驗證、資料顯示到 localStorage、fetch API 與小專案實作，帶讀者一邊完成作品，一邊學會如何用 Codex 協助寫程式與檢查成果。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=8g_aEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=8g_aEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=8g_aEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=8g_aEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$118，提供試閱版"
+    "priceLabel": "NT$158.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:G1TXZXSUGN7"
   },
   {
     "id": "html-css-18h-codex-ai",
@@ -1381,14 +1813,15 @@
     ],
     "type": "paid",
     "format": "Google Play Book 電子書",
-    "cover": "assets/images/google-book-cover-images/ipas-ai-basic-question-bank-google-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_7RWG7KEZSPS_partner-cover.jpg",
     "description": "《iPAS AI 應用規劃師初級題庫完全攻略》是一本專為初級考生設計的刷題型備考書，內容涵蓋「人工智慧基礎概論」與「生成式 AI 應用與規劃」兩大科目。\n\n本書收錄 400 題原創擬真練習題，包含分類題庫、高頻陷阱題、混合情境題與全真模擬考，並為每題提供答案、解析、考點與易錯提醒，幫助讀者不只背答案，更能理解題目背後的判斷邏輯。",
     "downloadUrl": "https://books.google.com.tw/books/about?id=rzjZEQAAQBAJ&redir_esc=y",
     "buyUrl": "https://books.google.com.tw/books/about?id=rzjZEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=rzjZEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": false,
-    "priceLabel": "提供試閱"
+    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:7RWG7KEZSPS"
   },
   {
     "id": "epub-sigil-ai",
@@ -1402,14 +1835,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/AI-Sigil-site.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_B1EYW9LAH9D_partner-cover.jpg",
     "description": "實作導向的 EPUB 電子書製作指南。從 Sigil 安裝、EPUB 內部結構、HTML/CSS 排版、Pandoc 自動轉檔，到 EPUBCheck 除錯與 Google Play Books 上架，並示範如何運用 AI 協助章節規劃、文字改寫與校對，建立可持續維護的出版流程。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=MMbYEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=MMbYEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=MMbYEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=MMbYEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$105，提供試閱版"
+    "priceLabel": "NT$126.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:B1EYW9LAH9D"
   },
   {
     "id": "ai-python-automation",
@@ -1464,14 +1898,15 @@
     ],
     "type": "web",
     "format": "網站閱讀",
-    "cover": "assets/images/google-book-cover-images/ipas-ai-planner-play-book-google-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_T04ET8121LK_partner-cover.jpg",
     "description": "直接連到 Google Play Books 的 iPAS AI 規劃師作品頁，方便查看書籍資訊與閱讀入口。",
     "downloadUrl": "",
-    "buyUrl": "",
-    "readUrl": "https://play.google.com/store/books/details/iPAS_AI_%E8%A6%8F%E5%8A%83%E5%B8%AB%E4%B8%80%E6%AC%A1%E8%80%83%E9%81%8E?id=Q3itEQAAQBAJ&hl=en_US",
+    "buyUrl": "https://books.google.com.tw/books/about?id=Q3itEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=Q3itEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$147.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:T04ET8121LK"
   },
   {
     "id": "ipas-ai-application-planner-basic-exam-guide",
@@ -1485,14 +1920,15 @@
     ],
     "type": "web",
     "format": "Google Books 試閱版",
-    "cover": "../assets/images/book-ipas-ai-application-planner-basic.svg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_QJQ3TYB8SGL_partner-cover.jpg",
     "description": "以理解代替死背，系統化整理人工智慧基礎概念、生成式 AI 應用重點與試題解析，幫助準備 iPAS AI 應用規劃師（初級）的讀者掌握命題方向與解題邏輯。",
     "downloadUrl": "",
-    "buyUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=IlDWEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=IlDWEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$242.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:QJQ3TYB8SGL"
   },
   {
     "id": "ipas-ai-high-score-play-book",
@@ -1506,14 +1942,15 @@
     ],
     "type": "web",
     "format": "網站閱讀",
-    "cover": "../assets/images/book-ipas-ai-high-score.svg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_WDTXS5H50D8_partner-cover.jpg",
     "description": "聚焦 iPAS AI 重點觀念、理解式記憶與高分準備節奏，直接連到 Google Play Books 書籍頁。",
     "downloadUrl": "",
-    "buyUrl": "",
-    "readUrl": "https://play.google.com/store/books/details/%E8%AD%89%E7%85%A7%E9%81%94%E4%BA%BA%E7%A0%94%E7%A9%B6%E5%AE%A4AI_%E7%B5%84_%E4%B8%8D%E6%AD%BB%E8%83%8C_%E4%B9%9F%E8%83%BD%E9%AB%98%E5%88%86%E7%9A%84_iPAS_AI?id=gB2zEQAAQBAJ&hl=zh_TW",
+    "buyUrl": "https://books.google.com.tw/books/about?id=gB2zEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=gB2zEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:WDTXS5H50D8"
   },
   {
     "id": "ipas-ai-high-score-2026-03-exam",
@@ -1527,14 +1964,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "../assets/images/google-book-cover-images/ipas-ai-basic-question-bank-2026-500-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_CJZLNTJ1444_partner-cover.jpg",
     "description": "《iPAS AI 應用規劃師初級題庫完全攻略》整理人工智慧基礎概論與生成式 AI 應用與規劃兩大科目，收錄 500 題原創擬真練習，包含分類題庫、陷阱題、情境題與全真模擬考，適合準備 2026 初級考試的讀者考前複習。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=ezrbEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=ezrbEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$273.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:CJZLNTJ1444"
   },
   {
     "id": "english-speaking-play",
@@ -1544,14 +1982,15 @@
     "category": "英語/文學習",
     "type": "web",
     "format": "網站閱讀",
-    "cover": "../assets/images/book-english-speaking.svg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_G6DA5G8HG87_partner-cover.jpg",
     "description": "用漸進式句型練習英文會話，從入門到自然開口。",
     "downloadUrl": "",
-    "buyUrl": "",
-    "readUrl": "https://play.google.com/store/books/details/Jack_%E6%BC%B8%E9%80%B2%E5%BC%8F%E8%8B%B1%E8%AA%9E%E6%9C%83%E8%A9%B1%E8%A8%93%E7%B7%B4?id=t8iwEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=t8iwEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=t8iwEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$51.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:G6DA5G8HG87"
   },
   {
     "id": "english-grammar-play-2",
@@ -1561,14 +2000,15 @@
     "category": "英語/文學習",
     "type": "web",
     "format": "網站閱讀",
-    "cover": "../assets/images/book-english-grammar-play.svg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_J61LF0AKJGE_partner-cover.jpg",
     "description": "給學生與自學者的英文句子感建立指南，適合從句型理解打基礎。",
     "downloadUrl": "",
-    "buyUrl": "",
-    "readUrl": "https://play.google.com/store/books/details/%E8%AD%89%E7%85%A7%E9%81%94%E4%BA%BA%E7%A0%94%E7%A9%B6%E5%AE%A4%E8%8B%B1%E6%96%87%E7%B5%84_%E8%8B%B1%E6%96%87%E8%AA%9E%E6%B3%95%E5%85%A5%E9%96%80%E6%95%99%E5%AD%B8%E6%9B%B8_%E7%94%A8%E5%8F%A5%E5%9E%8B%E7%90%86%E8%A7%A3_%E4%B8%8D%E9%9D%A0%E6%AD%BB%E8%83%8C?id=c8GxEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=c8GxEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=c8GxEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:J61LF0AKJGE"
   },
   {
     "id": "english-grammar-zero-start",
@@ -1595,14 +2035,15 @@
     "category": "英語/文學習",
     "type": "web",
     "format": "網站閱讀",
-    "cover": "assets/images/google-book-cover-images/speech-english-play-google-cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_PZBYGYGY2BU_partner-cover.jpg",
     "description": "透過演說與表達情境學英文，兼顧句型、語感與口語表達。",
     "downloadUrl": "",
-    "buyUrl": "",
-    "readUrl": "https://play.google.com/store/books/details/%E8%AD%89%E7%85%A7%E9%81%94%E4%BA%BA%E7%A0%94%E7%A9%B6%E5%AE%A4%E8%8B%B1%E6%96%87%E7%B5%84_%E7%94%A8%E6%BC%94%E8%AA%AA%E5%AD%B8%E8%8B%B1%E6%96%87?id=IN2uEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=IN2uEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=IN2uEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:PZBYGYGY2BU"
   },
   {
     "id": "author-works-google-search",
@@ -1833,14 +2274,15 @@
     ],
     "type": "web",
     "format": "網站閱讀",
-    "cover": "../assets/images/book-ipas-mid-ai-guide.svg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_U62JXNG1DCE_partner-cover.jpg",
     "description": "聚焦 iPAS 中級 AI 應用規劃師考試，用白話拆解 AI 核心概念，從觀念、情境到判斷思維，幫助考生建立 AI 規劃能力，高分通過考試。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details/iPAS_%E4%B8%AD%E7%B4%9A_AI_%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E9%AB%98%E5%88%86%E9%81%8E%E9%97%9C%E6%8C%87%E5%8D%97?id=5ki3EQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details/iPAS_%E4%B8%AD%E7%B4%9A_AI_%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%AB%E9%AB%98%E5%88%86%E9%81%8E%E9%97%9C%E6%8C%87%E5%8D%97?id=5ki3EQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=5ki3EQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=5ki3EQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:U62JXNG1DCE"
   },
   {
     "id": "keeping-up-joneses-bilingual",
@@ -1850,14 +2292,15 @@
     "category": "英語/文學習",
     "type": "web",
     "format": "網站閱讀",
-    "cover": "assets/images/google-book-cover-images/keeping-up-joneses-bilingual-google-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_1H829ZL9K5N_partner-cover.jpg",
     "description": "收錄英文對話、中文翻譯、單字整理與重點句型說明，適合國中、高中學生、自學者，以及想用生活情境培養英語表達力的讀者。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=hVLSEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=hVLSEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=hVLSEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=hVLSEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "提供試閱版"
+    "priceLabel": "NT$152.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:1H829ZL9K5N"
   },
   {
     "id": "git-github-start-book",
@@ -1890,14 +2333,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "../assets/images/book-word-root-vocabulary.svg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_JFUE6T0C6BS_partner-cover.jpg",
     "description": "以英文單字結構為核心，透過字首、字根與字尾拆解常用單字，幫助讀者理解組字邏輯、建立字彙記憶力，適合英文初學者、考試準備者與想用字根法打底的學習者。",
     "downloadUrl": "",
-    "buyUrl": "https://play.google.com/store/books/details?id=xRPUEQAAQBAJ",
-    "readUrl": "https://play.google.com/store/books/details?id=xRPUEQAAQBAJ",
+    "buyUrl": "https://books.google.com.tw/books/about?id=xRPUEQAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=xRPUEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$84，提供試閱版"
+    "priceLabel": "NT$84.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:JFUE6T0C6BS"
   },
   {
     "id": "sql2026",
@@ -2299,14 +2743,15 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/word-vba-examples-google-cover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_1AT89X6NF87_partner-cover.jpg",
     "description": "《Word VBA 實例演習》是一本為 Word 使用者設計的 VBA 入門實作書。它不要求讀者先學完程式語法，而是從看得見的 Word 工作開始：插入文字、錄製巨集、整理格式、批次尋找取代、建立表格、產生會議紀錄範本、從 Excel 名單產生 Word 通知單，最後做出版前文件檢查。本書特別適合會使用 Word，但第一次接觸 VBA 的讀者。每章都先說明要完成的文件任務，再提供實作步驟、完整程式碼、程式碼解說、人工檢查點，以及新手可能卡住的地方。讀者可以先做出成果，再逐步理解 `Sub`、`Selection`、`ActiveDocument`、`Range`、`Find`、`Tables`、`Dir` 與 Excel Automation 等概念。第 1 到第 3 章帶讀者建立第一個巨集、理解錄製巨集產生的程式碼，並完成一鍵套用文件基本格式。這幾章的重點是熟悉 `.docm`、VBA 編輯器、模組與巨集安全設定。第 4 到第 7 章開始處理常見文件維護任務，包括批次尋找與取代、自動插入文件資訊與頁碼、建立會議紀錄範本，以及產生 Word 表格檢查清單。每章都提醒讀者先使用練習副本，避免在正式文件上直接測試。第 8 到第 10 章進入較完整的自動化流程：批次處理資料夾裡的多份 Word 文件、從 Excel 名單產生 Word 通知單，以及建立出版前文件檢查小工具。這些章節強調自動化可以節省重複工作，但不會取代人的最後閱讀與判斷。附錄提供 VBA 初學者速查表與常見錯誤排除方式，協助讀者在遇到路徑、引號、巨集安全性、選取範圍、表格座標或 Excel 未關閉等問題時，能先縮小範圍再處理。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=HS3bEQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=HS3bEQAAQBAJ&redir_esc=y",
     "featured": true,
     "popular": true,
-    "priceLabel": "NT$118，提供試閱版"
+    "priceLabel": "NT$273.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:1AT89X6NF87"
   },
   {
     "id": "college-2026-cybersecurity-intro",
@@ -2320,7 +2765,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "../assets/images/20260523/collage _frontcover_fixed.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_2D097U1Q2X5_partner-cover.jpg",
     "description": "面向大學生與初學者的 2026 資安入門書，從 AI 風險、雲端安全、零信任、SOC、SBOM 到 PQC，拆解現代資安需要理解的資料、權限、責任與影響，適合課程、社團帶讀與自學使用。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=98LbEQAAQBAJ&redir_esc=y",
@@ -2328,7 +2773,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 2,
-    "priceLabel": "提供試閱"
+    "priceLabel": "NT$252.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:2D097U1Q2X5"
   },
   {
     "id": "high-school-ai-cybersecurity",
@@ -2342,7 +2788,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "../assets/images/20260523/highschool_fixed.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_WN0USQ7D0DF_partner-cover.jpg",
     "description": "用生活案例、圖解觀念與課後練習，帶高中生、資訊社團與初學者理解 AI 時代的帳號保護、詐騙辨識、雲端安全與安全使用 AI。文字白話，適合做為入門教材與自學讀物。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=N8PbEQAAQBAJ&redir_esc=y",
@@ -2350,7 +2796,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 3,
-    "priceLabel": "提供試閱"
+    "priceLabel": "NT$105.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:WN0USQ7D0DF"
   },
   {
     "id": "digital-self-defense-ai-era",
@@ -2363,7 +2810,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "../assets/images/20260523/general_fixed.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_UHX57GNQ1HW_partner-cover.jpg",
     "description": "寫給一般人的數位安全入門。從訊息查證、帳號保護、手機權限、付款前檢查、雲端分享到 AI 深偽風險，整理成「先停、查證、再行動」的判斷流程，幫助讀者在日常生活中降低受騙與資料外洩風險。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=xMTbEQAAQBAJ&redir_esc=y",
@@ -2371,7 +2818,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 4,
-    "priceLabel": "提供試閱"
+    "priceLabel": "NT$200.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:UHX57GNQ1HW"
   },
   {
     "id": "hermes-agent-guide",
@@ -2386,7 +2834,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "../assets/images/20260523/hermes_frontcover.png",
+    "cover": "assets/images/google-book-cover-images/GGKEY_CCXAD005GJ1_partner-cover.jpg",
     "description": "整理 Hermes 的使用經驗與簡捷指引，從工具、記憶、技能、人工作業 Gate 到可驗證行動流程，幫助 AI Agent 協作者建立更穩定的實戰工作法。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=--nbEQAAQBAJ&redir_esc=y",
@@ -2394,7 +2842,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 5,
-    "priceLabel": "提供試閱"
+    "priceLabel": "NT$368.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:CCXAD005GJ1"
   },
   {
     "id": "harness-engineering",
@@ -2410,7 +2859,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/harness-engineering-google-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_AUDZK4Z7JUQ_partner-cover.jpg",
     "description": "《Harness Engineering 實戰：從 Prompt 到 Agent 的完整工作流》是一本給 AI 初學者的工程工作流手冊。如果你已會使用 ChatGPT、Codex、Claude Code 等 AI 工具，卻發現只會寫 Prompt 不夠，本書將教你把 Prompt、Context、RAG、Agent、Sandbox 與 Human-in-the-loop 串成一條可落地、可驗證的 AI 流程。這不是只追求神奇提示詞的書，而是教你設計 AI 任務的資料、工具、權限、驗證與人工審核的實戰手冊。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=c7HiEQAAQBAJ&redir_esc=y",
@@ -2418,7 +2867,8 @@
     "featured": true,
     "popular": true,
     "launchRank": 1,
-    "priceLabel": "NT$189，提供試閱版"
+    "priceLabel": "NT$252.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:AUDZK4Z7JUQ"
   },
   {
     "id": "ipas-ai-mid-learning-handbook-2026-06",
@@ -2433,7 +2883,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/ipas-ai-mid-learning-handbook-2026-06-google-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_PZAZ017PYFY_partner-cover.jpg",
     "description": "一本面向 iPAS AI 應用規劃師中級考試的備考手冊，整理三大考科核心內容，涵蓋 AI 專案導入、資料處理、機器學習、生成式 AI、RAG、Agent、MLOps、AI 治理與考點模擬練習，協助讀者建立完整的中級備考框架。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=ciriEQAAQBAJ&redir_esc=y",
@@ -2441,6 +2891,7 @@
     "featured": true,
     "popular": true,
     "launchRank": 2,
-    "priceLabel": "NT$321，提供試閱版"
+    "priceLabel": "NT$472.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:PZAZ017PYFY"
   }
 ]
