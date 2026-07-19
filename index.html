@@ -21,7 +21,7 @@
   <meta name="twitter:description" content="AI、Python、iPAS AI、Prompt Engineering 與數位出版教材，從看得懂到做得出來。">
   <meta name="twitter:image" content="https://happyebook.com/assets/images/og-image.svg">
   <meta name="twitter:image:alt" content="Happy eBook AI 與數位學習出版平台">
-  <link rel="stylesheet" href="src/styles.css?v=20260527-11">
+  <link rel="stylesheet" href="src/styles.css?v=20260719-8">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,6 +39,24 @@
   </script>
 </head>
 <body data-page="home">
+  <aside class="news-tv" data-news-tv hidden aria-label="即時消息輪播">
+    <div class="news-tv-head">
+      <span class="news-tv-live">News</span>
+      <strong data-news-tv-group>AI 重大消息</strong>
+      <button type="button" data-news-tv-close aria-label="關閉消息視窗">×</button>
+    </div>
+    <div class="news-tv-screen" data-news-tv-screen aria-live="polite">
+      <p>正在載入最新消息…</p>
+    </div>
+    <div class="news-tv-footer">
+      <span data-news-tv-position>1 / 1</span>
+      <div class="news-tv-controls" aria-label="消息輪播控制">
+        <button type="button" data-news-tv-prev aria-label="上一則">‹</button>
+        <button type="button" data-news-tv-toggle aria-label="暫停輪播" aria-pressed="false">暫停</button>
+        <button type="button" data-news-tv-next aria-label="下一則">›</button>
+      </div>
+    </div>
+  </aside>
   <div class="site-shell">
     <header class="site-header">
       <div class="container header-row">
@@ -290,6 +308,6 @@
       </div>
     </footer>
   </div>
-  <script src="src/script.js?v=20260531-3"></script>
+  <script src="src/script.js?v=20260719-6"></script>
 </body>
 </html>

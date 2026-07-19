@@ -1,0 +1,70 @@
+{
+  "updatedAt": "2026-07-19T12:00:00+08:00",
+  "groups": [
+    {
+      "id": "ai",
+      "label": "今日 AI 重要消息",
+      "updatedAt": "2026-07-19",
+      "note": "由 Happy eBook 編輯整理，優先採用官方消息；日期為來源發布日期。",
+      "items": [
+        {
+          "title": "OpenAI 發布 AI 時代評估框架",
+          "summary": "OpenAI 提出用於觀察 AI 能力、採用情況與社會影響的評估方向，協助讀者從不同面向理解 AI 發展。",
+          "source": "OpenAI",
+          "date": "2026-07-17",
+          "url": "https://openai.com/news/company-announcements/"
+        },
+        {
+          "title": "OpenAI 發布 GPT-5.6 模型家族",
+          "summary": "GPT-5.6 Sol、Terra 與 Luna 分別對應旗艦、日常平衡及高效率需求，並提供於 ChatGPT、Codex 與 API。",
+          "source": "OpenAI",
+          "date": "2026-07-09",
+          "url": "https://openai.com/index/gpt-5-6/"
+        },
+        {
+          "title": "OpenAI 推出新一代語音模型 GPT-Live",
+          "summary": "新一代語音模型著重更自然的即時對話體驗，並用於 ChatGPT Voice。",
+          "source": "OpenAI",
+          "date": "2026-07-08",
+          "url": "https://openai.com/research/index/"
+        },
+        {
+          "title": "OpenAI 分析程式能力評測中的雜訊",
+          "summary": "研究檢視 SWE-Bench Pro 等程式評測可能出現的可靠度問題，提醒使用者不要只看單一分數判斷模型能力。",
+          "source": "OpenAI Research",
+          "date": "2026-07-08",
+          "url": "https://openai.com/research/index/"
+        },
+        {
+          "title": "Google 整理六月 AI 產品與研究更新",
+          "summary": "內容涵蓋 Gemini、Android、裝置端模型與開發工具，適合快速掌握 Google AI 生態系近期方向。",
+          "source": "Google",
+          "date": "2026-07-01",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/"
+        }
+      ]
+    },
+    {
+      "id": "books-com-tw",
+      "label": "博客來電腦書 Top 5",
+      "updatedAt": "",
+      "note": "等待最近一次排行榜更新；排名會附上來源日期與原始頁面。",
+      "items": []
+    },
+    {
+      "id": "tenlong",
+      "label": "天瓏電腦書 Top 5",
+      "updatedAt": "",
+      "note": "等待最近一次排行榜更新；排名會附上來源日期與原始頁面。",
+      "items": []
+    },
+    {
+      "id": "happyebook",
+      "label": "Happy eBook 暢銷 Top 5",
+      "updatedAt": "",
+      "period": "最近 30 天",
+      "note": "資料來自 Google Play 圖書銷售摘要報表，通常比交易時間晚 1 至 2 個工作天。",
+      "items": []
+    }
+  ]
+}

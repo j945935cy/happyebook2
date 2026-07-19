@@ -740,7 +740,260 @@ const createMiniBookCard = (book, isPrimary = false) => {
 
 };
 
+const escapeHtml = (value) => String(value ?? "")
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;")
+  .replaceAll("'", "&#039;");
+
+const formatNewsDate = (value) => {
+  if (!value) return "尚待更新";
+  const date = new Date(`${String(value).slice(0, 10)}T00:00:00+08:00`);
+  if (Number.isNaN(date.getTime())) return escapeHtml(value);
+  return new Intl.DateTimeFormat("zh-TW", { year: "numeric", month: "long", day: "numeric" }).format(date);
+};
+
+let newsDataPromise;
+const loadNewsData = () => {
+  if (!newsDataPromise) {
+    const newsUrl = new URL("news.json", scriptBase);
+    newsDataPromise = fetch(newsUrl, { cache: "no-store" }).then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    });
+  }
+  return newsDataPromise;
+};
+
+const initNewsTv = async () => {
+  const tv = document.querySelector("[data-news-tv]");
+  if (!tv) return;
+  try {
+    if (sessionStorage.getItem("happyebook-news-tv-closed") === "1") return;
+  } catch (_error) {
+    // The widget still works when sessionStorage is unavailable.
+  }
+
+  const screen = tv.querySelector("[data-news-tv-screen]");
+  const groupLabel = tv.querySelector("[data-news-tv-group]");
+  const position = tv.querySelector("[data-news-tv-position]");
+  const previous = tv.querySelector("[data-news-tv-prev]");
+  const next = tv.querySelector("[data-news-tv-next]");
+  const toggle = tv.querySelector("[data-news-tv-toggle]");
+  const close = tv.querySelector("[data-news-tv-close]");
+  let entries = [];
+  let index = 0;
+  let timer = null;
+  let isPaused = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const stopTimer = () => {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  };
+  const startTimer = () => {
+    stopTimer();
+    if (isPaused || document.hidden || entries.length < 2) return;
+    timer = window.setInterval(() => {
+      index = (index + 1) % entries.length;
+      render();
+    }, 8000);
+  };
+  const render = () => {
+    const entry = entries[index];
+    if (!entry) return;
+    const { group, item } = entry;
+    const url = /^https?:\/\//.test(String(item.url || "")) ? item.url : "";
+    groupLabel.textContent = group.id === "ai" ? "AI 重大消息" : group.label;
+    position.textContent = `${index + 1} / ${entries.length}`;
+    const title = url ? `<a class="news-tv-title-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>` : escapeHtml(item.title);
+    screen.innerHTML = `<div class="news-tv-meta">${escapeHtml(item.source || group.label)} · ${formatNewsDate(item.date || group.updatedAt)}</div>
+      <h2>${title}</h2>
+      <p>${escapeHtml(item.summary || "")}</p>
+      ${url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">查看來源 →</a>` : ""}`;
+    startTimer();
+  };
+
+  try {
+    const data = await loadNewsData();
+    entries = (data.groups || []).flatMap((group) => (group.items || []).map((item) => ({ group, item })));
+    if (!entries.length) return;
+  } catch (error) {
+    console.warn("右上角 News 載入失敗：", error);
+    return;
+  }
+
+  previous.addEventListener("click", () => {
+    index = (index - 1 + entries.length) % entries.length;
+    render();
+  });
+  next.addEventListener("click", () => {
+    index = (index + 1) % entries.length;
+    render();
+  });
+  toggle.addEventListener("click", () => {
+    isPaused = !isPaused;
+    toggle.textContent = isPaused ? "播放" : "暫停";
+    toggle.setAttribute("aria-label", isPaused ? "開始輪播" : "暫停輪播");
+    toggle.setAttribute("aria-pressed", String(isPaused));
+    startTimer();
+  });
+  close.addEventListener("click", () => {
+    stopTimer();
+    tv.hidden = true;
+    try {
+      sessionStorage.setItem("happyebook-news-tv-closed", "1");
+    } catch (_error) {
+      // Closing the widget must not depend on storage permission.
+    }
+  });
+  tv.addEventListener("mouseenter", stopTimer);
+  tv.addEventListener("mouseleave", startTimer);
+  tv.addEventListener("focusin", stopTimer);
+  tv.addEventListener("focusout", () => window.setTimeout(startTimer, 0));
+  document.addEventListener("visibilitychange", startTimer);
+
+  if (isPaused) {
+    toggle.textContent = "播放";
+    toggle.setAttribute("aria-label", "開始輪播");
+    toggle.setAttribute("aria-pressed", "true");
+  }
+  tv.hidden = false;
+  render();
+};
+
+const initNewsWindow = async () => {
+  const root = document.querySelector("[data-news-window]");
+  if (!root) return;
+
+  const tabs = root.querySelector("[data-news-tabs]");
+  const slide = root.querySelector("[data-news-slide]");
+  const dots = root.querySelector("[data-news-dots]");
+  const updated = root.querySelector("[data-news-updated]");
+  const note = root.querySelector("[data-news-note]");
+  const previous = root.querySelector("[data-news-prev]");
+  const next = root.querySelector("[data-news-next]");
+  const toggle = root.querySelector("[data-news-toggle]");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let groups = [];
+  let groupIndex = 0;
+  let itemIndex = 0;
+  let timer = null;
+  let isPaused = prefersReducedMotion;
+
+  const activeGroup = () => groups[groupIndex] || { items: [], note: "" };
+  const stopTimer = () => {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  };
+  const startTimer = () => {
+    stopTimer();
+    if (isPaused || document.hidden || activeGroup().items.length < 2) return;
+    timer = window.setInterval(() => {
+      itemIndex = (itemIndex + 1) % activeGroup().items.length;
+      renderSlide();
+    }, 7000);
+  };
+  const renderTabs = () => {
+    tabs.innerHTML = groups.map((group, index) => `<button class="news-tab" type="button" role="tab" id="news-tab-${escapeHtml(group.id)}" aria-controls="news-panel" aria-selected="${index === groupIndex}" tabindex="${index === groupIndex ? "0" : "-1"}" data-news-group="${index}">${escapeHtml(group.label)}</button>`).join("");
+  };
+  const renderSlide = () => {
+    const group = activeGroup();
+    const items = Array.isArray(group.items) ? group.items : [];
+    updated.textContent = `${group.period ? `${group.period} · ` : ""}資料更新：${formatNewsDate(group.updatedAt)}`;
+    note.textContent = group.note || "";
+    previous.disabled = items.length < 2;
+    next.disabled = items.length < 2;
+    if (!items.length) {
+      slide.innerHTML = '<div class="news-empty" id="news-panel" role="tabpanel">目前尚無經過核對的榜單資料，完成更新後會在這裡顯示。</div>';
+      dots.innerHTML = "";
+      startTimer();
+      return;
+    }
+    itemIndex = Math.min(itemIndex, items.length - 1);
+    const item = items[itemIndex];
+    const url = /^https?:\/\//.test(String(item.url || "")) ? item.url : "";
+    const sequenceLabel = group.id === "ai" ? `第 ${itemIndex + 1} 則` : `第 ${itemIndex + 1} 名`;
+    slide.innerHTML = `<article class="news-item" id="news-panel" role="tabpanel" aria-labelledby="news-tab-${escapeHtml(group.id)}">
+      <span class="news-rank" aria-label="${sequenceLabel}">${String(item.rank || itemIndex + 1).padStart(2, "0")}</span>
+      <div class="news-item-copy">
+        <div class="news-item-meta"><span>${escapeHtml(item.source || group.label)}</span><time datetime="${escapeHtml(item.date || group.updatedAt || "")}">${formatNewsDate(item.date || group.updatedAt)}</time></div>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.summary || "")}</p>
+        ${url ? `<a class="news-item-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">查看來源</a>` : ""}
+      </div>
+    </article>`;
+    dots.innerHTML = items.map((_, index) => `<button class="news-dot" type="button" aria-label="顯示第 ${index + 1} 則" aria-current="${index === itemIndex}" data-news-item="${index}"></button>`).join("");
+    startTimer();
+  };
+  const selectGroup = (index, moveFocus = false) => {
+    groupIndex = (index + groups.length) % groups.length;
+    itemIndex = 0;
+    renderTabs();
+    renderSlide();
+    if (moveFocus) tabs.querySelector(`[data-news-group="${groupIndex}"]`)?.focus();
+  };
+
+  tabs.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-news-group]");
+    if (button) selectGroup(Number(button.dataset.newsGroup));
+  });
+  tabs.addEventListener("keydown", (event) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const target = event.key === "Home" ? 0 : event.key === "End" ? groups.length - 1 : groupIndex + (event.key === "ArrowRight" ? 1 : -1);
+    selectGroup(target, true);
+  });
+  dots.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-news-item]");
+    if (!button) return;
+    itemIndex = Number(button.dataset.newsItem);
+    renderSlide();
+  });
+  previous.addEventListener("click", () => {
+    itemIndex = (itemIndex - 1 + activeGroup().items.length) % activeGroup().items.length;
+    renderSlide();
+  });
+  next.addEventListener("click", () => {
+    itemIndex = (itemIndex + 1) % activeGroup().items.length;
+    renderSlide();
+  });
+  toggle.addEventListener("click", () => {
+    isPaused = !isPaused;
+    toggle.textContent = isPaused ? "播放" : "暫停";
+    toggle.setAttribute("aria-label", isPaused ? "開始自動輪播" : "暫停自動輪播");
+    toggle.setAttribute("aria-pressed", String(isPaused));
+    startTimer();
+  });
+  root.addEventListener("mouseenter", stopTimer);
+  root.addEventListener("mouseleave", startTimer);
+  root.addEventListener("focusin", stopTimer);
+  root.addEventListener("focusout", () => window.setTimeout(startTimer, 0));
+  document.addEventListener("visibilitychange", startTimer);
+
+  try {
+    const data = await loadNewsData();
+    groups = Array.isArray(data.groups) ? data.groups : [];
+    if (!groups.length) throw new Error("找不到消息分類");
+    if (isPaused) {
+      toggle.textContent = "播放";
+      toggle.setAttribute("aria-label", "開始自動輪播");
+      toggle.setAttribute("aria-pressed", "true");
+    }
+    selectGroup(0);
+  } catch (error) {
+    console.warn("news.json 載入失敗：", error);
+    updated.textContent = "最新消息暫時無法載入";
+    slide.innerHTML = '<div class="news-empty" role="status">資料連線暫時異常，請稍後再試。</div>';
+    previous.disabled = true;
+    next.disabled = true;
+    toggle.disabled = true;
+  }
+};
+
 const initHome = async () => {
+
+  initNewsTv();
 
   const books = (await loadBooks()).filter(isPublished);
 

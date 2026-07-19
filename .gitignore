@@ -30,3 +30,8 @@ publication/**/google_books_upload/
 .env
 .env.local
 .vercel
+
+# Private local sales reports and authenticated browser profiles
+.local/google-play-profile/
+.local/google-play-reports/
+reports/google-play/
