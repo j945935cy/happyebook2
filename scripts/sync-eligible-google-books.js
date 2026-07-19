@@ -149,6 +149,7 @@ function staticPage(book) {
   <link rel="stylesheet" href="../src/styles.css?v=20260627-3">
   <script type="application/ld+json">${jsonLd}</script>
   <script type="application/ld+json">${breadcrumb}</script>
+  <script defer src="../src/analytics.js"></script>
 </head>
 <body data-page="static-book">
   <div class="site-shell">

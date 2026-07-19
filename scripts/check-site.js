@@ -15,7 +15,7 @@ const {
 const result = validateBooks({ includeSitemap: true });
 const publicHtmlPaths = collectPublicHtmlPaths();
 const sitemapUrls = extractSitemapUrls();
-const requiredPages = ["index.html", "books.html", "book.html", "about.html", "contact.html"];
+const requiredPages = ["index.html", "books.html", "book.html", "about.html", "contact.html", "404.html"];
 const CURRENT_CSS_VERSION = "20260627-3";
 const CURRENT_SCRIPT_VERSION = "20260703-2";
 const referencedImagePaths = new Set();
@@ -39,6 +39,10 @@ for (const page of requiredPages) {
 
 for (const relativePath of publicHtmlPaths) {
   const html = readText(relativePath);
+
+  if (!/\bsrc=["'](?:\.\.\/)*src\/analytics\.js["']/i.test(html)) {
+    result.errors.push(`${relativePath}: Google Analytics loader is missing.`);
+  }
 
   if (/\b(?:href|src)=["'](?:\.\.\/)*-3["']/i.test(html)) {
     result.errors.push(`${relativePath}: broken shared asset path ending in "-3".`);
@@ -69,6 +73,10 @@ for (const relativePath of publicHtmlPaths) {
     }
     referencedImagePaths.add(normalizeReferencedImagePath(relativePath, value));
   }
+}
+
+if (!fileExists("src/analytics.js")) {
+  result.errors.push("Google Analytics loader missing: src/analytics.js.");
 }
 
 for (const book of result.books) {
