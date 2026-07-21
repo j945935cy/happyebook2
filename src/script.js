@@ -583,6 +583,14 @@ const getCategories = (book) => {
 const uniqueCategories = (books) => [...new Set(books.flatMap(getCategories))];
 
 const normalizeSearchValue = (value) => String(value || "").trim().toLowerCase();
+const SEARCH_SYNONYMS = {
+  "資料庫": ["database", "sql", "sqlite", "postgresql", "mysql", "資料庫設計", "查詢"],
+  "database": ["資料庫", "sql", "sqlite", "postgresql", "mysql", "資料庫設計", "查詢"],
+  "sql": ["資料庫", "database", "sqlite", "postgresql", "mysql"],
+  "sqlite": ["資料庫", "database", "sql"],
+  "人工智慧": ["ai", "artificial intelligence", "machine learning", "機器學習", "chatgpt"],
+  "ai": ["人工智慧", "artificial intelligence", "machine learning", "機器學習", "chatgpt"]
+};
 
 const sortBooksForView = (books, sortMode = "recommended") => {
   const sorted = books.slice();
@@ -594,29 +602,21 @@ const sortBooksForView = (books, sortMode = "recommended") => {
 };
 
 const matchesSearchQuery = (book, query) => {
-
-  if (!query) return true;
-
+  const normalizedQuery = normalizeSearchValue(query);
+  if (!normalizedQuery) return true;
   const searchableText = [
-
     book.title,
-
     book.subtitle,
-
     book.author,
-
     book.description,
-
     book.format,
-
     book.priceLabel,
-
+    ...(Array.isArray(book.tags) ? book.tags : [book.tags]),
+    ...(Array.isArray(book.searchTerms) ? book.searchTerms : [book.searchTerms]),
     ...getCategories(book)
-
-  ].filter(Boolean).join(" ").toLowerCase();
-
-  return searchableText.includes(query);
-
+  ].filter(Boolean).map(normalizeSearchValue).join(" ");
+  const terms = [normalizedQuery, ...(SEARCH_SYNONYMS[normalizedQuery] || [])];
+  return terms.some((term) => searchableText.includes(normalizeSearchValue(term)));
 };
 
 const isPlaceholderUrl = (value) => !value || value.includes("REPLACE_WITH_YOUR");
