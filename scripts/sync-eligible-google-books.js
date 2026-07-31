@@ -147,7 +147,7 @@ function staticPage(book) {
   <meta name="twitter:title" content="${title} | Happy eBook">
   <meta name="twitter:description" content="${description}">
   <meta name="twitter:image" content="${imageUrl}">
-  <link rel="stylesheet" href="../src/styles.css?v=20260627-3">
+  <link rel="stylesheet" href="../src/styles.css?v=20260731-1">
   <script type="application/ld+json">${jsonLd}</script>
   <script type="application/ld+json">${breadcrumb}</script>
   <script defer src="../src/analytics.js"></script>
@@ -161,7 +161,7 @@ function staticPage(book) {
     </main>
     <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><nav class="footer-nav" aria-label="頁尾導覽"><a href="../books.html">書籍列表</a><a href="../learning/ipas-ai.html">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a><a href="../about.html">關於</a><a href="../contact.html">聯絡</a><a href="../privacy.html">隱私權政策</a></nav></div></footer>
   </div>
-  <script src="../src/script.js?v=20260703-2"></script>
+  <script src="../src/script.js?v=20260731-1"></script>
 </body>
 </html>
 `;

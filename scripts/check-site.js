@@ -16,8 +16,8 @@ const result = validateBooks({ includeSitemap: true });
 const publicHtmlPaths = collectPublicHtmlPaths();
 const sitemapUrls = extractSitemapUrls();
 const requiredPages = ["index.html", "books.html", "book.html", "about.html", "contact.html", "404.html"];
-const CURRENT_CSS_VERSION = "20260627-3";
-const CURRENT_SCRIPT_VERSION = "20260703-2";
+const CURRENT_CSS_VERSION = "20260731-1";
+const CURRENT_SCRIPT_VERSION = "20260731-1";
 const referencedImagePaths = new Set();
 
 function normalizeReferencedImagePath(pagePath, value) {
