@@ -1092,6 +1092,10 @@ select {
 }
 
 @media (max-width: 980px) {
+  .book-detail {
+    grid-template-columns: 1fr;
+  }
+
   .brand-home-hero .hero-grid {
     grid-template-columns: 1fr;
   }

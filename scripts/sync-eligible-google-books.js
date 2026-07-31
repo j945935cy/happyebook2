@@ -195,7 +195,7 @@ async function main() {
         author: row.author || "Happy eBook Authors",
         category: categories(row.title),
         cover: "",
-        description: `《${split.title}》是 ${row.author || "Happy eBook Authors"} 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。`,
+        description: row.description || `《${split.title}》是 ${row.author || "Happy eBook Authors"} 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。`,
         priceLabel: priceLabel(row.price),
         googleBooksKey: row.googleBooksKey,
       };
