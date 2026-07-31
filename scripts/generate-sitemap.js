@@ -4,17 +4,16 @@ const {
   ROOT,
   changefreqForPath,
   collectPublicHtmlPaths,
+  lastModifiedForPath,
   pathToPublicUrl,
   priorityForPath,
-  todayIsoDate,
   xmlEscape,
 } = require("./site-utils");
 
-const lastmod = todayIsoDate();
 const paths = collectPublicHtmlPaths();
 const urls = paths.map((relativePath) => ({
   loc: pathToPublicUrl(relativePath),
-  lastmod,
+  lastmod: lastModifiedForPath(relativePath),
   changefreq: changefreqForPath(relativePath),
   priority: priorityForPath(relativePath),
 }));

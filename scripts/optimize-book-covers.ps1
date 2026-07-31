@@ -71,6 +71,7 @@ function Get-RelativePathText($basePath, $targetPath) {
 }
 
 $seen = @{}
+$coverUpdates = @{}
 $results = @()
 
 foreach ($book in $books) {
@@ -95,6 +96,7 @@ foreach ($book in $books) {
 
   $relativeSource = Get-RelativePathText $root $sourceItem.FullName
   $relativeDestination = Get-RelativePathText $root $destinationItem.FullName
+  $coverUpdates[$relativeSource] = $relativeDestination
 
   $results += [PSCustomObject]@{
     Source = $relativeSource
@@ -110,3 +112,28 @@ if ($results.Count -eq 0) {
 }
 
 $results | Format-Table -AutoSize
+
+$booksRaw = [IO.File]::ReadAllText($booksPath)
+foreach ($sourceCover in $coverUpdates.Keys) {
+  $optimizedCover = $coverUpdates[$sourceCover]
+  $booksRaw = $booksRaw.Replace('"' + $sourceCover + '"', '"' + $optimizedCover + '"')
+}
+[IO.File]::WriteAllText($booksPath, $booksRaw, (New-Object System.Text.UTF8Encoding($false)))
+
+$updatedPages = 0
+foreach ($book in $books) {
+  $originalCover = [string]$book.cover
+  if (-not $coverUpdates.ContainsKey($originalCover)) { continue }
+  $pagePath = Join-Path $root ("books\" + $book.id + ".html")
+  if (-not (Test-Path -LiteralPath $pagePath)) { continue }
+  $pageText = [IO.File]::ReadAllText($pagePath)
+  $newPageText = $pageText.Replace("../" + $originalCover, "../" + $coverUpdates[$originalCover])
+  if ($newPageText -ne $pageText) {
+    [IO.File]::WriteAllText($pagePath, $newPageText, (New-Object System.Text.UTF8Encoding($false)))
+    $updatedPages += 1
+  }
+}
+
+$beforeTotal = ($results | Measure-Object -Property BeforeMB -Sum).Sum
+$afterTotal = ($results | Measure-Object -Property AfterMB -Sum).Sum
+Write-Host ("Updated {0} cover records and {1} book pages. Referenced size: {2:N2} MB -> {3:N2} MB." -f $coverUpdates.Count, $updatedPages, $beforeTotal, $afterTotal)

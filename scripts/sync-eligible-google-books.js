@@ -107,7 +107,7 @@ function staticPage(book) {
     "@type": "Book",
     name: book.title,
     description: book.description,
-    author: { "@type": "Person", name: book.author },
+    author: { "@type": book.author.includes("編輯部") ? "Organization" : "Person", name: book.author },
     publisher: { "@type": "Organization", name: "Happy eBook" },
     inLanguage: "zh-TW",
     genre: category,
@@ -132,6 +132,7 @@ function staticPage(book) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title} | Happy eBook</title>
   <meta name="description" content="${description}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="${pageUrl}">
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <meta property="og:type" content="book">
@@ -156,9 +157,9 @@ function staticPage(book) {
     <header class="site-header"><div class="container header-row"><a class="brand" href="../index.html"><span class="brand-mark">Happy eBook</span><span class="brand-sub">單本作品介紹</span></a><button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="開啟主選單"><span class="nav-toggle-bars" aria-hidden="true"></span><span>選單</span></button><nav class="site-nav" data-site-nav><a href="../index.html">首頁</a><a href="../books.html">書籍列表</a><a href="../learning/ipas-ai.html">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a><a href="../about.html">關於</a><a href="../contact.html">聯絡</a></nav></div></header>
     <main>
       <section class="page-hero"><div class="container"><span class="eyebrow">Google Play Books</span><h1>${title}</h1><p>${subtitle}</p></div></section>
-      <section class="section"><div class="container book-detail"><div class="book-cover-panel"><div class="book-cover-stage"><img src="../${html(book.cover)}" alt="${title} 書封" loading="lazy" decoding="async"></div></div><div class="book-content-panel"><div class="tag-row"><span class="tag paid">付費購買</span><span class="tag preview">提供試閱版</span><span class="tag category">${html(category)}</span></div><h1>${title}</h1><p class="book-summary">${subtitle}</p><p>${description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${author}</strong></div><div class="meta-item"><span>分類</span><strong>${html(category)}</strong></div><div class="meta-item"><span>格式</span><strong>Google Play Books 電子書</strong></div><div class="meta-item"><span>取得方式</span><strong>${html(book.priceLabel)}</strong></div></div><div class="cta-row"><a class="button primary" href="${html(book.buyUrl)}" target="_blank" rel="noopener noreferrer">立即購買</a><a class="button secondary" href="../books.html">返回列表</a></div></div></div></section>
+      <section class="section"><div class="container book-detail"><div class="book-cover-panel"><div class="book-cover-stage"><img src="../${html(book.cover)}" alt="${title} 書封" loading="lazy" decoding="async"></div></div><div class="book-content-panel"><div class="tag-row"><span class="tag paid">付費購買</span><span class="tag preview">提供試閱版</span><span class="tag category">${html(category)}</span></div><p class="book-detail-title">${title}</p><p class="book-summary">${subtitle}</p><p>${description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${author}</strong></div><div class="meta-item"><span>分類</span><strong>${html(category)}</strong></div><div class="meta-item"><span>格式</span><strong>Google Play Books 電子書</strong></div><div class="meta-item"><span>取得方式</span><strong>${html(book.priceLabel)}</strong></div></div><div class="cta-row"><a class="button primary" href="${html(book.buyUrl)}" target="_blank" rel="noopener noreferrer">立即購買</a><a class="button secondary" href="../books.html">返回列表</a></div></div></div></section>
     </main>
-    <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><nav class="footer-nav" aria-label="頁尾導覽"><a href="../books.html">書籍列表</a><a href="../learning/ipas-ai.html">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a><a href="../about.html">關於</a><a href="../contact.html">聯絡</a></nav></div></footer>
+    <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><nav class="footer-nav" aria-label="頁尾導覽"><a href="../books.html">書籍列表</a><a href="../learning/ipas-ai.html">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a><a href="../about.html">關於</a><a href="../contact.html">聯絡</a><a href="../privacy.html">隱私權政策</a></nav></div></footer>
   </div>
   <script src="../src/script.js?v=20260703-2"></script>
 </body>
@@ -192,10 +193,10 @@ async function main() {
         id,
         title: split.title,
         subtitle: split.subtitle,
-        author: row.author || "Happy eBook Authors",
+        author: row.author || "Happy eBook 編輯部",
         category: categories(row.title),
         cover: "",
-        description: row.description || `《${split.title}》是 ${row.author || "Happy eBook Authors"} 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。`,
+        description: row.description || `《${split.title}》是 ${row.author || "Happy eBook 編輯部"} 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。`,
         priceLabel: priceLabel(row.price),
         googleBooksKey: row.googleBooksKey,
       };

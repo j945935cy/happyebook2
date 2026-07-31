@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
 const SITE_ORIGIN = "https://happyebook.com";
@@ -29,6 +30,7 @@ const ROOT_PUBLIC_PAGES = [
   "book.html",
   "about.html",
   "contact.html",
+  "privacy.html",
 ];
 
 function readText(relativePath) {
@@ -103,7 +105,9 @@ function collectPublicHtmlPaths() {
   }
   for (const dir of PUBLIC_HTML_DIRS) {
     for (const file of walkHtmlFiles(dir)) {
-      paths.add(file);
+      if (!/<meta\s+name=["\']robots["\'][^>]*noindex/i.test(readText(file))) {
+        paths.add(file);
+      }
     }
   }
   return Array.from(paths).sort((a, b) => pathToPublicUrl(a).localeCompare(pathToPublicUrl(b)));
@@ -136,6 +140,27 @@ function todayIsoDate() {
   return new Date().toISOString().slice(0, 10);
 }
 
+function lastModifiedForPath(relativePath) {
+  try {
+    const status = execFileSync("git", ["status", "--porcelain", "--", relativePath], {
+      cwd: ROOT,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    if (status) return todayIsoDate();
+
+    const value = execFileSync("git", ["log", "-1", "--format=%cs", "--", relativePath], {
+      cwd: ROOT,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+  } catch {
+    // Fall back when the release package does not include Git history.
+  }
+  return fs.statSync(path.join(ROOT, relativePath)).mtime.toISOString().slice(0, 10);
+}
+
 function priorityForPath(relativePath) {
   if (relativePath === "index.html") {
     return "1.0";
@@ -164,6 +189,8 @@ function validateBooks({ includeSitemap = false } = {}) {
   const errors = [];
   const warnings = [];
   const seenIds = new Map();
+  const seenGoogleIds = new Map();
+  const seenGoogleKeys = new Map();
 
   books.forEach((book, index) => {
     const label = book && book.id ? book.id : `index ${index}`;
@@ -194,6 +221,29 @@ function validateBooks({ includeSitemap = false } = {}) {
 
     if (book.category && !Array.isArray(book.category) && typeof book.category !== "string") {
       errors.push(`${label}: category must be a string or array.`);
+    }
+
+
+    const storeUrl = book.buyUrl || book.readUrl || "";
+    let googleId = "";
+    try {
+      googleId = new URL(storeUrl, SITE_ORIGIN).searchParams.get("id") || "";
+    } catch {
+      googleId = "";
+    }
+    if (googleId) {
+      if (seenGoogleIds.has(googleId)) {
+        errors.push(`${label}: duplicate Google Books id ${googleId} also used by ${seenGoogleIds.get(googleId)}.`);
+      } else {
+        seenGoogleIds.set(googleId, label);
+      }
+    }
+    if (book.googleBooksKey) {
+      if (seenGoogleKeys.has(book.googleBooksKey)) {
+        errors.push(`${label}: duplicate googleBooksKey ${book.googleBooksKey} also used by ${seenGoogleKeys.get(book.googleBooksKey)}.`);
+      } else {
+        seenGoogleKeys.set(book.googleBooksKey, label);
+      }
     }
 
     const coverPath = normalizeAssetPath(book.cover);
@@ -251,6 +301,7 @@ module.exports = {
   changefreqForPath,
   extractSitemapUrls,
   fileExists,
+  lastModifiedForPath,
   pathToPublicUrl,
   priorityForPath,
   publicBookPagePath,

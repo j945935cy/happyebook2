@@ -277,6 +277,9 @@ const primaryCategoryFilters = [
   "Hermes"
 ];
 
+const visibleCategoryLimit = 8;
+const booksPageSize = 24;
+
 const normalizeCategory = (category) => categoryAliases[String(category || "").trim()] || String(category || "").trim();
 
 const routeFilters = {
@@ -305,7 +308,7 @@ const resourcePromos = [
     title: "免費下載 Codex / Python 學程式 Prompt 範本",
     copy: "提供初學者可套用的 Prompt，練習請 Codex 解釋程式、修正錯誤與整理筆記。",
     url: "resources/free-resources.html#codex-prompts",
-    bookIds: ["codex-mini-projects-book", "codex-mini-projects-book-2", "codex-python", "codex-html-18h", "codex-css-18h", "codex-javascript-18h", "html-css-18h-codex-ai", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
+    bookIds: ["codex-mini-projects-book", "codex-mini-projects-book-2", "codex-python", "codex-html-18h", "codex-css-18h", "codex-javascript-18h", "html-css-18h-ai-portfolio", "python-for-beginners-book", "codex-coding", "ai-python-automation", "windows-aicoding", "vibe-coding-html-css-js"]
   }
 ];
 
@@ -644,9 +647,17 @@ const initResourceForms = () => {
       const name = String(formData.get("name") || "").trim();
       const email = String(formData.get("email") || "").trim();
       const website = String(formData.get("website") || "").trim();
+      const privacyConsent = form.querySelector('[name="privacyConsent"]');
       if (!name || !email) {
         if (status) {
           status.textContent = "請填寫 Name 與 email。";
+          status.classList.add("is-error");
+        }
+        return;
+      }
+      if (privacyConsent && !privacyConsent.checked) {
+        if (status) {
+          status.textContent = "請先閱讀並同意隱私權政策。";
           status.classList.add("is-error");
         }
         return;
@@ -800,6 +811,7 @@ const initContactPage = () => {
     const email = String(data.email || "").trim();
 
     const content = String(data.message || "").trim();
+    const privacyConsent = form.querySelector('[name="privacyConsent"]');
 
     if (!name || !email || !content) {
 
@@ -809,7 +821,10 @@ const initContactPage = () => {
 
     }
 
-
+    if (privacyConsent && !privacyConsent.checked) {
+      if (message) message.textContent = "請先閱讀並同意隱私權政策。";
+      return;
+    }
 
     const subject = `Happy eBook 聯絡表單｜${name}`;
 
@@ -925,10 +940,29 @@ const renderCategoryFilters = (books) => {
   const orderedCategories = getOrderedCategories(books);
 
   document.querySelectorAll("[data-category-filter-list]").forEach((list) => {
+    const categoryButtons = orderedCategories.map((category, index) => {
+      const button = createCategoryFilterButton(category);
+      if (index >= visibleCategoryLimit) button.classList.add("category-filter-extra");
+      return button;
+    });
+    const hiddenCount = Math.max(0, orderedCategories.length - visibleCategoryLimit);
+    const toggle = document.createElement("button");
+    toggle.className = "filter-chip category-filter-toggle";
+    toggle.dataset.categoryToggle = "";
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = `更多分類（${hiddenCount}）`;
+    toggle.hidden = hiddenCount === 0;
     list.replaceChildren(
       createCategoryFilterButton("all", true),
-      ...orderedCategories.map((category) => createCategoryFilterButton(category))
+      ...categoryButtons,
+      toggle
     );
+    toggle.addEventListener("click", () => {
+      const expanded = list.classList.toggle("is-expanded");
+      toggle.setAttribute("aria-expanded", String(expanded));
+      toggle.textContent = expanded ? "收合分類" : `更多分類（${hiddenCount}）`;
+    });
   });
 
 };
@@ -939,6 +973,7 @@ const initBooksPage = async () => {
 
   const grid = document.querySelector("[data-books-grid]");
   const countTarget = document.querySelector("[data-books-count]");
+  const moreButton = document.querySelector("[data-books-more]");
 
   await populateStats(books);
 
@@ -963,6 +998,7 @@ const initBooksPage = async () => {
 
   let activeRoute = params.get("route") || "";
   let activeSort = params.get("sort") || "recommended";
+  let visibleLimit = booksPageSize;
 
   if (searchInput && activeSearch) searchInput.value = activeSearch;
   if (sortSelect) sortSelect.value = activeSort;
@@ -970,8 +1006,17 @@ const initBooksPage = async () => {
   typeFilters.forEach((item) => item.classList.toggle("is-active", item.dataset.typeFilter === activeType));
 
   categoryFilters.forEach((item) => item.classList.toggle("is-active", item.dataset.categoryFilter === activeCategory));
+  const activeCategoryButton = categoryFilters.find((item) => item.dataset.categoryFilter === activeCategory);
+  if (activeCategoryButton?.classList.contains("category-filter-extra")) {
+    const list = activeCategoryButton.closest("[data-category-filter-list]");
+    list?.classList.add("is-expanded");
+    const toggle = list?.querySelector("[data-category-toggle]");
+    toggle?.setAttribute("aria-expanded", "true");
+    if (toggle) toggle.textContent = "收合分類";
+  }
 
-  const render = () => {
+  const render = ({ resetLimit = false } = {}) => {
+    if (resetLimit) visibleLimit = booksPageSize;
 
     const query = normalizeSearchValue(activeSearch);
 
@@ -992,15 +1037,21 @@ const initBooksPage = async () => {
     const noResultsCopy = query ? "請調整關鍵字或篩選條件後再試一次。" : "你可以切換篩選條件，或之後再回來看看。";
 
     const sorted = sortBooksForView(filtered, activeSort);
+    const visibleBooks = sorted.slice(0, visibleLimit);
 
     if (countTarget) {
       const filterLabel = activeType === "all" && activeCategory === "all" && !query ? "全部上架作品" : "目前篩選結果";
-      countTarget.textContent = `${filterLabel}：顯示 ${formatNumber(filtered.length)} / ${formatNumber(books.length)} 本`;
+      countTarget.textContent = `${filterLabel}：顯示 ${formatNumber(visibleBooks.length)} / ${formatNumber(filtered.length)} 本`;
     }
 
-    grid.innerHTML = sorted.length ? sorted.map(createBookCard).join("") : `<div class="empty-state"><h3>${noResultsTitle}</h3><p>${noResultsCopy}</p></div>`;
+    grid.innerHTML = visibleBooks.length ? visibleBooks.map(createBookCard).join("") : `<div class="empty-state"><h2>${noResultsTitle}</h2><p>${noResultsCopy}</p></div>`;
 
     hydrateCoverImages(grid);
+    if (moreButton) {
+      const remaining = Math.max(0, sorted.length - visibleBooks.length);
+      moreButton.hidden = remaining === 0;
+      moreButton.textContent = remaining ? `顯示更多書籍（尚有 ${formatNumber(remaining)} 本）` : "已顯示全部書籍";
+    }
 
   };
 
@@ -1010,7 +1061,7 @@ const initBooksPage = async () => {
 
     activeRoute = "";
 
-    render();
+    render({ resetLimit: true });
 
   });
 
@@ -1022,7 +1073,7 @@ const initBooksPage = async () => {
 
     typeFilters.forEach((item) => item.classList.toggle("is-active", item === button));
 
-    render();
+    render({ resetLimit: true });
 
   }));
 
@@ -1034,7 +1085,7 @@ const initBooksPage = async () => {
 
     categoryFilters.forEach((item) => item.classList.toggle("is-active", item === button));
 
-    render();
+    render({ resetLimit: true });
 
   }));
 
@@ -1042,17 +1093,30 @@ const initBooksPage = async () => {
 
     activeSort = String(event.target.value || "recommended");
 
-    render();
+    render({ resetLimit: true });
 
+  });
+
+  moreButton?.addEventListener("click", () => {
+    visibleLimit += booksPageSize;
+    render();
   });
 
   render();
 
 };
 
-const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); const heroCopy = document.querySelector("[data-book-hero-copy]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; const bookUrl = `https://happyebook.com/books/${encodeURIComponent(book.id)}.html`; const bookDesc = book.description || book.subtitle || "查看作品詳細資料、格式、作者與閱讀或購買方式。"; const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute("content", val); }; setMeta('meta[property="og:title"]', `${book.title} | Happy eBook`); setMeta('meta[property="og:description"]', bookDesc); setMeta('meta[property="og:url"]', bookUrl); setMeta('meta[name="twitter:title"]', `${book.title} | Happy eBook`); setMeta('meta[name="twitter:description"]', bookDesc); setMeta('meta[name="description"]', bookDesc); let canon = document.querySelector('link[rel="canonical"]'); if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); } canon.href = bookUrl; const breadcrumbJson = document.createElement("script"); breadcrumbJson.type = "application/ld+json"; breadcrumbJson.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Happy eBook", "item": "https://happyebook.com/" }, { "@type": "ListItem", "position": 2, "name": "書籍列表", "item": "https://happyebook.com/books.html" }, { "@type": "ListItem", "position": 3, "name": book.title, "item": bookUrl } ] }); document.head.appendChild(breadcrumbJson); const ldJson = document.createElement("script"); ldJson.type = "application/ld+json"; const categories = getCategories(book); const bookSchema = { "@context": "https://schema.org", "@type": "Book", "name": book.title, "description": book.description, "author": { "@type": "Person", "name": book.author }, "inLanguage": "zh-TW", "genre": categories[0] || "", "url": bookUrl, "isPartOf": { "@type": "WebSite", "name": "Happy eBook", "url": "https://happyebook.com/" } }; if (book.buyUrl) bookSchema["offers"] = { "@type": "Offer", "url": book.buyUrl, "priceCurrency": "TWD" }; ldJson.textContent = JSON.stringify(bookSchema); document.head.appendChild(ldJson); if (heroCopy) heroCopy.textContent = book.heroCopy || "這裡會顯示書封、書名、副標、作者、分類、標籤、簡介、格式與操作按鈕。"; const coverSources = getCoverSources(book.cover, book.id); const coverSourcesJson = JSON.stringify(coverSources); target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><h1>${book.title}</h1><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${getCategories(book).join(' / ')}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; hydrateCoverImages(target); addBookInsights(book, books, target); addResourcePromo(book.id, target); };
+const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); const heroCopy = document.querySelector("[data-book-hero-copy]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; const bookUrl = `https://happyebook.com/books/${encodeURIComponent(book.id)}.html`; const bookDesc = book.description || book.subtitle || "查看作品詳細資料、格式、作者與閱讀或購買方式。"; const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute("content", val); }; setMeta('meta[property="og:title"]', `${book.title} | Happy eBook`); setMeta('meta[property="og:description"]', bookDesc); setMeta('meta[property="og:url"]', bookUrl); setMeta('meta[name="twitter:title"]', `${book.title} | Happy eBook`); setMeta('meta[name="twitter:description"]', bookDesc); setMeta('meta[name="description"]', bookDesc); let canon = document.querySelector('link[rel="canonical"]'); if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); } canon.href = bookUrl; const breadcrumbJson = document.createElement("script"); breadcrumbJson.type = "application/ld+json"; breadcrumbJson.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Happy eBook", "item": "https://happyebook.com/" }, { "@type": "ListItem", "position": 2, "name": "書籍列表", "item": "https://happyebook.com/books.html" }, { "@type": "ListItem", "position": 3, "name": book.title, "item": bookUrl } ] }); document.head.appendChild(breadcrumbJson); const ldJson = document.createElement("script"); ldJson.type = "application/ld+json"; const categories = getCategories(book); const bookSchema = { "@context": "https://schema.org", "@type": "Book", "name": book.title, "description": book.description, "author": { "@type": book.author.includes("編輯部") ? "Organization" : "Person", "name": book.author }, "inLanguage": "zh-TW", "genre": categories[0] || "", "url": bookUrl, "isPartOf": { "@type": "WebSite", "name": "Happy eBook", "url": "https://happyebook.com/" } }; if (book.buyUrl) bookSchema["offers"] = { "@type": "Offer", "url": book.buyUrl, "priceCurrency": "TWD" }; ldJson.textContent = JSON.stringify(bookSchema); document.head.appendChild(ldJson); if (heroCopy) heroCopy.textContent = book.heroCopy || "這裡會顯示書封、書名、副標、作者、分類、標籤、簡介、格式與操作按鈕。"; const coverSources = getCoverSources(book.cover, book.id); const coverSourcesJson = JSON.stringify(coverSources); target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><p class="book-detail-title">${book.title}</p><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${getCategories(book).join(' / ')}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; hydrateCoverImages(target); addBookInsights(book, books, target); addResourcePromo(book.id, target); };
 
 const initStaticBookResourcePromo = async () => {
+
+  const duplicateHeading = document.querySelector(".book-content-panel h1");
+  if (duplicateHeading && document.querySelectorAll("main h1").length > 1) {
+    const title = document.createElement("p");
+    title.className = "book-detail-title";
+    title.textContent = duplicateHeading.textContent;
+    duplicateHeading.replaceWith(title);
+  }
 
   const match = window.location.pathname.match(/\/books\/([^/]+)\.html$/);
 
@@ -1064,6 +1128,16 @@ const initStaticBookResourcePromo = async () => {
   if (book) addBookInsights(book, books);
   addResourcePromo(bookId);
 
+};
+
+const initPrivacyLinks = () => {
+  document.querySelectorAll(".footer-nav").forEach((nav) => {
+    if (nav.querySelector('a[href$="privacy.html"]')) return;
+    const link = document.createElement("a");
+    link.href = "/privacy.html";
+    link.textContent = "隱私權政策";
+    nav.appendChild(link);
+  });
 };
 
 const initNav = () => {
@@ -1111,10 +1185,19 @@ const initResourceEmailForms = () => {
       const name = String(formData.get("name") || "").trim();
       const email = String(formData.get("email") || "").trim();
       const website = String(formData.get("website") || "").trim();
+      const privacyConsent = form.querySelector('[name="privacyConsent"]');
 
       if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         if (status) {
           status.textContent = "請填寫 Name 與正確的 email。";
+          status.classList.add("is-error");
+        }
+        return;
+      }
+
+      if (privacyConsent && !privacyConsent.checked) {
+        if (status) {
+          status.textContent = "請先閱讀並同意隱私權政策。";
           status.classList.add("is-error");
         }
         return;
@@ -1645,6 +1728,8 @@ const initBookProgressDashboard = async () => {
 const boot = () => {
 
   initNav();
+
+  initPrivacyLinks();
 
   bindExternalLinks();
 

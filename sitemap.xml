@@ -751,12 +751,6 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://happyebook.com/books/html-css-18h-codex-ai.html</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
     <loc>https://happyebook.com/books/ipas-4a2kchkyl8k.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -806,12 +800,6 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/ipas-ai-mid-learning-handbook-2026-06.html</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://happyebook.com/books/ipas-ai-mid-learning-handbook.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -1211,6 +1199,12 @@
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/privacy.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://happyebook.com/resources/free-resources.html</loc>
