@@ -11,26 +11,118 @@
     "detailPages": true,
     "sitemap": true,
     "localValidation": true,
-    "remoteDeployment": false
+    "remoteDeployment": true
   },
   "books": [
-    { "googleBooksKey": "GGKEY:C1K2GACA0S4", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:JYQGC2626W5", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:AENAPC08Y0Q", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:PP4U77BZ2GJ", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:71REXULXD9S", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:WXJ741ZAG9W", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:8909EQ1LC5K", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:WLRNLGQBB7E", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:K9XBGRUY153", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:RRYQSSZ9WJG", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:AK0FEQFLP3B", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:GUP76NQ48QU", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:K7LA3U87NFG", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:FLRTL7GAX6D", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:1G26L58T7A5", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:RR7T4PW20PL", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:FZAR95AD5FZ", "catalog": true, "cover": true, "detailPage": true },
-    { "googleBooksKey": "GGKEY:6ADEEW4R2LY", "catalog": true, "cover": true, "detailPage": true }
-  ]
+    {
+      "googleBooksKey": "GGKEY:C1K2GACA0S4",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:JYQGC2626W5",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:AENAPC08Y0Q",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:PP4U77BZ2GJ",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:71REXULXD9S",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:WXJ741ZAG9W",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:8909EQ1LC5K",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:WLRNLGQBB7E",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:K9XBGRUY153",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:RRYQSSZ9WJG",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:AK0FEQFLP3B",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:GUP76NQ48QU",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:K7LA3U87NFG",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:FLRTL7GAX6D",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:1G26L58T7A5",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:RR7T4PW20PL",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:FZAR95AD5FZ",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    },
+    {
+      "googleBooksKey": "GGKEY:6ADEEW4R2LY",
+      "catalog": true,
+      "cover": true,
+      "detailPage": true
+    }
+  ],
+  "deployedCommit": "0c71509bd7069b0024070d2b2610affa51d9d98c",
+  "publicCatalogCount": 181
 }
