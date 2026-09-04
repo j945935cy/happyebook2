@@ -3,6 +3,697 @@
     "type": "paid",
     "format": "Google Play Books 電子書",
     "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=KX4DEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=KX4DEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -1,
+    "id": "google-play-book-jxt5zhh7y1w",
+    "title": "資料格式工程學",
+    "subtitle": "從 CSV、JSON 到 Protobuf、Parquet：打造跨平台、可驗證、可演進的資料契約",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_JXT5ZHH7Y1W_partner-cover.jpg",
+    "description": "從前導零、空值、時區與金額精度，到 API 契約、事件版本、個資安全與 Parquet 分析層，《資料格式工程學》帶你理解格式如何改變系統對資料的解讀。 本書涵蓋 CSV、JSON、YAML、XML、Avro、Protobuf、Parquet 與 ORC，並以可執行的 HappyShop 案例，示範如何建立跨平台、可驗證、可演進的資料契約。 資料能被解析，不代表它仍然正確。",
+    "priceLabel": "NT$205.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:JXT5ZHH7Y1W",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=npIDEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=npIDEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -2,
+    "id": "data-format-engineering-from-csv-and-json-to-protobuf-and-parque-bhywp5tl9dp",
+    "title": "Data Format Engineering: From CSV and JSON to Protobuf and Parquet",
+    "subtitle": "Building Cross-Platform, Verifiable, and Evolvable Data Contracts",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_BHYWP5TL9DP_partner-cover.jpg",
+    "description": "Data that parses is not necessarily data that is correct. explains how leading zeros, nulls, time zones, monetary precision, API contracts, event versions, privacy controls, and analytical storage change the way systems interpret data. The book covers CSV, JSON, YAML, XML, Avro, Protobuf, Parquet, and ORC, backed by an executable HappyShop example that builds a cross-platform, verifiable, and evolvable data contract.",
+    "priceLabel": "NT$205.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:BHYWP5TL9DP",
+    "language": "en",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=KZkDEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=KZkDEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -3,
+    "id": "herdr-k5hqn8kxh19",
+    "title": "Herdr 易學速用秘訣",
+    "subtitle": "讓 Coding Agents 持續執行、遠端重連與聰明協作",
+    "author": "Happy eBook",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_K5HQN8KXH19_partner-cover.jpg",
+    "description": "Herdr 是一個讓終端機工作位置更容易理解、重新連接與驗證的工具。本書不把「畫面還在」誤當成「工作已完成」，而是從持久化邊界、第一次 marker、detach／重新連接開始，逐步帶你看懂 session、workspace、tab、pane 與 agent 的責任範圍。 你會先完成普通 pane 的可驗證練習，再學習遠端 SSH、server 重啟、官方整合、自動化控制與多代理程式協作。每個進階流程都配有 timeout、blocked、unknown、產物與清理條件，幫助你在沒有 Herdr 或 coding agent 經驗時，也能安全地判斷「現在真的完成了什麼」。 適合想整理 shell、測試、開發伺服器與 coding-agent 工作流程的讀者；不要求先熟悉 tmux 或其他終端機多工工具。",
+    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:K5HQN8KXH19",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=6ccDEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=6ccDEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -4,
+    "id": "hermes-agent-2026-8-pwn61cghejd",
+    "title": "Hermes Agent 實戰指南 (2026年8月更新版）",
+    "subtitle": "從安裝、快速入門到 10 個 AI 代理應用",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_PWN61CGHEJD_partner-cover.jpg",
+    "description": "本書寫給希望讓 AI 不只回答問題，還能實際操作檔案、終端、瀏覽器、程式碼與自動化流程的讀者。你不需要先學會打造 Agent，也不必是專業程式設計師；需要程式設計的章節會從可驗證的小型範例開始。 快速入門提供 Bash／WSL 與 Windows 原生 PowerShell 兩條路徑。第 8 章之後的完整伴隨實例以 Bash（Linux、macOS 或 Windows WSL2）作為主要可重現命令環境；Windows 原生讀者仍可使用 Hermes Desktop 與 PowerShell，但標成 bash 的區塊不可直接照貼。若希望逐章跟做全部實例，Windows 讀者應在第 3 章完成 WSL2 路徑。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:PWN61CGHEJD",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=no8EEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=no8EEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -5,
+    "id": "pi-coding-agent-ft5baczldw8",
+    "title": "Pi Coding Agent 入門",
+    "subtitle": "從安裝、設定到程式碼與長篇文件實戰",
+    "author": "Happy eＢook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_FT5BACZLDW8_partner-cover.jpg",
+    "description": "Pi Coding Agent 是在終端機中運作的 AI 程式代理：你交給它一項任務，它讀取檔案、修改程式碼、執行指令，並依測試結果繼續修正。本書寫給會使用基本終端機、但初次接觸 AI 程式代理的讀者，從安裝、登入模型服務到限制工具權限逐步示範，並以三項可驗證的實戰貫穿全書——用測試驅動開發完成樂透小遊戲、建立 Flask JSON API、編輯一本五千詞以上的英文電子書。你不只學會下指令，更學會用 Git 差異與重新執行測試來驗收代理成果。附錄含指令速查表、六道練習題與術語表。全書指令皆於 Pi 0.84.2（2026-08）實測驗證。",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:FT5BACZLDW8",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=J5wEEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=J5wEEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -6,
+    "id": "pi-ai-npja71437g0",
+    "title": "Pi 程式開發代理：極簡主義的 AI 開發工作流",
+    "subtitle": "打造會自我擴展的終端機 Agent",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_NPJA71437G0_partner-cover.jpg",
+    "description": "2026 年的終端機編碼代理已經高度收斂：讀檔、寫檔、跑 shell、串流輸出。 ——四個工具、不到 1,000 tokens 的系統提示詞、刻意不內建 MCP / sub-agents / plan mode，把「缺什麼就叫 agent 自己造」變成核心工作流。 這本書記錄如何駕馭這種極簡主義：不只是「用 Pi」，而是「把 Pi 變成你的 Pi」。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:NPJA71437G0",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=DL4EEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=DL4EEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -7,
+    "id": "opencode-a656qwrqt03",
+    "title": "OpenCode 入門指南",
+    "subtitle": "30 分鐘學會 AI 輔助程式設計",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_A656QWRQT03_partner-cover.jpg",
+    "description": "還在羨慕別人用 AI 寫程式？OpenCode 把你的終端機變成最強開發夥伴。 OpenCode 是開源、執行於終端機的 AI 程式助理——它讀得懂整個專案、會規劃任務、能直接修改程式碼並執行指令，支援多種模型，包含免費方案。 本書為「OpenCode 技術叢書」第一冊，專為初次接觸 AI 輔助開發的讀者設計：",
+    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:A656QWRQT03",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=zscEEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=zscEEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -8,
+    "id": "opencode-ly9csly94gn",
+    "title": "OpenCode 實戰寶典",
+    "subtitle": "從概念到實踐的完整學習路徑",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_LY9CSLY94GN_partner-cover.jpg",
+    "description": "「裝好了，然後呢？」——這本書回答所有 OpenCode 使用者的下一個問題。 第一冊帶你入門；第二冊把你變成高手。五篇二十二個章節＋四篇附錄： ・概念篇：代理架構、工具迴圈、技能系統——理解它為何聰明",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:LY9CSLY94GN",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=FtMEEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=FtMEEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -9,
+    "id": "opencode-3528p9pw9sc",
+    "title": "OpenCode 架構解密",
+    "subtitle": "從代理迴圈到生產級 AI 系統的可觀察設計",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_3528P9PW9SC_partner-cover.jpg",
+    "description": "《OpenCode 架構解密》是「OpenCode 技術叢書」第三冊。前兩冊教你用，這一冊帶你拆——從一次對話的九步旅程，到 20 張 SQLite 資料表組成的領域模型；從代理迴圈裡的權限閘門，到 REST、SSE、control、MCP、ACP 五條通訊通道的選型決策。 本書鐵律：只寫能驗證的事。每個論述都附帶可執行的驗證動作——唯讀查詢真實資料庫、curl 官方 API、走訪目錄結構、逐欄解讀日欄解讀日誌。讀完你不只「知道」架構，而是能親手重現每項證據。 ・全景篇——引擎室地圖、client/server 分工、資料目錄導覽",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:3528P9PW9SC",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=xdwEEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=xdwEEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -10,
+    "id": "opencode-3dwe43g2hnx",
+    "title": "OpenCode 團隊作戰",
+    "subtitle": "從個人效率到組織級 AI 工程化",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_3DWE43G2HNX_partner-cover.jpg",
+    "description": "《OpenCode 團隊作戰》是「OpenCode 技術叢書」第五冊（完結篇）。前四冊解決個人會用、懂原理、能擴充；這一冊解決組織怎麼落地：會話資產化、分享與遠距協作、GitHub/GitLab 平台自動化、模型供給治理，直到企業級部署。 延續系列鐵律「只寫能驗證的事」：全部 CLI 命令實機驗證、九份官方文檔逐字核對、stats 成本報表與 export 匯出格式附真實輸出樣本。 ・從 me 到 we——安裝生命週期、會話即資產、成本報表",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:3DWE43G2HNX",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=ytUEEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=ytUEEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -11,
+    "id": "opencode-7d24jsj8n15",
+    "title": "OpenCode 擴展開發",
+    "subtitle": "從自訂工具到生態發布的建造者指南",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_7D24JSJ8N15_partner-cover.jpg",
+    "description": "《OpenCode 擴展開發》是「OpenCode 技術叢書」第四冊，帶你從使用者變成建造者。八個擴充點一次攤開：自訂指令、Agent Skills、代理工程、主題設計、MCP、自訂工具、外掛鉤子、SDK 整合——從改一句提示，到把 OpenCode 裝進你的自動化管線。 延續系列鐵律「只寫能驗證的事」：十七支外掛鉤子逐一對照官方型別定義、SDK 方法對照 OpenAPI 生成碼、快取目錄實機解剖。書中範例可直接放進專案的 .opencode/ 目錄運行。 ・工坊地圖——擴充點選型決策、載入時序、除錯三管道",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:7D24JSJ8N15",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=h98EEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=h98EEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -12,
+    "id": "60-rh09qz1u417",
+    "title": "乙安 60 天",
+    "subtitle": "兩個月輕鬆考上職業安全衛生管理員",
+    "author": "Happy eBook Authors",
+    "category": [
+      "職業安全衛生",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_RH09QZ1U417_partner-cover.jpg",
+    "description": "1. 殘酷數字開場：24,619 人報名、棄考 26.64%、合格率 13.41%——淘汰人的是壞掉的準備系統 2. 三條破局策略：術科保本（保留 3 年）／數字集中轟炸／8 週照表操課 - 115/7 新制全面對應（舊書罰則大量失效＝獨家優勢）",
+    "priceLabel": "NT$419.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:RH09QZ1U417",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=YBsFEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=YBsFEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -13,
+    "id": "pi-coding-agent-dufkgazj3ut",
+    "title": "Pi Coding Agent 完全指南",
+    "subtitle": "從極簡設計到生產部署：552 行核心 × 4 個工具 × 無限可能",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DUFKGAZJ3UT_partner-cover.jpg",
+    "description": "將 Pi Agent 架構、核心元件、Extension 系統、安全機制、容器化部署完整剖析。含 21 章 + 4 附錄 + 9 個實戰範例，從入門到生產部署一次搞定。",
+    "priceLabel": "NT$366.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:DUFKGAZJ3UT",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=vBgFEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=vBgFEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -14,
+    "id": "932-c7n0fr2k03r",
+    "title": "乙安 932 題全解",
+    "subtitle": "會的快答，不會的講通",
+    "author": "Happy eBook Authors",
+    "category": [
+      "職業安全衛生",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_C7N0FR2K03R_partner-cover.jpg",
+    "description": "官方 A15 題庫 932 題分流攻略：708 題直答速查、217 題逐題講解、7 題公式計算，會的快答，不會的講通。",
+    "priceLabel": "NT$419.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:C7N0FR2K03R",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=-74FEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=-74FEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -15,
+    "id": "60-932-027skhgnfpc",
+    "title": "乙安 60 天：932 題高分通關版",
+    "subtitle": "職業安全衛生管理員從觀念到題庫的安心線備考法",
+    "author": "Happy eBook Authors",
+    "category": [
+      "職業安全衛生",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_027SKHGNFPC_partner-cover.jpg",
+    "description": "《乙安 60 天：932 題高分通關版》是一本專為乙級技術士職業安全衛生管理員考試設計的備考用書。 • 每題附完整解析：原理（法源條文）、最強干擾項分析、記法（記憶口訣） • 涵蓋勞基法、職安法、職災保險、職業衛生、管理風險等核心領域",
+    "priceLabel": "NT$629.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:027SKHGNFPC",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=FtQFEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=FtQFEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -16,
+    "id": "ai-dsqz22kwfnp",
+    "title": "AI 時代的資料格式",
+    "subtitle": "從 JSON、CSV、XML、YAML 到 JSONL、Schema 與 RAG 實戰",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DSQZ22KWFNP_partner-cover.jpg",
+    "description": "你每天都在接觸資料格式：試算表中的 CSV、API 回傳的 JSON、企業系統裡的 XML、工具設定使用的 YAML 與 TOML，以及供 AI 處理的 JSONL、Schema 與 Markdown 文件。 真正困難的，從來不只是記住每種格式的語法，而是理解： - 如何讓人、程式與 AI 對同一份資料有一致理解？",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:DSQZ22KWFNP",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=2NcFEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=2NcFEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -17,
+    "id": "60-cn0hwz9t450",
+    "title": "乙安 術科篇：60 天計算題 + 關鍵字答題法",
+    "subtitle": "電腦閱卷時代的術科滿分攻略",
+    "author": "Happy eBook Authors",
+    "category": [
+      "職業安全衛生",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_CN0HWZ9T450_partner-cover.jpg",
+    "description": "乙級職業安全衛生管理員 術科電腦測驗(CBT) 專用。涵蓋 JSA、職災統計、管理計畫、風險評估四大主題，含計算題步驟拆解、關鍵字精準度訓練、全真模擬試題 50 題。",
+    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:CN0HWZ9T450",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=fe4FEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=fe4FEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -18,
+    "id": "python-6xp1cdsaahk",
+    "title": "Python 資料處理實戰",
+    "subtitle": "用 CSV、Excel、JSON 與 API 建立可驗證、可重跑的資料流程",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_6XP1CDSAAHK_partner-cover.jpg",
+    "description": "學過基本 Python，卻不知道如何把 CSV、Excel、JSON 與 API 整理成可靠的資料流程？ 《Python 資料處理實戰》以「晴日商店」合成資料為連續案例，帶你從檔案讀寫、型別與缺值處理開始，逐步完成資料清理、Schema 驗證、Excel 報表、JSONL 批次處理、API 同步與每日資料管線。 本書不只示範成功案例，也實際處理缺檔、格式錯誤、重複資料、API 404／503、輸出衝突與產物竄改。每章均提供可執行命令、預期輸出、退出碼、錯誤案例、驗證清單與練習題。",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:6XP1CDSAAHK",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=9x0GEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=9x0GEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -19,
+    "id": "google-play-book-cdd8hwthcxd",
+    "title": "乙安題庫導覽",
+    "subtitle": "官方題庫高頻主題整理",
+    "author": "Happy eBook Authors",
+    "category": [
+      "職業安全衛生",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_CDD8HWTHCXD_partner-cover.jpg",
+    "description": "《乙安題庫導覽》是為準備乙級職業安全衛生管理員術科電腦測驗（CBT）的考生設計的主題式練習工具。 本書依官方公開題庫整理高頻主題，搭配關鍵字答題法與自編練習題，協助考生掌握法規用語、重要數字、計算公式與完整作答方式。 內容涵蓋 JSA 工作安全分析、職災調查、安全衛生管理計畫、風險評估、法規與計算題，並收錄錯題精析、模擬試題、公式總表、法規速查及關鍵字對照表。",
+    "priceLabel": "NT$419.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:CDD8HWTHCXD",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=BTIGEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=BTIGEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -20,
+    "id": "api-ehneb84uynt",
+    "title": "API 資料契約實戰",
+    "subtitle": "以 OpenAPI、JSON Schema、Webhook 與冪等性打造可靠的系統整合",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_EHNEB84UYNT_partner-cover.jpg",
+    "description": "API 回傳 200，不代表整合可靠。本書以「晴日商店訂單 API 與合作夥伴 Webhook」為連續案例，帶你實作 OpenAPI 3.1.2、JSON Schema Draft 2020-12、cursor 分頁、逾時與有限重試、冪等鍵、Webhook HMAC 簽章、事件去重及 breaking-change gate。所有核心實驗均在 localhost 執行，適合具備基本 Python 能力、第一次系統化學習 API 契約的讀者。",
+    "priceLabel": "NT$366.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:EHNEB84UYNT",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=0mQGEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=0mQGEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -21,
+    "id": "windows-11-wsl-2-docker-x5c8d3jh39h",
+    "title": "Windows 11、WSL 2 與 Docker 應用實戰",
+    "subtitle": "Google Play Books 電子書",
+    "author": "Happy eBook Authors",
+    "category": [
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_X5C8D3JH39H_partner-cover.jpg",
+    "description": "給想在 Windows 11 建立 Linux 與 Docker 開發環境的初學者。從 PowerShell、WSL 2 Ubuntu、路徑、權限與 localhost 開始，逐步掌握 Dockerfile、volume、network、Docker Compose、FastAPI 與 PostgreSQL，並完成可重建、可除錯、可備份還原的多服務專案。全書 18 章、63 題練習與六份附錄，所有命令均標示 PowerShell、WSL Bash 或 container shell，另附公開範例與測試。",
+    "priceLabel": "NT$366.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:X5C8D3JH39H",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=xywHEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=xywHEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -22,
+    "id": "google-play-book-n7g03btbz36",
+    "title": "消防法規題庫解析冊",
+    "subtitle": "Google Play Books 電子書",
+    "author": "證照達人研究室消防組",
+    "category": [
+      "消防安全",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_N7G03BTBZ36_partner-cover.jpg",
+    "description": "108～115 年消防設備師、消防設備士消防法規官方題目、選項、答案與解析。",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:N7G03BTBZ36",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=QDEHEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=QDEHEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -23,
+    "id": "google-play-book-xffbwafek7b",
+    "title": "消防法規考試導讀",
+    "subtitle": "消防設備師與消防設備士法規架構、考點與答題法",
+    "author": "證照達人研究室消防組",
+    "category": [
+      "消防安全",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_XFFBWAFEK7B_partner-cover.jpg",
+    "description": "本書定位為消防設備師與消防設備士國家考試的消防法規入門導讀，協助讀者建立法源、責任、場所判斷、設備設置、檢查申報及答題方法的框架與解題流程。 本書涵蓋法規導讀、考點整理、判斷流程及答題方法；不取代全國法規資料庫、主管機關公告或個案法律判斷。最新修法、當年度應考須知及歷屆題答案，請依官方最新來源及出題年度分別核對。108～115年完整題本與逐題解析另見《消防法規題庫解析冊》。",
+    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:XFFBWAFEK7B",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=2EEHEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=2EEHEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -24,
+    "id": "google-play-book-w4gx9knhryz",
+    "title": "消防設備士 參：警報與避難系統精練班",
+    "subtitle": "警報與避難系統消防安全設備概要｜零基礎導讀、訊號鏈與讀題方法",
+    "author": "證照達人研究室消防組",
+    "category": [
+      "消防安全",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_W4GX9KNHRYZ_partner-cover.jpg",
+    "description": "以零基礎讀者為對象，涵蓋警報、受信、廣播、避難標示、緊急照明、避難器具與排煙系統的保護目的、訊號流程、設置標準讀法、構造機能、竣工測試、檢修判讀、設備重點卡與 113～114 年官方試題解析。本書供消防設備士備考與概念學習，不是設備操作、測試、檢修或現場避難指揮指引。",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:W4GX9KNHRYZ",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=r1YHEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=r1YHEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -25,
+    "id": "google-play-book-3gsk7lzfdjq",
+    "title": "消防設備士 貳：水與化學系統精練班",
+    "subtitle": "水與化學系統消防安全設備概要｜零基礎導讀、設備解析、公式計算與歷屆題型摘要自測",
+    "author": "證照達人研究室消防組",
+    "category": [
+      "消防安全",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_3GSK7LZFDJQ_partner-cover.jpg",
+    "description": "本書以零基礎讀者為對象，整理消防設備士普通考試「水與化學系統消防安全設備概要」。全書先以八類設備總覽建立方向，再用來源、驅動、隔離、控制、輸送、釋放、證據的流程閱讀設備，並比較正常、動作與故障三種狀態。內容涵蓋室內消防栓、室外消防栓、自動撒水、水霧、泡沫、二氧化碳、惰性氣體、鹵化烴與乾粉設備，並提供法規與考題文件詞彙、設備解析工作表、技術值核對卡、公式計算示例、計算變化題、申論作答示範，以及依 114～115 年官方題本改寫的題型自測。本書適合準備消防設備士普通考試、需要建立水與化學系統整體觀念，或想把法規、設備、計算與題型連成一套讀書流程的讀者。技術值與題型均應依題目指定版本及官方最新資料重新核對。",
+    "priceLabel": "NT$156.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:3GSK7LZFDJQ",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=8TwHEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=8TwHEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -26,
+    "id": "google-play-book-68cubk37eex",
+    "title": "消防設備士 肆：火災學概要",
+    "subtitle": "消防設備士考試的燃燒、火災現象與滅火原理",
+    "author": "證照達人研究室消防組",
+    "category": [
+      "消防安全",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_68CUBK37EEX_partner-cover.jpg",
+    "description": "本書以消防設備士普通考試的火災學概要為對象，整理燃燒、熱傳、火災成長、煙氣、建築延燒、滅火原理及特殊火災。內容採觀念、現象、公式、題型與答題方法相互對照，並附選擇題、計算題、簡答題、申論題、完整模擬試題、模擬題逐題解析、第三章情境圖解、公式速查及考前複習工具。涉及法規門檻、設備設置、危險物品管制、建築防火及行政程序時，應以題目指定版本與官方最新資料為準。",
+    "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:68CUBK37EEX",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=fV0HEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=fV0HEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -27,
+    "id": "google-play-book-s5pekswfk1g",
+    "title": "消防設備士 壹：消防法規速記手冊",
+    "subtitle": "消防法規概要｜核心考點、實戰題與讀題方法",
+    "author": "證照達人研究室消防組",
+    "category": [
+      "消防安全",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_S5PEKSWFK1G_partner-cover.jpg",
+    "description": "消防設備士消防法規概要入門教材：四區法規地圖、核心考點、法源判讀、場所與設備條件、審查查驗檢修申報、20 題實戰題與 30日複習工具。",
+    "priceLabel": "NT$156.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:S5PEKSWFK1G",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=6vsHEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=6vsHEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -28,
+    "id": "ai-agent-djnnf85kuwy",
+    "title": "聰明用 AI Agent 要知道的事",
+    "subtitle": "從單兵作戰到可驗證的 AI 開發工作流",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DJNNF85KUWY_partner-cover.jpg",
+    "description": "一本給工程師的 AI Agent 實作指南，從 Codex、Claude Code、Pi、Agent Skills 與 MCP 出發，說明模型選擇、成本控制、多 Agent 協作，以及測試、資安與品質閘門。 本書協助讀者建立可理解、可審查、可回復的 AI 開發工作流，將 AI Agent 納入實際工程流程，而不是只依賴模糊的 Prompt。書中並提供 Reader Lab、設定範本與檢查清單。",
+    "priceLabel": "NT$336.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:DJNNF85KUWY",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=FCYIEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=FCYIEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -29,
+    "id": "smart-ai-agents-what-developers-should-know-yq74upaqjfl",
+    "title": "Smart AI Agents: What Developers Should Know",
+    "subtitle": "From Solo Coding to a Verifiable AI Development Workflow",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_YQ74UPAQJFL_partner-cover.jpg",
+    "description": "Build reliable AI coding workflows with Codex, Claude Code, Pi, Agent Skills, and MCP. Learn to control scope, manage costs, protect secrets, and verify every change.",
+    "priceLabel": "NT$409.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:YQ74UPAQJFL",
+    "language": "en",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
+    "buyUrl": "https://books.google.com.tw/books/about?id=S9kIEgAAQBAJ&redir_esc=y",
+    "readUrl": "https://books.google.com.tw/books/about?id=S9kIEgAAQBAJ&redir_esc=y",
+    "featured": false,
+    "popular": false,
+    "launchRank": -30,
+    "id": "ai-scgk74pdwc1",
+    "title": "AI 時代的網頁開發",
+    "subtitle": "從一句需求到網站上線：用 AI 選工具、做網頁、部署、維護與加入智慧功能",
+    "author": "Happy eBook Authors",
+    "category": [
+      "網頁開發",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_SCGK74PDWC1_partner-cover.jpg",
+    "description": "你可以請 AI 產生一個看起來像網站的畫面，但要把它變成真正能上線、能維護、能保護資料的網站，還需要需求判斷、工具選擇、測試、部署與營運能力。 本書以「AI 內容工作室」為貫穿案例，帶你從需求與範圍開始，理解瀏覽器、伺服器、資料庫、API、網域與部署的關係，再比較無程式碼平台、AI 建站工具與自行開發的取捨。接著使用 Codex、Next.js、TypeScript、Supabase、GitHub 與 Vercel，逐步完成網站規劃、製作、驗收、上線、維護、除錯與復原，最後加入具來源限制與人工覆核的 AI 功能。 書中每章都有小練習、檢查項目與可保存的工作成果，並附上需求訪談表、工具決策表、上線檢查表、平台查核表及常見錯誤排除。這不是讓 AI 代替你完成一切的捷徑，而是一套讓你與 AI 協作、仍能掌握決策與品質的工作方法。",
+    "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
+    "googleBooksKey": "GGKEY:SCGK74PDWC1",
+    "storeStatus": "available"
+  },
+  {
+    "type": "paid",
+    "format": "Google Play Books 電子書",
+    "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=omr8EQAAQBAJ&redir_esc=y",
     "readUrl": "https://books.google.com.tw/books/about?id=omr8EQAAQBAJ&redir_esc=y",
     "featured": false,
@@ -365,7 +1056,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_6ADEEW4R2LY_partner-cover.jpg",
     "description": "以做中學為核心，透過 19 個實戰單元、自動化驗收腳本與排錯步驟，在 Windows 11 上建立流暢的 Linux、Docker 與 AI coding 開發工作站。",
     "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:6ADEEW4R2LY"
+    "googleBooksKey": "GGKEY:6ADEEW4R2LY",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -389,7 +1081,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_FZAR95AD5FZ_partner-cover.jpg",
     "description": "不必捨棄 Windows，也能完整學習 Linux。本書帶你安裝與排查 WSL 2，練習 Linux 指令、開發工具、Docker、檔案整合及系統管理。",
     "priceLabel": "NT$366.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:FZAR95AD5FZ"
+    "googleBooksKey": "GGKEY:FZAR95AD5FZ",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -413,7 +1106,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_RR7T4PW20PL_partner-cover.jpg",
     "description": "以 Windows 11 為主機，整合 WSL 2、VS Code、OpenCode 與 Zen，從安裝設定到 AI coding 日常工作流程，建立穩定、可維護的開發環境。",
     "priceLabel": "NT$419.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:RR7T4PW20PL"
+    "googleBooksKey": "GGKEY:RR7T4PW20PL",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -437,7 +1131,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_1G26L58T7A5_partner-cover.jpg",
     "description": "A practical guide to building an AI development workstation with Windows 11, WSL 2, VS Code, OpenCode, and Zen, including setup, integration, daily workflows, and troubleshooting.",
     "priceLabel": "NT$499.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:1G26L58T7A5"
+    "googleBooksKey": "GGKEY:1G26L58T7A5",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -461,7 +1156,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_FLRTL7GAX6D_partner-cover.jpg",
     "description": "Windows 11、WSL 2、VS Code、OpenCode、Zen を組み合わせ、AI 開発に必要な環境構築、ツール連携、基本操作、トラブルシューティングを実践的に学ぶガイドです。",
     "priceLabel": "NT$472.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:FLRTL7GAX6D"
+    "googleBooksKey": "GGKEY:FLRTL7GAX6D",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -485,7 +1181,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_K7LA3U87NFG_partner-cover.jpg",
     "description": "以 Cursor、Claude Code、Windsurf 與 Cline 為核心，整理需求描述、上下文提供、程式修改、測試驗證與版本控制的 AI coding 實戰流程。",
     "priceLabel": "NT$366.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:K7LA3U87NFG"
+    "googleBooksKey": "GGKEY:K7LA3U87NFG",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -507,7 +1204,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_GUP76NQ48QU_partner-cover.jpg",
     "description": "從六本重量級政治著作提煉共同警訊，整理領導、制度、媒體與社會信任的關係，協助讀者思考民主面對下一次考驗時，我們能做哪些準備。",
     "priceLabel": "NT$167.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:GUP76NQ48QU"
+    "googleBooksKey": "GGKEY:GUP76NQ48QU",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -530,7 +1228,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_AK0FEQFLP3B_partner-cover.jpg",
     "description": "An accessible synthesis of six bestselling political books, examining pressure on democratic institutions, leadership, media, public trust, and the choices citizens face next.",
     "priceLabel": "NT$169.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:AK0FEQFLP3B"
+    "googleBooksKey": "GGKEY:AK0FEQFLP3B",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -553,7 +1252,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_RRYQSSZ9WJG_partner-cover.jpg",
     "description": "透過六本暢銷政治書的觀點，整理民主制度、權力、媒體與公民責任所面臨的考驗，以中英文內容協助讀者理解事件背後的結構與可能發展。",
     "priceLabel": "NT$188.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:RRYQSSZ9WJG"
+    "googleBooksKey": "GGKEY:RRYQSSZ9WJG",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -577,7 +1277,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_K9XBGRUY153_partner-cover.jpg",
     "description": "從一頁式個人簡介到多頁網站與 React 作品集，示範如何與 OpenCode 協作規劃、產生、修正及部署三種網站，建立可重複使用的 AI coding 工作流程。",
     "priceLabel": "NT$168.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:K9XBGRUY153"
+    "googleBooksKey": "GGKEY:K9XBGRUY153",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -601,7 +1302,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_WLRNLGQBB7E_partner-cover.jpg",
     "description": "從零建立 Python Playwright 環境，循序學習定位器、自動等待、表單、檔案、網路請求、測試架構與實務排錯，掌握穩定的網頁自動化方法。",
     "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:WLRNLGQBB7E"
+    "googleBooksKey": "GGKEY:WLRNLGQBB7E",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -624,7 +1326,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_8909EQ1LC5K_partner-cover.jpg",
     "description": "把別人的事還給他們，把自己的人生拿回來。本書以台灣常見的家庭期待、職場壓力與人際焦慮為例，協助讀者停止內耗並建立清楚界線。",
     "priceLabel": "NT$231.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:8909EQ1LC5K"
+    "googleBooksKey": "GGKEY:8909EQ1LC5K",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -648,7 +1351,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_WXJ741ZAG9W_partner-cover.jpg",
     "description": "從重複點擊、資料擷取與表單操作開始，透過 12 個生活與工作專案學會 Playwright 的瀏覽器自動化流程、等待策略、驗證與批次處理。",
     "priceLabel": "NT$257.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:WXJ741ZAG9W"
+    "googleBooksKey": "GGKEY:WXJ741ZAG9W",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -672,7 +1376,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_71REXULXD9S_partner-cover.jpg",
     "description": "以 12 個真實生活與工作場景，帶你用 Python 與 Playwright 完成比價、盯盤、表單、對帳、資料收集、跨系統驗證及 CI/CD 等自動化專案。",
     "priceLabel": "NT$262.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:71REXULXD9S"
+    "googleBooksKey": "GGKEY:71REXULXD9S",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -695,7 +1400,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_PP4U77BZ2GJ_partner-cover.jpg",
     "description": "從台灣人的家庭、職場與社群生活出發，練習把無法控制的事交還給別人，把選擇權帶回自己。中英對照編排，附具體對話腳本與 30 天練習。",
     "priceLabel": "NT$268.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:PP4U77BZ2GJ"
+    "googleBooksKey": "GGKEY:PP4U77BZ2GJ",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -718,7 +1424,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_AENAPC08Y0Q_partner-cover.jpg",
     "description": "透過每天一個主題、一段自我覺察與一項練習，逐步看見焦慮、委屈、自責與過度在意所造成的心理消耗，建立更清楚的人際界線與穩定回應壓力的方法。",
     "priceLabel": "NT$158.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:AENAPC08Y0Q"
+    "googleBooksKey": "GGKEY:AENAPC08Y0Q",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -742,7 +1449,8 @@
     "cover": "assets/images/google-book-cover-images/GGKEY_JYQGC2626W5_partner-cover.jpg",
     "description": "給一般工作者的中英雙語實戰手冊，說明如何用 AI 改善任務管理、會議、溝通、知識管理、風險判斷與工作流程，把時間留給決策、協作與領導。",
     "priceLabel": "NT$210.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:JYQGC2626W5"
+    "googleBooksKey": "GGKEY:JYQGC2626W5",
+    "storeStatus": "available"
   },
   {
     "type": "paid",
@@ -765,8 +1473,9 @@
     ],
     "cover": "assets/images/google-book-cover-images/GGKEY_C1K2GACA0S4_partner-cover.jpg",
     "description": "別再只問 AI 問題，開始設計 AI 可以完成的工作流程。本書教你把模糊需求拆成目標、資料、步驟、工具、產出與驗證，讓 AI 真正協助完成研究、寫作、文件整理與專案工作。",
-    "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
-    "googleBooksKey": "GGKEY:C1K2GACA0S4"
+    "priceLabel": "NT$209.00，Google Play Books，Google Play 預購",
+    "googleBooksKey": "GGKEY:C1K2GACA0S4",
+    "storeStatus": "preorder"
   },
   {
     "type": "paid",

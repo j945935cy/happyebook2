@@ -407,11 +407,13 @@ const matchesRouteFilter = (book, route) => {
 
 const createTags = (book) => [
 
-  getEffectiveType(book) === "free" ? "" : `<span class="tag ${getEffectiveType(book)}">${typeLabel[getEffectiveType(book)] || getEffectiveType(book)}</span>`,
+  book.storeStatus === "preorder"
+    ? '<span class="tag paid">Google Play 預購</span>'
+    : (getEffectiveType(book) === "free" ? "" : `<span class="tag ${getEffectiveType(book)}">${typeLabel[getEffectiveType(book)] || getEffectiveType(book)}</span>`),
 
   isFreeBook(book) ? `<span class="tag free">分享閱讀</span>` : "",
 
-  hasPreview(book) ? `<span class="tag preview">提供試閱版</span>` : "",
+  book.storeStatus !== "preorder" && hasPreview(book) ? `<span class="tag preview">提供試閱版</span>` : "",
 
   `<span class="tag category">${getCategories(book).join(' / ')}</span>`
 
@@ -439,7 +441,7 @@ const primaryAction = (book) => {
 
     const href = book.buyUrl || book.readUrl || detailUrl;
 
-    const label = book.buyUrl ? "立即購買" : book.readUrl ? "查看試閱" : "查看詳情";
+    const label = book.storeStatus === "preorder" ? "前往預購" : (book.buyUrl ? "立即購買" : book.readUrl ? "查看試閱" : "查看詳情");
 
     const attrs = hasExternalUrl(href) ? ` target="_blank" rel="noopener noreferrer"` : "";
 
