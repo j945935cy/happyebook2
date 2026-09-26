@@ -1,0 +1,326 @@
+[
+  {
+    "googleBooksKey": "GGKEY:04GA3U8KWJ0",
+    "googleBooksId": "s8APEgAAQBAJ",
+    "title": "AI 時代的 PostgreSQL 網頁實戰: 從資料表設計到 AI 網站的做中學實例演習",
+    "displayTitle": "AI 時代的 PostgreSQL 網頁實戰: 從資料表設計到 AI 網站的做中學實例演習",
+    "subtitle": "從資料表設計到 AI 網站的實例演習",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/s8APEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "程式設計",
+      "資料庫",
+      "PostgreSQL",
+      "AI 工具應用"
+    ],
+    "description": "從資料表設計開始，逐步建立 PostgreSQL 資料庫與網頁應用，並把 AI 功能放進可操作的實例中。本書以做中學方式串起資料建模、網站開發與資料庫應用，適合想練習把資料庫知識用在實際網站專案的讀者。"
+  },
+  {
+    "googleBooksKey": "GGKEY:09W1LGB3FCG",
+    "googleBooksId": "qIYMEgAAQBAJ",
+    "title": "讓 AI 真正替你工作：Hermes Agent × GPT-6 Astra 實戰",
+    "displayTitle": "讓 AI 真正替你工作：Hermes Agent × GPT-6 Astra 實戰",
+    "subtitle": "使用 Hermes Agent 與 GPT-6 Astra 建立 AI 工作流程",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/qIYMEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "Hermes",
+      "AI 工具應用"
+    ],
+    "description": "本書以 Hermes Agent 與 GPT-6 Astra 為核心，示範如何把 AI 從問答工具帶入日常工作流程。讀者可循著實作內容了解如何交辦任務、運用工具並檢查成果，建立更能落實工作的 AI 協作方式。"
+  },
+  {
+    "googleBooksKey": "GGKEY:96SNBLX770L",
+    "googleBooksId": "7CANEgAAQBAJ",
+    "title": "OpenCode 30小時實作課: 讀懂程式、修好問題、完成可驗收的交付",
+    "displayTitle": "OpenCode 30小時實作課: 讀懂程式、修好問題、完成可驗收的交付",
+    "subtitle": "讀懂程式、修好問題、完成可驗收的交付",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/7CANEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "程式設計",
+      "OpenCode",
+      "Vibe Coding"
+    ],
+    "description": "以 30 小時實作課程安排學習進度，帶讀者使用 OpenCode 閱讀程式、定位問題、逐步修正，最後完成可檢查與驗收的成果。適合想透過實際任務熟悉 AI 程式開發工具的初學者與自學者。"
+  },
+  {
+    "googleBooksKey": "GGKEY:B54WLUNXNYT",
+    "googleBooksId": "UXAMEgAAQBAJ",
+    "title": "讓 AI 畫對圖: 六大AI繪圖工具的實作與協作",
+    "displayTitle": "讓 AI 畫對圖: 六大AI繪圖工具的實作與協作",
+    "subtitle": "六大 AI 繪圖工具的實作與協作",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/UXAMEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "AI 繪圖",
+      "AI 工具應用"
+    ],
+    "description": "比較並實作六種 AI 繪圖工具，從需求描述、提示詞調整到結果檢查，整理出可重複使用的創作流程。本書著重工具協作與實際操作，幫助讀者依作品需求選擇合適的繪圖方式。"
+  },
+  {
+    "googleBooksKey": "GGKEY:CSDRDL2DL1D",
+    "googleBooksId": "LVwOEgAAQBAJ",
+    "title": "AI 時代的實用生活指南: 用 ChatGPT 提升工作、學習與生活效率",
+    "displayTitle": "AI 時代的實用生活指南: 用 ChatGPT 提升工作、學習與生活效率",
+    "subtitle": "用 ChatGPT 提升工作、學習與生活效率",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/LVwOEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "ChatGPT",
+      "生活應用",
+      "AI 工具應用"
+    ],
+    "description": "以工作、學習與日常生活中的常見任務為例，介紹如何運用 ChatGPT 整理資訊、協助規劃並提升處理效率。本書適合想把生成式 AI 用進生活情境、又希望從具體步驟開始練習的讀者。"
+  },
+  {
+    "googleBooksKey": "GGKEY:DX1HG01ABSN",
+    "googleBooksId": "o_kIEgAAQBAJ",
+    "title": "OpenCode 深入解析: 代理迴圈、工作階段、工具與擴充優先架構",
+    "displayTitle": "OpenCode 深入解析: 代理迴圈、工作階段、工具與擴充優先架構",
+    "subtitle": "理解代理迴圈、工作階段、工具與擴充優先架構",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/o_kIEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "OpenCode",
+      "程式設計"
+    ],
+    "description": "帶讀者拆解 OpenCode 的代理迴圈、工作階段與工具使用方式，並理解擴充優先的系統架構。適合想進一步了解 AI coding agent 如何運作，以及如何把工具與工作流程組合起來的讀者。"
+  },
+  {
+    "googleBooksKey": "GGKEY:FUZHTDQN2JY",
+    "googleBooksId": "nRoKEgAAQBAJ",
+    "title": "AI Skill 實戰: 先找、再組、後自建",
+    "displayTitle": "AI Skill 實戰: 先找、再組、後自建",
+    "subtitle": "先找、再組、後自建 AI Skill",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/nRoKEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "AI 工具應用",
+      "程式設計"
+    ],
+    "description": "從尋找現成 AI Skill 開始，接著練習組合技能，最後學會依工作需求建立自己的 Skill。本書以循序實作方式介紹技能的選擇、整合與自建，協助讀者把重複任務整理成可重用的工作流程。"
+  },
+  {
+    "googleBooksKey": "GGKEY:FW1FQLUZ9E0",
+    "googleBooksId": "FIcPEgAAQBAJ",
+    "title": "AI 時代的資料庫實戰：打造網路商店進銷存實例演習: 用 PostgreSQL 從商品、訂單、採購、庫存到可查證的 AI 店長助理",
+    "displayTitle": "AI 時代的資料庫實戰：打造網路商店進銷存實例演習: 用 PostgreSQL 從商品、訂單、採購、庫存到可查證的 AI 店長助理",
+    "subtitle": "用 PostgreSQL 實作商品、訂單、採購、庫存與 AI 店長助理",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/FIcPEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "程式設計",
+      "資料庫",
+      "PostgreSQL",
+      "AI 工具應用"
+    ],
+    "description": "以網路商店為實作案例，使用 PostgreSQL 串起商品、訂單、採購與庫存資料，並延伸到可查證的 AI 店長助理。讀者可循著案例練習資料庫設計與應用，理解 AI 如何在有資料依據的情境中協助工作。"
+  },
+  {
+    "googleBooksKey": "GGKEY:HX1DWGDYQHK",
+    "googleBooksId": "XbMMEgAAQBAJ",
+    "title": "Getting Diagrams Right with AI: A Practical Guide to Mermaid, D2, PlantUML, Graphviz, draw.io, and Excalidraw",
+    "displayTitle": "Getting Diagrams Right with AI: A Practical Guide to Mermaid, D2, PlantUML, Graphviz, draw.io, and Excalidraw",
+    "subtitle": "A practical guide to six diagramming tools and AI-assisted workflows",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/XbMMEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "圖表工具",
+      "技術文件",
+      "AI 工具應用"
+    ],
+    "description": "This practical guide compares Mermaid, D2, PlantUML, Graphviz, draw.io, and Excalidraw, showing how to choose a diagramming tool and work with AI to produce clear, useful diagrams. It is designed for readers who create technical documentation, explain systems, or turn ideas into visual models.",
+    "language": "en"
+  },
+  {
+    "googleBooksKey": "GGKEY:J44QKUQ72TU",
+    "googleBooksId": "6IsMEgAAQBAJ",
+    "title": "Hermes 快速入門與聰明用",
+    "displayTitle": "Hermes 快速入門與聰明用",
+    "subtitle": "Hermes Agent 入門與日常使用指南",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/6IsMEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "Hermes",
+      "AI 工具應用"
+    ],
+    "description": "本書帶讀者快速認識 Hermes，從基本設定與常用操作開始，逐步掌握如何把需求交給 AI 助理並檢查執行結果。內容適合剛接觸 Hermes、希望建立穩定使用方式的讀者。"
+  },
+  {
+    "googleBooksKey": "GGKEY:JA5JGW8E24B",
+    "googleBooksId": "DUoNEgAAQBAJ",
+    "title": "Hermes Agent 入門實戰: 30 小時打造你的 AI 工作流",
+    "displayTitle": "Hermes Agent 入門實戰: 30 小時打造你的 AI 工作流",
+    "subtitle": "用 30 小時實作建立 Hermes Agent 工作流程",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/DUoNEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "Hermes",
+      "程式設計"
+    ],
+    "description": "以 30 小時的實作路線帶讀者入門 Hermes Agent，從認識工具到建立可重複使用的 AI 工作流程。透過逐步操作與任務練習，學習如何拆解工作、安排工具並確認結果。"
+  },
+  {
+    "googleBooksKey": "GGKEY:N2QFDNX8GD0",
+    "googleBooksId": "dCkQEgAAQBAJ",
+    "title": "AI 時代的 Redis 網頁實戰: 用 Python、FastAPI 與 Redis 打造可擴充的 AI 客服工單平台",
+    "displayTitle": "AI 時代的 Redis 網頁實戰: 用 Python、FastAPI 與 Redis 打造可擴充的 AI 客服工單平台",
+    "subtitle": "用 Python、FastAPI 與 Redis 打造 AI 客服工單平台",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/dCkQEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "程式設計",
+      "Python",
+      "資料庫",
+      "AI 工具應用"
+    ],
+    "description": "以 Python、FastAPI 與 Redis 為基礎，實作可擴充的 AI 客服工單平台。本書把網頁 API、資料處理與客服工作流程放進同一個專案，讓讀者透過實作理解 Redis 在應用系統中的使用方式。"
+  },
+  {
+    "googleBooksKey": "GGKEY:X4FKBAQK36S",
+    "googleBooksId": "ryIREgAAQBAJ",
+    "title": "ROS 2 做中學：用 ROSMASTER R2 打造阿克曼機器人: R2 安全盤點與導航準備度： ROS 2 入門與實作",
+    "displayTitle": "ROS 2 做中學：用 ROSMASTER R2 打造阿克曼機器人: R2 安全盤點與導航準備度： ROS 2 入門與實作",
+    "subtitle": "用 ROSMASTER R2 打造阿克曼機器人，並檢查安全與導航準備度",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "需要處理",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/ryIREgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "ROS 2",
+      "機器人",
+      "程式設計",
+      "實作教材"
+    ],
+    "description": "以 ROSMASTER R2 阿克曼機器人為實作對象，介紹 ROS 2 入門、設備安全盤點與導航前置檢查，協助讀者理解開始機器人實作前需要確認的條件。此書目前在 Google Play Books Partner Center 顯示需要處理，因此暫不公開展示。"
+  },
+  {
+    "googleBooksKey": "GGKEY:XWF3KTQB3EW",
+    "googleBooksId": "hA8OEgAAQBAJ",
+    "title": "Python × Playwright 自動化實戰: 從安裝入門到新聞、交通、股價與新書追蹤的 16 個應用",
+    "displayTitle": "Python × Playwright 自動化實戰: 從安裝入門到新聞、交通、股價與新書追蹤的 16 個應用",
+    "subtitle": "從安裝入門到 16 個自動化應用",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/hA8OEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "程式設計",
+      "Python",
+      "瀏覽器自動化",
+      "Playwright"
+    ],
+    "description": "從安裝 Playwright 開始，透過 16 個實例練習新聞、交通、股價與新書追蹤等瀏覽器自動化任務。讀者將學習如何操作網頁、擷取資訊並把重複工作整理成可執行的 Python 程式。"
+  },
+  {
+    "googleBooksKey": "GGKEY:Y54R43AEEXJ",
+    "googleBooksId": "TmYQEgAAQBAJ",
+    "title": "ROS 2 視覺機械臂機器人實戰: 使用 Jetson Orin NX、麥克納姆輪、MoveIt 2 與 Nav2 打造會移動的智慧機器人",
+    "displayTitle": "ROS 2 視覺機械臂機器人實戰: 使用 Jetson Orin NX、麥克納姆輪、MoveIt 2 與 Nav2 打造會移動的智慧機器人",
+    "subtitle": "使用 Jetson Orin NX、MoveIt 2 與 Nav2 打造會移動的智慧機器人",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/TmYQEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "ROS 2",
+      "機器人",
+      "AI 視覺",
+      "程式設計"
+    ],
+    "description": "本書整合 Jetson Orin NX、視覺機械臂、麥克納姆輪底盤、MoveIt 2 與 Nav2，帶讀者認識移動式智慧機器人的軟硬體與 ROS 2 實作。適合想了解機械臂操作、移動底盤與導航整合的機器人學習者。"
+  },
+  {
+    "googleBooksKey": "GGKEY:YDYHW5STJH1",
+    "googleBooksId": "p9kMEgAAQBAJ",
+    "title": "Pi Coding Agent 60 小時實戰教材: 從入門、工作流、客製化到 SDK 與系統整合",
+    "displayTitle": "Pi Coding Agent 60 小時實戰教材: 從入門、工作流、客製化到 SDK 與系統整合",
+    "subtitle": "從入門與工作流到客製化、SDK 和系統整合",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/p9kMEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "程式設計",
+      "實作教材"
+    ],
+    "description": "以 60 小時實作教材安排學習路線，帶讀者從 Pi Coding Agent 入門，逐步練習工作流、客製化、SDK 使用與系統整合。適合希望由基礎操作進一步建立完整 coding agent 應用能力的讀者。"
+  },
+  {
+    "googleBooksKey": "GGKEY:YRZ4G6AP2TN",
+    "googleBooksId": "fiMKEgAAQBAJ",
+    "title": "打造你的 AI Agent 團隊: 從單一 Agent 到可驗證、可治理的多 Agent 系統",
+    "displayTitle": "打造你的 AI Agent 團隊: 從單一 Agent 到可驗證、可治理的多 Agent 系統",
+    "subtitle": "從單一 Agent 建立可驗證、可治理的多 Agent 系統",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/fiMKEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "系統設計",
+      "AI 工具應用"
+    ],
+    "description": "從單一 AI Agent 開始，逐步設計多 Agent 協作系統，並把驗證與治理納入工作流程。本書適合希望理解多代理架構、任務分工與系統管理方式的讀者，協助把 Agent 團隊從概念推進到可檢查的實作。"
+  },
+  {
+    "googleBooksKey": "GGKEY:ZY31ZE9KS0U",
+    "googleBooksId": "gs4KEgAAQBAJ",
+    "title": "讓 AI 會用工具：MCP 入門與實戰: 以鎖定版本掌握 MCP，從工具整合到 AI Agent 架構與驗收",
+    "displayTitle": "讓 AI 會用工具：MCP 入門與實戰: 以鎖定版本掌握 MCP，從工具整合到 AI Agent 架構與驗收",
+    "subtitle": "以鎖定版本掌握 MCP，從工具整合到 AI Agent 架構與驗收",
+    "author": "Happy eBook Authors",
+    "price": "",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/gs4KEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "AI 學習",
+      "MCP",
+      "AI Agent",
+      "程式設計"
+    ],
+    "description": "以固定版本為基礎介紹 MCP，帶讀者從工具整合開始，逐步理解 AI Agent 架構與驗收方式。本書著重可操作的實作流程，協助讀者掌握 MCP 工具連接、整合與檢查成果的方法。"
+  }
+]

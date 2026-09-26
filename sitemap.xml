@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://happyebook.com/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,13 +44,13 @@
   </url>
   <url>
     <loc>https://happyebook.com/book.html</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books.html</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/60-cn0hwz9t450.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/932-c7n0fr2k03r.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -163,6 +163,12 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/ai-agent-agent-agent-yrz4g6ap2tn.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/ai-agent-ai-agent-security-and-governance-in-practice-bilingual--fs68k5tu91p.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -170,7 +176,7 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/ai-agent-c1k2gaca0s4.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -194,7 +200,7 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/ai-agent-djnnf85kuwy.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -223,6 +229,12 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/ai-ai-b54wlunxnyt.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/ai-automation-toolbook.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -231,6 +243,12 @@
   <url>
     <loc>https://happyebook.com/books/ai-bn4y17w1hns.html</loc>
     <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/ai-chatgpt-csdrdl2dl1d.html</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -337,6 +355,18 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/ai-hermes-agent-gpt-6-astra-09w1lgb3fcg.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/ai-mcp-mcp-ai-agent-zy31ze9ks0u.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/ai-modern-intro-python-ai-agent.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -345,6 +375,18 @@
   <url>
     <loc>https://happyebook.com/books/ai-ngppls8tu21.html</loc>
     <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/ai-postgresql-ai-04ga3u8kwj0.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/ai-postgresql-ai-fw1fqluz9e0.html</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -367,6 +409,12 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/ai-redis-python-fastapi-redis-ai-n2qfdnx8gd0.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/ai-rr7t4pw20pl.html</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -380,13 +428,19 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/ai-scgk74pdwc1.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/ai-sigil-epub-6385yfd4ybg.html</loc>
     <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/ai-skill-fuzhtdqn2jy.html</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -452,7 +506,7 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/api-ehneb84uynt.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -650,7 +704,7 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/data-format-engineering-from-csv-and-json-to-protobuf-and-parque-bhywp5tl9dp.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -739,6 +793,12 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/getting-diagrams-right-with-ai-a-practical-guide-to-mermaid-d2-p-hx1dwgdyqhk.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/git-github-start-book.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -776,13 +836,13 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/google-play-book-3gsk7lzfdjq.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/google-play-book-68cubk37eex.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -824,7 +884,7 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/google-play-book-cdd8hwthcxd.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -860,31 +920,31 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/google-play-book-jxt5zhh7y1w.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/google-play-book-n7g03btbz36.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/google-play-book-s5pekswfk1g.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/google-play-book-w4gx9knhryz.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/google-play-book-xffbwafek7b.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -920,13 +980,19 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/herdr-k5hqn8kxh19.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/hermes-agent-2026-8-pwn61cghejd.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/hermes-agent-30-ai-ja5jgw8e24b.html</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -951,6 +1017,12 @@
   <url>
     <loc>https://happyebook.com/books/hermes-agent-skilled.html</loc>
     <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/hermes-j44qkuq72tu.html</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -1117,14 +1189,20 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/opencode-30-96snblx770l.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/opencode-3528p9pw9sc.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/opencode-3dwe43g2hnx.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -1136,13 +1214,19 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/opencode-7d24jsj8n15.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/opencode-a656qwrqt03.html</loc>
     <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/opencode-dx1hg01absn.html</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -1171,14 +1255,20 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/pi-coding-agent-60-sdk-ydyhw5stjh1.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/pi-coding-agent-dufkgazj3ut.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/pi-coding-agent-ft5baczldw8.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -1202,13 +1292,19 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/python-6xp1cdsaahk.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://happyebook.com/books/python-for-beginners-book.html</loc>
     <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://happyebook.com/books/python-playwright-16-xwf3ktqb3ew.html</loc>
+    <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -1237,8 +1333,14 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://happyebook.com/books/ros-2-jetson-orin-nx-moveit-2-nav2-y54r43aeexj.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://happyebook.com/books/smart-ai-agents-what-developers-should-know-yq74upaqjfl.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -1358,7 +1460,7 @@
   </url>
   <url>
     <loc>https://happyebook.com/books/windows-11-wsl-2-docker-x5c8d3jh39h.html</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

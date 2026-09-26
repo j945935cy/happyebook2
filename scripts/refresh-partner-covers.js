@@ -30,7 +30,10 @@ async function download(book) {
 
 async function main() {
   fs.mkdirSync(coverDir, { recursive: true });
-  const queue = books.filter((book) => book.googleBooksKey && book.googleBooksId);
+  const publishableStatuses = new Set(["在 Google Play 開始販售", "在 Google Play 上預購"]);
+  const queue = books.filter((book) =>
+    book.googleBooksKey && book.googleBooksId && publishableStatuses.has(book.status)
+  );
   const successes = [];
   const failures = [];
   const concurrency = 6;
