@@ -112,7 +112,7 @@ function staticPage(book) {
     genre: category,
     url: pageUrl,
     image: imageUrl,
-    identifier: book.googleBooksKey,
+    identifier: book.googleBooksKey || book.googleBooksId || googleId(book),
   }).replace(/</g, "\\u003c");
   const breadcrumb = JSON.stringify({
     "@context": "https://schema.org",
@@ -168,7 +168,7 @@ function staticPage(book) {
 
 async function main() {
   const byKey = new Map(books.filter((book) => book.googleBooksKey).map((book) => [book.googleBooksKey, book]));
-  const byGoogleId = new Map(books.map((book) => [googleId(book), book]).filter(([id]) => id));
+  const byGoogleId = new Map(books.map((book) => [book.googleBooksId || googleId(book), book]).filter(([id]) => id));
   const coverDirectory = path.join(root, "assets", "images", "google-book-cover-images");
   fs.mkdirSync(coverDirectory, { recursive: true });
   const added = [];
@@ -182,7 +182,8 @@ async function main() {
     let book = byKey.get(row.googleBooksKey) || byGoogleId.get(row.googleBooksId);
     if (!book) {
       const split = titleParts(row);
-      const id = uniqueId(slugify(split.title, row.googleBooksKey));
+      const sourceId = row.googleBooksKey || row.googleBooksId;
+      const id = uniqueId(slugify(split.title, sourceId));
       book = {
         type: "paid",
         format: "Google Play Books 電子書",
@@ -202,12 +203,14 @@ async function main() {
         cover: "",
         description: cleanDescription(row.description) || `《${split.title}》是 ${row.author || "Happy eBook 編輯部"} 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。`,
         priceLabel: priceLabel(row.price, storeStatus),
-        googleBooksKey: row.googleBooksKey,
+        googleBooksId: row.googleBooksId,
+        ...(row.googleBooksKey ? { googleBooksKey: row.googleBooksKey } : {}),
       };
       books.unshift(book);
-      added.push({ id: book.id, key: row.googleBooksKey, title: book.title });
+      added.push({ id: book.id, key: sourceId, title: book.title });
     } else {
-      book.googleBooksKey = row.googleBooksKey;
+      if (row.googleBooksKey) book.googleBooksKey = row.googleBooksKey;
+      book.googleBooksId = row.googleBooksId;
       book.buyUrl = aboutUrl(row.googleBooksId);
       book.readUrl = aboutUrl(row.googleBooksId);
       book.storeStatus = storeStatus;
@@ -217,7 +220,10 @@ async function main() {
     }
 
     const cover = await fetchImage(row.coverUrl || coverUrl(row.googleBooksId));
-    const relativeCover = `assets/images/google-book-cover-images/GGKEY_${row.googleBooksKey.replace("GGKEY:", "")}_partner-cover.${cover.extension}`;
+    const coverId = row.googleBooksKey
+      ? `GGKEY_${row.googleBooksKey.replace("GGKEY:", "")}`
+      : `GOOGLEBOOKS_${row.googleBooksId}`;
+    const relativeCover = `assets/images/google-book-cover-images/${coverId}_partner-cover.${cover.extension}`;
     fs.writeFileSync(path.join(root, relativeCover), cover.body);
     book.cover = relativeCover;
     fs.writeFileSync(path.join(root, "books", `${book.id}.html`), staticPage(book), "utf8");
