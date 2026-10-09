@@ -1,5 +1,23 @@
 [
   {
+    "googleBooksKey": "GGKEY:HPZQC2KJK4P",
+    "googleBooksId": "sTUXEgAAQBAJ",
+    "title": "Codex CLI 聰明用：打造安全、高效、可重複的 AI 開發流程",
+    "displayTitle": "Codex CLI 聰明用",
+    "subtitle": "打造安全、高效、可重複的 AI 開發流程",
+    "author": "Happy eBook Authors",
+    "price": "213.00",
+    "status": "在 Google Play 開始販售",
+    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/sTUXEgAAQBAJ?fife=w1200-h1800",
+    "category": [
+      "Codex",
+      "AI 學習",
+      "AI Coding",
+      "程式設計"
+    ],
+    "description": "讓 Codex CLI 不只完成一次任務，而是成為可檢查、可重複的開發流程。本書是 Codex CLI 系列第三冊，從前兩冊的小修改、除錯與測試出發，進一步討論如何衡量工作流程、撰寫專案指引、管理上下文與權限，以及審慎評估外部工具、MCP 與擴充功能。透過任務卡、風險決策表、交接紀錄與綜合演練，練習把可靠做法整理成個人與團隊都能遵循的工作方式。全書重點不是追求更快產生程式，而是分清提示、沙箱與資料授權，留下實際測試及差異檢查的證據，知道何時停止、如何復原，以及哪些結果仍待驗證。另涵蓋非互動工作流程、模型與用量比較的限制，以及團隊品質檢核。適合已能啟動 Codex CLI、完成小型修改，並具備 Git 分支、diff 與基本測試能力的讀者。主要跟做路線為 Linux、macOS 或 WSL Bash。公開讀者服務提供與本冊對應的固定版本範例與工作流模板，不提供完整章節；請依書前版本識別取得素材。"
+  },
+  {
     "googleBooksId": "yjQXEgAAQBAJ",
     "title": "Codex CLI 入門：從安裝到完成第一個程式任務",
     "displayTitle": "Codex CLI 入門",
