@@ -17,6 +17,7 @@ function titleParts(row) {
 }
 
 function categoriesForTitle(title) {
+  if (/Codex/i.test(title)) return ["Codex", "AI Coding", "AI 學習"];
   if (/乙安|職業安全衛生/.test(title)) return ["職業安全衛生", "考試準備"];
   if (/消防/.test(title)) return ["消防安全", "考試準備"];
   if (/API|資料格式|資料處理|資料契約|JSON|CSV|OpenAPI|Schema|Protobuf|Parquet/i.test(title)) {
