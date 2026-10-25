@@ -250,6 +250,15 @@ function validateBooks({ includeSitemap = false } = {}) {
     if (coverPath && !fileExists(coverPath)) {
       errors.push(`${label}: cover file not found: ${book.cover}`);
     }
+    if (book.googleBooksKey && coverPath.startsWith("assets/images/google-book-cover-images/")) {
+      const key = String(book.googleBooksKey).replace(/^GGKEY:/i, "");
+      const coverName = path.basename(coverPath);
+      const expectedPrefix = `GGKEY_${key}_partner-cover`;
+      const pendingPlaceholder = `GGKEY_${key}_cover-pending.svg`;
+      if (!coverName.startsWith(expectedPrefix) && coverName !== pendingPlaceholder) {
+        errors.push(`${label}: cover filename does not match googleBooksKey ${book.googleBooksKey}: ${coverName}.`);
+      }
+    }
 
     if (book.id && !fileExists(publicBookPagePath(book))) {
       errors.push(`${label}: missing static book page ${publicBookPagePath(book)}.`);

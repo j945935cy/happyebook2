@@ -120,7 +120,7 @@
       "AI Agent",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_ZY31ZE9KS0U_partner-cover.jpg",
     "description": "以固定版本為基礎介紹 MCP，帶讀者從工具整合開始，逐步理解 AI Agent 架構與驗收方式。本書著重可操作的實作流程，協助讀者掌握 MCP 工具連接、整合與檢查成果的方法。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:ZY31ZE9KS0U"
@@ -170,7 +170,7 @@
       "程式設計",
       "實作教材"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_YDYHW5STJH1_partner-cover.jpg",
     "description": "以 60 小時實作教材安排學習路線，帶讀者從 Pi Coding Agent 入門，逐步練習工作流、客製化、SDK 使用與系統整合。適合希望由基礎操作進一步建立完整 coding agent 應用能力的讀者。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:YDYHW5STJH1"
@@ -195,7 +195,7 @@
       "AI 視覺",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_Y54R43AEEXJ_partner-cover.jpg",
     "description": "本書整合 Jetson Orin NX、視覺機械臂、麥克納姆輪底盤、MoveIt 2 與 Nav2，帶讀者認識移動式智慧機器人的軟硬體與 ROS 2 實作。適合想了解機械臂操作、移動底盤與導航整合的機器人學習者。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:Y54R43AEEXJ"
@@ -245,7 +245,7 @@
       "資料庫",
       "AI 工具應用"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_N2QFDNX8GD0_partner-cover.jpg",
     "description": "以 Python、FastAPI 與 Redis 為基礎，實作可擴充的 AI 客服工單平台。本書把網頁 API、資料處理與客服工作流程放進同一個專案，讓讀者透過實作理解 Redis 在應用系統中的使用方式。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:N2QFDNX8GD0"
@@ -270,7 +270,7 @@
       "Hermes",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_JA5JGW8E24B_partner-cover.jpg",
     "description": "以 30 小時的實作路線帶讀者入門 Hermes Agent，從認識工具到建立可重複使用的 AI 工作流程。透過逐步操作與任務練習，學習如何拆解工作、安排工具並確認結果。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:JA5JGW8E24B"
@@ -295,7 +295,7 @@
       "Hermes",
       "AI 工具應用"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_J44QKUQ72TU_partner-cover.jpg",
     "description": "本書帶讀者快速認識 Hermes，從基本設定與常用操作開始，逐步掌握如何把需求交給 AI 助理並檢查執行結果。內容適合剛接觸 Hermes、希望建立穩定使用方式的讀者。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:J44QKUQ72TU"
@@ -371,7 +371,7 @@
       "AI 工具應用",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_FUZHTDQN2JY_partner-cover.jpg",
     "description": "從尋找現成 AI Skill 開始，接著練習組合技能，最後學會依工作需求建立自己的 Skill。本書以循序實作方式介紹技能的選擇、整合與自建，協助讀者把重複任務整理成可重用的工作流程。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:FUZHTDQN2JY"
@@ -396,7 +396,7 @@
       "OpenCode",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DX1HG01ABSN_partner-cover.jpg",
     "description": "帶讀者拆解 OpenCode 的代理迴圈、工作階段與工具使用方式，並理解擴充優先的系統架構。適合想進一步了解 AI coding agent 如何運作，以及如何把工具與工作流程組合起來的讀者。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DX1HG01ABSN"
@@ -421,7 +421,7 @@
       "生活應用",
       "AI 工具應用"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_CSDRDL2DL1D_partner-cover.jpg",
     "description": "以工作、學習與日常生活中的常見任務為例，介紹如何運用 ChatGPT 整理資訊、協助規劃並提升處理效率。本書適合想把生成式 AI 用進生活情境、又希望從具體步驟開始練習的讀者。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:CSDRDL2DL1D"
@@ -445,7 +445,7 @@
       "AI 繪圖",
       "AI 工具應用"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_B54WLUNXNYT_partner-cover.jpg",
     "description": "比較並實作六種 AI 繪圖工具，從需求描述、提示詞調整到結果檢查，整理出可重複使用的創作流程。本書著重工具協作與實際操作，幫助讀者依作品需求選擇合適的繪圖方式。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:B54WLUNXNYT"
@@ -470,7 +470,7 @@
       "OpenCode",
       "Vibe Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_96SNBLX770L_partner-cover.jpg",
     "description": "以 30 小時實作課程安排學習進度，帶讀者使用 OpenCode 閱讀程式、定位問題、逐步修正，最後完成可檢查與驗收的成果。適合想透過實際任務熟悉 AI 程式開發工具的初學者與自學者。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:96SNBLX770L"
@@ -520,7 +520,7 @@
       "PostgreSQL",
       "AI 工具應用"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_04GA3U8KWJ0_partner-cover.jpg",
     "description": "從資料表設計開始，逐步建立 PostgreSQL 資料庫與網頁應用，並把 AI 功能放進可操作的實例中。本書以做中學方式串起資料建模、網站開發與資料庫應用，適合想練習把資料庫知識用在實際網站專案的讀者。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:04GA3U8KWJ0"
@@ -542,7 +542,7 @@
       "程式設計",
       "資料工程"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_JXT5ZHH7Y1W_partner-cover.jpg",
     "description": "從前導零、空值、時區與金額精度，到 API 契約、事件版本、個資安全與 Parquet 分析層，《資料格式工程學》帶你理解格式如何改變系統對資料的解讀。 本書涵蓋 CSV、JSON、YAML、XML、Avro、Protobuf、Parquet 與 ORC，並以可執行的 HappyShop 案例，示範如何建立跨平台、可驗證、可演進的資料契約。 資料能被解析，不代表它仍然正確。",
     "priceLabel": "NT$205.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:JXT5ZHH7Y1W",
@@ -565,7 +565,7 @@
       "程式設計",
       "資料工程"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_BHYWP5TL9DP_partner-cover.jpg",
     "description": "Data that parses is not necessarily data that is correct. explains how leading zeros, nulls, time zones, monetary precision, API contracts, event versions, privacy controls, and analytical storage change the way systems interpret data. The book covers CSV, JSON, YAML, XML, Avro, Protobuf, Parquet, and ORC, backed by an executable HappyShop example that builds a cross-platform, verifiable, and evolvable data contract.",
     "priceLabel": "NT$205.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:BHYWP5TL9DP",
@@ -612,7 +612,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_PWN61CGHEJD_partner-cover.jpg",
     "description": "本書寫給希望讓 AI 不只回答問題，還能實際操作檔案、終端、瀏覽器、程式碼與自動化流程的讀者。你不需要先學會打造 Agent，也不必是專業程式設計師；需要程式設計的章節會從可驗證的小型範例開始。 快速入門提供 Bash／WSL 與 Windows 原生 PowerShell 兩條路徑。第 8 章之後的完整伴隨實例以 Bash（Linux、macOS 或 Windows WSL2）作為主要可重現命令環境；Windows 原生讀者仍可使用 Hermes Desktop 與 PowerShell，但標成 bash 的區塊不可直接照貼。若希望逐章跟做全部實例，Windows 讀者應在第 3 章完成 WSL2 路徑。",
     "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:PWN61CGHEJD",
@@ -635,7 +635,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_FT5BACZLDW8_partner-cover.jpg",
     "description": "Pi Coding Agent 是在終端機中運作的 AI 程式代理：你交給它一項任務，它讀取檔案、修改程式碼、執行指令，並依測試結果繼續修正。本書寫給會使用基本終端機、但初次接觸 AI 程式代理的讀者，從安裝、登入模型服務到限制工具權限逐步示範，並以三項可驗證的實戰貫穿全書——用測試驅動開發完成樂透小遊戲、建立 Flask JSON API、編輯一本五千詞以上的英文電子書。你不只學會下指令，更學會用 Git 差異與重新執行測試來驗收代理成果。附錄含指令速查表、六道練習題與術語表。全書指令皆於 Pi 0.84.2（2026-08）實測驗證。",
     "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:FT5BACZLDW8",
@@ -681,7 +681,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_A656QWRQT03_partner-cover.jpg",
     "description": "還在羨慕別人用 AI 寫程式？OpenCode 把你的終端機變成最強開發夥伴。 OpenCode 是開源、執行於終端機的 AI 程式助理——它讀得懂整個專案、會規劃任務、能直接修改程式碼並執行指令，支援多種模型，包含免費方案。 本書為「OpenCode 技術叢書」第一冊，專為初次接觸 AI 輔助開發的讀者設計：",
     "priceLabel": "NT$209.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:A656QWRQT03",
@@ -704,7 +704,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_LY9CSLY94GN_partner-cover.jpg",
     "description": "「裝好了，然後呢？」——這本書回答所有 OpenCode 使用者的下一個問題。 第一冊帶你入門；第二冊把你變成高手。五篇二十二個章節＋四篇附錄： ・概念篇：代理架構、工具迴圈、技能系統——理解它為何聰明",
     "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:LY9CSLY94GN",
@@ -727,7 +727,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_3528P9PW9SC_partner-cover.jpg",
     "description": "《OpenCode 架構解密》是「OpenCode 技術叢書」第三冊。前兩冊教你用，這一冊帶你拆——從一次對話的九步旅程，到 20 張 SQLite 資料表組成的領域模型；從代理迴圈裡的權限閘門，到 REST、SSE、control、MCP、ACP 五條通訊通道的選型決策。 本書鐵律：只寫能驗證的事。每個論述都附帶可執行的驗證動作——唯讀查詢真實資料庫、curl 官方 API、走訪目錄結構、逐欄解讀日欄解讀日誌。讀完你不只「知道」架構，而是能親手重現每項證據。 ・全景篇——引擎室地圖、client/server 分工、資料目錄導覽",
     "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:3528P9PW9SC",
@@ -750,7 +750,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_3DWE43G2HNX_partner-cover.jpg",
     "description": "《OpenCode 團隊作戰》是「OpenCode 技術叢書」第五冊（完結篇）。前四冊解決個人會用、懂原理、能擴充；這一冊解決組織怎麼落地：會話資產化、分享與遠距協作、GitHub/GitLab 平台自動化、模型供給治理，直到企業級部署。 延續系列鐵律「只寫能驗證的事」：全部 CLI 命令實機驗證、九份官方文檔逐字核對、stats 成本報表與 export 匯出格式附真實輸出樣本。 ・從 me 到 we——安裝生命週期、會話即資產、成本報表",
     "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:3DWE43G2HNX",
@@ -773,7 +773,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_7D24JSJ8N15_partner-cover.jpg",
     "description": "《OpenCode 擴展開發》是「OpenCode 技術叢書」第四冊，帶你從使用者變成建造者。八個擴充點一次攤開：自訂指令、Agent Skills、代理工程、主題設計、MCP、自訂工具、外掛鉤子、SDK 整合——從改一句提示，到把 OpenCode 裝進你的自動化管線。 延續系列鐵律「只寫能驗證的事」：十七支外掛鉤子逐一對照官方型別定義、SDK 方法對照 OpenAPI 生成碼、快取目錄實機解剖。書中範例可直接放進專案的 .opencode/ 目錄運行。 ・工坊地圖——擴充點選型決策、載入時序、除錯三管道",
     "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:7D24JSJ8N15",
@@ -980,7 +980,7 @@
       "程式設計",
       "資料工程"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_EHNEB84UYNT_partner-cover.jpg",
     "description": "API 回傳 200，不代表整合可靠。本書以「晴日商店訂單 API 與合作夥伴 Webhook」為連續案例，帶你實作 OpenAPI 3.1.2、JSON Schema Draft 2020-12、cursor 分頁、逾時與有限重試、冪等鍵、Webhook HMAC 簽章、事件去重及 breaking-change gate。所有核心實驗均在 localhost 執行，適合具備基本 Python 能力、第一次系統化學習 API 契約的讀者。",
     "priceLabel": "NT$366.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:EHNEB84UYNT",
@@ -1002,7 +1002,7 @@
     "category": [
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_X5C8D3JH39H_partner-cover.jpg",
     "description": "給想在 Windows 11 建立 Linux 與 Docker 開發環境的初學者。從 PowerShell、WSL 2 Ubuntu、路徑、權限與 localhost 開始，逐步掌握 Dockerfile、volume、network、Docker Compose、FastAPI 與 PostgreSQL，並完成可重建、可除錯、可備份還原的多服務專案。全書 18 章、63 題練習與六份附錄，所有命令均標示 PowerShell、WSL Bash 或 container shell，另附公開範例與測試。",
     "priceLabel": "NT$366.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:X5C8D3JH39H",
@@ -1071,7 +1071,7 @@
       "消防安全",
       "考試準備"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_W4GX9KNHRYZ_partner-cover.png",
     "description": "以零基礎讀者為對象，涵蓋警報、受信、廣播、避難標示、緊急照明、避難器具與排煙系統的保護目的、訊號流程、設置標準讀法、構造機能、竣工測試、檢修判讀、設備重點卡與 113～114 年官方試題解析。本書供消防設備士備考與概念學習，不是設備操作、測試、檢修或現場避難指揮指引。",
     "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:W4GX9KNHRYZ",
@@ -1163,7 +1163,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DJNNF85KUWY_partner-cover.jpg",
     "description": "一本給工程師的 AI Agent 實作指南，從 Codex、Claude Code、Pi、Agent Skills 與 MCP 出發，說明模型選擇、成本控制、多 Agent 協作，以及測試、資安與品質閘門。 本書協助讀者建立可理解、可審查、可回復的 AI 開發工作流，將 AI Agent 納入實際工程流程，而不是只依賴模糊的 Prompt。書中並提供 Reader Lab、設定範本與檢查清單。",
     "priceLabel": "NT$336.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DJNNF85KUWY",
@@ -1186,7 +1186,7 @@
       "AI Coding",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_YQ74UPAQJFL_partner-cover.jpg",
     "description": "Build reliable AI coding workflows with Codex, Claude Code, Pi, Agent Skills, and MCP. Learn to control scope, manage costs, protect secrets, and verify every change.",
     "priceLabel": "NT$409.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:YQ74UPAQJFL",
@@ -1654,7 +1654,7 @@
       "Windows 系統管理",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_1G26L58T7A5_partner-cover.jpg",
     "description": "A practical guide to building an AI development workstation with Windows 11, WSL 2, VS Code, OpenCode, and Zen, including setup, integration, daily workflows, and troubleshooting.",
     "priceLabel": "NT$499.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:1G26L58T7A5",
@@ -1679,7 +1679,7 @@
       "Windows 系統管理",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_FLRTL7GAX6D_partner-cover.jpg",
     "description": "Windows 11、WSL 2、VS Code、OpenCode、Zen を組み合わせ、AI 開発に必要な環境構築、ツール連携、基本操作、トラブルシューティングを実践的に学ぶガイドです。",
     "priceLabel": "NT$472.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:FLRTL7GAX6D",
@@ -1704,7 +1704,7 @@
       "AI 工具應用",
       "Workflow 設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_K7LA3U87NFG_partner-cover.jpg",
     "description": "以 Cursor、Claude Code、Windsurf 與 Cline 為核心，整理需求描述、上下文提供、程式修改、測試驗證與版本控制的 AI coding 實戰流程。",
     "priceLabel": "NT$366.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:K7LA3U87NFG",
@@ -1849,7 +1849,7 @@
       "溝通技巧",
       "自學"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_8909EQ1LC5K_partner-cover.jpg",
     "description": "把別人的事還給他們，把自己的人生拿回來。本書以台灣常見的家庭期待、職場壓力與人際焦慮為例，協助讀者停止內耗並建立清楚界線。",
     "priceLabel": "NT$231.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:8909EQ1LC5K",
@@ -1947,7 +1947,7 @@
       "溝通技巧",
       "自學"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_AENAPC08Y0Q_partner-cover.jpg",
     "description": "透過每天一個主題、一段自我覺察與一項練習，逐步看見焦慮、委屈、自責與過度在意所造成的心理消耗，建立更清楚的人際界線與穩定回應壓力的方法。",
     "priceLabel": "NT$158.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:AENAPC08Y0Q",
@@ -1972,7 +1972,7 @@
       "效率工具",
       "Workflow 設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_JYQGC2626W5_partner-cover.jpg",
     "description": "給一般工作者的中英雙語實戰手冊，說明如何用 AI 改善任務管理、會議、溝通、知識管理、風險判斷與工作流程，把時間留給決策、協作與領導。",
     "priceLabel": "NT$210.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:JYQGC2626W5",
@@ -2020,7 +2020,7 @@
       "英文學習",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_29SPT000TXG_partner-cover.jpg",
     "description": "A Timeless Classic, Reimagined for the Modern Reader\n\nExperience William Shakespeare's legendary comedy, \"The Taming of the Shrew\", like never before. This exclusive Premium Illustrated Edition breathes new life into the classic tale of Petruchio and Katherina.\n\n[ Exclusive Features of this Edition ]\n\nOriginal Renaissance Oil Portraits: Features stunning, AI-crafted character illustrations (including Katherina, Petruchio, Bianca, and more) designed specifically for this edition.\n\nModern & Clean Typography: Completely re-typeset with a refreshing, easy-on-the-eyes layout, generous line-spacing, and eye-care color palettes.\n\nFlawless E-Reader Experience: Expertly formatted to ensure perfect display on phones, tablets, and e-ink devices without broken formatting or lost verses.\n\nWhether you are a lifelong Shakespeare enthusiast, a student discovering the play for the first time, or a collector of beautifully designed digital books, this edition guarantees a premium reading journey.",
     "priceLabel": "NT$134，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:29SPT000TXG"
@@ -2041,7 +2041,7 @@
     "category": [
       "英文學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_CGJQ65F4L6G_partner-cover.jpg",
     "description": "A clear modern-English reading edition of Shakespeare’s A Midsummer Night’s Dream, arranged scene by scene for phones, tablets, and e-readers.",
     "priceLabel": "NT$134，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:CGJQ65F4L6G"
@@ -2062,7 +2062,7 @@
     "category": [
       "英文學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_S0A6QHCU3J6_partner-cover.jpg",
     "description": "《仲夏夜之夢》手機優先雙語閱讀版，逐場呈現現代英文與繁體中文對照，適合英文閱讀、莎士比亞入門與雙語閱讀。",
     "priceLabel": "NT$156，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:S0A6QHCU3J6"
@@ -2083,7 +2083,7 @@
     "category": [
       "英文學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_9CXN0RD6363_partner-cover.jpg",
     "description": "以 CEFR B1 簡明現代英語完整重述《羅密歐與茱麗葉》，每段英文後緊接繁體中文翻譯，並搭配詞彙、場景摘要、閱讀理解與完整答案，幫助中級英語學習者讀懂經典故事並建立閱讀信心。",
     "priceLabel": "NT$177，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:9CXN0RD6363"
@@ -2125,7 +2125,7 @@
     "category": [
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_XZS1B41QUUT_partner-cover.jpg",
     "description": "通用大模型很強，但不一定懂你的品牌語氣、專業流程與內部規範。當 Prompt 與 RAG 不足以改變模型行為時，微調就是打造專屬 AI 的關鍵能力。\n\n\n\n\n《Vol.9 AI 模型微調實戰》帶你從開源模型生態開始，認識 Hugging Face、Transformers 與 vLLM，建立微調資料集，理解 LoRA 的低秩適應原理，並比較 RLHF 與 DPO 的訓練方式。書中也涵蓋 Unsloth 記憶體優化、客服模型實作、LoRA 合併、GGUF 量化，以及 LLM-as-a-Judge 與 Eval-Driven Development。\n\n\n\n\n本書適合具備 Python 或基礎 AI 經驗的讀者。你將學會判斷何時使用 RAG、何時需要 Fine-Tuning，如何以較低硬體成本訓練模型，以及如何評估微調後的模型是否真的更符合業務需求。",
     "priceLabel": "NT$314，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:XZS1B41QUUT"
@@ -2146,7 +2146,7 @@
     "category": [
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_Q7H71WQ1DUP_partner-cover.jpg",
     "description": "企業導入 AI，真正困難的往往不是模型，而是資料。格式混亂、品質不一、缺乏權限控管，會讓再強的模型也產生錯誤與幻覺。\n\n\n\n\n《Vol.8 企業級 AI 資料工程》以實務流程帶你建立 AI 時代的資料基礎。全書從資料品質、資料湖、ETL 與清洗開始，進一步說明 Embedding、向量資料庫、Chunking、合成資料、自動化 Data Pipeline、即時串流與資料治理，最後回到 Data-Centric AI 的核心思維。\n\n\n\n\n每章包含情境故事、原理解析、實作練習、企業案例與重點整理，適合希望建置 RAG、知識庫與企業 AI 系統的資料工程師、後端工程師及技術主管。讀完後，你將更清楚資料如何被擷取、清洗、切分、索引、檢索、監控與治理，並能規劃一條可維護、可擴充的 AI 資料管線。",
     "priceLabel": "NT$261，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:Q7H71WQ1DUP"
@@ -2168,7 +2168,7 @@
       "AI 學習",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_7K0TLU061KX_partner-cover.jpg",
     "description": "當 AI 從聊天框走向企業流程，系統必須具備工具呼叫、狀態管理、記憶、協作、安全審批與可控交付能力。模型只是大腦，真正的企業 AI 還需要完整的系統架構。\n\n\n\n\n《Vol.10 企業級 AI 系統大集成》從多模態與 Function Calling 開始，逐步拆解 ReAct 思考框架、AgentExecutor、自主智能體、多代理人協作、CrewAI、記憶體層級與 LangGraph 狀態機。後續以企業級 Orchestrator 架構串接共享記憶、工具與專業 Agent，並討論 Alignment、HITL 人工審批與高風險操作的安全卡控。\n\n\n\n\n本書適合希望把 RAG、Agent 與工具協定整合進真實產品的開發者與架構師。透過架構圖、流程解析與實務案例，你將建立從單一模型到可治理 AI 團隊的整體視野，理解如何讓 Agent 不只會回答，更能可靠地完成任務。",
     "priceLabel": "NT$261，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:7K0TLU061KX"
@@ -2191,7 +2191,7 @@
       "AI 學習",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_4F10A02L47Z_partner-cover.jpg",
     "description": "當 AI 不只回答問題，而能讀檔、寄信、執行程式與操作企業系統，安全設計就不能只靠一句系統提示。本書以 Coding、RAG、郵件、MCP／Skill、企業報表與部署維運六個標準情境，實作 Agent 威脅模型、最小權限、供應鏈審查、沙盒隔離、人工核准、記憶治理、稽核與紅隊測試，並提供六個操作實驗與 60 項上線檢查表。",
     "priceLabel": "NT$261，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:4F10A02L47Z"
@@ -2214,7 +2214,7 @@
       "AI 學習",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_FS68K5TU91P_partner-cover.jpg",
     "description": "當 AI Agent 不只回答問題，還能讀取檔案、呼叫工具、修改系統與對外傳送資料，安全治理就不能只靠一句「請勿洩漏機密」。本書以資產、風險、控制與驗收四步驟，拆解 Prompt Injection、MCP 與 Skill 供應鏈、最小權限、憑證保護、沙盒隔離、人工核准、記憶污染、稽核追蹤及紅隊測試。\n\n\n\n\n全書採繁體中文與英文逐段對照，並提供六個企業標準情境、可直接使用的治理範本、60 項上線檢查表與實作實驗，協助開發、資安、維運及管理團隊把抽象政策落實為可驗證的工作流程。\n\n\n\n\nWhen an AI agent can read files, call tools, modify systems, and transmit data—not merely answer questions—security governance cannot rely on a single instruction such as “do not disclose secrets.” This bilingual edition provides paragraph-aligned Traditional Chinese and English, six enterprise scenarios, governance templates, a 60-item production checklist, and hands-on labs.",
     "priceLabel": "NT$366，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:FS68K5TU91P"
@@ -2237,7 +2237,7 @@
       "AI 學習",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_BHT839A3D13_partner-cover.jpg",
     "description": "An AI agent does more than generate text. It can read files, call tools, modify systems, and send data beyond the organization. Once model output can change real systems, security must extend beyond prompts and model behavior.\n\n\n\n\nThis practical guide shows engineering, security, operations, and governance teams how to design agent workflows around assets, risks, enforceable controls, and acceptance evidence. It covers prompt injection, MCP and Skill supply chains, least privilege, credential protection, sandboxing, human approval, memory poisoning, audit trails, incident response, and red-team testing.\n\n\n\n\nSix enterprise scenarios, ready-to-use governance templates, hands-on labs, and a 60-item release checklist turn abstract policy into operating discipline.",
     "priceLabel": "NT$366，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:BHT839A3D13"
@@ -2258,7 +2258,7 @@
     "category": [
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_BN4Y17W1HNS_partner-cover.jpg",
     "description": "AI 的歷史不只由突破組成，也由失敗、誤判、偏差與過度宣傳共同塑造。從會下棋的電腦、自動駕駛事故與人臉辨識偏差，到生成圖片、虛構引用、benchmark 誤讀與公開聊天機器人翻車，本書帶讀者回到可查證的事件與原始資料，理解 AI 為什麼會在看起來聰明時犯下嚴重錯誤。\n\n\n\n\n全書以通俗歷史、失效鏈分析與使用者檢查表，拆解資料、模型、介面、組織決策與人機責任之間的關係。適合一般讀者、教育工作者、產品經理，以及需要判讀 AI 輸出的專業工作者。",
     "priceLabel": "NT$209，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:BN4Y17W1HNS"
@@ -2363,7 +2363,7 @@
     "category": [
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_86G1XFS98WB_partner-cover.jpg",
     "description": "你喜歡紙張的觸感、翻頁的節奏與書架上的收藏，卻也想知道電子書是否能讓閱讀更方便嗎？這本書不要求你放棄紙本，而是陪你多學會一種讀書的方法。\n\n\n\n\n全書從紙本讀者最常遇到的疑問出發，說明電子書、電子紙、有聲書與文字轉語音的差別，協助你依照眼睛舒適度、生活情境、內容來源與預算選擇裝置和平台。你會實際學到如何調整字體與版面、查字、畫線、記筆記、整理數位書架、離線閱讀、保護帳號，以及在旅行、工作和學習中靈活搭配紙本與電子書。\n\n\n\n\n書末附有購買與借閱檢查表、家人陪讀指南、問題排除地圖、電子書小辭典，以及可以直接使用的三十天閱讀實驗工作簿。無論你想放大文字、減輕攜書負擔、利用通勤時間閱讀，或讓書念給你聽，都可以從一個真實問題和一本真正想讀的書開始。",
     "priceLabel": "NT$209，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:86G1XFS98WB"
@@ -2555,7 +2555,7 @@
     "category": [
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DGG0ABY476H_partner-cover.jpg",
     "description": "專題製作不知道從何開始？報告書寫不出來？PPT 抓不到重點？本書用「手搖飲料店」的實戰案例，帶你用 AI 解決所有卡關！從想題目到完成 Word 報告書、上台簡報、展示海報與學習歷程，這是一本為商管群高職生量身打造的高效工作流指南。",
     "priceLabel": "NT$189，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DGG0ABY476H"
@@ -2684,7 +2684,7 @@
       "AI 學習",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_LK3GPET80QK_partner-cover.jpg",
     "description": "《AI Agent 開發工作流》是 Happy eBook 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
     "priceLabel": "NT$578.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:LK3GPET80QK"
@@ -2816,7 +2816,7 @@
       "AI 學習",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_39H3F8UU1S9_partner-cover.jpg",
     "description": "《用 ChatGPT 思考，用 Codex 實作》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
     "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:39H3F8UU1S9"
@@ -2837,7 +2837,7 @@
     "category": [
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_0SGN17N5GX0_partner-cover.jpg",
     "description": "《SQL 18 小時實戰》是 Happy eBook 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
     "priceLabel": "NT$261.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:0SGN17N5GX0"
@@ -2858,7 +2858,7 @@
     "category": [
       "英文學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_JHRBBBFUYN4_partner-cover.jpg",
     "description": "《The Taming of the Shrew》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
     "priceLabel": "NT$156.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:JHRBBBFUYN4"
@@ -2879,7 +2879,7 @@
     "category": [
       "英文學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_G0BPUYGU8PX_partner-cover.jpg",
     "description": "《The Taming of the Shrew》是 Happy eBook Authors 發布於 Google Play Books 的電子書。本頁提供作品介紹、分類、定價，以及 Google Play Books 試閱與購買入口。",
     "priceLabel": "NT$156.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:G0BPUYGU8PX"
@@ -3054,7 +3054,7 @@
       "證照考試",
       "AI 學習"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_W4UAB6LULAZ_partner-cover.jpg",
     "description": "《iPAS AIoT 應用工程師高分過關指南》是證照達人研究室 AIoT 組整理於 Google Play Books 的電子書作品，聚焦 iPAS AIoT 應用工程師考試準備，涵蓋四大考科、觀念理解、情境判斷與實作入門。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$314.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:W4UAB6LULAZ"
@@ -3100,7 +3100,7 @@
       "AI Agent",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_TBHGERTLAK8_partner-cover.jpg",
     "description": "《Claude Code 進階實戰》是 Happy eBook 整理於 Google Play Books 的電子書作品，主題屬於「AI Agent / AI Coding」。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$252.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:TBHGERTLAK8"
@@ -3123,7 +3123,7 @@
       "AI Agent",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_5R5K6C3CKEY_partner-cover.jpg",
     "description": "《AI Coding Agent 實戰工作流》是 Happy eBook 整理於 Google Play Books 的電子書作品，主題屬於「AI Agent / AI Coding」。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$262.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:5R5K6C3CKEY"
@@ -3146,7 +3146,7 @@
       "AI Agent",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_48J54N52R64_partner-cover.jpg",
     "description": "《Claude Code 實戰入門》是 Happy eBook 整理於 Google Play Books 的電子書作品，主題屬於「AI Agent / AI Coding」。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$242.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:48J54N52R64"
@@ -3169,7 +3169,7 @@
       "AI Agent",
       "AI Coding"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_HNTRL5EAFNZ_partner-cover.jpg",
     "description": "《OpenCode 實戰入門》是 Happy eBook 整理於 Google Play Books 的電子書作品，主題屬於「AI Agent / AI Coding」。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$242.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:HNTRL5EAFNZ"
@@ -3193,7 +3193,7 @@
       "AI Coding",
       "Hermes"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_LJB07P6FR45_partner-cover.jpg",
     "description": "《Hermes Agent 進階技巧》是 Happy eBook 整理於 Google Play Books 的電子書作品，主題屬於「AI Agent / AI Coding / Hermes」。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$210.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:LJB07P6FR45"
@@ -3217,7 +3217,7 @@
       "AI Coding",
       "Hermes"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_NY8P9ZLSKWU_partner-cover.jpg",
     "description": "《Hermes Agent 熟練應用》是 Happy eBook 整理於 Google Play Books 的電子書作品，主題屬於「AI Agent / AI Coding / Hermes」。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$210.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:NY8P9ZLSKWU"
@@ -3241,7 +3241,7 @@
       "AI Coding",
       "Hermes"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_2P05YZHCECQ_partner-cover.jpg",
     "description": "《Hermes Agent 快速入門》是 Happy eBook 整理於 Google Play Books 的電子書作品，主題屬於「AI Agent / AI Coding / Hermes」。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$210.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:2P05YZHCECQ"
@@ -3335,7 +3335,7 @@
       "版本控制",
       "AI 協作"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_2FAK55B127R_partner-cover.jpg",
     "description": "《GitHub 入門使用指南》是 Happy eBook 整理於 Google Play Books 的電子書作品，主題屬於「GitHub / 版本控制」。本頁提供書名、作者、分類、定價與 Google Play Books 試閱與購買入口，方便讀者與站務管理者快速找到對應作品。",
     "priceLabel": "NT$210.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:2FAK55B127R"
@@ -3704,7 +3704,7 @@
       "Vibe Coding",
       "程式設計"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_EQSRWCAJPZ8_partner-cover.jpg",
     "description": "這本書用做中學的方式介紹 Codex 程式設計。讀者會從小任務開始，練習描述需求、閱讀修改結果、驗證頁面與整理錯誤，逐步建立與 AI coding 工具協作的基本能力。",
     "priceLabel": "NT$294.00，Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:EQSRWCAJPZ8"
@@ -4030,7 +4030,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_WT86YWX6ZE0_partner-cover.jpg",
     "description": "《AI Agent 開發工作流》寫給已經會使用 AI 工具，但想進一步建立可重複、可檢查、可交接工作流的讀者。本書從 AI Coding 的演進與失控原因談起，進入 Skills、Agent Workflow、Agent 記憶、工具使用、Multi-Agent 協調、MCP、n8n、Claude Code、Codex、Fleet 與 Tailscale 等實務場景，協助讀者把 AI 從一次漂亮輸出，放進可管理、可驗證、可持續改進的工作方式。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=0N_sEQAAQBAJ&redir_esc=y",
@@ -4104,7 +4104,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DAZW49ZRGYF_partner-cover.jpg",
     "description": "《用 Codex 做出 10 個小作品》用 2 本中英故事書與 8 個網頁小遊戲，帶初學者練習和 Codex 協作。每一章都用固定流程說明作品目標、可直接使用的 prompt、Codex 可能修改的地方、完成後怎麼檢查，以及發現問題時如何請 Codex 修正。適合第一次使用 Codex 的自學者、想用 AI 輔助教學的老師、想陪孩子做小作品的家長，以及想從小型網頁作品開始練習程式的人。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=UK3eEQAAQBAJ&redir_esc=y",
@@ -4397,7 +4397,7 @@
     ],
     "type": "paid",
     "format": "Google Play Book 電子書",
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_7RWG7KEZSPS_partner-cover.jpg",
     "description": "《iPAS AI 應用規劃師初級題庫完全攻略》是一本專為初級考生設計的刷題型備考書，內容涵蓋「人工智慧基礎概論」與「生成式 AI 應用與規劃」兩大科目。\n\n本書收錄 400 題原創擬真練習題，包含分類題庫、高頻陷阱題、混合情境題與全真模擬考，並為每題提供答案、解析、考點與易錯提醒，幫助讀者不只背答案，更能理解題目背後的判斷邏輯。",
     "downloadUrl": "https://books.google.com.tw/books/about?id=rzjZEQAAQBAJ&redir_esc=y",
     "buyUrl": "https://books.google.com.tw/books/about?id=rzjZEQAAQBAJ&redir_esc=y",
@@ -4548,7 +4548,7 @@
     ],
     "type": "paid",
     "format": "Google Play Books 電子書",
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_CJZLNTJ1444_partner-cover.jpg",
     "description": "《iPAS AI 應用規劃師初級題庫完全攻略》整理人工智慧基礎概論與生成式 AI 應用與規劃兩大科目，收錄 500 題原創擬真練習，包含分類題庫、陷阱題、情境題與全真模擬考，適合準備 2026 初級考試的讀者考前複習。",
     "downloadUrl": "",
     "buyUrl": "https://books.google.com.tw/books/about?id=ezrbEQAAQBAJ&redir_esc=y",
@@ -4743,7 +4743,7 @@
     ],
     "type": "web",
     "format": "網站閱讀",
-    "cover": "https://j945935cy.github.io/Python-for-Beginners-Book/",
+    "cover": "assets/images/google-book-cover-images/Python-for-Beginners-Book_output_google-books_cover.png",
     "description": "整理 Python 初學者常見基礎主題，適合想從零開始建立語法觀念與練習節奏的讀者。",
     "downloadUrl": "",
     "buyUrl": "",
@@ -5498,7 +5498,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL37EB9A5A8B_partner-cover.png",
     "description": "《0_preface》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL37EB9A5A8B"
@@ -5546,7 +5546,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL228815AA17_partner-cover.png",
     "description": "《AI Agent 六級進化論：理解 Agent 與設計安全工作流》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL228815AA17"
@@ -5570,7 +5570,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL012052381B_partner-cover.png",
     "description": "《AI Agent 六級進化論：組件、案例與持續運作》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL012052381B"
@@ -5618,7 +5618,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE16437AF27_partner-cover.png",
     "description": "《AI Agent 工作流程實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLE16437AF27"
@@ -5642,7 +5642,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL008B8CBFF2_partner-cover.png",
     "description": "《AI Coding 實戰手冊：Cursor + Claude Code + Windsurf + Cline》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL008B8CBFF2"
@@ -5666,7 +5666,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL050E514B84_cover-pending.svg",
     "description": "《AI Development Environment Masterclass: Windows 11 + WSL 2 + VS Code + OpenCode + Zen》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL050E514B84"
@@ -5690,7 +5690,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL4CD58828BB_partner-cover.jpg",
     "description": "《AI Skill 實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL4CD58828BB"
@@ -5762,7 +5762,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLA8460EEDBA_cover-pending.svg",
     "description": "《AI 指揮官實戰：用 Herdr 打造可驗證的 AI 協作工作流》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLA8460EEDBA"
@@ -5786,7 +5786,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_BY0YSK4HS85_partner-cover.jpg",
     "description": "《AI 時代必備知識：從入門使用到駕馭 AI Agent》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:BY0YSK4HS85"
@@ -5810,7 +5810,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLD9790130EF_partner-cover.jpg",
     "description": "《AI 時代必備知識：從入門使用到駕馭 AI Agent》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLD9790130EF"
@@ -5834,7 +5834,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLF0017F40A0_partner-cover.png",
     "description": "《AI 時代的 Firebase 做中學》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLF0017F40A0"
@@ -5882,7 +5882,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL5BCF33AAF0_partner-cover.jpg",
     "description": "《AI 時代的 PostgreSQL 網頁實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL5BCF33AAF0"
@@ -5906,7 +5906,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL02906E1A93_partner-cover.jpg",
     "description": "《AI 時代的 Redis 網頁實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL02906E1A93"
@@ -5930,7 +5930,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL128180F6C5_partner-cover.png",
     "description": "《AI 時代的數位防身術》是由 Happy eBook 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL128180F6C5"
@@ -5954,7 +5954,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL9529AB6B6F_partner-cover.png",
     "description": "《AI 時代的網頁開發》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL9529AB6B6F"
@@ -5978,7 +5978,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL85340112C4_partner-cover.jpg",
     "description": "《AI 時代的資料庫實戰：打造網路商店進銷存實例演習》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL85340112C4"
@@ -6002,7 +6002,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL11CE029CFA_partner-cover.png",
     "description": "《AI 時代的資料格式》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL11CE029CFA"
@@ -6050,7 +6050,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE4E6ABF045_cover-pending.svg",
     "description": "《AI 開發環境全攻略：Windows 11 + WSL 2 + VS Code + OpenCode + Zen》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLE4E6ABF045"
@@ -6074,7 +6074,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL1F2050C7C5_partner-cover.jpg",
     "description": "《AI-Powered Project Management》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL1F2050C7C5"
@@ -6098,7 +6098,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLEE1991682D_cover-pending.svg",
     "description": "《AI開発環境マスター：Windows 11 + WSL 2 + VS Code + OpenCode + Zen》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLEE1991682D"
@@ -6122,7 +6122,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE30388B6F5_partner-cover.png",
     "description": "《API 資料契約實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLE30388B6F5"
@@ -6146,7 +6146,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLBB6469F73C_partner-cover.jpg",
     "description": "《Agent Skills 實戰手冊：從挑選、使用到測試維護，打造可重複的 AI 工作流》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLBB6469F73C"
@@ -6170,7 +6170,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLAE3465ACA4_partner-cover.png",
     "description": "《Blender 做中學：從第一個模型到完整作品》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLAE3465ACA4"
@@ -6218,7 +6218,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE5BAF98893_partner-cover.png",
     "description": "《Codex + OpenCLI 實作：讀取網頁、整理資訊、產生可檢查的草稿》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLE5BAF98893"
@@ -6338,7 +6338,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL6028C0C4D0_partner-cover.png",
     "description": "《Codex CLI 聰明上手》是由 Happy eBook 吳進北 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL6028C0C4D0"
@@ -6362,7 +6362,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLCD4D60CD06_partner-cover.jpg",
     "description": "《Codex × CLI-Anything × Blender：AI 3D 建模實作》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLCD4D60CD06"
@@ -6386,7 +6386,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_A3AEGH0EJQ1_partner-cover.jpg",
     "description": "《Codex × CLI-Anything × Blender：AI 3D 建模實作》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:A3AEGH0EJQ1"
@@ -6410,7 +6410,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL386C623254_partner-cover.jpg",
     "description": "《Data Format Engineering》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL386C623254"
@@ -6434,7 +6434,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL9866EB0C39_partner-cover.jpg",
     "description": "《From “I Should” to “I Choose”》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL9866EB0C39"
@@ -6458,7 +6458,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL020C9A7DD7_partner-cover.png",
     "description": "《Getting Diagrams Right with AI》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL020C9A7DD7"
@@ -6530,7 +6530,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL48391C4552_partner-cover.jpg",
     "description": "《Herdr 多 Agent 實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL48391C4552"
@@ -6554,7 +6554,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL38226C24B7_partner-cover.jpg",
     "description": "《Herdr 易學速用秘訣》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL38226C24B7"
@@ -6578,7 +6578,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLA584705678_partner-cover.jpg",
     "description": "《Hermes Agent 100 小時》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLA584705678"
@@ -6602,7 +6602,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL3B9F7268FB_partner-cover.jpg",
     "description": "《Hermes Agent 30 小時》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL3B9F7268FB"
@@ -6626,7 +6626,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL871EF1C7BB_partner-cover.jpg",
     "description": "《Hermes Agent 實戰指南》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL871EF1C7BB"
@@ -6650,7 +6650,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLA8A92A7DB7_partner-cover.jpg",
     "description": "《Hermes Agent 操作手冊：從第一次安裝到多平台 AI 助理》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLA8A92A7DB7"
@@ -6674,7 +6674,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL67650E3F49_partner-cover.png",
     "description": "《Hermes 使用經驗分享與簡捷使用指引》是由 Happy eBook 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL67650E3F49"
@@ -6698,7 +6698,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL9DC9984909_partner-cover.jpg",
     "description": "《Hermes 快速入門與聰明用》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL9DC9984909"
@@ -6770,7 +6770,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL62298CCFEF_partner-cover.png",
     "description": "《Let AI Write Python: What Do We Still Need to Learn?》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL62298CCFEF"
@@ -6818,7 +6818,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL254CC211D3_partner-cover.png",
     "description": "《Obsidian × OpenCode(中英對照版):Building an AI-Powered Knowledge Management System 中英對照》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL254CC211D3"
@@ -6890,7 +6890,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL0BC6AEF647_partner-cover.png",
     "description": "《Obsidian × OpenCode:強強聯手的知識管理》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL0BC6AEF647"
@@ -6962,7 +6962,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL691C979545_partner-cover.png",
     "description": "《Obsidian 快樂學:聰明用》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL691C979545"
@@ -6986,7 +6986,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL617A28F406_partner-cover.png",
     "description": "《OpenCLI 網站自動化入門：讓 AI Agent 安全操作網站與瀏覽器》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL617A28F406"
@@ -7010,7 +7010,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_ART1RX5PY66_partner-cover.jpg",
     "description": "《OpenCode 2.0 新功能實戰（編輯預覽稿）》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:ART1RX5PY66"
@@ -7034,7 +7034,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL2396A317F1_partner-cover.jpg",
     "description": "《OpenCode 2.0 新功能實戰（編輯預覽稿）》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL2396A317F1"
@@ -7058,7 +7058,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL521511D93E_cover-pending.svg",
     "description": "《OpenCode 入門指南》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL521511D93E"
@@ -7082,7 +7082,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL7CDB3C117A_cover-pending.svg",
     "description": "《OpenCode 團隊作戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL7CDB3C117A"
@@ -7106,7 +7106,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL62947C4A59_cover-pending.svg",
     "description": "《OpenCode 實戰寶典》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL62947C4A59"
@@ -7130,7 +7130,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLED1DAE91B8_cover-pending.svg",
     "description": "《OpenCode 擴展開發》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLED1DAE91B8"
@@ -7154,7 +7154,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL8B661FEF44_cover-pending.svg",
     "description": "《OpenCode 架構解密》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL8B661FEF44"
@@ -7178,7 +7178,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL1645839C0D_partner-cover.jpg",
     "description": "《Pi Coding Agent 100 小時實戰教材》是由 Pi Coding Agent 100 小時教材編輯團隊 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL1645839C0D"
@@ -7202,7 +7202,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_31L60K8Y91P_partner-cover.jpg",
     "description": "《Pi Coding Agent 入門》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:31L60K8Y91P"
@@ -7226,7 +7226,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLCEF5537A0D_partner-cover.jpg",
     "description": "《Pi Coding Agent 入門》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLCEF5537A0D"
@@ -7250,7 +7250,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLA28E146E74_partner-cover.png",
     "description": "《Pi Coding Agent 完全指南》是由 Pi Cookbook 團隊 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLA28E146E74"
@@ -7274,7 +7274,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL9645920F90_partner-cover.png",
     "description": "《Pi 程式開發代理：極簡主義的 AI 開發工作流》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL9645920F90"
@@ -7298,7 +7298,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLA0E2CF2E59_partner-cover.png",
     "description": "《Playwright 自動化實戰：12 個生活與工作必備專案（Python 版）》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLA0E2CF2E59"
@@ -7370,7 +7370,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL58F2E5E601_partner-cover.png",
     "description": "《Python × Playwright 自動化實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL58F2E5E601"
@@ -7418,7 +7418,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLDEFF218461_partner-cover.png",
     "description": "《Python 讓 AI 寫，我們要學什麼？》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLDEFF218461"
@@ -7442,7 +7442,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLB45376ECA2_partner-cover.png",
     "description": "《Python 資料處理實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLB45376ECA2"
@@ -7466,7 +7466,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_X4FKBAQK36S_partner-cover.jpg",
     "description": "《ROS 2 做中學：用 ROSMASTER R2 打造阿克曼機器人》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:X4FKBAQK36S"
@@ -7490,7 +7490,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL97821244A6_partner-cover.jpg",
     "description": "《ROS 2 做中學：用 ROSMASTER R2 打造阿克曼機器人》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL97821244A6"
@@ -7514,7 +7514,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL4EC6114382_partner-cover.jpg",
     "description": "《ROS 2 視覺機械臂機器人實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL4EC6114382"
@@ -7562,7 +7562,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE429F805A2_partner-cover.png",
     "description": "《Rust 實戰入門》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLE429F805A2"
@@ -7610,7 +7610,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL30E96BF5C6_cover-pending.svg",
     "description": "《What Happens Next? — Are We Ready?》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL30E96BF5C6"
@@ -7658,7 +7658,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL30F129CC4D_cover-pending.svg",
     "description": "《下一次會怎樣？——我們準備好了嗎？》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL30F129CC4D"
@@ -7682,7 +7682,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL83AD276AA5_cover-pending.svg",
     "description": "《下一次會怎樣？——我們準備好了嗎？ / What Happens Next? — Are We Ready?》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL83AD276AA5"
@@ -7706,7 +7706,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLA5AFD7C72B_partner-cover.png",
     "description": "《不花錢學 AI：從 LLM 概念到 Coding Agent 安全流程》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLA5AFD7C72B"
@@ -7754,7 +7754,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL959E600D43_partner-cover.png",
     "description": "《乙安 60 天：932 題高分通關版》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL959E600D43"
@@ -7778,7 +7778,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLA21252971E_partner-cover.png",
     "description": "《乙安 術科篇：60 天計算題 + 關鍵字答題法》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLA21252971E"
@@ -7802,7 +7802,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL5696697377_partner-cover.png",
     "description": "《乙安 題庫導覽》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL5696697377"
@@ -7826,7 +7826,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL922B4E270D_partner-cover.png",
     "description": "《使用 10 個範例學習 Codex CLI》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL922B4E270D"
@@ -7874,7 +7874,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL3897FB0F9B_partner-cover.png",
     "description": "《做中學 WSL2 打造 Windows 上的 Linux、Docker 與 AI 開發工作站》是由 《做中學 WSL2》編輯團隊 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL3897FB0F9B"
@@ -7898,7 +7898,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLB1BAA31678_partner-cover.jpg",
     "description": "《多 Agent 系統架構與實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLB1BAA31678"
@@ -7922,7 +7922,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLAC526B2734_partner-cover.png",
     "description": "《大學生的 2026 資安入門：AI 時代的雲端安全與數位韌性》是由 Happy eBook 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLAC526B2734"
@@ -7970,7 +7970,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLB275D42186_partner-cover.jpg",
     "description": "《從「我應該」到「我選擇」》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLB275D42186"
@@ -7994,7 +7994,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL51B308B5FD_partner-cover.png",
     "description": "《從零開始學 Herdr：終端新手的動手演習》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL51B308B5FD"
@@ -8018,7 +8018,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL3435416874_partner-cover.jpg",
     "description": "《情緒清理：30 天告別內耗挑戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL3435416874"
@@ -8066,7 +8066,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLFB9329A21A_partner-cover.png",
     "description": "《打造你的 AI Agent 團隊》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLFB9329A21A"
@@ -8090,7 +8090,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_ZNEK2JPYT7A_partner-cover.jpg",
     "description": "《打造自己的專用瀏覽器，學會 AI 程式設計》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:ZNEK2JPYT7A"
@@ -8138,7 +8138,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLD94D8E682D_partner-cover.png",
     "description": "《消防法規考試導讀》是由 證照達人研究室 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLD94D8E682D"
@@ -8162,7 +8162,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL806E04C753_partner-cover.png",
     "description": "《消防設備士 參：警報與避難系統精練班》是由 證照達人研究室消防組 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL806E04C753"
@@ -8186,7 +8186,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL2D59B02CAD_partner-cover.png",
     "description": "《消防設備士 壹：消防法規速記手冊》是由 證照達人研究室消防組 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL2D59B02CAD"
@@ -8210,7 +8210,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLCF80403F27_partner-cover.png",
     "description": "《消防設備士 肆：火災學概要》是由 證照達人研究室消防組 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLCF80403F27"
@@ -8234,7 +8234,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE0CBEFC547_partner-cover.png",
     "description": "《消防設備士 貳：水與化學系統精練班》是由 證照達人研究室消防組 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLE0CBEFC547"
@@ -8282,7 +8282,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL395F65CD41_partner-cover.png",
     "description": "《用 OpenCode 打造自己的網頁：三種型態從零到上線》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL395F65CD41"
@@ -8306,7 +8306,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL749C2FB0BC_partner-cover.png",
     "description": "《用 Windows 玩轉 Linux：Windows + Linux 整合實作：WSL 2 開發環境全攻略》是由 Happy eBook 團隊 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL749C2FB0BC"
@@ -8330,7 +8330,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL1735115297_partner-cover.png",
     "description": "《用三個實例學會多 Agent 應用》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL1735115297"
@@ -8402,7 +8402,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL814EBD8D0D_partner-cover.png",
     "description": "《精打細算學 AI 用 AI》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL814EBD8D0D"
@@ -8426,7 +8426,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL9AA01AE967_partner-cover.jpg",
     "description": "《網頁開發實戰增修版》是由 Happy eBook 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL9AA01AE967"
@@ -8474,7 +8474,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL1098C1B507_partner-cover.png",
     "description": "《聰明使用 Pi Coding Agent》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL1098C1B507"
@@ -8498,7 +8498,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE18FD4E790_partner-cover.jpg",
     "description": "《聰明用 AI Agent 要知道的事》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DLE18FD4E790"
@@ -8522,7 +8522,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_YPLQRBBEYC9_partner-cover.jpg",
     "description": "《自己的工具，自己做》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:YPLQRBBEYC9"
@@ -8546,7 +8546,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL488433185D_partner-cover.jpg",
     "description": "《自己的工具，自己做》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL488433185D"
@@ -8594,7 +8594,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL74C2A35DE2_partner-cover.jpg",
     "description": "《讓 AI 會用工具：MCP 入門與實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL74C2A35DE2"
@@ -8618,7 +8618,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL1C69720F3E_partner-cover.png",
     "description": "《讓 AI 畫對圖：六大AI繪圖工具的實作與協作》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL1C69720F3E"
@@ -8642,7 +8642,7 @@
       "數位出版",
       "電子書"
     ],
-    "cover": "assets/images/google-book-cover-images/GGKEY_2QNCYWYWAFF_partner-cover.jpg",
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL73182C9AB5_partner-cover.jpg",
     "description": "《資料格式工程學》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
     "priceLabel": "Google Play Books，提供試閱版",
     "googleBooksKey": "GGKEY:DL73182C9AB5"
