@@ -405,6 +405,13 @@ const matchesRouteFilter = (book, route) => {
 
 };
 
+const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;"
+}[character]));
 const createTags = (book) => [
 
   book.storeStatus === "preorder"
@@ -558,7 +565,7 @@ const createBookCard = (book) => {
 
   const coverClass = isGoogleBookCover(book.cover) ? " google-book-cover" : "";
 
-  return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img class="${coverClass.trim()}" data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）" loading="lazy" decoding="async"></a></div><div class="book-card-body"><div class="book-card-content"><div class="tag-row">${createTags(book)}</div><h3>${book.title}</h3><p class="book-subtitle">${book.subtitle || ""}</p><p class="book-meta">${book.author} ・ ${book.format}</p><p class="book-description">${book.description}</p></div><div class="card-actions">${primaryAction(book)}<a class="card-link" href="${getBookDetailUrl(book)}">更多資訊</a></div></div></article>`;
+  return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img class="${coverClass.trim()}" data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）" loading="lazy" decoding="async"></a></div><div class="book-card-body"><div class="book-card-content"><div class="tag-row">${createTags(book)}</div><h3>${book.title}</h3><p class="book-subtitle">${book.subtitle || ""}</p><p class="book-meta">${book.author} ・ ${book.format}</p><p class="book-meta book-access">${escapeHtml(book.priceLabel || typeLabel[getEffectiveType(book)] || "")}</p><p class="book-description">${book.description}</p></div><div class="card-actions">${primaryAction(book)}<a class="card-link" href="${getBookDetailUrl(book)}">更多資訊</a></div></div></article>`;
 
 };
 
@@ -976,6 +983,7 @@ const initBooksPage = async () => {
   const grid = document.querySelector("[data-books-grid]");
   const countTarget = document.querySelector("[data-books-count]");
   const moreButton = document.querySelector("[data-books-more]");
+  const clearFiltersButton = document.querySelector("[data-clear-filters]");
 
   await populateStats(books);
 
@@ -1042,11 +1050,17 @@ const initBooksPage = async () => {
     const visibleBooks = sorted.slice(0, visibleLimit);
 
     if (countTarget) {
-      const filterLabel = activeType === "all" && activeCategory === "all" && !query ? "全部上架作品" : "目前篩選結果";
+      const filterLabel = activeType === "all" && activeCategory === "all" && !query && !activeRoute ? "全部上架作品" : "目前篩選結果";
       countTarget.textContent = `${filterLabel}：顯示 ${formatNumber(visibleBooks.length)} / ${formatNumber(filtered.length)} 本`;
     }
 
+    const hasActiveFilters = Boolean(query || activeType !== "all" || activeCategory !== "all" || activeRoute || activeSort !== "recommended");
+    if (clearFiltersButton) clearFiltersButton.hidden = !hasActiveFilters;
+    typeFilters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.typeFilter === activeType)));
+    categoryFilters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.categoryFilter === activeCategory)));
+
     grid.innerHTML = visibleBooks.length ? visibleBooks.map(createBookCard).join("") : `<div class="empty-state"><h2>${noResultsTitle}</h2><p>${noResultsCopy}</p></div>`;
+
 
     hydrateCoverImages(grid);
     if (moreButton) {
@@ -1102,6 +1116,30 @@ const initBooksPage = async () => {
   moreButton?.addEventListener("click", () => {
     visibleLimit += booksPageSize;
     render();
+  });
+  clearFiltersButton?.addEventListener("click", () => {
+    activeType = "all";
+    activeCategory = "all";
+    activeSearch = "";
+    activeRoute = "";
+    activeSort = "recommended";
+    if (searchInput) searchInput.value = "";
+    if (sortSelect) sortSelect.value = "recommended";
+    typeFilters.forEach((button) => button.classList.toggle("is-active", button.dataset.typeFilter === "all"));
+    categoryFilters.forEach((button) => button.classList.toggle("is-active", button.dataset.categoryFilter === "all"));
+    document.querySelectorAll("[data-category-filter-list]").forEach((list) => {
+      list.classList.remove("is-expanded");
+      const toggle = list.querySelector("[data-category-toggle]");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+        const hiddenCount = Math.max(0, list.querySelectorAll(".category-filter-extra").length);
+        toggle.textContent = `更多分類（${hiddenCount}）`;
+      }
+    });
+    render({ resetLimit: true });
+    const url = new URL(window.location.href);
+    ["q", "type", "category", "route", "sort"].forEach((key) => url.searchParams.delete(key));
+    window.history.replaceState({}, "", url);
   });
 
   render();

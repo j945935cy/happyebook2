@@ -1228,3 +1228,15 @@ select {
   }
 }
 
+.filter-actions { display: flex; justify-content: flex-end; margin-top: 12px; }
+.books-more-button { display: block; margin: 24px auto 0; }
+.book-access { color: var(--primary-dark); font-weight: 700; }
+.review-progress { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 18px 0 12px; }
+.review-progress p { margin: 0; color: var(--primary-dark); font-weight: 800; }
+.review-checklist { display: grid; gap: 10px; padding: 0; list-style: none; }
+.review-checklist li { padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.review-checklist label { display: flex; align-items: flex-start; gap: 14px; cursor: pointer; }
+.review-checklist input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--primary); }
+.review-checklist label span { display: grid; gap: 6px; }
+.review-checklist small { color: var(--muted); font-size: 0.94rem; line-height: 1.6; }
+@media (max-width: 600px) { .review-progress { align-items: flex-start; flex-direction: column; } }
