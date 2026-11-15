@@ -1738,6 +1738,10 @@ a:focus-visible {
   .brand-home-hero {
     padding-block: 52px 38px;
   }
+  .brand-home-hero > .container {
+    padding-inline: 16px;
+  }
+
 
   .next-gen-showcase {
     border-radius: 22px;
