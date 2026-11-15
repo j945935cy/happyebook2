@@ -357,20 +357,20 @@ button:disabled { opacity: 0.48; cursor: not-allowed; }
 .book-cover-link img.google-book-cover, .book-cover-link img[data-cover-src*="books.google.com.tw/books/publisher/content"] { transform: scale(1); }
 .book-cover-link:hover img { opacity: 0.85; }
 .book-card-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; padding: 20px; }
-.book-card-content { display: grid; gap: 9px; }
+.book-card-content { display: grid; gap: 9px; min-width: 0; }
 .book-card h3, .feature-card h3, .info-panel h3, .page-panel h3, .submit-card h3, .contact-card h3, .about-card h3 { margin-top: 0; overflow-wrap: anywhere; line-height: 1.35; }
 .book-card h3 { display: -webkit-box; margin-bottom: 0; min-height: 2.7em; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: 1.08rem; }
 .book-subtitle { display: -webkit-box; margin: 0; min-height: 3.1em; overflow: hidden; color: var(--muted); line-height: 1.55; font-size: 0.92rem; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .feature-number { display: inline-flex; margin-bottom: 18px; color: var(--accent); font-weight: 900; }
 .book-meta { display: -webkit-box; margin: 0; overflow: hidden; font-size: 0.88rem; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .book-description { display: -webkit-box; margin: 0; min-height: 3.6em; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-.tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 0; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 0; min-width: 0; }
 .tag { display: inline-flex; align-items: center; max-width: 100%; padding: 5px 9px; border-radius: 999px; overflow: hidden; font-size: 0.8rem; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
 .tag.free { background: rgba(47, 158, 68, 0.14); color: var(--free); }
 .tag.paid { background: rgba(242, 140, 40, 0.14); color: var(--paid); }
 .tag.web { background: rgba(37, 99, 235, 0.14); color: var(--web); }
 .tag.preview { background: rgba(242, 140, 40, 0.14); color: #b45309; }
-.tag.category { background: var(--surface-soft); color: var(--primary-dark); }
+.tag.category { background: var(--surface-soft); color: var(--primary-dark); min-width: 0; white-space: normal; overflow-wrap: anywhere; text-overflow: clip; }
 .card-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 2px; }
 .card-actions .button { flex: 1 1 132px; }
 .card-link { color: var(--primary-dark); font-weight: 700; white-space: nowrap; }
