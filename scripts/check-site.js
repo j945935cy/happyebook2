@@ -17,6 +17,7 @@ const publicHtmlPaths = collectPublicHtmlPaths();
 const sitemapUrls = extractSitemapUrls();
 const requiredPages = ["index.html", "books.html", "book.html", "about.html", "contact.html", "404.html"];
 const CURRENT_CSS_VERSION = "20260731-1";
+const CSS_VERSION_OVERRIDES = new Map([["index.html", "20261115-2"]]);
 const CURRENT_SCRIPT_VERSION = "20260731-1";
 const SCRIPT_VERSION_OVERRIDES = new Map([["books.html", "20261115-1"]]);
 const referencedImagePaths = new Set();
@@ -52,8 +53,9 @@ for (const relativePath of publicHtmlPaths) {
   const cssVersionPattern = /\b(?:href|src)=["'](?:\.\.\/)*src\/styles\.css\?v=([^"']+)["']/gi;
   let cssMatch;
   while ((cssMatch = cssVersionPattern.exec(html))) {
-    if (cssMatch[1] !== CURRENT_CSS_VERSION) {
-      result.errors.push(`${relativePath}: shared CSS version is ${cssMatch[1]}, expected ${CURRENT_CSS_VERSION}.`);
+    const expectedCssVersion = CSS_VERSION_OVERRIDES.get(relativePath) || CURRENT_CSS_VERSION;
+    if (cssMatch[1] !== expectedCssVersion) {
+      result.errors.push(`${relativePath}: shared CSS version is ${cssMatch[1]}, expected ${expectedCssVersion}.`);
     }
   }
 
