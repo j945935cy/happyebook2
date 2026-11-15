@@ -96,8 +96,27 @@ function staticPage(book) {
   const metaDescription = html(book.description.length > 180 ? `${book.description.slice(0, 177)}…` : book.description);
   const author = html(book.author);
   const language = languageForBook(book);
-  const htmlLanguage = language === "en" ? "en" : "zh-Hant";
-  const ogLocale = language === "en" ? "en_US" : "zh_TW";
+  const htmlLanguage = language === "zh-TW" ? "zh-Hant-TW" : language;
+  const ogLocales = {
+    ar: "ar",
+    bn: "bn_BD",
+    de: "de_DE",
+    en: "en_US",
+    es: "es_ES",
+    "es-419": "es_419",
+    fr: "fr_FR",
+    id: "id_ID",
+    it: "it_IT",
+    ja: "ja_JP",
+    ms: "ms_MY",
+    pt: "pt_BR",
+    ru: "ru_RU",
+    th: "th_TH",
+    ur: "ur_PK",
+    vi: "vi_VN",
+    "zh-TW": "zh_TW",
+  };
+  const ogLocale = ogLocales[language] || "zh_TW";
   const preorder = book.storeStatus === "preorder";
   const availabilityTag = preorder ? "Google Play 預購" : "提供試閱版";
   const actionLabel = preorder ? "前往預購" : "立即購買";
@@ -146,7 +165,7 @@ function staticPage(book) {
   <meta name="twitter:title" content="${title} | Happy eBook">
   <meta name="twitter:description" content="${metaDescription}">
   <meta name="twitter:image" content="${imageUrl}">
-  <link rel="stylesheet" href="../src/styles.css?v=20260926-1">
+  <link rel="stylesheet" href="../src/styles.css?v=20260731-1">
   <script type="application/ld+json">${jsonLd}</script>
   <script type="application/ld+json">${breadcrumb}</script>
   <script defer src="../src/analytics.js"></script>
@@ -160,7 +179,7 @@ function staticPage(book) {
     </main>
     <footer class="footer"><div class="container footer-bar"><span>Happy eBook</span><nav class="footer-nav" aria-label="頁尾導覽"><a href="../books.html">書籍列表</a><a href="../learning/ipas-ai.html">iPAS AI</a><a href="https://english-daily-sentence.vercel.app/" target="_blank" rel="noopener noreferrer">每日英文學習</a><a href="../about.html">關於</a><a href="../contact.html">聯絡</a><a href="../privacy.html">隱私權政策</a></nav></div></footer>
   </div>
-  <script src="../src/script.js?v=20261009-2"></script>
+  <script src="../src/script.js?v=20260731-1"></script>
 </body>
 </html>
 `;

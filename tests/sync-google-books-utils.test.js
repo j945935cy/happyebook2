@@ -60,7 +60,10 @@ test("removes duplicated storefront text and category residue from descriptions"
   assert.equal(cleanDescription(`${sentence} ${sentence} Foreign language & study aids`), sentence);
 });
 
-test("uses explicit page language and defaults to Traditional Chinese", () => {
+test("preserves supported language tags and defaults invalid tags to Traditional Chinese", () => {
   assert.equal(languageForBook({ language: "en" }), "en");
+  assert.equal(languageForBook({ language: "es-419" }), "es-419");
+  assert.equal(languageForBook({ language: "vi" }), "vi");
+  assert.equal(languageForBook({ language: "not a language" }), "zh-TW");
   assert.equal(languageForBook({ title: "中文書" }), "zh-TW");
 });
