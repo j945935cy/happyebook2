@@ -18,6 +18,7 @@ const sitemapUrls = extractSitemapUrls();
 const requiredPages = ["index.html", "books.html", "book.html", "about.html", "contact.html", "404.html"];
 const CURRENT_CSS_VERSION = "20260731-1";
 const CURRENT_SCRIPT_VERSION = "20260731-1";
+const SCRIPT_VERSION_OVERRIDES = new Map([["books.html", "20261115-1"]]);
 const referencedImagePaths = new Set();
 
 function normalizeReferencedImagePath(pagePath, value) {
@@ -56,11 +57,12 @@ for (const relativePath of publicHtmlPaths) {
     }
   }
 
+  const expectedScriptVersion = SCRIPT_VERSION_OVERRIDES.get(relativePath) || CURRENT_SCRIPT_VERSION;
   const scriptVersionPattern = /\b(?:href|src)=["'](?:\.\.\/)*src\/script\.js\?v=([^"']+)["']/gi;
   let scriptMatch;
   while ((scriptMatch = scriptVersionPattern.exec(html))) {
-    if (scriptMatch[1] !== CURRENT_SCRIPT_VERSION) {
-      result.errors.push(`${relativePath}: shared script version is ${scriptMatch[1]}, expected ${CURRENT_SCRIPT_VERSION}.`);
+    if (scriptMatch[1] !== expectedScriptVersion) {
+      result.errors.push(`${relativePath}: shared script version is ${scriptMatch[1]}, expected ${expectedScriptVersion}.`);
     }
   }
 

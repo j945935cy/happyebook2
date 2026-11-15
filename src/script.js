@@ -253,6 +253,21 @@ const matchesTypeFilter = (book, filter) => {
 
 };
 
+const getBookLanguageGroup = (book) => {
+  const language = String(book.language || "").trim();
+  if (/^zh(?:-|$)/i.test(language)) return "chinese";
+  if (language) return "foreign";
+
+  // Legacy catalog rows lack language codes; use title script as a fallback.
+  const text = `${book.title || ""} ${book.subtitle || ""}`;
+  const hasHan = /[\u3400-\u9fff]/.test(text);
+  const hasJapaneseKana = /[\u3040-\u30ff]/.test(text);
+  return hasHan && !hasJapaneseKana ? "chinese" : "foreign";
+};
+
+const matchesLanguageFilter = (book, filter) =>
+  filter === "all" || getBookLanguageGroup(book) === filter;
+
 const categoryAliases = {
   "英語/文學習": "英語學習",
   "證照學習": "考試準備",
@@ -1005,9 +1020,14 @@ const initBooksPage = async () => {
 
   const categoryFilters = [...document.querySelectorAll("[data-category-filter]")];
 
+  const languageFilters = [...document.querySelectorAll("[data-language-filter]")];
+
   let activeType = params.get("type") || "all";
 
   let activeCategory = params.get("category") ? normalizeCategory(params.get("category")) : "all";
+
+  const requestedLanguage = params.get("language") || "all";
+  let activeLanguage = ["chinese", "foreign"].includes(requestedLanguage) ? requestedLanguage : "all";
 
   let activeSearch = params.get("q") || "";
 
@@ -1021,6 +1041,7 @@ const initBooksPage = async () => {
   typeFilters.forEach((item) => item.classList.toggle("is-active", item.dataset.typeFilter === activeType));
 
   categoryFilters.forEach((item) => item.classList.toggle("is-active", item.dataset.categoryFilter === activeCategory));
+  languageFilters.forEach((item) => item.classList.toggle("is-active", item.dataset.languageFilter === activeLanguage));
   const activeCategoryButton = categoryFilters.find((item) => item.dataset.categoryFilter === activeCategory);
   if (activeCategoryButton?.classList.contains("category-filter-extra")) {
     const list = activeCategoryButton.closest("[data-category-filter-list]");
@@ -1041,6 +1062,7 @@ const initBooksPage = async () => {
 
       matchesTypeFilter(book, activeType) &&
 
+      (activeLanguage === "all" || matchesLanguageFilter(book, activeLanguage)) &&
       (activeCategory === "all" || getCategories(book).includes(activeCategory)) &&
 
       matchesSearchQuery(book, query)
@@ -1055,14 +1077,15 @@ const initBooksPage = async () => {
     const visibleBooks = sorted.slice(0, visibleLimit);
 
     if (countTarget) {
-      const filterLabel = activeType === "all" && activeCategory === "all" && !query && !activeRoute ? "全部上架作品" : "目前篩選結果";
+      const filterLabel = activeType === "all" && activeLanguage === "all" && activeCategory === "all" && !query && !activeRoute ? "全部上架作品" : "目前篩選結果";
       countTarget.textContent = `${filterLabel}：顯示 ${formatNumber(visibleBooks.length)} / ${formatNumber(filtered.length)} 本`;
     }
 
-    const hasActiveFilters = Boolean(query || activeType !== "all" || activeCategory !== "all" || activeRoute || activeSort !== "recommended");
+    const hasActiveFilters = Boolean(query || activeType !== "all" || activeLanguage !== "all" || activeCategory !== "all" || activeRoute || activeSort !== "recommended");
     if (clearFiltersButton) clearFiltersButton.hidden = !hasActiveFilters;
     typeFilters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.typeFilter === activeType)));
     categoryFilters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.categoryFilter === activeCategory)));
+    languageFilters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.languageFilter === activeLanguage)));
 
     grid.innerHTML = visibleBooks.length ? visibleBooks.map(createBookCard).join("") : `<div class="empty-state"><h2>${noResultsTitle}</h2><p>${noResultsCopy}</p></div>`;
 
@@ -1110,6 +1133,13 @@ const initBooksPage = async () => {
 
   }));
 
+  languageFilters.forEach((button) => button.addEventListener("click", () => {
+    activeLanguage = button.dataset.languageFilter;
+    activeRoute = "";
+    languageFilters.forEach((item) => item.classList.toggle("is-active", item === button));
+    render({ resetLimit: true });
+  }));
+
   sortSelect?.addEventListener("change", (event) => {
 
     activeSort = String(event.target.value || "recommended");
@@ -1125,6 +1155,7 @@ const initBooksPage = async () => {
   clearFiltersButton?.addEventListener("click", () => {
     activeType = "all";
     activeCategory = "all";
+    activeLanguage = "all";
     activeSearch = "";
     activeRoute = "";
     activeSort = "recommended";
@@ -1132,6 +1163,7 @@ const initBooksPage = async () => {
     if (sortSelect) sortSelect.value = "recommended";
     typeFilters.forEach((button) => button.classList.toggle("is-active", button.dataset.typeFilter === "all"));
     categoryFilters.forEach((button) => button.classList.toggle("is-active", button.dataset.categoryFilter === "all"));
+    languageFilters.forEach((button) => button.classList.toggle("is-active", button.dataset.languageFilter === "all"));
     document.querySelectorAll("[data-category-filter-list]").forEach((list) => {
       list.classList.remove("is-expanded");
       const toggle = list.querySelector("[data-category-toggle]");
@@ -1143,7 +1175,7 @@ const initBooksPage = async () => {
     });
     render({ resetLimit: true });
     const url = new URL(window.location.href);
-    ["q", "type", "category", "route", "sort"].forEach((key) => url.searchParams.delete(key));
+    ["q", "type", "language", "category", "route", "sort"].forEach((key) => url.searchParams.delete(key));
     window.history.replaceState({}, "", url);
   });
 
