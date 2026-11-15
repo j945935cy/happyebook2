@@ -807,6 +807,11 @@ const initContactPage = () => {
 
   if (!form) return;
 
+  const hint = document.createElement("p");
+  hint.className = "form-note";
+  hint.textContent = "送出會開啟你裝置上的郵件程式，請在郵件程式中確認內容後再寄出；若無法開啟，請複製聯絡資訊中的 Email，改用你的網頁信箱寄送。";
+  form.before(hint);
+
 
 
   form.addEventListener("submit", (event) => {
@@ -1170,46 +1175,61 @@ const initStaticBookResourcePromo = async () => {
 
 };
 
-const initPrivacyLinks = () => {
+const siteNavigationLinks = [
+  ["/", "首頁", (path) => path === "/"],
+  ["/books.html", "書籍列表", (path) => path === "/books.html" || path.startsWith("/books/")],
+  ["/learning/ai.html", "AI 學習", (path) => path.startsWith("/learning/") && path !== "/learning/ipas-ai.html"],
+  ["/learning/ipas-ai.html", "iPAS AI", (path) => path === "/learning/ipas-ai.html"],
+  ["/about.html", "關於", (path) => path === "/about.html"],
+  ["/contact.html", "聯絡", (path) => path === "/contact.html"]
+];
+
+const siteResourceLinks = [
+  ["/articles/", "學習短文", (path) => path.startsWith("/articles/")],
+  ["/mini-projects/", "小作品", (path) => path.startsWith("/mini-projects/")],
+  ["/resources/free-resources.html", "免費資源", (path) => path.startsWith("/resources/")],
+  ["https://english-daily-sentence.vercel.app/", "每日英文學習", () => false, ' target="_blank" rel="noopener noreferrer"']
+];
+
+const renderNavigationLinks = (links, currentPath = "") => links.map(([href, label, isActive, attributes = ""]) => {
+  const active = currentPath && isActive(currentPath);
+  return `<a href="${href}"${attributes}${active ? ' class="is-active" aria-current="page"' : ""}>${label}</a>`;
+}).join("");
+
+const isResourcePath = (path) => siteResourceLinks.some(([, , isActive]) => isActive(path));
+
+const initFooterNavigation = () => {
   document.querySelectorAll(".footer-nav").forEach((nav) => {
-    if (nav.querySelector('a[href$="privacy.html"]')) return;
-    const link = document.createElement("a");
-    link.href = "/privacy.html";
-    link.textContent = "隱私權政策";
-    nav.appendChild(link);
+    nav.setAttribute("aria-label", "頁尾導覽");
+    nav.innerHTML = renderNavigationLinks([...siteNavigationLinks, ...siteResourceLinks]) + '<a href="/privacy.html">隱私權政策</a>';
   });
 };
 
 const initNav = () => {
-
   const nav = document.querySelector("[data-site-nav]");
-
   const toggle = document.querySelector("[data-nav-toggle]");
+  if (!nav) return;
+
+  const currentPath = (window.location.pathname.replace(/\/+$/, "") || "/").replace(/\/index\.html$/, "/");
+  const hasActiveResource = isResourcePath(currentPath);
+  nav.setAttribute("aria-label", "主要導覽");
+  nav.innerHTML = renderNavigationLinks(siteNavigationLinks, currentPath)
+    + `<details class="site-nav-group"${hasActiveResource ? " open" : ""}><summary${hasActiveResource ? ' class="is-active"' : ""}>學習資源</summary><div class="site-nav-group-menu">${renderNavigationLinks(siteResourceLinks, currentPath)}</div></details>`;
 
   const closeNav = () => {
-
-    nav?.classList.remove("is-open");
-
+    nav.classList.remove("is-open");
     toggle?.setAttribute("aria-expanded", "false");
-
     toggle?.setAttribute("aria-label", "開啟主選單");
-
   };
 
   toggle?.addEventListener("click", () => {
-
-    const isOpen = nav?.classList.toggle("is-open") || false;
-
+    const isOpen = nav.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
-
     toggle.setAttribute("aria-label", isOpen ? "關閉主選單" : "開啟主選單");
-
   });
 
-  nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
-
+  nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
   window.addEventListener("resize", () => { if (window.innerWidth > 760) closeNav(); });
-
 };
 
 const initResourceEmailForms = () => {
@@ -1769,7 +1789,7 @@ const boot = () => {
 
   initNav();
 
-  initPrivacyLinks();
+  initFooterNavigation();
 
   bindExternalLinks();
 
