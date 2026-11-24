@@ -264,9 +264,9 @@ function validateBooks({ includeSitemap = false } = {}) {
       errors.push(`${label}: missing static book page ${publicBookPagePath(book)}.`);
     }
 
-    const hasActionUrl = Boolean(book.readUrl || book.buyUrl || book.downloadUrl);
+    const hasActionUrl = Boolean(book.readUrl || book.buyUrl || book.koboUrl || book.downloadUrl);
     if (!hasActionUrl) {
-      warnings.push(`${label}: no readUrl, buyUrl, or downloadUrl.`);
+      warnings.push(`${label}: no readUrl, buyUrl, koboUrl, or downloadUrl.`);
     }
   });
 

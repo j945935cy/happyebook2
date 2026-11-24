@@ -174,9 +174,9 @@ const isWebsiteBook = (book) => book.type === "web" || String(book.format || "")
 
 const isPreviewBook = (book) => book.priceLabel?.includes("試閱") || isGoogleBooksUrl(book.readUrl);
 
-const isPaidBook = (book) => book.type === "paid" || !!book.buyUrl;
+const isPaidBook = (book) => book.type === "paid" || !!book.buyUrl || !!book.koboUrl;
 
-const isFreeAccessBook = (book) => book.type === "free" || book.priceLabel?.includes("免費") || (!!book.downloadUrl && !book.buyUrl);
+const isFreeAccessBook = (book) => book.type === "free" || book.priceLabel?.includes("免費") || (!!book.downloadUrl && !book.buyUrl && !book.koboUrl);
 
 const getEffectiveType = (book) => {
 
@@ -446,10 +446,23 @@ const primaryAction = (book) => {
 
   if (effectiveType === "paid") {
 
-    const href = book.buyUrl || book.readUrl || detailUrl;
+    const storeActions = [];
 
-    const label = book.storeStatus === "preorder" ? "前往預購" : (book.buyUrl ? "立即購買" : book.readUrl ? "查看試閱" : "查看詳情");
+    if (book.buyUrl) {
+      const attrs = hasExternalUrl(book.buyUrl) ? ` target="_blank" rel="noopener noreferrer"` : "";
+      const label = book.storeStatus === "preorder" ? "Google Play 預購" : "Google Play 購買";
+      storeActions.push(`<a class="button primary" href="${book.buyUrl}"${attrs}>${label}</a>`);
+    }
 
+    if (book.koboUrl) {
+      const attrs = hasExternalUrl(book.koboUrl) ? ` target="_blank" rel="noopener noreferrer"` : "";
+      storeActions.push(`<a class="button secondary" href="${book.koboUrl}"${attrs}>Kobo 購買</a>`);
+    }
+
+    if (storeActions.length) return storeActions.join("");
+
+    const href = book.readUrl || detailUrl;
+    const label = book.readUrl ? "查看試閱" : "查看詳情";
     const attrs = hasExternalUrl(href) ? ` target="_blank" rel="noopener noreferrer"` : "";
 
     return `<a class="button primary" href="${href}"${attrs}>${label}</a>`;
@@ -1165,6 +1178,17 @@ const initStaticBookResourcePromo = async () => {
   const bookId = decodeURIComponent(match[1]);
   const books = (await loadBooks()).filter(isPublished);
   const book = books.find((item) => item.id === bookId);
+  const actionRow = document.querySelector(".book-content-panel .action-row");
+  if (book?.koboUrl && actionRow && !Array.from(actionRow.querySelectorAll("a")).some((link) => link.href === book.koboUrl)) {
+    const koboLink = document.createElement("a");
+    koboLink.className = "button secondary";
+    koboLink.href = book.koboUrl;
+    koboLink.target = "_blank";
+    koboLink.rel = "noopener noreferrer";
+    koboLink.textContent = "Kobo 購買";
+    actionRow.appendChild(koboLink);
+  }
+
   if (book) addBookInsights(book, books);
   addResourcePromo(bookId);
 

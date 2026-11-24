@@ -27,6 +27,7 @@ const emptyBook = () => ({
   description: "",
   downloadUrl: "",
   buyUrl: "",
+  koboUrl: "",
   readUrl: "",
   featured: true,
   popular: false,
@@ -215,7 +216,7 @@ const bookForOutput = (b) => {
     author: n.author, category: n.category,
     type: n.type, format: n.format, cover: n.cover,
     description: n.description,
-    downloadUrl: n.downloadUrl, buyUrl: n.buyUrl, readUrl: n.readUrl,
+    downloadUrl: n.downloadUrl, buyUrl: n.buyUrl, koboUrl: n.koboUrl, readUrl: n.readUrl,
     featured: n.featured, popular: n.popular, priceLabel: n.priceLabel
   };
 };
@@ -254,6 +255,7 @@ const openModal = (book = null) => {
   setText("cover",       b.cover);
   setText("readUrl",     b.readUrl);
   setText("buyUrl",      b.buyUrl);
+  setText("koboUrl",     b.koboUrl);
   setText("downloadUrl", b.downloadUrl);
   setText("description", b.description);
   setChk("published", b.published);

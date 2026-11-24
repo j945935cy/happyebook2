@@ -69,6 +69,7 @@ happyebook2/
 - 依內容型態篩選：全部、免費版、提供試讀、其他
 - 依 `books.json` 自動產生分類篩選按鈕
 - 書籍卡片顯示書封、書名、副標、作者、格式、標籤與簡介
+- 付費書籍可分別提供 Google Play 與 Kobo 購買連結
 - 單本作品詳細頁
 - 聯絡表單與 mailto 備援
 - 手機版導覽選單
@@ -98,6 +99,7 @@ src/book-projects.json
   "description": "作品簡介",
   "downloadUrl": "",
   "buyUrl": "",
+  "koboUrl": "",
   "readUrl": "https://example.com",
   "featured": true,
   "popular": true,
