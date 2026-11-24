@@ -21,3 +21,7 @@
 - card: rounded + shadow
 - button: rounded + hover
 - tag: badge style
+- Homepage: limit hero actions to the three highest-intent entries (AI learning, iPAS AI, book catalogue); keep secondary destinations in the site navigation and later sections.
+- Site navigation: one shared link list in `src/script.js` drives consistent primary and footer navigation; secondary learning destinations are grouped in a responsive menu with route-aware active states.
+- Catalogue: quick links use existing category metadata only; do not infer difficulty or study duration when those fields are absent.
+- Contact: disclose that the static form opens the visitor's configured mail application; do not imply server-side submission.

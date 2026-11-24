@@ -68,7 +68,9 @@ function cleanDescription(value) {
 }
 
 function languageForBook(book) {
-  return book.language === "en" ? "en" : "zh-TW";
+  return /^[a-z]{2}(?:-[A-Z0-9]{2,8})?$/.test(String(book.language || ""))
+    ? book.language
+    : "zh-TW";
 }
 
 module.exports = {
