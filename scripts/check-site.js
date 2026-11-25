@@ -27,6 +27,11 @@ const SCRIPT_VERSION_OVERRIDES = new Map([
   ["books/codex-cli-yduxegaaqbaj.html", "20261124-1"],
   ["books/codex-cli-yjqxegaaqbaj.html", "20261124-1"]
 ]);
+for (const book of result.books) {
+  if (book.koboUrl) {
+    SCRIPT_VERSION_OVERRIDES.set(`books/${book.id}.html`, "20261124-1");
+  }
+}
 const referencedImagePaths = new Set();
 
 function normalizeReferencedImagePath(pagePath, value) {
