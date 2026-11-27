@@ -16,7 +16,7 @@ const REQUIRED_BOOK_FIELDS = [
   "description",
   "priceLabel",
 ];
-const VALID_BOOK_TYPES = new Set(["free", "paid", "web"]);
+const VALID_BOOK_TYPES = new Set(["free", "paid", "web", "catalog"]);
 const PUBLIC_HTML_DIRS = [
   "articles",
   "books",
@@ -31,6 +31,7 @@ const ROOT_PUBLIC_PAGES = [
   "about.html",
   "contact.html",
   "privacy.html",
+  "affiliate-disclosure.html",
 ];
 
 function readText(relativePath) {
@@ -216,7 +217,7 @@ function validateBooks({ includeSitemap = false } = {}) {
     }
 
     if (book.type && !VALID_BOOK_TYPES.has(book.type)) {
-      errors.push(`${label}: type "${book.type}" is not one of free, paid, web.`);
+      errors.push(`${label}: type "${book.type}" is not one of free, paid, web, catalog.`);
     }
 
     if (book.category && !Array.isArray(book.category) && typeof book.category !== "string") {
@@ -265,7 +266,7 @@ function validateBooks({ includeSitemap = false } = {}) {
     }
 
     const hasActionUrl = Boolean(book.readUrl || book.buyUrl || book.koboUrl || book.downloadUrl);
-    if (!hasActionUrl) {
+    if (!hasActionUrl && book.type !== "catalog") {
       warnings.push(`${label}: no readUrl, buyUrl, koboUrl, or downloadUrl.`);
     }
   });

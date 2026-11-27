@@ -1,6 +1,6 @@
 const sampleBooks = [];
 
-const typeLabel = { free: "免費閱讀", paid: "付費購買", web: "網站教材" };
+const typeLabel = { free: "免費閱讀", paid: "商店資訊", web: "網站教材", catalog: "作品介紹" };
 
 const fallbackCoverDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900"><rect width="640" height="900" fill="#dbeafe"/><rect x="52" y="52" width="536" height="796" rx="24" fill="#eff6ff"/><text x="320" y="420" text-anchor="middle" fill="#1e3a5f" font-size="34" font-family="Noto Sans TC, sans-serif">Happy eBook</text><text x="320" y="468" text-anchor="middle" fill="#4b6b8d" font-size="24" font-family="Noto Sans TC, sans-serif">預設書封</text></svg>')}`;
 
@@ -138,7 +138,7 @@ let coverLoadFailureCount = 0;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20261009-2";
+const booksDataVersion = "20261127-1";
 
 const siteConfig = {
 
@@ -156,7 +156,7 @@ const getBookDetailUrl = (book) => {
 
   const id = encodeURIComponent(book.id);
 
-  return window.location.pathname.includes("/src/") ? `../books/${id}.html` : `books/${id}.html`;
+  return `/books/${id}.html`;
 
 };
 
@@ -172,7 +172,7 @@ const formatNumber = (value) => new Intl.NumberFormat("zh-TW").format(Number(val
 
 const isWebsiteBook = (book) => book.type === "web" || String(book.format || "").includes("網站");
 
-const isPreviewBook = (book) => book.priceLabel?.includes("試閱") || isGoogleBooksUrl(book.readUrl);
+const isPreviewBook = (book) => !!book.readUrl && book.priceLabel?.includes("試閱");
 
 const isPaidBook = (book) => book.type === "paid" || !!book.buyUrl || !!book.koboUrl;
 
@@ -180,6 +180,7 @@ const isFreeAccessBook = (book) => book.type === "free" || book.priceLabel?.incl
 
 const getEffectiveType = (book) => {
 
+  if (book.type === "catalog") return "catalog";
   if (isPaidBook(book)) return "paid";
 
   if (isGoogleBooksUrl(book.readUrl)) return "web";
@@ -219,7 +220,14 @@ const loadBooks = async () => {
 
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-    return sortBooksForDisplay(await response.json());
+    const rows = await response.json();
+    return sortBooksForDisplay(rows.map(book => {
+      const safe = { ...book };
+      for (const key of ["buyUrl", "readUrl", "downloadUrl"]) {
+        if (isGoogleBooksUrl(safe[key])) safe[key] = "";
+      }
+      return safe;
+    }));
 
   } catch (error) {
 
@@ -430,7 +438,7 @@ const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (character
 const createTags = (book) => [
 
   book.storeStatus === "preorder"
-    ? '<span class="tag paid">Google Play 預購</span>'
+    ? '<span class="tag paid">預購</span>'
     : (getEffectiveType(book) === "free" ? "" : `<span class="tag ${getEffectiveType(book)}">${typeLabel[getEffectiveType(book)] || getEffectiveType(book)}</span>`),
 
   isFreeBook(book) ? `<span class="tag free">分享閱讀</span>` : "",
@@ -446,6 +454,7 @@ const primaryAction = (book) => {
   const detailUrl = getBookDetailUrl(book);
 
   const effectiveType = getEffectiveType(book);
+  if (effectiveType === "catalog") return `<a class="button secondary" href="${detailUrl}">作品介紹</a>`;
 
   if (effectiveType === "free") {
 
@@ -465,13 +474,13 @@ const primaryAction = (book) => {
 
     if (book.buyUrl) {
       const attrs = hasExternalUrl(book.buyUrl) ? ` target="_blank" rel="noopener noreferrer"` : "";
-      const label = book.storeStatus === "preorder" ? "Google Play 預購" : "Google Play 購買";
+      const label = book.storeStatus === "preorder" ? "預購" : "前往商店查看";
       storeActions.push(`<a class="button primary" href="${book.buyUrl}"${attrs}>${label}</a>`);
     }
 
     if (book.koboUrl) {
       const attrs = hasExternalUrl(book.koboUrl) ? ` target="_blank" rel="noopener noreferrer"` : "";
-      storeActions.push(`<a class="button secondary" href="${book.koboUrl}"${attrs}>Kobo 購買</a>`);
+      storeActions.push(`<a class="button secondary" href="${book.koboUrl}"${attrs}>前往 Kobo 查看</a>`);
     }
 
     if (storeActions.length) return storeActions.join("");
@@ -1222,7 +1231,7 @@ const initStaticBookResourcePromo = async () => {
     koboLink.href = book.koboUrl;
     koboLink.target = "_blank";
     koboLink.rel = "noopener noreferrer";
-    koboLink.textContent = "Kobo 購買";
+    koboLink.textContent = "前往 Kobo 查看";
     actionRow.appendChild(koboLink);
   }
 
@@ -1257,7 +1266,7 @@ const isResourcePath = (path) => siteResourceLinks.some(([, , isActive]) => isAc
 const initFooterNavigation = () => {
   document.querySelectorAll(".footer-nav").forEach((nav) => {
     nav.setAttribute("aria-label", "頁尾導覽");
-    nav.innerHTML = renderNavigationLinks([...siteNavigationLinks, ...siteResourceLinks]) + '<a href="/privacy.html">隱私權政策</a>';
+    nav.innerHTML = renderNavigationLinks([...siteNavigationLinks, ...siteResourceLinks]) + '<a href="/privacy.html">隱私權政策</a><a href="/affiliate-disclosure.html">推薦與聯盟揭露</a>';
   });
 };
 

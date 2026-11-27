@@ -16,22 +16,10 @@ const result = validateBooks({ includeSitemap: true });
 const publicHtmlPaths = collectPublicHtmlPaths();
 const sitemapUrls = extractSitemapUrls();
 const requiredPages = ["index.html", "books.html", "book.html", "about.html", "contact.html", "404.html"];
-const CURRENT_CSS_VERSION = "20260731-1";
-const CSS_VERSION_OVERRIDES = new Map([["index.html", "20261115-2"]]);
-const CURRENT_SCRIPT_VERSION = "20260731-1";
-const SCRIPT_VERSION_OVERRIDES = new Map([
-  ["books.html", "20261124-1"],
-  ["book.html", "20261124-1"],
-  ["books/codex-cli-0bgsegaaqbaj.html", "20261124-1"],
-  ["books/codex-cli-stuxegaaqbaj.html", "20261124-1"],
-  ["books/codex-cli-yduxegaaqbaj.html", "20261124-1"],
-  ["books/codex-cli-yjqxegaaqbaj.html", "20261124-1"]
-]);
-for (const book of result.books) {
-  if (book.koboUrl) {
-    SCRIPT_VERSION_OVERRIDES.set(`books/${book.id}.html`, "20261124-1");
-  }
-}
+const CURRENT_CSS_VERSION = "20261127-1";
+const CSS_VERSION_OVERRIDES = new Map();
+const CURRENT_SCRIPT_VERSION = "20261127-1";
+const SCRIPT_VERSION_OVERRIDES = new Map();
 const referencedImagePaths = new Set();
 
 function normalizeReferencedImagePath(pagePath, value) {

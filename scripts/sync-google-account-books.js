@@ -1,16 +1,4 @@
 #!/usr/bin/env node
-
-const path = require("path");
-const { spawnSync } = require("child_process");
-
-const manifestPath = process.argv[2];
-if (!manifestPath) {
-  throw new Error("Usage: node scripts/sync-google-account-books.js <manifest-json>");
-}
-
-const result = spawnSync(process.execPath, [path.join(__dirname, "sync-eligible-google-books.js"), path.resolve(manifestPath)], {
-  cwd: path.resolve(__dirname, ".."),
-  stdio: "inherit",
-});
-if (result.error) throw result.error;
-if (result.status !== 0) process.exit(result.status || 1);
+// Google 圖書入口已停用；原始腳本保存在站外備份。
+console.error("Google 圖書同步已停用，未變更任何網站資料。請先人工確認平台恢復，再重新設計匯入流程。");
+process.exit(1);

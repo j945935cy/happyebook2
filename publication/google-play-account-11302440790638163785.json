@@ -6,7 +6,7 @@
     "author": "Happy eBook Authors",
     "price": "209.00",
     "status": "在 Google Play 上預購",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/VX3-EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["AI 學習", "AI Agent", "Workflow 設計", "效率工具"],
     "description": "別再只問 AI 問題，開始設計 AI 可以完成的工作流程。本書教你把模糊需求拆成目標、資料、步驟、工具、產出與驗證，讓 AI 真正協助完成研究、寫作、文件整理與專案工作。"
   },
@@ -17,7 +17,7 @@
     "author": "Happy eBook Author",
     "price": "210.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/rt37EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["AI 學習", "AI 工具應用", "效率工具", "Workflow 設計"],
     "description": "給一般工作者的中英雙語實戰手冊，說明如何用 AI 改善任務管理、會議、溝通、知識管理、風險判斷與工作流程，把時間留給決策、協作與領導。"
   },
@@ -28,7 +28,7 @@
     "author": "Happy eBook Authors",
     "price": "158.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/sNz7EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["自我成長", "溝通技巧", "自學"],
     "description": "透過每天一個主題、一段自我覺察與一項練習，逐步看見焦慮、委屈、自責與過度在意所造成的心理消耗，建立更清楚的人際界線與穩定回應壓力的方法。"
   },
@@ -39,7 +39,7 @@
     "author": "Happy eBook Authors",
     "price": "268.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/kdj7EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["自我成長", "溝通技巧", "英文學習"],
     "description": "從台灣人的家庭、職場與社群生活出發，練習把無法控制的事交還給別人，把選擇權帶回自己。中英對照編排，附具體對話腳本與 30 天練習。"
   },
@@ -50,7 +50,7 @@
     "author": "Happy eBook Authors",
     "price": "262.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/sFb7EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["Python", "程式設計", "網頁開發", "效率工具"],
     "description": "以 12 個真實生活與工作場景，帶你用 Python 與 Playwright 完成比價、盯盤、表單、對帳、資料收集、跨系統驗證及 CI/CD 等自動化專案。"
   },
@@ -61,7 +61,7 @@
     "author": "Happy eBook Authors",
     "price": "257.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/wFT7EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["程式設計", "網頁開發", "效率工具", "自學"],
     "description": "從重複點擊、資料擷取與表單操作開始，透過 12 個生活與工作專案學會 Playwright 的瀏覽器自動化流程、等待策略、驗證與批次處理。"
   },
@@ -72,7 +72,7 @@
     "author": "Happy eBook Authors",
     "price": "231.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/H0b7EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["自我成長", "溝通技巧", "自學"],
     "description": "把別人的事還給他們，把自己的人生拿回來。本書以台灣常見的家庭期待、職場壓力與人際焦慮為例，協助讀者停止內耗並建立清楚界線。"
   },
@@ -83,7 +83,7 @@
     "author": "Happy eBook Authors",
     "price": "314.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/n7_6EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["Python", "程式設計", "網頁開發", "自學"],
     "description": "從零建立 Python Playwright 環境，循序學習定位器、自動等待、表單、檔案、網路請求、測試架構與實務排錯，掌握穩定的網頁自動化方法。"
   },
@@ -94,7 +94,7 @@
     "author": "Happy eBook Authors",
     "price": "168.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/tob6EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["AI Coding", "網頁開發", "AI 工具應用", "Vibe Coding"],
     "description": "從一頁式個人簡介到多頁網站與 React 作品集，示範如何與 OpenCode 協作規劃、產生、修正及部署三種網站，建立可重複使用的 AI coding 工作流程。"
   },
@@ -105,7 +105,7 @@
     "author": "Happy eBook Authors",
     "price": "188.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/QBj6EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["文化整理", "英文學習", "自學"],
     "description": "透過六本暢銷政治書的觀點，整理民主制度、權力、媒體與公民責任所面臨的考驗，以中英文內容協助讀者理解事件背後的結構與可能發展。"
   },
@@ -116,7 +116,7 @@
     "author": "Happy eBook Authors",
     "price": "169.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/nKD5EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["文化整理", "英文學習", "自學"],
     "description": "An accessible synthesis of six bestselling political books, examining pressure on democratic institutions, leadership, media, public trust, and the choices citizens face next."
   },
@@ -127,7 +127,7 @@
     "author": "Happy eBook Authors",
     "price": "167.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/NpD5EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["文化整理", "自學"],
     "description": "從六本重量級政治著作提煉共同警訊，整理領導、制度、媒體與社會信任的關係，協助讀者思考民主面對下一次考驗時，我們能做哪些準備。"
   },
@@ -138,7 +138,7 @@
     "author": "Happy eBook Authors",
     "price": "366.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/9mv5EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["AI Coding", "程式設計", "AI 工具應用", "Workflow 設計"],
     "description": "以 Cursor、Claude Code、Windsurf 與 Cline 為核心，整理需求描述、上下文提供、程式修改、測試驗證與版本控制的 AI coding 實戰流程。"
   },
@@ -149,7 +149,7 @@
     "author": "Happy eBook Authors",
     "price": "472.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/MMb4EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["AI Coding", "Linux 入門", "Windows 系統管理", "程式設計"],
     "description": "Windows 11、WSL 2、VS Code、OpenCode、Zen を組み合わせ、AI 開発に必要な環境構築、ツール連携、基本操作、トラブルシューティングを実践的に学ぶガイドです。"
   },
@@ -160,7 +160,7 @@
     "author": "Happy eBook Authors",
     "price": "499.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/HMT4EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["AI Coding", "Linux 入門", "Windows 系統管理", "程式設計"],
     "description": "A practical guide to building an AI development workstation with Windows 11, WSL 2, VS Code, OpenCode, and Zen, including setup, integration, daily workflows, and troubleshooting."
   },
@@ -171,7 +171,7 @@
     "author": "Happy eBook Authors",
     "price": "419.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/L8P4EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["AI Coding", "Linux 入門", "Windows 系統管理", "程式設計"],
     "description": "以 Windows 11 為主機，整合 WSL 2、VS Code、OpenCode 與 Zen，從安裝設定到 AI coding 日常工作流程，建立穩定、可維護的開發環境。"
   },
@@ -182,7 +182,7 @@
     "author": "Happy eBook Authors",
     "price": "366.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/27r4EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["Linux 入門", "Windows 系統管理", "程式設計", "自學"],
     "description": "不必捨棄 Windows，也能完整學習 Linux。本書帶你安裝與排查 WSL 2，練習 Linux 指令、開發工具、Docker、檔案整合及系統管理。"
   },
@@ -193,7 +193,7 @@
     "author": "Happy eBook",
     "price": "261.00",
     "status": "在 Google Play 開始販售",
-    "coverUrl": "https://books.google.com/books/publisher/content/images/frontcover/gqL4EQAAQBAJ?fife",
+    "coverUrl": "",
     "category": ["Linux 入門", "Windows 系統管理", "AI Coding", "自學"],
     "description": "以做中學為核心，透過 19 個實戰單元、自動化驗收腳本與排錯步驟，在 Windows 11 上建立流暢的 Linux、Docker 與 AI coding 開發工作站。"
   }

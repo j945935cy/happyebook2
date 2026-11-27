@@ -1800,3 +1800,11 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+.publisher-copy { max-width: 900px; }
+.publisher-copy h2 { margin-top: 2rem; }
+.publisher-copy p,.publisher-copy li,.article-body p,.article-body li { line-height: 1.85; overflow-wrap: anywhere; }
+.article-body pre { overflow-x: auto; padding: 1rem; background: #eef3fb; color: #173354; border-radius: 8px; }
+.article-body blockquote { margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 3px solid #3765aa; background: #f3f6fc; }
+.article-byline,.availability-note { color: #465a70; font-size: .95rem; }
+.tag.catalog { background: #e8edf5; color: #30465f; }
