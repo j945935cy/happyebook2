@@ -9,6 +9,45 @@ const books = JSON.parse(fs.readFileSync(path.join(root, 'src/books.json'), 'utf
 const source = fs.readFileSync(path.join(root, 'src/script.js'), 'utf8').replace(/boot\(\);\s*$/, '');
 const context = vm.createContext({ URL, Intl, console, document: { currentScript: { src: 'https://happyebook.com/src/script.js' } }, window: { location: { pathname: '/', href: 'https://happyebook.com/' } } });
 vm.runInContext(source, context);
+test('unverified, placeholder, changed and unpublished purchase entries cannot render', () => {
+  const verified = books[0];
+  for (const book of [
+    {...verified, purchaseVerification: undefined},
+    {...verified, koboUrl: '#', buyUrl: '#'},
+    {...verified, koboUrl: 'https://www.kobo.com/tw/zh/ebook/another-product'},
+    {...verified, published: false},
+    {...verified, koboUrl: 'https://www.kobo.com.evil.test/tw/zh/ebook/book'},
+  ]) {
+    context.book = book;
+    assert.equal(vm.runInContext('isPublished(book)', context), false);
+    assert.equal(vm.runInContext('createBookCard(book) + createMiniBookCard(book)', context), '');
+  }
+});
+test('the loader excludes unverified records before search, counts or recommendations', async () => {
+  context.fetch = async () => ({ok: true, json: async () => [books[0], {...books[0], id: 'invalid', koboUrl: '#'}]});
+  const loaded = await vm.runInContext('loadBooks()', context);
+  assert.deepEqual(Array.from(loaded, b => b.id), [books[0].id]);
+});
+test('retired book pages are not indexed and contain no product listings', () => {
+  const ids = new Set(books.map(b => b.id));
+  const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
+  for (const name of fs.readdirSync(path.join(root, 'books'))) {
+    if (!name.endsWith('.html') || ids.has(name.slice(0, -5))) continue;
+    const html = fs.readFileSync(path.join(root, 'books', name), 'utf8');
+    assert.match(html, /<meta name="robots" content="noindex, follow">/, name);
+    assert.doesNotMatch(html, /book-detail|book-card|"@type"\s*:\s*"Book"/, name);
+    assert.ok(!sitemap.includes(`/books/${name}</loc>`), name);
+  }
+});
+test('learning resources have a separate entry and never enter the public book catalog', () => {
+  assert.ok(books.every(b => b.type === 'paid'));
+  const resources = fs.readFileSync(path.join(root, 'resources/learning-materials.html'), 'utf8');
+  assert.match(resources, /Python for Beginners/);
+  assert.match(resources, /前往學習網站/);
+  const catalog = fs.readFileSync(path.join(root, 'books.html'), 'utf8');
+  assert.match(catalog, /resources\/learning-materials.html/);
+  assert.doesNotMatch(catalog, /data-type-filter="(?:free|web|catalog)"/);
+});
 test('all catalog cards and hero cards render without Google store links or false preview labels', () => {
   for (const book of books) {
     context.book = book;

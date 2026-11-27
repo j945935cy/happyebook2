@@ -18,7 +18,7 @@ const sitemapUrls = extractSitemapUrls();
 const requiredPages = ["index.html", "books.html", "book.html", "about.html", "contact.html", "404.html"];
 const CURRENT_CSS_VERSION = "20261127-1";
 const CSS_VERSION_OVERRIDES = new Map();
-const CURRENT_SCRIPT_VERSION = "20261127-1";
+const CURRENT_SCRIPT_VERSION = "20261127-2";
 const SCRIPT_VERSION_OVERRIDES = new Map();
 const referencedImagePaths = new Set();
 

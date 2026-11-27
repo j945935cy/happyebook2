@@ -4,78 +4,7 @@ const typeLabel = { free: "免費閱讀", paid: "商店資訊", web: "網站教�
 
 const fallbackCoverDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900"><rect width="640" height="900" fill="#dbeafe"/><rect x="52" y="52" width="536" height="796" rx="24" fill="#eff6ff"/><text x="320" y="420" text-anchor="middle" fill="#1e3a5f" font-size="34" font-family="Noto Sans TC, sans-serif">Happy eBook</text><text x="320" y="468" text-anchor="middle" fill="#4b6b8d" font-size="24" font-family="Noto Sans TC, sans-serif">預設書封</text></svg>')}`;
 
-const googleBookCovers = {
-
-  "ai-publishing-book": ["ai-publishing-book-cover.jpg"],
-
-  "codex-mini-projects-book": ["codex-mini-projects-book-imagegen-cover-site.jpg"],
-
-  "codex-mini-projects-book-2": ["codex-mini-projects-book-2-screenshot-cover.jpg", "codex-mini-projects-book-2-cover.jpg"],
-
-  "hermes-learning-by-doing": ["hermes-learning-by-doing-cover-1400x2100.png"],
-
-  "codex-python": ["codex-python-google-cover.png", "python-codex-exercises-cover-1400x2100.png"],
-
-  "codex-coding": ["codex-coding-google-cover.png", "codex-coding-exercises-cover-1400x2100.png", "codex-learning-by-doing-cover-1400x2100.png"],
-
-  "antigravity-coding": ["antigravity-coding-google-cover.jpg", "antigravity-coding-exercises-cover-1400x2100.png"],
-
-  "classic-english-writing": ["happyebook2_assets_images_classic-english-writing-cover.png"],
-
-  "codex-html-18h": ["GGKEY_PG5C88JAPT0_frontcover-site.jpg", "codex-html-18h-cover.webp"],
-
-  "codex-css-18h": ["GGKEY_T5Z67TRQA55_cover_option_2_style.png", "GGKEY_T5Z67TRQA55_frontcover.png", "codex-css-18h-google-cover.jpg"],
-
-  "codex-javascript-18h": ["codex-javascript-18h-google-cover.jpg", "codex-javascript-18hr-course-cover-1400x2100.png"],
-
-  "html-css-18h-codex-ai": ["GGKEY_T16QHNQSP55_frontcover.png", "html-css-18h-codex-ai-google-cover.jpg"],
-
-  "ipas-ai-應用規劃師初級題庫完全攻略": ["ipas-ai-basic-question-bank-google-cover.jpg"],
-
-  "epub-sigil-ai": ["AI-Sigil-site.jpg", "epub-sigil-ai-google-cover.jpg"],
-
-  "ipas-ai-planner-play-book": ["ipas-ai-planner-play-book-google-cover.jpg"],
-
-  "english-grammar-zero-start": ["english-grammar-zero-start-google-cover.png"],
-
-  "speech-english-play": ["speech-english-play-google-cover.png"],
-
-  "keeping-up-joneses-bilingual": ["keeping-up-joneses-bilingual-google-cover.jpg"],
-
-  "vibe-coding-html-css-js": ["GGKEY_1TED5EGFLYL_frontcover.png"],
-
-  "ai-python-automation": ["ai-python-automation_epub_cover1.png", "ai-python-automation_epub_OEBPS_Images_cover.svg"],
-
-  "ebook-wsl2-online": [],
-
-  "python-for-beginners-book": [
-
-    "Python-for-Beginners-Book_output_google-books_cover.png",
-
-    "Python-for-Beginners-Book_assets_images_cover.png",
-
-    "Python-for-Beginners-Book_docs_assets_images_cover.png",
-
-    "Python-for-Beginners-Book_meta_cover.png"
-
-  ],
-
-  "linux-beginner-2026": ["happyebook2_assets_images_linux-beginner-cover.png", "ebook2026linux_social-cover.svg"],
-
-  "speak-clearly-book": [],
-
-  "sql2026": ["SQL2026_cover1-site.jpg", "SQL2026_build_epub_cover1.png"],
-
-  "2026-cloud-security": ["2026-Cloud-Security_docs_assets_images_cover-2026-cloud-security.svg"],
-
-  "word-vba-examples": ["word-vba-examples-google-cover.png", "happyebook2_assets_images_word-vba-examples-cover.png"],
-  "word-builder-1200": ["GGKEY_JFUE6T0C6BS_frontcover-site.jpg"],
-  "harness-engineering": ["harness-engineering-google-cover.jpg"],
-  "ipas-ai-mid-learning-handbook-2026-06": ["ipas-ai-mid-learning-handbook-2026-06-google-cover.jpg"],
-  "ipas-ai-high-score-2026-03-exam": ["ipas-ai-basic-question-bank-2026-500-cover.jpg"],
-  "windows-aicoding": ["Windows-AICoding_google ebook cover.png"]
-
-};
+const googleBookCovers = {};
 
 const encodeCoverCandidate = (value) => {
 
@@ -138,7 +67,7 @@ let coverLoadFailureCount = 0;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20261127-1";
+const booksDataVersion = "20261127-2";
 
 const siteConfig = {
 
@@ -150,7 +79,21 @@ const siteConfig = {
 
 };
 
-const isPublished = (book) => book.published !== false;
+const isStoreProductUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" && !url.username && !url.password && (
+      (url.hostname === "www.kobo.com" && /^\/[^/]+\/[^/]+\/ebook\/[^/]+$/.test(url.pathname)) ||
+      (url.hostname === "www.books.com.tw" && /^\/products\/[A-Za-z0-9]+$/.test(url.pathname))
+    );
+  } catch { return false; }
+};
+const getPurchaseUrl = (book) => {
+  const verification = book.purchaseVerification;
+  if (verification?.status !== "purchase-control-visible" || !verification.checkedAt) return "";
+  return [book.koboUrl, book.buyUrl].find(url => isStoreProductUrl(url) && url === verification.url) || "";
+};
+const isPublished = (book) => book.published !== false && Boolean(getPurchaseUrl(book));
 
 const getBookDetailUrl = (book) => {
 
@@ -227,7 +170,7 @@ const loadBooks = async () => {
         if (isGoogleBooksUrl(safe[key])) safe[key] = "";
       }
       return safe;
-    }));
+    }).filter(isPublished));
 
   } catch (error) {
 
@@ -380,7 +323,7 @@ const scoreRelatedBook = (source, candidate) => {
 };
 
 const getRelatedBooks = (book, books, limit = 3) => books
-  .filter((candidate) => candidate.id !== book.id)
+  .filter((candidate) => isPublished(candidate) && candidate.id !== book.id)
   .map((candidate) => ({ book: candidate, score: scoreRelatedBook(book, candidate) }))
   .filter((item) => item.score > 0)
   .sort((left, right) => right.score - left.score)
@@ -450,55 +393,10 @@ const createTags = (book) => [
 ].filter(Boolean).join("");
 
 const primaryAction = (book) => {
-
-  const detailUrl = getBookDetailUrl(book);
-
-  const effectiveType = getEffectiveType(book);
-  if (effectiveType === "catalog") return `<a class="button secondary" href="${detailUrl}">作品介紹</a>`;
-
-  if (effectiveType === "free") {
-
-    const href = book.downloadUrl || book.readUrl || detailUrl;
-
-    const label = book.downloadUrl ? "下載閱讀" : book.readUrl ? "線上閱讀" : "查看詳情";
-
-    const attrs = hasExternalUrl(href) ? ` target="_blank" rel="noopener noreferrer"` : "";
-
-    return `<a class="button primary" href="${href}"${attrs}>${label}</a>`;
-
-  }
-
-  if (effectiveType === "paid") {
-
-    const storeActions = [];
-
-    if (book.buyUrl) {
-      const attrs = hasExternalUrl(book.buyUrl) ? ` target="_blank" rel="noopener noreferrer"` : "";
-      const label = book.storeStatus === "preorder" ? "預購" : "前往商店查看";
-      storeActions.push(`<a class="button primary" href="${book.buyUrl}"${attrs}>${label}</a>`);
-    }
-
-    if (book.koboUrl) {
-      const attrs = hasExternalUrl(book.koboUrl) ? ` target="_blank" rel="noopener noreferrer"` : "";
-      storeActions.push(`<a class="button secondary" href="${book.koboUrl}"${attrs}>前往 Kobo 查看</a>`);
-    }
-
-    if (storeActions.length) return storeActions.join("");
-
-    const href = book.readUrl || detailUrl;
-    const label = book.readUrl ? "查看試閱" : "查看詳情";
-    const attrs = hasExternalUrl(href) ? ` target="_blank" rel="noopener noreferrer"` : "";
-
-    return `<a class="button primary" href="${href}"${attrs}>${label}</a>`;
-
-  }
-
-  const href = book.readUrl || detailUrl;
-
-  const attrs = hasExternalUrl(href) ? ` target="_blank" rel="noopener noreferrer"` : "";
-
-  return `<a class="button primary" href="${href}"${attrs}>前往閱讀</a>`;
-
+  const url = getPurchaseUrl(book);
+  if (!url) return "";
+  const store = new URL(url).hostname === "www.kobo.com" ? "Kobo" : "博客來";
+  return `<a class="button primary" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">前往 ${store} 購買</a>`;
 };
 
 const loadCoverIntoImage = (image) => {
@@ -591,8 +489,9 @@ const hydrateCoverImages = (container = document) => {
 };
 
 const createBookCard = (book) => {
+  if (!isPublished(book)) return "";
 
-  const readHref = book.readUrl || getBookDetailUrl(book);
+  const readHref = getBookDetailUrl(book);
 
   const readAttrs = hasExternalUrl(readHref) ? ` target="_blank" rel="noopener noreferrer"` : "";
 
@@ -602,7 +501,7 @@ const createBookCard = (book) => {
 
   const coverClass = isGoogleBookCover(book.cover) ? " google-book-cover" : "";
 
-  return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 前往閱讀"><img class="${coverClass.trim()}" data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）" loading="lazy" decoding="async"></a></div><div class="book-card-body"><div class="book-card-content"><div class="tag-row">${createTags(book)}</div><h3>${book.title}</h3><p class="book-subtitle">${book.subtitle || ""}</p><p class="book-meta">${book.author} ・ ${book.format}</p><p class="book-meta book-access">${escapeHtml(book.priceLabel || typeLabel[getEffectiveType(book)] || "")}</p><p class="book-description">${book.description}</p></div><div class="card-actions">${primaryAction(book)}<a class="card-link" href="${getBookDetailUrl(book)}">更多資訊</a></div></div></article>`;
+  return `<article class="book-card"><div class="book-card-media"><a href="${readHref}"${readAttrs} class="book-cover-link" aria-label="${book.title} 書籍介紹"><img class="${coverClass.trim()}" data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）" loading="lazy" decoding="async"></a></div><div class="book-card-body"><div class="book-card-content"><div class="tag-row">${createTags(book)}</div><h3>${book.title}</h3><p class="book-subtitle">${book.subtitle || ""}</p><p class="book-meta">${book.author} ・ ${book.format}</p><p class="book-meta book-access">${escapeHtml(book.priceLabel || typeLabel[getEffectiveType(book)] || "")}</p><p class="book-description">${book.description}</p></div><div class="card-actions">${primaryAction(book)}<a class="card-link" href="${getBookDetailUrl(book)}">更多資訊</a></div></div></article>`;
 
 };
 
@@ -906,8 +805,9 @@ const initContactPage = () => {
 };
 
 const createMiniBookCard = (book, isPrimary = false) => {
+  if (!isPublished(book)) return "";
 
-  const href = book.readUrl || getBookDetailUrl(book);
+  const href = getBookDetailUrl(book);
 
   const attrs = hasExternalUrl(href) ? ` target="_blank" rel="noopener noreferrer"` : "";
 
@@ -933,7 +833,7 @@ const initHome = async () => {
 
   if (shelf && books.length) {
 
-    const shelfBooks = books.filter((b) => b.featured).slice(0, 3);
+    const shelfBooks = books.slice().sort((a, b) => Number(b.featured) - Number(a.featured)).slice(0, 3);
 
     shelf.innerHTML = shelfBooks.map((book, i) => createMiniBookCard(book, i === 0)).join("");
 
@@ -945,7 +845,7 @@ const initHome = async () => {
 
   if (featuredGrid && books.length) {
 
-    const featuredBooks = books.filter((b) => b.featured).slice(0, 6);
+    const featuredBooks = books.slice().sort((a, b) => Number(b.featured) - Number(a.featured)).slice(0, 6);
 
     featuredGrid.innerHTML = featuredBooks.map(createBookCard).join("");
 
@@ -1205,7 +1105,13 @@ const initBooksPage = async () => {
 
 };
 
-const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = books.find((item) => item.id === id) || books[0]; const target = document.querySelector("[data-book-detail]"); const heroCopy = document.querySelector("[data-book-hero-copy]"); if (!target || !book) return; document.title = `${book.title} | Happy eBook`; const bookUrl = `https://happyebook.com/books/${encodeURIComponent(book.id)}.html`; const bookDesc = book.description || book.subtitle || "查看作品詳細資料、格式、作者與閱讀或購買方式。"; const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute("content", val); }; setMeta('meta[property="og:title"]', `${book.title} | Happy eBook`); setMeta('meta[property="og:description"]', bookDesc); setMeta('meta[property="og:url"]', bookUrl); setMeta('meta[name="twitter:title"]', `${book.title} | Happy eBook`); setMeta('meta[name="twitter:description"]', bookDesc); setMeta('meta[name="description"]', bookDesc); let canon = document.querySelector('link[rel="canonical"]'); if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); } canon.href = bookUrl; const breadcrumbJson = document.createElement("script"); breadcrumbJson.type = "application/ld+json"; breadcrumbJson.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Happy eBook", "item": "https://happyebook.com/" }, { "@type": "ListItem", "position": 2, "name": "書籍列表", "item": "https://happyebook.com/books.html" }, { "@type": "ListItem", "position": 3, "name": book.title, "item": bookUrl } ] }); document.head.appendChild(breadcrumbJson); const ldJson = document.createElement("script"); ldJson.type = "application/ld+json"; const categories = getCategories(book); const bookSchema = { "@context": "https://schema.org", "@type": "Book", "name": book.title, "description": book.description, "author": { "@type": book.author.includes("編輯部") ? "Organization" : "Person", "name": book.author }, "inLanguage": "zh-TW", "genre": categories[0] || "", "url": bookUrl, "isPartOf": { "@type": "WebSite", "name": "Happy eBook", "url": "https://happyebook.com/" } }; if (book.buyUrl) bookSchema["offers"] = { "@type": "Offer", "url": book.buyUrl, "priceCurrency": "TWD" }; ldJson.textContent = JSON.stringify(bookSchema); document.head.appendChild(ldJson); if (heroCopy) heroCopy.textContent = book.heroCopy || "這裡會顯示書封、書名、副標、作者、分類、標籤、簡介、格式與操作按鈕。"; const coverSources = getCoverSources(book.cover, book.id); const coverSourcesJson = JSON.stringify(coverSources); target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><p class="book-detail-title">${book.title}</p><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${getCategories(book).join(' / ')}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; hydrateCoverImages(target); addBookInsights(book, books, target); addResourcePromo(book.id, target); };
+const initBookPage = async () => { const books = (await loadBooks()).filter(isPublished); const id = new URLSearchParams(window.location.search).get("id"); const book = id ? books.find((item) => item.id === id) : books[0]; const target = document.querySelector("[data-book-detail]"); const heroCopy = document.querySelector("[data-book-hero-copy]"); if (!target) return; if (!book) {
+    document.title = "書單已更新｜Happy eBook";
+    if (heroCopy) heroCopy.textContent = "請瀏覽目前提供購買入口的書籍。";
+    target.innerHTML = '<div class="empty-state"><h2>此書目前未列入書單</h2><a class="button primary" href="/books.html">瀏覽目前書單</a></div>';
+    const robots = document.createElement("meta"); robots.name = "robots"; robots.content = "noindex, follow"; document.head.appendChild(robots);
+    return;
+  } document.title = `${book.title} | Happy eBook`; const bookUrl = `https://happyebook.com/books/${encodeURIComponent(book.id)}.html`; const bookDesc = book.description || book.subtitle || "查看作品詳細資料、格式、作者與閱讀或購買方式。"; const setMeta = (sel, val) => { const el = document.querySelector(sel); if (el) el.setAttribute("content", val); }; setMeta('meta[property="og:title"]', `${book.title} | Happy eBook`); setMeta('meta[property="og:description"]', bookDesc); setMeta('meta[property="og:url"]', bookUrl); setMeta('meta[name="twitter:title"]', `${book.title} | Happy eBook`); setMeta('meta[name="twitter:description"]', bookDesc); setMeta('meta[name="description"]', bookDesc); let canon = document.querySelector('link[rel="canonical"]'); if (!canon) { canon = document.createElement("link"); canon.rel = "canonical"; document.head.appendChild(canon); } canon.href = bookUrl; const breadcrumbJson = document.createElement("script"); breadcrumbJson.type = "application/ld+json"; breadcrumbJson.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Happy eBook", "item": "https://happyebook.com/" }, { "@type": "ListItem", "position": 2, "name": "書籍列表", "item": "https://happyebook.com/books.html" }, { "@type": "ListItem", "position": 3, "name": book.title, "item": bookUrl } ] }); document.head.appendChild(breadcrumbJson); const ldJson = document.createElement("script"); ldJson.type = "application/ld+json"; const categories = getCategories(book); const bookSchema = { "@context": "https://schema.org", "@type": "Book", "name": book.title, "description": book.description, "author": { "@type": book.author.includes("編輯部") ? "Organization" : "Person", "name": book.author }, "inLanguage": "zh-TW", "genre": categories[0] || "", "url": bookUrl, "isPartOf": { "@type": "WebSite", "name": "Happy eBook", "url": "https://happyebook.com/" } }; if (book.buyUrl) bookSchema["offers"] = { "@type": "Offer", "url": book.buyUrl, "priceCurrency": "TWD" }; ldJson.textContent = JSON.stringify(bookSchema); document.head.appendChild(ldJson); if (heroCopy) heroCopy.textContent = book.heroCopy || "這裡會顯示書封、書名、副標、作者、分類、標籤、簡介、格式與操作按鈕。"; const coverSources = getCoverSources(book.cover, book.id); const coverSourcesJson = JSON.stringify(coverSources); target.innerHTML = `<div class="book-cover-panel"><div class="book-cover-stage"><img data-cover-image src="${fallbackCoverDataUrl}" data-cover-sources='${coverSourcesJson}' data-cover-alt="${book.title} 書封" alt="${book.title} 書封（載入中）"></div></div><div class="book-content-panel"><div class="tag-row">${createTags(book)}</div><p class="book-detail-title">${book.title}</p><p class="book-summary">${book.subtitle}</p><p>${book.description}</p><div class="meta-list"><div class="meta-item"><span>作者</span><strong>${book.author}</strong></div><div class="meta-item"><span>分類</span><strong>${getCategories(book).join(' / ')}</strong></div><div class="meta-item"><span>格式</span><strong>${book.format}</strong></div><div class="meta-item"><span>取得方式</span><strong>${book.priceLabel}</strong></div></div><div class="cta-row">${primaryAction(book)}<a class="button secondary" href="books.html">返回列表</a></div></div>`; hydrateCoverImages(target); addBookInsights(book, books, target); addResourcePromo(book.id, target); };
 
 const initStaticBookResourcePromo = async () => {
 
@@ -1231,7 +1137,7 @@ const initStaticBookResourcePromo = async () => {
     koboLink.href = book.koboUrl;
     koboLink.target = "_blank";
     koboLink.rel = "noopener noreferrer";
-    koboLink.textContent = "前往 Kobo 查看";
+    koboLink.textContent = "前往 Kobo 購買";
     actionRow.appendChild(koboLink);
   }
 

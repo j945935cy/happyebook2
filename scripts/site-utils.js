@@ -192,9 +192,29 @@ function validateBooks({ includeSitemap = false } = {}) {
   const seenIds = new Map();
   const seenGoogleIds = new Map();
   const seenGoogleKeys = new Map();
+  const seenPurchaseUrls = new Set();
 
   books.forEach((book, index) => {
     const label = book && book.id ? book.id : `index ${index}`;
+    const verification = book.purchaseVerification;
+    let purchaseUrlValid = false;
+    try {
+      const url = new URL(verification?.url);
+      purchaseUrlValid = url.protocol === "https:" && !url.username && !url.password && (
+        (url.hostname === "www.kobo.com" && /^\/[^/]+\/[^/]+\/ebook\/[^/]+$/.test(url.pathname)) ||
+        (url.hostname === "www.books.com.tw" && /^\/products\/[A-Za-z0-9]+$/.test(url.pathname))
+      );
+    } catch { /* Invalid or absent purchase URL. */ }
+    if (book.type !== "paid" || verification?.status !== "purchase-control-visible" ||
+        !/^\d{4}-\d{2}-\d{2}$/.test(verification?.checkedAt || "") || !purchaseUrlValid ||
+        ![book.koboUrl, book.buyUrl].includes(verification?.url)) {
+      errors.push(`${label}: a verified retailer product purchase URL is required for the public catalog.`);
+    }
+    if (seenPurchaseUrls.has(verification?.url)) errors.push(`${label}: duplicate retailer product URL.`);
+    seenPurchaseUrls.add(verification?.url);
+    for (const key of ["buyUrl", "koboUrl"]) {
+      if (book[key] && book[key] !== verification?.url) errors.push(`${label}: unverified ${key}.`);
+    }
 
     for (const field of REQUIRED_BOOK_FIELDS) {
       const value = book[field];
