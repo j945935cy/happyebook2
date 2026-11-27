@@ -168,5 +168,3167 @@
       "checkedAt": "2026-11-27",
       "url": "https://www.kobo.com/tw/zh/ebook/SkNI9D3yDzO1Lqdu5eG_SA"
     }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1000,
+    "id": "kobo-926a8852-7a76-4747-b0b9-1777f4576866",
+    "title": "Agent Skills 實戰手冊",
+    "subtitle": "從挑選、使用到測試與維護，完整掌握 Agent Skills 的實戰方法，打造可重複、可驗證、可持續維護的 AI 工作流",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-926a8852-7a76-4747-b0b9-1777f4576866.jpg",
+    "description": "從挑選、使用到測試與維護，完整掌握 Agent Skills 的實戰方法，打造可重複、可驗證、可持續維護的 AI 工作流",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/agent-skills",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/agent-skills"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1003,
+    "id": "kobo-93fb5493-6f0b-409a-b7ad-592ab1c6fdb6",
+    "title": "AI Agent 工作流程實戰",
+    "subtitle": "從提示詞到自動化任務：給知識工作者、內容創作者與自由工作者的 AI 任務設計指南",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "Workflow 設計",
+      "效率工具"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_C1K2GACA0S4_partner-cover.png",
+    "description": "別再只問 AI 問題，開始設計 AI 可以完成的工作流程。本書教你把模糊需求拆成目標、資料、步驟、工具、產出與驗證，讓 AI 真正協助完成研究、寫作、文件整理與專案工作。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-agent-8",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-agent-8"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1004,
+    "id": "kobo-5a1e4cdb-6f96-4efb-9bb6-22246bb1e3fa",
+    "title": "AI Coding 實戰手冊",
+    "subtitle": "Cursor + Claude Code + Windsurf + Cline",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "程式設計",
+      "AI 工具應用",
+      "Workflow 設計"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_K7LA3U87NFG_partner-cover.jpg",
+    "description": "以 Cursor、Claude Code、Windsurf 與 Cline 為核心，整理需求描述、上下文提供、程式修改、測試驗證與版本控制的 AI coding 實戰流程。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-coding",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-coding"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1005,
+    "id": "kobo-afc61e0b-8d0b-42ec-ba0a-f18f79e525d8",
+    "title": "AI Development Environment Complete Guide",
+    "subtitle": "Windows 11 + WSL 2 + VS Code + OpenCode + Zen",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "Linux 入門",
+      "Windows 系統管理",
+      "程式設計"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_1G26L58T7A5_partner-cover.jpg",
+    "description": "A practical guide to building an AI development workstation with Windows 11, WSL 2, VS Code, OpenCode, and Zen, including setup, integration, daily workflows, and troubleshooting.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-development-environment-complete-guide",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-development-environment-complete-guide"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1006,
+    "id": "kobo-90756e9c-3852-4c2f-8551-f5809b7cd770",
+    "title": "AI Skill 實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL4CD58828BB_partner-cover.jpg",
+    "description": "《AI Skill 實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-skill",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-skill"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1007,
+    "id": "kobo-74aae27b-c75a-44af-8256-10c767b8113f",
+    "title": "AI 上將：一個人指揮一支不眠的百人軍團",
+    "subtitle": "你的 AI 越聰明，你就越累",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-74aae27b-c75a-44af-8256-10c767b8113f.jpg",
+    "description": "你的 AI 越聰明，你就越累。 十個、五十個、一百個不眠不休的 AI 助手同時等你下命令——但你被它們的輸出淹沒，只好親自一行一行修正。你沒有變成指揮官，你變成了整支軍團唯一的監工。 這不是 AI 的問題，是「指揮」的問題。 《AI 上將》不教你寫提示詞，而是教你一套與任何 AI 都通用的指揮方法：任務拆解 × 精準下達 × 嚴格驗收。把模糊目標拆成可驗證的子任務、用 AI 聽得懂的話下達任務書、用證據取代感覺進行驗收——讓它第一次就做對，而不是做十次讓你擦屁股。 20 章實戰方法＋5 大工具模板，從單一任務到並行軍團，從救火到防火，一步步把你訓練成「一個人指揮百人軍團」的上將。 適合：想用 AI 大幅提升產出、卻苦於它總做錯的工程師、產品經理與自由工作者。工具會換，方法不會——這套方法十年後依然有效",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-628",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-628"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1008,
+    "id": "kobo-0b1f484d-f3c0-4bed-a855-ce5619ebe380",
+    "title": "AI 應用工程實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_0JL9P31LLG2_partner-cover.png",
+    "description": "《AI 應用工程實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-812",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-812"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1009,
+    "id": "kobo-5b41d8a5-af79-4a7a-92f7-169476134f5d",
+    "title": "AI 指揮官實戰",
+    "subtitle": "給開發者的一人 AI 團隊工作流，學習如何整合 AI 工具、代理與協作流程，建立可驗證、可重複的開發方法",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-5b41d8a5-af79-4a7a-92f7-169476134f5d.jpg",
+    "description": "給開發者的一人 AI 團隊工作流，學習如何整合 AI 工具、代理與協作流程，建立可驗證、可重複的開發方法",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-764",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-764"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1010,
+    "id": "kobo-185a5829-433a-4f0f-a722-1bb48cc32974",
+    "title": "AI 時代必備知識：從入門使用到駕馭 AI Agent",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_BY0YSK4HS85_partner-cover.jpg",
+    "description": "《AI 時代必備知識：從入門使用到駕馭 AI Agent》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-ai-agent",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-ai-agent"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1011,
+    "id": "kobo-e268e7cc-5950-4f7c-b99d-7dccbe3ee3d3",
+    "title": "AI 時代的 Firebase 做中學",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLF0017F40A0_partner-cover.png",
+    "description": "《AI 時代的 Firebase 做中學》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-firebase",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-firebase"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1012,
+    "id": "kobo-3d58f60d-e560-45f4-bdc2-8fe177e01b70",
+    "title": "AI 時代的 PostgreSQL 網頁實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL5BCF33AAF0_partner-cover.jpg",
+    "description": "《AI 時代的 PostgreSQL 網頁實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-postgresql",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-postgresql"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1013,
+    "id": "kobo-6089c91e-bf88-4123-8d1e-387408953098",
+    "title": "AI 時代的 Redis 網頁實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL02906E1A93_partner-cover.jpg",
+    "description": "《AI 時代的 Redis 網頁實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-redis",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-redis"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1014,
+    "id": "kobo-62558286-4621-46b4-bed7-ba3bfe301ebf",
+    "title": "AI 時代的實用生活指南",
+    "subtitle": "ChatGPT 不只是聊天工具，也可以成為你的工作、學習與生活助手",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-62558286-4621-46b4-bed7-ba3bfe301ebf.jpg",
+    "description": "ChatGPT 不只是聊天工具，也可以成為你的工作、學習與生活助手。 《AI 時代的實用生活指南》專為沒有技術背景、剛開始接觸 ChatGPT 的讀者設計，透過清楚的步驟、實際案例、對話示範、表格與練習，帶你從第一次提問開始，逐步學會如何： • 規劃每日工作與處理待辦事項 • 撰寫、改寫及編輯工作文件 • 整理會議紀錄、追蹤決策與行動 • 分析資料、閱讀文章及協助研究 • 學習語言、準備考試與建立個人學習計畫 • 規劃旅遊、管理家庭與改善生活習慣 • 協助求職、職涯發展與內容創作 • 建立適合自己的 AI 工作流程",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-699",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-699"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1015,
+    "id": "kobo-ff31e90a-2523-478c-b6a6-f4e56cc4f804",
+    "title": "AI 時代的管理實戰：六大功能重塑 × OpenCode 工具箱",
+    "subtitle": "AI 改變的不只是工具，而是整個管理方式",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-ff31e90a-2523-478c-b6a6-f4e56cc4f804.jpg",
+    "description": "AI 改變的不只是工具，而是整個管理方式。 本書把管理大師法約爾（Fayol）的六大管理功能——規劃、組織、用人、領導、控制、變革——逐一用 AI 重塑，並以三個規模不同的真實案例串成全書： - 阿志：一人開發者，用 AI 建立自己的「一人管理團隊」 - 晨星：五人新創，把 AI 變成虛擬團隊成員 - 順達：三百人製造廠，用 AI 盤點技能、推動持續變革 每一章都是「案例串場 → 傳統痛點 → AI 如何重塑 → 用 OpenCode 直接動手做 → 管理啟示」的完整閉環。全書含 12 張流程圖、可直接複製的指令與設定檔範例，並附 30/60/90 天導入路線圖，讓讀者看完就能落地。 特別適合： - 想用 AI 提升效率的經理人 - 一人公司或小團隊創業者 - 負責 AI 導入專案的專案經理",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-opencode",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-opencode"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1016,
+    "id": "kobo-4ace6109-cd93-40e4-b035-e047cf67f127",
+    "title": "AI 時代的網頁開發",
+    "subtitle": "從一句需求到網站上線：用 AI 選工具、做網頁、部署、維護與加入智慧功能",
+    "author": "Happy eBook Authors",
+    "category": [
+      "網頁開發",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_SCGK74PDWC1_partner-cover.png",
+    "description": "你可以請 AI 產生一個看起來像網站的畫面，但要把它變成真正能上線、能維護、能保護資料的網站，還需要需求判斷、工具選擇、測試、部署與營運能力。 本書以「AI 內容工作室」為貫穿案例，帶你從需求與範圍開始，理解瀏覽器、伺服器、資料庫、API、網域與部署的關係，再比較無程式碼平台、AI 建站工具與自行開發的取捨。接著使用 Codex、Next.js、TypeScript、Supabase、GitHub 與 Vercel，逐步完成網站規劃、製作、驗收、上線、維護、除錯與復原，最後加入具來源限制與人工覆核的 AI 功能。 書中每章都有小練習、檢查項目與可保存的工作成果，並附上需求訪談表、工具決策表、上線檢查表、平台查核表及常見錯誤排除。這不是讓 AI 代替你完成一切的捷徑，而是一套讓你與 AI 協作、仍能掌握決策與品質的工作方法。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-681",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-681"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1017,
+    "id": "kobo-d23d751c-988c-4446-a6d7-e44081b20d74",
+    "title": "AI 時代的資料庫實戰：打造網路商店進銷存實例演習",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL85340112C4_partner-cover.jpg",
+    "description": "《AI 時代的資料庫實戰：打造網路商店進銷存實例演習》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-736",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-736"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1018,
+    "id": "kobo-6c51de59-accd-4380-b856-94b16261476a",
+    "title": "AI 時代的資料格式",
+    "subtitle": "從 JSON、CSV、XML、YAML 到 JSONL、Schema 與 RAG 實戰",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DSQZ22KWFNP_partner-cover.png",
+    "description": "你每天都在接觸資料格式：試算表中的 CSV、API 回傳的 JSON、企業系統裡的 XML、工具設定使用的 YAML 與 TOML，以及供 AI 處理的 JSONL、Schema 與 Markdown 文件。 真正困難的，從來不只是記住每種格式的語法，而是理解： - 如何讓人、程式與 AI 對同一份資料有一致理解？",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-669",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-669"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1019,
+    "id": "kobo-d96388c4-ba89-431b-8238-ae8d3d20063d",
+    "title": "AI 時代，怎麼學？",
+    "subtitle": "從提問、練習到創造，打造自己的學習流程",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_LKW143SJWF8_partner-cover.jpg",
+    "description": "AI 工具讓提問、查找與生成變得容易，但真正學會仍要靠自己理解、練習、查核與應用。本書以在職知識工作者與職涯轉換者為對象，帶你建立一套可持續更新的學習流程：從選擇值得投入的能力、盤點起點與設定成果標準，到拆解學習路徑、設計練習、運用 AI 提示與回饋，再以主動回想、查核和新情境測試確認是否真正學會。書中提供案例、操作步驟、流程圖與工作表，協助你把學到的知識轉化為可檢視的工作成果，並根據證據規劃下一輪學習。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-802",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-802"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1020,
+    "id": "kobo-d51e5f33-f8e6-459d-b851-6f205a8f59fd",
+    "title": "AI 與機器學習研究入門",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_EAUW7AYZPCR_partner-cover.png",
+    "description": "《AI 與機器學習研究入門》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-811",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-811"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1021,
+    "id": "kobo-4aa69d45-abc1-4a97-899f-00286d6888bc",
+    "title": "AI 開發環境全攻略",
+    "subtitle": "Windows 11 + WSL 2 + VS Code + OpenCode + Zen：AI Development Environment Complete Guide: Windows 11 + WSL 2 + VS Code + OpenCode + Zen",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "Linux 入門",
+      "Windows 系統管理",
+      "程式設計"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_RR7T4PW20PL_partner-cover.png",
+    "description": "以 Windows 11 為主機，整合 WSL 2、VS Code、OpenCode 與 Zen，從安裝設定到 AI coding 日常工作流程，建立穩定、可維護的開發環境。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-626",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-626"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1022,
+    "id": "kobo-bc1be740-48a6-4d7a-98db-13ea197df5a8",
+    "title": "AI-Powered Project Management",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL1F2050C7C5_partner-cover.jpg",
+    "description": "《AI-Powered Project Management》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-powered-project-management-2",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-powered-project-management-2"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1024,
+    "id": "kobo-2fd50a73-6920-4768-a943-d0bf40139c90",
+    "title": "AI開発環境マスター：Windows 11 + WSL 2 + VS Code + OpenCode + Zen",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLEE1991682D_partner-cover.jpg",
+    "description": "《AI開発環境マスター：Windows 11 + WSL 2 + VS Code + OpenCode + Zen》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/nVPEaCViEjKprjbNUndJnA",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/nVPEaCViEjKprjbNUndJnA"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1025,
+    "id": "kobo-c56df745-bf63-4071-9ab0-e097cb05df57",
+    "title": "API 資料契約實戰",
+    "subtitle": "以 OpenAPI、JSON Schema、Webhook 與冪等性打造可靠的系統整合",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_EHNEB84UYNT_partner-cover.jpg",
+    "description": "API 回傳 200，不代表整合可靠。本書以「晴日商店訂單 API 與合作夥伴 Webhook」為連續案例，帶你實作 OpenAPI 3.1.2、JSON Schema Draft 2020-12、cursor 分頁、逾時與有限重試、冪等鍵、Webhook HMAC 簽章、事件去重及 breaking-change gate。所有核心實驗均在 localhost 執行，適合具備基本 Python 能力、第一次系統化學習 API 契約的讀者。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/api-5",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/api-5"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1026,
+    "id": "kobo-624e2e43-b559-4250-a173-0344435d39f3",
+    "title": "Blender 做中學：從第一個模型到完整作品",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLAE3465ACA4_partner-cover.png",
+    "description": "《Blender 做中學：從第一個模型到完整作品》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/blender-15",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/blender-15"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1027,
+    "id": "kobo-62ffce8d-a76c-4107-b8c0-7049ba13d21e",
+    "title": "Build Your AI Agent Team",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_G598G02AGSH_partner-cover.jpg",
+    "description": "From Solo Coding to a Verifiable AI Development Workflow: Mastering task decomposition, precise delegation, and rigorous verification in multi-agent systems.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/build-your-ai-agent-team",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/build-your-ai-agent-team"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1028,
+    "id": "kobo-c00453eb-0986-4d06-907c-d507995a3598",
+    "title": "Building Your AI Agent Team",
+    "subtitle": "From a Single Agent to Verifiable, Governable Multi-Agent Systems",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_LT9W7CPURL7_partner-cover.jpg",
+    "description": "AI agents are more than chatbots that generate answers. They can use tools, track state, hand work between roles, and produce results that people can inspect—but only when their responsibilities, permissions, and stopping rules are designed carefully. Building Your AI Agent Team is a practical guide for product managers, software engineers, and technical operators who need to decide when to use fixed code, a single AI agent, or a multi-agent system. Through a research-report workflow, it explains how to define task contracts, structure tool calls and handoffs, manage state and memory, preserve human approval at high-risk boundaries, evaluate quality and reliability, and plan security and operating controls. The book moves from agent fundamentals to role design, evaluation, reliability, APIs, production operations, and an end-to-end system design. It emphasizes a useful principle throughout: add agents only when distinct responsibilities, permissions, parallel work, or independent review justify the extra complexity. No prior multi-agent experience is assumed. Basic familiarity with code, JSON, HTTP/API concepts, and the command line will make the implementation-oriented sections easier to follow. Reader Lab files are referenced separately and are not included in this EPUB. The Codex examples are controlled-session demonstrations; they do not constitute a ready-to-run production orchestrator or service.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/building-your-ai-agent-team",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/building-your-ai-agent-team"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1029,
+    "id": "kobo-f8b17a68-c47e-4a78-af93-09ea51fb83c9",
+    "title": "Codex + OpenCLI 實作：讀取網頁、整理資訊、產生可檢查的草稿",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE5BAF98893_partner-cover.png",
+    "description": "《Codex + OpenCLI 實作：讀取網頁、整理資訊、產生可檢查的草稿》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/codex-opencli",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/codex-opencli"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1030,
+    "id": "kobo-49b60f46-cefc-406c-a86e-505b2c2abc39",
+    "title": "Codex × CLI-Anything × Blender：AI 3D 建模實作",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLCD4D60CD06_partner-cover.jpg",
+    "description": "《Codex × CLI-Anything × Blender：AI 3D 建模實作》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/codex-cli-anything-blender-ai-3d",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/codex-cli-anything-blender-ai-3d"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1031,
+    "id": "kobo-99875006-d47b-40e8-8d7a-5db75143888b",
+    "title": "Data Format Engineering",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL386C623254_partner-cover.jpg",
+    "description": "《Data Format Engineering》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/data-format-engineering",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/data-format-engineering"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1032,
+    "id": "kobo-1f5921b2-b20f-447c-873c-2a3a0c229d75",
+    "title": "Getting Diagrams Right with AI",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL020C9A7DD7_partner-cover.png",
+    "description": "《Getting Diagrams Right with AI》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/getting-diagrams-right-with-ai",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/getting-diagrams-right-with-ai"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1033,
+    "id": "kobo-1ce0da0b-c901-43e0-a6d6-b2d5a29b3fce",
+    "title": "Harness 才是關鍵",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_FNFXKYD35NG_partner-cover.png",
+    "description": "《Harness 才是關鍵》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/harness-2",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/harness-2"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1036,
+    "id": "kobo-1cfb6e59-3de0-4da1-92b3-7d9f4cfef2e5",
+    "title": "Herdr 終端機 AI 代理多工器：從單一 Agent 到可驗證的多 Agent 工作流",
+    "subtitle": "本書以 Herdr 為核心，說明如何在終端機中管理多個 AI coding agent，隔離平行修改，重新連線工作階段，讀回輸出、執行測試、檢查差異，並在人工核准後接受結果",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-1cfb6e59-3de0-4da1-92b3-7d9f4cfef2e5.jpg",
+    "description": "本書以 Herdr 為核心，說明如何在終端機中管理多個 AI coding agent，隔離平行修改，重新連線工作階段，讀回輸出、執行測試、檢查差異，並在人工核准後接受結果。內容涵蓋 workspace、tab、pane、CLI、自動化介面、Git Worktree、設定管理與 SSH 遠端工作流程",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/herdr-ai-agent-agent",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/herdr-ai-agent-agent"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1037,
+    "id": "kobo-9c996eaf-689c-48cd-bb0d-4ebc33668aba",
+    "title": "Hermes Agent in Practice",
+    "subtitle": "From Installation and Quick Start to 10 Practical AI Agent Applications",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_TCSE8Q6FSQT_partner-cover.jpg",
+    "description": "Learn to use Hermes Agent as more than a chat interface. This practical guide starts with installation, a first verified task, core architecture, model providers, credentials, tools, approvals, memory, and reliability. It then walks through practical workflows for organizing files, researching with citations, turning documents into action items, analyzing spreadsheets, building and debugging software, working with GitHub issues, coordinating subagents, and operating automations through Gateway, Cron, Webhooks, and messaging relays. The later chapters cover tools and extensions, profiles and projects, security and privacy, troubleshooting, upgrades, backups, and recovery. Appendices provide command references, reusable prompt templates, configuration indexes, safety checklists, a glossary, and exercises. Examples distinguish Bash/WSL from native Windows PowerShell, emphasize bounded permissions and independent verification, and identify version-sensitive behavior. Hermes changes quickly; check the current official documentation and your installed CLI before applying commands.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/hermes-agent-in-practice",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/hermes-agent-in-practice"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1038,
+    "id": "kobo-a6544970-43cc-45bd-86ba-87ba53752558",
+    "title": "Hermes Agent 入門實戰",
+    "subtitle": "本書主要給反覆整理文字文件、會議資料或專案筆記的人：把交辦、保存與核對變成可重複的方法，而不只是改寫一次回答",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-a6544970-43cc-45bd-86ba-87ba53752558.jpg",
+    "description": "本書主要給反覆整理文字文件、會議資料或專案筆記的人：把交辦、保存與核對變成可重複的方法，而不只是改寫一次回答",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/hermes-agent",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/hermes-agent"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1039,
+    "id": "kobo-1afb0ea0-2928-44b7-91cf-b8d6e2c8be8a",
+    "title": "Hermes Agent 實戰指南 (2026年11月更新版）",
+    "subtitle": "本書寫給希望讓 AI 不只回答問題，還能實際操作檔案、終端、瀏覽器、程式碼與自動化流程的讀者",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-1afb0ea0-2928-44b7-91cf-b8d6e2c8be8a.jpg",
+    "description": "本書寫給希望讓 AI 不只回答問題，還能實際操作檔案、終端、瀏覽器、程式碼與自動化流程的讀者。你不需要先學會打造 Agent，也不必是專業程式設計師；需要程式設計的章節會從可驗證的小型範例開始。 快速入門提供 Bash／WSL 與 Windows 原生 PowerShell 兩條路徑。第 8 章之後的完整伴隨實例以 Bash（Linux、macOS 或 Windows WSL2）作為主要可重現命令環境；Windows 原生讀者仍可使用 Hermes Desktop 與 PowerShell，但標成 bash 的區塊不可直接照貼。若希望逐章跟做全部實例，Windows 讀者應在第 3 章完成 WSL2 路徑",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/hermes-agent-202611",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/hermes-agent-202611"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1040,
+    "id": "kobo-d670e208-8de6-4c26-9b99-ead81c69afaa",
+    "title": "Hermes Agent 實戰指南 (2026年8月更新版）",
+    "subtitle": "從安裝、快速入門到 10 個 AI 代理應用",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_PWN61CGHEJD_partner-cover.jpg",
+    "description": "本書寫給希望讓 AI 不只回答問題，還能實際操作檔案、終端、瀏覽器、程式碼與自動化流程的讀者。你不需要先學會打造 Agent，也不必是專業程式設計師；需要程式設計的章節會從可驗證的小型範例開始。 快速入門提供 Bash／WSL 與 Windows 原生 PowerShell 兩條路徑。第 8 章之後的完整伴隨實例以 Bash（Linux、macOS 或 Windows WSL2）作為主要可重現命令環境；Windows 原生讀者仍可使用 Hermes Desktop 與 PowerShell，但標成 bash 的區塊不可直接照貼。若希望逐章跟做全部實例，Windows 讀者應在第 3 章完成 WSL2 路徑。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/hermes-agent-20268",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/hermes-agent-20268"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1042,
+    "id": "kobo-3c06c698-8e72-4570-81dc-02ab3eaa6e2c",
+    "title": "Hermes 快速入門與聰明用",
+    "subtitle": "Hermes Agent 入門與日常使用指南",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "Hermes",
+      "AI 工具應用"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_J44QKUQ72TU_partner-cover.jpg",
+    "description": "本書帶讀者快速認識 Hermes，從基本設定與常用操作開始，逐步掌握如何把需求交給 AI 助理並檢查執行結果。內容適合剛接觸 Hermes、希望建立穩定使用方式的讀者。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/hermes-155",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/hermes-155"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1043,
+    "id": "kobo-cbdf1ba4-0b62-4eb3-9939-f03323b5d3ef",
+    "title": "How to Learn in the Age of AI",
+    "subtitle": "From Asking Questions and Practicing to Creating: Build Your Personal Learning Workflow",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_1QG8D7PH7KG_partner-cover.jpg",
+    "description": "Bookmarking more courses and AI tutorials is easy; knowing what to learn right now, practicing until you can execute on your own, and verifying whether AI assistance has actually made you more capable is the hard part. How to Learn in the Age of AI: From Asking Questions and Practicing to Creating: Build Your Personal Learning Workflow is written for working knowledge professionals and career switchers. You do not need a programming background or any specific brand of AI tool. Starting from a single real work bottleneck—or a safe synthetic practice scenario if you are between roles or handling confidential data—this book guides you through one complete, repeatable learning loop across three parts and ten focused chapters: • Part I — Choose the Right Direction: Turn vague ambitions like “learn AI” into a concrete Learning Problem Card, compare transferable, domain, and tool capabilities with explicit criteria, establish an unassisted baseline work sample and four-level evaluation rubric, and map out a sustainable weekly learning path with a fallback scope for busy weeks. • Part II — Build an Effective Learning Loop: Use AI as a diagnostic questioner, graded-hint coach, and rubric-based reviewer rather than an answer generator. Isolate weak sub-skills through deliberate practice, retain knowledge through closed-book retrieval and adaptive spacing, and test transfer by changing one task condition at a time. • Part III — Deliver Work and Keep Updating: Assemble your practice into an inspectable work deliverable, audit AI outputs by separating factual claims, inferences, recommendations, and unknowns against primary sources, protect confidential and personal data, and run an evidence-based retrospective to decide whether to continue, change methods, narrow scope, or stop. Included in the Appendix: • Worksheets A–G: Reusable templates for problem definition, capability prioritization, four-level performance rubrics, the five-step AI Hint Ladder, deliberate practice and spaced retrieval logs, AI disclosure checklists, primary-source and privacy gates, and a full-cycle completion checklist. • Appendix H: An end-to-end synthetic data walkthrough illustrating how a career switcher moves from an initial problem card to a verified one-page operations analysis deliverable. Scope and Honest Boundaries: Workplace scenarios in this book are synthetic method illustrations rather than real interviews or client stories. Research citations (including cognitive psychology reviews, National Academies learning syntheses, UNESCO generative AI guidance, and recent university trial working papers) explicitly state their scope and limitations. This book does not guarantee employment, promotion, income, or a fixed speed of mastery, nor does it replace legal, medical, financial, security, or organizational policy judgment.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/how-to-learn-in-the-age-of-ai",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/how-to-learn-in-the-age-of-ai"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1044,
+    "id": "kobo-eb798af5-8873-4b49-a5d8-704aaa086270",
+    "title": "Inside Coding Agent Harnesses",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_0S7A0P4T49L_partner-cover.png",
+    "description": "《Inside Coding Agent Harnesses》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/inside-coding-agent-harnesses",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/inside-coding-agent-harnesses"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1045,
+    "id": "kobo-3a8659c0-f061-4910-a602-d425cc6de4c4",
+    "title": "iPAS AI 應用規劃師中級題庫",
+    "subtitle": "《iPAS AI 應用規劃師中級題庫》是為準備 iPAS AI 應用規劃師中級考試的讀者設計的模擬試題集",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-3a8659c0-f061-4910-a602-d425cc6de4c4.jpg",
+    "description": "《iPAS AI 應用規劃師中級題庫》是為準備 iPAS AI 應用規劃師中級考試的讀者設計的模擬試題集。 全書共收錄 581 題，包含三大科目分科練習、三回混合模擬試卷，以及反向關鍵字複習題。題目設計著重於觀念辨識、情境判斷、資料流程、模型評估、生成式 AI、RAG、Agent、MLOps、AI 治理與隱私風險等常見中級考點",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ipas-ai-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ipas-ai-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1046,
+    "id": "kobo-4e3ef70b-9bb0-46da-bd97-abb56681fdda",
+    "title": "iPAS AI 應用規劃師學習手冊",
+    "subtitle": "本書面向 iPAS AI 應用規劃師中級備考讀者，整理 AI 技術應用、大數據處理分析、機器學習三科重點，並依 115 年公告題方向設計延伸類似題、答案解析與高陷阱提醒，協助考生建立考點判斷力",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-4e3ef70b-9bb0-46da-bd97-abb56681fdda.jpg",
+    "description": "本書面向 iPAS AI 應用規劃師中級備考讀者，整理 AI 技術應用、大數據處理分析、機器學習三科重點，並依 115 年公告題方向設計延伸類似題、答案解析與高陷阱提醒，協助考生建立考點判斷力",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ipas-ai-3",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ipas-ai-3"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1047,
+    "id": "kobo-ec809b3f-bc05-4ecd-9105-4a3de13eb224",
+    "title": "iPAS AIoT 應用工程師高分過關指南",
+    "subtitle": "這不是一本只整理考古題的書，而是一本為 iPAS AIoT 應用工程師考試與 AIoT 實務入門設計的完整學習指南",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-ec809b3f-bc05-4ecd-9105-4a3de13eb224.jpg",
+    "description": "這不是一本只整理考古題的書，而是一本為 iPAS AIoT 應用工程師考試與 AIoT 實務入門設計的完整學習指南。 本書延續 Happy eBook iPAS 系列特色，使用「觀念理解、情境判斷、類似題延伸、實作應用」的方式，帶讀者從 AIoT 基礎、感測器、通訊協定、邊緣運算、AI 模型、電腦視覺、NLP、系統架構、雲端平台、資料分析、資安，到智慧工廠、智慧醫療、智慧城市與智慧農業案例，逐步建立可應考、也可實作的知識架構。 第一版以四大考科學習地圖、600 題四大考科練習與詳解、7 天 / 14 天 / 18 小時讀書路線為核心。題庫包含章節補強題、機器聯網與感測器信號調節補強題、考前綜合模擬題與跨考科情境整合題，並採保守定位：這些題目是原創練習題，不宣稱來自官方來源、考題預測或結果承諾。後續仍可擴充更多實作案例、iPAS AI Daily 每日複習與 18 小時課程，形成「教材＋每日複習＋題庫＋課程」的完整學習體系。 四大考科對應# 本書第一版依使用者提供的考科資訊規劃學習地圖： 【考科一-學科】AIoT基礎概論 【考科二-學科】物聯網系統與應用 【考科三-術科】機器聯網基礎應用實作",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ipas-aiot",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ipas-aiot"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1048,
+    "id": "kobo-07fd5b21-4b1b-43fc-aadb-0b06a39d59a8",
+    "title": "iPAS 資訊安全工程師中級考試指南",
+    "subtitle": "中級不是多背一批名詞，而是在角色、限制、成本、時序與營運需求同時出現時，選出最合適的控制組合",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-07fd5b21-4b1b-43fc-aadb-0b06a39d59a8.jpg",
+    "description": "中級不是多背一批名詞，而是在角色、限制、成本、時序與營運需求同時出現時，選出最合適的控制組合。 本書整合「資訊安全規劃實務」與「資訊安全防護實務」，以晴岳數位服務為連續案例，帶你完成治理、風險、資料、IAM、網路、開發、雲端、韌性、弱點、SOC、事件應變與控制驗證。全書提供架構圖、決策表、跨域案例、原創情境題與四回診斷模擬；題本與答案解析分開編排，方便先閉卷作答，再集中訂正。 考試資訊請依iPAS官方網站最新簡章與公告為準",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ipas-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ipas-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1049,
+    "id": "kobo-0aa54a90-f970-4ff9-9c09-39af2c1438d0",
+    "title": "iPAS 資訊安全工程師初級考試指南",
+    "subtitle": "用觀念地圖、連續企業案例、比較表、原創練習與雙科模擬，從零建立iPAS資訊安全工程師初級的完整應考架構",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-0aa54a90-f970-4ff9-9c09-39af2c1438d0.jpg",
+    "description": "用觀念地圖、連續企業案例、比較表、原創練習與雙科模擬，從零建立iPAS資訊安全工程師初級的完整應考架構",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ipas-2",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ipas-2"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1050,
+    "id": "kobo-f167ed8f-7fc5-40d5-996f-bd97e34c9811",
+    "title": "Let AI Write Python: What Do We Still Need to Learn?",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL62298CCFEF_partner-cover.png",
+    "description": "《Let AI Write Python: What Do We Still Need to Learn?》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/let-ai-write-python-what-do-we-still-need-to-learn",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/let-ai-write-python-what-do-we-still-need-to-learn"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1051,
+    "id": "kobo-d03e73bf-165f-43e0-8108-e411f98385a5",
+    "title": "Multi-Agent Workflows in Practice",
+    "subtitle": "Three Case Studies in Planning, Content Creation, and Debugging",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_PHQ8KEYBEDZ_partner-cover.jpg",
+    "description": "More agents do not automatically make a task easier or safer. Multi-agent work succeeds when responsibilities are distinct, handoffs carry the right inputs, and a person can verify what was—and was not—completed. Multi-Agent Workflows in Practice teaches a repeatable collaboration process through three case studies: Travel planning — parallel research and integration, with fictional figures and reminders to verify dates, schedules, availability, and costs before making real plans. Python course creation — a staged handoff from instructional design to code and learner review, using synthetic files and a reported test suite. Search bug fixing — reproduce a blank-query failure, add a regression check, make a focused fix, and review the result. The evidence is module-level, not proof that a website interface was fixed. The book also covers task decomposition, role boundaries, dependencies, stop conditions, CLI workspace preparation, multi-tab handoffs, acceptance checks, and a capstone planning exercise. It distinguishes a plan, a simulated artifact, a reported test, and a verified result instead of treating agent prose as completion evidence. The examples use Bash on Ubuntu/WSL, Python, and Node.js. Companion exercises are a separate download; files without a visible redistribution license are not bundled.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/multi-agent-workflows-in-practice",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/multi-agent-workflows-in-practice"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1054,
+    "id": "kobo-ece1c722-d2ad-45aa-a9b0-f42e5efcc7d8",
+    "title": "Obsidian × OpenCode(中英對照版)",
+    "subtitle": "人負責目標與判斷，Obsidian 負責記憶與連結，OpenCode 負責搜尋、整理、執行與驗證，這是三方強強聯手的知識管理系統",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-ece1c722-d2ad-45aa-a9b0-f42e5efcc7d8.jpg",
+    "description": "人負責目標與判斷，Obsidian 負責記憶與連結，OpenCode 負責搜尋、整理、執行與驗證，這是三方強強聯手的知識管理系統。本中英對照版採逐段編排，每段先英文、後繁體中文，適合一邊建立 AI 知識工作流，一邊熟悉數位工具與知識管理的英文表達。內容從安裝 OpenCode、準備練習 Vault、安全與備份、AI 可讀的 Vault 結構與 AGENTS.md 規則，到捕捉、研究、出版與自動化的完整流程，並附範例 Vault、逐章練習、Skill 與 Agent 素材。 You set goals and judge, Obsidian remembers and connects, and OpenCode searches, organizes, executes, and verifies. This bilingual edition presents each English paragraph first, followed by Traditional Chinese, making it ideal for learning AI-powered knowledge management and practical technical English at the same time. Includes a sample Vault, chapter exercises, and reusable Skill and Agent materials. ... 展開/摺疊簡介",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/obsidian-opencode-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/obsidian-opencode-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1055,
+    "id": "kobo-b82a93d3-99a9-4bc2-bfbd-56efde4c1fb8",
+    "title": "Obsidian 做中學:實作你的筆記系統",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "知識管理",
+      "數位工具",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_4TC618N7UPY_partner-cover.png",
+    "description": "《Obsidian 做中學:實作你的筆記系統》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/obsidian-57",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/obsidian-57"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1056,
+    "id": "kobo-c73dacde-4f8e-4ab7-91af-bcaf18d700b0",
+    "title": "Obsidian 入門:打造你的第二個大腦",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "知識管理",
+      "數位工具",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_RDUYR2R2CX9_partner-cover.png",
+    "description": "《Obsidian 入門:打造你的第二個大腦》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/obsidian-56",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/obsidian-56"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1057,
+    "id": "kobo-b255ecc5-6f68-4235-a91f-c36431a1964d",
+    "title": "Obsidian 實例應用:知識管理的進階實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "知識管理",
+      "數位工具",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_J69A9ZZH18E_partner-cover.png",
+    "description": "《Obsidian 實例應用:知識管理的進階實戰》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/obsidian-58",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/obsidian-58"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1058,
+    "id": "kobo-a273e5e1-205b-4627-83c8-11ab5249b021",
+    "title": "Obsidian 快樂學，聰明用",
+    "subtitle": "快樂學，聰明用——把 Obsidian 從工具變成習慣",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-a273e5e1-205b-4627-83c8-11ab5249b021.jpg",
+    "description": "快樂學，聰明用——把 Obsidian 從工具變成習慣。本書從《Obsidian 入門》《做中學》《實例應用》《自動化實戰》四本實戰書中萃取精華，用最短的路徑走完「入門 → 系統 → 自動化 → AI 協作」的完整旅程：雙向連結與知識圖譜、四區架構與卡片盒、任務與專案管理、Dataview 儀表板、模板與 QuickAdd 自動化、Smart Connections 與 AGENTS.md 的 AI 協作。每章 20-40 分鐘，邊讀邊做，兩週就能擁有一套會自動長大的知識系統",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/obsidian-55",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/obsidian-55"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1059,
+    "id": "kobo-c9772797-60fb-46ed-9471-e5256034aaa7",
+    "title": "Obsidian 自動化實戰:Templater × QuickAdd × Dataview × Bases",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "知識管理",
+      "數位工具",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_ETKLJDW51N3_partner-cover.png",
+    "description": "《Obsidian 自動化實戰:Templater × QuickAdd × Dataview × Bases》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/obsidian-templater-quickadd-dataview-bases",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/obsidian-templater-quickadd-dataview-bases"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1060,
+    "id": "kobo-4a38db0a-1e28-424e-b13e-e58b8c91358c",
+    "title": "OpenCLI 網站自動化入門",
+    "subtitle": "學習使用 OpenCLI 讓 AI Agent 安全操作網站與瀏覽器，從觀察、定位、填寫到驗證，建立可控、可檢查、可重做的網站自動化流程",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-4a38db0a-1e28-424e-b13e-e58b8c91358c.jpg",
+    "description": "學習使用 OpenCLI 讓 AI Agent 安全操作網站與瀏覽器，從觀察、定位、填寫到驗證，建立可控、可檢查、可重做的網站自動化流程",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencli",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencli"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1061,
+    "id": "kobo-36bc350a-8fed-42b8-81ce-b5e8305ac0f5",
+    "title": "OpenCode 2.0 新功能實戰",
+    "subtitle": "掌握 OpenCode 2.0 的重要功能升級，從第一個任務開始，逐步學習工具整合、多代理協作與安全驗證，建立可重做的 AI 開發流程",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-36bc350a-8fed-42b8-81ce-b5e8305ac0f5.jpg",
+    "description": "掌握 OpenCode 2.0 的重要功能升級，從第一個任務開始，逐步學習工具整合、多代理協作與安全驗證，建立可重做的 AI 開發流程",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-2-0",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-2-0"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1062,
+    "id": "kobo-469f9e01-b7fb-4a93-8f42-dda7be21a6cf",
+    "title": "OpenCode 30小時實作課",
+    "subtitle": "AI很快就能給出一份程式",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-469f9e01-b7fb-4a93-8f42-dda7be21a6cf.jpg",
+    "description": "AI很快就能給出一份程式。真正的工作，是確認它讀對資料、沒有覆寫原檔，也能讓別人照著說明使用。 《OpenCode 30小時實作課》以一份範例書目為起點，帶你把「請AI幫忙」變成可檢查的工作：先說清楚需求與界線，再讀程式、看工具事件、寫測試，最後完成可交接的成果。 【一條專題主線，三段學習路線】 • 基礎操作與安全驗證：練習受控讀寫、任務契約、必要的Python，以及Git與權限保護。 • 規則、測試與專案接手：留下專案規則，接手教材提供的完整書目工具，追蹤資料流，以紅綠測試、CSV邊界案例與批次檢查驗證判斷。 • 修改、重用與交付：在同一個工作副本完成限定改動，把審查做成可重用命令，再整理操作手冊與工具包，進行收件者驗收。 【不只看AI回答，也看原碼與證據】 你將練習先寫預期，再核對檔案差異、測試結果與工具事件。遇到模型答錯，以原碼或測試反證，而不是為了配合回答修改正確資料。 【適合這樣的你】 已會建立資料夾、編輯純文字與使用基本終端機，願意讀一點程式，但不必事先熟悉OpenCode。主線使用WSL／Linux的Bash，只介紹專題需要的Python與Git；本書不是完全零基礎的電腦入門書。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-30",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-30"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1063,
+    "id": "kobo-2b202836-bce6-4cb3-9786-24265cb948c5",
+    "title": "OpenCode 入門指南",
+    "subtitle": "30 分鐘學會 AI 輔助程式設計",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_A656QWRQT03_partner-cover.jpg",
+    "description": "還在羨慕別人用 AI 寫程式？OpenCode 把你的終端機變成最強開發夥伴。 OpenCode 是開源、執行於終端機的 AI 程式助理——它讀得懂整個專案、會規劃任務、能直接修改程式碼並執行指令，支援多種模型，包含免費方案。 本書為「OpenCode 技術叢書」第一冊，專為初次接觸 AI 輔助開發的讀者設計：",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-5",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-5"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1064,
+    "id": "kobo-e408d82c-53f7-4e82-b0b7-8d2bad2d4e5e",
+    "title": "OpenCode 團隊作戰",
+    "subtitle": "從個人效率到組織級 AI 工程化",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_3DWE43G2HNX_partner-cover.jpg",
+    "description": "《OpenCode 團隊作戰》是「OpenCode 技術叢書」第五冊（完結篇）。前四冊解決個人會用、懂原理、能擴充；這一冊解決組織怎麼落地：會話資產化、分享與遠距協作、GitHub/GitLab 平台自動化、模型供給治理，直到企業級部署。 延續系列鐵律「只寫能驗證的事」：全部 CLI 命令實機驗證、九份官方文檔逐字核對、stats 成本報表與 export 匯出格式附真實輸出樣本。 ・從 me 到 we——安裝生命週期、會話即資產、成本報表",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-6",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-6"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1065,
+    "id": "kobo-74e25efc-419d-4aa2-ba85-f238ea8dc81d",
+    "title": "OpenCode 實戰寶典",
+    "subtitle": "從概念到實踐的完整學習路徑",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_LY9CSLY94GN_partner-cover.jpg",
+    "description": "「裝好了，然後呢？」——這本書回答所有 OpenCode 使用者的下一個問題。 第一冊帶你入門；第二冊把你變成高手。五篇二十二個章節＋四篇附錄： ・概念篇：代理架構、工具迴圈、技能系統——理解它為何聰明",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-9",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-9"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1066,
+    "id": "kobo-697f49da-b552-4053-9189-930df22300d4",
+    "title": "opencode 實戰手冊",
+    "subtitle": "終端機裡的 AI 程式助手，從入門到高手",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "OpenCode",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_5LNSPLDCU2W_partner-cover.png",
+    "description": "《opencode 實戰手冊》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1067,
+    "id": "kobo-7e6496bb-75d3-4ebf-b072-f007313dd6f7",
+    "title": "OpenCode 實戰筆記",
+    "subtitle": "「裝好了，然後呢？」——這本書回答所有 OpenCode 使用者的下一個問題",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-7e6496bb-75d3-4ebf-b072-f007313dd6f7.jpg",
+    "description": "「裝好了，然後呢？」——這本書回答所有 OpenCode 使用者的下一個問題。 第一冊帶你入門；第二冊把你變成高手。五篇二十二個章節＋四篇附錄： ・概念篇：代理架構、工具迴圈、技能系統——理解它為何聰明 ・環境設定篇：AGENTS.md 與互動技巧——讓它讀懂你的專案 ・進階功能篇：LSP、MCP、會話工程、七層設定——釋放完整戰力 ・實戰應用篇：探索、功能開發、重構、除錯、Git 協作、團隊工作流六大場景 ・優化維護篇：成本矩陣、安全防護、問題排除——長期使用的護城河 所有指令基於 v1.18.21 實測驗證；除錯三假設法、重構雙安全網等方法論可直接複製到你的工作流。 適合已安裝完成、想從「能用」進階到「善用」的開發者。 OPENCODE 技術叢書 第二冊。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-2",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-2"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1068,
+    "id": "kobo-1e320b38-4dc6-46b3-86cc-1e3ff65a633e",
+    "title": "OpenCode 擴展開發",
+    "subtitle": "從自訂工具到生態發布的建造者指南",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_7D24JSJ8N15_partner-cover.jpg",
+    "description": "《OpenCode 擴展開發》是「OpenCode 技術叢書」第四冊，帶你從使用者變成建造者。八個擴充點一次攤開：自訂指令、Agent Skills、代理工程、主題設計、MCP、自訂工具、外掛鉤子、SDK 整合——從改一句提示，到把 OpenCode 裝進你的自動化管線。 延續系列鐵律「只寫能驗證的事」：十七支外掛鉤子逐一對照官方型別定義、SDK 方法對照 OpenAPI 生成碼、快取目錄實機解剖。書中範例可直接放進專案的 .opencode/ 目錄運行。 ・工坊地圖——擴充點選型決策、載入時序、除錯三管道",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-4",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-4"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1069,
+    "id": "kobo-808c4ab6-ebf0-4b58-a704-df8dc2626fdd",
+    "title": "OpenCode 架構解密",
+    "subtitle": "從代理迴圈到生產級 AI 系統的可觀察設計",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_3528P9PW9SC_partner-cover.jpg",
+    "description": "《OpenCode 架構解密》是「OpenCode 技術叢書」第三冊。前兩冊教你用，這一冊帶你拆——從一次對話的九步旅程，到 20 張 SQLite 資料表組成的領域模型；從代理迴圈裡的權限閘門，到 REST、SSE、control、MCP、ACP 五條通訊通道的選型決策。 本書鐵律：只寫能驗證的事。每個論述都附帶可執行的驗證動作——唯讀查詢真實資料庫、curl 官方 API、走訪目錄結構、逐欄解讀日欄解讀日誌。讀完你不只「知道」架構，而是能親手重現每項證據。 ・全景篇——引擎室地圖、client/server 分工、資料目錄導覽",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-3",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-3"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1070,
+    "id": "kobo-1869cf3d-eb7c-4706-af61-317a4e1a3fc5",
+    "title": "OpenCode 深入解析",
+    "subtitle": "OpenCode 不只是會回答問題的聊天工具，而是一套能觀察專案、呼叫工具、保留工作階段並接受權限控制的程式設計代理工作流",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-1869cf3d-eb7c-4706-af61-317a4e1a3fc5.jpg",
+    "description": "OpenCode 不只是會回答問題的聊天工具，而是一套能觀察專案、呼叫工具、保留工作階段並接受權限控制的程式設計代理工作流。本書從安全探索與安裝基線開始，逐步拆解代理迴圈、Provider、Model、Session、Context、Tool、Skill、MCP、Plugin、SDK 與 JSONL RPC。 全書以可重跑的案例貫穿：讀者會建立唯讀基線、觀察事件、設計中斷與恢復流程、隔離外部能力，最後完成一個具備測試、權限、失敗證據與最小修正的發行判斷專案。適合已具備 Git 與命令列基礎，想把 AI 程式設計代理導入個人或團隊工作流的開發者、技術主管與平台團隊",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/opencode-7",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/opencode-7"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1071,
+    "id": "kobo-6d8eb6cf-6292-403b-bd2b-747a9bb12d53",
+    "title": "Orca Multi-Agent Tool 實例演習",
+    "subtitle": "從分工到交付",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_S6CG0CGBWX4_partner-cover.jpg",
+    "description": "想讓多個 AI 程式代理協作，又不想把程式碼與決策交給黑箱？本書以 Orca CLI 為主軸，帶你從規劃任務、劃分責任，到檢查程式與決定是否交付。 全書以小店結帳專案貫穿六章，逐步介紹 Run、Task、Dispatch、Worker、worktree、訊息協調與 Decision Gate。你會練習如何平行處理互不重疊的程式修改、核對提交與測試證據、回覆 Worker 的問題，以及在阻塞或中斷時保留成果並安全重試。最後再由獨立 QA 核對候選版本，並由人做出交付決策。 本書包含 Orca CLI 操作範例、Python 輔助程式、測試與練習題，並強調幾個實務原則：測試通過不等於程式已獲接受、Worker 回報完成不等於已核准、Task 依賴也不保證 worktree 已包含前置提交。 適合熟悉終端機與 Git，想以可追溯、可驗收方式協調 AI 程式代理的開發者。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/orca-multi-agent-tool",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/orca-multi-agent-tool"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1072,
+    "id": "kobo-8ffd21c4-d124-4aae-ae95-83c82bd501ce",
+    "title": "Pi Coding Agent 60 小時實戰教材",
+    "subtitle": "《Pi Coding Agent 60 小時實戰教材》帶讀者從 Pi Coding Agent 基礎使用一 路學到工作流客製化、Extensions 開發，以及 SDK、RPC、JSON 系統整合",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-8ffd21c4-d124-4aae-ae95-83c82bd501ce.jpg",
+    "description": "《Pi Coding Agent 60 小時實戰教材》帶讀者從 Pi Coding Agent 基礎使用一 路學到工作流客製化、Extensions 開發，以及 SDK、RPC、JSON 系統整合。 本書核心內容約 60 小時可完成；若包含完整作業、講師授課、團隊實驗與延伸專題，完整課程規模約 80～100 小時。 內容包含： - 安裝、登入、模型選擇與專案分析 - Session、AGENTS.md 與安全工作流 - Prompt Templates、Skills 與 Themes - TypeScript Extensions 開發 - SDK、RPC 與 JSON mode 整合",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/pi-coding-agent-60",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/pi-coding-agent-60"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1073,
+    "id": "kobo-a66b982e-b9c5-49b1-bd33-ace5cde6c528",
+    "title": "Pi Coding Agent 入門",
+    "subtitle": "從安裝、設定到程式碼與長篇文件實戰",
+    "author": "Happy eＢook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_FT5BACZLDW8_partner-cover.jpg",
+    "description": "Pi Coding Agent 是在終端機中運作的 AI 程式代理：你交給它一項任務，它讀取檔案、修改程式碼、執行指令，並依測試結果繼續修正。本書寫給會使用基本終端機、但初次接觸 AI 程式代理的讀者，從安裝、登入模型服務到限制工具權限逐步示範，並以三項可驗證的實戰貫穿全書——用測試驅動開發完成樂透小遊戲、建立 Flask JSON API、編輯一本五千詞以上的英文電子書。你不只學會下指令，更學會用 Git 差異與重新執行測試來驗收代理成果。附錄含指令速查表、六道練習題與術語表。全書指令皆於 Pi 0.84.2（2026-08）實測驗證。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/pi-coding-agent",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/pi-coding-agent"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1074,
+    "id": "kobo-1c857a04-0d80-41a0-b260-9e187192e153",
+    "title": "Pi Coding Agent 完全指南",
+    "subtitle": "從極簡設計到生產部署：552 行核心 × 4 個工具 × 無限可能",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DUFKGAZJ3UT_partner-cover.png",
+    "description": "將 Pi Agent 架構、核心元件、Extension 系統、安全機制、容器化部署完整剖析。含 21 章 + 4 附錄 + 9 個實戰範例，從入門到生產部署一次搞定。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/pi-coding-agent-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/pi-coding-agent-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1075,
+    "id": "kobo-331c332c-d0e7-4759-aafc-40ab05a20ca6",
+    "title": "Pi 程式開發代理：極簡主義的 AI 開發工作流",
+    "subtitle": "打造會自我擴展的終端機 Agent",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_NPJA71437G0_partner-cover.png",
+    "description": "2026 年的終端機編碼代理已經高度收斂：讀檔、寫檔、跑 shell、串流輸出。 ——四個工具、不到 1,000 tokens 的系統提示詞、刻意不內建 MCP / sub-agents / plan mode，把「缺什麼就叫 agent 自己造」變成核心工作流。 這本書記錄如何駕馭這種極簡主義：不只是「用 Pi」，而是「把 Pi 變成你的 Pi」。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/pi-ai-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/pi-ai-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1076,
+    "id": "kobo-dca82f67-ce0f-49ce-b89b-62a6e2a32bfc",
+    "title": "Playwright 自動化實戰",
+    "subtitle": "12 個生活與工作必備專案",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "網頁開發",
+      "效率工具",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_WXJ741ZAG9W_partner-cover.png",
+    "description": "從重複點擊、資料擷取與表單操作開始，透過 12 個生活與工作專案學會 Playwright 的瀏覽器自動化流程、等待策略、驗證與批次處理。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/playwright-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/playwright-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1077,
+    "id": "kobo-70611694-4b5f-4857-92ce-7aafd1bc0acb",
+    "title": "Practical Python × LLM Application Development",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_SNSHQ8XBZ9T_partner-cover.png",
+    "description": "《Practical Python × LLM Application Development》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/practical-python-llm-application-development",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/practical-python-llm-application-development"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1078,
+    "id": "kobo-7d3c9b33-3d40-458e-bf8e-376d136b3365",
+    "title": "Python Playwright 網頁自動化實戰",
+    "subtitle": "從入門到精通",
+    "author": "Happy eBook Authors",
+    "category": [
+      "Python",
+      "程式設計",
+      "網頁開發",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_WLRNLGQBB7E_partner-cover.png",
+    "description": "從零建立 Python Playwright 環境，循序學習定位器、自動等待、表單、檔案、網路請求、測試架構與實務排錯，掌握穩定的網頁自動化方法。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/python-playwright-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/python-playwright-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1079,
+    "id": "kobo-e2d4f150-c006-41aa-9922-bdc858e71a17",
+    "title": "Python Playwright 自動化實戰",
+    "subtitle": "12 個生活與工作必備專案",
+    "author": "Happy eBook Authors",
+    "category": [
+      "Python",
+      "程式設計",
+      "網頁開發",
+      "效率工具"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_71REXULXD9S_partner-cover.png",
+    "description": "以 12 個真實生活與工作場景，帶你用 Python 與 Playwright 完成比價、盯盤、表單、對帳、資料收集、跨系統驗證及 CI/CD 等自動化專案。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/python-playwright",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/python-playwright"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1080,
+    "id": "kobo-c38dd7ee-c816-43ed-84be-248e0211b683",
+    "title": "Python 帶你搞定生活大小事",
+    "subtitle": "想學 Python，卻不知道從哪裡開始？與其先背一堆語法，不如從每天會遇到的小麻煩動手：記帳、整理下載資料夾、重新命名照片、搜尋筆記，還有日期提醒與天氣查詢",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-c38dd7ee-c816-43ed-84be-248e0211b683.jpg",
+    "description": "想學 Python，卻不知道從哪裡開始？與其先背一堆語法，不如從每天會遇到的小麻煩動手：記帳、整理下載資料夾、重新命名照片、搜尋筆記，還有日期提醒與天氣查詢。 本書為零程式經驗的讀者設計，先帶你認識 Python 基礎，再一步步拆解 12 個生活自動化工具。全書共 17 章，從清單、檔案與日期等入門題目，延伸到網路資料、AI 筆記助手、錯誤處理和定時執行。每個專案都以具體情境說明程式如何運作，並引導你檢查結果、處理常見問題，再逐步修改成符合自己需求的工具。 你將學到如何： ・用 CSV 記錄支出、比較商品價格，並整理待辦與重要日期 ・整理下載檔案、批次命名照片、掃描重複檔案 ・搜尋文字筆記、查詢天氣資料，並理解 API 的基本使用方式 ・為輸入與檔案操作加入檢查，讓程式遇到錯誤時更可靠 ・認識 AI 摘要與分類的使用方式，以及資料隱私與人工核對的重要性 本書不要求你先有程式背景，重點是看懂步驟、觀察輸出，再把範例逐步改成自己的工具。天氣查詢與雲端 AI 練習需要網路或服務帳戶；沒有帳戶時，AI 章仍可完成離線人工練習。雲端 API 可能產生費用，實際使用前請確認服務條款與設定",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/python-378",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/python-378"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1081,
+    "id": "kobo-36bd47dd-0a71-4e3d-a416-3f9281a5115f",
+    "title": "Python 資料處理實戰",
+    "subtitle": "用 CSV、Excel、JSON 與 API 建立可驗證、可重跑的資料流程",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_6XP1CDSAAHK_partner-cover.png",
+    "description": "學過基本 Python，卻不知道如何把 CSV、Excel、JSON 與 API 整理成可靠的資料流程？ 《Python 資料處理實戰》以「晴日商店」合成資料為連續案例，帶你從檔案讀寫、型別與缺值處理開始，逐步完成資料清理、Schema 驗證、Excel 報表、JSONL 批次處理、API 同步與每日資料管線。 本書不只示範成功案例，也實際處理缺檔、格式錯誤、重複資料、API 404／503、輸出衝突與產物竄改。每章均提供可執行命令、預期輸出、退出碼、錯誤案例、驗證清單與練習題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/python-366",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/python-366"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1082,
+    "id": "kobo-95e88369-9c7b-4e2d-b892-e7be9d5fcdfd",
+    "title": "ROS 2 做中學：用 ROSMASTER R2 打造阿克曼機器人",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_X4FKBAQK36S_partner-cover.jpg",
+    "description": "《ROS 2 做中學：用 ROSMASTER R2 打造阿克曼機器人》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ros-2-rosmaster-r2",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ros-2-rosmaster-r2"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1083,
+    "id": "kobo-ae95c927-d04b-4b9b-bac8-5bc1b7cca622",
+    "title": "ROS 2 視覺機械臂機器人實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL4EC6114382_partner-cover.jpg",
+    "description": "《ROS 2 視覺機械臂機器人實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ros-2-2",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ros-2-2"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1084,
+    "id": "kobo-18b230bf-fb97-4b90-8213-a017f413f41c",
+    "title": "Rust in Practice",
+    "subtitle": "From Ownership to Command-Line Tools",
+    "author": "Happy eBook Authors",
+    "category": [
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_Z73X3693XF1_partner-cover.jpg",
+    "description": "Rust in Practice is for readers who understand basic programming concepts and want to learn Rust for the first time. Through one small command-line text log analyzer, the book introduces types, ownership, moves, borrowing, structs, enums, vectors, Option, Result, modules, file input, error reporting, and testing. Rather than presenting disconnected syntax examples, the book evolves the same rust-log-summary project chapter by chapter. You will begin with Cargo and fixed data, organize the program around a data model, parse text files, report failures clearly, split code into modules, and finish with a tested command-line interface. The examples use synthetic data and require no external service account or paid subscription.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/rust-in-practice-4",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/rust-in-practice-4"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1085,
+    "id": "kobo-b694caf0-a43f-4714-8f96-49dfaa13a41d",
+    "title": "Rust 實例演習",
+    "subtitle": "《Rust 實例演習》是一本給已有基本 Rust 語法經驗讀者的實作工作簿，透過 80 道循序漸進的練習，逐步完成一個命令列支出紀錄工具",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-b694caf0-a43f-4714-8f96-49dfaa13a41d.jpg",
+    "description": "《Rust 實例演習》是一本給已有基本 Rust 語法經驗讀者的實作工作簿，透過 80 道循序漸進的練習，逐步完成一個命令列支出紀錄工具。 練習涵蓋型別、所有權、借用、資料模型、集合、錯誤處理、模組、檔案輸入與測試等主題，並以同一個專案串連各章內容。每題附有提示、驗收條件、常見陷阱與參考解答，協助讀者不只看懂範例，也能驗證程式的行為。 適合已接觸 Rust 基礎、希望透過實作把概念練成可執行 CLI 專案的自學者",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/rust-45",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/rust-45"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1086,
+    "id": "kobo-9802f96c-41d4-4dec-94e6-59226657d6a3",
+    "title": "Rust 實戰入門",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLE429F805A2_partner-cover.png",
+    "description": "《Rust 實戰入門》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/rust-46",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/rust-46"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1087,
+    "id": "kobo-7a4560c8-6985-4faf-b380-76b23aafaeca",
+    "title": "Smart AI Agents: What Developers Should Know",
+    "subtitle": "From Solo Coding to a Verifiable AI Development Workflow",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_YQ74UPAQJFL_partner-cover.jpg",
+    "description": "Build reliable AI coding workflows with Codex, Claude Code, Pi, Agent Skills, and MCP. Learn to control scope, manage costs, protect secrets, and verify every change.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/smart-ai-agents-what-developers-should-know",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/smart-ai-agents-what-developers-should-know"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1089,
+    "id": "kobo-dec09c05-d11c-4693-bd79-7d998838e032",
+    "title": "The AI Orchestrator",
+    "subtitle": "Task Decomposition × Precise Delegation × Rigorous Verification",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_UK5L2KUPA91_partner-cover.png",
+    "description": "《The AI Orchestrator》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/the-ai-orchestrator",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/the-ai-orchestrator"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1090,
+    "id": "kobo-05b8f06d-c552-43ca-aa21-71501259e889",
+    "title": "The AI Orchestrator ｜ AI 指揮官",
+    "subtitle": "Task Decomposition × Precise Delegation × Rigorous Verification ｜ 任務拆解 × 精準下達 × 嚴格驗收",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Agent",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_TCZ8BE276AE_partner-cover.png",
+    "description": "《The AI Orchestrator ｜ AI 指揮官》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/the-ai-orchestrator-ai",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/the-ai-orchestrator-ai"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1091,
+    "id": "kobo-fd5022a7-e4b7-475f-9783-004dc336c4c5",
+    "title": "Think with ChatGPT, Build with Codex",
+    "subtitle": "An AI Collaboration Workflow for Conversation, Planning, Writing, Programming, and Automation",
+    "author": "Happy eBook Authors",
+    "category": [
+      "Codex",
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_8YYQF6163HS_partner-cover.jpg",
+    "description": "AI can help you brainstorm, write, explain an error, or plan a project. But a useful answer is not the same as finished work. Think with ChatGPT, Build with Codex teaches a practical, human-led workflow for turning ideas into deliverables. Use ChatGPT to clarify needs, compare options, plan content, and understand technical problems. Then hand a clear task specification to Codex to work with files, code, and projects. Finally, check the result yourself. Through approachable examples, reusable prompts, checklists, tables, and hands-on exercises, this guide covers: • Dividing work between ChatGPT and Codex • Turning vague requests into actionable task specifications • Planning, drafting, and revising written work • Using Codex to organize files, write code, debug, and build small tools • Understanding the boundaries between ChatGPT plans, API billing, third-party platforms, and local models • Working with WSL, Docker, and local-model tools • Reviewing AI changes and reducing security risks No engineering background is required. The book focuses on a repeatable method—not on memorizing product screens or assuming that today’s model names, prices, or policies will never change.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/think-with-chatgpt-build-with-codex",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/think-with-chatgpt-build-with-codex"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1092,
+    "id": "kobo-e09a81e5-5773-4f67-b297-b7262d035137",
+    "title": "What Happens Next? — Are We Ready?",
+    "subtitle": "Insights from Six Bestselling Political Books on the Future of Democracy",
+    "author": "Happy eBook Authors",
+    "category": [
+      "文化整理",
+      "英文學習",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_AK0FEQFLP3B_partner-cover.png",
+    "description": "An accessible synthesis of six bestselling political books, examining pressure on democratic institutions, leadership, media, public trust, and the choices citizens face next.",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/what-happens-next-are-we-ready",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/what-happens-next-are-we-ready"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1094,
+    "id": "kobo-f5144dfe-0032-4c1c-9806-9460f5436a31",
+    "title": "Windows 11、WSL 2 與 Docker 應用實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_X5C8D3JH39H_partner-cover.jpg",
+    "description": "給想在 Windows 11 建立 Linux 與 Docker 開發環境的初學者。從 PowerShell、WSL 2 Ubuntu、路徑、權限與 localhost 開始，逐步掌握 Dockerfile、volume、network、Docker Compose、FastAPI 與 PostgreSQL，並完成可重建、可除錯、可備份還原的多服務專案。全書 18 章、63 題練習與六份附錄，所有命令均標示 PowerShell、WSL Bash 或 container shell，另附公開範例與測試。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/windows-11-wsl-2-docker",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/windows-11-wsl-2-docker"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1095,
+    "id": "kobo-60437b58-b48b-4399-bb21-b68497a1c9f8",
+    "title": "下一次會怎樣？（中文版）",
+    "subtitle": "下一次會怎樣？這是每個人都在問的問題",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-60437b58-b48b-4399-bb21-b68497a1c9f8.jpg",
+    "description": "下一次會怎樣？這是每個人都在問的問題。 從六本重量級政治書籍——《Confidence Man》、《A Warning》、《Fire and Fury》、《The Room Where It Happened》、《Peril》、《Regime Change》——中，本書提煉出權力運作的共同模式，探討我們面臨的挑戰與選擇。 第一部分：六本書的觀察 - 權力的真相：忠誠優先於能力、直覺勝過專業 - 制度的考驗：行政擴張、司法獨立、選舉 Integrity - 媒體的角色：假訊息、社群媒體、新聞自由 - 社會的分裂：極化、同溫層、信任崩解 - 國際的影響：盟友關係、多邊主義、威權擴張 第二部分：未來的挑戰 - 短期風險（1-2年）：政策不確定、經濟挑戰、外部威脅",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/cTon2_L1PzKAmv3cbR_KCA",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/cTon2_L1PzKAmv3cbR_KCA"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1096,
+    "id": "kobo-dbdb8825-d2ac-44ac-aaa9-03699b8f7723",
+    "title": "不花錢學 AI",
+    "subtitle": "從 LLM 基礎概念開始，循序理解 AI、Coding Agent 與安全使用流程，透過可重做的練習建立不依賴盲目操作的工作方法",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-dbdb8825-d2ac-44ac-aaa9-03699b8f7723.jpg",
+    "description": "從 LLM 基礎概念開始，循序理解 AI、Coding Agent 與安全使用流程，透過可重做的練習建立不依賴盲目操作的工作方法",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-758",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-758"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1097,
+    "id": "kobo-22854653-2ef3-4149-8787-64331be5808d",
+    "title": "乙安 60 天：932 題高分通關版",
+    "subtitle": "職業安全衛生管理員從觀念到題庫的安心線備考法",
+    "author": "Happy eBook Authors",
+    "category": [
+      "職業安全衛生",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_027SKHGNFPC_partner-cover.png",
+    "description": "《乙安 60 天：932 題高分通關版》是一本專為乙級技術士職業安全衛生管理員考試設計的備考用書。 • 每題附完整解析：原理（法源條文）、最強干擾項分析、記法（記憶口訣） • 涵蓋勞基法、職安法、職災保險、職業衛生、管理風險等核心領域",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/lnIvbsprPjWywaH7eHNb6Q",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/lnIvbsprPjWywaH7eHNb6Q"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1098,
+    "id": "kobo-c0c77b49-120c-4bd6-b3a7-e3f511824724",
+    "title": "乙安 932 題全解",
+    "subtitle": "會的快答，不會的講通",
+    "author": "Happy eBook Authors",
+    "category": [
+      "職業安全衛生",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_C7N0FR2K03R_partner-cover.png",
+    "description": "官方 A15 題庫 932 題分流攻略：708 題直答速查、217 題逐題講解、7 題公式計算，會的快答，不會的講通。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/PI2BegvxojKOwKztbELO3Q",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/PI2BegvxojKOwKztbELO3Q"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1099,
+    "id": "kobo-ae5d8fd4-d205-4394-b45e-2afb99feee87",
+    "title": "乙安 術科篇：60 天計算題 + 關鍵字答題法",
+    "subtitle": "電腦閱卷時代的術科滿分攻略",
+    "author": "Happy eBook Authors",
+    "category": [
+      "職業安全衛生",
+      "考試準備"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_CN0HWZ9T450_partner-cover.png",
+    "description": "乙級職業安全衛生管理員 術科電腦測驗(CBT) 專用。涵蓋 JSA、職災統計、管理計畫、風險評估四大主題，含計算題步驟拆解、關鍵字精準度訓練、全真模擬試題 50 題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/em4vUFThxzy55h4jkLydqA",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/em4vUFThxzy55h4jkLydqA"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1100,
+    "id": "kobo-3c497342-3879-4e75-b532-47c69abd840d",
+    "title": "使用 10 個範例學習 Codex CLI",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL922B4E270D_partner-cover.png",
+    "description": "《使用 10 個範例學習 Codex CLI》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/10-codex-cli",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/10-codex-cli"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1101,
+    "id": "kobo-adcec01d-60f5-4dd8-9dda-06d2a1b1c5fd",
+    "title": "做中學 WSL2：打造 Windows 上的 Linux、Docker 與 AI 開發工作站",
+    "subtitle": "不必放棄 Windows，就能擁有極致流暢的 Linux + Docker + AI 實戰開發工作區！ 本書以「做中學（Learn by Doing）」為核心，拋棄繁瑣枯燥的純理論，專為想在 Wind",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-adcec01d-60f5-4dd8-9dda-06d2a1b1c5fd.jpg",
+    "description": "不必放棄 Windows，就能擁有極致流暢的 Linux + Docker + AI 實戰開發工作區！ 本書以「做中學（Learn by Doing）」為核心，拋棄繁瑣枯燥的純理論，專為想在 Windows 11 上建置現代化開發環境的工程師與初學者設計。全書包含 19 個精簡高效的實戰單元，搭配自動化驗收腳本與明確的排錯步驟，帶你從零打通 Windows 與 Linux 的跨系統整合！",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/wsl2-windows-linux-docker-ai",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/wsl2-windows-linux-docker-ai"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1102,
+    "id": "kobo-4e3ed02f-f1e1-45ee-bc35-679befb53919",
+    "title": "台灣，怎麼這麼有趣？",
+    "subtitle": "你以為熟悉的台灣，其實處處藏著驚奇",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-4e3ed02f-f1e1-45ee-bc35-679befb53919.jpg",
+    "description": "你以為熟悉的台灣，其實處處藏著驚奇。為什麼岩石會長得像霜淇淋？火車頭為什麼需要一座扇形車庫？戰地坑道如何變成音樂廳與酒窖？一座鹽田、一場蜂炮、一盞天燈，又保存了哪些生活記憶？本書走訪 29 個令人忍不住追問「為什麼」的地方，從地質、歷史、產業、建築與民俗出發，用故事與知識，讀懂風景背後的台灣。這不只是一本旅遊書，而是一張邀請你重新認識台灣的探索地圖",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/-e6JnGzd7Dahi8N09m3ImQ",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/-e6JnGzd7Dahi8N09m3ImQ"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1103,
+    "id": "kobo-30f18c46-0b74-496c-9cea-268f9c1cd8d7",
+    "title": "多 Agent 系統架構與實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLB1BAA31678_partner-cover.jpg",
+    "description": "《多 Agent 系統架構與實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/agent-14",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/agent-14"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1104,
+    "id": "kobo-244c9c14-ea17-4550-8217-6e14a56637f9",
+    "title": "從「我應該」到「我選擇」 中文版",
+    "subtitle": "你是這樣的人嗎？ 每天早上醒來，還沒下床，你已經在想今天要面對的事",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-244c9c14-ea17-4550-8217-6e14a56637f9.jpg",
+    "description": "你是這樣的人嗎？ 每天早上醒來，還沒下床，你已經在想今天要面對的事。老闆的訊息、LINE 群組的紅點、家人的期待、社群上的比較——你還沒開始過你的人生，已經先累了一遍。 你一直在努力滿足別人，卻很少問自己：「我到底想要什麼？」 你不是不努力。你只是把能量花錯了地方。 這本書在講什麼 這本書要教你的東西，只有兩個字：**讓他們**。 讓他們說。讓他們做。讓他們決定。讓他們失望。讓他們不喜歡你。讓他們過他們的人生。 這不是擺爛，不是冷漠，不是放棄。這是一個人生界線的重新設定——你不再把能量花在你不能控制的事情上，而是全部收回來，放在你真正能改變的地方：**你自己**。 這本書跟其他勵志書有什麼不同？ 它不是翻譯書，不是心靈鸡汤。它是一本從台灣人的真實生活出發的實踐手冊。所有的場景、對話、掙扎，都是你每天在面對的事：",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/FZKkNrBZ5TOCYmEKcMF7NA",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/FZKkNrBZ5TOCYmEKcMF7NA"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1105,
+    "id": "kobo-cd952565-d7f8-41e8-a520-547f427dda70",
+    "title": "從「我應該」到「我選擇」/ From \"I Should\" to \"I Choose\" 中英對照版",
+    "subtitle": "你不是不努力",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-cd952565-d7f8-41e8-a520-547f427dda70.jpg",
+    "description": "你不是不努力。你每天認真上班、按時繳帳單、週末回家吃飯、逢年過節包紅包——但你總覺得，好像一輩子都在滿足別人的期待。 這本書要給你的東西很簡單：兩個字——Let Them。 讓他們說。讓他們做。讓他們決定。讓他們失望。讓他們不喜歡你。讓他們過他們的人生。這不是擺爛，不是冷漠。這是一個人生界線的重新設定：你不再把能量花在你不能控制的事情上，而是全部收回來，放在你真正能改變的地方——你自己。 這本書不是翻譯書，不是心靈雞湯。它是一本從台灣人真實生活出發的實踐手冊：親戚的靈魂拷問、職場的情緒勒索、家人的「為你好」、社群上的比較焦慮——每一章都有具體的對話腳本、練習方法，以及三十天的 Let Them 挑戰計畫。中英雙語對照編排，英文在前、中文在後，學心理工具同時練英文。 從今天開始，從「我應該」到「我選擇」",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/from-i-should-to-i-choose",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/from-i-should-to-i-choose"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1106,
+    "id": "kobo-09cf3acd-2a96-4634-8dae-17b07453d3b8",
+    "title": "從零開始學 Herdr：終端新手的動手演習",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL51B308B5FD_partner-cover.png",
+    "description": "《從零開始學 Herdr：終端新手的動手演習》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/herdr-1",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/herdr-1"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1107,
+    "id": "kobo-d2832f9b-9e0b-4c91-bd34-5e56424a73c7",
+    "title": "情緒清理：30 天告別內耗挑戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL3435416874_partner-cover.jpg",
+    "description": "《情緒清理：30 天告別內耗挑戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/xqUOtnRlXDCgJlEvbUN3Tw",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/xqUOtnRlXDCgJlEvbUN3Tw"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1108,
+    "id": "kobo-e25162b0-18db-4571-af2c-6922cbb22e99",
+    "title": "我和 Codex 越來越厲害",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_TYP9TX5LELY_partner-cover.png",
+    "description": "《我和 Codex 越來越厲害》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/codex-32",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/codex-32"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1109,
+    "id": "kobo-603aa28b-cb8a-4231-a147-cf7b3b739731",
+    "title": "打造你的 AI Agent 團隊",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DLFB9329A21A_partner-cover.png",
+    "description": "《打造你的 AI Agent 團隊》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-agent-10",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-agent-10"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1110,
+    "id": "kobo-954fa766-dd56-46d4-a8f0-4f1d73fa132f",
+    "title": "打造你的個人 AI 團隊",
+    "subtitle": "不懂程式，也能讓六個 AI 幫你找資料、寫作、查證、設計與行銷",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI 工具",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_0R67LN76GJS_partner-cover.png",
+    "description": "《打造你的個人 AI 團隊》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-640",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-640"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1111,
+    "id": "kobo-5371751a-002d-4a3f-9bb2-6322b25e07a1",
+    "title": "打造自己的專用瀏覽器，學會 AI 程式設計",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_ZNEK2JPYT7A_partner-cover.jpg",
+    "description": "《打造自己的專用瀏覽器，學會 AI 程式設計》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-713",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-713"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1113,
+    "id": "kobo-27ce2954-5133-424a-9b4a-01762f7e02c9",
+    "title": "為什麼我們永遠在為別人買單",
+    "subtitle": "每個人都該懂一點經濟學",
+    "author": "Happy eBook Authors",
+    "category": [
+      "經濟學",
+      "自學"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_7H86RZREX9H_partner-cover.png",
+    "description": "《為什麼我們永遠在為別人買單》是 Happy eBook Authors 的電子書作品。本頁保留作品介紹與學習主題。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/wEKFaPyAqjiwSY6njV9sfw",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/wEKFaPyAqjiwSY6njV9sfw"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1114,
+    "id": "kobo-610d8faf-3fb2-43db-bbe8-f7987ecc10d0",
+    "title": "用 AI 解決實際問題",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_WPN0ZRTU08J_partner-cover.png",
+    "description": "《用 AI 解決實際問題》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-810",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-810"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1115,
+    "id": "kobo-179f185f-130b-4af0-b758-a1f2b696dbee",
+    "title": "用 Windows 玩轉 Linux：Windows + Linux 整合實作：WSL 2 開發環境全攻略",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook 團隊",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL749C2FB0BC_partner-cover.png",
+    "description": "《用 Windows 玩轉 Linux：Windows + Linux 整合實作：WSL 2 開發環境全攻略》是由 Happy eBook 團隊 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/windows-linux-windows-linux-wsl-2",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/windows-linux-windows-linux-wsl-2"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1116,
+    "id": "kobo-912b6f88-b22c-423c-ad13-34bbb57d82bd",
+    "title": "用三個實例學會多 Agent 應用",
+    "subtitle": "從任務拆解、角色分工到交接與驗收",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "AI Coding"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_QWGABURKNPY_partner-cover.jpg",
+    "description": "想把複雜任務交給多個 AI Agent 協作，卻不知道如何分工、交接與驗收？本書以循序漸進的方式，帶你掌握多 Agent 協作的實用方法。 全書透過三個實例，示範如何將任務拆解、分配角色、管理依賴，並檢查成果是否真的可交付： • 台南旅遊規劃：練習平行蒐集資訊，再由主 Agent 整合與標示待確認事項。 • Python 教材製作：練習依賴式接力，從課程設計、程式製作到試學驗收。 • 搜尋錯誤修復：練習重現問題、建立回歸測試、最小幅度修復與獨立審查。 你也會學到如何撰寫可重複使用的提示詞、安排跨對話交接、設定停止條件，以及用測試和證據判斷成果能否交付。書中提供操作步驟、練習與檢查清單，並說明教學示例與實際驗證的界線。 本書適合已使用過 AI 對話，想進一步學會任務分工與協作流程的讀者。內容不依賴特定 Agent 平台，也不要求使用自動調度框架；重點是建立清楚、可追溯、可驗收的工作方法。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/agent-15",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/agent-15"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1117,
+    "id": "kobo-5b47a033-7968-4a48-a7d4-478cb73af40a",
+    "title": "私人 AI 家庭伺服器：Ollama、Open WebUI 與 Hermes 整合",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_HD7376Z7F1D_partner-cover.png",
+    "description": "《私人 AI 家庭伺服器：Ollama、Open WebUI 與 Hermes 整合》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-ollama-open-webui-hermes",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-ollama-open-webui-hermes"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1119,
+    "id": "kobo-a3a2b4e8-4b5c-481a-a6da-7ea464d9ad92",
+    "title": "精打細算學 AI 用 AI",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL814EBD8D0D_partner-cover.png",
+    "description": "《精打細算學 AI 用 AI》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-ai-53",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-ai-53"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1120,
+    "id": "kobo-78716cac-d69b-4b3c-9946-a07c362ffcf7",
+    "title": "聰明使用 Pi Coding Agent：用 Skill、Agent 協作與模型評估，打造可驗收的 AI 工作流程",
+    "subtitle": "學習使用 Pi Coding Agent，結合 Skill、Agent 協作與模型評估，建立可驗收、可驗證的 AI 輔助工作流程",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-78716cac-d69b-4b3c-9946-a07c362ffcf7.jpg",
+    "description": "學習使用 Pi Coding Agent，結合 Skill、Agent 協作與模型評估，建立可驗收、可驗證的 AI 輔助工作流程",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/pi-coding-agent-skill-agent-ai",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/pi-coding-agent-skill-agent-ai"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1121,
+    "id": "kobo-faf9ad93-af2f-474f-a7e5-7e42d8165fb5",
+    "title": "聰明用 AI Agent 要知道的事",
+    "subtitle": "從單兵作戰到可驗證的 AI 開發工作流",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI Coding",
+      "AI 學習"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DJNNF85KUWY_partner-cover.jpg",
+    "description": "一本給工程師的 AI Agent 實作指南，從 Codex、Claude Code、Pi、Agent Skills 與 MCP 出發，說明模型選擇、成本控制、多 Agent 協作，以及測試、資安與品質閘門。 本書協助讀者建立可理解、可審查、可回復的 AI 開發工作流，將 AI Agent 納入實際工程流程，而不是只依賴模糊的 Prompt。書中並提供 Reader Lab、設定範本與檢查清單。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-agent-9",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-agent-9"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1122,
+    "id": "kobo-03bddb5e-346b-40ca-be69-7ba8661b5bc1",
+    "title": "自己的工具，自己做",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_YPLQRBBEYC9_partner-cover.jpg",
+    "description": "《自己的工具，自己做》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ziNDgueqzTyhS3jqOTx4BQ",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ziNDgueqzTyhS3jqOTx4BQ"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1123,
+    "id": "kobo-11e085a6-4e8f-49e9-b3ac-c75c604a6c63",
+    "title": "讓 AI 幫你操作軟體",
+    "subtitle": "讓 AI 不只回答問題，也能透過命令列實際操作軟體",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-11e085a6-4e8f-49e9-b3ac-c75c604a6c63.jpg",
+    "description": "讓 AI 不只回答問題，也能透過命令列實際操作軟體。本書從 CLI-Hub 與環境準備開始，帶你以文件、報表、圖片和出版流程練習 AI Agent 自動化，再逐步建立命令列介面、測試、錯誤處理與交接方法。第十四章以 CLI-Anything 為既有 Python 專案生成 CLI，並示範如何用實際測試驗收結果。 全書 17 章，附 GitHub 讀者練習專案與固定版本範例，適合想把重複操作整理成可重跑、可檢查工作流程的讀者。案例使用 Claude Code、Codex、Python 與開源軟體；各工具功能會隨版本變動，書中標示相應版本與驗證範圍。本書為獨立教材，並非 CLI-Anything 官方出版品",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-783",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-783"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1124,
+    "id": "kobo-9bf052dc-c623-46d9-aa00-d4a964e6a6f1",
+    "title": "讓 AI 會用工具：MCP 入門與實戰",
+    "subtitle": "電子書介紹",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "數位出版",
+      "電子書"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_DL74C2A35DE2_partner-cover.jpg",
+    "description": "《讓 AI 會用工具：MCP 入門與實戰》是由 Happy eBook Authors 撰寫的電子書，提供完整實作與學習內容。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-mcp",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-mcp"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1125,
+    "id": "kobo-8a788270-028a-476f-a682-8a1bafcadf44",
+    "title": "讓 AI 畫對圖",
+    "subtitle": "一張圖可以語法正確、配色整齊，卻仍然讓人做錯決定",
+    "author": "Happy eBook Authors",
+    "category": [
+      "AI 學習",
+      "電子書"
+    ],
+    "cover": "assets/images/book-covers/kobo-8a788270-028a-476f-a682-8a1bafcadf44.jpg",
+    "description": "一張圖可以語法正確、配色整齊，卻仍然讓人做錯決定。箭頭方向反了、付款逾時被當成失敗、同名方塊代表不同概念——讓 AI 把圖畫得更漂亮，並不會讓這些錯誤自動消失。 《讓 AI 畫對圖》帶你從需求釐清出發，運用 AI 協助產生、修改與驗證流程圖、架構圖、互動圖及需求白板，交付可編輯、可維護、能由團隊接手的圖稿。 本書以虛構的線上訂單與客服平台貫穿實作，涵蓋建單、付款、結果未知、人工交接與部分退款，介紹六套工具的分工： • Mermaid：將流程圖直接寫進文件。 • D2：以文字維護系統架構。 • PlantUML：表達互動時序、狀態與模型關係。 • Graphviz：從依賴資料產圖，追蹤變更影響。 • draw.io：讓 AI 草稿能由人接手編輯。 • Excalidraw：用白板整理尚未確定的需求與問題。 除了工具語法，你還會練習撰寫明確的 AI 任務規格、限制局部修改範圍、辨識「能產圖卻畫錯」的問題，以及處理跨工具轉換、版本管理、自動化驗證與安全交付。各章搭配操作示範、練習及參考解答，最後以部分退款綜合專案串起完整協作流程。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/ai-688",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/ai-688"
+    }
+  },
+  {
+    "type": "paid",
+    "format": "電子書",
+    "downloadUrl": "",
+    "buyUrl": "",
+    "readUrl": "",
+    "featured": false,
+    "popular": false,
+    "launchRank": 1127,
+    "id": "kobo-4427a7a2-2234-4227-8e5a-a01c4e759906",
+    "title": "資料格式工程學",
+    "subtitle": "從 CSV、JSON 到 Protobuf、Parquet：打造跨平台、可驗證、可演進的資料契約",
+    "author": "Happy eBook Authors",
+    "category": [
+      "程式設計",
+      "資料工程"
+    ],
+    "cover": "assets/images/google-book-cover-images/GGKEY_JXT5ZHH7Y1W_partner-cover.jpg",
+    "description": "從前導零、空值、時區與金額精度，到 API 契約、事件版本、個資安全與 Parquet 分析層，《資料格式工程學》帶你理解格式如何改變系統對資料的解讀。 本書涵蓋 CSV、JSON、YAML、XML、Avro、Protobuf、Parquet 與 ORC，並以可執行的 HappyShop 案例，示範如何建立跨平台、可驗證、可演進的資料契約。 資料能被解析，不代表它仍然正確。",
+    "priceLabel": "前往 Kobo 購買；售價與供應狀態以商店為準",
+    "koboUrl": "https://www.kobo.com/tw/zh/ebook/FUCXbYc0cDmWqAqnCbwp4A",
+    "purchaseVerification": {
+      "status": "purchase-control-visible",
+      "checkedAt": "2026-11-27",
+      "url": "https://www.kobo.com/tw/zh/ebook/FUCXbYc0cDmWqAqnCbwp4A"
+    }
   }
 ]
