@@ -67,7 +67,7 @@ let coverLoadFailureCount = 0;
 
 const scriptBase = new URL(".", document.currentScript?.src || window.location.href);
 
-const booksDataVersion = "20261127-2";
+const booksDataVersion = "20261128-1";
 
 const siteConfig = {
 
