@@ -84,7 +84,10 @@ if (!fileExists("src/analytics.js")) {
 }
 
 for (const book of result.books) {
-  if (book.id && !sitemapUrls.has(publicBookUrl(book))) {
+  const pagePath = book.id ? `books/${book.id}.html` : "";
+  const noindexed = pagePath && fileExists(pagePath) &&
+    /<meta\s+name=["']robots["'][^>]*noindex/i.test(readText(pagePath));
+  if (!noindexed && book.id && !sitemapUrls.has(publicBookUrl(book))) {
     result.errors.push(`${book.id}: missing from sitemap.xml.`);
   }
   if (book.cover && !/^https?:\/\//i.test(book.cover)) {

@@ -294,6 +294,11 @@ function validateBooks({ includeSitemap = false } = {}) {
   if (includeSitemap) {
     const sitemapUrls = extractSitemapUrls();
     for (const book of books) {
+      const pagePath = book.id ? publicBookPagePath(book) : "";
+      if (pagePath && fileExists(pagePath) &&
+          /<meta\s+name=["']robots["'][^>]*noindex/i.test(readText(pagePath))) {
+        continue;
+      }
       if (book.id && !sitemapUrls.has(publicBookUrl(book))) {
         errors.push(`${book.id}: missing from sitemap.xml.`);
       }
