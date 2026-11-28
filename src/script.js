@@ -209,8 +209,9 @@ const getBookLanguageGroup = (book) => {
   if (/^zh(?:-|$)/i.test(language)) return "chinese";
   if (language) return "foreign";
 
-  // Legacy catalog rows lack language codes; use title script as a fallback.
-  const text = `${book.title || ""} ${book.subtitle || ""}`;
+  // Legacy catalog rows lack language codes; use the title only. A Chinese
+  // subtitle such as "電子書介紹" would otherwise misclassify English books.
+  const text = String(book.title || "");
   const hasHan = /[\u3400-\u9fff]/.test(text);
   const hasJapaneseKana = /[\u3040-\u30ff]/.test(text);
   return hasHan && !hasJapaneseKana ? "chinese" : "foreign";
@@ -345,10 +346,14 @@ const addBookInsights = (book, books, target = document) => {
   const panel = target.querySelector?.(".book-content-panel") || document.querySelector(".book-content-panel");
   if (!book || !panel || panel.querySelector("[data-book-insights]")) return;
   const relatedBooks = getRelatedBooks(book, books);
+  const hasPublishedAudience = [...document.querySelectorAll("h2")].some((heading) => /適合/.test(heading.textContent || ""));
+  const audienceBlock = hasPublishedAudience ? "" : `<div class="book-insight-block"><h2>適合讀者</h2><ul>${getAudienceItems(book).map((item) => `<li>${item}</li>`).join("")}</ul></div>`;
+  const relatedBlock = relatedBooks.length ? `<div class="book-insight-block"><h2>相關書籍</h2><div class="related-book-list">${relatedBooks.map(createRelatedBookLink).join("")}</div></div>` : "";
+  if (!audienceBlock && !relatedBlock) return;
   const insightElement = document.createElement("section");
   insightElement.className = "book-insights";
   insightElement.dataset.bookInsights = book.id;
-  insightElement.innerHTML = `<div class="book-insight-block"><h2>適合讀者</h2><ul>${getAudienceItems(book).map((item) => `<li>${item}</li>`).join("")}</ul></div>${relatedBooks.length ? `<div class="book-insight-block"><h2>相關書籍</h2><div class="related-book-list">${relatedBooks.map(createRelatedBookLink).join("")}</div></div>` : ""}`;
+  insightElement.innerHTML = `${audienceBlock}${relatedBlock}`;
   const ctaRow = panel.querySelector(".cta-row");
   if (ctaRow) {
     ctaRow.insertAdjacentElement("afterend", insightElement);

@@ -80,3 +80,23 @@ test('retired import entry points fail without modifying the catalog', () => {
   }
   assert.deepEqual(fs.readFileSync(path.join(root,'src/books.json')), before);
 });
+test('English titles have an explicit language code and pass the foreign-language filter', () => {
+  const english = books.filter((book) => !/[\u3400-\u9fff]/.test(book.title || ""));
+  assert.ok(english.length > 0);
+  for (const book of english) assert.equal(book.language, "en", book.id);
+  for (const title of ["Build Your AI Agent Team", "Data Format Engineering"]) {
+    const book = books.find((item) => item.title === title);
+    assert.ok(book, title);
+    context.book = book;
+    assert.equal(vm.runInContext('getBookLanguageGroup(book)', context), "foreign", title);
+    context.book = {...book, language: undefined};
+    assert.equal(vm.runInContext('getBookLanguageGroup(book)', context), "foreign", title);
+  }
+});
+test('the Codex CLI page has one reader level and a Kobo preview hint', () => {
+  const html = fs.readFileSync(path.join(root, 'books/codex-cli-yduxegaaqbaj.html'), 'utf8');
+  assert.equal((html.match(/適合(?:哪些)?讀者/g) || []).length, 1);
+  assert.doesNotMatch(html, /初學者/);
+  assert.match(html, /Kobo 書頁提供「立即預覽」/);
+  assert.match(source, /hasPublishedAudience/);
+});
