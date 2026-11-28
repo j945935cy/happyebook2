@@ -1014,7 +1014,18 @@ const initBooksPage = async () => {
     categoryFilters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.categoryFilter === activeCategory)));
     languageFilters.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.languageFilter === activeLanguage)));
 
-    grid.innerHTML = visibleBooks.length ? visibleBooks.map(createBookCard).join("") : `<div class="empty-state"><h2>${noResultsTitle}</h2><p>${noResultsCopy}</p></div>`;
+    if (visibleBooks.length) {
+      grid.innerHTML = visibleBooks.map(createBookCard).join("");
+    } else {
+      const emptyState = document.createElement("div");
+      emptyState.className = "empty-state";
+      const heading = document.createElement("h2");
+      heading.textContent = noResultsTitle;
+      const copy = document.createElement("p");
+      copy.textContent = noResultsCopy;
+      emptyState.append(heading, copy);
+      grid.replaceChildren(emptyState);
+    }
 
 
     hydrateCoverImages(grid);
